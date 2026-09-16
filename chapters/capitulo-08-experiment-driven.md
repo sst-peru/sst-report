@@ -479,3 +479,15 @@ flowchart LR
 
 > **PENDIENTE.** <!-- COMPLETAR: enlace al video de presentación del producto. -->
 
+### 8.7.2. Resumen usando Gees Framework
+
+> **PENDIENTE.** Aplicar el framework Gees (Go to market, Engage, Expand, Sustain) según el
+> formato que indique el docente. Contenido sugerido con base en lo desarrollado:
+>
+> | Etapa | Contenido propuesto |
+> |---|---|
+> | **Go to market** | Entrada por el canal de consultoras de SST, que atienden a varias empresas medianas y sufren la consolidación manual de registros. Producto mínimo: captura en campo más evidencia exportable |
+> | **Engage** | Adopción medida desde el primer día como métrica de producto; el circuito de retroalimentación al operario (aviso de cierre) como mecanismo de retención |
+> | **Expand** | Ampliación hacia vigilancia médica ocupacional y gestión de contratistas, los dos módulos que la competencia sí cubre |
+> | **Sustain** | Suscripción escalonada por número de trabajadores; el cumplimiento normativo recurrente sostiene la renovación |
+
