@@ -55,3 +55,16 @@ puesto a prueba. Ese es el punto de partida del experimento.
 | C2 | "Sin operación offline, el sistema no sirve en obra ni en mina" |
 | C3 | "La evidencia exportable es el argumento que cierra la venta" |
 
+### 8.1.3. Experiment-Ready Questions
+
+Una pregunta está lista para experimentar cuando es específica, medible y su respuesta cambia
+una decisión.
+
+| ID | Pregunta | ¿Qué decisión cambia? |
+|---|---|---|
+| Q1 | ¿Un formulario de tres pasos aumenta el número de reportes por usuario frente a uno de diez campos? | Si no, se simplifica el producto eliminando la variante y se invierte en otra barrera |
+| Q2 | ¿Qué proporción de reportes se origina sin conexión? | Determina si la inversión en la cola local y la sincronización se justifica |
+| Q3 | ¿La foto obligatoria reduce la tasa de finalización del reporte? | Decide si la foto se mantiene obligatoria u opcional |
+| Q4 | ¿El aumento de reportes se traduce en más hallazgos cerrados o solo en más cola? | Decide si hay que trabajar sobre la capacidad de cierre antes de escalar la captura |
+| Q5 | ¿La posibilidad de reportar de forma anónima aumenta los reportes de actos inseguros de terceros? | Decide si se implementa el reporte anónimo |
+
