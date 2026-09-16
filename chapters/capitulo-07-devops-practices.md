@@ -70,3 +70,5 @@ flowchart LR
 <!-- IMAGEN REQUERIDA: capturas de la pestaña Actions de cada repositorio mostrando
      ejecuciones exitosas, en assets/img/pipeline-ci-<repo>.png -->
 
+## 7.2. Continuous Delivery
+
