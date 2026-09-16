@@ -34,3 +34,15 @@ comparten la contraseña `demo12345`.
 > variantes del experimento. Sirven para demostrar el funcionamiento del sistema y **no
 > constituyen evidencia experimental**.
 
+## Anexo D. Cálculo del tamaño de muestra
+
+El cálculo de la sección 8.2.5 es reproducible ejecutando, en el repositorio del informe:
+
+```bash
+python tools/tamano-muestra.py
+```
+
+El script documenta los parámetros del diseño, el modelo estadístico empleado y sus supuestos, y
+calcula tanto el tamaño de muestra requerido para distintos niveles de potencia como el efecto
+mínimo detectable para muestras menores.
+
