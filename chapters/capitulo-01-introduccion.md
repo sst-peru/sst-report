@@ -34,3 +34,5 @@ API REST que ambos consumen.
 |---|---|
 | <img src="../assets/img/perfil-integrante.jpg" width="130"> | **<!-- COMPLETAR: Apellidos y Nombres -->**<br>Código: <!-- COMPLETAR --><br>Carrera: Ingeniería de Software<br><br><!-- COMPLETAR: párrafo de resumen con los principales conocimientos técnicos y habilidades que aportas al equipo. Sé concreto: lenguajes, frameworks, herramientas y experiencias previas relevantes. --> |
 
+## 1.2. Solution Profile
+
