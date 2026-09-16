@@ -234,3 +234,8 @@ flowchart TD
     G -->|Supervisor| I[Cerrar con acción correctiva]
 ```
 
+### 4.4.3. Mobile Applications Mock-ups
+
+<!-- IMAGEN REQUERIDA: capturas reales de la aplicación Android en ejecución en
+     assets/img/mobile-mockup-*.png -->
+
