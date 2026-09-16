@@ -358,3 +358,7 @@ verifica con las mismas pruebas.
 
 > **PENDIENTE.** <!-- IMAGEN REQUERIDA -->
 
+### 8.3.8. Implemented To-Be RESTful API and/or Serverless Backend Evidence
+
+> **PENDIENTE.** Documentar los endpoints añadidos para las historias To-Be.
+
