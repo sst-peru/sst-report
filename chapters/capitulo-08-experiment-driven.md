@@ -139,3 +139,18 @@ diseñar el experimento para confirmar lo que ya se cree.
 | **Tasa de cierre** | Hallazgos cerrados sobre hallazgos creados en el periodo | Detecta si la captura crece más rápido que la capacidad de atención |
 | **Cobertura de evidencia** | Proporción de hallazgos con foto y con acción correctiva registrada | Mide la calidad del expediente ante una fiscalización |
 
+### 8.2.3. Measures
+
+| Medida | Operacionalización | Origen del dato |
+|---|---|---|
+| Reportes por usuario | Conteo de `Report` por `reported_by`, dividido entre los usuarios de la variante | `experiments/report_form/results/` |
+| Variante asignada | Campo `form_variant` almacenado en cada reporte y `Assignment` del usuario | Base de datos |
+| Reportes con foto | Conteo de reportes con `photo` no nulo | `experiments/report_form/results/` |
+| MTTR por variante | Promedio de `closed_at − created_at` de los reportes cerrados de cada grupo | `experiments/report_form/results/` |
+| Serie diaria | Conteo de reportes por día y variante | `experiments/report_form/results/` (campo `daily`) |
+| Reportes sincronizados offline | Conteo de reportes con `synced_offline` verdadero | Base de datos |
+
+Todas las medidas se obtienen del propio sistema. No se emplea una herramienta de analítica
+externa, decisión justificada en el Capítulo VII: los eventos de una herramienta externa se
+pierden cuando no hay conectividad, que es exactamente la condición de uso del producto.
+
