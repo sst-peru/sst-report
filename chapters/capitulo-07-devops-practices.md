@@ -135,3 +135,25 @@ usuario. La promoción a producción requiere aprobación explícita.
 | Migraciones de Django | Ejecutadas automáticamente antes de activar la nueva versión |
 | Etiquetas de versión | Cada despliegue a producción corresponde a un tag en `main` |
 
+### 7.3.2. Production Deployment Pipeline Components
+
+```mermaid
+flowchart LR
+    A[Merge a main] --> B[CI completo]
+    B --> C[Etiquetar versión]
+    C --> D{Aprobación manual}
+    D -->|Aprobado| E[Desplegar API]
+    E --> F[Ejecutar migraciones]
+    F --> G[Desplegar web]
+    G --> H[Verificación de humo en producción]
+    H --> I{¿Correcto?}
+    I -->|Sí| J[Versión activa]
+    I -->|No| K[Rollback a la versión anterior]
+    D -->|Rechazado| L[Permanece en preproducción]
+```
+
+> **PENDIENTE — implementación.** Documentar el despliegue real cuando se ejecute: URL de
+> producción, proveedor, procedimiento de rollback probado y evidencia de al menos un despliegue
+> completo. <!-- IMAGEN REQUERIDA: captura del despliegue exitoso en
+> assets/img/pipeline-deploy.png -->
+
