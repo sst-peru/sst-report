@@ -234,3 +234,22 @@ finalización sin ayuda, y errores cometidos.
 > **PENDIENTE.** Hallazgos organizados por heurística o criterio, con severidad, evidencia y
 > recomendación.
 
+### 6.4.2. Auditoría recibida
+
+#### 6.4.2.1. Información del grupo auditor
+
+> **PENDIENTE.**
+
+#### 6.4.2.2. Cronograma de auditoría recibida
+
+> **PENDIENTE.**
+
+#### 6.4.2.3. Contenido de auditoría recibida
+
+> **PENDIENTE.**
+
+#### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
+
+> **PENDIENTE.** Por cada hallazgo recibido: descripción, decisión tomada, cambio realizado y
+> commit o Pull Request que lo implementa. Esta trazabilidad entre la observación y el commit
+> que la resuelve es lo que demuestra que la auditoría tuvo efecto real.
