@@ -340,3 +340,8 @@ hace que el pipeline sea parte del experimento y no solo de la construcción es 
 instrumentación —el campo `form_variant`— viaja en el mismo artefacto que se despliega y se
 verifica con las mismas pruebas.
 
+### 8.3.4. To-Be Sprint Backlogs
+
+> **PENDIENTE.** Completar con el sprint de implementación de las historias To-Be, siguiendo el
+> mismo formato del Capítulo V.
+
