@@ -256,3 +256,17 @@ hipótesis. Esta distinción es la diferencia entre un experimento y una demostr
 | Participantes que saben que están siendo observados | Validez externa | Reconocer el efecto Hawthorne como limitación del piloto |
 | Población de estudiantes en lugar de operarios reales | Validez externa | Declararlo explícitamente: los resultados indican tendencia, no se generalizan a operarios en obra |
 
+### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
+
+Estructura Goal–Question–Metric:
+
+| Goal | Question | KPI / Metric | Fuente |
+|---|---|---|---|
+| Capturar en el sistema lo que ocurre en campo | ¿Cuánto reporta cada operario? | Reportes por usuario activo | `experiments/report_form/results/` |
+| | ¿Qué formulario produce más reportes? | *Lift* porcentual entre variantes | Mismo endpoint |
+| Responder rápido al peligro detectado | ¿Cuánto tarda un hallazgo en cerrarse? | MTTR total y por severidad | `metrics/mttr/` |
+| | ¿Se acumulan hallazgos sin atender? | Hallazgos abiertos al cierre de la semana | `metrics/mttr/` |
+| Sostener la prevención programada | ¿Se cumplen las inspecciones? | Tasa de cumplimiento, total y por área | `metrics/inspection-compliance/` |
+| Producir evidencia defendible | ¿Los hallazgos tienen evidencia completa? | Proporción con foto y con acción correctiva | `metrics/reports-summary/` |
+| Sostener la operación sin conexión | ¿Cuántos reportes nacen sin señal? | Proporción de reportes con `synced_offline` | Base de datos |
+
