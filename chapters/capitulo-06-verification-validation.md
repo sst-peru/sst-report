@@ -196,3 +196,9 @@ El entrevistado ejecuta tareas reales mientras se observa y se registra.
 **Métricas de observación por tarea:** tiempo de ejecución, número de toques o clics,
 finalización sin ayuda, y errores cometidos.
 
+### 6.3.2. Registro de Entrevistas
+
+> **PENDIENTE — trabajo de campo.** Registro por entrevistado: nombre, edad, distrito, cargo,
+> fecha, duración, enlace al video con minuto de inicio, tareas completadas con sus tiempos y
+> resumen de los hallazgos. **Requiere realizar las entrevistas; no puede redactarse antes.**
+
