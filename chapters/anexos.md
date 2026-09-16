@@ -46,3 +46,15 @@ El script documenta los parámetros del diseño, el modelo estadístico empleado
 calcula tanto el tamaño de muestra requerido para distintos niveles de potencia como el efecto
 mínimo detectable para muestras menores.
 
+## Anexo E. Estructura del repositorio del informe
+
+| Ruta | Contenido |
+|---|---|
+| `README.md` | Carátula, registro de versiones, índice y Student Outcome |
+| `chapters/` | Un archivo por capítulo |
+| `assets/img/` | Imágenes: capturas, diagramas exportados, fotografías |
+| `assets/diagrams/` | Fuentes editables de los diagramas |
+| `tools/build.py` | Genera el índice y compila `informe-completo.md` |
+| `tools/tamano-muestra.py` | Cálculo del tamaño de muestra del experimento |
+| `CONTRIBUTING.md` | GitFlow y Conventional Commits aplicados al informe |
+
