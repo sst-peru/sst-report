@@ -197,3 +197,23 @@ que no contaminen el relato del problema.
 | Motivaciones | Responsabilidad profesional y legal; reducir la exposición de la empresa |
 | Cómo se relaciona con el producto | Lo usa a diario desde el panel web y ocasionalmente desde el celular en obra |
 
+### 2.3.2. User Task Matrix
+
+| Tarea | Operario (frecuencia / importancia) | Supervisor de SST (frecuencia / importancia) |
+|---|---|---|
+| Detectar un peligro en el frente de trabajo | Alta / Alta | Media / Alta |
+| Reportar un acto o condición insegura | Media / Alta | Baja / Media |
+| Adjuntar evidencia fotográfica del hallazgo | Media / Alta | Baja / Media |
+| Consultar el estado de un hallazgo propio | Media / Media | Alta / Alta |
+| Asignar responsable de la acción correctiva | Nunca / — | Alta / Alta |
+| Cerrar el hallazgo con la acción aplicada | Nunca / — | Alta / Alta |
+| Consultar la matriz IPERC de su puesto | Baja / Media | Media / Alta |
+| Actualizar la matriz IPERC | Nunca / — | Baja / Alta |
+| Recibir EPP y dar conformidad | Baja / Alta | Media / Media |
+| Registrar la entrega de EPP | Nunca / — | Media / Alta |
+| Ejecutar una inspección con checklist | Baja / Media | Alta / Alta |
+| Programar inspecciones periódicas | Nunca / — | Baja / Alta |
+| Revisar indicadores (MTTR, cumplimiento) | Nunca / — | Alta / Alta |
+| Registrar el acta del comité y sus acuerdos | Baja / Baja | Media / Alta |
+| Preparar evidencia para una inspección de SUNAFIL | Nunca / — | Baja / Muy alta |
+
