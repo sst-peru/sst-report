@@ -120,3 +120,18 @@ primero) y por severidad cuando la prioridad manda.
 | Por tópico | Menú principal: reportes, IPERC, inspecciones, EPP, comité |
 | Por audiencia | El menú se filtra por rol: el operario ve cuatro opciones, el supervisor nueve |
 
+### 4.2.2. Labeling Systems
+
+Las etiquetas usan el vocabulario del dominio definido en el Ubiquitous Language, no traducciones
+literales del inglés técnico.
+
+| En la interfaz | En el modelo | Por qué esa etiqueta |
+|---|---|---|
+| Reportar | `Report.create` | Verbo de la acción del operario, no "nuevo registro" |
+| Hallazgo | `Report` gestionado | Es el término que usa el profesional de SST |
+| Matriz IPERC | `IpercMatrix` | Nombre normativo, reconocible sin explicación |
+| Equipos de protección | `EppItem` / `EppDelivery` | Se evita la sigla en el menú y se usa en el detalle |
+| Comité de SST | `Committee` | Nombre normativo |
+| Acta N° | `Meeting.number` | Formato documental esperado por el auditor |
+| Cerrar hallazgo | `Report.close` | Acción con consecuencia explícita |
+
