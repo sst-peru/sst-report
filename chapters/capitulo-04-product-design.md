@@ -239,3 +239,23 @@ flowchart TD
 <!-- IMAGEN REQUERIDA: capturas reales de la aplicación Android en ejecución en
      assets/img/mobile-mockup-*.png -->
 
+### 4.4.4. Mobile Applications User Flow Diagrams
+
+```mermaid
+flowchart LR
+    subgraph Operario
+    O1[Ve un peligro] --> O2[Abre Resguardo]
+    O2 --> O3[Reportar]
+    O3 --> O4[3 toques + foto]
+    O4 --> O5[Confirmación inmediata]
+    O5 --> O6[Consulta el estado después]
+    end
+    subgraph Supervisor
+    S1[Recibe el hallazgo] --> S2[Prioriza por severidad]
+    S2 --> S3[Asigna responsable]
+    S3 --> S4[Verifica y cierra]
+    end
+    O5 -.sincronización.-> S1
+    S4 -.visible para.-> O6
+```
+
