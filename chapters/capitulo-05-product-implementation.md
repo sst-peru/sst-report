@@ -148,3 +148,29 @@ Tener ambas capas importa porque el hook local puede no estar instalado en una m
 > **PENDIENTE.** <!-- IMAGEN REQUERIDA: capturas de la landing page desplegada en
 > assets/img/evidencia-landing-*.png, más la URL pública. -->
 
+### 5.2.3. Implemented Frontend-Web Application Evidence
+
+<!-- IMAGEN REQUERIDA: capturas del panel web en ejecución, una por pantalla, en
+     assets/img/evidencia-web-<pantalla>.png. Lista sugerida:
+     acceso, registro, tablero, bandeja de hallazgos, detalle con bitácora, matriz IPERC,
+     inspecciones con checklist, EPP, comité con actas, usuarios, experimento A/B. -->
+
+La aplicación web está implementada en React con TypeScript y cubre la totalidad de las
+funcionalidades disponibles para los roles de supervisor y comité, además del reporte para
+cualquier rol.
+
+| Pantalla | Ruta | Funcionalidad implementada |
+|---|---|---|
+| Acceso | `/login` | Autenticación con JWT |
+| Registro | `/registro` | Alta de trabajador por RUC de empresa |
+| Tablero | `/` | MTTR, hallazgos abiertos, cumplimiento de inspecciones, vencidas, acuerdos y actas del comité |
+| Reportes | `/reportes` | Bandeja filtrable por estado, tipo y área |
+| Nuevo reporte | `/reportes/nuevo` | Formulario en sus dos variantes del experimento, con foto, vista previa ampliable y captura de ubicación |
+| Detalle | `/reportes/:id` | Datos completos, bitácora, asignación de responsable y cierre con acción correctiva |
+| Matriz IPERC | `/iperc` | Consulta y edición de entradas con cálculo del nivel de riesgo |
+| Inspecciones | `/inspecciones` | Programas, generación de ocurrencias, ejecución con checklist e indicadores |
+| EPP | `/epp` | Catálogo, registro de entregas y conformidad del trabajador |
+| Comité | `/comite` | Constitución, miembros, paridad, actas con quórum y acuerdos |
+| Usuarios y áreas | `/usuarios` | Alta de usuarios con rol y gestión de áreas |
+| Experimento | `/experimento` | Resultados comparados por variante |
+
