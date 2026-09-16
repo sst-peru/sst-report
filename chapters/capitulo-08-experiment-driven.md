@@ -270,3 +270,23 @@ Estructura Goal–Question–Metric:
 | Producir evidencia defendible | ¿Los hallazgos tienen evidencia completa? | Proporción con foto y con acción correctiva | `metrics/reports-summary/` |
 | Sostener la operación sin conexión | ¿Cuántos reportes nacen sin señal? | Proporción de reportes con `synced_offline` | Base de datos |
 
+### 8.2.8. Web and Mobile Tracking Plan
+
+El plan de seguimiento se implementa sobre el modelo de datos del propio producto. Cada fila
+indica el evento, su disparador y dónde queda registrado.
+
+| Evento | Disparador | Datos registrados | Plataforma | Dónde se almacena |
+|---|---|---|---|---|
+| `variante_asignada` | Primer inicio de sesión tras activarse el experimento | Usuario, experimento, variante, fecha | Web y móvil | Tabla `experiments_assignment` |
+| `reporte_creado` | El usuario envía el reporte | Usuario, tipo, categoría, área, severidad, variante del formulario, con o sin foto, con o sin GPS, fecha de ocurrencia y de recepción | Web y móvil | Tabla `reports_report` |
+| `reporte_sincronizado_offline` | El worker sube un reporte de la cola local | Marca `synced_offline` y diferencia entre ocurrencia y recepción | Móvil | Campo del mismo reporte |
+| `reporte_asignado` | El supervisor asigna responsable | Autor, responsable, fecha, estado resultante | Web y móvil | Tabla `reports_reportaction` |
+| `reporte_cerrado` | El supervisor cierra el hallazgo | Fecha de cierre, acción correctiva, tiempo de resolución | Web y móvil | Campos del reporte y bitácora |
+| `inspeccion_realizada` | Se completa una inspección | Programa, fecha programada, fecha de ejecución, resultados del checklist | Web y móvil | Tabla `inspections_inspection` |
+| `epp_conformidad` | El trabajador da conformidad | Entrega, trabajador, fecha | Web y móvil | Tabla `epp_eppdelivery` |
+| `evidencia_exportada` | Se descarga un archivo de evidencia | Usuario, recurso exportado, filtros aplicados | Web | <!-- COMPLETAR: hoy la exportación no deja registro; agregar un log de auditoría --> |
+
+**Consideración de privacidad.** El plan registra datos personales —DNI, fotografías,
+geolocalización— de trabajadores identificables. Su tratamiento queda sujeto a la Ley N° 29733
+de Protección de Datos Personales y se analiza en la matriz ética de la sección 8.8.
+
