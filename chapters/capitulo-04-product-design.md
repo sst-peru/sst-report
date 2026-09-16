@@ -261,3 +261,9 @@ flowchart LR
 
 ## 4.5. Mobile Applications Prototyping
 
+### 4.5.1. Android Mobile Applications Prototyping
+
+<!-- COMPLETAR: enlace al prototipo navegable en Figma. Si el prototipo se sustituye por la
+     aplicación real compilada, dejarlo indicado y enlazar el APK de depuración generado por
+     el pipeline. -->
+
