@@ -106,3 +106,17 @@ usuario. Se documenta como decisión consciente y no como omisión.
 
 ## 4.2. Information Architecture
 
+### 4.2.1. Organization Systems
+
+La información se organiza por **proceso del sistema de gestión**, no por tipo de dato: el
+usuario piensa en "reportar", "inspeccionar" o "revisar la matriz", no en "entidades". Dentro de
+cada proceso, el orden es cronológico descendente para lo operativo (los hallazgos más recientes
+primero) y por severidad cuando la prioridad manda.
+
+| Esquema | Aplicación |
+|---|---|
+| Secuencial | Formulario rápido de reporte: tres pasos con avance explícito |
+| Cronológico | Bandeja de hallazgos, bitácora, actas del comité |
+| Por tópico | Menú principal: reportes, IPERC, inspecciones, EPP, comité |
+| Por audiencia | El menú se filtra por rol: el operario ve cuatro opciones, el supervisor nueve |
+
