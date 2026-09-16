@@ -330,3 +330,9 @@ flowchart LR
 <!-- COMPLETAR: enlace al prototipo navegable en Figma, o indicación de que el prototipo se
      sustituye por la aplicación web desplegada, con su URL. -->
 
+## 4.8. Domain-Driven Software Architecture
+
+La arquitectura sigue el enfoque C4. El sistema se organiza en **bounded contexts** que
+corresponden a los procesos del sistema de gestión: identidad y organización, reportes,
+IPERC, EPP, inspecciones, comité y experimentación.
+
