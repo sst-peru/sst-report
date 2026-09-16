@@ -108,3 +108,48 @@ escenarios principales.
 
 ## 6.2. Static testing & Verification
 
+### 6.2.1. Static Code Analysis
+
+#### 6.2.1.1. Coding standard & Code conventions
+
+| Repositorio | Herramienta | Configuración | Ejecución |
+|---|---|---|---|
+| `sst-api` | ruff 0.8 | Línea de 100 caracteres, reglas E (pycodestyle), F (pyflakes), I (orden de imports), UP (modernización), B (bugbear) y DJ (específicas de Django); migraciones excluidas | `ruff check .` en cada PR |
+| `sst-api` | Django | `makemigrations --check --dry-run` detiene el PR si hay cambios de modelo sin migración generada | En cada PR |
+| `sst-web` | ESLint 9 | Reglas recomendadas de JavaScript y TypeScript más `react-hooks` | `npm run lint` |
+| `sst-web` | TypeScript 5.7 | Modo estricto, `noUnusedLocals`, `noUnusedParameters`, `noFallthroughCasesInSwitch` | `npm run typecheck` |
+| `sst-mobile` | Compilador de Kotlin | Verificación de tipos y advertencias en la compilación | `gradle assembleDebug` |
+| Los cuatro | Hook `commit-msg` + workflow | Conventional Commits | Local y en PR |
+
+**Resultado de la última verificación estática de la aplicación web:** `tsc --noEmit` sin
+errores de tipo y ESLint sin advertencias sobre los 22 archivos de TypeScript del proyecto.
+
+<!-- IMAGEN REQUERIDA: captura de la ejecución de ruff, eslint y tsc sin errores, en
+     assets/img/evidencia-analisis-estatico.png -->
+
+#### 6.2.1.2. Code Quality & Code Security
+
+**Hallazgos de seguridad detectados y corregidos durante el desarrollo**
+
+| # | Hallazgo | Severidad | Corrección |
+|---|---|---|---|
+| S1 | El endpoint de registro público aceptaba el campo `role`, permitiendo que cualquiera se registrara como `ADMIN` o `SUPERVISOR` (escalada de privilegios) | Alta | El serializador de registro dejó de aceptar `role` y fuerza `OPERARIO`. Se agregó la prueba `test_el_registro_publico_no_permite_elegir_rol` para impedir la regresión |
+| S2 | El registro permitía asociar un usuario a un área de otra empresa | Media | Validación cruzada en el serializador y prueba asociada |
+| S3 | Los tokens JWT se almacenan en `localStorage` en la aplicación web | Media | Aceptado como riesgo conocido para el alcance académico. En producción el refresh token debería moverse a una cookie `httpOnly` para reducir la exposición ante XSS. **Documentado como deuda técnica, no como no hallazgo** |
+
+**Prácticas de seguridad aplicadas**
+
+- Autenticación con JWT de vida corta (60 minutos) y renovación mediante refresh token.
+- Autorización verificada en el backend en cada consulta, no en la interfaz: el filtrado por
+  rol se aplica en `get_queryset()`, de modo que ocultar un botón nunca es la medida de control.
+- Aislamiento multiempresa: toda consulta se restringe a la empresa del usuario autenticado.
+- Validación de contraseñas con los validadores de Django.
+- Secretos fuera del repositorio mediante variables de entorno.
+- Tráfico en claro permitido únicamente contra direcciones de desarrollo, declarado
+  explícitamente en `network_security_config.xml`.
+
+> **PENDIENTE — herramientas externas.** Ejecutar un análisis con SonarQube o SonarCloud sobre
+> los tres repositorios y adjuntar el reporte de *code smells*, duplicación, cobertura y
+> *security hotspots*. <!-- IMAGEN REQUERIDA: captura del panel de SonarCloud en
+> assets/img/evidencia-sonar.png -->
+
