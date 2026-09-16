@@ -62,3 +62,30 @@ Pruebas que ejercitan el API completo: enrutamiento, permisos, serialización y 
 > **PENDIENTE.** Actualizar el número total de pruebas y adjuntar la captura de la ejecución
 > después de la última corrida.
 
+### 6.1.3. Core Behavior-Driven Development
+
+Los criterios de aceptación de las historias de usuario del Capítulo III están redactados en
+formato Gherkin y constituyen la especificación del comportamiento esperado. La tabla siguiente
+relaciona cada escenario con la prueba automatizada que lo verifica.
+
+| Historia | Escenario Gherkin | Prueba que lo cubre |
+|---|---|---|
+| US06 | Reporte en tres pasos / descripción opcional | `test_operario_crea_reporte_minimo` |
+| US08 | Reintento del mismo reporte | `test_sincronizacion_offline_no_duplica` |
+| US11 | Sincronización diferida conserva la fecha | `test_occurred_at_puede_ser_anterior_al_registro` |
+| US13 | Alcance por rol en la consulta | `test_operario_no_ve_reportes_de_otros` |
+| US15 | Asignación pasa a en proceso | `test_asignar_pasa_a_en_proceso` |
+| US16 | Cierre registra fecha y tiempo de resolución | `test_supervisor_cierra_y_calcula_mttr` |
+| US17 | Operario intenta cerrar | `test_operario_no_puede_cerrar` |
+| US30 | Constitución del comité según tamaño | `test_supervisor_registra_el_comite` |
+| US31 | Verificación de paridad | `test_comite_paritario_y_quorum` |
+| US32 | Numeración correlativa del acta | `test_numero_de_acta_es_consecutivo_y_lo_pone_el_servidor` |
+| US33 | Acta sin quórum | `test_acta_sin_quorum_queda_marcada` |
+| US34 | Recálculo del cumplimiento de acuerdos | `test_cumplimiento_del_comite` |
+| US37 | Exportación y su permiso | `test_supervisor_exporta_reportes`, `test_operario_no_exporta_evidencia` |
+| US38 | Estabilidad de la variante | `test_variante_es_estable_por_usuario` |
+
+> **PENDIENTE — opcional.** Si se desea evidencia formal de BDD, migrar estos escenarios a
+> `pytest-bdd` con archivos `.feature`. La cobertura de comportamiento ya existe; lo que
+> añadiría es la trazabilidad literal entre el archivo Gherkin y la prueba.
+
