@@ -106,3 +106,5 @@ escenarios principales.
 > **PENDIENTE.** Ejecutar y registrar el resultado de cada escenario con fecha, entorno y
 > evidencia en imagen o video.
 
+## 6.2. Static testing & Verification
+
