@@ -12,3 +12,9 @@
 | **Pensamientos** | "Esto es peligroso" | "Listo, quedó registrado" | "Esto es crítico, va primero" | "Queda documentado quién, qué y cuándo" | "Tengo cómo demostrarlo" |
 | **Mejoras respecto del as-is** | — | Registro con hora exacta, foto y GPS; sin dependencia de la señal | Priorización por severidad en lugar de por quién insiste más | Responsable y plazo explícitos; bitácora automática | Expediente generado por la operación diaria, no reconstruido a mano |
 
+## 3.2. User Stories
+
+Las historias se agrupan en nueve épicas. Los criterios de aceptación siguen el formato Gherkin
+(Dado / Cuando / Entonces). Las historias técnicas (TS) corresponden a trabajo de infraestructura
+sin valor directo para el usuario final pero necesario para sostener el producto.
+
