@@ -42,3 +42,25 @@ normativa colombiana, relevante porque marca la tendencia regional del segmento.
 | **Oportunidades** | La conectividad intermitente en obra y mina es un problema real que ningún competidor declara resolver; la fiscalización de SUNAFIL empuja la demanda de evidencia trazable. | Profundizar su app móvil hacia la captura en campo. | Incorporar canal móvil aprovechando su base instalada. | Expandirse a Perú adaptando su producto a la Ley N° 29783. |
 | **Amenazas** | Que un competidor con cartera instalada replique el flujo de reporte rápido antes de que el producto gane tracción. | Entrantes especializados en la experiencia de campo. | Competidores con canal móvil nativo. | Regulación local que dificulta la expansión regional. |
 
+### 2.1.2. Estrategias y tácticas frente a competidores
+
+**Estrategia 1 — Competir donde el tamaño no protege: la experiencia del operario.**
+Ninguno de los competidores declara operación sin conexión ni un flujo de reporte de pocos
+toques. Táctica: sostener el flujo de tres pasos como decisión de producto no negociable y
+medirla experimentalmente, de modo que la ventaja esté sustentada en datos y no en opinión.
+
+**Estrategia 2 — No competir en amplitud funcional.**
+Intentar igualar la cobertura de una suite con quince años de desarrollo sería perder por
+definición. Táctica: declarar explícitamente fuera de alcance la vigilancia médica ocupacional
+y concentrar el producto en el ciclo hallazgo → asignación → cierre → evidencia.
+
+**Estrategia 3 — Hacer de la evidencia el argumento de venta.**
+El comprador no compra una app, compra tranquilidad ante una inspección. Táctica: exportación
+a Excel de los cinco registros obligatorios y trazabilidad demostrable de cada hallazgo, con
+la documentación del API abierta como prueba de seriedad técnica.
+
+**Estrategia 4 — Entrar por el canal del consultor.**
+Las consultoras de SST atienden varias empresas medianas a la vez y sufren en carne propia la
+consolidación manual de registros. Táctica: modelo de referidos con las consultoras como primer
+canal, en lugar de venta directa.
+
