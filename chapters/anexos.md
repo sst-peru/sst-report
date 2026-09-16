@@ -19,3 +19,18 @@
 | Aplicación web desplegada | <!-- COMPLETAR --> |
 | Documentación del API (Swagger) | <!-- COMPLETAR: URL pública + `/api/docs/` --> |
 
+## Anexo C. Credenciales de demostración
+
+Usuarios generados por el comando `python manage.py seed_demo` del repositorio `sst-api`. Todos
+comparten la contraseña `demo12345`.
+
+| Usuario | Rol | Qué permite demostrar |
+|---|---|---|
+| `supervisor` | Supervisor de SST | Acceso completo: tablero, gestión de hallazgos, IPERC, inspecciones, EPP, comité, usuarios y exportaciones |
+| `comite1`, `comite2` | Miembro del comité | Mismas capacidades que el supervisor |
+| `operario1` … `operario6` | Operario | Menú reducido, visibilidad limitada a sus propios reportes, y las dos variantes del formulario del experimento |
+
+> **Advertencia.** Los datos que genera `seed_demo` son simulados, incluida la diferencia entre
+> variantes del experimento. Sirven para demostrar el funcionamiento del sistema y **no
+> constituyen evidencia experimental**.
+
