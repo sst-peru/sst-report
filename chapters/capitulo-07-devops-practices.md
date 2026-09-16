@@ -159,3 +159,22 @@ flowchart LR
 
 ## 7.4. Continuous Monitoring
 
+### 7.4.1. Tools and Practices
+
+El monitoreo continuo cumple aquí una doble función: vigilar la salud técnica del sistema y
+alimentar el experimento con los datos de producto que la hipótesis necesita.
+
+| Dimensión | Qué se observa | Herramienta prevista |
+|---|---|---|
+| Disponibilidad | El API responde correctamente | Verificación periódica de un endpoint de salud |
+| Errores de aplicación | Excepciones no controladas en el backend y en los clientes | Sentry u otro agregador de errores |
+| Rendimiento | Latencia de los endpoints más usados | Métricas del proveedor de despliegue |
+| Sincronización móvil | Proporción de reportes que llegan marcados como `synced_offline` y reintentos fallidos | Consulta sobre el propio modelo de datos |
+| Métricas de producto | Reportes por usuario y por variante, MTTR, cumplimiento de inspecciones | Endpoints `metrics/` y `experiments/{key}/results/` del propio sistema |
+
+**Decisión de diseño.** Las métricas del experimento no dependen de una herramienta de analítica
+externa: la variante del formulario se guarda en el propio reporte (`form_variant`) y los
+indicadores se calculan sobre la base de datos. Esto evita la pérdida de eventos por bloqueadores
+o por falta de conectividad —precisamente el escenario de uso del producto— y hace que el dato
+del experimento sea tan confiable como el dato operativo.
+
