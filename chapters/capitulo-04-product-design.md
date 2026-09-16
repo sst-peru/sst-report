@@ -135,3 +135,16 @@ literales del inglés técnico.
 | Acta N° | `Meeting.number` | Formato documental esperado por el auditor |
 | Cerrar hallazgo | `Report.close` | Acción con consecuencia explícita |
 
+### 4.2.3. SEO Tags and Meta Tags
+
+Aplican a la landing page y a la pantalla de acceso de la aplicación web; el interior del panel
+no se indexa por requerir autenticación.
+
+| Etiqueta | Contenido |
+|---|---|
+| `<title>` | Resguardo — Sistema de Gestión de SST |
+| `<meta name="description">` | Resguardo — Sistema de Gestión de Seguridad y Salud en el Trabajo (Ley N° 29783) |
+| `<html lang>` | `es-PE` |
+| `<meta name="viewport">` | `width=device-width, initial-scale=1.0` |
+| Open Graph | <!-- COMPLETAR en la landing page: og:title, og:description, og:image, og:url --> |
+
