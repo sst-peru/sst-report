@@ -209,3 +209,28 @@ web, barra inferior en móvil— por convención de cada entorno.
      (3 pasos), formulario largo, lista de reportes, detalle del hallazgo, IPERC, mis EPP,
      inspecciones, tablero. -->
 
+### 4.4.2. Mobile Applications Wireflow Diagrams
+
+```mermaid
+flowchart TD
+    A[Acceso] -->|credenciales válidas| B{Rol}
+    A -->|crear cuenta| A2[Registro por RUC] --> B
+    B -->|Operario| C[Reportar]
+    B -->|Supervisor| D[Tablero]
+
+    C --> C1[Paso 1: ¿qué viste?]
+    C1 --> C2[Paso 2: categoría]
+    C2 --> C3[Paso 3: foto, severidad]
+    C3 --> C4[Guardar local]
+    C4 --> C5{¿Hay señal?}
+    C5 -->|Sí| C6[Sincroniza al API]
+    C5 -->|No| C7[Queda pendiente y reintenta]
+    C6 --> E[Mis reportes]
+    C7 --> E
+
+    D --> F[Reportes del servidor]
+    F --> G[Detalle del hallazgo]
+    G -->|Supervisor| H[Asignar responsable]
+    G -->|Supervisor| I[Cerrar con acción correctiva]
+```
+
