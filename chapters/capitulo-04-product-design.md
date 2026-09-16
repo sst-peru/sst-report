@@ -384,3 +384,33 @@ dos implementaciones de la misma regla de negocio que puedan divergir. La lógic
 hacer cada rol, cómo se calcula el nivel de riesgo, cuándo se considera cerrado un hallazgo—
 vive una sola vez, en el backend.
 
+### 4.8.3. Software Architecture Components Diagrams
+
+```mermaid
+flowchart TB
+    subgraph API[API REST · Django REST Framework]
+        Auth[accounts<br/>Empresa, Área, Usuario, Roles<br/>Registro y JWT]
+        Reports[reports<br/>Reporte, Categoría, Bitácora<br/>Idempotencia por client_uuid]
+        Iperc[iperc<br/>Matriz versionada y entradas<br/>Cálculo del nivel de riesgo]
+        Epp[epp<br/>Catálogo y entregas<br/>Vencimiento por vida útil]
+        Insp[inspections<br/>Programas y ocurrencias<br/>Tasa de cumplimiento]
+        Comite[committee<br/>Comité, miembros, actas<br/>Quórum y acuerdos]
+        Exp[experiments<br/>Asignación determinística<br/>Resultados del A/B]
+        Exports[exports<br/>Generación de evidencia .xlsx]
+    end
+
+    Reports --> Auth
+    Iperc --> Auth
+    Iperc -.origen del peligro.-> Reports
+    Epp --> Auth
+    Insp --> Auth
+    Comite --> Auth
+    Comite -.acuerdo sobre hallazgo.-> Reports
+    Exp -.variante del reporte.-> Reports
+    Exports --> Reports
+    Exports --> Iperc
+    Exports --> Epp
+    Exports --> Insp
+    Exports --> Comite
+```
+
