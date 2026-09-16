@@ -58,3 +58,6 @@ mínimo detectable para muestras menores.
 | `tools/tamano-muestra.py` | Cálculo del tamaño de muestra del experimento |
 | `CONTRIBUTING.md` | GitFlow y Conventional Commits aplicados al informe |
 
+## Anexo F. Student Outcome
+
+Ver la sección *Student Outcome* del documento principal (`README.md`).
