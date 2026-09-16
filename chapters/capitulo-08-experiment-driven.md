@@ -292,3 +292,13 @@ de Protección de Datos Personales y se analiza en la matriz ética de la secci�
 
 ## 8.3. Experimentation
 
+### 8.3.1. To-Be User Stories
+
+| ID | Título | Descripción | Criterios de aceptación |
+|---|---|---|---|
+| TB01 | Aviso de datos de demostración | **Como** evaluador del sistema **quiero** distinguir los datos de demostración de los reales **para** no interpretar resultados simulados como evidencia. | **Dado** que los datos provienen de la carga de demostración<br>**Cuando** abro el panel del experimento<br>**Entonces** el sistema muestra un aviso visible que lo declara |
+| TB02 | Intervalo de confianza en los resultados | **Como** analista **quiero** ver el intervalo de confianza de la diferencia **para** comunicar la precisión y no solo el promedio. | **Cuando** consulto los resultados del experimento<br>**Entonces** veo la diferencia estimada con su intervalo al 95 % |
+| TB03 | Registro de auditoría de exportaciones | **Como** responsable de datos personales **quiero** saber quién exportó evidencia y cuándo **para** rendir cuentas del tratamiento de datos. | **Cuando** un usuario exporta un archivo<br>**Entonces** queda registrado el usuario, el recurso y la fecha |
+| TB04 | Notificación de hallazgo crítico | **Como** supervisor **quiero** recibir aviso de un hallazgo crítico sin asignar **para** que no quede esperando en la bandeja. | **Dado** un hallazgo crítico abierto por más de 24 horas<br>**Entonces** el sistema notifica al supervisor y registra el envío |
+| TB05 | Aviso de cierre al reportante | **Como** operario **quiero** enterarme cuando mi hallazgo se cierra **para** sostener el hábito de reportar. | **Cuando** se cierra un hallazgo que yo reporté<br>**Entonces** recibo la notificación con la acción correctiva aplicada |
+
