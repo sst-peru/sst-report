@@ -362,3 +362,7 @@ verifica con las mismas pruebas.
 
 > **PENDIENTE.** Documentar los endpoints añadidos para las historias To-Be.
 
+### 8.3.9. Team Collaboration Insights
+
+> **PENDIENTE.** <!-- IMAGEN REQUERIDA: analíticos de GitHub del periodo de experimentación -->
+
