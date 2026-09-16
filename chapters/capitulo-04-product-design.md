@@ -352,3 +352,35 @@ flowchart TB
     Supervisor -->|Presenta el expediente| Sunafil
 ```
 
+### 4.8.2. Software Architecture Container Diagrams
+
+```mermaid
+flowchart TB
+    Operario([Operario])
+    Supervisor([Supervisor / Comité])
+
+    subgraph Resguardo
+        Movil[Aplicación móvil<br/>Android nativo · Kotlin + Jetpack Compose]
+        Web[Aplicación web<br/>React + TypeScript + Vite]
+        API[API REST<br/>Django + Django REST Framework]
+        BD[(Base de datos<br/>PostgreSQL)]
+        Archivos[(Almacenamiento de fotos<br/>sistema de archivos / objeto)]
+        Local[(Cola local<br/>Room en el dispositivo)]
+    end
+
+    Operario -->|HTTPS| Movil
+    Supervisor -->|HTTPS| Web
+    Movil -->|JSON / JWT| API
+    Web -->|JSON / JWT| API
+    Movil --> Local
+    Local -->|Sincronización diferida| API
+    API --> BD
+    API --> Archivos
+```
+
+**Decisión de arquitectura.** Ambos clientes consumen exactamente el mismo API. Esto no es un
+detalle de implementación: es lo que garantiza la paridad funcional exigida, porque no existen
+dos implementaciones de la misma regla de negocio que puedan divergir. La lógica —qué puede
+hacer cada rol, cómo se calcula el nivel de riesgo, cuándo se considera cerrado un hallazgo—
+vive una sola vez, en el backend.
+
