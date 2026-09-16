@@ -102,3 +102,134 @@ papel, pero no fluye a tiempo hacia quien puede actuar.**
 | **How** (¿Cómo?) | Con una aplicación móvil que permite reportar en segundos con foto y geolocalización, funcionando sin conexión y sincronizando después, y un panel web donde el comité asigna, cierra y evidencia. |
 | **How much** (¿Cuánto?) | El costo del problema se mide en dos dimensiones: el tiempo de exposición al riesgo mientras el peligro no se corrige (MTTR), y la exposición económica ante multas de SUNAFIL por no evidenciar la gestión del riesgo. <!-- COMPLETAR: rango de multas vigente según la escala de infracciones de SUNAFIL, citando la norma --> |
 
+### 1.2.2. Lean UX Process
+
+#### 1.2.2.1. Lean UX Problem Statements
+
+**Dominio.** Gestión operativa de la seguridad y salud en el trabajo en empresas peruanas
+obligadas por la Ley N° 29783.
+
+**Segmentos de clientes.**
+- Trabajadores de campo (operarios) de empresas medianas y pequeñas de alto riesgo.
+- Supervisores de SST y miembros del comité de SST de esas mismas empresas.
+
+**Pain points.**
+- Reportar un peligro cuesta más esfuerzo del que el trabajador está dispuesto a invertir.
+- El registro en papel o en hoja de cálculo carece de fecha exacta, evidencia fotográfica y
+  ubicación, por lo que no sirve como prueba ante una inspección.
+- El comité de SST descubre los peligros tarde y no tiene forma de demostrar el seguimiento.
+- La matriz IPERC envejece y deja de reflejar los riesgos reales de la operación.
+
+**Gap.** Las soluciones disponibles en el mercado están construidas alrededor del profesional de
+SST y de sus obligaciones documentales, no alrededor del operario que detecta el peligro. El
+formulario de reporte típico exige más de diez campos y presupone conectividad permanente.
+
+**Visión / estrategia.** Convertir al trabajador de campo en el sensor principal del sistema de
+gestión, bajando la fricción del reporte hasta que reportar sea más barato que no reportar, y
+usando ese flujo de datos para mantener vivo el resto del sistema.
+
+**Segmento inicial.** Empresas constructoras medianas de Lima Metropolitana, de entre 20 y 200
+trabajadores, con comité de SST constituido y operaciones en obra.
+
+#### 1.2.2.2. Lean UX Assumptions
+
+**Business assumptions**
+
+1. Creemos que nuestros clientes son empresas medianas obligadas por la Ley N° 29783 que ya
+   tienen un comité de SST constituido.
+2. Estos clientes pueden ser atendidos con una solución SaaS por suscripción mensual según
+   número de trabajadores.
+3. El valor principal que el cliente quiere de nuestro producto es reducir su exposición a
+   sanciones y accidentes, evidenciando gestión real y no solo documentación.
+4. El cliente también obtiene reducción del tiempo administrativo que hoy consume consolidar
+   registros dispersos.
+5. Conseguiremos la mayoría de clientes a través de consultoras de SST y de referencias en el
+   sector construcción.
+6. Haremos dinero mediante suscripción mensual por empresa, escalonada por número de
+   trabajadores activos.
+7. Nuestra competencia principal en el mercado son plataformas SST orientadas al profesional de
+   salud ocupacional, como SELERIA y GISSAT.
+8. Los venceremos por la experiencia del operario en campo: reporte en segundos y operación sin
+   conexión.
+9. El mayor riesgo del producto es que los trabajadores no adopten la aplicación y el sistema
+   quede tan vacío como el cuaderno que reemplaza.
+10. Resolveremos esto midiendo la adopción como métrica de producto desde el primer día, y
+    experimentando sobre la fricción del formulario de reporte.
+
+**User assumptions**
+
+| Pregunta | Supuesto |
+|---|---|
+| ¿Quién es el usuario? | El operario de campo, con casco y guantes, que usa su propio celular de gama media o baja. |
+| ¿Dónde encaja el producto en su trabajo? | En el momento exacto en que ve el peligro, sin interrumpir su tarea más de un minuto. |
+| ¿Qué problemas tiene? | Reportar le cuesta tiempo, no ve resultado de haber reportado antes, y a veces teme la reacción del supervisor. |
+| ¿Cuándo y cómo lo usa? | De pie, con una mano, en exteriores, con conectividad intermitente. |
+| ¿Qué funcionalidades son importantes? | Tomar foto, elegir el tipo de peligro y enviar. Todo lo demás es opcional. |
+| ¿Cómo debe verse y comportarse? | Objetivos táctiles grandes, texto corto, confirmación inmediata de que el reporte quedó guardado. |
+
+**Feature assumptions**
+
+1. Creemos que un formulario de tres pasos aumentará la frecuencia de reportes de los operarios.
+2. Creemos que guardar el reporte localmente antes de enviarlo evitará la pérdida de reportes en
+   zonas sin cobertura.
+3. Creemos que la fotografía obligatoria mejorará la capacidad del comité de priorizar sin ir al
+   lugar.
+4. Creemos que mostrar al operario el estado de sus reportes anteriores sostendrá la adopción en
+   el tiempo.
+5. Creemos que exportar la evidencia a Excel reducirá el tiempo de preparación ante una
+   inspección de SUNAFIL.
+
+#### 1.2.2.3. Lean UX Hypothesis Statements
+
+**H1 — Fricción del reporte (hipótesis central del experimento)**
+
+> **Creemos que** un aumento en la frecuencia de reportes de actos y condiciones inseguras
+> **se logrará si** el operario de campo **obtiene** un flujo de reporte de tres a cuatro toques
+> con fotografía **con** un formulario tipo asistente en lugar del formulario tradicional de
+> diez o más campos.
+> **Sabremos que** hemos tenido éxito **cuando** el grupo expuesto al formulario rápido registre
+> una cantidad de reportes por usuario significativamente mayor que el grupo expuesto al
+> formulario largo, durante el periodo de medición.
+
+**H2 — Operación sin conexión**
+
+> **Creemos que** la reducción de reportes perdidos **se logrará si** el operario **obtiene**
+> la certeza de que su reporte quedó guardado **con** un almacenamiento local que sincroniza
+> automáticamente al recuperar la señal.
+> **Sabremos que** hemos tenido éxito **cuando** la proporción de reportes creados sin conexión
+> que llegan al servidor sea cercana al total, sin duplicados.
+
+**H3 — Trazabilidad del hallazgo**
+
+> **Creemos que** una reducción del tiempo de cierre de hallazgos **se logrará si** el supervisor
+> de SST **obtiene** visibilidad inmediata y asignación de responsable **con** un panel web que
+> concentra los reportes en tiempo real.
+> **Sabremos que** hemos tenido éxito **cuando** el MTTR de hallazgos disminuya respecto de la
+> línea base del proceso en papel.
+
+**H4 — Evidencia ante la autoridad**
+
+> **Creemos que** una reducción del tiempo de preparación ante inspecciones **se logrará si**
+> el responsable de SST **obtiene** los registros consolidados **con** exportaciones a Excel de
+> reportes, IPERC, EPP, inspecciones y actas del comité.
+> **Sabremos que** hemos tenido éxito **cuando** el tiempo declarado para armar el expediente se
+> reduzca respecto del procedimiento manual actual.
+
+#### 1.2.2.4. Lean UX Canvas
+
+<!-- IMAGEN REQUERIDA: exportar el Lean UX Canvas desde UXPressia, Miro o Figma a
+     assets/img/lean-ux-canvas.png -->
+
+![Lean UX Canvas](../assets/img/lean-ux-canvas.png)
+
+| Bloque | Contenido |
+|---|---|
+| **1. Business Problem** | Las empresas peruanas obligadas por la Ley N° 29783 no logran que el dato de seguridad fluya desde el frente de trabajo hasta quien puede actuar, lo que las expone a accidentes evitables y a sanciones por no evidenciar gestión del riesgo. |
+| **2. Business Outcomes** | Aumento de reportes por trabajador activo; reducción del MTTR de hallazgos; aumento de la tasa de cumplimiento de inspecciones programadas; reducción del tiempo de preparación de evidencia. |
+| **3. Users** | Operario de campo; supervisor de SST; miembro del comité de SST. |
+| **4. User Outcomes & Benefits** | El operario reporta sin perder tiempo y ve que su reporte tuvo consecuencia. El supervisor deja de perseguir papeles y prioriza por severidad. El comité sustenta su gestión con evidencia trazable. |
+| **5. Solutions** | App Android con reporte en tres pasos y operación sin conexión; panel web de seguimiento; matriz IPERC alimentada por hallazgos; control de EPP; programa de inspecciones; actas del comité; exportación de evidencia. |
+| **6. Hypotheses** | Las hipótesis H1 a H4 de la sección anterior. |
+| **7. What's the most important thing we need to learn first?** | Si la fricción del formulario es realmente el factor que determina la frecuencia de reporte del operario. |
+| **8. What's the least amount of work to learn the next most important thing?** | Implementar las dos variantes del formulario tras una asignación determinística por usuario y comparar reportes por usuario entre ambos grupos. |
+
