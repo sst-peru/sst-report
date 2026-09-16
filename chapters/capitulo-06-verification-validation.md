@@ -89,3 +89,20 @@ relaciona cada escenario con la prueba automatizada que lo verifica.
 > `pytest-bdd` con archivos `.feature`. La cobertura de comportamiento ya existe; lo que
 > añadiría es la trazabilidad literal entre el archivo Gherkin y la prueba.
 
+### 6.1.4. Core System Tests
+
+Pruebas de extremo a extremo sobre el sistema desplegado, ejecutadas manualmente sobre los
+escenarios principales.
+
+| # | Escenario | Pasos | Resultado esperado |
+|---|---|---|---|
+| ST01 | Ciclo completo del hallazgo | El operario reporta desde el móvil → el supervisor lo ve en la web → asigna → cierra | El hallazgo aparece cerrado en ambos clientes y el MTTR se actualiza |
+| ST02 | Reporte sin conexión | Se activa el modo avión → se reporta → se restablece la conexión | El reporte queda pendiente y luego se sincroniza sin duplicarse |
+| ST03 | Paridad por rol | Un supervisor ejecuta asignación y cierre desde el móvil y desde la web | El resultado es idéntico en ambos canales |
+| ST04 | Aislamiento entre empresas | Un usuario de la empresa A consulta reportes | No aparece ningún dato de la empresa B |
+| ST05 | Evidencia ante auditoría | Se exportan los cinco registros a Excel | Los archivos abren correctamente y contienen la trazabilidad completa |
+| ST06 | Asignación del experimento | Dos operarios de distinta variante abren el formulario | Cada uno ve la variante que le corresponde, de forma estable |
+
+> **PENDIENTE.** Ejecutar y registrar el resultado de cada escenario con fecha, entorno y
+> evidencia en imagen o video.
+
