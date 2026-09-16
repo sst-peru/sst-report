@@ -151,3 +151,11 @@ que no contaminen el relato del problema.
 > | Enlace al video (con minuto) | |
 > | Resumen de la entrevista | |
 
+### 2.2.3. Análisis de entrevistas
+
+> **PENDIENTE.** Se completa después del registro. Estructura esperada: hallazgos por segmento,
+> cada uno con el porcentaje de entrevistados que lo manifestó, citas textuales breves que lo
+> respalden, y la conexión explícita con los supuestos del Lean UX que confirma o refuta. Los
+> supuestos refutados deben marcarse como tales: un needfinding que confirma todo lo que se
+> asumió antes de entrevistar suele significar que se preguntó mal.
+
