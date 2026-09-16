@@ -312,3 +312,31 @@ de Protección de Datos Personales y se analiza en la matriz ética de la secci�
 | 4 | TB04 | Notificación de hallazgo crítico | 5 | Ataca el MTTR, la segunda métrica del curso |
 | 5 | TB03 | Registro de auditoría de exportaciones | 3 | Obligación derivada del tratamiento de datos personales |
 
+### 8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle
+
+```mermaid
+flowchart LR
+    A[Pregunta priorizada<br/>del Question Backlog] --> B[Experiment Card]
+    B --> C[Historia To-Be<br/>en el backlog]
+    C --> D[Rama feature/]
+    D --> E[Pipeline CI<br/>lint, tipos, pruebas]
+    E --> F{¿Verde?}
+    F -->|No| D
+    F -->|Sí| G[Pull Request a develop]
+    G --> H[Despliegue a pruebas]
+    H --> I[Ejecución del experimento<br/>ventana de 14 días]
+    I --> J[Recolección por el propio producto<br/>form_variant y métricas]
+    J --> K[Análisis estadístico]
+    K --> L{¿Se confirma?}
+    L -->|Sí| M[Se adopta y se elimina la variante]
+    L -->|No| N[Se descarta y se re-prioriza<br/>el Question Backlog]
+    M --> O[Shareback: aprendizaje documentado]
+    N --> O
+    O --> A
+```
+
+El ciclo es cerrado: la salida del experimento vuelve a alimentar el backlog de preguntas. Lo que
+hace que el pipeline sea parte del experimento y no solo de la construcción es que la
+instrumentación —el campo `form_variant`— viaja en el mismo artefacto que se despliega y se
+verifica con las mismas pruebas.
+
