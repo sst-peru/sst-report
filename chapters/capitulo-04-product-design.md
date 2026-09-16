@@ -73,3 +73,34 @@ móvil los iconos provienen de Material Icons, limitados a la navegación inferi
 | Estados | Píldoras rectangulares de 2 px de radio, con fondo y borde del color del estado |
 | Puntos de quiebre | 980 px: la barra lateral pasa a barra horizontal superior; 720 px: las rejillas colapsan a una columna |
 
+### 4.1.3. Mobile Style Guidelines
+
+| Elemento | Definición |
+|---|---|
+| Sistema de diseño | Material 3 (Jetpack Compose), con esquema de color propio derivado de la paleta institucional |
+| Navegación | Barra inferior de cuatro destinos, distinta según rol, más una pantalla "Más" que agrupa el resto |
+| Objetivos táctiles | Mínimo 48 dp; en el formulario rápido, tarjetas de selección de ancho completo y 56 dp de alto en las acciones principales |
+| Tipografía | Escala tipográfica de Material 3, sin fuentes externas |
+| Retroalimentación | Confirmación inmediata al guardar un reporte, con indicador visible de cuántos quedan pendientes de envío |
+| Modo sin conexión | Estado explícito en la lista: "Enviado" o "Pendiente", nunca un error silencioso |
+
+#### 4.1.3.1. iOS Mobile Style Guidelines
+
+Fuera del alcance del proyecto. La decisión se sustenta en el segmento objetivo: el operario de
+campo peruano usa mayoritariamente dispositivos Android de gama media o baja, y desarrollar
+para iOS habría consumido la mitad del presupuesto de desarrollo del ciclo sin atender a ese
+usuario. Se documenta como decisión consciente y no como omisión.
+
+<!-- COMPLETAR: respaldar la afirmación sobre distribución de sistemas operativos con una
+     fuente citable (OSIPTEL, StatCounter Perú o similar). -->
+
+#### 4.1.3.2. Android Mobile Style Guidelines
+
+| Elemento | Definición |
+|---|---|
+| Color primario | Azul marino institucional, consistente con la web |
+| Modo oscuro | Soportado mediante el esquema oscuro de Material 3 |
+| Icono de aplicación | Icono adaptativo con triángulo de advertencia, símbolo universal de peligro en SST |
+| Componentes | `Card`, `FilterChip`, `NavigationBar`, `AlertDialog` y `Checkbox` de Material 3, sin componentes personalizados innecesarios |
+| Permisos | Cámara y ubicación se solicitan en el momento de uso, no al abrir la aplicación |
+
