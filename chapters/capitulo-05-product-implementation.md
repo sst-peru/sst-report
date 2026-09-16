@@ -204,3 +204,35 @@ cualquier rol.
 > **PENDIENTE — compilación.** Adjuntar evidencia de la compilación exitosa y el APK de
 > depuración generado por el pipeline, más capturas en dispositivo o emulador.
 
+### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
+
+El API expone 8 módulos de dominio bajo el prefijo `/api/v1/`.
+
+| Módulo | Endpoints principales |
+|---|---|
+| Autenticación | `POST auth/register/`, `POST auth/login/`, `POST auth/refresh/`, `GET auth/me/`, CRUD `auth/users/`, CRUD `auth/areas/` |
+| Reportes | CRUD `reports/`, `POST reports/{id}/assign/`, `POST reports/{id}/close/`, `POST reports/{id}/change-status/`, CRUD `categories/` |
+| IPERC | CRUD `iperc/matrices/`, CRUD `iperc/entries/` |
+| EPP | CRUD `epp/items/`, CRUD `epp/deliveries/` |
+| Inspecciones | CRUD `inspections/schedules/`, `POST inspections/schedules/{id}/generate-next/`, CRUD `inspections/`, `POST inspections/{id}/complete/` |
+| Comité | CRUD `committee/`, `committee/members/`, `committee/meetings/`, `committee/agreements/`, `GET committee-compliance/` |
+| Métricas | `GET metrics/mttr/`, `GET metrics/inspection-compliance/`, `GET metrics/reports-summary/` |
+| Experimento | `GET experiments/my-variant/`, `GET experiments/{key}/results/` |
+| Exportación | `GET exports/reports.xlsx`, `iperc.xlsx`, `epp.xlsx`, `inspections.xlsx`, `committee.xlsx` |
+
+**Dos decisiones de implementación que conviene destacar en la sustentación:**
+
+*Idempotencia en la creación de reportes.* `POST reports/` recibe un `client_uuid` generado por
+el dispositivo antes del envío. Si el reporte con ese identificador ya existe, el API responde
+`200` con el reporte existente en lugar de crear uno nuevo y responder `201`. Sin esta decisión,
+un reintento tras una conexión interrumpida —el caso normal en obra— duplicaría el hallazgo y
+distorsionaría todas las métricas.
+
+*El rol no se acepta del cliente.* El registro público fuerza el rol `OPERARIO`. Si se aceptara
+del cliente, cualquiera podría registrarse como supervisor y cerrar sus propios hallazgos,
+rompiendo la separación de responsabilidades que la normativa exige. Los usuarios con otros
+roles se crean desde `auth/users/`, que requiere ser supervisor o miembro del comité.
+
+<!-- IMAGEN REQUERIDA: captura de la interfaz Swagger en /api/docs/ mostrando los módulos
+     desplegados, en assets/img/evidencia-api-swagger.png -->
+
