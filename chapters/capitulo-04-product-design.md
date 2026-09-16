@@ -185,3 +185,14 @@ web, barra inferior en móvil— por convención de cada entorno.
 
 ## 4.3. Landing Page UI Design
 
+### 4.3.1. Landing Page Wireframe
+
+<!-- IMAGEN REQUERIDA: wireframe de la landing page (Figma o Adobe XD) en
+     assets/img/landing-wireframe.png -->
+
+> **PENDIENTE.** Estructura propuesta, de arriba hacia abajo: barra de navegación con logo y
+> acceso; encabezado con la propuesta de valor en una frase y llamada a la acción; bloque del
+> problema con las cifras del MTPE; bloque de funcionalidades en tres columnas (reporte en
+> campo, seguimiento, evidencia); bloque de cumplimiento normativo citando la Ley N° 29783;
+> planes; formulario de contacto; pie con datos de la empresa.
+
