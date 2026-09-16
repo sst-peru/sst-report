@@ -554,3 +554,130 @@ classDiagram
 
 ## 4.10. Database Design
 
+### 4.10.1. Relational/Non-Relational Database Diagram
+
+Base de datos relacional PostgreSQL. El modelo se deriva directamente del diagrama de clases;
+las claves foráneas reflejan las relaciones de agregación descritas.
+
+```mermaid
+erDiagram
+    COMPANY ||--o{ AREA : tiene
+    COMPANY ||--o{ USER : emplea
+    COMPANY ||--o{ CATEGORY : configura
+    COMPANY ||--o{ REPORT : registra
+    COMPANY ||--o{ IPERC_MATRIX : versiona
+    COMPANY ||--o{ EPP_ITEM : cataloga
+    COMPANY ||--o{ INSPECTION_SCHEDULE : programa
+    COMPANY ||--|| COMMITTEE : constituye
+
+    USER ||--o{ REPORT : reporta
+    USER ||--o{ REPORT_ACTION : registra
+    USER ||--o{ EPP_DELIVERY : recibe
+    USER ||--o{ COMMITTEE_MEMBER : integra
+
+    REPORT ||--o{ REPORT_ACTION : bitacora
+    REPORT ||--o{ IPERC_ENTRY : origina
+    CATEGORY ||--o{ REPORT : clasifica
+    AREA ||--o{ REPORT : ubica
+
+    IPERC_MATRIX ||--o{ IPERC_ENTRY : contiene
+    AREA ||--o{ IPERC_ENTRY : ubica
+
+    EPP_ITEM ||--o{ EPP_DELIVERY : entrega
+
+    INSPECTION_SCHEDULE ||--o{ INSPECTION : genera
+    AREA ||--o{ INSPECTION_SCHEDULE : ubica
+
+    COMMITTEE ||--o{ COMMITTEE_MEMBER : compone
+    COMMITTEE ||--o{ MEETING : celebra
+    MEETING ||--o{ AGREEMENT : acuerda
+    REPORT ||--o{ AGREEMENT : motiva
+
+    EXPERIMENT ||--o{ ASSIGNMENT : asigna
+    USER ||--o{ ASSIGNMENT : pertenece
+
+    COMPANY {
+        int id PK
+        string name
+        string ruc UK
+        int worker_count
+    }
+    USER {
+        int id PK
+        string username UK
+        string role
+        string dni
+        int company_id FK
+        int area_id FK
+    }
+    REPORT {
+        int id PK
+        uuid client_uuid UK
+        string kind
+        string severity
+        string status
+        text description
+        string photo
+        decimal latitude
+        decimal longitude
+        datetime occurred_at
+        datetime created_at
+        datetime closed_at
+        string form_variant
+        bool synced_offline
+        int company_id FK
+        int reported_by_id FK
+        int assigned_to_id FK
+        int category_id FK
+        int area_id FK
+    }
+    IPERC_ENTRY {
+        int id PK
+        string job_position
+        string hazard
+        string risk
+        int probability
+        int consequence
+        text existing_controls
+        int matrix_id FK
+        int area_id FK
+        int source_report_id FK
+    }
+    EPP_DELIVERY {
+        int id PK
+        int quantity
+        datetime delivered_at
+        date expires_at
+        bool acknowledged
+        int item_id FK
+        int worker_id FK
+    }
+    INSPECTION {
+        int id PK
+        date due_date
+        datetime performed_at
+        string status
+        text findings
+        json results
+        int schedule_id FK
+    }
+    MEETING {
+        int id PK
+        int number
+        date date
+        text agenda
+        text minutes
+        int committee_id FK
+    }
+```
+
+**Decisiones de diseño de datos**
+
+| Decisión | Justificación |
+|---|---|
+| `client_uuid` único en `REPORT` | Permite que el cliente móvil reintente el envío sin crear duplicados: la unicidad la garantiza la base de datos, no la lógica de aplicación |
+| `occurred_at` separado de `created_at` | Un reporte creado sin conexión conserva su fecha real; sin esta separación el MTTR quedaría distorsionado |
+| `source_report_id` en `IPERC_ENTRY` | Documenta que la matriz se alimenta de hallazgos reales, que es la diferencia entre una matriz viva y una de escritorio |
+| Índices en `(company, status)` y `(company, created_at)` | Las dos consultas más frecuentes del panel son la bandeja por estado y el listado cronológico |
+| `results` como JSON en `INSPECTION` | El checklist varía por programa; normalizarlo exigiría dos tablas más sin beneficio de consulta |
+| `form_variant` en `REPORT` | La atribución del experimento queda en el propio dato, no en un sistema de analítica externo |
