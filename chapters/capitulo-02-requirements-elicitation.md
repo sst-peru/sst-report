@@ -64,3 +64,5 @@ Las consultoras de SST atienden varias empresas medianas a la vez y sufren en ca
 consolidación manual de registros. Táctica: modelo de referidos con las consultoras como primer
 canal, en lugar de venta directa.
 
+## 2.2. Entrevistas
+
