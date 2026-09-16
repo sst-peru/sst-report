@@ -325,3 +325,8 @@ flowchart LR
     J --> K
 ```
 
+## 4.7. Web Applications Prototyping
+
+<!-- COMPLETAR: enlace al prototipo navegable en Figma, o indicación de que el prototipo se
+     sustituye por la aplicación web desplegada, con su URL. -->
+
