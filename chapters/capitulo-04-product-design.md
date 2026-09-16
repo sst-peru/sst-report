@@ -104,3 +104,5 @@ usuario. Se documenta como decisión consciente y no como omisión.
 | Componentes | `Card`, `FilterChip`, `NavigationBar`, `AlertDialog` y `Checkbox` de Material 3, sin componentes personalizados innecesarios |
 | Permisos | Cámara y ubicación se solicitan en el momento de uso, no al abrir la aplicación |
 
+## 4.2. Information Architecture
+
