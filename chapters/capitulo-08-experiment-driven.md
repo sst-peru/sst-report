@@ -110,3 +110,5 @@ La pregunta Q1 encabeza el backlog y es la que se somete a experimento en este c
 | **Medida** | MTTR semanal y número de hallazgos abiertos al cierre de cada semana |
 | **Decisión asociada** | Si el MTTR se deteriora, priorizar funcionalidades de capacidad de respuesta (notificaciones, asignación automática) antes que funcionalidades de captura |
 
+## 8.2. Experiment Design
+
