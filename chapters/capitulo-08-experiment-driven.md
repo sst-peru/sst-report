@@ -403,3 +403,37 @@ que el resultado del A/B.
 
 ## 8.5. Experiment Aftermath & Analysis
 
+### 8.5.1. Analysis and Interpretation of Results
+
+> **PENDIENTE — datos reales.** Esta sección se completa únicamente con los datos de la corrida
+> real del experimento.
+>
+> **Advertencia de integridad.** El comando `seed_demo` del repositorio `sst-api` genera 60 días
+> de historia **simulada**, en la que el grupo del formulario rápido reporta aproximadamente el
+> doble por construcción del generador. Esos datos sirven para demostrar el funcionamiento del
+> sistema, **no como evidencia experimental**. Si se muestran en la sustentación, deben
+> declararse como datos de demostración. Presentarlos como resultados sería fabricar evidencia.
+>
+> Estructura que debe seguir el análisis cuando existan datos reales:
+>
+> | Elemento | Contenido |
+> |---|---|
+> | Participantes | Usuarios por grupo, composición por área, bajas durante el periodo |
+> | Estadística descriptiva | Media, mediana, desviación estándar y rango de reportes por usuario en cada grupo |
+> | Serie temporal | Reportes diarios por variante, para detectar efecto de novedad |
+> | Prueba de hipótesis | Estadístico, grados de libertad, valor p y decisión sobre H₀ |
+> | Tamaño del efecto | Diferencia de medias, *lift* porcentual e intervalo de confianza al 95 % |
+> | Potencia alcanzada | Recalculada con el n real y la varianza observada |
+> | Interpretación | Qué significa el resultado para la decisión de producto |
+> | Limitaciones | Tamaño de muestra, población, duración, amenazas a la validez identificadas en 8.2.6 |
+>
+> **Los tres desenlaces posibles y qué hacer con cada uno:**
+>
+> 1. *Diferencia significativa a favor del formulario rápido:* se adopta como formulario único y
+>    se elimina la variante larga del producto.
+> 2. *Sin diferencia significativa con potencia suficiente:* la hipótesis se refuta; el supuesto
+>    A1 era falso y la inversión debe redirigirse a la barrera que señalen las entrevistas.
+> 3. *Sin diferencia significativa con potencia insuficiente:* el experimento no concluye. Se
+>    reporta como no concluyente y se replantea con más participantes. **Este desenlace no debe
+>    presentarse como refutación.**
+
