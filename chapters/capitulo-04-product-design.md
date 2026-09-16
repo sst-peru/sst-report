@@ -148,3 +148,15 @@ no se indexa por requerir autenticación.
 | `<meta name="viewport">` | `width=device-width, initial-scale=1.0` |
 | Open Graph | <!-- COMPLETAR en la landing page: og:title, og:description, og:image, og:url --> |
 
+### 4.2.4. Searching Systems
+
+El sistema no ofrece un buscador global. La búsqueda es **contextual y por filtros**, porque el
+usuario no busca texto libre sino subconjuntos: los hallazgos abiertos de un área, las
+inspecciones vencidas, las entregas de EPP de un trabajador.
+
+| Pantalla | Mecanismo |
+|---|---|
+| Bandeja de hallazgos | Filtros por estado, tipo y área; ordenamiento por fecha y severidad |
+| API | Filtros por campo, búsqueda textual en descripción y nota de cierre, y ordenamiento, provistos por el backend |
+| Matriz IPERC | Búsqueda por peligro, riesgo y puesto |
+
