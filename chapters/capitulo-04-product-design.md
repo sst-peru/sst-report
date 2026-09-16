@@ -336,3 +336,19 @@ La arquitectura sigue el enfoque C4. El sistema se organiza en **bounded context
 corresponden a los procesos del sistema de gestión: identidad y organización, reportes,
 IPERC, EPP, inspecciones, comité y experimentación.
 
+### 4.8.1. Software Architecture Context Diagram
+
+```mermaid
+flowchart TB
+    Operario([Operario de campo<br/>Trabajador que detecta peligros])
+    Supervisor([Supervisor / Comité de SST<br/>Gestiona el SGSST])
+    Sunafil([SUNAFIL<br/>Autoridad fiscalizadora])
+
+    Resguardo[Resguardo<br/>Sistema de Gestión de SST]
+
+    Operario -->|Reporta actos y condiciones inseguras<br/>desde su celular| Resguardo
+    Supervisor -->|Gestiona hallazgos, IPERC, EPP,<br/>inspecciones y comité| Resguardo
+    Resguardo -->|Evidencia documental exportada| Supervisor
+    Supervisor -->|Presenta el expediente| Sunafil
+```
+
