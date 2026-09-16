@@ -473,3 +473,5 @@ flowchart LR
 
 > **PENDIENTE.** Realizar la sesión y adjuntar los artefactos con su fecha.
 
+## 8.7. To-Be Software Platform Pre-launch
+
