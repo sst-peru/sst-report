@@ -196,3 +196,7 @@ web, barra inferior en móvil— por convención de cada entorno.
 > campo, seguimiento, evidencia); bloque de cumplimiento normativo citando la Ley N° 29783;
 > planes; formulario de contacto; pie con datos de la empresa.
 
+### 4.3.2. Landing Page Mock-up
+
+<!-- IMAGEN REQUERIDA: mock-up de la landing page en assets/img/landing-mockup.png -->
+
