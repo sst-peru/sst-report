@@ -249,3 +249,13 @@ contrato publicado no puede divergir de la implementación.
 Todos los endpoints requieren autenticación JWT mediante la cabecera `Authorization: Bearer
 <token>`, con la excepción de `auth/register/`, `auth/login/` y `auth/refresh/`.
 
+### 5.2.8. Team Collaboration Insights
+
+<!-- IMAGEN REQUERIDA: capturas de GitHub → Insights → Contributors y Commits de cada uno de
+     los cuatro repositorios, en assets/img/insights-<repo>.png -->
+
+> **PENDIENTE.** Incluir, por cada repositorio, la captura de los analíticos de colaboración y
+> una descripción de cómo se distribuyó el trabajo. El historial de commits debe ser coherente
+> con lo declarado en el Registro de Versiones del Informe y en el Participant Performance
+> Report.
+
