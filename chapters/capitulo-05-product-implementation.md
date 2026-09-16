@@ -174,3 +174,12 @@ cualquier rol.
 | Usuarios y áreas | `/usuarios` | Alta de usuarios con rol y gestión de áreas |
 | Experimento | `/experimento` | Resultados comparados por variante |
 
+### 5.2.4. Acuerdo de Servicio - SaaS
+
+> **PENDIENTE.** Redactar el acuerdo de nivel de servicio del producto como SaaS: disponibilidad
+> comprometida, ventana de mantenimiento, tiempos de respuesta ante incidencias por severidad,
+> política de respaldo y retención de datos, tratamiento de datos personales conforme a la Ley
+> N° 29733 de Protección de Datos Personales —relevante porque el sistema almacena DNI,
+> fotografías y geolocalización de trabajadores— y condiciones de terminación con devolución de
+> la información del cliente.
+
