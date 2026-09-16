@@ -82,3 +82,31 @@ Priorización por el criterio de mayor incertidumbre combinada con mayor costo d
 
 La pregunta Q1 encabeza el backlog y es la que se somete a experimento en este ciclo.
 
+### 8.1.5. Experiment Cards
+
+**Experiment Card — EXP-01**
+
+| Campo | Contenido |
+|---|---|
+| **Pregunta** | Q1: ¿Un formulario de tres pasos aumenta el número de reportes por usuario frente al formulario tradicional de diez o más campos? |
+| **Hipótesis** | Creemos que el grupo expuesto al formulario rápido registrará al menos el doble de reportes por usuario que el grupo expuesto al formulario largo, durante la ventana de medición |
+| **Método** | Experimento controlado A/B con asignación determinística por usuario |
+| **Variable independiente** | Variante del formulario de reporte: `rapido` o `largo` |
+| **Variable dependiente** | Número de reportes por usuario en la ventana de medición |
+| **Variables controladas** | El resto de la aplicación es idéntico para ambos grupos: mismo acceso, misma lista, misma operación sin conexión, mismo API |
+| **Participantes** | Operarios de campo con cuenta activa |
+| **Duración** | 14 días |
+| **Criterio de éxito** | Diferencia estadísticamente significativa (α = 0.05) a favor del grupo `rapido` |
+| **Criterio de refutación** | Ausencia de diferencia significativa, o diferencia a favor del formulario largo |
+| **Decisión asociada** | Si se confirma, el flujo rápido se convierte en el único formulario del producto. Si se refuta, se elimina la variante, se conserva el formulario simple por coherencia de diseño y la inversión se redirige hacia la barrera que las entrevistas señalen como dominante |
+
+**Experiment Card — EXP-02 (siguiente ciclo)**
+
+| Campo | Contenido |
+|---|---|
+| **Pregunta** | Q4: ¿El aumento de reportes se traduce en hallazgos cerrados o solo en cola acumulada? |
+| **Hipótesis** | Creemos que un aumento del volumen de reportes sin cambios en el proceso de cierre incrementará el MTTR |
+| **Método** | Análisis observacional de la serie temporal de MTTR frente al volumen de reportes |
+| **Medida** | MTTR semanal y número de hallazgos abiertos al cierre de cada semana |
+| **Decisión asociada** | Si el MTTR se deteriora, priorizar funcionalidades de capacidad de respuesta (notificaciones, asignación automática) antes que funcionalidades de captura |
+
