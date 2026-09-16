@@ -126,3 +126,56 @@ sin valor directo para el usuario final pero necesario para sostener el producto
 | TS03 | Documentación viva del API | **Como** desarrollador de los clientes **quiero** una especificación OpenAPI generada del código **para** que el contrato no se desactualice. | **Escenario: documentación**<br>**Cuando** accedo a la ruta de documentación<br>**Entonces** obtengo la especificación de todos los endpoints vigentes | — |
 | TS04 | Datos de demostración | **Como** equipo **quiero** un comando que genere datos realistas **para** poder demostrar y probar el sistema. | **Escenario: carga**<br>**Cuando** ejecuto el comando de carga<br>**Entonces** el sistema queda con empresa, usuarios, reportes, IPERC, EPP, inspecciones y actas de ejemplo, claramente identificados como datos de demostración | — |
 
+## 3.3. Product Backlog
+
+Orden por prioridad de negocio. La estimación usa Story Points en escala de Fibonacci.
+
+| # | ID | Historia | Épica | Story Points |
+|---|---|---|---|---|
+| 1 | US02 | Inicio de sesión | EP01 | 3 |
+| 2 | US06 | Reporte rápido desde el celular | EP02 | 8 |
+| 3 | US07 | Reporte sin conexión | EP02 | 13 |
+| 4 | US08 | Sincronización sin duplicados | EP02 | 8 |
+| 5 | US14 | Bandeja de hallazgos | EP03 | 5 |
+| 6 | US16 | Cierre con acción correctiva | EP03 | 5 |
+| 7 | US15 | Asignación de responsable | EP03 | 5 |
+| 8 | US17 | Separación de responsabilidades | EP03 | 3 |
+| 9 | US09 | Evidencia fotográfica | EP02 | 5 |
+| 10 | US13 | Consulta de mis reportes | EP02 | 3 |
+| 11 | US35 | Indicador MTTR | EP08 | 5 |
+| 12 | US18 | Bitácora del hallazgo | EP03 | 3 |
+| 13 | US10 | Geolocalización del hallazgo | EP02 | 5 |
+| 14 | US11 | Fecha real de ocurrencia | EP02 | 3 |
+| 15 | US38 | Asignación de variante | EP09 | 5 |
+| 16 | US39 | Registro de la variante en el reporte | EP09 | 2 |
+| 17 | US40 | Resultados del experimento | EP09 | 5 |
+| 18 | US01 | Registro de trabajador | EP01 | 5 |
+| 19 | US03 | Sesión persistente en campo | EP01 | 3 |
+| 20 | US05 | Gestión de áreas | EP01 | 2 |
+| 21 | US04 | Administración de usuarios | EP01 | 5 |
+| 22 | US12 | Reporte desde la web | EP02 | 5 |
+| 23 | US27 | Programa de inspecciones | EP06 | 5 |
+| 24 | US28 | Ejecución con checklist | EP06 | 5 |
+| 25 | US29 | Inspecciones vencidas | EP06 | 3 |
+| 26 | US36 | Tasa de cumplimiento de inspecciones | EP08 | 5 |
+| 27 | US20 | Registro de peligros | EP04 | 5 |
+| 28 | US19 | Consulta de la matriz en campo | EP04 | 3 |
+| 29 | US21 | Versionado de la matriz | EP04 | 3 |
+| 30 | US22 | Trazabilidad con el hallazgo de origen | EP04 | 3 |
+| 31 | US23 | Catálogo de EPP | EP05 | 3 |
+| 32 | US24 | Registro de entrega | EP05 | 3 |
+| 33 | US25 | Conformidad del trabajador | EP05 | 3 |
+| 34 | US26 | Alerta de EPP vencido | EP05 | 2 |
+| 35 | US30 | Constitución del comité | EP07 | 3 |
+| 36 | US31 | Miembros y paridad | EP07 | 5 |
+| 37 | US32 | Acta de reunión | EP07 | 5 |
+| 38 | US33 | Control de quórum | EP07 | 3 |
+| 39 | US34 | Acuerdos con responsable y plazo | EP07 | 3 |
+| 40 | US37 | Exportación de evidencia | EP08 | 8 |
+| 41 | TS02 | Convenciones de commits | — | 2 |
+| 42 | TS01 | Integración continua | — | 5 |
+| 43 | TS03 | Documentación viva del API | — | 2 |
+| 44 | TS04 | Datos de demostración | — | 5 |
+
+**Total estimado:** 188 Story Points.
+
