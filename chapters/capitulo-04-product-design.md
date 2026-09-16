@@ -271,3 +271,5 @@ flowchart LR
 
 Fuera del alcance, conforme a lo justificado en 4.1.3.1.
 
+## 4.6. Web Applications UX/UI Design
+
