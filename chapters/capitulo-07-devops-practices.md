@@ -194,3 +194,21 @@ flowchart LR
     J --> K[Verificación periódica]
 ```
 
+### 7.4.3. Alerting Pipeline Components
+
+| Condición | Umbral propuesto | Canal | Destinatario |
+|---|---|---|---|
+| El API no responde | Dos verificaciones consecutivas fallidas | Correo | Equipo de desarrollo |
+| Tasa de error 5xx elevada | Por encima del 1 % de las peticiones en 15 minutos | Correo | Equipo de desarrollo |
+| Hallazgo crítico sin asignar | Más de 24 horas abierto con severidad crítica | Notificación en la aplicación | Supervisor de SST |
+| Inspección vencida | La fecha programada pasó sin ejecución | Notificación en la aplicación | Responsable del programa |
+| Acuerdo del comité vencido | Pasó el plazo sin cumplirse | Notificación en la aplicación | Responsable del acuerdo |
+
+Las tres últimas condiciones son alertas **de dominio**, no de infraestructura, y son las que
+convierten al sistema en una herramienta de gestión y no solo en un repositorio de registros.
+
+> **PENDIENTE — implementación.** Hoy el sistema **calcula** estas condiciones y las muestra en
+> el tablero (hallazgos críticos abiertos, inspecciones vencidas, acuerdos pendientes), pero
+> **no emite notificaciones**. Documentarlo así; implementar las notificaciones es el siguiente
+> incremento natural del producto.
+
