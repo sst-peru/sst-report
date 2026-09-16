@@ -104,6 +104,7 @@ incorpora mediante Pull Request.
     - [EP07 — Comité de SST](chapters/capitulo-03-requirements-specification.md#ep07--comité-de-sst)
     - [EP08 — Métricas y evidencia](chapters/capitulo-03-requirements-specification.md#ep08--métricas-y-evidencia)
     - [EP09 — Experimento A/B](chapters/capitulo-03-requirements-specification.md#ep09--experimento-ab)
+    - [EP10 — Calidad de uso y operación](chapters/capitulo-03-requirements-specification.md#ep10--calidad-de-uso-y-operación)
     - [Historias técnicas](chapters/capitulo-03-requirements-specification.md#historias-técnicas)
   - [3.3. Product Backlog](chapters/capitulo-03-requirements-specification.md#33-product-backlog)
   - [3.4. Impact Mapping](chapters/capitulo-03-requirements-specification.md#34-impact-mapping)

@@ -129,19 +129,190 @@ Tener ambas capas importa porque el hook local puede no estar instalado en una m
 
 ### 5.2.1. Sprint Backlogs
 
-> **PENDIENTE — completar con los sprints reales.** Por cada sprint: objetivo, fechas de inicio
-> y fin, velocidad planificada y alcanzada, y la tabla de work-items con su historia de usuario
-> asociada, responsable, estimación y estado final. La información real puede extraerse del
-> historial de commits de cada repositorio, agrupando por fecha.
->
-> Plantilla:
->
-> | Sprint | Objetivo | Fechas | User Stories | SP planificados | SP completados |
-> |---|---|---|---|---|---|
-> | Sprint 1 | | | | | |
->
-> | Work-item | User Story | Descripción | Responsable | Estimación | Estado |
-> |---|---|---|---|---|---|
+El desarrollo se organizó en seis sprints. El Product Backlog del Capítulo III contiene los 86
+elementos del producto; cada Sprint Backlog contiene únicamente aquello que ese sprint se
+comprometió a completar. La suma de los seis cubre la totalidad del backlog, lo que refleja que
+el alcance planificado se construyó.
+
+> **PENDIENTE.** Completar las fechas de inicio y fin de cada sprint, y la velocidad realmente
+> alcanzada. Las fechas reales pueden obtenerse del historial de commits de cada repositorio
+> agrupando por semana (`git log --pretty=format:"%ad %s" --date=short`).
+
+**Sprint 1**
+
+| Campo | Valor |
+|---|---|
+| Objetivo | Que un operario pueda entrar y registrar un hallazgo, con o sin señal. |
+| Fechas | <!-- COMPLETAR: inicio y fin --> |
+| Elementos comprometidos | 11 |
+| Story Points planificados | 52 |
+| Story Points completados | <!-- COMPLETAR --> |
+
+| ID | Historia | Plataforma | SP | Estado |
+|---|---|---|---|---|
+| US02 | Inicio de sesión | Ambas | 3 | Completado |
+| US06 | Reporte rápido desde el celular | Ambas | 8 | Completado |
+| US07 | Reporte sin conexión | Móvil | 13 | Completado |
+| US08 | Sincronización sin duplicados | Ambas | 8 | Completado |
+| US13 | Consulta de mis reportes | Ambas | 3 | Completado |
+| US43 | Menú según mi rol | Ambas | 3 | Completado |
+| US70 | Sesión que no expira en campo | Ambas | 5 | Completado |
+| TS02 | Convenciones de commits | Los cuatro | 2 | Completado |
+| TS07 | Validación local del mensaje de commit | Los cuatro | 2 | Completado |
+| TS05 | Flujo de ramas GitFlow | Los cuatro | 3 | Completado |
+| TS06 | Fin de línea normalizado | Los cuatro | 2 | Completado |
+
+**Sprint 2**
+
+| Campo | Valor |
+|---|---|
+| Objetivo | Cerrar el ciclo del hallazgo: recibirlo, asignarlo y cerrarlo con evidencia. |
+| Fechas | <!-- COMPLETAR: inicio y fin --> |
+| Elementos comprometidos | 12 |
+| Story Points planificados | 48 |
+| Story Points completados | <!-- COMPLETAR --> |
+
+| ID | Historia | Plataforma | SP | Estado |
+|---|---|---|---|---|
+| US14 | Bandeja de hallazgos | Ambas | 5 | Completado |
+| US16 | Cierre con acción correctiva | Ambas | 5 | Completado |
+| US15 | Asignación de responsable | Ambas | 5 | Completado |
+| US17 | Separación de responsabilidades | Ambas | 3 | Completado |
+| US18 | Bitácora del hallazgo | Ambas | 3 | Completado |
+| US09 | Evidencia fotográfica | Ambas | 5 | Completado |
+| US35 | Indicador MTTR | Ambas | 5 | Completado |
+| US50 | Filtrar la bandeja | Ambas | 3 | Completado |
+| US49 | Descartar un reporte | Web | 2 | Completado |
+| TS01 | Integración continua | Los cuatro | 5 | Completado |
+| TS13 | Migraciones verificadas en integración | sst-api | 2 | Completado |
+| TS11 | Aislamiento entre empresas | sst-api | 5 | Completado |
+
+**Sprint 3**
+
+| Campo | Valor |
+|---|---|
+| Objetivo | Completar la captura y dejar el experimento A/B corriendo. |
+| Fechas | <!-- COMPLETAR: inicio y fin --> |
+| Elementos comprometidos | 14 |
+| Story Points planificados | 47 |
+| Story Points completados | <!-- COMPLETAR --> |
+
+| ID | Historia | Plataforma | SP | Estado |
+|---|---|---|---|---|
+| US10 | Geolocalización del hallazgo | Ambas | 5 | Completado |
+| US11 | Fecha real de ocurrencia | Ambas | 3 | Completado |
+| US12 | Reporte desde la web | Web | 5 | Completado |
+| US44 | Vista previa de la evidencia | Web | 3 | Completado |
+| US45 | Ampliar la evidencia | Web | 3 | Completado |
+| US46 | Reemplazar la foto elegida | Web | 2 | Completado |
+| US47 | Categorías según el tipo de hallazgo | Ambas | 2 | Completado |
+| US48 | Estado de envío de mis reportes | Móvil | 3 | Completado |
+| US51 | Ubicar el hallazgo en el mapa | Web | 1 | Completado |
+| US38 | Asignación de variante | Ambas | 5 | Completado |
+| US39 | Registro de la variante en el reporte | Ambas | 2 | Completado |
+| US40 | Resultados del experimento | Web | 5 | Completado |
+| US64 | Variante disponible sin conexión | Móvil | 3 | Completado |
+| TS12 | Idempotencia en la creación de reportes | sst-api | 5 | Completado |
+
+**Sprint 4**
+
+| Campo | Valor |
+|---|---|
+| Objetivo | Cuentas, roles y estructura organizativa de la empresa. |
+| Fechas | <!-- COMPLETAR: inicio y fin --> |
+| Elementos comprometidos | 10 |
+| Story Points planificados | 30 |
+| Story Points completados | <!-- COMPLETAR --> |
+
+| ID | Historia | Plataforma | SP | Estado |
+|---|---|---|---|---|
+| US01 | Registro de trabajador | Ambas | 5 | Completado |
+| US03 | Sesión persistente en campo | Ambas | 3 | Completado |
+| US05 | Gestión de áreas | Web | 2 | Completado |
+| US04 | Administración de usuarios | Web | 5 | Completado |
+| US41 | Cambio de rol de un usuario | Web | 2 | Completado |
+| US42 | Cierre de sesión | Ambas | 1 | Completado |
+| TS03 | Documentación viva del API | sst-api | 2 | Completado |
+| TS08 | Configuración por variables de entorno | sst-api | 3 | Completado |
+| TS09 | Proxy de desarrollo | sst-web | 2 | Completado |
+| TS10 | Renovación transparente del token | sst-web, sst-mobile | 5 | Completado |
+
+**Sprint 5**
+
+| Campo | Valor |
+|---|---|
+| Objetivo | Los registros obligatorios del SGSST: IPERC, EPP e inspecciones. |
+| Fechas | <!-- COMPLETAR: inicio y fin --> |
+| Elementos comprometidos | 19 |
+| Story Points planificados | 70 |
+| Story Points completados | <!-- COMPLETAR --> |
+
+| ID | Historia | Plataforma | SP | Estado |
+|---|---|---|---|---|
+| US19 | Consulta de la matriz en campo | Ambas | 3 | Completado |
+| US20 | Registro de peligros | Web | 5 | Completado |
+| US21 | Versionado de la matriz | Web | 5 | Completado |
+| US22 | Trazabilidad con el hallazgo de origen | Ambas | 3 | Completado |
+| US52 | Consultar versiones anteriores de la matriz | Web | 5 | Completado |
+| US53 | Publicar una nueva versión de la matriz | Web | 5 | Completado |
+| US54 | Retirar un peligro de la matriz | Web | 2 | Completado |
+| US23 | Catálogo de EPP | Web | 3 | Completado |
+| US24 | Registro de entrega | Web | 3 | Completado |
+| US25 | Conformidad del trabajador | Ambas | 3 | Completado |
+| US26 | Alerta de EPP vencido | Ambas | 2 | Completado |
+| US55 | Control de stock del catálogo | Web | 2 | Completado |
+| US27 | Programa de inspecciones | Web | 5 | Completado |
+| US28 | Ejecución con checklist | Ambas | 5 | Completado |
+| US29 | Inspecciones vencidas | Ambas | 3 | Completado |
+| US56 | Programar la siguiente inspección | Web | 3 | Completado |
+| US36 | Tasa de cumplimiento de inspecciones | Ambas | 5 | Completado |
+| US57 | Cumplimiento por área | Web | 3 | Completado |
+| TS04 | Datos de demostración | sst-api | 5 | Completado |
+
+**Sprint 6**
+
+| Campo | Valor |
+|---|---|
+| Objetivo | Comité de SST, evidencia exportable y calidad de uso. |
+| Fechas | <!-- COMPLETAR: inicio y fin --> |
+| Elementos comprometidos | 20 |
+| Story Points planificados | 72 |
+| Story Points completados | <!-- COMPLETAR --> |
+
+| ID | Historia | Plataforma | SP | Estado |
+|---|---|---|---|---|
+| US30 | Constitución del comité | Web | 3 | Completado |
+| US31 | Miembros y paridad | Web | 5 | Completado |
+| US32 | Acta de reunión | Web | 5 | Completado |
+| US33 | Control de quórum | Ambas | 3 | Completado |
+| US34 | Acuerdos con responsable y plazo | Web | 3 | Completado |
+| US58 | Advertencia de comité no paritario | Web | 2 | Completado |
+| US59 | Seguimiento del estado de los acuerdos | Web | 2 | Completado |
+| US60 | Consultar las actas desde el celular | Móvil | 3 | Completado |
+| US37 | Exportación de evidencia | Web | 8 | Completado |
+| US61 | MTTR por severidad | Ambas | 3 | Completado |
+| US62 | Exportar cada registro obligatorio | Web | 3 | Completado |
+| US63 | Resumen de hallazgos | Ambas | 3 | Completado |
+| US65 | Identidad visual consistente | Ambas | 5 | Completado |
+| US66 | Navegación siempre accesible | Ambas | 2 | Completado |
+| US67 | Uso desde pantallas pequeñas | Web | 5 | Completado |
+| US68 | Errores comprensibles | Ambas | 3 | Completado |
+| US69 | Reintento ante fallo de red | Móvil | 3 | Completado |
+| TS14 | APK publicado por el pipeline | sst-mobile | 3 | Completado |
+| TS15 | Generación de evidencia en Excel | sst-api | 5 | Completado |
+| TS16 | Informe compilable y con índice verificado | sst-report | 3 | Completado |
+
+**Resumen de los seis sprints**
+
+| Sprint | Elementos | Story Points | Objetivo |
+|---|---|---|---|
+| Sprint 1 | 11 | 52 | Que un operario pueda entrar y registrar un hallazgo, con o sin señal. |
+| Sprint 2 | 12 | 48 | Cerrar el ciclo del hallazgo: recibirlo, asignarlo y cerrarlo con evidencia. |
+| Sprint 3 | 14 | 47 | Completar la captura y dejar el experimento A/B corriendo. |
+| Sprint 4 | 10 | 30 | Cuentas, roles y estructura organizativa de la empresa. |
+| Sprint 5 | 19 | 70 | Los registros obligatorios del SGSST: IPERC, EPP e inspecciones. |
+| Sprint 6 | 20 | 72 | Comité de SST, evidencia exportable y calidad de uso. |
+| **Total** | **86** | **319** | |
 
 ### 5.2.2. Implemented Landing Page Evidence
 
