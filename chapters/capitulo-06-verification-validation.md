@@ -153,3 +153,15 @@ errores de tipo y ESLint sin advertencias sobre los 22 archivos de TypeScript de
 > *security hotspots*. <!-- IMAGEN REQUERIDA: captura del panel de SonarCloud en
 > assets/img/evidencia-sonar.png -->
 
+### 6.2.2. Reviews
+
+| Práctica | Aplicación |
+|---|---|
+| Pull Request obligatorio | Ningún cambio llega a `develop` ni a `main` sin PR; las ramas están protegidas contra push directo |
+| Plantilla de PR | Cada PR declara qué hace, el tipo de cambio y una lista de verificación: rama correcta, Conventional Commits, pruebas ejecutadas, migraciones generadas, documentación del API actualizada y aviso al resto del equipo si cambió el contrato |
+| Verificación automática previa | El PR no puede integrarse con el pipeline en rojo |
+| Revisión de código | Revisión del diff completo antes de integrar, con foco en reglas de negocio, permisos y comentarios que expliquen decisiones |
+
+<!-- IMAGEN REQUERIDA: captura de un Pull Request con su plantilla completada y los checks del
+     pipeline en verde, en assets/img/evidencia-pull-request.png -->
+
