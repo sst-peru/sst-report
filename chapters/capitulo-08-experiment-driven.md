@@ -368,3 +368,31 @@ verifica con las mismas pruebas.
 
 ## 8.4. To-Be Validation Interviews
 
+### 8.4.1. Diseño de Entrevistas
+
+Entrevistas posteriores a la ejecución del experimento, orientadas a explicar el **porqué** del
+resultado cuantitativo. El número dice qué pasó; la entrevista, por qué.
+
+**Para participantes del grupo `rapido`**
+
+1. Cuéntame de la última vez que reportaste con la aplicación. ¿Qué hiciste exactamente?
+2. ¿Hubo alguna vez que quisiste reportar y no lo hiciste? ¿Qué te detuvo?
+3. ¿Qué te pareció tener que tomar la foto?
+4. ¿Qué harías distinto si tú diseñaras la pantalla?
+
+**Para participantes del grupo `largo`**
+
+1. Cuéntame de la última vez que reportaste. ¿Cuánto te tomó?
+2. ¿Qué parte del formulario te resultó más pesada?
+3. ¿Dejaste reportes a medias? ¿Por qué?
+4. ¿Qué campos te parecieron innecesarios?
+
+**Pregunta común a ambos grupos**
+
+5. Fuera de la aplicación, ¿qué otra cosa hace que alguien no reporte un peligro que vio?
+
+Esta última pregunta busca deliberadamente evidencia en contra del supuesto A1: si los
+participantes señalan mayoritariamente el temor a represalias o la desconfianza en que algo
+cambie, entonces la fricción del formulario no es la barrera principal, y ese hallazgo vale más
+que el resultado del A/B.
+
