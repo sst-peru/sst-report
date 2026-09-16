@@ -200,3 +200,5 @@ web, barra inferior en móvil— por convención de cada entorno.
 
 <!-- IMAGEN REQUERIDA: mock-up de la landing page en assets/img/landing-mockup.png -->
 
+## 4.4. Mobile Applications UX/UI Design
+
