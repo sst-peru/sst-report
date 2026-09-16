@@ -127,3 +127,19 @@ Tener ambas capas importa porque el hook local puede no estar instalado en una m
 
 ## 5.2. Product Implementation & Deployment
 
+### 5.2.1. Sprint Backlogs
+
+> **PENDIENTE — completar con los sprints reales.** Por cada sprint: objetivo, fechas de inicio
+> y fin, velocidad planificada y alcanzada, y la tabla de work-items con su historia de usuario
+> asociada, responsable, estimación y estado final. La información real puede extraerse del
+> historial de commits de cada repositorio, agrupando por fecha.
+>
+> Plantilla:
+>
+> | Sprint | Objetivo | Fechas | User Stories | SP planificados | SP completados |
+> |---|---|---|---|---|---|
+> | Sprint 1 | | | | | |
+>
+> | Work-item | User Story | Descripción | Responsable | Estimación | Estado |
+> |---|---|---|---|---|---|
+
