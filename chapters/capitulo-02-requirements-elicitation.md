@@ -263,3 +263,15 @@ que no contaminen el relato del problema.
 | **Esfuerzos** | Tiempo perdido en formatos; temor a incomodar | Consolidación manual; falta de trazabilidad |
 | **Resultados** | Trabajar sin accidentarse | Demostrar gestión y evitar sanciones |
 
+### 2.3.5. As-is Scenario Mapping
+
+<!-- IMAGEN REQUERIDA: exportar el As-is Scenario Map a assets/img/as-is-scenario-map.png -->
+
+![As-is Scenario Map](../assets/img/as-is-scenario-map.png)
+
+| Fase | Detección | Comunicación | Registro | Corrección | Evidencia |
+|---|---|---|---|---|---|
+| **Acciones** | El trabajador identifica el peligro | Aviso verbal al supervisor inmediato | Anotación en formato físico o en Excel, si ocurre | Se corrige según disponibilidad y criterio | Se arma un expediente cuando hay inspección |
+| **Pensamientos** | "Esto es peligroso" | "Ya avisé" | "Otro papel más" | "¿Esto ya se atendió?" | "¿Dónde está el registro?" |
+| **Puntos de dolor** | Nada registra lo que vio | El aviso se pierde si el supervisor lo olvida | Sin hora, sin foto, sin ubicación | Sin responsable ni plazo definido | Reconstrucción manual y tardía |
+
