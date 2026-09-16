@@ -72,3 +72,24 @@ flowchart LR
 
 ## 7.2. Continuous Delivery
 
+### 7.2.1. Tools and Practices
+
+La entrega continua asegura que cualquier commit integrado en `develop` esté en condiciones de
+ser desplegado, sin trabajo manual adicional.
+
+| Herramienta | Rol previsto |
+|---|---|
+| GitHub Actions | Construcción de artefactos desplegables |
+| Artefactos de Actions | APK de depuración publicado en cada ejecución del pipeline móvil |
+| Docker | <!-- COMPLETAR: empaquetado del API si se adopta --> |
+| Render / Railway / Fly.io | Entorno de despliegue del API |
+| Vercel / Netlify | Entorno de despliegue de la aplicación web |
+
+**Prácticas adoptadas**
+
+1. **El artefacto se construye una sola vez** y es el mismo que se promueve entre entornos; no
+   se reconstruye por entorno.
+2. **La configuración viaja por variables de entorno**, no dentro del artefacto, de modo que el
+   mismo build sirve para desarrollo y producción.
+3. **Toda migración de base de datos se ejecuta como parte del despliegue**, no manualmente.
+
