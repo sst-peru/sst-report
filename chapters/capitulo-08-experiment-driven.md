@@ -444,3 +444,5 @@ que el resultado del A/B.
 > —por ejemplo, el peso del temor a represalias— ingresan con su puntuación de incertidumbre y
 > costo de equivocarse.
 
+## 8.6. Continuous Learning
+
