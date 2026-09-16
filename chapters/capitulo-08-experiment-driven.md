@@ -475,3 +475,7 @@ flowchart LR
 
 ## 8.7. To-Be Software Platform Pre-launch
 
+### 8.7.1. About-the-Product Intro Video
+
+> **PENDIENTE.** <!-- COMPLETAR: enlace al video de presentación del producto. -->
+
