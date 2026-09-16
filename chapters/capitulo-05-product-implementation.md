@@ -183,3 +183,24 @@ cualquier rol.
 > fotografías y geolocalización de trabajadores— y condiciones de terminación con devolución de
 > la información del cliente.
 
+### 5.2.5. Implemented Native-Mobile Application Evidence
+
+<!-- IMAGEN REQUERIDA: capturas de la aplicación Android en ejecución en
+     assets/img/evidencia-movil-<pantalla>.png. Lista sugerida: acceso, registro, formulario
+     rápido en sus tres pasos, formulario largo, lista de reportes con pendientes de envío,
+     detalle del hallazgo, IPERC, mis EPP, inspecciones con checklist, tablero. -->
+
+| Pantalla | Funcionalidad implementada |
+|---|---|
+| Acceso y registro | Autenticación JWT y alta de trabajador por RUC |
+| Reportar | Formulario rápido de tres pasos y formulario largo, según la variante asignada |
+| Mis reportes | Cola local con estado de envío y listado del servidor con filtros |
+| Detalle del hallazgo | Bitácora, foto, tiempo de resolución; asignación y cierre para supervisor y comité |
+| Matriz IPERC | Consulta de peligros y controles por puesto |
+| Mis EPP | Entregas, vencimientos y conformidad del trabajador |
+| Inspecciones | Listado y ejecución con checklist |
+| Tablero | MTTR, cumplimiento de inspecciones y acuerdos del comité |
+
+> **PENDIENTE — compilación.** Adjuntar evidencia de la compilación exitosa y el APK de
+> depuración generado por el pipeline, más capturas en dispositivo o emulador.
+
