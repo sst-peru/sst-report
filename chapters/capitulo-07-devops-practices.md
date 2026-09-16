@@ -93,3 +93,26 @@ ser desplegado, sin trabajo manual adicional.
    mismo build sirve para desarrollo y producción.
 3. **Toda migración de base de datos se ejecuta como parte del despliegue**, no manualmente.
 
+### 7.2.2. Stages Deployment Pipeline Components
+
+```mermaid
+flowchart LR
+    A[Merge a develop] --> B[CI en verde]
+    B --> C[Construir artefactos]
+    C --> C1[API: imagen o paquete]
+    C --> C2[Web: build estático de Vite]
+    C --> C3[Móvil: APK de depuración]
+    C1 --> D[Desplegar a entorno de pruebas]
+    C2 --> D
+    D --> E[Migraciones de base de datos]
+    E --> F[Verificación de humo]
+    F --> G{¿Aprobado?}
+    G -->|Sí| H[Listo para promover a producción]
+    G -->|No| I[Revertir y corregir]
+```
+
+> **PENDIENTE — implementación.** Los pipelines de construcción existen y publican artefactos;
+> el despliegue automatizado a un entorno de pruebas está diseñado pero **no implementado
+> todavía**. Debe documentarse honestamente como tal hasta que se ejecute, indicando después el
+> proveedor elegido y adjuntando la evidencia del despliegue.
+
