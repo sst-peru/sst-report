@@ -165,3 +165,5 @@ errores de tipo y ESLint sin advertencias sobre los 22 archivos de TypeScript de
 <!-- IMAGEN REQUERIDA: captura de un Pull Request con su plantilla completada y los checks del
      pipeline en verde, en assets/img/evidencia-pull-request.png -->
 
+## 6.3. Validation Interviews
+
