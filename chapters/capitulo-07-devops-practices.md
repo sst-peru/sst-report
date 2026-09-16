@@ -157,3 +157,5 @@ flowchart LR
 > completo. <!-- IMAGEN REQUERIDA: captura del despliegue exitoso en
 > assets/img/pipeline-deploy.png -->
 
+## 7.4. Continuous Monitoring
+
