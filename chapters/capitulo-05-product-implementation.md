@@ -111,3 +111,17 @@ Tener ambas capas importa porque el hook local puede no estar instalado en una m
 | Fin de línea | LF en el repositorio, forzado por `.gitattributes`; CRLF solo en `.bat`, `.cmd` y `.ps1` | `.gitattributes` |
 | Idioma | Código y mensajes de commit sin tildes ni eñes; interfaz y documentación en español correcto | Revisión en PR |
 
+### 5.1.4. Software Deployment Configuration
+
+| Componente | Configuración |
+|---|---|
+| API | Variables de entorno mediante archivo `.env` (`DEBUG`, `SECRET_KEY`, `ALLOWED_HOSTS`, `DATABASE_URL`, `CORS_ALLOWED_ORIGINS`). `DATABASE_URL` vacío usa SQLite; con valor, PostgreSQL |
+| Web | `VITE_API_URL` define el API consumido. En desarrollo, Vite hace proxy de `/api` al backend, evitando CORS |
+| Móvil | `API_BASE_URL` se inyecta como `buildConfigField` en Gradle. En emulador, `http://10.0.2.2:8000/api/v1/`, que es la dirección con la que el emulador alcanza el `localhost` del anfitrión |
+| Tráfico en claro | `network_security_config.xml` permite HTTP sin cifrar únicamente contra direcciones de desarrollo; en producción el API va por HTTPS |
+| Secretos | Ningún secreto se versiona: `.env` está en `.gitignore` y se distribuye `.env.example` con los nombres de variable |
+
+> **PENDIENTE — despliegue.** Documentar aquí el despliegue real cuando esté hecho: proveedor
+> (Render, Railway, Fly.io o similar para el API; Vercel o Netlify para la web), URL pública de
+> cada entorno, y procedimiento de migración de base de datos en el despliegue.
+
