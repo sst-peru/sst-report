@@ -304,3 +304,7 @@ flowchart TD
     T --> US[Usuarios y áreas]
 ```
 
+### 4.6.3. Web Applications Mock-ups
+
+<!-- IMAGEN REQUERIDA: capturas reales del panel web en assets/img/web-mockup-*.png -->
+
