@@ -159,3 +159,5 @@ que no contaminen el relato del problema.
 > supuestos refutados deben marcarse como tales: un needfinding que confirma todo lo que se
 > asumió antes de entrevistar suele significar que se preguntó mal.
 
+## 2.3. Needfinding
+
