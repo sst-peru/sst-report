@@ -349,3 +349,8 @@ verifica con las mismas pruebas.
 
 > **PENDIENTE.** <!-- IMAGEN REQUERIDA -->
 
+### 8.3.6. Implemented To-Be Frontend-Web Application Evidence
+
+> **PENDIENTE.** <!-- IMAGEN REQUERIDA: captura del panel del experimento con el aviso de datos
+> de demostración y el intervalo de confianza, en assets/img/evidencia-tobe-web.png -->
+
