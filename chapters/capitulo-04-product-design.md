@@ -279,3 +279,28 @@ Fuera del alcance, conforme a lo justificado en 4.1.3.1.
      Pantallas: acceso, registro, tablero, bandeja de hallazgos, detalle, matriz IPERC,
      inspecciones, EPP, comité, usuarios, experimento. -->
 
+### 4.6.2. Web Applications Wireflow Diagrams
+
+```mermaid
+flowchart TD
+    L[Acceso] --> R{Rol}
+    R -->|Operario| RE[Reportes propios]
+    R -->|Supervisor / Comité| T[Tablero]
+    T --> B[Bandeja de hallazgos]
+    B --> D[Detalle]
+    D --> AS[Asignar]
+    D --> CI[Cerrar]
+    T --> IP[Matriz IPERC]
+    IP --> IPE[Agregar o editar peligro]
+    T --> IN[Inspecciones]
+    IN --> INP[Nuevo programa]
+    IN --> INE[Realizar con checklist]
+    T --> EP[EPP]
+    EP --> EPE[Registrar entrega]
+    T --> CO[Comité]
+    CO --> AC[Nueva acta]
+    AC --> AG[Agregar acuerdo]
+    T --> EX[Experimento A/B]
+    T --> US[Usuarios y áreas]
+```
+
