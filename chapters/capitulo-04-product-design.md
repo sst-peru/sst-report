@@ -267,3 +267,7 @@ flowchart LR
      aplicación real compilada, dejarlo indicado y enlazar el APK de depuración generado por
      el pipeline. -->
 
+### 4.5.2. iOS Mobile Applications Prototyping
+
+Fuera del alcance, conforme a lo justificado en 4.1.3.1.
+
