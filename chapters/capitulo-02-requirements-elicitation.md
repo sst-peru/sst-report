@@ -66,3 +66,66 @@ canal, en lugar de venta directa.
 
 ## 2.2. Entrevistas
 
+### 2.2.1. Diseño de entrevistas
+
+**Objetivo general.** Comprender cómo se detecta, comunica y gestiona hoy un peligro en el
+frente de trabajo, y qué impide que ese circuito funcione, antes de proponer solución alguna.
+
+**Segmento 1 — Trabajador de campo (operario)**
+
+*Preguntas demográficas y de contexto*
+
+1. ¿Cuál es tu nombre, tu edad y en qué distrito vives?
+2. ¿Qué haces exactamente en tu trabajo y desde hace cuánto tiempo?
+3. ¿Qué celular usas? ¿Lo llevas contigo durante la jornada?
+4. ¿Cómo es la señal en el lugar donde trabajas?
+
+*Preguntas principales*
+
+5. Cuéntame de la última vez que viste algo peligroso en tu trabajo. ¿Qué era y qué hiciste?
+6. ¿A quién se lo comunicaste? ¿Cómo? ¿Qué pasó después?
+7. ¿Alguna vez viste algo peligroso y decidiste no reportarlo? ¿Qué te hizo decidir eso?
+8. ¿Cómo se reportan formalmente los actos y condiciones inseguras en tu empresa?
+9. ¿Cuánto tiempo te toma llenar ese formato? ¿Qué es lo más incómodo de hacerlo?
+10. ¿Te enteras de si lo que reportaste se corrigió? ¿Cómo?
+11. Si reportar te tomara menos de un minuto desde tu celular, ¿lo harías más seguido? ¿Qué te
+    haría dudar?
+
+*Preguntas complementarias*
+
+12. ¿Qué te preocupa cuando reportas algo que hizo mal un compañero o un jefe?
+13. ¿Qué equipos de protección te entregan y cómo firmas que los recibiste?
+14. ¿Participas o has participado en el comité de SST? ¿Sabes qué se acuerda ahí?
+
+**Segmento 2 — Supervisor de SST / miembro del comité**
+
+*Preguntas demográficas y de contexto*
+
+1. ¿Cuál es tu nombre, tu edad, tu formación y tu cargo?
+2. ¿De cuántos trabajadores y cuántas sedes eres responsable?
+3. ¿Qué herramientas usas hoy para gestionar el sistema de SST?
+
+*Preguntas principales*
+
+4. Descríbeme qué pasa desde que un trabajador detecta un peligro hasta que se corrige.
+5. ¿Cuánto tiempo pasa, en promedio, entre el reporte y el cierre del hallazgo? ¿Cómo lo sabes?
+6. ¿Cómo mantienes actualizada la matriz IPERC? ¿Cada cuánto la revisas realmente?
+7. ¿Cómo controlas el programa de inspecciones y qué tan seguido se cumple?
+8. ¿Cómo registras la entrega de EPP y cómo demuestras que el trabajador la recibió?
+9. Cuéntame de la última inspección de SUNAFIL o auditoría interna. ¿Qué te pidieron y cuánto
+   tiempo te tomó reunirlo?
+10. ¿Qué información te falta hoy para tomar mejores decisiones de seguridad?
+11. Si tuvieras los reportes entrando en tiempo real con foto y ubicación, ¿qué cambiaría en tu
+    trabajo?
+
+*Preguntas complementarias*
+
+12. ¿Qué software de SST has evaluado o usado? ¿Por qué lo dejaste o no lo adoptaste?
+13. ¿Quién decide la compra de una herramienta así en tu empresa y qué argumento pesa más?
+14. ¿Cómo se convoca y documenta el comité de SST?
+
+**Buenas prácticas aplicadas en el diseño.** Las preguntas evitan inducir la respuesta (no se
+pregunta "¿te gustaría una app?" sino qué hizo la última vez), parten de lo concreto y
+reciente antes de lo general, y dejan las preguntas sobre la solución para el final, de modo
+que no contaminen el relato del problema.
+
