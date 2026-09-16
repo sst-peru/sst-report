@@ -25,3 +25,12 @@ construcción, manufactura, minería de menor escala y logística.
 Android para el trabajador de campo, un panel web para el supervisor y el comité de SST, y una
 API REST que ambos consumen.
 
+### 1.1.2. Perfiles de integrantes del equipo
+
+<!-- IMAGEN REQUERIDA: foto del integrante en assets/img/perfil-<apellido>.jpg (formato
+     cuadrado, aproximadamente 400x400 px) -->
+
+| | |
+|---|---|
+| <img src="../assets/img/perfil-integrante.jpg" width="130"> | **<!-- COMPLETAR: Apellidos y Nombres -->**<br>Código: <!-- COMPLETAR --><br>Carrera: Ingeniería de Software<br><br><!-- COMPLETAR: párrafo de resumen con los principales conocimientos técnicos y habilidades que aportas al equipo. Sé concreto: lenguajes, frameworks, herramientas y experiencias previas relevantes. --> |
+
