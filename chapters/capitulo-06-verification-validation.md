@@ -202,3 +202,18 @@ finalización sin ayuda, y errores cometidos.
 > fecha, duración, enlace al video con minuto de inicio, tareas completadas con sus tiempos y
 > resumen de los hallazgos. **Requiere realizar las entrevistas; no puede redactarse antes.**
 
+### 6.3.3. Evaluaciones según heurísticas
+
+> **PENDIENTE.** Evaluación del producto contra las diez heurísticas de Nielsen, siguiendo el
+> formato que indique el docente: por cada problema detectado, la heurística incumplida, la
+> severidad de 0 a 4, la evidencia en imagen y la recomendación de mejora.
+>
+> Puntos del producto que conviene revisar con honestidad en esta evaluación:
+>
+> - *Visibilidad del estado del sistema:* el indicador de reportes pendientes de envío cumple
+>   esta heurística; conviene verificar si es igual de visible en todas las pantallas.
+> - *Prevención de errores:* el cierre de un hallazgo es irreversible y hoy no pide confirmación.
+> - *Reconocimiento antes que recuerdo:* la matriz IPERC muestra probabilidad y consecuencia como
+>   números, no como etiquetas, en la tabla principal.
+> - *Ayuda y documentación:* el producto no tiene ayuda en línea.
+
