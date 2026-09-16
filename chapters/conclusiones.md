@@ -57,3 +57,7 @@ no significativo en esas condiciones no refuta nada.
 > **PENDIENTE.** <!-- COMPLETAR: enlace al video de validación de la aplicación con usuarios
 > reales ejecutando las tareas definidas en la sección 6.3.1. -->
 
+## Video About-the-Team
+
+> **PENDIENTE.** <!-- COMPLETAR: enlace al video del equipo, incluyendo los testimonios sobre
+> las dimensiones del Student Outcome 4 exigidos por el enunciado. -->
