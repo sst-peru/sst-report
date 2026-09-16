@@ -366,3 +366,5 @@ verifica con las mismas pruebas.
 
 > **PENDIENTE.** <!-- IMAGEN REQUERIDA: analíticos de GitHub del periodo de experimentación -->
 
+## 8.4. To-Be Validation Interviews
+
