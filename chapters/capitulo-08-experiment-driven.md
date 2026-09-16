@@ -154,3 +154,23 @@ Todas las medidas se obtienen del propio sistema. No se emplea una herramienta d
 externa, decisión justificada en el Capítulo VII: los eventos de una herramienta externa se
 pierden cuando no hay conectividad, que es exactamente la condición de uso del producto.
 
+### 8.2.4. Conditions
+
+| Condición | Definición |
+|---|---|
+| **Unidad de asignación** | El usuario. No la sesión ni el reporte: si un mismo operario viera formularios distintos, la comparación dejaría de medir el formulario |
+| **Mecanismo de asignación** | Hash SHA-256 estable de `clave_del_experimento + id_de_usuario`, con módulo sobre el número de variantes |
+| **Grupo de control** | Variante `largo`: formulario tradicional con todos los campos visibles y obligatorios |
+| **Grupo de tratamiento** | Variante `rapido`: asistente de tres pasos con foto y descripción opcional |
+| **Elementos controlados** | Acceso, navegación, lista de reportes, operación sin conexión, API y permisos son idénticos en ambos grupos |
+| **Criterio de inclusión** | Usuarios con rol operario y cuenta activa durante toda la ventana |
+| **Criterio de exclusión** | Usuarios creados para pruebas o demostración; usuarios con rol de gestión |
+| **Ventana de medición** | 14 días corridos, iniciando el mismo día para ambos grupos |
+| **Contaminación** | No hay comunicación entre variantes dentro de la aplicación; el riesgo residual es que dos operarios comparen sus pantallas entre sí, lo que se registra como amenaza a la validez |
+
+**Por qué la asignación es determinística y no aleatoria.** Un `random()` produciría una
+asignación distinta en cada consulta, de modo que un mismo usuario podría ver un formulario
+distinto cada día. El hash estable garantiza tres propiedades necesarias: el usuario conserva su
+variante durante todo el experimento, la aplicación puede recalcularla sin conexión, y la
+asignación es reproducible por un tercero que quiera auditar los resultados.
+
