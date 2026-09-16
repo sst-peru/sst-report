@@ -308,3 +308,20 @@ flowchart TD
 
 <!-- IMAGEN REQUERIDA: capturas reales del panel web en assets/img/web-mockup-*.png -->
 
+### 4.6.4. Web Applications User Flow Diagrams
+
+```mermaid
+flowchart LR
+    A[Supervisor inicia sesión] --> B[Revisa el tablero]
+    B --> C{¿Hay críticos abiertos?}
+    C -->|Sí| D[Abre el hallazgo crítico]
+    C -->|No| E[Revisa inspecciones vencidas]
+    D --> F[Asigna responsable]
+    F --> G[Se corrige en campo]
+    G --> H[Cierra con acción correctiva]
+    H --> I[El MTTR se recalcula]
+    E --> J[Programa la siguiente inspección]
+    I --> K[Exporta evidencia para SUNAFIL]
+    J --> K
+```
+
