@@ -129,3 +129,25 @@ pregunta "¿te gustaría una app?" sino qué hizo la última vez), parten de lo 
 reciente antes de lo general, y dejan las preguntas sobre la solución para el final, de modo
 que no contaminen el relato del problema.
 
+### 2.2.2. Registro de entrevistas
+
+> **PENDIENTE — trabajo de campo.** Esta sección debe contener entrevistas reales, grabadas en
+> video y editadas en el video de evidencia. Por cada entrevistado se registra: nombre y
+> apellidos, edad, distrito de residencia, cargo, fecha de la entrevista, duración, enlace al
+> video con el minuto de inicio, y un resumen de entre 150 y 250 palabras de lo que respondió.
+>
+> Mínimo recomendado: cuatro entrevistas por segmento. **Este contenido no puede redactarse sin
+> haber realizado las entrevistas**; inventarlo invalidaría todo el needfinding que se construye
+> encima, y es exactamente lo que el jurado verifica preguntando por los entrevistados.
+>
+> Plantilla por entrevistado:
+>
+> | Campo | Contenido |
+> |---|---|
+> | Nombre y apellidos | |
+> | Edad / Distrito | |
+> | Cargo y empresa | |
+> | Fecha y duración | |
+> | Enlace al video (con minuto) | |
+> | Resumen de la entrevista | |
+
