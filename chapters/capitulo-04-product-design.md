@@ -202,3 +202,10 @@ web, barra inferior en móvil— por convención de cada entorno.
 
 ## 4.4. Mobile Applications UX/UI Design
 
+### 4.4.1. Mobile Applications Wireframes
+
+<!-- IMAGEN REQUERIDA: wireframes de las pantallas móviles en
+     assets/img/mobile-wireframes.png. Pantallas: acceso, registro, formulario rápido
+     (3 pasos), formulario largo, lista de reportes, detalle del hallazgo, IPERC, mis EPP,
+     inspecciones, tablero. -->
+
