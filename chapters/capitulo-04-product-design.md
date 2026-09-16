@@ -273,3 +273,9 @@ Fuera del alcance, conforme a lo justificado en 4.1.3.1.
 
 ## 4.6. Web Applications UX/UI Design
 
+### 4.6.1. Web Applications Wireframes
+
+<!-- IMAGEN REQUERIDA: wireframes del panel web en assets/img/web-wireframes.png.
+     Pantallas: acceso, registro, tablero, bandeja de hallazgos, detalle, matriz IPERC,
+     inspecciones, EPP, comité, usuarios, experimento. -->
+
