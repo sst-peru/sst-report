@@ -174,3 +174,62 @@ distinto cada día. El hash estable garantiza tres propiedades necesarias: el us
 variante durante todo el experimento, la aplicación puede recalcularla sin conexión, y la
 asignación es reproducible por un tercero que quiera auditar los resultados.
 
+### 8.2.5. Scale Calculations and Decisions
+
+**Parámetros del diseño**
+
+| Parámetro | Valor | Justificación |
+|---|---|---|
+| Nivel de significancia (α) | 0.05, dos colas | Estándar del curso: minimiza los errores atribuibles al azar (Tipo I) |
+| Potencia estadística (1 − β) | 0.80 | Rango recomendado de 80 % a 95 %; con 80 % se acota la probabilidad de error Tipo II a 20 % |
+| Efecto mínimo detectable (MDE) | +100 % | Es la magnitud que afirma la hipótesis de negocio ("el doble") |
+| Ventana de medición | 14 días | Suficiente para cubrir dos ciclos semanales de trabajo, incluidos los turnos de fin de semana |
+| Tasa base supuesta | 0.15 reportes por usuario y por día | **Supuesto a calibrar con el piloto.** Equivale a un reporte cada siete días por operario |
+
+**Modelo estadístico.** Se compara la media de reportes por usuario entre dos grupos
+independientes mediante la aproximación normal para diferencia de medias:
+
+> n por grupo = 2 · (Z(α/2) + Z(β))² · σ² / Δ²
+
+Se asume que el conteo de reportes por usuario sigue aproximadamente una distribución de
+Poisson, por lo que la varianza se estima igual a la media. Es una aproximación declarada: si la
+dispersión real resulta mayor —algo frecuente en conteos de comportamiento humano, donde unos
+pocos usuarios concentran la mayoría de los reportes—, el tamaño requerido será mayor y debe
+recalcularse con la varianza observada.
+
+**Resultados del cálculo**
+
+El cálculo es reproducible ejecutando `python tools/tamano-muestra.py` en el repositorio del
+informe. Con una media esperada de 2.10 reportes por usuario en el control y 4.20 en el
+tratamiento:
+
+| Potencia | Usuarios por grupo | Total |
+|---|---|---|
+| 80 % | 12 | **24** |
+| 90 % | 16 | 32 |
+| 95 % | 19 | 38 |
+
+**Efecto mínimo detectable según la muestra disponible**
+
+Este es el análisis que determina si el experimento puede ejecutarse con los participantes que
+realmente se consigan:
+
+| Usuarios por grupo | Total | Solo se podrían detectar efectos de |
+|---|---|---|
+| 3 | 6 | +232 % o mayores |
+| 5 | 10 | +166 % o mayores |
+| 8 | 16 | +123 % o mayores |
+| 12 | 24 | +97 % o mayores |
+| 20 | 40 | +72 % o mayores |
+
+**Decisión de escala y su consecuencia honesta.** El diseño requiere **24 participantes** para
+detectar el efecto que la hipótesis afirma, con α = 0.05 y potencia del 80 %. Si el piloto se
+ejecuta con menos participantes —por ejemplo, seis—, el experimento queda **subpotenciado**: solo
+podría detectar un efecto superior al 232 %, muy por encima del que se busca. En ese escenario,
+un resultado no significativo **no permite concluir que el formulario no funciona**, y debe
+reportarse explícitamente como una limitación del estudio y no como una refutación de la
+hipótesis. Esta distinción es la diferencia entre un experimento y una demostración.
+
+> **PENDIENTE.** Consignar aquí el número real de participantes reclutados y recalcular el
+> efecto mínimo detectable con esa cifra antes de interpretar cualquier resultado.
+
