@@ -160,3 +160,26 @@ inspecciones vencidas, las entregas de EPP de un trabajador.
 | API | Filtros por campo, búsqueda textual en descripción y nota de cierre, y ordenamiento, provistos por el backend |
 | Matriz IPERC | Búsqueda por peligro, riesgo y puesto |
 
+### 4.2.5. Navigation Systems
+
+```mermaid
+flowchart LR
+    Login[Acceso] --> Rol{Rol}
+    Rol -->|Operario| Reportar[Reportar]
+    Rol -->|Supervisor / Comité| Tablero[Tablero]
+
+    Reportar --> MisReportes[Mis reportes]
+    MisReportes --> Detalle[Detalle del hallazgo]
+    Reportar --> MisEPP[Mis EPP]
+    Reportar --> MasOp[Más: IPERC, comité, inspecciones]
+
+    Tablero --> Hallazgos[Reportes]
+    Hallazgos --> Detalle
+    Tablero --> Inspecciones[Inspecciones]
+    Tablero --> MasSup[Más: IPERC, EPP, comité, usuarios, experimento]
+```
+
+La navegación es idéntica en concepto entre web y móvil para un mismo rol: lo que un rol puede
+hacer en una plataforma puede hacerlo en la otra. Cambia solo el mecanismo —barra lateral en
+web, barra inferior en móvil— por convención de cada entorno.
+
