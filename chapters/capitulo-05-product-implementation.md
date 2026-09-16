@@ -143,3 +143,8 @@ Tener ambas capas importa porque el hook local puede no estar instalado en una m
 > | Work-item | User Story | Descripción | Responsable | Estimación | Estado |
 > |---|---|---|---|---|---|
 
+### 5.2.2. Implemented Landing Page Evidence
+
+> **PENDIENTE.** <!-- IMAGEN REQUERIDA: capturas de la landing page desplegada en
+> assets/img/evidencia-landing-*.png, más la URL pública. -->
+
