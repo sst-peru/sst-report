@@ -233,3 +233,28 @@ trabajadores, con comité de SST constituido y operaciones en obra.
 | **7. What's the most important thing we need to learn first?** | Si la fricción del formulario es realmente el factor que determina la frecuencia de reporte del operario. |
 | **8. What's the least amount of work to learn the next most important thing?** | Implementar las dos variantes del formulario tras una asignación determinística por usuario y comparar reportes por usuario entre ambos grupos. |
 
+## 1.3. Segmentos objetivo
+
+**Segmento 1 — Trabajador de campo (operario)**
+
+Hombres y mujeres de entre 20 y 55 años que desempeñan labores operativas en obra, planta,
+almacén o unidad minera. Usan teléfonos Android de gama media o baja como principal —y con
+frecuencia único— dispositivo digital. Su jornada transcurre de pie, con equipos de protección
+puestos, y su interacción con sistemas de la empresa se limita a marcar asistencia y firmar
+formatos. Son quienes primero ven el peligro y, hoy, quienes menos herramientas tienen para
+comunicarlo.
+
+**Segmento 2 — Supervisor de SST y miembro del comité**
+
+Profesionales o técnicos en seguridad, entre 25 y 50 años, responsables de que el sistema de
+gestión funcione y de responder ante la autoridad. Trabajan con computadora y celular, manejan
+hojas de cálculo y formatos, y dedican una parte sustancial de su tiempo a consolidar
+información dispersa en lugar de a intervenir sobre el riesgo. Son el usuario que decide la
+compra o la recomienda.
+
+> **PENDIENTE — sustento estadístico.** Cada segmento debe respaldarse con información
+> demográfica y estadística citada: número de empresas en el rango de 20 a 200 trabajadores en
+> Lima, población ocupada en construcción y penetración de smartphones Android en el segmento.
+> Fuentes sugeridas: INEI (Encuesta Nacional de Hogares, Directorio Central de Empresas),
+> MTPE (boletines de notificaciones de accidentes) y OSIPTEL (estadísticas de telefonía móvil).
+> Citar en formato APA en el capítulo de Bibliografía.
