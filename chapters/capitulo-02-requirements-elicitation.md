@@ -247,3 +247,19 @@ que no contaminen el relato del problema.
 | Sustentación | Responde ante el inspector | Reunión | "No puedo demostrar el seguimiento" | Vulnerabilidad | Trazabilidad hallazgo → cierre |
 | Resultado | Observaciones o multa | Acta de inspección | "Teníamos el dato, pero no la prueba" | Impotencia | Evidencia generada por la operación diaria |
 
+### 2.3.4. Empathy Mapping
+
+<!-- IMAGEN REQUERIDA: exportar los Empathy Maps desde UXPressia a
+     assets/img/empathy-operario.png y assets/img/empathy-supervisor.png -->
+
+![Empathy Map del operario](../assets/img/empathy-operario.png)
+
+| Cuadrante | Operario | Supervisor de SST |
+|---|---|---|
+| **¿Qué piensa y siente?** | Que su seguridad depende de él mismo; que reportar rara vez cambia algo | Que la responsabilidad legal recae sobre él; que trabaja con información incompleta |
+| **¿Qué ve?** | Peligros que se repiten; formatos que nadie revisa | Hojas de cálculo desactualizadas; reportes que llegan tarde |
+| **¿Qué oye?** | "Avísale al capataz"; "así siempre se ha trabajado" | "Necesitamos el expediente para mañana"; "¿por qué no se corrigió?" |
+| **¿Qué dice y hace?** | Avisa verbalmente; a veces resuelve el peligro él mismo | Persigue registros; arma reportes manualmente |
+| **Esfuerzos** | Tiempo perdido en formatos; temor a incomodar | Consolidación manual; falta de trazabilidad |
+| **Resultados** | Trabajar sin accidentarse | Demostrar gestión y evitar sanciones |
+
