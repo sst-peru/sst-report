@@ -52,3 +52,8 @@ no significativo en esas condiciones no refuta nada.
 > **PENDIENTE.** Incorporar aquí las conclusiones derivadas del resultado real del experimento y
 > de las entrevistas de validación, una vez ejecutados.
 
+## Video App Validation
+
+> **PENDIENTE.** <!-- COMPLETAR: enlace al video de validación de la aplicación con usuarios
+> reales ejecutando las tareas definidas en la sección 6.3.1. -->
+
