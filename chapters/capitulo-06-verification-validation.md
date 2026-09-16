@@ -219,3 +219,18 @@ finalización sin ayuda, y errores cometidos.
 
 ## 6.4. Auditoría de Experiencias de Usuario
 
+### 6.4.1. Auditoría realizada
+
+#### 6.4.1.1. Información del grupo auditado
+
+> **PENDIENTE.** Nombre del startup auditado, producto, integrantes y enlace a su repositorio.
+
+#### 6.4.1.2. Cronograma de auditoría realizada
+
+> **PENDIENTE.** Fechas y actividades de la auditoría ejecutada.
+
+#### 6.4.1.3. Contenido de auditoría realizada
+
+> **PENDIENTE.** Hallazgos organizados por heurística o criterio, con severidad, evidencia y
+> recomendación.
+
