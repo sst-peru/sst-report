@@ -129,3 +129,13 @@ metodológica: un formulario más corto podría, en principio, producir reportes
 desalentar su uso al percibirse como poco serio. Cerrar esa posibilidad por anticipado sería
 diseñar el experimento para confirmar lo que ya se cree.
 
+### 8.2.2. Domain Business Metrics
+
+| Métrica de negocio | Definición | Por qué importa |
+|---|---|---|
+| **Frecuencia de reporte** | Reportes creados por usuario activo en el periodo | Mide si el sistema captura lo que ocurre en campo; es la entrada de todo el resto |
+| **MTTR de hallazgos** | Horas promedio entre la creación del reporte y su cierre | Mide la capacidad de respuesta: cuánto tiempo permanece expuesto el peligro |
+| **Tasa de cumplimiento de inspecciones** | Inspecciones realizadas sobre programadas | Mide la disciplina preventiva, no solo la reactiva |
+| **Tasa de cierre** | Hallazgos cerrados sobre hallazgos creados en el periodo | Detecta si la captura crece más rápido que la capacidad de atención |
+| **Cobertura de evidencia** | Proporción de hallazgos con foto y con acción correctiva registrada | Mide la calidad del expediente ante una fiscalización |
+
