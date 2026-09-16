@@ -118,3 +118,20 @@ flowchart LR
 
 ## 7.3. Continuous Deployment
 
+### 7.3.1. Tools and Practices
+
+El despliegue continuo lleva a producción, sin intervención manual, todo cambio integrado en
+`main` que haya superado el pipeline.
+
+**Decisión de alcance.** Para este proyecto se adopta **entrega continua con aprobación manual
+para producción**, y no despliegue continuo pleno. La razón es de dominio, no técnica: el
+sistema sostiene registros con valor legal ante una fiscalización, y un despliegue defectuoso
+que corrompa la trazabilidad de un hallazgo tiene consecuencias que exceden la molestia de un
+usuario. La promoción a producción requiere aprobación explícita.
+
+| Herramienta | Rol previsto |
+|---|---|
+| GitHub Actions con *environments* | Despliegue a producción con regla de aprobación requerida |
+| Migraciones de Django | Ejecutadas automáticamente antes de activar la nueva versión |
+| Etiquetas de versión | Cada despliegue a producción corresponde a un tag en `main` |
+
