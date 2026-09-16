@@ -236,3 +236,16 @@ roles se crean desde `auth/users/`, que requiere ser supervisor o miembro del co
 <!-- IMAGEN REQUERIDA: captura de la interfaz Swagger en /api/docs/ mostrando los módulos
      desplegados, en assets/img/evidencia-api-swagger.png -->
 
+### 5.2.7. RESTful API documentation
+
+La documentación se genera automáticamente desde el código con drf-spectacular, de modo que el
+contrato publicado no puede divergir de la implementación.
+
+| Recurso | Ruta |
+|---|---|
+| Interfaz interactiva (Swagger UI) | `/api/docs/` |
+| Especificación OpenAPI 3 | `/api/schema/` |
+
+Todos los endpoints requieren autenticación JWT mediante la cabecera `Authorization: Bearer
+<token>`, con la excepción de `auth/register/`, `auth/login/` y `auth/refresh/`.
+
