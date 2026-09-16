@@ -437,3 +437,10 @@ que el resultado del A/B.
 >    reporta como no concluyente y se replantea con más participantes. **Este desenlace no debe
 >    presentarse como refutación.**
 
+### 8.5.2. Re-scored and Re-prioritized Question Backlog
+
+> **PENDIENTE.** Repriorizar el backlog de preguntas a la luz del resultado. La pregunta Q1 sale
+> del backlog una vez respondida; las preguntas que las entrevistas revelen como más relevantes
+> —por ejemplo, el peso del temor a represalias— ingresan con su puntuación de incertidumbre y
+> costo de equivocarse.
+
