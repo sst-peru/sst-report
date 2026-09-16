@@ -125,3 +125,5 @@ Tener ambas capas importa porque el hook local puede no estar instalado en una m
 > (Render, Railway, Fly.io o similar para el API; Vercel o Netlify para la web), URL pública de
 > cada entorno, y procedimiento de migración de base de datos en el despliegue.
 
+## 5.2. Product Implementation & Deployment
+
