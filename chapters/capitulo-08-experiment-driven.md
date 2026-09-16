@@ -233,3 +233,26 @@ hipótesis. Esta distinción es la diferencia entre un experimento y una demostr
 > **PENDIENTE.** Consignar aquí el número real de participantes reclutados y recalcular el
 > efecto mínimo detectable con esa cifra antes de interpretar cualquier resultado.
 
+### 8.2.6. Methods Selection
+
+| Aspecto | Método elegido | Justificación |
+|---|---|---|
+| Tipo de estudio | Experimento controlado A/B con asignación entre sujetos | Permite atribuir la diferencia a la variable manipulada y no a características de los usuarios |
+| Asignación | Determinística por hash estable, 50/50 | Estabilidad, reproducibilidad y funcionamiento sin conexión |
+| Prueba estadística principal | Prueba t de Welch para dos muestras independientes sobre reportes por usuario | No asume varianzas iguales, supuesto que rara vez se cumple con conteos |
+| Prueba alternativa | Prueba U de Mann-Whitney | Se aplica si la distribución de conteos resulta muy asimétrica o el tamaño de muestra es pequeño, donde la normalidad no es razonable |
+| Métrica de efecto | Diferencia de medias y diferencia relativa porcentual (*lift*) | El *lift* es la forma en que la hipótesis de negocio está formulada |
+| Intervalo de confianza | 95 % sobre la diferencia de medias | Comunica la precisión de la estimación, no solo si hay o no significancia |
+| Análisis complementario | Serie diaria por variante | Permite detectar efectos de novedad: un pico inicial que se desvanece |
+
+**Amenazas a la validez identificadas**
+
+| Amenaza | Tipo | Mitigación |
+|---|---|---|
+| Muestra pequeña | Validez estadística | Declarar el efecto mínimo detectable y no interpretar la ausencia de significancia como refutación |
+| Efecto de novedad | Validez interna | Analizar la serie diaria además del total del periodo |
+| Usuarios que comparan pantallas entre sí | Validez interna | Registrar la amenaza; no es controlable en un piloto presencial |
+| Distinta exposición al riesgo entre áreas | Validez interna | Verificar que la asignación no quede desbalanceada por área; reportar la composición de cada grupo |
+| Participantes que saben que están siendo observados | Validez externa | Reconocer el efecto Hawthorne como limitación del piloto |
+| Población de estudiantes en lugar de operarios reales | Validez externa | Declararlo explícitamente: los resultados indican tendencia, no se generalizan a operarios en obra |
+
