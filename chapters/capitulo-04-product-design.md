@@ -416,3 +416,118 @@ flowchart TB
 
 ## 4.9. Software Object-Oriented Design
 
+### 4.9.1. Class Diagrams
+
+```mermaid
+classDiagram
+    class Company {
+        +String name
+        +String ruc
+        +int worker_count
+        +requires_committee() bool
+    }
+    class Area {
+        +String name
+        +bool is_active
+    }
+    class User {
+        +String username
+        +Role role
+        +String dni
+        +can_manage() bool
+    }
+    class Report {
+        +UUID client_uuid
+        +ReportKind kind
+        +Severity severity
+        +ReportStatus status
+        +DateTime occurred_at
+        +DateTime closed_at
+        +String form_variant
+        +resolution_hours() float
+        +close(note)
+    }
+    class ReportAction {
+        +String note
+        +DateTime created_at
+    }
+    class Category {
+        +String name
+        +ReportKind kind
+    }
+    class IpercMatrix {
+        +int version
+        +MatrixStatus status
+    }
+    class IpercEntry {
+        +String job_position
+        +String hazard
+        +int probability
+        +int consequence
+        +risk_score() int
+        +risk_level() String
+    }
+    class EppItem {
+        +String name
+        +int lifespan_days
+    }
+    class EppDelivery {
+        +DateTime delivered_at
+        +Date expires_at
+        +bool acknowledged
+        +is_expired() bool
+    }
+    class InspectionSchedule {
+        +String title
+        +Frequency frequency
+        +List checklist
+        +generate_next()
+    }
+    class Inspection {
+        +Date due_date
+        +InspectionStatus status
+        +is_overdue() bool
+    }
+    class Committee {
+        +Date period_start
+        +quorum_required() int
+        +is_paritario() bool
+    }
+    class Meeting {
+        +int number
+        +Date date
+        +quorum_reached() bool
+    }
+    class Agreement {
+        +String description
+        +AgreementStatus status
+    }
+    class Experiment {
+        +String key
+        +List variants
+        +variant_for(user_id) String
+    }
+
+    Company "1" o-- "*" Area
+    Company "1" o-- "*" User
+    Company "1" o-- "*" Report
+    User "1" --> "*" Report : reporta
+    User "0..1" --> "*" Report : responsable
+    Report "1" o-- "*" ReportAction
+    Category "0..1" <-- "*" Report
+    Area "0..1" <-- "*" Report
+    Company "1" o-- "*" IpercMatrix
+    IpercMatrix "1" o-- "*" IpercEntry
+    IpercEntry "0..1" --> "1" Report : origen
+    Company "1" o-- "*" EppItem
+    EppItem "1" o-- "*" EppDelivery
+    User "1" --> "*" EppDelivery : recibe
+    Company "1" o-- "*" InspectionSchedule
+    InspectionSchedule "1" o-- "*" Inspection
+    Company "1" -- "0..1" Committee
+    Committee "1" o-- "*" Meeting
+    Meeting "1" o-- "*" Agreement
+    Agreement "0..1" --> "1" Report : referido
+    Experiment "1" o-- "*" Report : variante
+```
+
