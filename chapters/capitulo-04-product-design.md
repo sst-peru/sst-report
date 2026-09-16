@@ -552,3 +552,5 @@ classDiagram
 | `Agreement` | Acuerdo adoptado en una reunión, con responsable y plazo. | Puede referenciar el hallazgo o la entrada IPERC que lo originó |
 | `Experiment` / `Assignment` | Experimento A/B y la asignación de cada usuario. | `variant_for()` usa un hash estable de clave + identificador de usuario, de modo que la asignación es reproducible y calculable sin conexión |
 
+## 4.10. Database Design
+
