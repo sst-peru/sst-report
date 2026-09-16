@@ -178,3 +178,19 @@ indicadores se calculan sobre la base de datos. Esto evita la pérdida de evento
 o por falta de conectividad —precisamente el escenario de uso del producto— y hace que el dato
 del experimento sea tan confiable como el dato operativo.
 
+### 7.4.2. Monitoring Pipeline Components
+
+```mermaid
+flowchart LR
+    A[Aplicación móvil] -->|Reportes con variante| C[API]
+    B[Aplicación web] -->|Reportes con variante| C
+    C --> D[(Base de datos)]
+    D --> E[Endpoints de métricas]
+    E --> F[Tablero de SST<br/>MTTR y cumplimiento]
+    E --> G[Panel del experimento<br/>reportes por usuario y variante]
+    C --> H[Registro de errores]
+    H --> I[Agregador de errores]
+    C --> J[Endpoint de salud]
+    J --> K[Verificación periódica]
+```
+
