@@ -396,3 +396,8 @@ participantes señalan mayoritariamente el temor a represalias o la desconfianza
 cambie, entonces la fricción del formulario no es la barrera principal, y ese hallazgo vale más
 que el resultado del A/B.
 
+### 8.4.2. Registro de Entrevistas
+
+> **PENDIENTE — trabajo de campo.** Mismo formato de registro del Capítulo VI: datos del
+> entrevistado, fecha, enlace al video con minuto de inicio y resumen.
+
