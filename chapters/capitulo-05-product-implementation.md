@@ -259,3 +259,9 @@ Todos los endpoints requieren autenticación JWT mediante la cabecera `Authoriza
 > con lo declarado en el Registro de Versiones del Informe y en el Participant Performance
 > Report.
 
+## 5.3. Video About-the-Product
+
+> **PENDIENTE.** <!-- COMPLETAR: enlace al video y descripción del contenido. El video debe
+> mostrar el producto en operación cubriendo el escenario principal: el operario reporta un
+> hallazgo desde el celular, el supervisor lo recibe en el panel, lo asigna y lo cierra, y el
+> indicador MTTR se actualiza. Duración sugerida: entre 3 y 5 minutos. -->
