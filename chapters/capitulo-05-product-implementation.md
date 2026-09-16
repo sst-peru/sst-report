@@ -129,10 +129,13 @@ Tener ambas capas importa porque el hook local puede no estar instalado en una m
 
 ### 5.2.1. Sprint Backlogs
 
-El desarrollo se organizó en seis sprints. El Product Backlog del Capítulo III contiene los 86
-elementos del producto; cada Sprint Backlog contiene únicamente aquello que ese sprint se
-comprometió a completar. La suma de los seis cubre la totalidad del backlog, lo que refleja que
-el alcance planificado se construyó.
+El desarrollo se organizó en seis sprints. El Product Backlog del Capítulo III contiene los 162
+elementos del producto, de los cuales 86 (319 Story Points) están implementados y 76 quedan
+especificados como backlog pendiente. Los Sprint Backlogs que siguen cubren exactamente esos 86
+elementos implementados: cada uno contiene únicamente aquello que ese sprint se comprometió a
+completar, y la suma de los seis equivale al alcance efectivamente construido en este ciclo. Los
+elementos marcados *Propuesta* en el Capítulo III no figuran en ningún sprint, precisamente
+porque no se construyeron.
 
 > **PENDIENTE.** Completar las fechas de inicio y fin de cada sprint, y la velocidad realmente
 > alcanzada. Las fechas reales pueden obtenerse del historial de commits de cada repositorio
