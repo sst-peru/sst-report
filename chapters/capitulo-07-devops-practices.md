@@ -116,3 +116,5 @@ flowchart LR
 > todavía**. Debe documentarse honestamente como tal hasta que se ejecute, indicando después el
 > proveedor elegido y adjuntando la evidencia del despliegue.
 
+## 7.3. Continuous Deployment
+
