@@ -217,3 +217,5 @@ finalización sin ayuda, y errores cometidos.
 >   números, no como etiquetas, en la tabla principal.
 > - *Ayuda y documentación:* el producto no tiene ayuda en línea.
 
+## 6.4. Auditoría de Experiencias de Usuario
+
