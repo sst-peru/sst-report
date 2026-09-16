@@ -161,3 +161,39 @@ que no contaminen el relato del problema.
 
 ## 2.3. Needfinding
 
+### 2.3.1. User Personas
+
+<!-- IMAGEN REQUERIDA: exportar cada User Persona desde UXPressia a
+     assets/img/persona-operario.png y assets/img/persona-supervisor.png -->
+
+> **Nota de método.** Los arquetipos que siguen son **hipótesis de trabajo** construidas a
+> partir del análisis del dominio y de la normativa, y deben ser **confirmados o corregidos con
+> las entrevistas reales** antes de la entrega. Se incluyen aquí para orientar el diseño, no
+> como resultado de investigación ya realizada.
+
+![User Persona - Operario](../assets/img/persona-operario.png)
+
+| | **Persona 1 (hipótesis): el operario que ve el peligro** |
+|---|---|
+| Nombre | <!-- COMPLETAR tras las entrevistas --> |
+| Edad / Distrito | <!-- COMPLETAR --> |
+| Ocupación | Operario de obra civil |
+| Dispositivos | Android de gama media, plan prepago con datos limitados |
+| Objetivos | Terminar su jornada sin accidentes; que lo que advierte se corrija; no tener problemas con su supervisor |
+| Frustraciones | Llenar formatos le quita tiempo; no sabe si lo que reportó se atendió; a veces no hay señal donde trabaja |
+| Motivaciones | La seguridad propia y la de sus compañeros; evitar la pérdida de días de trabajo por una lesión |
+| Cómo se relaciona con el producto | Lo abre solo cuando ve algo; espera resolverlo en menos de un minuto |
+
+![User Persona - Supervisor](../assets/img/persona-supervisor.png)
+
+| | **Persona 2 (hipótesis): el responsable de que el sistema funcione** |
+|---|---|
+| Nombre | <!-- COMPLETAR tras las entrevistas --> |
+| Edad / Distrito | <!-- COMPLETAR --> |
+| Ocupación | Supervisor de SST / miembro del comité |
+| Dispositivos | Laptop de trabajo y celular; usa Excel a diario |
+| Objetivos | Que no ocurran accidentes; poder demostrar ante una inspección que el sistema opera |
+| Frustraciones | Consolidar información dispersa; enterarse tarde de los peligros; matriz IPERC desactualizada |
+| Motivaciones | Responsabilidad profesional y legal; reducir la exposición de la empresa |
+| Cómo se relaciona con el producto | Lo usa a diario desde el panel web y ocasionalmente desde el celular en obra |
+
