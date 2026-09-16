@@ -68,3 +68,17 @@ una decisión.
 | Q4 | ¿El aumento de reportes se traduce en más hallazgos cerrados o solo en más cola? | Decide si hay que trabajar sobre la capacidad de cierre antes de escalar la captura |
 | Q5 | ¿La posibilidad de reportar de forma anónima aumenta los reportes de actos inseguros de terceros? | Decide si se implementa el reporte anónimo |
 
+### 8.1.4. Question Backlog
+
+Priorización por el criterio de mayor incertidumbre combinada con mayor costo de equivocarse.
+
+| Prioridad | ID | Pregunta | Incertidumbre | Costo de equivocarse | Puntaje |
+|---|---|---|---|---|---|
+| 1 | Q1 | Fricción del formulario | Alta | Alto | 9 |
+| 2 | Q4 | Captura frente a capacidad de cierre | Alta | Alto | 9 |
+| 3 | Q2 | Peso real del uso sin conexión | Media | Alto | 6 |
+| 4 | Q3 | Foto obligatoria | Media | Medio | 4 |
+| 5 | Q5 | Reporte anónimo | Alta | Bajo | 3 |
+
+La pregunta Q1 encabeza el backlog y es la que se somete a experimento en este ciclo.
+
