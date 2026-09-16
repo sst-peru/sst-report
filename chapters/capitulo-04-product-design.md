@@ -183,3 +183,5 @@ La navegación es idéntica en concepto entre web y móvil para un mismo rol: lo
 hacer en una plataforma puede hacerlo en la otra. Cambia solo el mecanismo —barra lateral en
 web, barra inferior en móvil— por convención de cada entorno.
 
+## 4.3. Landing Page UI Design
+
