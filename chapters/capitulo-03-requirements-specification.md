@@ -18,3 +18,17 @@ Las historias se agrupan en nueve épicas. Los criterios de aceptación siguen e
 (Dado / Cuando / Entonces). Las historias técnicas (TS) corresponden a trabajo de infraestructura
 sin valor directo para el usuario final pero necesario para sostener el producto.
 
+### Épicas
+
+| ID | Épica | Descripción |
+|---|---|---|
+| EP01 | Acceso y cuentas | Registro, autenticación y administración de usuarios y roles. |
+| EP02 | Reporte de actos y condiciones inseguras | Captura del hallazgo en campo, con evidencia y operación sin conexión. |
+| EP03 | Gestión del hallazgo | Seguimiento desde la recepción hasta el cierre verificado. |
+| EP04 | Matriz IPERC | Identificación de peligros, evaluación de riesgos y controles. |
+| EP05 | Control de EPP | Catálogo, entregas, vencimientos y conformidad del trabajador. |
+| EP06 | Inspecciones periódicas | Programación, ejecución con checklist y cumplimiento. |
+| EP07 | Comité de SST | Constitución, miembros, actas de reunión y acuerdos. |
+| EP08 | Métricas y evidencia | Indicadores de gestión y exportación para auditorías. |
+| EP09 | Experimento A/B | Asignación de variantes y medición de resultados. |
+
