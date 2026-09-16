@@ -167,3 +167,32 @@ errores de tipo y ESLint sin advertencias sobre los 22 archivos de TypeScript de
 
 ## 6.3. Validation Interviews
 
+### 6.3.1. Diseño de Entrevistas
+
+Las entrevistas de validación se realizan sobre el producto funcionando, no sobre el concepto.
+El entrevistado ejecuta tareas reales mientras se observa y se registra.
+
+**Tareas a ejecutar — segmento operario**
+
+1. Regístrate en la aplicación con el RUC que te doy.
+2. Reporta esta condición insegura que te muestro, con foto.
+3. Muéstrame dónde ves si tu reporte ya fue atendido.
+4. Da conformidad a la entrega de EPP que tienes pendiente.
+
+**Tareas a ejecutar — segmento supervisor**
+
+1. Encuentra el hallazgo crítico que está abierto hace más días.
+2. Asígnalo a alguien de tu equipo y ciérralo indicando qué se hizo.
+3. Agrega a la matriz IPERC un peligro que venga de ese hallazgo.
+4. Genera la evidencia que le mostrarías a un inspector de SUNAFIL.
+
+**Preguntas posteriores a las tareas**
+
+1. ¿Qué te resultó más confuso de lo que acabas de hacer?
+2. ¿Qué esperabas que pasara y no pasó?
+3. Si mañana tuvieras esto en tu trabajo, ¿lo usarías? ¿Qué te lo impediría?
+4. ¿Qué le falta para reemplazar lo que usas hoy?
+
+**Métricas de observación por tarea:** tiempo de ejecución, número de toques o clics,
+finalización sin ayuda, y errores cometidos.
+
