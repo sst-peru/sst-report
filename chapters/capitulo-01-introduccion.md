@@ -27,12 +27,26 @@ API REST que ambos consumen.
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
-<!-- IMAGEN REQUERIDA: foto del integrante en assets/img/perfil-<apellido>.jpg (formato
-     cuadrado, aproximadamente 400x400 px) -->
+<!-- IMAGEN REQUERIDA: una foto por integrante, cuadrada y de aproximadamente 400x400 px, en
+     assets/img/perfil-1.jpg, perfil-2.jpg y perfil-3.jpg -->
+
+**Integrante 1**
 
 | | |
 |---|---|
-| <img src="../assets/img/perfil-integrante.jpg" width="130"> | **<!-- COMPLETAR: Apellidos y Nombres -->**<br>Código: <!-- COMPLETAR --><br>Carrera: Ingeniería de Software<br><br><!-- COMPLETAR: párrafo de resumen con los principales conocimientos técnicos y habilidades que aportas al equipo. Sé concreto: lenguajes, frameworks, herramientas y experiencias previas relevantes. --> |
+| <img src="../assets/img/perfil-1.jpg" width="130"> | **<!-- COMPLETAR: Apellidos y Nombres -->**<br>**Código:** <!-- COMPLETAR --><br>**Carrera:** <!-- COMPLETAR --><br><br><!-- COMPLETAR: párrafo de resumen. Indicar los principales conocimientos técnicos y habilidades que aporta al equipo, siendo concreto: lenguajes, frameworks, herramientas y experiencias previas relevantes. --> |
+
+**Integrante 2**
+
+| | |
+|---|---|
+| <img src="../assets/img/perfil-2.jpg" width="130"> | **<!-- COMPLETAR: Apellidos y Nombres -->**<br>**Código:** <!-- COMPLETAR --><br>**Carrera:** <!-- COMPLETAR --><br><br><!-- COMPLETAR: párrafo de resumen con los conocimientos técnicos y habilidades que aporta al equipo. --> |
+
+**Integrante 3**
+
+| | |
+|---|---|
+| <img src="../assets/img/perfil-3.jpg" width="130"> | **<!-- COMPLETAR: Apellidos y Nombres -->**<br>**Código:** <!-- COMPLETAR --><br>**Carrera:** <!-- COMPLETAR --><br><br><!-- COMPLETAR: párrafo de resumen con los conocimientos técnicos y habilidades que aporta al equipo. --> |
 
 ## 1.2. Solution Profile
 
@@ -75,11 +89,10 @@ papel, pero no fluye a tiempo hacia quien puede actuar.**
 
 | # | Objetivo |
 |---|---|
-| O1 | Reducir el tiempo entre la detección de un peligro y su registro formal a menos de un minuto de trabajo del operario. |
-| O2 | Garantizar que ningún reporte se pierda por falta de conectividad en obra, mina o planta. |
-| O3 | Dar al comité de SST trazabilidad completa del hallazgo: quién reportó, quién fue asignado, qué se hizo y cuándo se cerró. |
-| O4 | Mantener la matriz IPERC alimentada por hallazgos reales de campo y no solo por revisiones periódicas. |
-| O5 | Producir, en un clic, la evidencia documental que una inspección de SUNAFIL requiere. |
+| O1 | Reducir a menos de un minuto de trabajo del operario el tiempo entre la detección de un peligro y su registro formal, incluso sin conectividad en obra, mina o planta. |
+| O2 | Dar al comité de SST trazabilidad completa del hallazgo: quién reportó, quién fue asignado, qué se hizo y cuándo se cerró. |
+| O3 | Mantener la matriz IPERC alimentada por hallazgos reales de campo y no solo por revisiones periódicas. |
+| O4 | Producir, en un clic, la evidencia documental que una inspección de SUNAFIL requiere. |
 
 **Restricciones y alcance**
 
@@ -251,10 +264,3 @@ gestión funcione y de responder ante la autoridad. Trabajan con computadora y c
 hojas de cálculo y formatos, y dedican una parte sustancial de su tiempo a consolidar
 información dispersa en lugar de a intervenir sobre el riesgo. Son el usuario que decide la
 compra o la recomienda.
-
-> **PENDIENTE — sustento estadístico.** Cada segmento debe respaldarse con información
-> demográfica y estadística citada: número de empresas en el rango de 20 a 200 trabajadores en
-> Lima, población ocupada en construcción y penetración de smartphones Android en el segmento.
-> Fuentes sugeridas: INEI (Encuesta Nacional de Hogares, Directorio Central de Empresas),
-> MTPE (boletines de notificaciones de accidentes) y OSIPTEL (estadísticas de telefonía móvil).
-> Citar en formato APA en el capítulo de Bibliografía.
