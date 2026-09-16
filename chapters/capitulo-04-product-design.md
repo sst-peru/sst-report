@@ -60,3 +60,16 @@ móvil los iconos provienen de Material Icons, limitados a la navegación inferi
 <!-- IMAGEN REQUERIDA: captura de la paleta y la tipografía aplicadas, o tabla de color
      exportada desde Figma, en assets/img/style-guide-paleta.png -->
 
+### 4.1.2. Web Style Guidelines
+
+| Elemento | Definición |
+|---|---|
+| Estructura | Barra lateral fija de 236 px, barra superior de 52 px con razón social y fecha, contenido con ancho máximo de 1320 px y pie de página con la referencia normativa |
+| Navegación | Vertical en la barra lateral, filtrada por rol; la opción activa se marca con filete azul a la izquierda |
+| Tablas | Cabecera gris en versalitas, filas alternadas, realce al pasar el cursor, desbordamiento horizontal contenido en el propio bloque |
+| Indicadores | Tarjeta con filete superior azul, etiqueta en versalitas y cifra en serif de 32 px; el filete se vuelve rojo cuando el valor exige atención |
+| Formularios | Etiqueta en versalitas sobre el control, rejilla que se adapta de una a varias columnas, controles de elección con estilo propio (la casilla se llena de azul marino con el check en blanco) |
+| Modales | Superficie blanca con filete superior azul sobre fondo azul marino translúcido |
+| Estados | Píldoras rectangulares de 2 px de radio, con fondo y borde del color del estado |
+| Puntos de quiebre | 980 px: la barra lateral pasa a barra horizontal superior; 720 px: las rejillas colapsan a una columna |
+
