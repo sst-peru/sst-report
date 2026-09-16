@@ -531,3 +531,24 @@ classDiagram
     Experiment "1" o-- "*" Report : variante
 ```
 
+### 4.9.2. Class Dictionary
+
+| Clase | Responsabilidad | Atributos y métodos destacados |
+|---|---|---|
+| `Company` | Empresa obligada por la Ley N° 29783. Raíz de agregado de todo el sistema: nada existe fuera de una empresa. | `ruc` único; `requires_committee()` devuelve verdadero desde 20 trabajadores, umbral que la ley fija para exigir comité paritario |
+| `Area` | Área, sede o frente de trabajo donde se ubican los peligros. | Único por nombre dentro de la empresa |
+| `User` | Usuario del sistema. El rol determina qué puede hacer, en web y en móvil por igual. | `role` en {OPERARIO, SUPERVISOR, COMITE, ADMIN}; `can_manage()` centraliza la regla de quién puede asignar y cerrar |
+| `Category` | Categoría de peligro configurable por empresa, asociada al tipo de hallazgo. | `kind` restringe qué categorías aplican a actos y cuáles a condiciones |
+| `Report` | Reporte de un acto o condición insegura. Entidad central del sistema. | `client_uuid` habilita la sincronización sin duplicados; `occurred_at` separa la fecha del hecho de la de recepción; `resolution_hours()` es el insumo del MTTR |
+| `ReportAction` | Entrada de la bitácora del hallazgo. | Registra autor, nota, estado resultante y fecha; es la evidencia de trazabilidad |
+| `IpercMatrix` | Versión de la matriz IPERC. | `version` correlativa por empresa; `status` en {BORRADOR, VIGENTE, HISTORICA} |
+| `IpercEntry` | Fila de la matriz: peligro de un puesto y sus controles. | `risk_score()` = probabilidad × consecuencia; `risk_level()` traduce el puntaje a la escala normativa; `source_report` documenta el origen en campo |
+| `EppItem` | EPP del catálogo de la empresa. | `lifespan_days` determina el vencimiento de cada entrega |
+| `EppDelivery` | Entrega de un EPP a un trabajador. Registro obligatorio. | Calcula `expires_at` al guardar; `acknowledged` guarda la conformidad del trabajador |
+| `InspectionSchedule` | Programa de inspecciones: qué, cada cuánto y quién. | `checklist` en JSON; `generate_next()` crea la siguiente ocurrencia según la frecuencia |
+| `Inspection` | Ocurrencia concreta de una inspección programada. | `is_overdue()` marca el incumplimiento cuando pasó la fecha sin ejecución |
+| `Committee` | Comité de SST de la empresa, o supervisor único si tiene menos de 20 trabajadores. | `quorum_required()` = mitad más uno de los titulares; `is_paritario()` verifica la igualdad de representaciones |
+| `Meeting` | Acta de reunión del comité. | `number` correlativo asignado por el servidor; `quorum_reached()` determina la validez del acta |
+| `Agreement` | Acuerdo adoptado en una reunión, con responsable y plazo. | Puede referenciar el hallazgo o la entrada IPERC que lo originó |
+| `Experiment` / `Assignment` | Experimento A/B y la asignación de cada usuario. | `variant_for()` usa un hash estable de clave + identificador de usuario, de modo que la asignación es reproducible y calculable sin conexión |
+
