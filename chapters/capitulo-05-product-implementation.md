@@ -26,3 +26,74 @@
 | Pruebas backend | pytest + pytest-django | 8.3 / 4.9 | Suite de pruebas del API |
 | Análisis estático | ruff / ESLint / TypeScript | 0.8 / 9.17 / 5.7 | Verificación sin ejecutar el código |
 
+### 5.1.2. Source Code Management
+
+**Repositorios.** El producto se organiza en tres repositorios independientes más el del informe,
+todos dentro de la organización pública `sst-peru`:
+
+| Repositorio | Contenido |
+|---|---|
+| `sst-api` | API REST en Django; concentra el modelo de dominio y las reglas de negocio |
+| `sst-web` | Panel web en React |
+| `sst-mobile` | Aplicación Android nativa |
+| `sst-report` | Este informe |
+
+La separación responde a que cada uno tiene su propio ciclo de construcción, su propio pipeline
+y su propio lenguaje; un monorepo habría obligado a ejecutar los tres pipelines ante cualquier
+cambio.
+
+**GitFlow.** Se aplica el flujo de ramas en los cuatro repositorios:
+
+```mermaid
+gitGraph
+    commit id: "inicial"
+    branch develop
+    checkout develop
+    commit id: "base"
+    branch feature/authentication
+    checkout feature/authentication
+    commit id: "feat(auth)"
+    checkout develop
+    merge feature/authentication
+    branch feature/reports-offline
+    checkout feature/reports-offline
+    commit id: "feat(reports)"
+    checkout develop
+    merge feature/reports-offline
+    checkout main
+    merge develop tag: "tf"
+```
+
+| Rama | Propósito | Sale de | Vuelve a |
+|---|---|---|---|
+| `main` | Solo versiones entregables, etiquetadas | — | — |
+| `develop` | Integración del trabajo en curso | main | — |
+| `feature/*` | Nueva funcionalidad | develop | develop |
+| `fix/*` | Corrección de defecto | develop | develop |
+| `docs/*` | Redacción del informe | develop | develop |
+| `chore/*` | Infraestructura y configuración | develop | develop |
+
+Reglas de protección aplicadas en GitHub: `main` y `develop` no aceptan push directo ni
+force push; la integración ocurre exclusivamente por Pull Request; `develop` es la rama por
+defecto, de modo que los PR apuntan ahí sin intervención.
+
+**Conventional Commits.** Todos los mensajes siguen `tipo(alcance): descripción`. Ejemplos
+reales del historial del proyecto:
+
+```
+feat(auth): agregar empresa, areas, usuario con roles y endpoints de registro y login
+feat(reports): agregar reportes de actos y condiciones inseguras con cierre y bitacora
+feat(sync): subir reportes pendientes con workmanager cuando vuelve la red
+fix(reports): redondear la latitud y longitud del gps antes de validar
+fix(auth)!: impedir que el registro publico elija su propio rol y agregar endpoint de usuarios
+test(reports): cubrir creacion offline, permisos por rol y calculo de mttr
+ci: agregar workflows de tests, lint y validacion de conventional commits
+```
+
+El signo `!` marca un cambio que rompe el contrato del API, como ocurrió al retirar el campo
+`role` del registro público.
+
+La convención se verifica en dos momentos: un hook `commit-msg` local la rechaza antes de crear
+el commit, y un workflow de GitHub Actions la valida sobre todos los commits del Pull Request.
+Tener ambas capas importa porque el hook local puede no estar instalado en una máquina nueva.
+
