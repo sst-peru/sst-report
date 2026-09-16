@@ -112,3 +112,20 @@ La pregunta Q1 encabeza el backlog y es la que se somete a experimento en este c
 
 ## 8.2. Experiment Design
 
+### 8.2.1. Hypotheses
+
+**Hipótesis nula (H₀).** No existe diferencia en la media de reportes por usuario entre el grupo
+expuesto al formulario rápido y el expuesto al formulario largo.
+
+> H₀: μ_rápido = μ_largo
+
+**Hipótesis alterna (H₁).** La media de reportes por usuario del grupo expuesto al formulario
+rápido es distinta de la del grupo expuesto al formulario largo.
+
+> H₁: μ_rápido ≠ μ_largo
+
+Se plantea la prueba **a dos colas** aunque la hipótesis de negocio sea direccional. La razón es
+metodológica: un formulario más corto podría, en principio, producir reportes de menor calidad y
+desalentar su uso al percibirse como poco serio. Cerrar esa posibilidad por anticipado sería
+diseñar el experimento para confirmar lo que ya se cree.
+
