@@ -212,3 +212,25 @@ convierten al sistema en una herramienta de gestión y no solo en un repositorio
 > **no emite notificaciones**. Documentarlo así; implementar las notificaciones es el siguiente
 > incremento natural del producto.
 
+### 7.4.4. Notification Pipeline Components
+
+```mermaid
+flowchart LR
+    A[Evento de dominio<br/>hallazgo crítico, inspección vencida] --> B[Regla de alerta]
+    B --> C{Severidad}
+    C -->|Crítica| D[Notificación push al responsable]
+    C -->|Media| E[Resumen diario por correo]
+    C -->|Informativa| F[Indicador en el tablero]
+    D --> G[Registro de la notificación enviada]
+    E --> G
+    G --> H[Medición: ¿se atendió tras la alerta?]
+```
+
+El último paso del diagrama es intencional: una notificación cuyo efecto no se mide es indistinguible
+del ruido. Registrar si el hallazgo se atendió después de la alerta permite evaluar
+experimentalmente si las notificaciones mejoran el MTTR, que es una hipótesis natural para el
+siguiente ciclo.
+
+> **PENDIENTE — implementación.** Canal de notificación previsto: Firebase Cloud Messaging para
+> la aplicación Android y correo electrónico para el resumen diario. No implementado en esta
+> entrega.
