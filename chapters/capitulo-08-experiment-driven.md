@@ -354,3 +354,7 @@ verifica con las mismas pruebas.
 > **PENDIENTE.** <!-- IMAGEN REQUERIDA: captura del panel del experimento con el aviso de datos
 > de demostración y el intervalo de confianza, en assets/img/evidencia-tobe-web.png -->
 
+### 8.3.7. Implemented To-Be Native-Mobile Application Evidence
+
+> **PENDIENTE.** <!-- IMAGEN REQUERIDA -->
+
