@@ -446,3 +446,30 @@ que el resultado del A/B.
 
 ## 8.6. Continuous Learning
 
+### 8.6.1. Shareback Session Artifacts: Learning Workflow
+
+```mermaid
+flowchart LR
+    A[Resultado del experimento] --> B[Sesión de shareback]
+    B --> C[Qué creíamos]
+    B --> D[Qué observamos]
+    B --> E[Qué aprendimos]
+    B --> F[Qué decidimos]
+    F --> G[Cambios en el backlog]
+    F --> H[Supuestos actualizados]
+    H --> I[Nuevas preguntas al backlog]
+    I --> J[Siguiente Experiment Card]
+    G --> K[Siguiente sprint]
+```
+
+**Artefactos de la sesión de shareback**
+
+| Artefacto | Contenido |
+|---|---|
+| Resumen de una página | Pregunta, hipótesis, método, resultado y decisión |
+| Tabla de supuestos actualizada | Cada supuesto del apartado 8.1.2 marcado como confirmado, refutado o aún sin evidencia |
+| Question Backlog repriorizado | Con las preguntas nuevas surgidas del experimento |
+| Registro de decisión | Qué se decidió, quién decidió y con qué evidencia |
+
+> **PENDIENTE.** Realizar la sesión y adjuntar los artefactos con su fecha.
+
