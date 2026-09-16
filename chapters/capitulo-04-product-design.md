@@ -118,7 +118,7 @@ primero) y por severidad cuando la prioridad manda.
 | Secuencial | Formulario rápido de reporte: tres pasos con avance explícito |
 | Cronológico | Bandeja de hallazgos, bitácora, actas del comité |
 | Por tópico | Menú principal: reportes, IPERC, inspecciones, EPP, comité |
-| Por audiencia | El menú se filtra por rol: el operario ve cuatro opciones, el supervisor nueve |
+| Por audiencia | El menú se filtra por rol: en la web el operario ve seis opciones y el supervisor nueve; en el móvil, cuatro destinos en la barra inferior más una pantalla "Más" |
 
 ### 4.2.2. Labeling Systems
 
@@ -146,7 +146,20 @@ no se indexa por requerir autenticación.
 | `<meta name="description">` | Resguardo — Sistema de Gestión de Seguridad y Salud en el Trabajo (Ley N° 29783) |
 | `<html lang>` | `es-PE` |
 | `<meta name="viewport">` | `width=device-width, initial-scale=1.0` |
-| Open Graph | <!-- COMPLETAR en la landing page: og:title, og:description, og:image, og:url --> |
+| `<meta name="theme-color">` | `#12304f` (azul marino institucional) |
+| `<meta name="robots">` | `index, follow` |
+| `og:type` / `og:site_name` / `og:locale` | `website` / `Resguardo` / `es_PE` |
+| `og:title` | Resguardo — Sistema de Gestión de SST |
+| `og:description` | Reporte de actos y condiciones inseguras desde el celular, con foto, ubicación y sin depender de la señal. Seguimiento hasta el cierre y evidencia lista para una inspección. |
+| `og:url` / `og:image` | URL del despliegue y su imagen de presentación |
+| `twitter:card` | `summary_large_image` |
+
+Las etiquetas están declaradas en el `index.html` de `sst-web`, de modo que se sirven con la
+página pública sin necesidad de ejecutar JavaScript: un rastreador las lee en la primera
+respuesta del servidor.
+
+<!-- COMPLETAR: sustituir el dominio de ejemplo de `og:url` y publicar la imagen de
+     `og:image` (1200 × 630 px) una vez definido el dominio del despliegue. -->
 
 ### 4.2.4. Searching Systems
 
@@ -162,43 +175,162 @@ inspecciones vencidas, las entregas de EPP de un trabajador.
 
 ### 4.2.5. Navigation Systems
 
+La navegación responde a una sola pregunta: **qué puede hacer este rol, aquí y ahora**. No hay un
+menú universal que luego deshabilite opciones; cada rol recibe únicamente los destinos que le
+corresponden, y esa filtración ocurre en el mismo lugar en las dos plataformas.
+
+#### Niveles de navegación
+
+| Nivel | Web | Móvil | Propósito |
+|---|---|---|---|
+| **Global** | Barra lateral fija de 236 px, siempre visible | Barra inferior de cuatro destinos más una pantalla "Más" | Moverse entre procesos del sistema de gestión |
+| **Local** | Acciones dentro de la pantalla: *Asignar*, *Cerrar*, *Nueva versión*, *Registrar entrega* | Las mismas acciones, como botones de ancho completo | Actuar sobre el registro que se está viendo |
+| **Contextual** | Filtros de la bandeja (estado, tipo, área) y selector de versión de la matriz | Filtros equivalentes en chips | Reducir un listado sin cambiar de pantalla |
+| **De retorno** | El título del detalle enlaza a su listado; el logotipo lleva al inicio del rol | Botón de retroceso del sistema y de la barra superior | Volver sin perder el contexto |
+
+No hay migas de pan (*breadcrumbs*): la jerarquía tiene como máximo dos niveles —listado y
+detalle—, y un rastro de migas de dos escalones ocupa espacio sin aportar orientación.
+
+#### Destinos por rol y plataforma
+
+La tabla siguiente es la verificación de la paridad exigida al proyecto. Cada fila es un destino
+real del código: la barra lateral de la web se arma desde una lista con marca `managerOnly`, y la
+barra inferior del móvil desde dos listas de pestañas, una por rol.
+
+| Destino | Ruta web | Operario (web) | Operario (móvil) | Supervisor y comité (web) | Supervisor y comité (móvil) |
+|---|---|---|---|---|---|
+| Tablero de indicadores | `/` | — | — | Barra lateral | Barra inferior |
+| Reportar un hallazgo | `/reportes/nuevo` | Barra lateral | Barra inferior | Barra lateral | Menú "Más" |
+| Reportes | `/reportes` | Barra lateral | Barra inferior | Barra lateral | Barra inferior |
+| Detalle del hallazgo | `/reportes/:id` | Desde el listado | Desde el listado | Desde el listado | Desde el listado |
+| Matriz IPERC | `/iperc` | Barra lateral | Menú "Más" | Barra lateral | Menú "Más" |
+| Inspecciones | `/inspecciones` | Barra lateral | Menú "Más" | Barra lateral | Barra inferior |
+| Equipos de protección | `/epp` | Barra lateral | Barra inferior ("Mis EPP") | Barra lateral | Menú "Más" |
+| Comité de SST | `/comite` | Barra lateral | Menú "Más" | Barra lateral | Menú "Más" |
+| Reportes guardados en el equipo | — | — | Menú "Más" | — | Menú "Más" |
+| Experimento A/B | `/experimento` | — | — | Barra lateral | — |
+| Usuarios y áreas | `/usuarios` | — | — | Barra lateral | — |
+
+Tres lecturas de esa tabla:
+
+1. **Para el operario la paridad es completa.** Los seis destinos que ve en la web son los
+   mismos que alcanza en el móvil. Cambia dónde está cada uno: lo que hace todos los días
+   —reportar, ver sus reportes, ver sus EPP— ocupa la barra inferior, y lo que consulta de vez en
+   cuando queda un toque más adentro, en "Más". Priorizar por frecuencia de uso es el criterio
+   de una barra de cuatro destinos; ocultar capacidades no lo es.
+2. **Para el supervisor hay dos destinos solo en la web**, *Usuarios y áreas* y *Experimento A/B*.
+   No es un pendiente: son las historias US04, US05, US41 y US40, especificadas como web desde el
+   Capítulo III. Dar de alta usuarios, definir áreas y leer los resultados de un experimento son
+   tareas de escritorio, con formularios largos y tablas comparativas; nadie las hace con una mano
+   mientras sostiene un casco con la otra. La regla de paridad aplica a las capacidades de campo
+   y de gestión del hallazgo, y estas dos quedan documentadas como excepción razonada.
+3. **Un destino existe solo en el móvil**, *Reportes guardados en el equipo*, porque solo el móvil
+   tiene una cola local: es la lista de lo que se capturó sin señal y aún no se ha sincronizado.
+   En la web no tendría contenido que mostrar.
+
+#### Reglas de comportamiento
+
+| Regla | Comportamiento | Por qué |
+|---|---|---|
+| Destino inicial según rol | El operario entra a *Reportar*; el supervisor y el comité, al *Tablero* | La primera pantalla debe ser la tarea más probable de ese rol, no una bienvenida |
+| Ruta no autorizada | Un operario que escriba `/usuarios` es redirigido a sus reportes | Un 403 en pantalla no le sirve de nada a quien no puede estar ahí |
+| Ruta inexistente | Cualquier otra ruta redirige al inicio del rol | Evita pantallas en blanco por un enlace viejo o un error de tipeo |
+| Sesión no iniciada | El acceso a una ruta privada lleva a la página pública, no a un error | Quien llega sin cuenta debe poder entender qué es el sistema |
+| Opción activa | Filete azul a la izquierda en la web; destino resaltado en la barra inferior del móvil | Ubicación permanente sin recurrir a migas de pan |
+| Estado al volver | El móvil conserva el estado de cada pestaña al cambiar entre ellas | Volver a una lista y encontrarla al inicio obliga a repetir el trabajo de búsqueda |
+| Cierre de sesión | Siempre en el pie de la barra lateral y en la pantalla "Más" | Una acción con consecuencia se coloca lejos de la navegación frecuente |
+
+#### Mapa de navegación
+
 ```mermaid
 flowchart LR
-    Login[Acceso] --> Rol{Rol}
+    Publica[Página pública] --> Acceso[Acceso]
+    Publica --> Registro[Registro]
+    Registro --> Rol{Rol del usuario}
+    Acceso --> Rol
+
     Rol -->|Operario| Reportar[Reportar]
     Rol -->|Supervisor / Comité| Tablero[Tablero]
 
     Reportar --> MisReportes[Mis reportes]
-    MisReportes --> Detalle[Detalle del hallazgo]
     Reportar --> MisEPP[Mis EPP]
-    Reportar --> MasOp[Más: IPERC, comité, inspecciones]
+    Reportar --> MasOp["Más: IPERC · Comité · Inspecciones · Guardados en el equipo"]
+    MisReportes --> Detalle[Detalle del hallazgo]
 
     Tablero --> Hallazgos[Reportes]
-    Hallazgos --> Detalle
     Tablero --> Inspecciones[Inspecciones]
-    Tablero --> MasSup[Más: IPERC, EPP, comité, usuarios, experimento]
+    Tablero --> MasSup["Más: IPERC · Comité · EPP · Reportar · Guardados en el equipo"]
+    Tablero --> SoloWeb["Solo web: Usuarios y áreas · Experimento A/B"]
+    Hallazgos --> Detalle
+    Detalle --> Asignar[Asignar responsable]
+    Detalle --> Cerrar[Cerrar con acción correctiva]
 ```
 
-La navegación es idéntica en concepto entre web y móvil para un mismo rol: lo que un rol puede
-hacer en una plataforma puede hacerlo en la otra. Cambia solo el mecanismo —barra lateral en
-web, barra inferior en móvil— por convención de cada entorno.
+El diagrama vale para las dos plataformas: lo que cambia es el mecanismo —barra lateral en la web,
+barra inferior más pantalla "Más" en el móvil—, no el conjunto de destinos ni el camino entre
+ellos. Un supervisor que aprendió a moverse en la web no tiene que volver a aprender nada al
+abrir el celular.
 
 ## 4.3. Landing Page UI Design
 
+La página pública es lo único del producto que ve alguien que todavía no tiene cuenta. Por eso
+tiene una restricción autoimpuesta que conviene declarar: **solo anuncia lo que el sistema hace
+hoy**. Ninguna de las capacidades descritas en ella pertenece al backlog propuesto del Capítulo
+III; si una funcionalidad está marcada *Propuesta*, no aparece en la página.
+
+Vive en la misma aplicación web (`sst-web`), en la ruta pública `/inicio`, y comparte los tokens
+de color y tipografía del panel. Un visitante que después inicia sesión no siente que entró a
+otro producto. Además, es el destino al que redirige cualquier ruta privada cuando no hay sesión
+iniciada: quien llega por un enlace sin estar autenticado encuentra una explicación, no un error.
+
 ### 4.3.1. Landing Page Wireframe
 
-<!-- IMAGEN REQUERIDA: wireframe de la landing page (Figma o Adobe XD) en
-     assets/img/landing-wireframe.png -->
+Estructura de arriba hacia abajo, con la intención de cada bloque:
 
-> **PENDIENTE.** Estructura propuesta, de arriba hacia abajo: barra de navegación con logo y
-> acceso; encabezado con la propuesta de valor en una frase y llamada a la acción; bloque del
-> problema con las cifras del MTPE; bloque de funcionalidades en tres columnas (reporte en
-> campo, seguimiento, evidencia); bloque de cumplimiento normativo citando la Ley N° 29783;
-> planes; formulario de contacto; pie con datos de la empresa.
+| # | Bloque | Contenido | Qué debe lograr |
+|---|---|---|---|
+| 1 | Barra de navegación | Logotipo, anclas a las secciones y botón *Ingresar* | Que el usuario que ya es cliente llegue al acceso en un clic, sin leer nada |
+| 2 | Encabezado | Referencia normativa, titular, párrafo de propuesta de valor y dos llamadas a la acción | Decir en una frase qué resuelve y para quién |
+| 3 | Panel del recorrido | Los cinco pasos del hallazgo: se detecta, se registra, se asigna, se cierra, se documenta | Mostrar el producto como un proceso completo, no como una lista de pantallas |
+| 4 | El problema | Tres tarjetas: el reporte no llega, el peligro sigue ahí, no hay cómo demostrarlo | Que el visitante se reconozca antes de que se le ofrezca nada |
+| 5 | El sistema | Seis capacidades: reporte en campo, seguimiento, evidencia, IPERC, EPP e inspecciones, comité | Responder qué hace, con el vocabulario del dominio |
+| 6 | Cumplimiento | Tabla obligación → base normativa → dónde queda registrado | Convertir la promesa en trazabilidad verificable |
+| 7 | Planes | Tres niveles según número de trabajadores | Que el visitante se ubique sin pedir una cotización |
+| 8 | Contacto | Bloque sobre fondo azul marino con correo y enlace de solicitud de demostración | Cerrar con una acción, no con un formulario que no va a ninguna parte |
+| 9 | Pie | Referencia a la Ley N° 29783 y su Reglamento | Reforzar el encuadre institucional |
+
+**Decisiones de diseño que conviene sustentar en la exposición**
+
+| Decisión | Razón |
+|---|---|
+| El bloque de planes no muestra precios | El precio depende del número de trabajadores y del acompañamiento; publicar una cifra inventada sería peor que no publicar ninguna |
+| El contacto es un enlace de correo, no un formulario | Un formulario que no envía a ningún servidor es una promesa falsa; el enlace abre el correo del visitante con los campos ya planteados |
+| La cifra oficial del MTPE está condicionada en el código | La página tiene preparado el bloque de la cifra, pero no lo muestra mientras no se cargue el dato con su fuente. Es el mismo criterio del Capítulo I: antes que una cifra sin respaldo, ninguna |
+| La tabla de cumplimiento cita el artículo | Un responsable de SST evalúa el producto por su cobertura normativa, no por adjetivos |
+
+<!-- IMAGEN REQUERIDA: wireframe de la landing page en assets/img/landing-wireframe.png.
+     Puede dibujarse en Figma sobre la estructura de nueve bloques de la tabla anterior. -->
 
 ### 4.3.2. Landing Page Mock-up
 
-<!-- IMAGEN REQUERIDA: mock-up de la landing page en assets/img/landing-mockup.png -->
+La página está construida y es navegable: no hay un mock-up estático que difiera de ella. El
+mock-up de esta sección son capturas de la página real.
+
+<!-- IMAGEN REQUERIDA: capturas de la landing page desplegada en
+     assets/img/landing-mockup-hero.png, landing-mockup-problema.png,
+     landing-mockup-cumplimiento.png y landing-mockup-planes.png.
+     Se obtienen levantando la web y abriendo http://localhost:5173/inicio -->
+
+**Aplicación de la guía de estilo.** La página reutiliza los tokens de `global.css` sin introducir
+colores nuevos: azul marino para la marca, las acciones y el bloque de contacto; gris para
+estructura y texto secundario; blanco para las superficies. El titular y los nombres de los
+planes van en la serif del sistema, igual que los títulos del panel. El único elemento que la
+página añade a la identidad es el numeral circular del recorrido, en azul claro, que existe para
+que los cinco pasos se lean como una secuencia y no como una lista.
+
+**Etiquetas SEO.** Las etiquetas `title`, `description`, `lang`, `viewport`, Open Graph y Twitter
+Card declaradas en la sección 4.2.3 viven en el `index.html` de la aplicación web y aplican a esta
+página.
 
 ## 4.4. Mobile Applications UX/UI Design
 
@@ -556,59 +688,98 @@ classDiagram
 
 ### 4.10.1. Relational/Non-Relational Database Diagram
 
-Base de datos relacional PostgreSQL. El modelo se deriva directamente del diagrama de clases;
-las claves foráneas reflejan las relaciones de agregación descritas.
+Base de datos relacional **PostgreSQL** en despliegue y SQLite en desarrollo, con el mismo
+esquema: no se usa ninguna característica propietaria de PostgreSQL más allá del tipo JSON, que
+SQLite emula. El esquema no se escribe a mano; lo generan las migraciones de Django a partir de
+los modelos, de modo que el diagrama siguiente es un reflejo del código y no un documento
+paralelo que pueda desactualizarse.
+
+Son **quince tablas**, más la tabla intermedia de asistencia a las reuniones del comité.
 
 ```mermaid
 erDiagram
-    COMPANY ||--o{ AREA : tiene
-    COMPANY ||--o{ USER : emplea
-    COMPANY ||--o{ CATEGORY : configura
-    COMPANY ||--o{ REPORT : registra
-    COMPANY ||--o{ IPERC_MATRIX : versiona
-    COMPANY ||--o{ EPP_ITEM : cataloga
-    COMPANY ||--o{ INSPECTION_SCHEDULE : programa
-    COMPANY ||--|| COMMITTEE : constituye
+    COMPANY ||--o{ AREA : "define"
+    COMPANY ||--o{ USER : "emplea"
+    COMPANY ||--o{ CATEGORY : "configura"
+    COMPANY ||--o{ REPORT : "registra"
+    COMPANY ||--o{ IPERC_MATRIX : "versiona"
+    COMPANY ||--o{ EPP_ITEM : "cataloga"
+    COMPANY ||--o{ INSPECTION_SCHEDULE : "programa"
+    COMPANY ||--|| COMMITTEE : "constituye"
 
-    USER ||--o{ REPORT : reporta
-    USER ||--o{ REPORT_ACTION : registra
-    USER ||--o{ EPP_DELIVERY : recibe
-    USER ||--o{ COMMITTEE_MEMBER : integra
+    AREA ||--o{ USER : "ubica"
+    AREA ||--o{ REPORT : "ubica"
+    AREA ||--o{ IPERC_ENTRY : "ubica"
+    AREA ||--o{ INSPECTION_SCHEDULE : "ubica"
 
-    REPORT ||--o{ REPORT_ACTION : bitacora
-    REPORT ||--o{ IPERC_ENTRY : origina
-    CATEGORY ||--o{ REPORT : clasifica
-    AREA ||--o{ REPORT : ubica
+    USER ||--o{ REPORT : "reporta"
+    USER ||--o{ REPORT : "es responsable de"
+    USER ||--o{ REPORT_ACTION : "escribe"
+    USER ||--o{ EPP_DELIVERY : "recibe"
+    USER ||--o{ EPP_DELIVERY : "entrega"
+    USER ||--o{ INSPECTION : "ejecuta"
+    USER ||--o{ INSPECTION_SCHEDULE : "es responsable de"
+    USER ||--o{ IPERC_MATRIX : "aprueba"
+    USER ||--o{ IPERC_ENTRY : "es responsable de"
+    USER ||--o{ COMMITTEE_MEMBER : "integra"
+    USER ||--o{ AGREEMENT : "asume"
+    USER ||--o{ ASSIGNMENT : "es asignado en"
 
-    IPERC_MATRIX ||--o{ IPERC_ENTRY : contiene
-    AREA ||--o{ IPERC_ENTRY : ubica
+    CATEGORY ||--o{ REPORT : "clasifica"
+    REPORT ||--o{ REPORT_ACTION : "acumula"
+    REPORT ||--o{ IPERC_ENTRY : "origina"
+    REPORT ||--o{ AGREEMENT : "motiva"
 
-    EPP_ITEM ||--o{ EPP_DELIVERY : entrega
+    IPERC_MATRIX ||--o{ IPERC_ENTRY : "contiene"
+    IPERC_ENTRY ||--o{ AGREEMENT : "motiva"
 
-    INSPECTION_SCHEDULE ||--o{ INSPECTION : genera
-    AREA ||--o{ INSPECTION_SCHEDULE : ubica
+    EPP_ITEM ||--o{ EPP_DELIVERY : "se entrega en"
 
-    COMMITTEE ||--o{ COMMITTEE_MEMBER : compone
-    COMMITTEE ||--o{ MEETING : celebra
-    MEETING ||--o{ AGREEMENT : acuerda
-    REPORT ||--o{ AGREEMENT : motiva
+    INSPECTION_SCHEDULE ||--o{ INSPECTION : "genera"
 
-    EXPERIMENT ||--o{ ASSIGNMENT : asigna
-    USER ||--o{ ASSIGNMENT : pertenece
+    COMMITTEE ||--o{ COMMITTEE_MEMBER : "se compone de"
+    COMMITTEE ||--o{ MEETING : "celebra"
+    MEETING ||--o{ AGREEMENT : "acuerda"
+    MEETING }o--o{ COMMITTEE_MEMBER : "registra asistencia de"
+
+    EXPERIMENT ||--o{ ASSIGNMENT : "asigna"
 
     COMPANY {
         int id PK
         string name
         string ruc UK
+        string address
         int worker_count
+        datetime created_at
+    }
+    AREA {
+        int id PK
+        string name
+        string description
+        bool is_active
+        int company_id FK
     }
     USER {
         int id PK
         string username UK
+        string first_name
+        string last_name
+        string email
+        string password
         string role
         string dni
+        string phone
+        bool is_active
         int company_id FK
         int area_id FK
+    }
+    CATEGORY {
+        int id PK
+        string name
+        string kind
+        string icon
+        bool is_active
+        int company_id FK
     }
     REPORT {
         int id PK
@@ -620,8 +791,11 @@ erDiagram
         string photo
         decimal latitude
         decimal longitude
+        text closure_note
         datetime occurred_at
         datetime created_at
+        datetime updated_at
+        datetime assigned_at
         datetime closed_at
         string form_variant
         bool synced_offline
@@ -631,17 +805,46 @@ erDiagram
         int category_id FK
         int area_id FK
     }
+    REPORT_ACTION {
+        int id PK
+        text note
+        string new_status
+        datetime created_at
+        int report_id FK
+        int author_id FK
+    }
+    IPERC_MATRIX {
+        int id PK
+        int version
+        string status
+        date valid_from
+        datetime created_at
+        int company_id FK
+        int approved_by_id FK
+    }
     IPERC_ENTRY {
         int id PK
         string job_position
         string hazard
         string risk
-        int probability
-        int consequence
+        smallint probability
+        smallint consequence
         text existing_controls
+        text proposed_controls
+        datetime updated_at
         int matrix_id FK
         int area_id FK
+        int responsible_id FK
         int source_report_id FK
+    }
+    EPP_ITEM {
+        int id PK
+        string name
+        string description
+        int lifespan_days
+        int stock
+        bool is_active
+        int company_id FK
     }
     EPP_DELIVERY {
         int id PK
@@ -649,8 +852,20 @@ erDiagram
         datetime delivered_at
         date expires_at
         bool acknowledged
+        string notes
         int item_id FK
         int worker_id FK
+        int delivered_by_id FK
+    }
+    INSPECTION_SCHEDULE {
+        int id PK
+        string title
+        json checklist
+        string frequency
+        bool is_active
+        int company_id FK
+        int area_id FK
+        int responsible_id FK
     }
     INSPECTION {
         int id PK
@@ -660,16 +875,89 @@ erDiagram
         text findings
         json results
         int schedule_id FK
+        int performed_by_id FK
+    }
+    COMMITTEE {
+        int id PK
+        date period_start
+        date period_end
+        bool is_supervisor_mode
+        datetime created_at
+        int company_id FK
+    }
+    COMMITTEE_MEMBER {
+        int id PK
+        string role
+        string represents
+        bool is_active
+        int committee_id FK
+        int user_id FK
     }
     MEETING {
         int id PK
         int number
         date date
+        string place
+        bool is_extraordinary
         text agenda
         text minutes
+        datetime created_at
         int committee_id FK
     }
+    AGREEMENT {
+        int id PK
+        text description
+        date due_date
+        string status
+        int meeting_id FK
+        int responsible_id FK
+        int related_report_id FK
+        int related_iperc_entry_id FK
+    }
+    EXPERIMENT {
+        int id PK
+        string key UK
+        string name
+        text description
+        json variants
+        bool is_active
+        datetime started_at
+        datetime ended_at
+    }
+    ASSIGNMENT {
+        int id PK
+        string variant
+        datetime assigned_at
+        int experiment_id FK
+        int user_id FK
+    }
 ```
+
+**Restricciones de integridad declaradas en la base de datos**
+
+No son validaciones de formulario: son restricciones del motor, de modo que ni un error de la
+aplicación ni una carga directa pueden dejar el dato inconsistente.
+
+| Restricción | Tabla | Qué impide |
+|---|---|---|
+| `ruc` único | `COMPANY` | Dos empresas con el mismo RUC |
+| `client_uuid` único | `REPORT` | Que un reintento de sincronización cree un hallazgo duplicado |
+| `(company, name)` único | `AREA` | Dos áreas con el mismo nombre en una empresa |
+| `(company, version)` único | `IPERC_MATRIX` | Dos matrices con la misma versión |
+| `(committee, number)` único | `MEETING` | Dos actas con el mismo número correlativo |
+| `(committee, user)` único | `COMMITTEE_MEMBER` | Que una persona figure dos veces en el mismo comité |
+| `(experiment, user)` único | `ASSIGNMENT` | Que un usuario quede asignado a dos variantes |
+| `company` uno a uno | `COMMITTEE` | Más de un comité vigente por empresa |
+| Índices `(company, status)` y `(company, -created_at)` | `REPORT` | No impiden nada: aceleran las dos consultas más frecuentes del panel |
+
+**Comportamiento al borrar**
+
+| Relación | Regla | Razón |
+|---|---|---|
+| `REPORT.reported_by`, `REPORT_ACTION.author`, `EPP_DELIVERY.delivered_by` | `PROTECT` | Un usuario con evidencia asociada no se puede borrar: eso destruiría la trazabilidad que la ley exige conservar |
+| `EPP_DELIVERY.item` | `PROTECT` | Un EPP entregado no puede desaparecer del catálogo |
+| `REPORT.assigned_to`, `REPORT.area`, `REPORT.category`, `IPERC_ENTRY.source_report`, `AGREEMENT.responsible` | `SET NULL` | El registro sobrevive aunque el dato referenciado deje de existir; se pierde el enlace, no el hallazgo |
+| Todo lo que cuelga de `COMPANY`, y `MEETING` de `COMMITTEE` | `CASCADE` | Son partes de un agregado: sin su raíz no significan nada |
 
 **Decisiones de diseño de datos**
 
@@ -677,7 +965,18 @@ erDiagram
 |---|---|
 | `client_uuid` único en `REPORT` | Permite que el cliente móvil reintente el envío sin crear duplicados: la unicidad la garantiza la base de datos, no la lógica de aplicación |
 | `occurred_at` separado de `created_at` | Un reporte creado sin conexión conserva su fecha real; sin esta separación el MTTR quedaría distorsionado |
+| `latitude` y `longitude` con `decimal(9,6)` | Seis decimales dan precisión de unos 11 cm, suficiente para ubicar un peligro dentro de una planta; `float` introduciría error de redondeo en un dato que puede ser evidencia |
 | `source_report_id` en `IPERC_ENTRY` | Documenta que la matriz se alimenta de hallazgos reales, que es la diferencia entre una matriz viva y una de escritorio |
-| Índices en `(company, status)` y `(company, created_at)` | Las dos consultas más frecuentes del panel son la bandeja por estado y el listado cronológico |
-| `results` como JSON en `INSPECTION` | El checklist varía por programa; normalizarlo exigiría dos tablas más sin beneficio de consulta |
+| `related_report_id` y `related_iperc_entry_id` en `AGREEMENT` | El acuerdo del comité queda trazado hasta el hallazgo o el peligro que lo originó, que es justo lo que hoy se pierde en el cuaderno de actas |
+| `results` y `checklist` como JSON | El checklist varía por programa de inspección; normalizarlo exigiría dos tablas más sin ninguna consulta que lo aproveche |
+| `variants` como JSON en `EXPERIMENT` | El número de variantes es propiedad del experimento, no del esquema; así se puede correr un experimento de tres variantes sin migrar |
 | `form_variant` en `REPORT` | La atribución del experimento queda en el propio dato, no en un sistema de analítica externo |
+| Sin borrado físico de hallazgos | El estado `DESCARTADO` reemplaza al borrado: la decisión de descartar también es evidencia |
+| `risk_score` y `risk_level` no se almacenan | Se calculan desde `probability` y `consequence`; guardarlos crearía un dato que puede contradecir a su origen |
+
+**Nota sobre lo no relacional.** El sistema no usa base de datos documental. La información de
+SST es fuertemente relacional —un hallazgo pertenece a una empresa, un área, una categoría y un
+responsable, y debe poder consultarse por cualquiera de ellos— y los recuentos del tablero son
+agregaciones que el motor relacional resuelve mejor. Los dos casos con forma libre, el checklist
+de la inspección y las variantes del experimento, se resuelven con columnas JSON dentro del mismo
+esquema, sin introducir un segundo motor que habría que respaldar, migrar y mantener consistente.
