@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Valida Conventional Commits en el repositorio del informe.
+# Instalar con: bash scripts/setup-hooks.sh
+mensaje=$(head -n1 "$1")
+
+if [[ "$mensaje" =~ ^(Merge|Revert) ]]; then
+  exit 0
+fi
+
+patron='^(docs|fix|chore|style|refactor|feat|revert)(\([a-z0-9_-]+\))?!?: .{1,100}$'
+
+if [[ ! "$mensaje" =~ $patron ]]; then
+  cat <<'MSG' >&2
+
+  ✖ El mensaje de commit no cumple Conventional Commits.
+
+  Formato:  tipo(alcance): descripcion en minuscula, modo imperativo
+
+  Tipos:    docs  fix  chore  style  refactor  feat  revert
+  Alcance:  cap01 ... cap08, indice, build, assets
+
+  Ejemplos:
+    docs(cap01): redactar antecedentes y problematica con 5w2h
+    docs(cap08): documentar el calculo de tamano de muestra
+    fix(indice): corregir enlaces rotos del capitulo 6
+
+MSG
+  echo "  Tu mensaje fue: $mensaje" >&2
+  echo "" >&2
+  exit 1
+fi
