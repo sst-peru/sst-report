@@ -179,3 +179,20 @@ Orden por prioridad de negocio. La estimación usa Story Points en escala de Fib
 
 **Total estimado:** 188 Story Points.
 
+## 3.4. Impact Mapping
+
+<!-- IMAGEN REQUERIDA: exportar el Impact Map a assets/img/impact-map.png -->
+
+![Impact Map](../assets/img/impact-map.png)
+
+| Goal (¿Por qué?) | Actor (¿Quién?) | Impact (¿Cómo?) | Deliverable (¿Qué?) |
+|---|---|---|---|
+| **Reducir el tiempo entre la detección de un peligro y su corrección, evidenciando la gestión ante la autoridad** | Operario de campo | Reporta más seguido porque le cuesta poco | Formulario de tres pasos con foto (US06) |
+| | | No pierde reportes por falta de señal | Cola local y sincronización automática (US07, US08) |
+| | | Sostiene el hábito porque ve resultados | Consulta del estado de sus reportes (US13) |
+| | Supervisor de SST | Se entera de inmediato y prioriza por severidad | Bandeja de hallazgos filtrable (US14) |
+| | | Hace responsable a alguien con plazo | Asignación y cierre con acción correctiva (US15, US16) |
+| | | Mide en lugar de suponer | Indicadores MTTR y cumplimiento (US35, US36) |
+| | Comité de SST | Documenta sus decisiones y les da seguimiento | Actas con quórum y acuerdos (US32, US33, US34) |
+| | | Mantiene viva la matriz IPERC | Entradas con origen en hallazgos reales (US20, US22) |
+| | Empresa ante SUNAFIL | Demuestra gestión en lugar de solo documentación | Exportación de los registros obligatorios (US37) |
