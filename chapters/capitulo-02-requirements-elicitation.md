@@ -275,3 +275,39 @@ que no contaminen el relato del problema.
 | **Pensamientos** | "Esto es peligroso" | "Ya avisé" | "Otro papel más" | "¿Esto ya se atendió?" | "¿Dónde está el registro?" |
 | **Puntos de dolor** | Nada registra lo que vio | El aviso se pierde si el supervisor lo olvida | Sin hora, sin foto, sin ubicación | Sin responsable ni plazo definido | Reconstrucción manual y tardía |
 
+## 2.4. Ubiquitous Language
+
+Lenguaje ubicuo del dominio, compartido entre el código, el informe y la conversación con el
+cliente. Los términos en inglés indican el nombre exacto que reciben en el modelo de datos.
+
+| Término | Definición |
+|---|---|
+| **SGSST** | Sistema de Gestión de Seguridad y Salud en el Trabajo. Conjunto de elementos que una empresa debe implementar según la Ley N° 29783 para prevenir riesgos laborales. |
+| **Acto inseguro** (`ACTO`) | Comportamiento de una persona que se aparta del procedimiento seguro y puede causar un accidente. Ejemplo: trabajar en altura sin arnés. |
+| **Condición insegura** (`CONDICION`) | Situación del ambiente de trabajo, ajena al comportamiento individual, capaz de causar un accidente. Ejemplo: cable eléctrico expuesto. |
+| **Reporte** (`Report`) | Registro de un acto o condición insegura levantado por un trabajador, con su tipo, categoría, área, severidad, evidencia fotográfica y ubicación. |
+| **Hallazgo** | Un reporte que ha sido aceptado por el responsable de SST y entra en el ciclo de gestión hasta su cierre. |
+| **Severidad** (`severity`) | Gravedad potencial del hallazgo: baja, media, alta o crítica. Determina la prioridad de atención. |
+| **Estado del hallazgo** (`status`) | Abierto, en proceso, cerrado o descartado. |
+| **Acción correctiva** (`closure_note`) | Medida aplicada para eliminar o controlar el peligro, registrada al cerrar el hallazgo. Es la evidencia de que el ciclo se completó. |
+| **Bitácora** (`ReportAction`) | Secuencia de acciones registradas sobre un hallazgo —asignación, comentarios, cierre— con autor y fecha. Constituye la trazabilidad exigible ante una auditoría. |
+| **IPERC** | Identificación de Peligros, Evaluación de Riesgos y determinación de Controles. Matriz obligatoria que relaciona cada puesto o tarea con sus peligros, sus riesgos y los controles aplicados. |
+| **Peligro** (`hazard`) | Fuente con potencial de causar daño. Ejemplo: trabajo en altura. |
+| **Riesgo** (`risk`) | Combinación de la probabilidad de que ocurra el daño y su severidad. Ejemplo: caída a distinto nivel. |
+| **Nivel de riesgo** (`risk_level`) | Resultado de probabilidad × consecuencia: trivial, tolerable, moderado, importante o intolerable. |
+| **Control** | Medida que elimina o reduce el riesgo. Se distinguen los controles existentes de los propuestos. |
+| **EPP** | Equipo de Protección Personal: casco, guantes, arnés, lentes, calzado de seguridad. |
+| **Entrega de EPP** (`EppDelivery`) | Registro de la entrega de un EPP a un trabajador, con fecha, cantidad, vencimiento según vida útil y conformidad del trabajador. Registro obligatorio de la ley. |
+| **Vida útil** (`lifespan_days`) | Duración en días tras la cual un EPP debe reponerse. |
+| **Inspección** (`Inspection`) | Revisión programada de un área contra un checklist, con fecha prevista, ejecución y hallazgos. |
+| **Programa de inspecciones** (`InspectionSchedule`) | Definición de qué se inspecciona, con qué frecuencia y quién es responsable. |
+| **Tasa de cumplimiento** | Proporción de inspecciones realizadas sobre las programadas en un periodo. |
+| **Comité de SST** (`Committee`) | Órgano paritario obligatorio desde 20 trabajadores, con igual número de representantes del empleador y de los trabajadores. Por debajo de ese umbral la ley admite un supervisor de SST. |
+| **Acta de reunión** (`Meeting`) | Documento numerado correlativamente que registra una sesión del comité: fecha, asistentes, agenda, desarrollo y acuerdos. |
+| **Quórum** (`quorum_reached`) | Mitad más uno de los miembros titulares. Sin quórum el acta no es válida y la reunión se reprograma. |
+| **Acuerdo** (`Agreement`) | Compromiso adoptado en una reunión del comité, con responsable, plazo y estado de cumplimiento. |
+| **MTTR** | *Mean Time To Repair*. Tiempo promedio transcurrido entre el registro de un hallazgo y su cierre. Métrica principal de la capacidad de respuesta del sistema. |
+| **SUNAFIL** | Superintendencia Nacional de Fiscalización Laboral, autoridad que fiscaliza el cumplimiento de la normativa de SST en el Perú. |
+| **Sincronización offline** (`synced_offline`) | Envío diferido de reportes creados sin conexión, una vez restablecida la red. |
+| **UUID de cliente** (`client_uuid`) | Identificador generado por el dispositivo antes de enviar un reporte, que permite reintentar el envío sin crear duplicados. |
+| **Variante** (`form_variant`) | Versión del formulario de reporte asignada a un usuario dentro del experimento A/B: `rapido` o `largo`. |
