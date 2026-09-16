@@ -302,3 +302,13 @@ de Protección de Datos Personales y se analiza en la matriz ética de la secci�
 | TB04 | Notificación de hallazgo crítico | **Como** supervisor **quiero** recibir aviso de un hallazgo crítico sin asignar **para** que no quede esperando en la bandeja. | **Dado** un hallazgo crítico abierto por más de 24 horas<br>**Entonces** el sistema notifica al supervisor y registra el envío |
 | TB05 | Aviso de cierre al reportante | **Como** operario **quiero** enterarme cuando mi hallazgo se cierra **para** sostener el hábito de reportar. | **Cuando** se cierra un hallazgo que yo reporté<br>**Entonces** recibo la notificación con la acción correctiva aplicada |
 
+### 8.3.2. To-Be Product Backlog
+
+| # | ID | Historia | Story Points | Justificación de la prioridad |
+|---|---|---|---|---|
+| 1 | TB01 | Aviso de datos de demostración | 2 | Requisito de integridad: impide que datos simulados se lean como resultados |
+| 2 | TB02 | Intervalo de confianza en los resultados | 5 | Sin él, el panel comunica una diferencia sin su precisión |
+| 3 | TB05 | Aviso de cierre al reportante | 5 | Cierra el circuito de retroalimentación que las entrevistas señalan como causa del abandono |
+| 4 | TB04 | Notificación de hallazgo crítico | 5 | Ataca el MTTR, la segunda métrica del curso |
+| 5 | TB03 | Registro de auditoría de exportaciones | 3 | Obligación derivada del tratamiento de datos personales |
+
