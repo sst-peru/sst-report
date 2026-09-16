@@ -217,3 +217,33 @@ que no contaminen el relato del problema.
 | Registrar el acta del comité y sus acuerdos | Baja / Baja | Media / Alta |
 | Preparar evidencia para una inspección de SUNAFIL | Nunca / — | Baja / Muy alta |
 
+### 2.3.3. User Journey Mapping
+
+<!-- IMAGEN REQUERIDA: exportar el User Journey Map desde UXPressia a
+     assets/img/journey-operario.png y assets/img/journey-supervisor.png -->
+
+![Journey del operario](../assets/img/journey-operario.png)
+
+**Journey as-is del operario ante un peligro detectado**
+
+| Fase | Acción | Punto de contacto | Pensamiento | Emoción | Oportunidad |
+|---|---|---|---|---|---|
+| Detección | Ve una escalera en mal estado | Entorno físico | "Esto se va a caer con alguien encima" | Alerta | — |
+| Decisión | Evalúa si reportar o seguir trabajando | — | "Me va a quitar tiempo y capaz ni lo arreglan" | Duda | Reducir el costo de reportar |
+| Comunicación | Avisa verbalmente al capataz | Conversación | "Ya avisé, es problema de él" | Alivio parcial | Dejar registro del aviso |
+| Registro | El aviso no se formaliza o se anota en papel | Formato físico | — | Indiferencia | Registro automático con hora, foto y lugar |
+| Seguimiento | No recibe información de qué pasó | — | "Para qué reporto si no pasa nada" | Frustración | Visibilidad del estado del hallazgo |
+| Reincidencia | Ve el mismo peligro semanas después | Entorno físico | "Aquí nada cambia" | Resignación | Trazabilidad y cierre verificado |
+
+![Journey del supervisor](../assets/img/journey-supervisor.png)
+
+**Journey as-is del supervisor ante una inspección de SUNAFIL**
+
+| Fase | Acción | Punto de contacto | Pensamiento | Emoción | Oportunidad |
+|---|---|---|---|---|---|
+| Aviso | Se anuncia la inspección | Correo / visita | "Espero que esté todo" | Tensión | — |
+| Búsqueda | Reúne formatos, cuadernos y hojas de cálculo | Archivador, Excel | "¿Dónde quedó el registro de marzo?" | Estrés | Registro único y consultable |
+| Consolidación | Arma el expediente a mano | Word, Excel | "Esto me va a tomar dos días" | Agobio | Exportación automática |
+| Sustentación | Responde ante el inspector | Reunión | "No puedo demostrar el seguimiento" | Vulnerabilidad | Trazabilidad hallazgo → cierre |
+| Resultado | Observaciones o multa | Acta de inspección | "Teníamos el dato, pero no la prueba" | Impotencia | Evidencia generada por la operación diaria |
+
