@@ -345,3 +345,7 @@ verifica con las mismas pruebas.
 > **PENDIENTE.** Completar con el sprint de implementación de las historias To-Be, siguiendo el
 > mismo formato del Capítulo V.
 
+### 8.3.5. Implemented To-Be Landing Page Evidence
+
+> **PENDIENTE.** <!-- IMAGEN REQUERIDA -->
+
