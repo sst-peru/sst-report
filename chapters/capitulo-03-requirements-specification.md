@@ -29,11 +29,13 @@ Dos columnas ordenan la lectura:
   del operario y vive en el móvil; lo que exige pantalla grande y decisión —configurar el IPERC,
   redactar un acta, administrar usuarios, leer el tablero— es del supervisor y del comité, y vive
   en la web. Ambas plataformas comparten todo lo que un mismo rol necesita en los dos sitios.
-- **Estado** distingue lo construido de lo especificado. *Implementada* significa que la
-  funcionalidad existe y es verificable en el código entregado. *Propuesta* significa que la
-  historia está escrita y estimada pero su construcción queda fuera del alcance de los seis
-  sprints de este ciclo. Un backlog contiene siempre más de lo que cabe en un sprint; declarar
-  por escrito cuál es cuál evita atribuirle al prototipo capacidades que todavía no tiene.
+- **Estado** separa tres situaciones. *Sprint 1* marca los quince elementos comprometidos y
+  entregados en el sprint de este ciclo, que son los que detalla el Sprint Backlog del Capítulo V.
+  *Implementada* marca lo que existe y es verificable en el código entregado pero no formó parte
+  de ese compromiso: es avance sobre los siguientes sprints. *Propuesta* marca lo que está escrito
+  y estimado pero todavía no se construye. Un backlog contiene siempre más de lo que cabe en un
+  sprint; declarar por escrito cuál es cuál evita atribuirle al prototipo capacidades que no
+  tiene, y evita también inflar la velocidad del sprint con trabajo que no se prometió.
 
 Las historias técnicas (TS) corresponden a trabajo de infraestructura
 sin valor directo para el usuario final pero necesario para sostener el producto.
@@ -69,41 +71,40 @@ Las épicas EP01 a EP10 son las que el equipo construyó en este ciclo. Las épi
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
 | US01 | Registro de trabajador | **Como** trabajador **quiero** crear mi cuenta indicando el RUC de mi empresa **para** empezar a reportar sin depender de que alguien me la cree. | **Escenario: registro exitoso**<br>**Dado** que ingreso al formulario de registro<br>**Cuando** completo mis datos y el RUC de una empresa registrada<br>**Entonces** el sistema crea mi cuenta con rol operario y me deja dentro de la aplicación<br><br>**Escenario: RUC inexistente**<br>**Dado** que ingreso un RUC no registrado<br>**Cuando** envío el formulario<br>**Entonces** el sistema me indica que debo solicitar el RUC a mi supervisor y no crea la cuenta | Ambas | Implementada | EP01|
-| US02 | Inicio de sesión | **Como** usuario **quiero** iniciar sesión con usuario y contraseña **para** acceder a la información de mi empresa. | **Escenario: credenciales válidas**<br>**Dado** que tengo una cuenta activa<br>**Cuando** ingreso mis credenciales correctas<br>**Entonces** el sistema me autentica y me lleva a la pantalla inicial de mi rol<br><br>**Escenario: credenciales inválidas**<br>**Cuando** ingreso credenciales incorrectas<br>**Entonces** el sistema muestra un mensaje de error sin revelar si el usuario existe | Ambas | Implementada | EP01|
+| US02 | Inicio de sesión | **Como** usuario **quiero** iniciar sesión con usuario y contraseña **para** acceder a la información de mi empresa. | **Escenario: credenciales válidas**<br>**Dado** que tengo una cuenta activa<br>**Cuando** ingreso mis credenciales correctas<br>**Entonces** el sistema me autentica y me lleva a la pantalla inicial de mi rol<br><br>**Escenario: credenciales inválidas**<br>**Cuando** ingreso credenciales incorrectas<br>**Entonces** el sistema muestra un mensaje de error sin revelar si el usuario existe | Ambas | Sprint 1 | EP01|
 | US03 | Sesión persistente en campo | **Como** operario **quiero** permanecer autenticado varios días **para** no tener que iniciar sesión cuando estoy en una zona sin señal. | **Escenario: renovación automática**<br>**Dado** que mi token de acceso expiró<br>**Cuando** la aplicación realiza una petición<br>**Entonces** el sistema renueva el token automáticamente y la petición se completa sin pedirme la contraseña | Ambas | Implementada | EP01|
 | US04 | Administración de usuarios | **Como** supervisor de SST **quiero** crear usuarios y asignarles rol **para** incorporar al equipo de seguridad con los permisos correctos. | **Escenario: alta de supervisor**<br>**Dado** que tengo rol de supervisor<br>**Cuando** creo un usuario con rol supervisor<br>**Entonces** el usuario queda creado en mi empresa con ese rol<br><br>**Escenario: operario sin permiso**<br>**Dado** que tengo rol operario<br>**Cuando** intento listar los usuarios<br>**Entonces** el sistema deniega el acceso | Web | Implementada | EP01|
 | US05 | Gestión de áreas | **Como** supervisor **quiero** registrar las áreas o frentes de trabajo **para** clasificar los hallazgos por ubicación organizativa. | **Escenario: alta de área**<br>**Cuando** registro un área con nombre y descripción<br>**Entonces** queda disponible para clasificar reportes, inspecciones y entradas IPERC | Web | Implementada | EP01|
 | US41 | Cambio de rol de un usuario | **Como** supervisor **quiero** cambiar el rol de un usuario existente **para** incorporarlo al comité sin crearle una cuenta nueva. | **Cuando** cambio el rol desde la pantalla de usuarios<br>**Entonces** el usuario pasa a tener los permisos de ese rol en web y en móvil | Web | Implementada | EP01|
 | US42 | Cierre de sesión | **Como** usuario **quiero** cerrar sesión **para** que nadie use mi cuenta en un equipo compartido. | **Cuando** cierro sesión<br>**Entonces** el sistema descarta mis credenciales y me devuelve a la pantalla de acceso | Ambas | Implementada | EP01|
-| US43 | Menú según mi rol | **Como** operario **quiero** ver solo las opciones que me corresponden **para** no perderme entre funciones que no puedo usar. | **Dado** que tengo rol operario<br>**Entonces** el menú muestra únicamente reportar, mis reportes, mis EPP y las consultas, y no las opciones de gestión | Ambas | Implementada | EP01|
-
+| US43 | Menú según mi rol | **Como** operario **quiero** ver solo las opciones que me corresponden **para** no perderme entre funciones que no puedo usar. | **Dado** que tengo rol operario<br>**Entonces** el menú muestra únicamente reportar, mis reportes, mis EPP y las consultas, y no las opciones de gestión | Ambas | Sprint 1 | EP01|
 ### EP02 — Reporte de actos y condiciones inseguras
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US06 | Reporte rápido desde el celular | **Como** operario **quiero** reportar un peligro en tres toques con una foto **para** no perder tiempo de trabajo. | **Escenario: reporte en tres pasos**<br>**Dado** que estoy en el frente de trabajo<br>**Cuando** elijo el tipo de hallazgo, la categoría y tomo la foto<br>**Entonces** el sistema registra el reporte y me confirma que quedó guardado<br><br>**Escenario: descripción opcional**<br>**Cuando** envío el reporte sin escribir descripción<br>**Entonces** el sistema lo acepta igualmente | Ambas | Implementada | EP02|
+| US06 | Reporte rápido desde el celular | **Como** operario **quiero** reportar un peligro en tres toques con una foto **para** no perder tiempo de trabajo. | **Escenario: reporte en tres pasos**<br>**Dado** que estoy en el frente de trabajo<br>**Cuando** elijo el tipo de hallazgo, la categoría y tomo la foto<br>**Entonces** el sistema registra el reporte y me confirma que quedó guardado<br><br>**Escenario: descripción opcional**<br>**Cuando** envío el reporte sin escribir descripción<br>**Entonces** el sistema lo acepta igualmente | Ambas | Sprint 1 | EP02|
 | US07 | Reporte sin conexión | **Como** operario en obra o mina **quiero** que mi reporte se guarde aunque no haya señal **para** no perderlo. | **Escenario: sin conectividad**<br>**Dado** que el dispositivo no tiene conexión<br>**Cuando** envío el reporte<br>**Entonces** se almacena localmente y se muestra como pendiente de envío<br><br>**Escenario: recuperación de señal**<br>**Cuando** el dispositivo recupera la conexión<br>**Entonces** el sistema sincroniza los reportes pendientes sin intervención del usuario | Móvil | Implementada | EP02|
 | US08 | Sincronización sin duplicados | **Como** responsable de SST **quiero** que un reintento de envío no genere reportes repetidos **para** que las métricas sean confiables. | **Escenario: reintento del mismo reporte**<br>**Dado** un reporte con un identificador de cliente ya recibido<br>**Cuando** el dispositivo reintenta el envío<br>**Entonces** el sistema devuelve el reporte existente y no crea uno nuevo | Ambas | Implementada | EP02|
-| US09 | Evidencia fotográfica | **Como** miembro del comité **quiero** ver la foto del hallazgo **para** entender el peligro sin desplazarme al lugar. | **Escenario: foto adjunta**<br>**Cuando** abro el detalle de un reporte con foto<br>**Entonces** veo la imagen y puedo ampliarla a pantalla completa | Ambas | Implementada | EP02|
-| US10 | Geolocalización del hallazgo | **Como** supervisor **quiero** saber dónde ocurrió el hallazgo **para** ubicarlo dentro de la operación. | **Escenario: captura de coordenadas**<br>**Cuando** el operario autoriza la ubicación al tomar la foto<br>**Entonces** el reporte guarda latitud y longitud y el panel ofrece verlas en un mapa<br><br>**Escenario: permiso denegado**<br>**Cuando** el operario no autoriza la ubicación<br>**Entonces** el reporte se envía igualmente, sin coordenadas | Ambas | Implementada | EP02|
-| US11 | Fecha real de ocurrencia | **Como** analista **quiero** que el reporte conserve la fecha en que ocurrió el hecho **para** que el indicador de tiempo de respuesta no se distorsione. | **Escenario: sincronización diferida**<br>**Dado** un reporte creado sin conexión el lunes<br>**Cuando** se sincroniza el miércoles<br>**Entonces** conserva la fecha de ocurrencia del lunes y registra además su fecha de recepción | Ambas | Implementada | EP02|
+| US09 | Evidencia fotográfica | **Como** miembro del comité **quiero** ver la foto del hallazgo **para** entender el peligro sin desplazarme al lugar. | **Escenario: foto adjunta**<br>**Cuando** abro el detalle de un reporte con foto<br>**Entonces** veo la imagen y puedo ampliarla a pantalla completa | Ambas | Sprint 1 | EP02|
+| US10 | Geolocalización del hallazgo | **Como** supervisor **quiero** saber dónde ocurrió el hallazgo **para** ubicarlo dentro de la operación. | **Escenario: captura de coordenadas**<br>**Cuando** el operario autoriza la ubicación al tomar la foto<br>**Entonces** el reporte guarda latitud y longitud y el panel ofrece verlas en un mapa<br><br>**Escenario: permiso denegado**<br>**Cuando** el operario no autoriza la ubicación<br>**Entonces** el reporte se envía igualmente, sin coordenadas | Ambas | Sprint 1 | EP02|
+| US11 | Fecha real de ocurrencia | **Como** analista **quiero** que el reporte conserve la fecha en que ocurrió el hecho **para** que el indicador de tiempo de respuesta no se distorsione. | **Escenario: sincronización diferida**<br>**Dado** un reporte creado sin conexión el lunes<br>**Cuando** se sincroniza el miércoles<br>**Entonces** conserva la fecha de ocurrencia del lunes y registra además su fecha de recepción | Ambas | Sprint 1 | EP02|
 | US12 | Reporte desde la web | **Como** trabajador administrativo **quiero** reportar desde el navegador **para** no depender del celular. | **Escenario: paridad de canal**<br>**Cuando** reporto desde la web<br>**Entonces** el hallazgo se crea con los mismos campos y reglas que desde la aplicación móvil | Web | Implementada | EP02|
-| US13 | Consulta de mis reportes | **Como** operario **quiero** ver los reportes que hice y su estado **para** saber si se atendieron. | **Escenario: alcance por rol**<br>**Dado** que tengo rol operario<br>**Cuando** consulto la lista de reportes<br>**Entonces** veo únicamente los míos | Ambas | Implementada | EP02|
+| US13 | Consulta de mis reportes | **Como** operario **quiero** ver los reportes que hice y su estado **para** saber si se atendieron. | **Escenario: alcance por rol**<br>**Dado** que tengo rol operario<br>**Cuando** consulto la lista de reportes<br>**Entonces** veo únicamente los míos | Ambas | Sprint 1 | EP02|
 | US44 | Vista previa de la evidencia | **Como** quien reporta **quiero** ver en pequeño la foto que elegí **para** confirmar que subí la correcta antes de enviar. | **Cuando** elijo una imagen<br>**Entonces** se muestra una miniatura con el nombre y el peso del archivo | Web | Implementada | EP02|
 | US45 | Ampliar la evidencia | **Como** miembro del comité **quiero** ampliar la foto a pantalla completa **para** distinguir el detalle del peligro. | **Cuando** toco la imagen<br>**Entonces** se abre a pantalla completa y se cierra con Escape o tocando fuera | Web | Implementada | EP02|
 | US46 | Reemplazar la foto elegida | **Como** quien reporta **quiero** quitar la foto y elegir otra **para** corregirme sin perder lo ya escrito. | **Cuando** quito la foto<br>**Entonces** el formulario conserva el resto de los datos y admite elegir una imagen nueva, incluso la misma | Web | Implementada | EP02|
-| US47 | Categorías según el tipo de hallazgo | **Como** quien reporta **quiero** ver solo las categorías que aplican **para** no equivocarme entre actos y condiciones. | **Dado** que elegí condición insegura<br>**Entonces** solo se ofrecen categorías de condición | Ambas | Implementada | EP02|
+| US47 | Categorías según el tipo de hallazgo | **Como** quien reporta **quiero** ver solo las categorías que aplican **para** no equivocarme entre actos y condiciones. | **Dado** que elegí condición insegura<br>**Entonces** solo se ofrecen categorías de condición | Ambas | Sprint 1 | EP02|
 | US48 | Estado de envío de mis reportes | **Como** operario **quiero** saber cuántos reportes tengo sin enviar **para** confiar en que no se perdieron. | **Dado** que hay reportes en la cola local<br>**Entonces** la pantalla muestra cuántos esperan señal, y cada uno indica si ya se envió | Móvil | Implementada | EP02|
 
 ### EP03 — Gestión del hallazgo
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US14 | Bandeja de hallazgos | **Como** supervisor **quiero** ver todos los hallazgos de la empresa filtrados por estado, tipo y área **para** priorizar mi trabajo. | **Escenario: filtro por estado**<br>**Cuando** filtro por estado abierto<br>**Entonces** la lista muestra solo los hallazgos sin atender | Ambas | Implementada | EP03|
-| US15 | Asignación de responsable | **Como** supervisor **quiero** asignar un responsable al hallazgo **para** que alguien se haga cargo de la corrección. | **Escenario: asignación**<br>**Cuando** asigno un responsable<br>**Entonces** el hallazgo pasa a estado en proceso y queda registrado en la bitácora quién asignó, a quién y cuándo | Ambas | Implementada | EP03|
-| US16 | Cierre con acción correctiva | **Como** supervisor **quiero** cerrar el hallazgo describiendo la acción aplicada **para** dejar evidencia de la corrección. | **Escenario: cierre**<br>**Cuando** cierro el hallazgo con la acción correctiva<br>**Entonces** el sistema registra la fecha de cierre y calcula el tiempo de resolución | Ambas | Implementada | EP03|
+| US14 | Bandeja de hallazgos | **Como** supervisor **quiero** ver todos los hallazgos de la empresa filtrados por estado, tipo y área **para** priorizar mi trabajo. | **Escenario: filtro por estado**<br>**Cuando** filtro por estado abierto<br>**Entonces** la lista muestra solo los hallazgos sin atender | Ambas | Sprint 1 | EP03|
+| US15 | Asignación de responsable | **Como** supervisor **quiero** asignar un responsable al hallazgo **para** que alguien se haga cargo de la corrección. | **Escenario: asignación**<br>**Cuando** asigno un responsable<br>**Entonces** el hallazgo pasa a estado en proceso y queda registrado en la bitácora quién asignó, a quién y cuándo | Ambas | Sprint 1 | EP03|
+| US16 | Cierre con acción correctiva | **Como** supervisor **quiero** cerrar el hallazgo describiendo la acción aplicada **para** dejar evidencia de la corrección. | **Escenario: cierre**<br>**Cuando** cierro el hallazgo con la acción correctiva<br>**Entonces** el sistema registra la fecha de cierre y calcula el tiempo de resolución | Ambas | Sprint 1 | EP03|
 | US17 | Separación de responsabilidades | **Como** empresa **quiero** que quien reporta no sea quien valida el cierre **para** cumplir el control que exige la normativa. | **Escenario: operario intenta cerrar**<br>**Dado** que tengo rol operario<br>**Cuando** intento cerrar un hallazgo<br>**Entonces** el sistema deniega la operación | Ambas | Implementada | EP03|
-| US18 | Bitácora del hallazgo | **Como** auditor interno **quiero** ver la secuencia completa de acciones sobre un hallazgo **para** verificar la trazabilidad. | **Escenario: historial**<br>**Cuando** abro el detalle de un hallazgo<br>**Entonces** veo en orden cronológico el reporte, las asignaciones, los comentarios y el cierre, cada uno con su autor y fecha | Ambas | Implementada | EP03|
+| US18 | Bitácora del hallazgo | **Como** auditor interno **quiero** ver la secuencia completa de acciones sobre un hallazgo **para** verificar la trazabilidad. | **Escenario: historial**<br>**Cuando** abro el detalle de un hallazgo<br>**Entonces** veo en orden cronológico el reporte, las asignaciones, los comentarios y el cierre, cada uno con su autor y fecha | Ambas | Sprint 1 | EP03|
 | US49 | Descartar un reporte | **Como** supervisor **quiero** descartar un reporte que no corresponde a un hallazgo de SST **para** que no distorsione los indicadores. | **Cuando** descarto un reporte<br>**Entonces** pasa a estado descartado, queda registrado en la bitácora y deja de contarse como hallazgo abierto | Web | Implementada | EP03|
 | US50 | Filtrar la bandeja | **Como** supervisor **quiero** filtrar por estado, tipo y área **para** trabajar por lotes en lugar de revisar todo. | **Cuando** aplico un filtro<br>**Entonces** la lista se reduce a los hallazgos que lo cumplen y el total se actualiza | Ambas | Implementada | EP03|
 | US51 | Ubicar el hallazgo en el mapa | **Como** supervisor **quiero** abrir la ubicación del hallazgo en un mapa **para** llegar al punto exacto. | **Dado** que el reporte tiene coordenadas<br>**Entonces** el detalle ofrece un enlace que abre esa posición en un mapa | Web | Implementada | EP03|
@@ -306,11 +307,11 @@ propuestas y quedan en el backlog.
 
 | ID | Título | Descripción | Criterios de aceptación | Repositorio | Estado | Épica |
 |---|---|---|---|---|---|---|
-| TS01 | Integración continua | **Como** equipo de desarrollo **quiero** que cada Pull Request ejecute pruebas y análisis estático **para** no integrar código roto. | **Escenario: PR con pruebas fallidas**<br>**Cuando** abro un PR cuyas pruebas fallan<br>**Entonces** el pipeline marca el PR en rojo y bloquea la integración | Los cuatro | Implementada | —|
-| TS02 | Convenciones de commits | **Como** equipo **quiero** que los mensajes de commit sigan Conventional Commits **para** mantener un historial legible y auditable. | **Escenario: mensaje inválido**<br>**Cuando** intento commitear con un mensaje fuera del formato<br>**Entonces** el hook local lo rechaza y el workflow de CI también | Los cuatro | Implementada | —|
+| TS01 | Integración continua | **Como** equipo de desarrollo **quiero** que cada Pull Request ejecute pruebas y análisis estático **para** no integrar código roto. | **Escenario: PR con pruebas fallidas**<br>**Cuando** abro un PR cuyas pruebas fallan<br>**Entonces** el pipeline marca el PR en rojo y bloquea la integración | Los cuatro | Sprint 1 | —|
+| TS02 | Convenciones de commits | **Como** equipo **quiero** que los mensajes de commit sigan Conventional Commits **para** mantener un historial legible y auditable. | **Escenario: mensaje inválido**<br>**Cuando** intento commitear con un mensaje fuera del formato<br>**Entonces** el hook local lo rechaza y el workflow de CI también | Los cuatro | Sprint 1 | —|
 | TS03 | Documentación viva del API | **Como** desarrollador de los clientes **quiero** una especificación OpenAPI generada del código **para** que el contrato no se desactualice. | **Escenario: documentación**<br>**Cuando** accedo a la ruta de documentación<br>**Entonces** obtengo la especificación de todos los endpoints vigentes | sst-api | Implementada | —|
 | TS04 | Datos de demostración | **Como** equipo **quiero** un comando que genere datos realistas **para** poder demostrar y probar el sistema. | **Escenario: carga**<br>**Cuando** ejecuto el comando de carga<br>**Entonces** el sistema queda con empresa, usuarios, reportes, IPERC, EPP, inspecciones y actas de ejemplo, claramente identificados como datos de demostración | sst-api | Implementada | —|
-| TS05 | Flujo de ramas GitFlow | **Como** equipo **quiero** un flujo de ramas definido y protegido **para** que nada llegue a la línea principal sin revisión. | **Dado** que intento empujar directamente a main o develop<br>**Entonces** la protección de rama lo rechaza y obliga a pasar por Pull Request | Los cuatro | Implementada | —|
+| TS05 | Flujo de ramas GitFlow | **Como** equipo **quiero** un flujo de ramas definido y protegido **para** que nada llegue a la línea principal sin revisión. | **Dado** que intento empujar directamente a main o develop<br>**Entonces** la protección de rama lo rechaza y obliga a pasar por Pull Request | Los cuatro | Sprint 1 | —|
 | TS06 | Fin de línea normalizado | **Como** equipo que trabaja en Windows **quiero** que el repositorio guarde siempre LF **para** que no aparezcan diferencias falsas en cada archivo. | **Cuando** edito un archivo en Windows y lo commiteo<br>**Entonces** el repositorio lo guarda con LF y el diff muestra solo lo que cambié de verdad | Los cuatro | Implementada | —|
 | TS07 | Validación local del mensaje de commit | **Como** desarrollador **quiero** que el formato del commit se valide antes de crearlo **para** enterarme al momento y no en el Pull Request. | **Cuando** intento commitear con un mensaje fuera de formato<br>**Entonces** el hook lo rechaza mostrando los tipos válidos y un ejemplo | Los cuatro | Implementada | —|
 | TS08 | Configuración por variables de entorno | **Como** responsable del despliegue **quiero** que la configuración viva fuera del código **para** usar el mismo artefacto en desarrollo y en producción. | **Cuando** cambio la base de datos o el origen permitido<br>**Entonces** basta modificar el archivo de entorno, sin tocar ni reconstruir el código | sst-api | Implementada | —|
@@ -349,13 +350,18 @@ cronológico: primero lo que hace que el sistema capture el hallazgo, después l
 gestionarlo, luego lo que sostiene la operación, y al final lo que amplía la cobertura legal del
 sistema de gestión.
 
-La columna **Estado** separa dos cosas que conviene no confundir. *Implementada* significa que la
-funcionalidad está construida y verificable en el código entregado; esos 86 elementos son los
-que se repartieron en los seis sprints del Capítulo V. *Propuesta* significa que la historia está
-especificada y estimada, pero su construcción queda fuera del alcance de estos sprints: es el
-backlog pendiente que da continuidad al producto. Un backlog sirve precisamente para eso —
-contener más de lo que cabe en un sprint — y declararlo por escrito evita atribuirle al
-prototipo capacidades que todavía no tiene.
+La columna **Estado** distingue tres situaciones que conviene no confundir:
+
+| Estado | Significado |
+|---|---|
+| **Sprint 1** | Elemento comprometido en el Sprint 1 y entregado. Es el alcance que el equipo se obligó a presentar en este ciclo, y el que se detalla en el Sprint Backlog del Capítulo V |
+| **Implementada** | Elemento construido y verificable en el código entregado, pero **no comprometido** en el Sprint 1: es avance sobre los siguientes sprints, no parte del compromiso de este |
+| **Propuesta** | Elemento especificado y estimado cuya construcción no ha empezado |
+
+Esa separación es deliberada. Un Sprint Backlog es un compromiso, y un compromiso se mide por lo
+que se prometió, no por todo lo que terminó habiendo en el repositorio. Declarar como alcance del
+sprint únicamente aquello a lo que el equipo se obligó —y dejar el resto identificado como avance
+o como backlog— es lo que permite que la velocidad signifique algo.
 
 La columna **Plataforma** se repite aquí para que la paridad web/móvil sea verificable sin
 volver a la sección anterior. El guion (`—`) marca los elementos sin interfaz propia: trabajo de
@@ -363,29 +369,29 @@ backend o de infraestructura.
 
 | # | ID | Historia | Épica | Plataforma | Estado | Story Points |
 |---|---|---|---|---|---|---|
-| 1 | US02 | Inicio de sesión | EP01 | Ambas | Implementada | 3 |
-| 2 | US06 | Reporte rápido desde el celular | EP02 | Ambas | Implementada | 8 |
+| 1 | US02 | Inicio de sesión | EP01 | Ambas | Sprint 1 | 3 |
+| 2 | US06 | Reporte rápido desde el celular | EP02 | Ambas | Sprint 1 | 8 |
 | 3 | US07 | Reporte sin conexión | EP02 | Móvil | Implementada | 13 |
 | 4 | US08 | Sincronización sin duplicados | EP02 | Ambas | Implementada | 8 |
-| 5 | US13 | Consulta de mis reportes | EP02 | Ambas | Implementada | 3 |
-| 6 | US43 | Menú según mi rol | EP01 | Ambas | Implementada | 3 |
+| 5 | US13 | Consulta de mis reportes | EP02 | Ambas | Sprint 1 | 3 |
+| 6 | US43 | Menú según mi rol | EP01 | Ambas | Sprint 1 | 3 |
 | 7 | US70 | Sesión que no expira en campo | EP10 | Ambas | Implementada | 5 |
-| 8 | US14 | Bandeja de hallazgos | EP03 | Ambas | Implementada | 5 |
-| 9 | US16 | Cierre con acción correctiva | EP03 | Ambas | Implementada | 5 |
-| 10 | US15 | Asignación de responsable | EP03 | Ambas | Implementada | 5 |
+| 8 | US14 | Bandeja de hallazgos | EP03 | Ambas | Sprint 1 | 5 |
+| 9 | US16 | Cierre con acción correctiva | EP03 | Ambas | Sprint 1 | 5 |
+| 10 | US15 | Asignación de responsable | EP03 | Ambas | Sprint 1 | 5 |
 | 11 | US17 | Separación de responsabilidades | EP03 | Ambas | Implementada | 3 |
-| 12 | US18 | Bitácora del hallazgo | EP03 | Ambas | Implementada | 3 |
-| 13 | US09 | Evidencia fotográfica | EP02 | Ambas | Implementada | 5 |
+| 12 | US18 | Bitácora del hallazgo | EP03 | Ambas | Sprint 1 | 3 |
+| 13 | US09 | Evidencia fotográfica | EP02 | Ambas | Sprint 1 | 5 |
 | 14 | US35 | Indicador MTTR | EP08 | Ambas | Implementada | 5 |
 | 15 | US50 | Filtrar la bandeja | EP03 | Ambas | Implementada | 3 |
 | 16 | US49 | Descartar un reporte | EP03 | Web | Implementada | 2 |
-| 17 | US10 | Geolocalización del hallazgo | EP02 | Ambas | Implementada | 5 |
-| 18 | US11 | Fecha real de ocurrencia | EP02 | Ambas | Implementada | 3 |
+| 17 | US10 | Geolocalización del hallazgo | EP02 | Ambas | Sprint 1 | 5 |
+| 18 | US11 | Fecha real de ocurrencia | EP02 | Ambas | Sprint 1 | 3 |
 | 19 | US12 | Reporte desde la web | EP02 | Web | Implementada | 5 |
 | 20 | US44 | Vista previa de la evidencia | EP02 | Web | Implementada | 3 |
 | 21 | US45 | Ampliar la evidencia | EP02 | Web | Implementada | 3 |
 | 22 | US46 | Reemplazar la foto elegida | EP02 | Web | Implementada | 2 |
-| 23 | US47 | Categorías según el tipo de hallazgo | EP02 | Ambas | Implementada | 2 |
+| 23 | US47 | Categorías según el tipo de hallazgo | EP02 | Ambas | Sprint 1 | 2 |
 | 24 | US48 | Estado de envío de mis reportes | EP02 | Móvil | Implementada | 3 |
 | 25 | US51 | Ubicar el hallazgo en el mapa | EP03 | Web | Implementada | 1 |
 | 26 | US38 | Asignación de variante | EP09 | Ambas | Implementada | 5 |
@@ -433,11 +439,11 @@ backend o de infraestructura.
 | 68 | US67 | Uso desde pantallas pequeñas | EP10 | Web | Implementada | 5 |
 | 69 | US68 | Errores comprensibles | EP10 | Ambas | Implementada | 3 |
 | 70 | US69 | Reintento ante fallo de red | EP10 | Móvil | Implementada | 3 |
-| 71 | TS02 | Convenciones de commits | — | Los cuatro | Implementada | 2 |
+| 71 | TS02 | Convenciones de commits | — | Los cuatro | Sprint 1 | 2 |
 | 72 | TS07 | Validación local del mensaje de commit | — | Los cuatro | Implementada | 2 |
-| 73 | TS05 | Flujo de ramas GitFlow | — | Los cuatro | Implementada | 3 |
+| 73 | TS05 | Flujo de ramas GitFlow | — | Los cuatro | Sprint 1 | 3 |
 | 74 | TS06 | Fin de línea normalizado | — | Los cuatro | Implementada | 2 |
-| 75 | TS01 | Integración continua | — | Los cuatro | Implementada | 5 |
+| 75 | TS01 | Integración continua | — | Los cuatro | Sprint 1 | 5 |
 | 76 | TS13 | Migraciones verificadas en integración | — | sst-api | Implementada | 2 |
 | 77 | TS03 | Documentación viva del API | — | sst-api | Implementada | 2 |
 | 78 | TS08 | Configuración por variables de entorno | — | sst-api | Implementada | 3 |
@@ -530,11 +536,14 @@ backend o de infraestructura.
 
 | Alcance | Elementos | Historias de usuario | Historias técnicas | Story Points |
 |---|---|---|---|---|
-| Implementado en los seis sprints | 86 | 70 | 16 | 319 |
-| Propuesto (backlog pendiente) | 76 | 58 | 18 | 341 |
+| Comprometido y entregado en el Sprint 1 | 15 | 12 | 3 | 60 |
+| Construido, fuera del compromiso del Sprint 1 | 71 | 58 | 13 | 259 |
+| Propuesto (sin construir) | 76 | 58 | 18 | 341 |
 | **Backlog completo** | **162** | **128** | **34** | **660** |
 
-El equipo construyó el 48 % de los Story Points del backlog. Lo propuesto no es relleno: cada elemento pendiente corresponde a una obligación de la Ley N° 29783 o de su Reglamento que el producto debe cubrir para reemplazar por completo el expediente en papel, y por eso queda especificado y estimado aunque no se construya en este ciclo.
+El Sprint 1 comprometió 60 Story Points, el 9 % del backlog. La diferencia entre ese compromiso y lo que ya está construido es intencional: el equipo prefirió un compromiso que pudiera sostener con el producto funcionando delante, y dejar el avance restante identificado como tal en lugar de inflar el alcance del sprint.
+
+Lo propuesto no es relleno: cada elemento pendiente corresponde a una obligación de la Ley N° 29783 o de su Reglamento que el producto debe cubrir para reemplazar por completo el expediente en papel, y por eso queda especificado y estimado aunque no se construya en este ciclo.
 
 ## 3.4. Impact Mapping
 

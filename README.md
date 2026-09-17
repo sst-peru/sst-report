@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- COMPLETAR: logo de la universidad en assets/img/logo-upc.png -->
-<img src="assets/img/Banner-UPC.png" alt="Universidad Peruana de Ciencias Aplicadas" width="800">
+<img src="assets/img/logo-upc.png" alt="Universidad Peruana de Ciencias Aplicadas" width="200">
 
 **UNIVERSIDAD PERUANA DE CIENCIAS APLICADAS**
 
@@ -11,21 +11,21 @@
 
 **1ASI0732 — Diseño de Experimentos de Ingeniería de Software**
 
-**NRC:**9108 <!-- COMPLETAR: número de referencia del curso -->
+**NRC:** <!-- COMPLETAR: número de referencia del curso -->
 
-**Profesor:**Julio Manuel Noriega Melendez 
+**Profesor:** <!-- COMPLETAR: nombre del profesor -->
 
 # Informe de Trabajo Final
 
-**Startup:** sst-Peru
+**Startup:** <!-- COMPLETAR: nombre del startup -->
 
 **Producto:** Resguardo — Sistema de Gestión de Seguridad y Salud en el Trabajo
 
 ### Integrantes
 
-| Código    | Apellidos y Nombres      |
-|-----------|--------------------------|
-| u20231c069 | Diego Alonzo Mora Blas |
+| Código | Apellidos y Nombres |
+|---|---|
+| <!-- COMPLETAR --> | <!-- COMPLETAR --> |
 
 **Septiembre de 2026**
 
@@ -37,7 +37,7 @@
 
 | Versión | Fecha | Autor | Descripción de modificación |
 |---|---|---|---|
-| 1.0 | 2026-09-13 | Diego Alonzo Mora Blas | Apoyo en la definición del problema mediante The 5 W's and 2 H's, desarrollo de componentes del frontend y colaboración en la implementación del backend de la aplicación. |
+| 1.0 | 2026-09-13 | <!-- COMPLETAR: apellidos y nombres --> | Creación del repositorio del informe y de la estructura completa de capítulos según el enunciado del trabajo final. |
 
 ---
 
@@ -168,7 +168,7 @@ incorpora mediante Pull Request.
     - [5.1.3. Source Code Style Guide & Conventions](chapters/capitulo-05-product-implementation.md#513-source-code-style-guide--conventions)
     - [5.1.4. Software Deployment Configuration](chapters/capitulo-05-product-implementation.md#514-software-deployment-configuration)
   - [5.2. Product Implementation & Deployment](chapters/capitulo-05-product-implementation.md#52-product-implementation--deployment)
-    - [5.2.1. Sprint Backlogs](chapters/capitulo-05-product-implementation.md#521-sprint-backlogs)
+    - [5.2.1. Sprint Backlog](chapters/capitulo-05-product-implementation.md#521-sprint-backlog)
     - [5.2.2. Implemented Landing Page Evidence](chapters/capitulo-05-product-implementation.md#522-implemented-landing-page-evidence)
     - [5.2.3. Implemented Frontend-Web Application Evidence](chapters/capitulo-05-product-implementation.md#523-implemented-frontend-web-application-evidence)
     - [5.2.4. Acuerdo de Servicio - SaaS](chapters/capitulo-05-product-implementation.md#524-acuerdo-de-servicio---saas)

@@ -50,13 +50,18 @@ cronológico: primero lo que hace que el sistema capture el hallazgo, después l
 gestionarlo, luego lo que sostiene la operación, y al final lo que amplía la cobertura legal del
 sistema de gestión.
 
-La columna **Estado** separa dos cosas que conviene no confundir. *Implementada* significa que la
-funcionalidad está construida y verificable en el código entregado; esos 86 elementos son los
-que se repartieron en los seis sprints del Capítulo V. *Propuesta* significa que la historia está
-especificada y estimada, pero su construcción queda fuera del alcance de estos sprints: es el
-backlog pendiente que da continuidad al producto. Un backlog sirve precisamente para eso —
-contener más de lo que cabe en un sprint — y declararlo por escrito evita atribuirle al
-prototipo capacidades que todavía no tiene.
+La columna **Estado** distingue tres situaciones que conviene no confundir:
+
+| Estado | Significado |
+|---|---|
+| **Sprint 1** | Elemento comprometido en el Sprint 1 y entregado. Es el alcance que el equipo se obligó a presentar en este ciclo, y el que se detalla en el Sprint Backlog del Capítulo V |
+| **Implementada** | Elemento construido y verificable en el código entregado, pero **no comprometido** en el Sprint 1: es avance sobre los siguientes sprints, no parte del compromiso de este |
+| **Propuesta** | Elemento especificado y estimado cuya construcción no ha empezado |
+
+Esa separación es deliberada. Un Sprint Backlog es un compromiso, y un compromiso se mide por lo
+que se prometió, no por todo lo que terminó habiendo en el repositorio. Declarar como alcance del
+sprint únicamente aquello a lo que el equipo se obligó —y dejar el resto identificado como avance
+o como backlog— es lo que permite que la velocidad signifique algo.
 
 La columna **Plataforma** se repite aquí para que la paridad web/móvil sea verificable sin
 volver a la sección anterior. El guion (`—`) marca los elementos sin interfaz propia: trabajo de
@@ -117,48 +122,54 @@ def main():
             )
         )
 
-    puntos_impl = sum(p for i, p in IMPLEMENTADOS)
-    puntos_prop = sum(p for i, p in PROPUESTOS)
-    us_impl = len([i for i, _ in IMPLEMENTADOS if i.startswith("US")])
-    ts_impl = len([i for i, _ in IMPLEMENTADOS if i.startswith("TS")])
-    us_prop = len([i for i, _ in PROPUESTOS if i.startswith("US")])
-    ts_prop = len([i for i, _ in PROPUESTOS if i.startswith("TS")])
+    porestado = {}
+    for identificador, puntos in IMPLEMENTADOS + PROPUESTOS:
+        est = historias[identificador]["estado"]
+        d = porestado.setdefault(est, dict(n=0, us=0, ts=0, sp=0))
+        d["n"] += 1
+        d["sp"] += puntos
+        d["us" if identificador.startswith("US") else "ts"] += 1
 
     cabecera = (
         "| # | ID | Historia | Épica | Plataforma | Estado | Story Points |\n"
         "|---|---|---|---|---|---|---|"
     )
+
+    def linea(etiqueta, clave, negrita=False):
+        d = porestado.get(clave, dict(n=0, us=0, ts=0, sp=0))
+        marca = "**" if negrita else ""
+        return "| %s%s%s | %s%d%s | %s%d%s | %s%d%s | %s%d%s |\n" % (
+            marca, etiqueta, marca, marca, d["n"], marca, marca, d["us"], marca,
+            marca, d["ts"], marca, marca, d["sp"], marca,
+        )
+
+    total = dict(
+        n=numero,
+        us=len([i for i, _ in IMPLEMENTADOS + PROPUESTOS if i.startswith("US")]),
+        ts=len([i for i, _ in IMPLEMENTADOS + PROPUESTOS if i.startswith("TS")]),
+        sp=total_puntos,
+    )
+    sp1 = porestado.get("Sprint 1", dict(sp=0))["sp"]
+
     resumen = (
         "\n**Total:** %d elementos (%d historias de usuario y %d historias técnicas), "
         "%d Story Points.\n\n"
         "| Alcance | Elementos | Historias de usuario | Historias técnicas | Story Points |\n"
-        "|---|---|---|---|---|\n"
-        "| Implementado en los seis sprints | %d | %d | %d | %d |\n"
-        "| Propuesto (backlog pendiente) | %d | %d | %d | %d |\n"
-        "| **Backlog completo** | **%d** | **%d** | **%d** | **%d** |\n\n"
-        "El equipo construyó el %.0f %% de los Story Points del backlog. Lo propuesto no es "
-        "relleno: cada elemento pendiente corresponde a una obligación de la Ley N° 29783 o de "
-        "su Reglamento que el producto debe cubrir para reemplazar por completo el expediente "
-        "en papel, y por eso queda especificado y estimado aunque no se construya en este ciclo.\n"
-        % (
-            numero,
-            us_impl + us_prop,
-            ts_impl + ts_prop,
-            total_puntos,
-            len(IMPLEMENTADOS),
-            us_impl,
-            ts_impl,
-            puntos_impl,
-            len(PROPUESTOS),
-            us_prop,
-            ts_prop,
-            puntos_prop,
-            numero,
-            us_impl + us_prop,
-            ts_impl + ts_prop,
-            total_puntos,
-            100.0 * puntos_impl / total_puntos,
-        )
+        "|---|---|---|---|---|\n" % (total["n"], total["us"], total["ts"], total["sp"])
+        + linea("Comprometido y entregado en el Sprint 1", "Sprint 1")
+        + linea("Construido, fuera del compromiso del Sprint 1", "Implementada")
+        + linea("Propuesto (sin construir)", "Propuesta")
+        + "| **Backlog completo** | **%d** | **%d** | **%d** | **%d** |\n\n"
+        % (total["n"], total["us"], total["ts"], total["sp"])
+        + "El Sprint 1 comprometió %d Story Points, el %.0f %% del backlog. La diferencia entre "
+        "ese compromiso y lo que ya está construido es intencional: el equipo prefirió un "
+        "compromiso que pudiera sostener con el producto funcionando delante, y dejar el avance "
+        "restante identificado como tal en lugar de inflar el alcance del sprint.\n\n"
+        "Lo propuesto no es relleno: cada elemento pendiente corresponde a una obligación de la "
+        "Ley N° 29783 o de su Reglamento que el producto debe cubrir para reemplazar por completo "
+        "el expediente en papel, y por eso queda especificado y estimado aunque no se construya "
+        "en este ciclo.\n"
+        % (sp1, 100.0 * sp1 / total_puntos)
     )
 
     seccion = INTRO + cabecera + "\n" + "\n".join(filas) + "\n" + resumen + "\n"

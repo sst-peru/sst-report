@@ -107,221 +107,82 @@ Tener ambas capas importa porque el hook local puede no estar instalado en una m
 
 ## 5.2. Product Implementation & Deployment
 
-### 5.2.1. Sprint Backlogs
+### 5.2.1. Sprint Backlog
 
-El desarrollo se organizó en seis bloques de trabajo, tratados aquí como sprints. El Product
-Backlog del Capítulo III contiene los 162 elementos del producto, de los cuales 86
-(319 Story Points) están implementados y 76 quedan
-especificados como backlog pendiente. Los Sprint Backlogs que siguen cubren exactamente esos 86
-elementos implementados: cada uno contiene únicamente aquello que ese sprint se comprometió a
-completar, y la suma de los seis equivale al alcance efectivamente construido en este ciclo. Los
-elementos marcados *Propuesta* en el Capítulo III no figuran en ningún sprint, precisamente
-porque no se construyeron.
+El ciclo se organizó en un único sprint. El Product Backlog del Capítulo III contiene los 162
+elementos del producto; el Sprint Backlog que sigue contiene únicamente aquello a lo que el
+equipo se comprometió para este sprint.
 
-La columna *Story Points completados* coincide con los planificados en los seis sprints porque
-todos los elementos comprometidos quedaron terminados; no hubo arrastre de un sprint al
-siguiente.
+**Criterio de selección.** El compromiso del Sprint 1 es el **ciclo de vida completo de un
+hallazgo**: que un operario pueda registrarlo con evidencia y que un supervisor pueda recibirlo,
+asignarlo y cerrarlo dejando constancia. Se eligió ese recorrido y no una lista de pantallas
+porque es el mínimo que entrega valor por sí solo: con esos quince elementos la empresa ya puede
+demostrar ante una inspección que un peligro fue detectado, atendido y corregido, con su fecha y
+su responsable. Cualquier subconjunto menor deja el ciclo abierto y no sirve como evidencia.
 
-**Sobre el periodo de ejecución.** Conviene decirlo con precisión, porque el historial de los
-repositorios es público y cualquiera puede contrastarlo: los seis sprints de esta sección
-**organizan el alcance, no ventanas de calendario**. El trabajo no se repartió en seis
-iteraciones separadas por semanas; se ejecutó en sesiones intensivas de desarrollo entre el 12 y
-el 16 de septiembre de 2026, que es lo que muestran las fechas de los commits en `sst-api`,
-`sst-web`, `sst-mobile` y `sst-report`. Por eso las tablas que siguen no declaran fechas de
-inicio y fin: declararlas repartidas en semanas sería contradecir un dato verificable en un clic.
-
-Esa aclaración no vacía de contenido a los Sprint Backlogs. Lo que cada uno documenta —qué
-objetivo perseguía ese bloque de trabajo, qué elementos se comprometieron en él, cuántos Story
-Points suponía y en qué orden se construyó sobre lo anterior— sigue siendo la información que un
-Sprint Backlog aporta, y es la que permite entender por qué el producto se levantó en ese orden
-y no en otro: primero la captura del hallazgo, después su gestión, luego los registros
-obligatorios y al final la evidencia exportable.
-
-Lo que sí se sostuvo de la práctica iterativa es el criterio de incremento: cada bloque cierra
-con el producto funcionando de extremo a extremo para lo que ese bloque prometía, no con piezas
-sueltas a la espera de integrarse. El Sprint 1 termina con un operario capaz de registrar un
-hallazgo sin señal; el Sprint 2, con ese hallazgo asignado y cerrado; y así sucesivamente.
-
-> **Limitación reconocida.** Un ciclo de desarrollo comprimido impide observar lo que la práctica
-> iterativa busca: retroalimentación del usuario entre iteraciones que reoriente el alcance de la
-> siguiente. Los seis bloques se ejecutaron sobre un plan fijado de antemano. Se documenta como
-> limitación del trabajo, no como práctica recomendable.
+Los quince elementos son, además, los que funcionan **en las dos plataformas**: doce de las doce
+historias de usuario del sprint están marcadas `Ambas` en el Capítulo III. Eso hace que el
+incremento sea demostrable tanto desde el panel web como desde la aplicación Android, que es la
+condición de paridad que el proyecto se impuso.
 
 **Sprint 1**
 
 | Campo | Valor |
 |---|---|
-| Objetivo | Que un operario pueda entrar y registrar un hallazgo, con o sin señal. |
-| Elementos comprometidos | 11 |
-| Story Points planificados | 52 |
-| Story Points completados | 52 |
+| Objetivo | Cerrar el ciclo del hallazgo de extremo a extremo: registrarlo en campo con evidencia, recibirlo, asignarlo y cerrarlo con la acción correctiva aplicada. |
+| Elementos comprometidos | 15 |
+| Story Points planificados | 60 |
+| Story Points completados | 60 |
+| Incremento entregable | Un operario registra un acto o condición insegura con foto, ubicación y fecha real desde el celular o la web; el supervisor lo ve en su bandeja, lo asigna y lo cierra; la bitácora queda con quién hizo qué y cuándo. |
 
 | ID | Historia | Plataforma | SP | Estado |
 |---|---|---|---|---|
 | US02 | Inicio de sesión | Ambas | 3 | Completado |
-| US06 | Reporte rápido desde el celular | Ambas | 8 | Completado |
-| US07 | Reporte sin conexión | Móvil | 13 | Completado |
-| US08 | Sincronización sin duplicados | Ambas | 8 | Completado |
-| US13 | Consulta de mis reportes | Ambas | 3 | Completado |
 | US43 | Menú según mi rol | Ambas | 3 | Completado |
-| US70 | Sesión que no expira en campo | Ambas | 5 | Completado |
-| TS02 | Convenciones de commits | Los cuatro | 2 | Completado |
-| TS07 | Validación local del mensaje de commit | Los cuatro | 2 | Completado |
-| TS05 | Flujo de ramas GitFlow | Los cuatro | 3 | Completado |
-| TS06 | Fin de línea normalizado | Los cuatro | 2 | Completado |
-
-**Sprint 2**
-
-| Campo | Valor |
-|---|---|
-| Objetivo | Cerrar el ciclo del hallazgo: recibirlo, asignarlo y cerrarlo con evidencia. |
-| Elementos comprometidos | 12 |
-| Story Points planificados | 48 |
-| Story Points completados | 48 |
-
-| ID | Historia | Plataforma | SP | Estado |
-|---|---|---|---|---|
-| US14 | Bandeja de hallazgos | Ambas | 5 | Completado |
-| US16 | Cierre con acción correctiva | Ambas | 5 | Completado |
-| US15 | Asignación de responsable | Ambas | 5 | Completado |
-| US17 | Separación de responsabilidades | Ambas | 3 | Completado |
-| US18 | Bitácora del hallazgo | Ambas | 3 | Completado |
+| US06 | Reporte rápido desde el celular | Ambas | 8 | Completado |
+| US47 | Categorías según el tipo de hallazgo | Ambas | 2 | Completado |
 | US09 | Evidencia fotográfica | Ambas | 5 | Completado |
-| US35 | Indicador MTTR | Ambas | 5 | Completado |
-| US50 | Filtrar la bandeja | Ambas | 3 | Completado |
-| US49 | Descartar un reporte | Web | 2 | Completado |
-| TS01 | Integración continua | Los cuatro | 5 | Completado |
-| TS13 | Migraciones verificadas en integración | sst-api | 2 | Completado |
-| TS11 | Aislamiento entre empresas | sst-api | 5 | Completado |
-
-**Sprint 3**
-
-| Campo | Valor |
-|---|---|
-| Objetivo | Completar la captura y dejar el experimento A/B corriendo. |
-| Elementos comprometidos | 14 |
-| Story Points planificados | 47 |
-| Story Points completados | 47 |
-
-| ID | Historia | Plataforma | SP | Estado |
-|---|---|---|---|---|
 | US10 | Geolocalización del hallazgo | Ambas | 5 | Completado |
 | US11 | Fecha real de ocurrencia | Ambas | 3 | Completado |
-| US12 | Reporte desde la web | Web | 5 | Completado |
-| US44 | Vista previa de la evidencia | Web | 3 | Completado |
-| US45 | Ampliar la evidencia | Web | 3 | Completado |
-| US46 | Reemplazar la foto elegida | Web | 2 | Completado |
-| US47 | Categorías según el tipo de hallazgo | Ambas | 2 | Completado |
-| US48 | Estado de envío de mis reportes | Móvil | 3 | Completado |
-| US51 | Ubicar el hallazgo en el mapa | Web | 1 | Completado |
-| US38 | Asignación de variante | Ambas | 5 | Completado |
-| US39 | Registro de la variante en el reporte | Ambas | 2 | Completado |
-| US40 | Resultados del experimento | Web | 5 | Completado |
-| US64 | Variante disponible sin conexión | Móvil | 3 | Completado |
-| TS12 | Idempotencia en la creación de reportes | sst-api | 5 | Completado |
+| US13 | Consulta de mis reportes | Ambas | 3 | Completado |
+| US14 | Bandeja de hallazgos | Ambas | 5 | Completado |
+| US15 | Asignación de responsable | Ambas | 5 | Completado |
+| US16 | Cierre con acción correctiva | Ambas | 5 | Completado |
+| US18 | Bitácora del hallazgo | Ambas | 3 | Completado |
+| TS02 | Convenciones de commits | Los cuatro | 2 | Completado |
+| TS05 | Flujo de ramas GitFlow | Los cuatro | 3 | Completado |
+| TS01 | Integración continua | Los cuatro | 5 | Completado |
 
-**Sprint 4**
+**Velocidad.** Los 60 Story Points comprometidos se completaron en su totalidad; no hubo arrastre
+al siguiente sprint. Con un solo sprint ejecutado no existe serie histórica, de modo que esta
+cifra es un punto de partida para estimar el Sprint 2 y no todavía una velocidad estabilizada.
 
-| Campo | Valor |
-|---|---|
-| Objetivo | Cuentas, roles y estructura organizativa de la empresa. |
-| Elementos comprometidos | 10 |
-| Story Points planificados | 30 |
-| Story Points completados | 30 |
+**Sobre el alcance construido más allá del compromiso.** El repositorio contiene trabajo que
+excede este Sprint Backlog: el Capítulo III identifica 71 elementos adicionales marcados
+*Implementada*, entre ellos la matriz IPERC, el control de EPP, las inspecciones, el comité, la
+exportación de evidencia y el experimento A/B. Se deja constancia explícita de que **no forman
+parte del compromiso del Sprint 1** y por eso no figuran en la tabla anterior. Contarlos como
+alcance del sprint habría inflado la velocidad y vuelto inútil la cifra para planificar el
+siguiente; identificarlos como avance permite que el Sprint 2 se planifique sobre lo que
+realmente falta.
 
-| ID | Historia | Plataforma | SP | Estado |
-|---|---|---|---|---|
-| US01 | Registro de trabajador | Ambas | 5 | Completado |
-| US03 | Sesión persistente en campo | Ambas | 3 | Completado |
-| US05 | Gestión de áreas | Web | 2 | Completado |
-| US04 | Administración de usuarios | Web | 5 | Completado |
-| US41 | Cambio de rol de un usuario | Web | 2 | Completado |
-| US42 | Cierre de sesión | Ambas | 1 | Completado |
-| TS03 | Documentación viva del API | sst-api | 2 | Completado |
-| TS08 | Configuración por variables de entorno | sst-api | 3 | Completado |
-| TS09 | Proxy de desarrollo | sst-web | 2 | Completado |
-| TS10 | Renovación transparente del token | sst-web, sst-mobile | 5 | Completado |
+**Sobre el periodo de ejecución.** Conviene decirlo con precisión, porque el historial de los
+repositorios es público y cualquiera puede contrastarlo: el sprint no ocupó una ventana de varias
+semanas. El trabajo se ejecutó en sesiones intensivas de desarrollo entre el 12 y el 16 de
+septiembre de 2026, que es lo que muestran las fechas de los commits en `sst-api`, `sst-web`,
+`sst-mobile` y `sst-report`. Por eso la tabla no declara fechas de inicio y fin: declararlas
+repartidas en semanas sería contradecir un dato verificable en un clic.
 
-**Sprint 5**
-
-| Campo | Valor |
-|---|---|
-| Objetivo | Los registros obligatorios del SGSST: IPERC, EPP e inspecciones. |
-| Elementos comprometidos | 19 |
-| Story Points planificados | 70 |
-| Story Points completados | 70 |
-
-| ID | Historia | Plataforma | SP | Estado |
-|---|---|---|---|---|
-| US19 | Consulta de la matriz en campo | Ambas | 3 | Completado |
-| US20 | Registro de peligros | Web | 5 | Completado |
-| US21 | Versionado de la matriz | Web | 5 | Completado |
-| US22 | Trazabilidad con el hallazgo de origen | Ambas | 3 | Completado |
-| US52 | Consultar versiones anteriores de la matriz | Web | 5 | Completado |
-| US53 | Publicar una nueva versión de la matriz | Web | 5 | Completado |
-| US54 | Retirar un peligro de la matriz | Web | 2 | Completado |
-| US23 | Catálogo de EPP | Web | 3 | Completado |
-| US24 | Registro de entrega | Web | 3 | Completado |
-| US25 | Conformidad del trabajador | Ambas | 3 | Completado |
-| US26 | Alerta de EPP vencido | Ambas | 2 | Completado |
-| US55 | Control de stock del catálogo | Web | 2 | Completado |
-| US27 | Programa de inspecciones | Web | 5 | Completado |
-| US28 | Ejecución con checklist | Ambas | 5 | Completado |
-| US29 | Inspecciones vencidas | Ambas | 3 | Completado |
-| US56 | Programar la siguiente inspección | Web | 3 | Completado |
-| US36 | Tasa de cumplimiento de inspecciones | Ambas | 5 | Completado |
-| US57 | Cumplimiento por área | Web | 3 | Completado |
-| TS04 | Datos de demostración | sst-api | 5 | Completado |
-
-**Sprint 6**
-
-| Campo | Valor |
-|---|---|
-| Objetivo | Comité de SST, evidencia exportable y calidad de uso. |
-| Elementos comprometidos | 20 |
-| Story Points planificados | 72 |
-| Story Points completados | 72 |
-
-| ID | Historia | Plataforma | SP | Estado |
-|---|---|---|---|---|
-| US30 | Constitución del comité | Web | 3 | Completado |
-| US31 | Miembros y paridad | Web | 5 | Completado |
-| US32 | Acta de reunión | Web | 5 | Completado |
-| US33 | Control de quórum | Ambas | 3 | Completado |
-| US34 | Acuerdos con responsable y plazo | Web | 3 | Completado |
-| US58 | Advertencia de comité no paritario | Web | 2 | Completado |
-| US59 | Seguimiento del estado de los acuerdos | Web | 2 | Completado |
-| US60 | Consultar las actas desde el celular | Móvil | 3 | Completado |
-| US37 | Exportación de evidencia | Web | 8 | Completado |
-| US61 | MTTR por severidad | Ambas | 3 | Completado |
-| US62 | Exportar cada registro obligatorio | Web | 3 | Completado |
-| US63 | Resumen de hallazgos | Ambas | 3 | Completado |
-| US65 | Identidad visual consistente | Ambas | 5 | Completado |
-| US66 | Navegación siempre accesible | Ambas | 2 | Completado |
-| US67 | Uso desde pantallas pequeñas | Web | 5 | Completado |
-| US68 | Errores comprensibles | Ambas | 3 | Completado |
-| US69 | Reintento ante fallo de red | Móvil | 3 | Completado |
-| TS14 | APK publicado por el pipeline | sst-mobile | 3 | Completado |
-| TS15 | Generación de evidencia en Excel | sst-api | 5 | Completado |
-| TS16 | Informe compilable y con índice verificado | sst-report | 3 | Completado |
-
-**Resumen de los seis sprints**
-
-| Sprint | Elementos | Story Points | Objetivo |
-|---|---|---|---|
-| Sprint 1 | 11 | 52 | Que un operario pueda entrar y registrar un hallazgo, con o sin señal. |
-| Sprint 2 | 12 | 48 | Cerrar el ciclo del hallazgo: recibirlo, asignarlo y cerrarlo con evidencia. |
-| Sprint 3 | 14 | 47 | Completar la captura y dejar el experimento A/B corriendo. |
-| Sprint 4 | 10 | 30 | Cuentas, roles y estructura organizativa de la empresa. |
-| Sprint 5 | 19 | 70 | Los registros obligatorios del SGSST: IPERC, EPP e inspecciones. |
-| Sprint 6 | 20 | 72 | Comité de SST, evidencia exportable y calidad de uso. |
-| **Total** | **86** | **319** | |
+> **Limitación reconocida.** Un ciclo de desarrollo comprimido impide observar lo que la práctica
+> iterativa busca: retroalimentación del usuario entre iteraciones que reoriente el alcance de la
+> siguiente. El sprint se ejecutó sobre un plan fijado de antemano. Se documenta como limitación
+> del trabajo, no como práctica recomendable.
 
 ### 5.2.2. Implemented Landing Page Evidence
 
 > **PENDIENTE — fuera del alcance de este ciclo.** La landing page no forma parte de la
 > aplicación web: se construye en un repositorio propio, por las razones expuestas en la sección
-> 4.3. Al cierre de estos seis sprints todavía no está implementada, de modo que no hay evidencia
+> 4.3. Al cierre de este sprint todavía no está implementada, de modo que no hay evidencia
 > que presentar aquí. La estructura prevista y las restricciones de contenido quedan
 > especificadas en 4.3.1.
 
