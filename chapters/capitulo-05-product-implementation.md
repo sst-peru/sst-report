@@ -109,8 +109,9 @@ Tener ambas capas importa porque el hook local puede no estar instalado en una m
 
 ### 5.2.1. Sprint Backlogs
 
-El desarrollo se organizó en seis sprints. El Product Backlog del Capítulo III contiene los 162
-elementos del producto, de los cuales 86 (319 Story Points) están implementados y 76 quedan
+El desarrollo se organizó en seis bloques de trabajo, tratados aquí como sprints. El Product
+Backlog del Capítulo III contiene los 162 elementos del producto, de los cuales 86
+(319 Story Points) están implementados y 76 quedan
 especificados como backlog pendiente. Los Sprint Backlogs que siguen cubren exactamente esos 86
 elementos implementados: cada uno contiene únicamente aquello que ese sprint se comprometió a
 completar, y la suma de los seis equivale al alcance efectivamente construido en este ciclo. Los
@@ -121,15 +122,36 @@ La columna *Story Points completados* coincide con los planificados en los seis 
 todos los elementos comprometidos quedaron terminados; no hubo arrastre de un sprint al
 siguiente.
 
-> **PENDIENTE — fechas.** Completar las fechas de inicio y fin de cada sprint con el calendario
-> del curso.
+**Sobre el periodo de ejecución.** Conviene decirlo con precisión, porque el historial de los
+repositorios es público y cualquiera puede contrastarlo: los seis sprints de esta sección
+**organizan el alcance, no ventanas de calendario**. El trabajo no se repartió en seis
+iteraciones separadas por semanas; se ejecutó en sesiones intensivas de desarrollo entre el 12 y
+el 16 de septiembre de 2026, que es lo que muestran las fechas de los commits en `sst-api`,
+`sst-web`, `sst-mobile` y `sst-report`. Por eso las tablas que siguen no declaran fechas de
+inicio y fin: declararlas repartidas en semanas sería contradecir un dato verificable en un clic.
+
+Esa aclaración no vacía de contenido a los Sprint Backlogs. Lo que cada uno documenta —qué
+objetivo perseguía ese bloque de trabajo, qué elementos se comprometieron en él, cuántos Story
+Points suponía y en qué orden se construyó sobre lo anterior— sigue siendo la información que un
+Sprint Backlog aporta, y es la que permite entender por qué el producto se levantó en ese orden
+y no en otro: primero la captura del hallazgo, después su gestión, luego los registros
+obligatorios y al final la evidencia exportable.
+
+Lo que sí se sostuvo de la práctica iterativa es el criterio de incremento: cada bloque cierra
+con el producto funcionando de extremo a extremo para lo que ese bloque prometía, no con piezas
+sueltas a la espera de integrarse. El Sprint 1 termina con un operario capaz de registrar un
+hallazgo sin señal; el Sprint 2, con ese hallazgo asignado y cerrado; y así sucesivamente.
+
+> **Limitación reconocida.** Un ciclo de desarrollo comprimido impide observar lo que la práctica
+> iterativa busca: retroalimentación del usuario entre iteraciones que reoriente el alcance de la
+> siguiente. Los seis bloques se ejecutaron sobre un plan fijado de antemano. Se documenta como
+> limitación del trabajo, no como práctica recomendable.
 
 **Sprint 1**
 
 | Campo | Valor |
 |---|---|
 | Objetivo | Que un operario pueda entrar y registrar un hallazgo, con o sin señal. |
-| Fechas | <!-- COMPLETAR: inicio y fin --> |
 | Elementos comprometidos | 11 |
 | Story Points planificados | 52 |
 | Story Points completados | 52 |
@@ -153,7 +175,6 @@ siguiente.
 | Campo | Valor |
 |---|---|
 | Objetivo | Cerrar el ciclo del hallazgo: recibirlo, asignarlo y cerrarlo con evidencia. |
-| Fechas | <!-- COMPLETAR: inicio y fin --> |
 | Elementos comprometidos | 12 |
 | Story Points planificados | 48 |
 | Story Points completados | 48 |
@@ -178,7 +199,6 @@ siguiente.
 | Campo | Valor |
 |---|---|
 | Objetivo | Completar la captura y dejar el experimento A/B corriendo. |
-| Fechas | <!-- COMPLETAR: inicio y fin --> |
 | Elementos comprometidos | 14 |
 | Story Points planificados | 47 |
 | Story Points completados | 47 |
@@ -205,7 +225,6 @@ siguiente.
 | Campo | Valor |
 |---|---|
 | Objetivo | Cuentas, roles y estructura organizativa de la empresa. |
-| Fechas | <!-- COMPLETAR: inicio y fin --> |
 | Elementos comprometidos | 10 |
 | Story Points planificados | 30 |
 | Story Points completados | 30 |
@@ -228,7 +247,6 @@ siguiente.
 | Campo | Valor |
 |---|---|
 | Objetivo | Los registros obligatorios del SGSST: IPERC, EPP e inspecciones. |
-| Fechas | <!-- COMPLETAR: inicio y fin --> |
 | Elementos comprometidos | 19 |
 | Story Points planificados | 70 |
 | Story Points completados | 70 |
@@ -260,7 +278,6 @@ siguiente.
 | Campo | Valor |
 |---|---|
 | Objetivo | Comité de SST, evidencia exportable y calidad de uso. |
-| Fechas | <!-- COMPLETAR: inicio y fin --> |
 | Elementos comprometidos | 20 |
 | Story Points planificados | 72 |
 | Story Points completados | 72 |
