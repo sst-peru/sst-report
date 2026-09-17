@@ -146,20 +146,9 @@ no se indexa por requerir autenticación.
 | `<meta name="description">` | Resguardo — Sistema de Gestión de Seguridad y Salud en el Trabajo (Ley N° 29783) |
 | `<html lang>` | `es-PE` |
 | `<meta name="viewport">` | `width=device-width, initial-scale=1.0` |
-| `<meta name="theme-color">` | `#12304f` (azul marino institucional) |
-| `<meta name="robots">` | `index, follow` |
-| `og:type` / `og:site_name` / `og:locale` | `website` / `Resguardo` / `es_PE` |
-| `og:title` | Resguardo — Sistema de Gestión de SST |
-| `og:description` | Reporte de actos y condiciones inseguras desde el celular, con foto, ubicación y sin depender de la señal. Seguimiento hasta el cierre y evidencia lista para una inspección. |
-| `og:url` / `og:image` | URL del despliegue y su imagen de presentación |
-| `twitter:card` | `summary_large_image` |
+| Open Graph | <!-- COMPLETAR en la landing page, que vive en su propio repositorio: og:title, og:description, og:image, og:url -->
 
-Las etiquetas están declaradas en el `index.html` de `sst-web`, de modo que se sirven con la
-página pública sin necesidad de ejecutar JavaScript: un rastreador las lee en la primera
-respuesta del servidor.
-
-<!-- COMPLETAR: sustituir el dominio de ejemplo de `og:url` y publicar la imagen de
-     `og:image` (1200 × 630 px) una vez definido el dominio del despliegue. -->
+Las etiquetas `title`, `description`, `lang` y `viewport` están declaradas en el `index.html` de `sst-web`. Las de Open Graph y Twitter Card corresponden a la landing page y se declararán en su repositorio.
 
 ### 4.2.4. Searching Systems
 
@@ -235,7 +224,7 @@ Tres lecturas de esa tabla:
 | Destino inicial según rol | El operario entra a *Reportar*; el supervisor y el comité, al *Tablero* | La primera pantalla debe ser la tarea más probable de ese rol, no una bienvenida |
 | Ruta no autorizada | Un operario que escriba `/usuarios` es redirigido a sus reportes | Un 403 en pantalla no le sirve de nada a quien no puede estar ahí |
 | Ruta inexistente | Cualquier otra ruta redirige al inicio del rol | Evita pantallas en blanco por un enlace viejo o un error de tipeo |
-| Sesión no iniciada | El acceso a una ruta privada lleva a la página pública, no a un error | Quien llega sin cuenta debe poder entender qué es el sistema |
+| Sesión no iniciada | El acceso a una ruta privada lleva a la pantalla de acceso, no a un error | Quien llega por un enlace sin sesión debe poder iniciarla y continuar |
 | Opción activa | Filete azul a la izquierda en la web; destino resaltado en la barra inferior del móvil | Ubicación permanente sin recurrir a migas de pan |
 | Estado al volver | El móvil conserva el estado de cada pestaña al cambiar entre ellas | Volver a una lista y encontrarla al inicio obliga a repetir el trabajo de búsqueda |
 | Cierre de sesión | Siempre en el pie de la barra lateral y en la pantalla "Más" | Una acción con consecuencia se coloca lejos de la navegación frecuente |
@@ -244,10 +233,9 @@ Tres lecturas de esa tabla:
 
 ```mermaid
 flowchart LR
-    Publica[Página pública] --> Acceso[Acceso]
-    Publica --> Registro[Registro]
-    Registro --> Rol{Rol del usuario}
-    Acceso --> Rol
+    Acceso[Acceso] --> Rol{Rol del usuario}
+    Acceso --> Registro[Registro]
+    Registro --> Rol
 
     Rol -->|Operario| Reportar[Reportar]
     Rol -->|Supervisor / Comité| Tablero[Tablero]
@@ -273,39 +261,46 @@ abrir el celular.
 
 ## 4.3. Landing Page UI Design
 
-La página pública es lo único del producto que ve alguien que todavía no tiene cuenta. Por eso
-tiene una restricción autoimpuesta que conviene declarar: **solo anuncia lo que el sistema hace
-hoy**. Ninguna de las capacidades descritas en ella pertenece al backlog propuesto del Capítulo
-III; si una funcionalidad está marcada *Propuesta*, no aparece en la página.
+La página pública **no forma parte de la aplicación web**. Vive en su propio repositorio, separada
+del panel de gestión, por dos razones que conviene declarar:
 
-Vive en la misma aplicación web (`sst-web`), en la ruta pública `/inicio`, y comparte los tokens
-de color y tipografía del panel. Un visitante que después inicia sesión no siente que entró a
-otro producto. Además, es el destino al que redirige cualquier ruta privada cuando no hay sesión
-iniciada: quien llega por un enlace sin estar autenticado encuentra una explicación, no un error.
+| Razón | Consecuencia |
+|---|---|
+| Audiencias distintas | La landing se dirige a quien todavía no es cliente; el panel, a quien ya lo es y trabaja en él todos los días. Son dos productos con métricas y ritmos de cambio diferentes |
+| Despliegue independiente | Un cambio de texto comercial no debería obligar a reconstruir y volver a desplegar la aplicación de gestión, ni arrastrar su código al navegador de un visitante |
+
+Comparte, eso sí, la identidad visual definida en 4.1: los mismos tokens de color, la misma
+tipografía y el mismo tono institucional, de modo que quien pase de la página al acceso no sienta
+que entró a otro producto.
+
+> **PENDIENTE — fuera del alcance de este ciclo.** La landing page se construye en un repositorio
+> aparte. Esta sección documenta su diseño previsto; las capturas se incorporan cuando esté
+> publicada.
 
 ### 4.3.1. Landing Page Wireframe
 
-Estructura de arriba hacia abajo, con la intención de cada bloque:
+Estructura prevista de arriba hacia abajo, con la intención de cada bloque:
 
 | # | Bloque | Contenido | Qué debe lograr |
 |---|---|---|---|
 | 1 | Barra de navegación | Logotipo, anclas a las secciones y botón *Ingresar* | Que el usuario que ya es cliente llegue al acceso en un clic, sin leer nada |
-| 2 | Encabezado | Referencia normativa, titular, párrafo de propuesta de valor y dos llamadas a la acción | Decir en una frase qué resuelve y para quién |
-| 3 | Panel del recorrido | Los cinco pasos del hallazgo: se detecta, se registra, se asigna, se cierra, se documenta | Mostrar el producto como un proceso completo, no como una lista de pantallas |
-| 4 | El problema | Tres tarjetas: el reporte no llega, el peligro sigue ahí, no hay cómo demostrarlo | Que el visitante se reconozca antes de que se le ofrezca nada |
-| 5 | El sistema | Seis capacidades: reporte en campo, seguimiento, evidencia, IPERC, EPP e inspecciones, comité | Responder qué hace, con el vocabulario del dominio |
+| 2 | Encabezado | Referencia normativa, titular, propuesta de valor y dos llamadas a la acción | Decir en una frase qué resuelve y para quién |
+| 3 | Recorrido del hallazgo | Los cinco pasos: se detecta, se registra, se asigna, se cierra, se documenta | Mostrar el producto como un proceso completo, no como una lista de pantallas |
+| 4 | El problema | Tres bloques: el reporte no llega, el peligro sigue ahí, no hay cómo demostrarlo | Que el visitante se reconozca antes de que se le ofrezca nada |
+| 5 | El sistema | Reporte en campo, seguimiento, evidencia, IPERC, EPP e inspecciones, comité | Responder qué hace, con el vocabulario del dominio |
 | 6 | Cumplimiento | Tabla obligación → base normativa → dónde queda registrado | Convertir la promesa en trazabilidad verificable |
 | 7 | Planes | Tres niveles según número de trabajadores | Que el visitante se ubique sin pedir una cotización |
-| 8 | Contacto | Bloque sobre fondo azul marino con correo y enlace de solicitud de demostración | Cerrar con una acción, no con un formulario que no va a ninguna parte |
+| 8 | Contacto | Vía de contacto y solicitud de demostración | Cerrar con una acción concreta |
 | 9 | Pie | Referencia a la Ley N° 29783 y su Reglamento | Reforzar el encuadre institucional |
 
-**Decisiones de diseño que conviene sustentar en la exposición**
+**Restricciones autoimpuestas al contenido**
 
-| Decisión | Razón |
+| Restricción | Razón |
 |---|---|
-| El bloque de planes no muestra precios | El precio depende del número de trabajadores y del acompañamiento; publicar una cifra inventada sería peor que no publicar ninguna |
-| El contacto es un enlace de correo, no un formulario | Un formulario que no envía a ningún servidor es una promesa falsa; el enlace abre el correo del visitante con los campos ya planteados |
-| La cifra oficial del MTPE está condicionada en el código | La página tiene preparado el bloque de la cifra, pero no lo muestra mientras no se cargue el dato con su fuente. Es el mismo criterio del Capítulo I: antes que una cifra sin respaldo, ninguna |
+| Solo se anuncian capacidades implementadas | Ninguna historia marcada *Propuesta* en el Capítulo III puede aparecer en la página: publicitar lo que no existe es la forma más rápida de perder al primer cliente |
+| Sin precios publicados en los planes | El precio depende del número de trabajadores y del acompañamiento; una cifra inventada es peor que ninguna |
+| Sin formulario que no envíe a ningún servidor | Un formulario que no llega a nadie es una promesa falsa; mientras no haya backend de contacto, se usa una vía de contacto directa |
+| La cifra del MTPE solo se publica con su fuente | Mismo criterio que el Capítulo I: antes que un número sin respaldo, ninguno |
 | La tabla de cumplimiento cita el artículo | Un responsable de SST evalúa el producto por su cobertura normativa, no por adjetivos |
 
 <!-- IMAGEN REQUERIDA: wireframe de la landing page en assets/img/landing-wireframe.png.
@@ -313,24 +308,16 @@ Estructura de arriba hacia abajo, con la intención de cada bloque:
 
 ### 4.3.2. Landing Page Mock-up
 
-La página está construida y es navegable: no hay un mock-up estático que difiera de ella. El
-mock-up de esta sección son capturas de la página real.
+<!-- IMAGEN REQUERIDA: mock-up o capturas de la landing page en
+     assets/img/landing-mockup-*.png, una vez construida en su repositorio. -->
 
-<!-- IMAGEN REQUERIDA: capturas de la landing page desplegada en
-     assets/img/landing-mockup-hero.png, landing-mockup-problema.png,
-     landing-mockup-cumplimiento.png y landing-mockup-planes.png.
-     Se obtienen levantando la web y abriendo http://localhost:5173/inicio -->
+> **PENDIENTE.** Incorporar el mock-up cuando la landing page esté construida, junto con la URL
+> de su despliegue.
 
-**Aplicación de la guía de estilo.** La página reutiliza los tokens de `global.css` sin introducir
-colores nuevos: azul marino para la marca, las acciones y el bloque de contacto; gris para
-estructura y texto secundario; blanco para las superficies. El titular y los nombres de los
-planes van en la serif del sistema, igual que los títulos del panel. El único elemento que la
-página añade a la identidad es el numeral circular del recorrido, en azul claro, que existe para
-que los cinco pasos se lean como una secuencia y no como una lista.
-
-**Etiquetas SEO.** Las etiquetas `title`, `description`, `lang`, `viewport`, Open Graph y Twitter
-Card declaradas en la sección 4.2.3 viven en el `index.html` de la aplicación web y aplican a esta
-página.
+**Aplicación de la guía de estilo.** La página debe reutilizar los tokens definidos en 4.1 sin
+introducir colores nuevos: azul marino para la marca, las acciones y el bloque de contacto; gris
+para estructura y texto secundario; blanco para las superficies. El titular y los nombres de los
+planes, en la serif del sistema, igual que los títulos del panel.
 
 ## 4.4. Mobile Applications UX/UI Design
 

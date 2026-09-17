@@ -4,7 +4,7 @@ from pathlib import Path
 
 RUTA = Path(__file__).resolve().parent.parent / "chapters" / "capitulo-03-requirements-specification.md"
 
-# Orden de prioridad de los 87 elementos ya implementados, con su estimacion.
+# Orden de prioridad de los 86 elementos ya implementados, con su estimacion.
 IMPLEMENTADOS = [
     ("US02", 3), ("US06", 8), ("US07", 13), ("US08", 8), ("US13", 3), ("US43", 3),
     ("US70", 5), ("US14", 5), ("US16", 5), ("US15", 5), ("US17", 3), ("US18", 3),
@@ -17,7 +17,7 @@ IMPLEMENTADOS = [
     ("US28", 5), ("US29", 3), ("US56", 3), ("US36", 5), ("US57", 3), ("US30", 3),
     ("US31", 5), ("US32", 5), ("US33", 3), ("US34", 3), ("US58", 2), ("US59", 2),
     ("US60", 3), ("US37", 8), ("US61", 3), ("US62", 3), ("US63", 3), ("US65", 5),
-    ("US66", 2), ("US67", 5), ("US68", 3), ("US69", 3), ("US129", 5),
+    ("US66", 2), ("US67", 5), ("US68", 3), ("US69", 3),
     ("TS02", 2), ("TS07", 2), ("TS05", 3), ("TS06", 2), ("TS01", 5), ("TS13", 2),
     ("TS03", 2), ("TS08", 3), ("TS09", 2), ("TS10", 5), ("TS11", 5), ("TS12", 5),
     ("TS04", 5), ("TS14", 3), ("TS15", 5), ("TS16", 3),
@@ -44,14 +44,14 @@ PROPUESTOS = [
 
 INTRO = """## 3.3. Product Backlog
 
-El backlog reúne los 163 elementos del producto: las 129 historias de usuario, agrupadas en
+El backlog reúne los 162 elementos del producto: las 128 historias de usuario, agrupadas en
 diecinueve épicas, y las 34 historias técnicas. El orden es de prioridad de negocio, no
 cronológico: primero lo que hace que el sistema capture el hallazgo, después lo que permite
 gestionarlo, luego lo que sostiene la operación, y al final lo que amplía la cobertura legal del
 sistema de gestión.
 
 La columna **Estado** separa dos cosas que conviene no confundir. *Implementada* significa que la
-funcionalidad está construida y verificable en el código entregado; esos 87 elementos son los
+funcionalidad está construida y verificable en el código entregado; esos 86 elementos son los
 que se repartieron en los seis sprints del Capítulo V. *Propuesta* significa que la historia está
 especificada y estimada, pero su construcción queda fuera del alcance de estos sprints: es el
 backlog pendiente que da continuidad al producto. Un backlog sirve precisamente para eso —

@@ -267,7 +267,6 @@ registro obligatorio que el producto aún no cubre y el primero del backlog futu
 | US108 | Planes y suscripción | **Como** administrador **quiero** conocer y cambiar mi plan **para** ajustar el servicio al tamaño de la empresa. | **Cuando** consulto la suscripción<br>**Entonces** veo el plan vigente, el número de trabajadores cubiertos y la fecha de renovación | Web | Propuesta | EP18 |
 | US109 | Exportación completa de mis datos | **Como** administrador **quiero** poder llevarme toda la información de mi empresa **para** no quedar atado al proveedor. | **Cuando** solicito la exportación completa<br>**Entonces** recibo todos los registros en formato abierto | Web | Propuesta | EP18 |
 | US110 | Respaldo y continuidad | **Como** empresa cliente **quiero** que mis registros estén respaldados **para** no perder la evidencia de años de gestión. | **Cuando** ocurre una falla del servicio<br>**Entonces** la información se restablece desde el último respaldo dentro del tiempo comprometido en el acuerdo de servicio | — | Propuesta | EP18 |
-| US129 | Página pública del producto | **Como** responsable de SST que todavía no es cliente **quiero** entender qué hace el sistema antes de pedir una cuenta **para** evaluar si me sirve. | **Cuando** entro a la dirección pública<br>**Entonces** veo qué problema resuelve, qué obligación legal cubre cada parte y cómo solicitar una demostración, y puedo pasar al acceso en un clic<br><br>**Escenario: ruta privada sin sesión**<br>**Cuando** abro una ruta del panel sin haber iniciado sesión<br>**Entonces** llego a la página pública, no a un error | Web | Implementada | EP18 |
 
 ### EP19 — Seguridad y privacidad de datos
 
@@ -344,14 +343,14 @@ propuestas y quedan en el backlog.
 
 ## 3.3. Product Backlog
 
-El backlog reúne los 163 elementos del producto: las 129 historias de usuario, agrupadas en
+El backlog reúne los 162 elementos del producto: las 128 historias de usuario, agrupadas en
 diecinueve épicas, y las 34 historias técnicas. El orden es de prioridad de negocio, no
 cronológico: primero lo que hace que el sistema capture el hallazgo, después lo que permite
 gestionarlo, luego lo que sostiene la operación, y al final lo que amplía la cobertura legal del
 sistema de gestión.
 
 La columna **Estado** separa dos cosas que conviene no confundir. *Implementada* significa que la
-funcionalidad está construida y verificable en el código entregado; esos 87 elementos son los
+funcionalidad está construida y verificable en el código entregado; esos 86 elementos son los
 que se repartieron en los seis sprints del Capítulo V. *Propuesta* significa que la historia está
 especificada y estimada, pero su construcción queda fuera del alcance de estos sprints: es el
 backlog pendiente que da continuidad al producto. Un backlog sirve precisamente para eso —
@@ -434,109 +433,108 @@ backend o de infraestructura.
 | 68 | US67 | Uso desde pantallas pequeñas | EP10 | Web | Implementada | 5 |
 | 69 | US68 | Errores comprensibles | EP10 | Ambas | Implementada | 3 |
 | 70 | US69 | Reintento ante fallo de red | EP10 | Móvil | Implementada | 3 |
-| 71 | US129 | Página pública del producto | EP18 | Web | Implementada | 5 |
-| 72 | TS02 | Convenciones de commits | — | Los cuatro | Implementada | 2 |
-| 73 | TS07 | Validación local del mensaje de commit | — | Los cuatro | Implementada | 2 |
-| 74 | TS05 | Flujo de ramas GitFlow | — | Los cuatro | Implementada | 3 |
-| 75 | TS06 | Fin de línea normalizado | — | Los cuatro | Implementada | 2 |
-| 76 | TS01 | Integración continua | — | Los cuatro | Implementada | 5 |
-| 77 | TS13 | Migraciones verificadas en integración | — | sst-api | Implementada | 2 |
-| 78 | TS03 | Documentación viva del API | — | sst-api | Implementada | 2 |
-| 79 | TS08 | Configuración por variables de entorno | — | sst-api | Implementada | 3 |
-| 80 | TS09 | Proxy de desarrollo | — | sst-web | Implementada | 2 |
-| 81 | TS10 | Renovación transparente del token | — | sst-web, sst-mobile | Implementada | 5 |
-| 82 | TS11 | Aislamiento entre empresas | — | sst-api | Implementada | 5 |
-| 83 | TS12 | Idempotencia en la creación de reportes | — | sst-api | Implementada | 5 |
-| 84 | TS04 | Datos de demostración | — | sst-api | Implementada | 5 |
-| 85 | TS14 | APK publicado por el pipeline | — | sst-mobile | Implementada | 3 |
-| 86 | TS15 | Generación de evidencia en Excel | — | sst-api | Implementada | 5 |
-| 87 | TS16 | Informe compilable y con índice verificado | — | sst-report | Implementada | 3 |
-| 88 | US71 | Registro de accidente de trabajo | EP11 | Web | Propuesta | 8 |
-| 89 | US72 | Registro de incidente peligroso | EP11 | Ambas | Propuesta | 5 |
-| 90 | US73 | Reportar un accidente desde el celular | EP11 | Móvil | Propuesta | 5 |
-| 91 | US74 | Investigación de causa raíz | EP11 | Web | Propuesta | 8 |
-| 92 | US75 | Medidas correctivas con responsable y plazo | EP11 | Web | Propuesta | 5 |
-| 93 | US76 | Aviso de accidente mortal dentro del plazo legal | EP11 | Web | Propuesta | 3 |
-| 94 | US77 | Indicadores de accidentabilidad | EP11 | Ambas | Propuesta | 5 |
-| 95 | US78 | Registro de enfermedad ocupacional | EP11 | Web | Propuesta | 5 |
-| 96 | US79 | Programa anual de capacitación | EP12 | Web | Propuesta | 5 |
-| 97 | US80 | Registro de asistencia a capacitación | EP12 | Móvil | Propuesta | 5 |
-| 98 | US81 | Inducción del personal nuevo | EP12 | Web | Propuesta | 5 |
-| 99 | US82 | Alerta de capacitación vencida | EP12 | Web | Propuesta | 3 |
-| 100 | US83 | Consultar mis capacitaciones | EP12 | Móvil | Propuesta | 3 |
-| 101 | US84 | Registro de simulacros | EP12 | Web | Propuesta | 3 |
-| 102 | US85 | Mapa de riesgos por área | EP13 | Web | Propuesta | 8 |
-| 103 | US86 | Consultar el mapa de riesgos en campo | EP13 | Móvil | Propuesta | 3 |
-| 104 | US87 | Inventario de señalización | EP13 | Web | Propuesta | 3 |
-| 105 | US88 | Ubicar el área por código QR | EP13 | Móvil | Propuesta | 5 |
-| 106 | US89 | Política de SST publicada | EP14 | Ambas | Propuesta | 3 |
-| 107 | US90 | Reglamento Interno de SST | EP14 | Ambas | Propuesta | 3 |
-| 108 | US91 | Plan y programa anual de SST | EP14 | Web | Propuesta | 5 |
-| 109 | US92 | Control de versiones de documentos | EP14 | Web | Propuesta | 5 |
-| 110 | US93 | Registro de monitoreo de agentes | EP15 | Web | Propuesta | 5 |
-| 111 | US94 | Alerta por exceder el límite permisible | EP15 | Web | Propuesta | 3 |
-| 112 | US95 | Programa de monitoreo | EP15 | Web | Propuesta | 3 |
-| 113 | US96 | Registro de empresa contratista | EP16 | Web | Propuesta | 5 |
-| 114 | US97 | Documentación de seguridad de la contratista | EP16 | Web | Propuesta | 5 |
-| 115 | US98 | Trabajadores de contratista reportando | EP16 | Móvil | Propuesta | 5 |
-| 116 | US99 | Permiso de trabajo de alto riesgo | EP16 | Ambas | Propuesta | 8 |
-| 117 | US100 | Aviso de hallazgo crítico sin asignar | EP17 | Ambas | Propuesta | 3 |
-| 118 | US101 | Aviso de cierre al reportante | EP17 | Móvil | Propuesta | 2 |
-| 119 | US102 | Aviso de asignación | EP17 | Ambas | Propuesta | 2 |
-| 120 | US103 | Resumen diario para el comité | EP17 | Web | Propuesta | 3 |
-| 121 | US104 | Aviso de acuerdo del comité por vencer | EP17 | Ambas | Propuesta | 2 |
-| 122 | US105 | Preferencias de notificación | EP17 | Ambas | Propuesta | 3 |
-| 123 | US106 | Alta de empresa desde la landing | EP18 | Web | Propuesta | 8 |
-| 124 | US107 | Datos y configuración de la empresa | EP18 | Web | Propuesta | 3 |
-| 125 | US108 | Planes y suscripción | EP18 | Web | Propuesta | 5 |
-| 126 | US109 | Exportación completa de mis datos | EP18 | Web | Propuesta | 5 |
-| 127 | US110 | Respaldo y continuidad | EP18 | — | Propuesta | 5 |
-| 128 | US111 | Consentimiento informado de datos personales | EP19 | Ambas | Propuesta | 3 |
-| 129 | US112 | Ubicación opcional y revocable | EP19 | Ambas | Propuesta | 3 |
-| 130 | US113 | Registro de auditoría de accesos | EP19 | Web | Propuesta | 5 |
-| 131 | US114 | Cierre de sesión remoto | EP19 | Web | Propuesta | 3 |
-| 132 | US115 | Política de retención de evidencia | EP19 | — | Propuesta | 5 |
-| 133 | US116 | Reporte anónimo de actos inseguros | EP19 | Ambas | Propuesta | 5 |
-| 134 | US117 | Reporte por voz | EP02 | Móvil | Propuesta | 8 |
-| 135 | US118 | Firma del trabajador en la entrega de EPP | EP05 | Móvil | Propuesta | 5 |
-| 136 | US119 | Adjuntar evidencia en inspecciones | EP06 | Móvil | Propuesta | 3 |
-| 137 | US120 | Generar hallazgo desde una inspección | EP06 | Ambas | Propuesta | 3 |
-| 138 | US121 | Convocatoria y asistencia del comité | EP07 | Web | Propuesta | 3 |
-| 139 | US122 | Elección de representantes de los trabajadores | EP07 | Web | Propuesta | 5 |
-| 140 | US123 | Exportar el tablero a PDF | EP08 | Web | Propuesta | 5 |
-| 141 | US124 | Comparar periodos | EP08 | Web | Propuesta | 3 |
-| 142 | US125 | Aviso de datos de demostración | EP09 | Web | Propuesta | 1 |
-| 143 | US126 | Intervalo de confianza en los resultados | EP09 | Web | Propuesta | 3 |
-| 144 | US127 | Interfaz accesible para lectores de pantalla | EP10 | Ambas | Propuesta | 8 |
-| 145 | US128 | Modo de alto contraste | EP10 | Ambas | Propuesta | 3 |
-| 146 | TS17 | Servicio de notificaciones push | EP17 | sst-api, sst-mobile | Propuesta | 5 |
-| 147 | TS18 | Tareas programadas en el servidor | EP17 | sst-api | Propuesta | 5 |
-| 148 | TS19 | Correo transaccional | EP18 | sst-api | Propuesta | 3 |
-| 149 | TS20 | Registro de auditoría | EP19 | sst-api | Propuesta | 5 |
-| 150 | TS21 | Respaldo automático y restauración probada | EP19 | sst-api | Propuesta | 5 |
-| 151 | TS22 | Almacenamiento de archivos en servicio de objetos | EP19 | sst-api | Propuesta | 5 |
-| 152 | TS23 | Observabilidad del backend | EP10 | sst-api | Propuesta | 3 |
-| 153 | TS24 | Reporte de errores del cliente | EP10 | sst-web, sst-mobile | Propuesta | 3 |
-| 154 | TS25 | Limitación de tasa de peticiones | EP19 | sst-api | Propuesta | 2 |
-| 155 | TS26 | Pruebas de extremo a extremo de la web | EP10 | sst-web | Propuesta | 8 |
-| 156 | TS27 | Pruebas instrumentadas del cliente móvil | EP10 | sst-mobile | Propuesta | 8 |
-| 157 | TS28 | Despliegue automatizado al entorno de pruebas | EP10 | sst-api, sst-web | Propuesta | 5 |
-| 158 | TS29 | Cifrado de datos personales en reposo | EP19 | sst-api | Propuesta | 8 |
-| 159 | TS30 | Versionado del API | EP19 | sst-api | Propuesta | 5 |
-| 160 | TS31 | Resolución de conflictos de sincronización | EP02 | sst-api, sst-mobile | Propuesta | 8 |
-| 161 | TS32 | Accesibilidad verificada en el pipeline | EP10 | sst-web, sst-mobile | Propuesta | 3 |
-| 162 | TS33 | Textos externalizados para traducción | EP18 | sst-web, sst-mobile | Propuesta | 5 |
-| 163 | TS34 | Entorno reproducible con contenedores | EP10 | sst-api, sst-web | Propuesta | 3 |
+| 71 | TS02 | Convenciones de commits | — | Los cuatro | Implementada | 2 |
+| 72 | TS07 | Validación local del mensaje de commit | — | Los cuatro | Implementada | 2 |
+| 73 | TS05 | Flujo de ramas GitFlow | — | Los cuatro | Implementada | 3 |
+| 74 | TS06 | Fin de línea normalizado | — | Los cuatro | Implementada | 2 |
+| 75 | TS01 | Integración continua | — | Los cuatro | Implementada | 5 |
+| 76 | TS13 | Migraciones verificadas en integración | — | sst-api | Implementada | 2 |
+| 77 | TS03 | Documentación viva del API | — | sst-api | Implementada | 2 |
+| 78 | TS08 | Configuración por variables de entorno | — | sst-api | Implementada | 3 |
+| 79 | TS09 | Proxy de desarrollo | — | sst-web | Implementada | 2 |
+| 80 | TS10 | Renovación transparente del token | — | sst-web, sst-mobile | Implementada | 5 |
+| 81 | TS11 | Aislamiento entre empresas | — | sst-api | Implementada | 5 |
+| 82 | TS12 | Idempotencia en la creación de reportes | — | sst-api | Implementada | 5 |
+| 83 | TS04 | Datos de demostración | — | sst-api | Implementada | 5 |
+| 84 | TS14 | APK publicado por el pipeline | — | sst-mobile | Implementada | 3 |
+| 85 | TS15 | Generación de evidencia en Excel | — | sst-api | Implementada | 5 |
+| 86 | TS16 | Informe compilable y con índice verificado | — | sst-report | Implementada | 3 |
+| 87 | US71 | Registro de accidente de trabajo | EP11 | Web | Propuesta | 8 |
+| 88 | US72 | Registro de incidente peligroso | EP11 | Ambas | Propuesta | 5 |
+| 89 | US73 | Reportar un accidente desde el celular | EP11 | Móvil | Propuesta | 5 |
+| 90 | US74 | Investigación de causa raíz | EP11 | Web | Propuesta | 8 |
+| 91 | US75 | Medidas correctivas con responsable y plazo | EP11 | Web | Propuesta | 5 |
+| 92 | US76 | Aviso de accidente mortal dentro del plazo legal | EP11 | Web | Propuesta | 3 |
+| 93 | US77 | Indicadores de accidentabilidad | EP11 | Ambas | Propuesta | 5 |
+| 94 | US78 | Registro de enfermedad ocupacional | EP11 | Web | Propuesta | 5 |
+| 95 | US79 | Programa anual de capacitación | EP12 | Web | Propuesta | 5 |
+| 96 | US80 | Registro de asistencia a capacitación | EP12 | Móvil | Propuesta | 5 |
+| 97 | US81 | Inducción del personal nuevo | EP12 | Web | Propuesta | 5 |
+| 98 | US82 | Alerta de capacitación vencida | EP12 | Web | Propuesta | 3 |
+| 99 | US83 | Consultar mis capacitaciones | EP12 | Móvil | Propuesta | 3 |
+| 100 | US84 | Registro de simulacros | EP12 | Web | Propuesta | 3 |
+| 101 | US85 | Mapa de riesgos por área | EP13 | Web | Propuesta | 8 |
+| 102 | US86 | Consultar el mapa de riesgos en campo | EP13 | Móvil | Propuesta | 3 |
+| 103 | US87 | Inventario de señalización | EP13 | Web | Propuesta | 3 |
+| 104 | US88 | Ubicar el área por código QR | EP13 | Móvil | Propuesta | 5 |
+| 105 | US89 | Política de SST publicada | EP14 | Ambas | Propuesta | 3 |
+| 106 | US90 | Reglamento Interno de SST | EP14 | Ambas | Propuesta | 3 |
+| 107 | US91 | Plan y programa anual de SST | EP14 | Web | Propuesta | 5 |
+| 108 | US92 | Control de versiones de documentos | EP14 | Web | Propuesta | 5 |
+| 109 | US93 | Registro de monitoreo de agentes | EP15 | Web | Propuesta | 5 |
+| 110 | US94 | Alerta por exceder el límite permisible | EP15 | Web | Propuesta | 3 |
+| 111 | US95 | Programa de monitoreo | EP15 | Web | Propuesta | 3 |
+| 112 | US96 | Registro de empresa contratista | EP16 | Web | Propuesta | 5 |
+| 113 | US97 | Documentación de seguridad de la contratista | EP16 | Web | Propuesta | 5 |
+| 114 | US98 | Trabajadores de contratista reportando | EP16 | Móvil | Propuesta | 5 |
+| 115 | US99 | Permiso de trabajo de alto riesgo | EP16 | Ambas | Propuesta | 8 |
+| 116 | US100 | Aviso de hallazgo crítico sin asignar | EP17 | Ambas | Propuesta | 3 |
+| 117 | US101 | Aviso de cierre al reportante | EP17 | Móvil | Propuesta | 2 |
+| 118 | US102 | Aviso de asignación | EP17 | Ambas | Propuesta | 2 |
+| 119 | US103 | Resumen diario para el comité | EP17 | Web | Propuesta | 3 |
+| 120 | US104 | Aviso de acuerdo del comité por vencer | EP17 | Ambas | Propuesta | 2 |
+| 121 | US105 | Preferencias de notificación | EP17 | Ambas | Propuesta | 3 |
+| 122 | US106 | Alta de empresa desde la landing | EP18 | Web | Propuesta | 8 |
+| 123 | US107 | Datos y configuración de la empresa | EP18 | Web | Propuesta | 3 |
+| 124 | US108 | Planes y suscripción | EP18 | Web | Propuesta | 5 |
+| 125 | US109 | Exportación completa de mis datos | EP18 | Web | Propuesta | 5 |
+| 126 | US110 | Respaldo y continuidad | EP18 | — | Propuesta | 5 |
+| 127 | US111 | Consentimiento informado de datos personales | EP19 | Ambas | Propuesta | 3 |
+| 128 | US112 | Ubicación opcional y revocable | EP19 | Ambas | Propuesta | 3 |
+| 129 | US113 | Registro de auditoría de accesos | EP19 | Web | Propuesta | 5 |
+| 130 | US114 | Cierre de sesión remoto | EP19 | Web | Propuesta | 3 |
+| 131 | US115 | Política de retención de evidencia | EP19 | — | Propuesta | 5 |
+| 132 | US116 | Reporte anónimo de actos inseguros | EP19 | Ambas | Propuesta | 5 |
+| 133 | US117 | Reporte por voz | EP02 | Móvil | Propuesta | 8 |
+| 134 | US118 | Firma del trabajador en la entrega de EPP | EP05 | Móvil | Propuesta | 5 |
+| 135 | US119 | Adjuntar evidencia en inspecciones | EP06 | Móvil | Propuesta | 3 |
+| 136 | US120 | Generar hallazgo desde una inspección | EP06 | Ambas | Propuesta | 3 |
+| 137 | US121 | Convocatoria y asistencia del comité | EP07 | Web | Propuesta | 3 |
+| 138 | US122 | Elección de representantes de los trabajadores | EP07 | Web | Propuesta | 5 |
+| 139 | US123 | Exportar el tablero a PDF | EP08 | Web | Propuesta | 5 |
+| 140 | US124 | Comparar periodos | EP08 | Web | Propuesta | 3 |
+| 141 | US125 | Aviso de datos de demostración | EP09 | Web | Propuesta | 1 |
+| 142 | US126 | Intervalo de confianza en los resultados | EP09 | Web | Propuesta | 3 |
+| 143 | US127 | Interfaz accesible para lectores de pantalla | EP10 | Ambas | Propuesta | 8 |
+| 144 | US128 | Modo de alto contraste | EP10 | Ambas | Propuesta | 3 |
+| 145 | TS17 | Servicio de notificaciones push | EP17 | sst-api, sst-mobile | Propuesta | 5 |
+| 146 | TS18 | Tareas programadas en el servidor | EP17 | sst-api | Propuesta | 5 |
+| 147 | TS19 | Correo transaccional | EP18 | sst-api | Propuesta | 3 |
+| 148 | TS20 | Registro de auditoría | EP19 | sst-api | Propuesta | 5 |
+| 149 | TS21 | Respaldo automático y restauración probada | EP19 | sst-api | Propuesta | 5 |
+| 150 | TS22 | Almacenamiento de archivos en servicio de objetos | EP19 | sst-api | Propuesta | 5 |
+| 151 | TS23 | Observabilidad del backend | EP10 | sst-api | Propuesta | 3 |
+| 152 | TS24 | Reporte de errores del cliente | EP10 | sst-web, sst-mobile | Propuesta | 3 |
+| 153 | TS25 | Limitación de tasa de peticiones | EP19 | sst-api | Propuesta | 2 |
+| 154 | TS26 | Pruebas de extremo a extremo de la web | EP10 | sst-web | Propuesta | 8 |
+| 155 | TS27 | Pruebas instrumentadas del cliente móvil | EP10 | sst-mobile | Propuesta | 8 |
+| 156 | TS28 | Despliegue automatizado al entorno de pruebas | EP10 | sst-api, sst-web | Propuesta | 5 |
+| 157 | TS29 | Cifrado de datos personales en reposo | EP19 | sst-api | Propuesta | 8 |
+| 158 | TS30 | Versionado del API | EP19 | sst-api | Propuesta | 5 |
+| 159 | TS31 | Resolución de conflictos de sincronización | EP02 | sst-api, sst-mobile | Propuesta | 8 |
+| 160 | TS32 | Accesibilidad verificada en el pipeline | EP10 | sst-web, sst-mobile | Propuesta | 3 |
+| 161 | TS33 | Textos externalizados para traducción | EP18 | sst-web, sst-mobile | Propuesta | 5 |
+| 162 | TS34 | Entorno reproducible con contenedores | EP10 | sst-api, sst-web | Propuesta | 3 |
 
-**Total:** 163 elementos (129 historias de usuario y 34 historias técnicas), 665 Story Points.
+**Total:** 162 elementos (128 historias de usuario y 34 historias técnicas), 660 Story Points.
 
 | Alcance | Elementos | Historias de usuario | Historias técnicas | Story Points |
 |---|---|---|---|---|
-| Implementado en los seis sprints | 87 | 71 | 16 | 324 |
+| Implementado en los seis sprints | 86 | 70 | 16 | 319 |
 | Propuesto (backlog pendiente) | 76 | 58 | 18 | 341 |
-| **Backlog completo** | **163** | **129** | **34** | **665** |
+| **Backlog completo** | **162** | **128** | **34** | **660** |
 
-El equipo construyó el 49 % de los Story Points del backlog. Lo propuesto no es relleno: cada elemento pendiente corresponde a una obligación de la Ley N° 29783 o de su Reglamento que el producto debe cubrir para reemplazar por completo el expediente en papel, y por eso queda especificado y estimado aunque no se construya en este ciclo.
+El equipo construyó el 48 % de los Story Points del backlog. Lo propuesto no es relleno: cada elemento pendiente corresponde a una obligación de la Ley N° 29783 o de su Reglamento que el producto debe cubrir para reemplazar por completo el expediente en papel, y por eso queda especificado y estimado aunque no se construya en este ciclo.
 
 ## 3.4. Impact Mapping
 

@@ -129,9 +129,9 @@ Tener ambas capas importa porque el hook local puede no estar instalado en una m
 
 ### 5.2.1. Sprint Backlogs
 
-El desarrollo se organizó en seis sprints. El Product Backlog del Capítulo III contiene los 163
-elementos del producto, de los cuales 87 (324 Story Points) están implementados y 76 quedan
-especificados como backlog pendiente. Los Sprint Backlogs que siguen cubren exactamente esos 87
+El desarrollo se organizó en seis sprints. El Product Backlog del Capítulo III contiene los 162
+elementos del producto, de los cuales 86 (319 Story Points) están implementados y 76 quedan
+especificados como backlog pendiente. Los Sprint Backlogs que siguen cubren exactamente esos 86
 elementos implementados: cada uno contiene únicamente aquello que ese sprint se comprometió a
 completar, y la suma de los seis equivale al alcance efectivamente construido en este ciclo. Los
 elementos marcados *Propuesta* en el Capítulo III no figuran en ningún sprint, precisamente
@@ -276,10 +276,10 @@ porque no se construyeron.
 
 | Campo | Valor |
 |---|---|
-| Objetivo | Comité de SST, evidencia exportable, página pública y calidad de uso. |
+| Objetivo | Comité de SST, evidencia exportable y calidad de uso. |
 | Fechas | <!-- COMPLETAR: inicio y fin --> |
-| Elementos comprometidos | 21 |
-| Story Points planificados | 77 |
+| Elementos comprometidos | 20 |
+| Story Points planificados | 72 |
 | Story Points completados | <!-- COMPLETAR --> |
 
 | ID | Historia | Plataforma | SP | Estado |
@@ -301,7 +301,6 @@ porque no se construyeron.
 | US67 | Uso desde pantallas pequeñas | Web | 5 | Completado |
 | US68 | Errores comprensibles | Ambas | 3 | Completado |
 | US69 | Reintento ante fallo de red | Móvil | 3 | Completado |
-| US129 | Página pública del producto | Web | 5 | Completado |
 | TS14 | APK publicado por el pipeline | sst-mobile | 3 | Completado |
 | TS15 | Generación de evidencia en Excel | sst-api | 5 | Completado |
 | TS16 | Informe compilable y con índice verificado | sst-report | 3 | Completado |
@@ -315,36 +314,19 @@ porque no se construyeron.
 | Sprint 3 | 14 | 47 | Completar la captura y dejar el experimento A/B corriendo. |
 | Sprint 4 | 10 | 30 | Cuentas, roles y estructura organizativa de la empresa. |
 | Sprint 5 | 19 | 70 | Los registros obligatorios del SGSST: IPERC, EPP e inspecciones. |
-| Sprint 6 | 21 | 77 | Comité de SST, evidencia exportable, página pública y calidad de uso. |
-| **Total** | **87** | **324** | |
+| Sprint 6 | 20 | 72 | Comité de SST, evidencia exportable y calidad de uso. |
+| **Total** | **86** | **319** | |
 
 ### 5.2.2. Implemented Landing Page Evidence
 
-La página pública está implementada dentro de la misma aplicación web, en la ruta `/inicio`
-(historia US129). Comparte los tokens de estilo del panel, no requiere autenticación y es el
-destino al que el sistema redirige cualquier ruta privada abierta sin sesión iniciada.
+> **PENDIENTE — fuera del alcance de este ciclo.** La landing page no forma parte de la
+> aplicación web: se construye en un repositorio propio, por las razones expuestas en la sección
+> 4.3. Al cierre de estos seis sprints todavía no está implementada, de modo que no hay evidencia
+> que presentar aquí. La estructura prevista y las restricciones de contenido quedan
+> especificadas en 4.3.1.
 
-| Bloque | Contenido implementado |
-|---|---|
-| Barra de navegación | Logotipo, anclas a las cinco secciones y botón *Ingresar* |
-| Encabezado | Referencia normativa, propuesta de valor y dos llamadas a la acción |
-| Recorrido del hallazgo | Los cinco pasos: se detecta, se registra, se asigna, se cierra, se documenta |
-| El problema | Tres tarjetas sobre el reporte que no llega, el peligro que sigue y la evidencia que falta |
-| El sistema | Seis capacidades, todas correspondientes a historias implementadas |
-| Cumplimiento | Tabla de cinco obligaciones con su artículo y dónde queda registrada cada una |
-| Planes | Tres niveles según número de trabajadores, sin precios publicados |
-| Contacto | Correo y enlace de solicitud de demostración con el cuerpo del mensaje preparado |
-| Pie | Referencia a la Ley N° 29783 y su Reglamento |
-
-Archivos: `src/features/landing/LandingPage.tsx` y `src/styles/landing.css` en el repositorio
-`sst-web`; las etiquetas Open Graph y Twitter Card, en su `index.html`.
-
-<!-- IMAGEN REQUERIDA: capturas de la landing page en ejecución en
-     assets/img/evidencia-landing-hero.png, evidencia-landing-problema.png,
-     evidencia-landing-cumplimiento.png y evidencia-landing-planes.png.
-     Se obtienen levantando la web y abriendo http://localhost:5173/inicio -->
-
-<!-- COMPLETAR: URL pública una vez desplegada la aplicación. -->
+<!-- IMAGEN REQUERIDA: capturas de la landing page desplegada en
+     assets/img/evidencia-landing-*.png, más su URL pública, una vez construida. -->
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
@@ -359,7 +341,6 @@ cualquier rol.
 
 | Pantalla | Ruta | Funcionalidad implementada |
 |---|---|---|
-| Página pública | `/inicio` | Presentación del producto, cobertura normativa, planes y contacto; accesible sin sesión |
 | Acceso | `/login` | Autenticación con JWT |
 | Registro | `/registro` | Alta de trabajador por RUC de empresa |
 | Tablero | `/` | MTTR, hallazgos abiertos, cumplimiento de inspecciones, vencidas, acuerdos y actas del comité |
