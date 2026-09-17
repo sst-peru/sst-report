@@ -25,7 +25,7 @@
 
 | Código | Apellidos y Nombres |
 |---|---|
-| <!-- COMPLETAR --> | <!-- COMPLETAR --> |
+|u202310837| Esquirva León Miguel Juan Diego|
 
 **Septiembre de 2026**
 
@@ -37,14 +37,13 @@
 
 | Versión | Fecha | Autor | Descripción de modificación |
 |---|---|---|---|
-| 1.0 | 2026-09-13 | <!-- COMPLETAR: apellidos y nombres --> | Creación del repositorio del informe y de la estructura completa de capítulos según el enunciado del trabajo final. |
+| 1.0 | 2026-09-13 | Esquirva León Miguel Juan Diego | Creación del repositorio del informe y de la estructura completa de capítulos según el enunciado del trabajo final. |
 
 ---
 
 ## Project Report Collaboration Insights
 
-**Repositorio del informe:** <!-- COMPLETAR: URL del repositorio en la organización de GitHub -->
-
+**Repositorio del informe:** https://github.com/sst-peru/sst-report
 **Organización de GitHub:** https://github.com/sst-peru
 
 El informe se elabora de forma incremental en este repositorio, aplicando **GitFlow** y
