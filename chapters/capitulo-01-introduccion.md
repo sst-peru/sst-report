@@ -77,14 +77,6 @@ En la práctica, en la mediana y pequeña empresa ese sistema opera así:
 El problema, resumido: **el dato de seguridad existe en la cabeza de los trabajadores o en
 papel, pero no fluye a tiempo hacia quien puede actuar.**
 
-> **PENDIENTE — cifra oficial.** Incorporar aquí la cifra de notificaciones de accidentes de
-> trabajo del último boletín del MTPE, con su año y fuente citada. Se descarga en
-> https://www.gob.pe/institucion/mtpe/informes-publicaciones/292368-boletin-estadistico-notificaciones-de-accidentes-de-trabajo
-> y el dataset abierto está en
-> https://www.datosabiertos.gob.pe/dataset/notificaciones-de-accidentes-de-trabajo-mortales-fuente-registro-%C3%BAnico-de-accidentes-de
-> Buscar: total de notificaciones del año, accidentes mortales y los dos o tres sectores de
-> mayor incidencia. No usar cifras aproximadas ni de memoria: el dato tiene que ser verificable.
-
 **Objetivos del proyecto**
 
 | # | Objetivo |

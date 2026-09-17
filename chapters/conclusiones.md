@@ -49,15 +49,7 @@ no significativo en esas condiciones no refuta nada.
    diseñadas pero no implementadas.
 5. Mover el refresh token a una cookie `httpOnly` antes de cualquier uso en producción.
 
-> **PENDIENTE.** Incorporar aquí las conclusiones derivadas del resultado real del experimento y
-> de las entrevistas de validación, una vez ejecutados.
-
 ## Video App Validation
-
-> **PENDIENTE.** <!-- COMPLETAR: enlace al video de validación de la aplicación con usuarios
-> reales ejecutando las tareas definidas en la sección 6.3.1. -->
 
 ## Video About-the-Team
 
-> **PENDIENTE.** <!-- COMPLETAR: enlace al video del equipo, incluyendo los testimonios sobre
-> las dimensiones del Student Outcome 4 exigidos por el enunciado. -->

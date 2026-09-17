@@ -273,10 +273,6 @@ Comparte, eso sí, la identidad visual definida en 4.1: los mismos tokens de col
 tipografía y el mismo tono institucional, de modo que quien pase de la página al acceso no sienta
 que entró a otro producto.
 
-> **PENDIENTE — fuera del alcance de este ciclo.** La landing page se construye en un repositorio
-> aparte. Esta sección documenta su diseño previsto; las capturas se incorporan cuando esté
-> publicada.
-
 ### 4.3.1. Landing Page Wireframe
 
 Estructura prevista de arriba hacia abajo, con la intención de cada bloque:
@@ -310,9 +306,6 @@ Estructura prevista de arriba hacia abajo, con la intención de cada bloque:
 
 <!-- IMAGEN REQUERIDA: mock-up o capturas de la landing page en
      assets/img/landing-mockup-*.png, una vez construida en su repositorio. -->
-
-> **PENDIENTE.** Incorporar el mock-up cuando la landing page esté construida, junto con la URL
-> de su despliegue.
 
 **Aplicación de la guía de estilo.** La página debe reutilizar los tokens definidos en 4.1 sin
 introducir colores nuevos: azul marino para la marca, las acciones y el bloque de contacto; gris

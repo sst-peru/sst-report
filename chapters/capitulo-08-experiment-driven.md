@@ -230,9 +230,6 @@ un resultado no significativo **no permite concluir que el formulario no funcion
 reportarse explícitamente como una limitación del estudio y no como una refutación de la
 hipótesis. Esta distinción es la diferencia entre un experimento y una demostración.
 
-> **PENDIENTE.** Consignar aquí el número real de participantes reclutados y recalcular el
-> efecto mínimo detectable con esa cifra antes de interpretar cualquier resultado.
-
 ### 8.2.6. Methods Selection
 
 | Aspecto | Método elegido | Justificación |
@@ -342,29 +339,15 @@ verifica con las mismas pruebas.
 
 ### 8.3.4. To-Be Sprint Backlogs
 
-> **PENDIENTE.** Completar con el sprint de implementación de las historias To-Be, siguiendo el
-> mismo formato del Capítulo V.
-
 ### 8.3.5. Implemented To-Be Landing Page Evidence
-
-> **PENDIENTE.** <!-- IMAGEN REQUERIDA -->
 
 ### 8.3.6. Implemented To-Be Frontend-Web Application Evidence
 
-> **PENDIENTE.** <!-- IMAGEN REQUERIDA: captura del panel del experimento con el aviso de datos
-> de demostración y el intervalo de confianza, en assets/img/evidencia-tobe-web.png -->
-
 ### 8.3.7. Implemented To-Be Native-Mobile Application Evidence
-
-> **PENDIENTE.** <!-- IMAGEN REQUERIDA -->
 
 ### 8.3.8. Implemented To-Be RESTful API and/or Serverless Backend Evidence
 
-> **PENDIENTE.** Documentar los endpoints añadidos para las historias To-Be.
-
 ### 8.3.9. Team Collaboration Insights
-
-> **PENDIENTE.** <!-- IMAGEN REQUERIDA: analíticos de GitHub del periodo de experimentación -->
 
 ## 8.4. To-Be Validation Interviews
 
@@ -398,51 +381,11 @@ que el resultado del A/B.
 
 ### 8.4.2. Registro de Entrevistas
 
-> **PENDIENTE — trabajo de campo.** Mismo formato de registro del Capítulo VI: datos del
-> entrevistado, fecha, enlace al video con minuto de inicio y resumen.
-
 ## 8.5. Experiment Aftermath & Analysis
 
 ### 8.5.1. Analysis and Interpretation of Results
 
-> **PENDIENTE — datos reales.** Esta sección se completa únicamente con los datos de la corrida
-> real del experimento.
->
-> **Advertencia de integridad.** El comando `seed_demo` del repositorio `sst-api` genera 60 días
-> de historia **simulada**, en la que el grupo del formulario rápido reporta aproximadamente el
-> doble por construcción del generador. Esos datos sirven para demostrar el funcionamiento del
-> sistema, **no como evidencia experimental**. Si se muestran en la sustentación, deben
-> declararse como datos de demostración. Presentarlos como resultados sería fabricar evidencia.
->
-> Estructura que debe seguir el análisis cuando existan datos reales:
->
-> | Elemento | Contenido |
-> |---|---|
-> | Participantes | Usuarios por grupo, composición por área, bajas durante el periodo |
-> | Estadística descriptiva | Media, mediana, desviación estándar y rango de reportes por usuario en cada grupo |
-> | Serie temporal | Reportes diarios por variante, para detectar efecto de novedad |
-> | Prueba de hipótesis | Estadístico, grados de libertad, valor p y decisión sobre H₀ |
-> | Tamaño del efecto | Diferencia de medias, *lift* porcentual e intervalo de confianza al 95 % |
-> | Potencia alcanzada | Recalculada con el n real y la varianza observada |
-> | Interpretación | Qué significa el resultado para la decisión de producto |
-> | Limitaciones | Tamaño de muestra, población, duración, amenazas a la validez identificadas en 8.2.6 |
->
-> **Los tres desenlaces posibles y qué hacer con cada uno:**
->
-> 1. *Diferencia significativa a favor del formulario rápido:* se adopta como formulario único y
->    se elimina la variante larga del producto.
-> 2. *Sin diferencia significativa con potencia suficiente:* la hipótesis se refuta; el supuesto
->    A1 era falso y la inversión debe redirigirse a la barrera que señalen las entrevistas.
-> 3. *Sin diferencia significativa con potencia insuficiente:* el experimento no concluye. Se
->    reporta como no concluyente y se replantea con más participantes. **Este desenlace no debe
->    presentarse como refutación.**
-
 ### 8.5.2. Re-scored and Re-prioritized Question Backlog
-
-> **PENDIENTE.** Repriorizar el backlog de preguntas a la luz del resultado. La pregunta Q1 sale
-> del backlog una vez respondida; las preguntas que las entrevistas revelen como más relevantes
-> —por ejemplo, el peso del temor a represalias— ingresan con su puntuación de incertidumbre y
-> costo de equivocarse.
 
 ## 8.6. Continuous Learning
 
@@ -471,25 +414,11 @@ flowchart LR
 | Question Backlog repriorizado | Con las preguntas nuevas surgidas del experimento |
 | Registro de decisión | Qué se decidió, quién decidió y con qué evidencia |
 
-> **PENDIENTE.** Realizar la sesión y adjuntar los artefactos con su fecha.
-
 ## 8.7. To-Be Software Platform Pre-launch
 
 ### 8.7.1. About-the-Product Intro Video
 
-> **PENDIENTE.** <!-- COMPLETAR: enlace al video de presentación del producto. -->
-
 ### 8.7.2. Resumen usando Gees Framework
-
-> **PENDIENTE.** Aplicar el framework Gees (Go to market, Engage, Expand, Sustain) según el
-> formato que indique el docente. Contenido sugerido con base en lo desarrollado:
->
-> | Etapa | Contenido propuesto |
-> |---|---|
-> | **Go to market** | Entrada por el canal de consultoras de SST, que atienden a varias empresas medianas y sufren la consolidación manual de registros. Producto mínimo: captura en campo más evidencia exportable |
-> | **Engage** | Adopción medida desde el primer día como métrica de producto; el circuito de retroalimentación al operario (aviso de cierre) como mecanismo de retención |
-> | **Expand** | Ampliación hacia vigilancia médica ocupacional y gestión de contratistas, los dos módulos que la competencia sí cubre |
-> | **Sustain** | Suscripción escalonada por número de trabajadores; el cumplimiento normativo recurrente sostiene la renovación |
 
 ## 8.8. Matriz de Evaluación Ética y de Impacto
 

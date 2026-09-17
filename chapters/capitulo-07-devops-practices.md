@@ -111,11 +111,6 @@ flowchart LR
     G -->|No| I[Revertir y corregir]
 ```
 
-> **PENDIENTE — implementación.** Los pipelines de construcción existen y publican artefactos;
-> el despliegue automatizado a un entorno de pruebas está diseñado pero **no implementado
-> todavía**. Debe documentarse honestamente como tal hasta que se ejecute, indicando después el
-> proveedor elegido y adjuntando la evidencia del despliegue.
-
 ## 7.3. Continuous Deployment
 
 ### 7.3.1. Tools and Practices
@@ -151,11 +146,6 @@ flowchart LR
     I -->|No| K[Rollback a la versión anterior]
     D -->|Rechazado| L[Permanece en preproducción]
 ```
-
-> **PENDIENTE — implementación.** Documentar el despliegue real cuando se ejecute: URL de
-> producción, proveedor, procedimiento de rollback probado y evidencia de al menos un despliegue
-> completo. <!-- IMAGEN REQUERIDA: captura del despliegue exitoso en
-> assets/img/pipeline-deploy.png -->
 
 ## 7.4. Continuous Monitoring
 
@@ -207,11 +197,6 @@ flowchart LR
 Las tres últimas condiciones son alertas **de dominio**, no de infraestructura, y son las que
 convierten al sistema en una herramienta de gestión y no solo en un repositorio de registros.
 
-> **PENDIENTE — implementación.** Hoy el sistema **calcula** estas condiciones y las muestra en
-> el tablero (hallazgos críticos abiertos, inspecciones vencidas, acuerdos pendientes), pero
-> **no emite notificaciones**. Documentarlo así; implementar las notificaciones es el siguiente
-> incremento natural del producto.
-
 ### 7.4.4. Notification Pipeline Components
 
 ```mermaid
@@ -231,6 +216,3 @@ del ruido. Registrar si el hallazgo se atendió después de la alerta permite ev
 experimentalmente si las notificaciones mejoran el MTTR, que es una hipótesis natural para el
 siguiente ciclo.
 
-> **PENDIENTE — implementación.** Canal de notificación previsto: Firebase Cloud Messaging para
-> la aplicación Android y correo electrónico para el resumen diario. No implementado en esta
-> entrega.

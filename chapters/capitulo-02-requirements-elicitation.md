@@ -125,33 +125,7 @@ que no contaminen el relato del problema.
 
 ### 2.2.2. Registro de entrevistas
 
-> **PENDIENTE — trabajo de campo.** Esta sección debe contener entrevistas reales, grabadas en
-> video y editadas en el video de evidencia. Por cada entrevistado se registra: nombre y
-> apellidos, edad, distrito de residencia, cargo, fecha de la entrevista, duración, enlace al
-> video con el minuto de inicio, y un resumen de entre 150 y 250 palabras de lo que respondió.
->
-> Mínimo recomendado: cuatro entrevistas por segmento. **Este contenido no puede redactarse sin
-> haber realizado las entrevistas**; inventarlo invalidaría todo el needfinding que se construye
-> encima, y es exactamente lo que el jurado verifica preguntando por los entrevistados.
->
-> Plantilla por entrevistado:
->
-> | Campo | Contenido |
-> |---|---|
-> | Nombre y apellidos | |
-> | Edad / Distrito | |
-> | Cargo y empresa | |
-> | Fecha y duración | |
-> | Enlace al video (con minuto) | |
-> | Resumen de la entrevista | |
-
 ### 2.2.3. Análisis de entrevistas
-
-> **PENDIENTE.** Se completa después del registro. Estructura esperada: hallazgos por segmento,
-> cada uno con el porcentaje de entrevistados que lo manifestó, citas textuales breves que lo
-> respalden, y la conexión explícita con los supuestos del Lean UX que confirma o refuta. Los
-> supuestos refutados deben marcarse como tales: un needfinding que confirma todo lo que se
-> asumió antes de entrevistar suele significar que se preguntó mal.
 
 ## 2.3. Needfinding
 

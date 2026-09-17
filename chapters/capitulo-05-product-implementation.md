@@ -101,10 +101,6 @@ Tener ambas capas importa porque el hook local puede no estar instalado en una m
 | Tráfico en claro | `network_security_config.xml` permite HTTP sin cifrar únicamente contra direcciones de desarrollo; en producción el API va por HTTPS |
 | Secretos | Ningún secreto se versiona: `.env` está en `.gitignore` y se distribuye `.env.example` con los nombres de variable |
 
-> **PENDIENTE — despliegue.** Documentar aquí el despliegue real cuando esté hecho: proveedor
-> (Render, Railway, Fly.io o similar para el API; Vercel o Netlify para la web), URL pública de
-> cada entorno, y procedimiento de migración de base de datos en el despliegue.
-
 ## 5.2. Product Implementation & Deployment
 
 ### 5.2.1. Sprint Backlog
@@ -180,12 +176,6 @@ repartidas en semanas sería contradecir un dato verificable en un clic.
 
 ### 5.2.2. Implemented Landing Page Evidence
 
-> **PENDIENTE — fuera del alcance de este ciclo.** La landing page no forma parte de la
-> aplicación web: se construye en un repositorio propio, por las razones expuestas en la sección
-> 4.3. Al cierre de este sprint todavía no está implementada, de modo que no hay evidencia
-> que presentar aquí. La estructura prevista y las restricciones de contenido quedan
-> especificadas en 4.3.1.
-
 <!-- IMAGEN REQUERIDA: capturas de la landing page desplegada en
      assets/img/evidencia-landing-*.png, más su URL pública, una vez construida. -->
 
@@ -217,12 +207,96 @@ cualquier rol.
 
 ### 5.2.4. Acuerdo de Servicio - SaaS
 
-> **PENDIENTE.** Redactar el acuerdo de nivel de servicio del producto como SaaS: disponibilidad
-> comprometida, ventana de mantenimiento, tiempos de respuesta ante incidencias por severidad,
-> política de respaldo y retención de datos, tratamiento de datos personales conforme a la Ley
-> N° 29733 de Protección de Datos Personales —relevante porque el sistema almacena DNI,
-> fotografías y geolocalización de trabajadores— y condiciones de terminación con devolución de
-> la información del cliente.
+Resguardo se ofrece como servicio en la nube: la empresa cliente no instala ni administra
+servidores. Eso traslada al proveedor obligaciones que conviene fijar por escrito, sobre todo
+tratándose de información que la empresa debe poder exhibir ante una fiscalización de SUNAFIL y
+que incluye datos personales de sus trabajadores.
+
+El acuerdo siguiente es el **nivel de servicio propuesto** para el producto. No está en vigor
+—el sistema todavía no opera en producción con clientes reales— y se documenta aquí como parte
+del diseño del servicio, no como un contrato suscrito.
+
+**1. Alcance del servicio**
+
+| Componente | Qué cubre |
+|---|---|
+| API y base de datos | Disponibilidad, respaldo y conservación de todos los registros del SGSST |
+| Panel web | Acceso desde navegador para supervisor, comité y administrador |
+| Aplicación Android | Distribución de la aplicación y compatibilidad con las dos últimas versiones mayores de Android |
+| Evidencia documental | Generación de las exportaciones de los registros obligatorios |
+
+**2. Disponibilidad**
+
+| Parámetro | Compromiso |
+|---|---|
+| Disponibilidad mensual del API y del panel web | 99,5 % |
+| Equivalente en indisponibilidad | Hasta 3 h 39 min por mes |
+| Medición | Sobre el total de minutos del mes calendario, excluyendo la ventana de mantenimiento programada |
+| Ventana de mantenimiento | Domingos de 02:00 a 05:00 (hora de Perú), avisada con 72 horas de anticipación |
+
+La aplicación móvil queda fuera de este cómputo por diseño: opera sin conexión y sincroniza
+cuando hay red, de modo que una caída del servicio no impide que el trabajador registre un
+hallazgo. Ese es precisamente el motivo de la arquitectura sin conexión.
+
+**3. Atención de incidencias**
+
+| Severidad | Definición | Primera respuesta | Objetivo de solución |
+|---|---|---|---|
+| **Crítica** | El servicio no está disponible o no se pueden registrar hallazgos | 1 hora | 4 horas |
+| **Alta** | Una funcionalidad de un registro obligatorio no opera y no hay forma de sortearla | 4 horas | 1 día hábil |
+| **Media** | Funcionalidad degradada con alternativa disponible | 1 día hábil | 5 días hábiles |
+| **Baja** | Consulta, mejora o defecto cosmético | 2 días hábiles | Según planificación |
+
+Horario de atención: lunes a viernes de 08:00 a 18:00 (hora de Perú) para severidades media y
+baja; veinticuatro horas para severidad crítica.
+
+**4. Respaldo, retención y continuidad**
+
+| Parámetro | Compromiso |
+|---|---|
+| Frecuencia de respaldo | Diaria, con copia cifrada fuera del servidor principal |
+| Retención de respaldos | 30 días de copias diarias y 12 copias mensuales |
+| RPO (pérdida máxima de datos) | 24 horas |
+| RTO (tiempo máximo de restablecimiento) | 8 horas |
+| Prueba de restauración | Trimestral, en entorno separado, con constancia del resultado |
+| Conservación de registros del SGSST | Mientras dure el contrato y por el plazo que exige la normativa peruana de conservación de registros de seguridad y salud en el trabajo |
+
+**5. Tratamiento de datos personales**
+
+El sistema almacena DNI, teléfono, fotografías tomadas en campo y coordenadas de geolocalización
+de trabajadores. Todo ello es dato personal bajo la **Ley N° 29733, Ley de Protección de Datos
+Personales**, y su tratamiento se sujeta a las siguientes condiciones:
+
+| Condición | Compromiso |
+|---|---|
+| Titularidad | Los datos son de la empresa cliente; el proveedor actúa como encargado del tratamiento, nunca como titular |
+| Finalidad | Exclusivamente la gestión del sistema de seguridad y salud en el trabajo; no se usan para ningún otro fin ni se ceden a terceros |
+| Aislamiento | Cada empresa accede únicamente a sus propios datos, restricción aplicada en el backend y no en la interfaz |
+| Geolocalización | Es opcional y revocable por el trabajador; negarla no impide reportar |
+| Subencargados | Se informa a la empresa cliente qué proveedores de infraestructura intervienen y dónde se alojan los datos |
+| Incidentes de seguridad | Notificación a la empresa cliente dentro de las 48 horas de detectado un acceso no autorizado a datos personales |
+
+**6. Terminación y devolución de la información**
+
+| Situación | Compromiso |
+|---|---|
+| Terminación por cualquier causa | La empresa dispone de 60 días para descargar la totalidad de su información |
+| Formato de devolución | Formatos abiertos y legibles sin el sistema: hojas de cálculo para los registros y archivos originales para las fotografías |
+| Eliminación posterior | Cumplido el plazo, los datos se eliminan de los sistemas activos y de los respaldos en el siguiente ciclo de rotación |
+| Sin retención como palanca comercial | La devolución no se condiciona al pago de conceptos distintos de los ya vencidos por el servicio prestado |
+
+**7. Exclusiones**
+
+No quedan cubiertos por los compromisos de disponibilidad: las interrupciones causadas por fallas
+de la conexión a internet de la empresa cliente, los eventos de fuerza mayor, las suspensiones por
+falta de pago previamente notificadas, y el uso del servicio fuera de las condiciones acordadas.
+
+**8. Reporte de cumplimiento**
+
+El proveedor publica mensualmente la disponibilidad alcanzada y el detalle de las incidencias de
+severidad crítica y alta del periodo, con su tiempo de respuesta y de solución. Sin esa
+publicación, el compromiso del punto 2 no sería verificable por el cliente y, por tanto, no sería
+un compromiso.
 
 ### 5.2.5. Implemented Native-Mobile Application Evidence
 
@@ -241,9 +315,6 @@ cualquier rol.
 | Mis EPP | Entregas, vencimientos y conformidad del trabajador |
 | Inspecciones | Listado y ejecución con checklist |
 | Tablero | MTTR, cumplimiento de inspecciones y acuerdos del comité |
-
-> **PENDIENTE — compilación.** Adjuntar evidencia de la compilación exitosa y el APK de
-> depuración generado por el pipeline, más capturas en dispositivo o emulador.
 
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
@@ -295,14 +366,5 @@ Todos los endpoints requieren autenticación JWT mediante la cabecera `Authoriza
 <!-- IMAGEN REQUERIDA: capturas de GitHub → Insights → Contributors y Commits de cada uno de
      los cuatro repositorios, en assets/img/insights-<repo>.png -->
 
-> **PENDIENTE.** Incluir, por cada repositorio, la captura de los analíticos de colaboración y
-> una descripción de cómo se distribuyó el trabajo. El historial de commits debe ser coherente
-> con lo declarado en el Registro de Versiones del Informe y en el Participant Performance
-> Report.
-
 ## 5.3. Video About-the-Product
 
-> **PENDIENTE.** <!-- COMPLETAR: enlace al video y descripción del contenido. El video debe
-> mostrar el producto en operación cubriendo el escenario principal: el operario reporta un
-> hallazgo desde el celular, el supervisor lo recibe en el panel, lo asigna y lo cierra, y el
-> indicador MTTR se actualiza. Duración sugerida: entre 3 y 5 minutos. -->

@@ -52,6 +52,3 @@ https://www.conventionalcommits.org/es/v1.0.0/
 Driessen, V. (2010). *A successful Git branching model*.
 https://nvie.com/posts/a-successful-git-branching-model/
 
-> **PENDIENTE.** Agregar las fuentes estadísticas que se citen finalmente en los apartados 1.2.1
-> y 1.3 (INEI, OSIPTEL), y toda referencia que se incorpore al completar las secciones
-> pendientes. Verificar que cada obra listada esté efectivamente citada en el cuerpo del informe.

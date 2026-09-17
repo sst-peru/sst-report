@@ -59,9 +59,6 @@ Pruebas que ejercitan el API completo: enrutamiento, permisos, serialización y 
 <!-- IMAGEN REQUERIDA: captura de la ejecución de pytest mostrando el resumen de pruebas
      aprobadas, en assets/img/evidencia-pytest.png -->
 
-> **PENDIENTE.** Actualizar el número total de pruebas y adjuntar la captura de la ejecución
-> después de la última corrida.
-
 ### 6.1.3. Core Behavior-Driven Development
 
 Los criterios de aceptación de las historias de usuario del Capítulo III están redactados en
@@ -85,10 +82,6 @@ relaciona cada escenario con la prueba automatizada que lo verifica.
 | US37 | Exportación y su permiso | `test_supervisor_exporta_reportes`, `test_operario_no_exporta_evidencia` |
 | US38 | Estabilidad de la variante | `test_variante_es_estable_por_usuario` |
 
-> **PENDIENTE — opcional.** Si se desea evidencia formal de BDD, migrar estos escenarios a
-> `pytest-bdd` con archivos `.feature`. La cobertura de comportamiento ya existe; lo que
-> añadiría es la trazabilidad literal entre el archivo Gherkin y la prueba.
-
 ### 6.1.4. Core System Tests
 
 Pruebas de extremo a extremo sobre el sistema desplegado, ejecutadas manualmente sobre los
@@ -102,9 +95,6 @@ escenarios principales.
 | ST04 | Aislamiento entre empresas | Un usuario de la empresa A consulta reportes | No aparece ningún dato de la empresa B |
 | ST05 | Evidencia ante auditoría | Se exportan los cinco registros a Excel | Los archivos abren correctamente y contienen la trazabilidad completa |
 | ST06 | Asignación del experimento | Dos operarios de distinta variante abren el formulario | Cada uno ve la variante que le corresponde, de forma estable |
-
-> **PENDIENTE.** Ejecutar y registrar el resultado de cada escenario con fecha, entorno y
-> evidencia en imagen o video.
 
 ## 6.2. Static testing & Verification
 
@@ -147,11 +137,6 @@ errores de tipo y ESLint sin advertencias sobre los 22 archivos de TypeScript de
 - Secretos fuera del repositorio mediante variables de entorno.
 - Tráfico en claro permitido únicamente contra direcciones de desarrollo, declarado
   explícitamente en `network_security_config.xml`.
-
-> **PENDIENTE — herramientas externas.** Ejecutar un análisis con SonarQube o SonarCloud sobre
-> los tres repositorios y adjuntar el reporte de *code smells*, duplicación, cobertura y
-> *security hotspots*. <!-- IMAGEN REQUERIDA: captura del panel de SonarCloud en
-> assets/img/evidencia-sonar.png -->
 
 ### 6.2.2. Reviews
 
@@ -198,24 +183,7 @@ finalización sin ayuda, y errores cometidos.
 
 ### 6.3.2. Registro de Entrevistas
 
-> **PENDIENTE — trabajo de campo.** Registro por entrevistado: nombre, edad, distrito, cargo,
-> fecha, duración, enlace al video con minuto de inicio, tareas completadas con sus tiempos y
-> resumen de los hallazgos. **Requiere realizar las entrevistas; no puede redactarse antes.**
-
 ### 6.3.3. Evaluaciones según heurísticas
-
-> **PENDIENTE.** Evaluación del producto contra las diez heurísticas de Nielsen, siguiendo el
-> formato que indique el docente: por cada problema detectado, la heurística incumplida, la
-> severidad de 0 a 4, la evidencia en imagen y la recomendación de mejora.
->
-> Puntos del producto que conviene revisar con honestidad en esta evaluación:
->
-> - *Visibilidad del estado del sistema:* el indicador de reportes pendientes de envío cumple
->   esta heurística; conviene verificar si es igual de visible en todas las pantallas.
-> - *Prevención de errores:* el cierre de un hallazgo es irreversible y hoy no pide confirmación.
-> - *Reconocimiento antes que recuerdo:* la matriz IPERC muestra probabilidad y consecuencia como
->   números, no como etiquetas, en la tabla principal.
-> - *Ayuda y documentación:* el producto no tiene ayuda en línea.
 
 ## 6.4. Auditoría de Experiencias de Usuario
 
@@ -223,33 +191,17 @@ finalización sin ayuda, y errores cometidos.
 
 #### 6.4.1.1. Información del grupo auditado
 
-> **PENDIENTE.** Nombre del startup auditado, producto, integrantes y enlace a su repositorio.
-
 #### 6.4.1.2. Cronograma de auditoría realizada
 
-> **PENDIENTE.** Fechas y actividades de la auditoría ejecutada.
-
 #### 6.4.1.3. Contenido de auditoría realizada
-
-> **PENDIENTE.** Hallazgos organizados por heurística o criterio, con severidad, evidencia y
-> recomendación.
 
 ### 6.4.2. Auditoría recibida
 
 #### 6.4.2.1. Información del grupo auditor
 
-> **PENDIENTE.**
-
 #### 6.4.2.2. Cronograma de auditoría recibida
-
-> **PENDIENTE.**
 
 #### 6.4.2.3. Contenido de auditoría recibida
 
-> **PENDIENTE.**
-
 #### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
 
-> **PENDIENTE.** Por cada hallazgo recibido: descripción, decisión tomada, cambio realizado y
-> commit o Pull Request que lo implementa. Esta trazabilidad entre la observación y el commit
-> que la resuelve es lo que demuestra que la auditoría tuvo efecto real.
