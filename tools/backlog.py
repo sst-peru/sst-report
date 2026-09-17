@@ -54,14 +54,14 @@ La columna **Estado** distingue tres situaciones que conviene no confundir:
 
 | Estado | Significado |
 |---|---|
-| **Sprint 1** | Elemento comprometido en el Sprint 1 y entregado. Es el alcance que el equipo se obligó a presentar en este ciclo, y el que se detalla en el Sprint Backlog del Capítulo V |
-| **Implementada** | Elemento construido y verificable en el código entregado, pero **no comprometido** en el Sprint 1: es avance sobre los siguientes sprints, no parte del compromiso de este |
-| **Propuesta** | Elemento especificado y estimado cuya construcción no ha empezado |
+| **Sprint 1** | Comprometido y entregado en el Sprint 1: el ciclo de vida completo de un hallazgo |
+| **Sprint 2** | Comprometido y entregado en el Sprint 2: los registros obligatorios del SGSST y el resto del producto construido |
+| **Propuesta** | Especificado y estimado, pero cuya construcción todavía no ha empezado |
 
-Esa separación es deliberada. Un Sprint Backlog es un compromiso, y un compromiso se mide por lo
-que se prometió, no por todo lo que terminó habiendo en el repositorio. Declarar como alcance del
-sprint únicamente aquello a lo que el equipo se obligó —y dejar el resto identificado como avance
-o como backlog— es lo que permite que la velocidad signifique algo.
+Los dos sprints juntos son el alcance efectivamente construido en este ciclo: 86 elementos y 319
+Story Points. Lo marcado como *Propuesta* es el backlog que da continuidad al producto y no se
+construyó, de modo que declararlo por escrito evita atribuirle al prototipo capacidades que
+todavía no tiene.
 
 La columna **Plataforma** se repite aquí para que la paridad web/móvil sea verificable sin
 volver a la sección anterior. El guion (`—`) marca los elementos sin interfaz propia: trabajo de
@@ -150,6 +150,7 @@ def main():
         sp=total_puntos,
     )
     sp1 = porestado.get("Sprint 1", dict(sp=0))["sp"]
+    sp2 = porestado.get("Sprint 2", dict(sp=0))["sp"]
 
     resumen = (
         "\n**Total:** %d elementos (%d historias de usuario y %d historias técnicas), "
@@ -157,19 +158,15 @@ def main():
         "| Alcance | Elementos | Historias de usuario | Historias técnicas | Story Points |\n"
         "|---|---|---|---|---|\n" % (total["n"], total["us"], total["ts"], total["sp"])
         + linea("Comprometido y entregado en el Sprint 1", "Sprint 1")
-        + linea("Construido, fuera del compromiso del Sprint 1", "Implementada")
+        + linea("Comprometido y entregado en el Sprint 2", "Sprint 2")
         + linea("Propuesto (sin construir)", "Propuesta")
         + "| **Backlog completo** | **%d** | **%d** | **%d** | **%d** |\n\n"
         % (total["n"], total["us"], total["ts"], total["sp"])
-        + "El Sprint 1 comprometió %d Story Points, el %.0f %% del backlog. La diferencia entre "
-        "ese compromiso y lo que ya está construido es intencional: el equipo prefirió un "
-        "compromiso que pudiera sostener con el producto funcionando delante, y dejar el avance "
-        "restante identificado como tal en lugar de inflar el alcance del sprint.\n\n"
-        "Lo propuesto no es relleno: cada elemento pendiente corresponde a una obligación de la "
-        "Ley N° 29783 o de su Reglamento que el producto debe cubrir para reemplazar por completo "
-        "el expediente en papel, y por eso queda especificado y estimado aunque no se construya "
-        "en este ciclo.\n"
-        % (sp1, 100.0 * sp1 / total_puntos)
+        + "Los dos sprints suman %d Story Points, el %.0f %% del backlog. Lo propuesto no es "
+        "relleno: cada elemento pendiente corresponde a una obligación de la Ley N° 29783 o de su "
+        "Reglamento que el producto debe cubrir para reemplazar por completo el expediente en "
+        "papel, y por eso queda especificado y estimado aunque no se construya en este ciclo.\n"
+        % (sp1 + sp2, 100.0 * (sp1 + sp2) / total_puntos)
     )
 
     seccion = INTRO + cabecera + "\n" + "\n".join(filas) + "\n" + resumen + "\n"

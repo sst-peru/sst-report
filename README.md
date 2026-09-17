@@ -167,7 +167,7 @@ incorpora mediante Pull Request.
     - [5.1.3. Source Code Style Guide & Conventions](chapters/capitulo-05-product-implementation.md#513-source-code-style-guide--conventions)
     - [5.1.4. Software Deployment Configuration](chapters/capitulo-05-product-implementation.md#514-software-deployment-configuration)
   - [5.2. Product Implementation & Deployment](chapters/capitulo-05-product-implementation.md#52-product-implementation--deployment)
-    - [5.2.1. Sprint Backlog](chapters/capitulo-05-product-implementation.md#521-sprint-backlog)
+    - [5.2.1. Sprint Backlogs](chapters/capitulo-05-product-implementation.md#521-sprint-backlogs)
     - [5.2.2. Implemented Landing Page Evidence](chapters/capitulo-05-product-implementation.md#522-implemented-landing-page-evidence)
     - [5.2.3. Implemented Frontend-Web Application Evidence](chapters/capitulo-05-product-implementation.md#523-implemented-frontend-web-application-evidence)
     - [5.2.4. Acuerdo de Servicio - SaaS](chapters/capitulo-05-product-implementation.md#524-acuerdo-de-servicio---saas)
