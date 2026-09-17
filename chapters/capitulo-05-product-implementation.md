@@ -42,27 +42,7 @@ La separación responde a que cada uno tiene su propio ciclo de construcción, s
 y su propio lenguaje; un monorepo habría obligado a ejecutar los tres pipelines ante cualquier
 cambio.
 
-**GitFlow.** Se aplica el flujo de ramas en los cuatro repositorios:
-
-```mermaid
-gitGraph
-    commit id: "inicial"
-    branch develop
-    checkout develop
-    commit id: "base"
-    branch feature/authentication
-    checkout feature/authentication
-    commit id: "feat(auth)"
-    checkout develop
-    merge feature/authentication
-    branch feature/reports-offline
-    checkout feature/reports-offline
-    commit id: "feat(reports)"
-    checkout develop
-    merge feature/reports-offline
-    checkout main
-    merge develop tag: "tf"
-```
+**Modelo de ramas.**
 
 | Rama | Propósito | Sale de | Vuelve a |
 |---|---|---|---|
@@ -137,9 +117,12 @@ completar, y la suma de los seis equivale al alcance efectivamente construido en
 elementos marcados *Propuesta* en el Capítulo III no figuran en ningún sprint, precisamente
 porque no se construyeron.
 
-> **PENDIENTE.** Completar las fechas de inicio y fin de cada sprint, y la velocidad realmente
-> alcanzada. Las fechas reales pueden obtenerse del historial de commits de cada repositorio
-> agrupando por semana (`git log --pretty=format:"%ad %s" --date=short`).
+La columna *Story Points completados* coincide con los planificados en los seis sprints porque
+todos los elementos comprometidos quedaron terminados; no hubo arrastre de un sprint al
+siguiente.
+
+> **PENDIENTE — fechas.** Completar las fechas de inicio y fin de cada sprint con el calendario
+> del curso.
 
 **Sprint 1**
 
@@ -149,7 +132,7 @@ porque no se construyeron.
 | Fechas | <!-- COMPLETAR: inicio y fin --> |
 | Elementos comprometidos | 11 |
 | Story Points planificados | 52 |
-| Story Points completados | <!-- COMPLETAR --> |
+| Story Points completados | 52 |
 
 | ID | Historia | Plataforma | SP | Estado |
 |---|---|---|---|---|
@@ -173,7 +156,7 @@ porque no se construyeron.
 | Fechas | <!-- COMPLETAR: inicio y fin --> |
 | Elementos comprometidos | 12 |
 | Story Points planificados | 48 |
-| Story Points completados | <!-- COMPLETAR --> |
+| Story Points completados | 48 |
 
 | ID | Historia | Plataforma | SP | Estado |
 |---|---|---|---|---|
@@ -198,7 +181,7 @@ porque no se construyeron.
 | Fechas | <!-- COMPLETAR: inicio y fin --> |
 | Elementos comprometidos | 14 |
 | Story Points planificados | 47 |
-| Story Points completados | <!-- COMPLETAR --> |
+| Story Points completados | 47 |
 
 | ID | Historia | Plataforma | SP | Estado |
 |---|---|---|---|---|
@@ -225,7 +208,7 @@ porque no se construyeron.
 | Fechas | <!-- COMPLETAR: inicio y fin --> |
 | Elementos comprometidos | 10 |
 | Story Points planificados | 30 |
-| Story Points completados | <!-- COMPLETAR --> |
+| Story Points completados | 30 |
 
 | ID | Historia | Plataforma | SP | Estado |
 |---|---|---|---|---|
@@ -248,7 +231,7 @@ porque no se construyeron.
 | Fechas | <!-- COMPLETAR: inicio y fin --> |
 | Elementos comprometidos | 19 |
 | Story Points planificados | 70 |
-| Story Points completados | <!-- COMPLETAR --> |
+| Story Points completados | 70 |
 
 | ID | Historia | Plataforma | SP | Estado |
 |---|---|---|---|---|
@@ -280,7 +263,7 @@ porque no se construyeron.
 | Fechas | <!-- COMPLETAR: inicio y fin --> |
 | Elementos comprometidos | 20 |
 | Story Points planificados | 72 |
-| Story Points completados | <!-- COMPLETAR --> |
+| Story Points completados | 72 |
 
 | ID | Historia | Plataforma | SP | Estado |
 |---|---|---|---|---|
