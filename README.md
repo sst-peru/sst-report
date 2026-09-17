@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- COMPLETAR: logo de la universidad en assets/img/logo-upc.png -->
-<img src="assets/img/logo-upc.png" alt="Universidad Peruana de Ciencias Aplicadas" width="200">
+<img src="assets/img/Banner-UPC.png" alt="Universidad Peruana de Ciencias Aplicadas" width="200">
 
 **UNIVERSIDAD PERUANA DE CIENCIAS APLICADAS**
 
