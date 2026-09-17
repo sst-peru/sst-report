@@ -6,7 +6,7 @@
 
 <!-- COMPLETAR: nombre del startup. Reemplazar [NOMBRE DEL STARTUP] en todo el documento. -->
 
-**[NOMBRE DEL STARTUP]** es una startup de software peruana dedicada a llevar la gestión de
+**Dangery** es una startup de software peruana dedicada a llevar la gestión de
 la seguridad y salud en el trabajo del papel al dato en tiempo real. Nace de una observación
 concreta: en la mayoría de empresas medianas y pequeñas del país el sistema de gestión de SST
 existe formalmente —hay matriz IPERC, hay comité, hay registros— pero funciona con semanas de
@@ -34,7 +34,7 @@ API REST que ambos consumen.
 
 | | |
 |---|---|
-| <img src="../assets/img/perfil-1.jpg" width="130"> | **<!-- COMPLETAR: Apellidos y Nombres -->**<br>**Código:** <!-- COMPLETAR --><br>**Carrera:** <!-- COMPLETAR --><br><br><!-- COMPLETAR: párrafo de resumen. Indicar los principales conocimientos técnicos y habilidades que aporta al equipo, siendo concreto: lenguajes, frameworks, herramientas y experiencias previas relevantes. --> |
+| <img src="../assets/img/perfil-1.jpg" width="130"> | **<!-- COMPLETAR: Esquirva León Miguel Juan Diego -->**<br>**Código:60752953** <!-- COMPLETAR --><br>**Carrera: Ingenieria de Software** <!-- COMPLETAR --><br><br><!-- COMPLETAR: párrafo de resumen. Indicar los principales conocimientos técnicos y habilidades que aporta al equipo, siendo concreto: lenguajes, frameworks, herramientas y experiencias previas relevantes. --> |
 
 **Integrante 2**
 
