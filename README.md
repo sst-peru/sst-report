@@ -11,21 +11,21 @@
 
 **1ASI0732 — Diseño de Experimentos de Ingeniería de Software**
 
-**NRC:** <!-- COMPLETAR: número de referencia del curso -->
+**NRC:**9108 <!-- COMPLETAR: número de referencia del curso -->
 
-**Profesor:** <!-- COMPLETAR: nombre del profesor -->
+**Profesor:**Julio Manuel Noriega Melendez 
 
 # Informe de Trabajo Final
 
-**Startup:** <!-- COMPLETAR: nombre del startup -->
+**Startup:** sst-Peru
 
 **Producto:** Resguardo — Sistema de Gestión de Seguridad y Salud en el Trabajo
 
 ### Integrantes
 
-| Código | Apellidos y Nombres |
-|---|---|
-| <!-- COMPLETAR --> | <!-- COMPLETAR --> |
+| Código    | Apellidos y Nombres      |
+|-----------|--------------------------|
+| u20231c069 | Diego Alonzo Mora Blas |
 
 **Septiembre de 2026**
 
@@ -37,7 +37,7 @@
 
 | Versión | Fecha | Autor | Descripción de modificación |
 |---|---|---|---|
-| 1.0 | 2026-09-13 | <!-- COMPLETAR: apellidos y nombres --> | Creación del repositorio del informe y de la estructura completa de capítulos según el enunciado del trabajo final. |
+| 1.0 | 2026-09-13 | Diego Alonzo Mora Blas | Apoyo en la definición del problema mediante The 5 W's and 2 H's, desarrollo de componentes del frontend y colaboración en la implementación del backend de la aplicación. |
 
 ---
 
