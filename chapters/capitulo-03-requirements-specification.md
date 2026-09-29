@@ -30,12 +30,12 @@ Dos columnas ordenan la lectura:
   redactar un acta, administrar usuarios, leer el tablero— es del supervisor y del comité, y vive
   en la web. Ambas plataformas comparten todo lo que un mismo rol necesita en los dos sitios.
 - **Estado** separa tres situaciones. *Sprint 1* marca los quince elementos comprometidos y
-  entregados en el sprint de este ciclo, que son los que detalla el Sprint Backlog del Capítulo V.
-  *Implementada* marca lo que existe y es verificable en el código entregado pero no formó parte
-  de ese compromiso: es avance sobre los siguientes sprints. *Propuesta* marca lo que está escrito
-  y estimado pero todavía no se construye. Un backlog contiene siempre más de lo que cabe en un
-  sprint; declarar por escrito cuál es cuál evita atribuirle al prototipo capacidades que no
-  tiene, y evita también inflar la velocidad del sprint con trabajo que no se prometió.
+  entregados en el primer sprint: el ciclo de vida completo de un hallazgo. *Sprint 2* marca los
+  setenta y un elementos del segundo sprint, que construyen el resto del sistema de gestión sobre
+  ese ciclo. Los dos juntos son el alcance efectivamente construido y son los que detallan los
+  Sprint Backlogs del Capítulo V. *Propuesta* marca lo que está escrito y estimado pero todavía no
+  se construye. Un backlog contiene siempre más de lo que cabe en un ciclo; declarar por escrito
+  cuál es cuál evita atribuirle al prototipo capacidades que no tiene.
 
 Las historias técnicas (TS) corresponden a trabajo de infraestructura
 sin valor directo para el usuario final pero necesario para sostener el producto.
@@ -44,16 +44,16 @@ sin valor directo para el usuario final pero necesario para sostener el producto
 
 | ID | Épica | Descripción | Historias | Alcance |
 |---|---|---|---|---|
-| EP01 | Acceso y cuentas | Registro, autenticación y administración de usuarios y roles. | 8 | Implementada |
-| EP02 | Reporte de actos y condiciones inseguras | Captura del hallazgo en campo, con evidencia y operación sin conexión. | 14 | 13 implementadas, 1 propuestas |
-| EP03 | Gestión del hallazgo | Seguimiento desde la recepción hasta el cierre verificado. | 8 | Implementada |
-| EP04 | Matriz IPERC | Identificación de peligros, evaluación de riesgos y controles. | 7 | Implementada |
-| EP05 | Control de EPP | Catálogo, entregas, vencimientos y conformidad del trabajador. | 6 | 5 implementadas, 1 propuestas |
-| EP06 | Inspecciones periódicas | Programación, ejecución con checklist y cumplimiento. | 7 | 5 implementadas, 2 propuestas |
-| EP07 | Comité de SST | Constitución, miembros, actas de reunión y acuerdos. | 10 | 8 implementadas, 2 propuestas |
-| EP08 | Métricas y evidencia | Indicadores de gestión y exportación para auditorías. | 8 | 6 implementadas, 2 propuestas |
-| EP09 | Experimento A/B | Asignación de variantes y medición de resultados. | 6 | 4 implementadas, 2 propuestas |
-| EP10 | Calidad de uso y operación | Atributos transversales: consistencia visual, uso en campo, manejo de errores y respuesta ante fallos de red. | 8 | 6 implementadas, 2 propuestas |
+| EP01 | Acceso y cuentas | Registro, autenticación y administración de usuarios y roles. | 8 | Construida (2 en el Sprint 1 y 6 en el Sprint 2) |
+| EP02 | Reporte de actos y condiciones inseguras | Captura del hallazgo en campo, con evidencia y operación sin conexión. | 14 | 13 construidas, 1 propuesta |
+| EP03 | Gestión del hallazgo | Seguimiento desde la recepción hasta el cierre verificado. | 8 | Construida (4 en el Sprint 1 y 4 en el Sprint 2) |
+| EP04 | Matriz IPERC | Identificación de peligros, evaluación de riesgos y controles. | 7 | Construida (7 en el Sprint 2) |
+| EP05 | Control de EPP | Catálogo, entregas, vencimientos y conformidad del trabajador. | 6 | 5 construidas, 1 propuesta |
+| EP06 | Inspecciones periódicas | Programación, ejecución con checklist y cumplimiento. | 7 | 5 construidas, 2 propuestas |
+| EP07 | Comité de SST | Constitución, miembros, actas de reunión y acuerdos. | 10 | 8 construidas, 2 propuestas |
+| EP08 | Métricas y evidencia | Indicadores de gestión y exportación para auditorías. | 8 | 6 construidas, 2 propuestas |
+| EP09 | Experimento A/B | Asignación de variantes y medición de resultados. | 6 | 4 construidas, 2 propuestas |
+| EP10 | Calidad de uso y operación | Atributos transversales: consistencia visual, uso en campo, manejo de errores y respuesta ante fallos de red. | 8 | 6 construidas, 2 propuestas |
 | EP11 | Accidentes e incidentes | Registro e investigación de accidentes de trabajo, incidentes peligrosos y enfermedades ocupacionales, con notificación a la autoridad. | 8 | Propuesta |
 | EP12 | Capacitación e inducción | Registro de inducción, capacitación, entrenamiento y simulacros de emergencia. | 6 | Propuesta |
 | EP13 | Mapa de riesgos y señalización | Representación gráfica de los riesgos por área y control de la señalización obligatoria. | 4 | Propuesta |
