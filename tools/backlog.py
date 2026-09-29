@@ -2,7 +2,7 @@
 import re
 from pathlib import Path
 
-RUTA = Path(__file__).resolve().parent.parent / "chapters" / "capitulo-03-requirements-specification.md"
+RUTA = Path(__file__).resolve().parent.parent / "README.md"
 
 # Orden de prioridad de los 86 elementos ya implementados, con su estimacion.
 IMPLEMENTADOS = [
@@ -72,7 +72,7 @@ backend o de infraestructura.
 
 def cargar_historias(texto):
     historias = {}
-    for linea in texto.split("## 3.3.")[0].splitlines():
+    for linea in texto.split("## 3.2. User Stories", 1)[1].split("## 3.3.", 1)[0].splitlines():
         if not re.match(r"^\|\s*(US|TS)\d+\s*\|", linea):
             continue
         celdas = [c.strip() for c in linea.strip().strip("|").split("|")]

@@ -30,9 +30,9 @@ git checkout develop
 git pull origin develop
 git checkout -b docs/capitulo-02-competidores
 
-# ... se redacta la sección ...
+# ... se redacta la sección en README.md ...
 python tools/build.py toc          # el índice se regenera solo
-git add chapters/capitulo-02-requirements-elicitation.md README.md
+git add README.md
 git commit -m "docs(cap02): agregar analisis competitivo con tres competidores"
 
 git push -u origin docs/capitulo-02-competidores
@@ -79,8 +79,8 @@ git push origin main --tags
 Antes de exportar el PDF:
 
 ```bash
-python tools/build.py             # regenera índice y arma informe-completo.md
+python tools/build.py             # actualiza el índice y muestra las marcas pendientes
 ```
 
-El script informa cuántas secciones siguen marcadas como **PENDIENTE** y cuántas marcas
+Exportar `README.md` a PDF. El script informa cuántas secciones siguen marcadas como **PENDIENTE** y cuántas marcas
 `COMPLETAR` quedan. Ninguna de las dos debería aparecer en el documento que se entrega.

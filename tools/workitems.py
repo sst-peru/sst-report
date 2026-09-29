@@ -7,8 +7,7 @@ import re
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-CAP3 = RAIZ / "chapters" / "capitulo-03-requirements-specification.md"
-CAP5 = RAIZ / "chapters" / "capitulo-05-product-implementation.md"
+INFORME = RAIZ / "README.md"
 
 HORAS_POR_PUNTO = 2
 
@@ -32,8 +31,8 @@ TECNICA = [
 
 
 def leer_backlog():
-    texto = CAP3.read_text(encoding="utf-8")
-    cuerpo = texto.split("## 3.3.", 1)[1]
+    texto = INFORME.read_text(encoding="utf-8")
+    cuerpo = texto.split("## 3.3.", 1)[1].split("## 3.4.", 1)[0]
     patron = (
         r"^\| \d+ \| ((?:US|TS)\d+) \| ([^|]+) \| ([^|]*) \| ([^|]+) \| (Sprint [12]) \| (\d+) \|$"
     )
@@ -228,10 +227,10 @@ tiempo real.
         len(s1) + len(s2), sp1 + sp2, n1 + n2, h1 + h2,
     )
 
-    texto = CAP5.read_text(encoding="utf-8")
+    texto = INFORME.read_text(encoding="utf-8")
     inicio = texto.index("### 5.2.1. Sprint Backlog")
     fin = texto.index("### 5.2.2.")
-    CAP5.write_text(texto[:inicio] + seccion + "\n" + texto[fin:], encoding="utf-8")
+    INFORME.write_text(texto[:inicio] + seccion + "\n" + texto[fin:], encoding="utf-8")
     print(
         "Sprint 1: %d elementos, %d SP, %d work-items, %d h" % (len(s1), sp1, n1, h1)
     )

@@ -5,8 +5,8 @@
     python tools/historial-por-secciones.py --ejecutar      # crea los commits
     python tools/historial-por-secciones.py --ejecutar --push
 
-Toma el contenido actual de cada capítulo como versión final, vacía los archivos y los
-vuelve a construir sección por sección, confirmando cada una con su propio commit en
+Toma el contenido actual de README.md como versión final y reconstruye sus capítulos
+sección por sección, confirmando cada una con su propio commit en
 formato Conventional Commits. El resultado es el mismo contenido con un historial
 detallado, sección por sección.
 
@@ -15,38 +15,28 @@ Advertencia: todos los commits llevarán la fecha y hora en que se ejecute el sc
 import argparse
 import re
 import subprocess
+import sys
 import unicodedata
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 
-CAPITULOS = [
-    "capitulo-01-introduccion.md",
-    "capitulo-02-requirements-elicitation.md",
-    "capitulo-03-requirements-specification.md",
-    "capitulo-04-product-design.md",
-    "capitulo-05-product-implementation.md",
-    "capitulo-06-verification-validation.md",
-    "capitulo-07-devops-practices.md",
-    "capitulo-08-experiment-driven.md",
-    "conclusiones.md",
-    "bibliografia.md",
-    "anexos.md",
-]
+INFORME = RAIZ / "README.md"
 
 ALCANCES = {
-    "capitulo-01-introduccion.md": "cap01",
-    "capitulo-02-requirements-elicitation.md": "cap02",
-    "capitulo-03-requirements-specification.md": "cap03",
-    "capitulo-04-product-design.md": "cap04",
-    "capitulo-05-product-implementation.md": "cap05",
-    "capitulo-06-verification-validation.md": "cap06",
-    "capitulo-07-devops-practices.md": "cap07",
-    "capitulo-08-experiment-driven.md": "cap08",
-    "conclusiones.md": "cierre",
-    "bibliografia.md": "biblio",
-    "anexos.md": "anexos",
+    "Capítulo I: Introducción": "cap01",
+    "Capítulo II: Requirements Elicitation & Analysis": "cap02",
+    "Capítulo III: Requirements Specification": "cap03",
+    "Capítulo IV: Product Design": "cap04",
+    "Capítulo V: Product Implementation": "cap05",
+    "Capítulo VI: Product Verification & Validation": "cap06",
+    "Capítulo VII: DevOps Practices": "cap07",
+    "Capítulo VIII: Experiment-Driven Development": "cap08",
+    "Conclusiones": "cierre",
+    "Bibliografía": "biblio",
+    "Anexos": "anexos",
 }
+CAPITULOS = list(ALCANCES)
 
 
 def git(*args, capturar=False):
@@ -123,19 +113,21 @@ def main():
     args = parser.parse_args()
 
     # 1. El contenido actual de los capítulos es la versión final.
-    finales = {}
-    for nombre in CAPITULOS:
-        ruta = RAIZ / "chapters" / nombre
-        if not ruta.exists():
-            raise SystemExit(f"Falta {ruta}. Corre el script desde el repositorio del informe.")
-        finales[nombre] = ruta.read_text(encoding="utf-8")
+    contenido = INFORME.read_text(encoding="utf-8")
+    posiciones = [contenido.index(f"\n# {titulo}\n") + 1 for titulo in CAPITULOS]
+    cabecera = contenido[:posiciones[0]]
+    limites = posiciones[1:] + [len(contenido)]
+    finales = {
+        titulo: contenido[inicio:fin]
+        for titulo, inicio, fin in zip(CAPITULOS, posiciones, limites)
+    }
 
     plan = []
     for nombre in CAPITULOS:
         alcance = ALCANCES[nombre]
         bloques = trocear(finales[nombre], args.nivel)
         for i, (titulo, texto) in enumerate(bloques):
-            etiqueta = titulo if titulo else f"estructura de {nombre.removesuffix('.md')}"
+            etiqueta = titulo if titulo else f"estructura de {nombre}"
             plan.append((nombre, alcance, etiqueta, texto, i == 0))
 
     print(f"Capítulos: {len(CAPITULOS)}")
@@ -158,23 +150,20 @@ def main():
     print(f"Rama: {args.rama}\n")
 
     # 3. Vaciar los capítulos y confirmarlo como un paso explícito del historial.
-    for nombre in CAPITULOS:
-        (RAIZ / "chapters" / nombre).write_text("", encoding="utf-8", newline="")
-    git("add", "chapters")
+    INFORME.write_text(cabecera, encoding="utf-8", newline="")
+    git("add", "README.md")
     creados = 0
     if git("status", "--porcelain", capturar=True):
         git("commit", "-m", "chore(informe): reiniciar capitulos para reconstruir el historial")
         creados = 1
         print("  [  1] chore(informe): reiniciar capitulos para reconstruir el historial")
 
-    acumulado = {nombre: "" for nombre in CAPITULOS}
+    acumulado = cabecera
 
     for nombre, alcance, etiqueta, texto, es_primero in plan:
-        acumulado[nombre] += texto
-        (RAIZ / "chapters" / nombre).write_text(
-            acumulado[nombre], encoding="utf-8", newline=""
-        )
-        git("add", f"chapters/{nombre}")
+        acumulado += texto
+        INFORME.write_text(acumulado, encoding="utf-8", newline="")
+        git("add", "README.md")
 
         if es_primero:
             texto_commit = f"docs({alcance}): crear el capitulo y su encabezado"
@@ -190,7 +179,7 @@ def main():
         print(f"  [{creados:>3}] {texto_commit}")
 
     # 4. Índice regenerado como último commit.
-    subprocess.run(["python", str(RAIZ / "tools" / "build.py"), "toc"], cwd=RAIZ, check=False)
+    subprocess.run([sys.executable, str(RAIZ / "tools" / "build.py"), "toc"], cwd=RAIZ, check=False)
     git("add", "README.md")
     estado = git("status", "--porcelain", capturar=True)
     if estado:

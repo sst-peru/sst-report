@@ -1,4 +1,4 @@
-# Se genera con tools/build.py; no se versiona para evitar conflictos en cada commit.
+# Exportación heredada; el informe se mantiene ahora en README.md.
 informe-completo.md
 
 .DS_Store

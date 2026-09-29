@@ -4,7 +4,7 @@ Este archivo **no forma parte del informe**: no se compila ni se incluye en el �
 Recoge las tareas que antes aparecían como bloques PENDIENTE dentro de los capítulos,
 para que el documento entregable quede limpio sin perder la lista de lo que falta.
 
-## bibliografia.md
+## Bibliografía
 
 **PENDIENTE.** Agregar las fuentes estadísticas que se citen finalmente en los apartados 1.2.1
 y 1.3 (INEI, OSIPTEL), y toda referencia que se incorpore al completar las secciones
@@ -12,7 +12,7 @@ pendientes. Verificar que cada obra listada esté efectivamente citada en el cue
 
 ---
 
-## capitulo-01-introduccion.md
+## Capítulo I: Introducción
 
 **PENDIENTE — cifra oficial.** Incorporar aquí la cifra de notificaciones de accidentes de
 trabajo del último boletín del MTPE, con su año y fuente citada. Se descarga en
@@ -24,7 +24,7 @@ mayor incidencia. No usar cifras aproximadas ni de memoria: el dato tiene que se
 
 ---
 
-## capitulo-02-requirements-elicitation.md
+## Capítulo II: Requirements Elicitation & Analysis
 
 **PENDIENTE — trabajo de campo.** Esta sección debe contener entrevistas reales, grabadas en
 video y editadas en el video de evidencia. Por cada entrevistado se registra: nombre y
@@ -55,7 +55,7 @@ asumió antes de entrevistar suele significar que se preguntó mal.
 
 ---
 
-## capitulo-04-product-design.md
+## Capítulo IV: Product Design
 
 **PENDIENTE — fuera del alcance de este ciclo.** La landing page se construye en un repositorio
 aparte. Esta sección documenta su diseño previsto; las capturas se incorporan cuando esté
@@ -67,7 +67,7 @@ de su despliegue.
 
 ---
 
-## capitulo-05-product-implementation.md
+## Capítulo V: Product Implementation
 
 **PENDIENTE — despliegue.** Documentar aquí el despliegue real cuando esté hecho: proveedor
 (Render, Railway, Fly.io o similar para el API; Vercel o Netlify para la web), URL pública de
@@ -98,7 +98,7 @@ indicador MTTR se actualiza. Duración sugerida: entre 3 y 5 minutos. -->
 
 ---
 
-## capitulo-06-verification-validation.md
+## Capítulo VI: Product Verification & Validation
 
 **PENDIENTE.** Actualizar el número total de pruebas y adjuntar la captura de la ejecución
 después de la última corrida.
@@ -163,7 +163,7 @@ que la resuelve es lo que demuestra que la auditoría tuvo efecto real.
 
 ---
 
-## capitulo-07-devops-practices.md
+## Capítulo VII: DevOps Practices
 
 **PENDIENTE — implementación.** Los pipelines de construcción existen y publican artefactos;
 el despliegue automatizado a un entorno de pruebas está diseñado pero **no implementado
@@ -189,7 +189,7 @@ entrega.
 
 ---
 
-## capitulo-08-experiment-driven.md
+## Capítulo VIII: Experiment-Driven Development
 
 **PENDIENTE.** Consignar aquí el número real de participantes reclutados y recalcular el
 efecto mínimo detectable con esa cifra antes de interpretar cualquier resultado.
@@ -276,7 +276,7 @@ formato que indique el docente. Contenido sugerido con base en lo desarrollado:
 
 ---
 
-## conclusiones.md
+## Conclusiones
 
 **PENDIENTE.** Incorporar aquí las conclusiones derivadas del resultado real del experimento y
 de las entrevistas de validación, una vez ejecutados.

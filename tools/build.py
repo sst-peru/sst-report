@@ -1,32 +1,17 @@
 #!/usr/bin/env python3
-"""Herramientas del informe: índice automático y compilación a un solo archivo.
+"""Actualiza el índice del informe único en README.md.
 
-    python tools/build.py toc   -> regenera la tabla de contenidos dentro del README
-    python tools/build.py       -> arma informe-completo.md (README + capítulos)
+    python tools/build.py toc   -> regenera la tabla de contenidos
+    python tools/build.py       -> actualiza el índice y resume las marcas pendientes
 
-El informe se escribe en varios archivos para que sea manejable, pero la entrega es un
-único PDF. Este script une todo en el orden correcto justo antes de exportar, así no hay
-que mantener a mano ni el índice ni el documento final.
+Para la entrega, exportar README.md directamente a PDF.
 """
 import re
 import sys
-import unicodedata
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-CAPITULOS = [
-    "capitulo-01-introduccion.md",
-    "capitulo-02-requirements-elicitation.md",
-    "capitulo-03-requirements-specification.md",
-    "capitulo-04-product-design.md",
-    "capitulo-05-product-implementation.md",
-    "capitulo-06-verification-validation.md",
-    "capitulo-07-devops-practices.md",
-    "capitulo-08-experiment-driven.md",
-    "conclusiones.md",
-    "bibliografia.md",
-    "anexos.md",
-]
+
 
 INICIO = "<!-- TOC:inicio -->"
 FIN = "<!-- TOC:fin -->"
@@ -60,14 +45,22 @@ def encabezados(ruta: Path):
 
 def construir_toc() -> str:
     lineas = []
-    for nombre in CAPITULOS:
-        ruta = RAIZ / "chapters" / nombre
-        if not ruta.exists():
-            continue
-        for nivel, titulo in encabezados(ruta):
+    usados = set()
+    en_informe = False
+    for nivel, titulo in encabezados(RAIZ / "README.md"):
+        base = ancla(titulo)
+        identificador = base
+        sufijo = 0
+        while identificador in usados:
+            sufijo += 1
+            identificador = f"{base}-{sufijo}"
+        usados.add(identificador)
+        if nivel == 1 and titulo == "Capítulo I: Introducción":
+            en_informe = True
+        if en_informe:
             sangria = "  " * (nivel - 1)
             limpio = re.sub(r"[*`]", "", titulo)
-            lineas.append(f"{sangria}- [{limpio}](chapters/{nombre}#{ancla(titulo)})")
+            lineas.append(f"{sangria}- [{limpio}](#{identificador})")
     return "\n".join(lineas)
 
 
@@ -86,24 +79,11 @@ def escribir_toc() -> None:
     print(f"Índice actualizado: {len(construir_toc().splitlines())} entradas.")
 
 
-def compilar() -> None:
-    partes = [(RAIZ / "README.md").read_text(encoding="utf-8")]
-    for nombre in CAPITULOS:
-        ruta = RAIZ / "chapters" / nombre
-        if not ruta.exists():
-            print(f"  aviso: falta {nombre}")
-            continue
-        # Salto de página para la exportación a PDF: cada capítulo empieza en página nueva.
-        partes.append('\n<div style="page-break-after: always;"></div>\n')
-        partes.append(ruta.read_text(encoding="utf-8"))
-
-    salida = RAIZ / "informe-completo.md"
-    salida.write_text("\n".join(partes), encoding="utf-8", newline="\n")
-
-    contenido = salida.read_text(encoding="utf-8")
+def resumir() -> None:
+    contenido = (RAIZ / "README.md").read_text(encoding="utf-8")
     pendientes = contenido.count("**PENDIENTE.**")
     completar = contenido.count("COMPLETAR")
-    print(f"informe-completo.md generado: {len(contenido.splitlines())} líneas.")
+    print(f"README.md: {len(contenido.splitlines())} líneas.")
     print(f"  secciones pendientes: {pendientes}")
     print(f"  marcas COMPLETAR:     {completar}")
 
@@ -113,4 +93,4 @@ if __name__ == "__main__":
         escribir_toc()
     else:
         escribir_toc()
-        compilar()
+        resumir()
