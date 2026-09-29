@@ -13,11 +13,11 @@
 
 **NRC:**9108 <!-- COMPLETAR: número de referencia del curso -->
 
-**Profesor:**Julio Manuel Noriega Melendez <!-- COMPLETAR: nombre del profesor -->
+**Profesor:** Julio Manuel Noriega Melendez <!-- COMPLETAR: nombre del profesor -->
 
 # Informe de Trabajo Final
 
-**Startup:**SST Solutions <!-- COMPLETAR: nombre del startup -->
+**Startup:** SST Solutions <!-- COMPLETAR: nombre del startup -->
 
 **Producto:** Resguardo — Sistema de Gestión de Seguridad y Salud en el Trabajo
 
