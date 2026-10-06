@@ -11,7 +11,7 @@
 
 **1ASI0732 — Diseño de Experimentos de Ingeniería de Software**
 
-**NRC:**9108 <!-- COMPLETAR: número de referencia del curso -->
+**NRC:** 9108 <!-- COMPLETAR: número de referencia del curso -->
 
 **Profesor:** Julio Manuel Noriega Melendez <!-- COMPLETAR: nombre del profesor -->
 
@@ -259,6 +259,7 @@ incorpora mediante Pull Request.
     - [8.7.2. Resumen usando Gees Framework](#872-resumen-usando-gees-framework)
   - [8.8. Matriz de Evaluación Ética y de Impacto](#88-matriz-de-evaluación-ética-y-de-impacto)
 - [Conclusiones](#conclusiones)
+  - [Avance de conclusiones](#avance-de-conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
   - [Video App Validation](#video-app-validation)
   - [Video About-the-Team](#video-about-the-team)
@@ -270,6 +271,8 @@ incorpora mediante Pull Request.
   - [Anexo D. Cálculo del tamaño de muestra](#anexo-d-cálculo-del-tamaño-de-muestra)
   - [Anexo E. Estructura del repositorio del informe](#anexo-e-estructura-del-repositorio-del-informe)
   - [Anexo F. Student Outcome](#anexo-f-student-outcome)
+  - [Anexo G. Corte de evidencia técnica](#anexo-g-corte-de-evidencia-técnica)
+  - [Anexo H. Matriz de evidencias del avance](#anexo-h-matriz-de-evidencias-del-avance)
 
 <!-- TOC:fin -->
 
@@ -871,11 +874,36 @@ cliente. Los términos en inglés indican el nombre exacto que reciben en el mod
 
 # Capítulo III: Requirements Specification
 
+Este capítulo especifica el comportamiento esperado de Resguardo y relaciona el escenario de
+uso con las historias, la prioridad del backlog y los resultados que se quieren medir. La
+especificación incluye capacidades futuras; su presencia en estas tablas no acredita por sí
+sola que estén implementadas.
+
+**Corte de evidencia: 6 de octubre de 2026.** Se conserva la planificación de los dos sprints
+del informe. Las etiquetas de sprint y las declaraciones históricas de entrega se deben
+contrastar con las versiones de código del [Anexo G](#anexo-g-corte-de-evidencia-técnica).
+Esa revisión encontró diferencias en el backend, el cliente móvil y las pruebas. Las secciones
+5.2 y 6.1 detallan el alcance verificable, sin convertir una estimación en evidencia de entrega.
+
 ## 3.1. To-Be Scenario Mapping
 
-<!-- IMAGEN REQUERIDA: exportar el To-Be Scenario Map a assets/img/to-be-scenario-map.png -->
+**Escenario objetivo.** Un operario detecta una condición insegura durante su jornada y la
+registra desde Android. El supervisor revisa la bandeja web, asigna la corrección y documenta
+el cierre. La empresa conserva el historial para revisar su gestión. Se presupone una cuenta
+activa, un área registrada y una sesión móvil iniciada antes de perder la conectividad.
 
-![To-Be Scenario Map](assets/img/to-be-scenario-map.png)
+```mermaid
+flowchart LR
+    A[Detectar peligro] --> B[Registrar hallazgo]
+    B --> C[Guardar localmente con UUID]
+    C --> D{Hay conexión}
+    D -->|No| E[Mostrar pendiente de envío]
+    E --> D
+    D -->|Sí| F[Sincronizar con API]
+    F --> G[Revisar y asignar en la web]
+    G --> H[Aplicar corrección y registrar cierre]
+    H --> I[Consultar estado y métricas]
+```
 
 | Fase | Detección | Reporte | Asignación | Corrección | Evidencia |
 |---|---|---|---|---|---|
@@ -884,6 +912,13 @@ cliente. Los términos en inglés indican el nombre exacto que reciben en el mod
 | **Mejoras respecto del as-is** | — | Registro con hora exacta, foto y GPS; sin dependencia de la señal | Priorización por severidad en lugar de por quién insiste más | Responsable y plazo explícitos; bitácora automática | Expediente generado por la operación diaria, no reconstruido a mano |
 
 ## 3.2. User Stories
+
+**Criterio de aceptación transversal.** Una historia se acepta cuando sus escenarios positivos
+y de error son reproducibles con el rol indicado, conserva el aislamiento de la empresa y
+cuenta con una evidencia vinculada a la versión evaluada. Para historias de sincronización
+también se verifica la recuperación tras pérdida de red y el reintento sin duplicados. La
+paridad entre clientes es un requisito que se valida por tarea; compartir API no basta para
+demostrarla.
 
 El catálogo completo son **128 historias de usuario** agrupadas en **diecinueve épicas**, más
 **34 historias técnicas**. Los criterios de aceptación siguen el formato Gherkin
@@ -1206,6 +1241,16 @@ propuestas y quedan en el backlog.
 
 ## 3.3. Product Backlog
 
+**Gestión de prioridad.** El orden se revisa considerando valor para el operario, dependencia
+técnica, riesgo de pérdida de información y esfuerzo estimado. El acceso y el registro del
+hallazgo preceden a la asignación y al cierre; las métricas dependen de esos registros. Los
+Story Points expresan esfuerzo relativo y no representan horas observadas ni productividad.
+
+**Definición de preparado (Ready).** Actor, necesidad, criterios de aceptación, dependencias y
+estimación acordados. **Definición de terminado (Done).** Código integrado, revisión registrada,
+pruebas pertinentes aprobadas, documentación actualizada y demostración del escenario. Hasta
+reunir esa evidencia, una etiqueta de sprint identifica planificación o entrega declarada.
+
 El backlog reúne los 162 elementos del producto: las 128 historias de usuario, agrupadas en
 diecinueve épicas, y las 34 historias técnicas. El orden es de prioridad de negocio, no
 cronológico: primero lo que hace que el sistema capture el hallazgo, después lo que permite
@@ -1407,9 +1452,23 @@ Los dos sprints suman 319 Story Points, el 48 % del backlog. Lo propuesto no es 
 
 ## 3.4. Impact Mapping
 
-<!-- IMAGEN REQUERIDA: exportar el Impact Map a assets/img/impact-map.png -->
+El mapa conecta la inversión de desarrollo con cambios observables en el trabajo de cada
+actor. Los impactos siguientes son hipótesis de producto que requieren medición con usuarios.
 
-![Impact Map](assets/img/impact-map.png)
+```mermaid
+flowchart LR
+    G[Reducir tiempo de gestión del peligro] --> O[Operario]
+    G --> S[Supervisor]
+    G --> C[Comité]
+    O --> O1[Reportar con menor esfuerzo]
+    O1 --> D1[US06 formulario rápido]
+    O1 --> D2[US07 y US08 cola y sincronización]
+    S --> S1[Priorizar y cerrar con trazabilidad]
+    S1 --> D3[US14 a US16 gestión del hallazgo]
+    S1 --> D4[US35 métricas de resolución]
+    C --> C1[Dar seguimiento a decisiones]
+    C1 --> D5[US32 a US34 actas y acuerdos]
+```
 
 | Goal (¿Por qué?) | Actor (¿Quién?) | Impact (¿Cómo?) | Deliverable (¿Qué?) |
 |---|---|---|---|
@@ -2392,7 +2451,16 @@ esquema, sin introducir un segundo motor que habría que respaldar, migrar y man
 
 # Capítulo V: Product Implementation
 
+Se documentan la configuración, el alcance declarado de los sprints y la evidencia técnica
+disponible. La inspección de código del Anexo G respalda la existencia de componentes, pero
+no sustituye una compilación exitosa, una prueba de aceptación o un despliegue público.
+
 ## 5.1. Software Configuration Management
+
+La línea base de cada entrega debe identificar el commit de API, web, Android e informe, las
+versiones de dependencias y las variables de configuración del entorno. Los cambios de
+contrato requieren revisar ambos clientes antes de promover una versión. El registro de
+entrega debe conservar esas referencias junto con sus resultados de construcción y pruebas.
 
 ### 5.1.1. Software Development Environment Configuration
 
@@ -2401,7 +2469,7 @@ esquema, sin introducir un segundo motor que habría que respaldar, migrar y man
 | Control de versiones | Git | 2.45 | Estándar del curso; requerido para GitFlow y Conventional Commits |
 | Alojamiento y colaboración | GitHub (organización pública `sst-peru`) | — | Exigido por el enunciado: organización pública con evidencia de commits |
 | Automatización | GitHub Actions | — | Integrado al repositorio, sin infraestructura adicional |
-| Backend | Python | 3.13 | Soportado por Django 5.1 |
+| Backend | Python | 3.11 | Versión configurada en el workflow del API consultado |
 | Framework backend | Django + Django REST Framework | 5.1.4 / 3.15.2 | Django aporta ORM, migraciones, autenticación y panel de administración; DRF añade el API REST |
 | Documentación del API | drf-spectacular | 0.28.0 | Genera OpenAPI desde el código, evitando que el contrato se desactualice |
 | Autenticación | djangorestframework-simplejwt | 5.3.1 | JWT consumido igual por web y móvil |
@@ -2417,6 +2485,27 @@ esquema, sin introducir un segundo motor que habría que respaldar, migrar y man
 | Entorno de desarrollo | Visual Studio Code / Android Studio | — | Edición del backend y la web; compilación y emulación Android |
 | Pruebas backend | pytest + pytest-django | 8.3 / 4.9 | Suite de pruebas del API |
 | Análisis estático | ruff / ESLint / TypeScript | 0.8 / 9.17 / 5.7 | Verificación sin ejecutar el código |
+
+**Preparación reproducible del entorno.** Los comandos siguientes se ejecutan en el
+repositorio de cada componente, después de clonar la versión que se va a evaluar.
+
+```bash
+# Backend: terminal Bash, dentro de sst-api
+python3.11 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements-dev.txt
+cp .env.example .env
+python manage.py migrate
+python manage.py seed_demo
+python manage.py runserver 0.0.0.0:8000
+```
+
+`seed_demo` se reserva para una base local de demostración. En una segunda terminal, dentro de
+`sst-web`, ejecutar `npm ci`, copiar `.env.example` a `.env` y ejecutar `npm run dev`. Android
+se abre en Android Studio con JDK 17, SDK 35 y dispositivo o emulador API 26 o superior; el
+workflow consultado utiliza Gradle 8.11.1. La configuración del emulador apunta al mismo API.
+Los archivos de dependencias y el commit fijan la versión evaluada; esta tabla no implica una
+recomendación de usar esas versiones para un nuevo producto.
 
 ### 5.1.2. Source Code Management
 
@@ -2445,9 +2534,10 @@ cambio.
 | `docs/*` | Redacción del informe | develop | develop |
 | `chore/*` | Infraestructura y configuración | develop | develop |
 
-Reglas de protección aplicadas en GitHub: `main` y `develop` no aceptan push directo ni
-force push; la integración ocurre exclusivamente por Pull Request; `develop` es la rama por
-defecto, de modo que los PR apuntan ahí sin intervención.
+**Política de protección prevista:** impedir push directo y force push a `main` y `develop`,
+y exigir Pull Request con verificaciones aprobadas. El repositorio permite inspeccionar código
+y workflows, pero no se adjunta evidencia de la configuración efectiva de esas protecciones.
+Las versiones de producto consultadas corresponden a la rama `develop`.
 
 **Conventional Commits.** Todos los mensajes siguen `tipo(alcance): descripción`. Ejemplos
 reales del historial del proyecto:
@@ -2483,6 +2573,13 @@ Tener ambas capas importa porque el hook local puede no estar instalado en una m
 | Fin de línea | LF en el repositorio, forzado por `.gitattributes`; CRLF solo en `.bat`, `.cmd` y `.ps1` | `.gitattributes` |
 | Idioma | Código y mensajes de commit sin tildes ni eñes; interfaz y documentación en español correcto | Revisión en PR |
 
+**Criterios de revisión.** Las validaciones de permisos pertenecen al backend; ocultar un botón
+no reemplaza la autorización. Los cambios de contrato deben actualizar los tipos del cliente,
+los serializadores y los ejemplos del API. Kotlin requiere revisión de estilo o un linter
+específico: compilar verifica la construcción, pero no demuestra cumplimiento del estilo.
+Para el informe, `CONTRIBUTING.md`, `.gitattributes` y el hook `commit-msg` son los archivos
+locales que formalizan el flujo y las convenciones.
+
 ### 5.1.4. Software Deployment Configuration
 
 | Componente | Configuración |
@@ -2493,7 +2590,31 @@ Tener ambas capas importa porque el hook local puede no estar instalado en una m
 | Tráfico en claro | `network_security_config.xml` permite HTTP sin cifrar únicamente contra direcciones de desarrollo; en producción el API va por HTTPS |
 | Secretos | Ningún secreto se versiona: `.env` está en `.gitignore` y se distribuye `.env.example` con los nombres de variable |
 
+**Entornos y condición de publicación.**
+
+| Entorno | Uso | Estado de evidencia |
+|---|---|---|
+| Desarrollo | API local, web con Vite y Android en emulador | Configuración localizada en los tres repositorios |
+| Pruebas compartidas | Validación integrada de una versión candidata con datos sintéticos | Sin URL ni registro de despliegue adjunto |
+| Producción | Servicio para empresas con HTTPS, respaldo y monitoreo | Sin despliegue acreditado en este informe |
+
+Antes de habilitar un entorno compartido se debe configurar el API con `DEBUG=False`, clave
+propia, hosts y orígenes autorizados, base PostgreSQL y almacenamiento persistente de fotografías.
+El procedimiento previsto es respaldar, revisar el plan de migraciones, aplicarlas, iniciar la
+versión y comprobar autenticación, creación de un reporte y lectura de métricas. No se considera
+publicado un componente solo porque su build termine correctamente.
+
+En Vite, las variables `VITE_*` quedan incorporadas al bundle durante la construcción. Cambiar
+`VITE_API_URL` entre entornos exige otro build, salvo que se use una ruta relativa común con
+proxy o se implemente configuración en tiempo de ejecución. No deben contener secretos.
+Véase [Vite: variables de entorno y modos](https://vite.dev/guide/env-and-mode).
+
 ## 5.2. Product Implementation & Deployment
+
+**Alcance de la evidencia.** Las tablas de pantallas describen el producto documentado; las
+notas de cada componente precisan qué se pudo localizar en el código público. No hay capturas
+de ejecución, APK, registros de despliegue ni videos del producto incorporados en `assets/`
+al cierre de esta revisión.
 
 ### 5.2.1. Sprint Backlogs
 
@@ -2867,7 +2988,35 @@ tiempo real.
 > siguiente. Los dos sprints se ejecutaron sobre un plan fijado de antemano. Se documenta como
 > limitación del trabajo, no como práctica recomendable.
 
+**Validación del cierre de sprint.** El desglose anterior conserva la planificación histórica
+(54 y 220 work-items); los estados de tarea no reemplazan las evidencias de aceptación. Para
+cerrar cada incremento se propone el siguiente control:
+
+| Incremento | Demostración de aceptación | Evidencia por completar |
+|---|---|---|
+| Sprint 1 | Crear un hallazgo en Android, verlo en web, asignarlo y cerrarlo | Commit de los tres componentes, prueba ST01 y grabación del flujo |
+| Sprint 2 | Sincronizar sin duplicados y comprobar módulos de gestión | Prueba ST02 y evidencia por módulo, incluidas las diferencias del Anexo G |
+
+Las 638 horas son estimadas; no se registra esfuerzo real ni se deduce una velocidad empírica.
+La aceptación final debe revisar especialmente la paridad móvil, el comité y las exportaciones,
+pues no se encuentran completos en el código público consultado.
+
 ### 5.2.2. Implemented Landing Page Evidence
+
+La landing page se encuentra **especificada, sin implementación acreditada** en este corte.
+El diseño de 4.3 establece la presentación del problema, la propuesta de valor y el llamado a
+la acción. No se ha identificado un repositorio o una URL pública que permita registrar una
+captura del sitio funcionando.
+
+| Elemento a demostrar | Criterio de aceptación |
+|---|---|
+| Propuesta de valor | Explica a quién sirve Resguardo y cómo se registra y gestiona un hallazgo |
+| Navegación y llamada a la acción | Los enlaces conducen a destinos válidos y la acción principal tiene un resultado visible |
+| Adaptación de pantalla | Contenido legible y navegación utilizable en escritorio y móvil |
+| Evidencia de entrega | URL, commit publicado y capturas de ambas resoluciones con fecha |
+
+La evidencia se incorporará a este apartado cuando exista una versión accesible; el wireframe
+no se presenta como captura de una implementación.
 
 <!-- IMAGEN REQUERIDA: capturas de la landing page desplegada en
      assets/img/evidencia-landing-*.png, más su URL pública, una vez construida. -->
@@ -2879,11 +3028,13 @@ tiempo real.
      acceso, registro, tablero, bandeja de hallazgos, detalle con bitácora, matriz IPERC,
      inspecciones con checklist, EPP, comité con actas, usuarios, experimento A/B. -->
 
-La aplicación web está implementada en React con TypeScript y cubre la totalidad de las
-funcionalidades disponibles para los roles de supervisor y comité, además del reporte para
-cualquier rol.
+La aplicación web usa React con TypeScript. El archivo
+[App.tsx de la versión consultada](https://github.com/sst-peru/sst-web/blob/2fd0a59df9465c464915b51894a60e5b5a9667c8/src/App.tsx)
+contiene las rutas de la tabla. Su presencia acredita una interfaz en el código, no el
+funcionamiento completo contra el backend: comité y administración de usuarios requieren
+contrastar las diferencias de contrato registradas en el Anexo G.
 
-| Pantalla | Ruta | Funcionalidad implementada |
+| Pantalla | Ruta | Funcionalidad descrita por la interfaz |
 |---|---|---|
 | Acceso | `/login` | Autenticación con JWT |
 | Registro | `/registro` | Alta de trabajador por RUC de empresa |
@@ -2897,6 +3048,11 @@ cualquier rol.
 | Comité | `/comite` | Constitución, miembros, paridad, actas con quórum y acuerdos |
 | Usuarios y áreas | `/usuarios` | Alta de usuarios con rol y gestión de áreas |
 | Experimento | `/experimento` | Resultados comparados por variante |
+
+**Protocolo de evidencia web.** Iniciar sesión como operario y supervisor, registrar un
+hallazgo, capturar su detalle antes y después de asignarlo y cerrarlo, y contrastar el indicador
+de resolución. Cada captura debe consignar versión, rol, entorno y resultado. El panel del
+experimento debe mostrar explícitamente que los datos de `seed_demo` son simulados.
 
 ### 5.2.4. Acuerdo de Servicio - SaaS
 
@@ -2923,7 +3079,7 @@ del diseño del servicio, no como un contrato suscrito.
 | Parámetro | Compromiso |
 |---|---|
 | Disponibilidad mensual del API y del panel web | 99,5 % |
-| Equivalente en indisponibilidad | Hasta 3 h 39 min por mes |
+| Equivalente en indisponibilidad | 3 h 36 min en un mes de 30 días, antes de excluir mantenimiento; varía con los minutos elegibles del mes |
 | Medición | Sobre el total de minutos del mes calendario, excluyendo la ventana de mantenimiento programada |
 | Ventana de mantenimiento | Domingos de 02:00 a 05:00 (hora de Perú), avisada con 72 horas de anticipación |
 
@@ -2991,27 +3147,44 @@ severidad crítica y alta del periodo, con su tiempo de respuesta y de solución
 publicación, el compromiso del punto 2 no sería verificable por el cliente y, por tanto, no sería
 un compromiso.
 
+**Criterio operativo del acuerdo.** La disponibilidad propuesta se calcula como
+`100 × (minutos elegibles − minutos de indisponibilidad) / minutos elegibles`. Las exclusiones
+se deben registrar, no asumir. Los objetivos de respuesta, RPO y RTO requieren un canal de
+soporte, monitoreo y pruebas de restauración antes de ofrecerse a clientes. Ninguna cifra de
+esta propuesta representa un nivel de servicio ya medido.
+
 ### 5.2.5. Implemented Native-Mobile Application Evidence
+
+La versión Android consultada contiene tres destinos de navegación: acceso, lista de reportes
+y nuevo reporte. Los formularios rápido y largo, la cola Room y el worker de sincronización
+aparecen en el código. No se localizan pantallas nativas de detalle, IPERC, EPP, inspecciones o
+tablero en esa versión; esas capacidades del alcance declarado requieren otra versión o su
+implementación. Fuente: [navegación Android](https://github.com/sst-peru/sst-mobile/blob/aeef3a8b1170d1a4bda12631ae3b2c54e47d3368/app/src/main/java/pe/sst/app/ui/navigation/SstApp.kt).
+
+La evidencia funcional prevista comprende instalar el APK, registrar un hallazgo en modo
+avión, reiniciar la app, recuperar la conexión y comprobar que el reporte persiste y llega una
+sola vez al API. Debe registrarse versión de Android, dispositivo, commit y resultado.
 
 <!-- IMAGEN REQUERIDA: capturas de la aplicación Android en ejecución en
      assets/img/evidencia-movil-<pantalla>.png. Lista sugerida: acceso, registro, formulario
      rápido en sus tres pasos, formulario largo, lista de reportes con pendientes de envío,
      detalle del hallazgo, IPERC, mis EPP, inspecciones con checklist, tablero. -->
 
-| Pantalla | Funcionalidad implementada |
+| Pantalla o componente | Estado en el código consultado |
 |---|---|
-| Acceso y registro | Autenticación JWT y alta de trabajador por RUC |
-| Reportar | Formulario rápido de tres pasos y formulario largo, según la variante asignada |
-| Mis reportes | Cola local con estado de envío y listado del servidor con filtros |
-| Detalle del hallazgo | Bitácora, foto, tiempo de resolución; asignación y cierre para supervisor y comité |
-| Matriz IPERC | Consulta de peligros y controles por puesto |
-| Mis EPP | Entregas, vencimientos y conformidad del trabajador |
-| Inspecciones | Listado y ejecución con checklist |
-| Tablero | MTTR, cumplimiento de inspecciones y acuerdos del comité |
+| Acceso | Pantalla de login y persistencia de sesión localizadas; registro nativo no localizado |
+| Reportar | Formularios rápido y largo localizados |
+| Mis reportes | Lista y cola local de reportes localizadas |
+| Sincronización | `ReportSyncWorker` y repositorio de reportes localizados; ejecución por demostrar |
+| Detalle, IPERC, EPP, inspecciones y tablero | Descritos en el alcance del informe, sin pantalla localizada en este commit |
 
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
-El API expone 8 módulos de dominio bajo el prefijo `/api/v1/`.
+El API utiliza Django REST Framework y el prefijo `/api/v1/`; no se ha identificado una
+implementación serverless. La siguiente relación conserva el contrato descrito en el informe.
+La configuración pública consultada incluye autenticación, reportes, IPERC, EPP, inspecciones,
+experimento y métricas; no registra rutas de comité, exportaciones o `auth/users/`.
+Fuente: [configuración de rutas del API](https://github.com/sst-peru/sst-api/blob/1b5e02e07108b4358f168133ee380563bf2da4c3/config/urls.py).
 
 | Módulo | Endpoints principales |
 |---|---|
@@ -3033,18 +3206,21 @@ el dispositivo antes del envío. Si el reporte con ese identificador ya existe, 
 un reintento tras una conexión interrumpida —el caso normal en obra— duplicaría el hallazgo y
 distorsionaría todas las métricas.
 
-*El rol no se acepta del cliente.* El registro público fuerza el rol `OPERARIO`. Si se aceptara
-del cliente, cualquiera podría registrarse como supervisor y cerrar sus propios hallazgos,
-rompiendo la separación de responsabilidades que la normativa exige. Los usuarios con otros
-roles se crean desde `auth/users/`, que requiere ser supervisor o miembro del comité.
+*Control del rol en el registro.* El requisito exige que el alta pública no permita elegir
+privilegios de gestión. Sin embargo, `RegisterSerializer` de la versión consultada incluye
+`role` entre los campos de entrada. La corrección descrita en versiones previas del informe
+no queda acreditada en ese commit y debe verificarse antes de aceptar US01 y US04.
+Fuente: [serializador de registro](https://github.com/sst-peru/sst-api/blob/1b5e02e07108b4358f168133ee380563bf2da4c3/apps/accounts/serializers.py).
 
 <!-- IMAGEN REQUERIDA: captura de la interfaz Swagger en /api/docs/ mostrando los módulos
      desplegados, en assets/img/evidencia-api-swagger.png -->
 
 ### 5.2.7. RESTful API documentation
 
-La documentación se genera automáticamente desde el código con drf-spectacular, de modo que el
-contrato publicado no puede divergir de la implementación.
+La documentación se genera desde el código con drf-spectacular. El esquema debe validarse y
+compararse con las respuestas reales; generarlo automáticamente no garantiza que las
+anotaciones de todas las operaciones estén completas. La herramienta ofrece validación del
+esquema, descrita en su [documentación de generación de clientes](https://drf-spectacular.readthedocs.io/en/latest/client_generation.html).
 
 | Recurso | Ruta |
 |---|---|
@@ -3054,81 +3230,182 @@ contrato publicado no puede divergir de la implementación.
 Todos los endpoints requieren autenticación JWT mediante la cabecera `Authorization: Bearer
 <token>`, con la excepción de `auth/register/`, `auth/login/` y `auth/refresh/`.
 
+**Ejemplo de contrato del ciclo principal.** Las rutas siguientes son relativas a `/api/v1/`;
+los identificadores corresponden a registros de la empresa autenticada.
+
+| Operación | Método y ruta | Entrada relevante | Respuesta esperada |
+|---|---|---|---|
+| Iniciar sesión | `POST auth/login/` | `username`, `password` | `200`, tokens y perfil |
+| Crear reporte | `POST reports/` | `kind`, `area`, `client_uuid`; descripción y evidencia según el caso | `201`, reporte creado |
+| Reintentar envío | `POST reports/` | Mismo `client_uuid` del reporte anterior | `200`, mismo identificador |
+| Consultar | `GET reports/{id}/` | Identificador visible para el usuario | `200`, detalle y bitácora |
+| Asignar | `POST reports/{id}/assign/` | `assigned_to`, `note` opcional | `200`, estado actualizado |
+| Cerrar | `POST reports/{id}/close/` | `closure_note` | `200`, fecha de cierre y tiempo de resolución |
+| Consultar MTTR | `GET metrics/mttr/?days=90` | Ventana en días | `200`, conteo de cerrados y horas promedio |
+
+Ejemplo de cuerpo JSON para un envío sin fotografía. `area` debe sustituirse por un ID válido;
+el UUID se genera una vez por reporte y se conserva para sus reintentos.
+
+```json
+{
+  "client_uuid": "9f8f39b8-5ec3-4ca8-a78b-6d806a9581ad",
+  "kind": "CONDICION",
+  "area": 1,
+  "description": "Cable expuesto en zona de tránsito",
+  "form_variant": "rapido",
+  "synced_offline": false
+}
+```
+
+Los campos y acciones se contrastaron con los
+[serializadores de reportes](https://github.com/sst-peru/sst-api/blob/1b5e02e07108b4358f168133ee380563bf2da4c3/apps/reports/serializers.py).
+Para subir una fotografía se emplea `multipart/form-data`. Los errores de validación deben
+consultarse como `400`, la autenticación inválida como `401`, una acción denegada como `403`
+y un recurso no visible como `404`, según la operación. No se debe reintentar indefinidamente
+una entrada rechazada por validación; la recuperación de red conserva el UUID original.
+
+**Límite de aceptación.** La búsqueda del UUID existente en `ReportViewSet.create()` no aplica
+un filtro de empresa en el código consultado. Se requiere una prueba adicional entre empresas
+y corregir ese alcance antes de certificar el aislamiento en los reintentos. La prueba actual
+de no duplicación utiliza una sola empresa.
+
 ### 5.2.8. Team Collaboration Insights
+
+El equipo consignado en la portada está integrado por Miguel Juan Diego Esquirva León y
+Diego Alonzo Mora Blas. Los work-items asignan áreas de responsabilidad; no permiten inferir
+por sí solos qué integrante realizó cada tarea ni cuánto tiempo le dedicó.
+
+| Repositorio | Evidencia de colaboración consultable | Lectura esperada |
+|---|---|---|
+| Informe | [Historial](https://github.com/sst-peru/sst-report/commits/develop/) | Evolución de capítulos y correcciones documentales |
+| Backend | [Pull Requests](https://github.com/sst-peru/sst-api/pulls?q=is%3Apr) | Cambios del dominio, contrato y pruebas |
+| Web | [Pull Requests](https://github.com/sst-peru/sst-web/pulls?q=is%3Apr) | Interfaces e integración con el API |
+| Android | [Pull Requests](https://github.com/sst-peru/sst-mobile/pulls?q=is%3Apr) | Captura en campo y sincronización |
+
+Como evidencia local, los commits `588e3c9`, `18f363d` y `c5bb93c` registran cambios en el
+informe y su planificación. La evaluación de aportes debe relacionar historia, autor, commit,
+PR y revisión. No se presentan porcentajes individuales ni capturas de Insights que no hayan
+sido incorporadas al repositorio.
 
 <!-- IMAGEN REQUERIDA: capturas de GitHub → Insights → Contributors y Commits de cada uno de
      los cuatro repositorios, en assets/img/insights-<repo>.png -->
 
 ## 5.3. Video About-the-Product
 
+**Estado:** guion preparado; no hay enlace de grabación incorporado. El video previsto dura
+entre tres y cinco minutos y sigue un solo hallazgo para que el espectador pueda comprobar
+la continuidad entre Android, API y web.
+
+| Tiempo orientativo | Contenido | Evidencia visible |
+|---|---|---|
+| 00:00–00:30 | Problema y usuarios de Resguardo | Contexto de campo y roles de operario y supervisor |
+| 00:30–01:30 | Registro desde Android | Formulario, foto y estado pendiente en modo avión |
+| 01:30–02:00 | Recuperación de conexión | Sincronización y un único reporte con el mismo identificador |
+| 02:00–03:15 | Gestión en la web | Asignación, acción correctiva y bitácora del hallazgo |
+| 03:15–04:00 | Consulta de resultado | Estado cerrado y actualización del MTTR |
+| 04:00–04:30 | Alcance y siguientes incrementos | Diferencias pendientes y aviso de datos simulados |
+
+La grabación debe mostrar las versiones utilizadas y evitar afirmar capacidades que no puedan
+ejecutarse. Al publicarla se registrarán enlace, fecha, duración y commits; el guion no se
+considera evidencia audiovisual de una validación realizada.
+
 ---
 
 # Capítulo VI: Product Verification & Validation
+
+La verificación comprueba reglas, permisos y contratos; la validación debe comprobar que el
+producto resuelve las tareas de los usuarios. En este corte se documentan casos y código de
+pruebas, sin atribuirles resultados de ejecución ni entrevistas que no estén adjuntos.
 
 ## 6.1. Testing Suites & Validation
 
 La estrategia de pruebas concentra el esfuerzo en el backend, y la razón es deliberada: en esta
 arquitectura toda la lógica de negocio vive en el API, y ambos clientes la consumen. Probar el
-API es probar la regla de negocio una vez para las dos plataformas; probarla en cada cliente
-sería duplicar el esfuerzo sin aumentar la cobertura real del dominio.
+API permite comprobar reglas compartidas. Además, cada cliente requiere pruebas de navegación,
+captura, manejo de errores y sincronización: las pruebas del servidor no cubren esos riesgos.
 
 **Herramientas.** pytest 8.3 con pytest-django 4.9 en el backend; el cliente de pruebas de
 Django REST Framework (`APIClient`) para ejercitar los endpoints; verificación estática con
 TypeScript y ESLint en la web, y compilación de Gradle en móvil.
 
+**Inventario verificable.** El archivo
+[test_reports.py](https://github.com/sst-peru/sst-api/blob/1b5e02e07108b4358f168133ee380563bf2da4c3/apps/reports/tests/test_reports.py)
+contiene ocho funciones de prueba: dos sobre modelos y seis de integración HTTP. El catálogo
+siguiente conserva los casos definidos en el informe y diferencia los localizados de los que
+requieren implementación o una referencia adicional. No se ha ejecutado la suite durante esta
+actualización documental; no se declara porcentaje de cobertura ni resultado aprobado.
+
+**Procedimiento de ejecución en `sst-api`:** instalar las dependencias de desarrollo en un
+entorno aislado y ejecutar:
+
+```bash
+python -m pytest -v --junitxml=pytest-results.xml
+```
+
+El registro debe adjuntar fecha, SHA, versión de Python, base utilizada, comando, código de
+salida y número de pruebas aprobadas, fallidas y omitidas. JUnit XML permite conservar un
+resultado procesable, según la [documentación de pytest](https://docs.pytest.org/en/stable/how-to/output.html).
+Una prueba omitida no se cuenta como aprobada. Un fallo debe asociarse a una incidencia y a
+la repetición de la prueba después de corregirlo.
+
 ### 6.1.1. Core Entities Unit Tests
 
 Pruebas sobre las reglas de negocio de las entidades del dominio, sin pasar por HTTP.
 
-| # | Prueba | Entidad | Qué verifica |
-|---|---|---|---|
-| 1 | `test_variante_es_estable_por_usuario` | `Experiment` | Que la variante asignada a un usuario sea la misma en llamadas sucesivas. Es la condición que hace válido el experimento: con asignación aleatoria, el mismo usuario podría ver un formulario distinto cada día y la comparación dejaría de medir el formulario |
-| 2 | `test_occurred_at_puede_ser_anterior_al_registro` | `Report` | Que un reporte creado sin conexión conserve su fecha de ocurrencia, anterior a la de recepción |
-| 3 | `test_comite_paritario_y_quorum` | `Committee` | Que `is_paritario()` detecte la igualdad de representaciones y que `quorum_required()` devuelva la mitad más uno de los titulares |
-| 4 | `test_acta_sin_quorum_queda_marcada` | `Meeting` | Que un acta sin el quórum requerido quede marcada como inválida, y que al registrar los asistentes suficientes pase a válida |
+| # | Prueba | Entidad | Qué verifica | Evidencia en el commit consultado |
+|---|---|---|---|---|
+| 1 | `test_variante_es_estable_por_usuario` | `Experiment` | Que la variante asignada a un usuario sea la misma en llamadas sucesivas. Es la condición que hace válido el experimento: con asignación aleatoria, el mismo usuario podría ver un formulario distinto cada día y la comparación dejaría de medir el formulario | Código localizado; sin ejecución adjunta |
+| 2 | `test_occurred_at_puede_ser_anterior_al_registro` | `Report` | Que un reporte creado sin conexión conserve su fecha de ocurrencia, anterior a la de recepción | Código localizado; sin ejecución adjunta |
+| 3 | `test_comite_paritario_y_quorum` | `Committee` | Que `is_paritario()` detecte la igualdad de representaciones y que `quorum_required()` devuelva la mitad más uno de los titulares | Caso especificado; código no localizado |
+| 4 | `test_acta_sin_quorum_queda_marcada` | `Meeting` | Que un acta sin el quórum requerido quede marcada como inválida, y que al registrar los asistentes suficientes pase a válida | Caso especificado; código no localizado |
 
-<!-- COMPLETAR: agregar pruebas unitarias del cálculo de nivel de riesgo de IpercEntry y del
-     cálculo de vencimiento de EppDelivery, que hoy están cubiertos indirectamente. -->
+**Ampliación de pruebas de entidades.** Se especifican casos de frontera para el nivel de
+riesgo de `IpercEntry`, el vencimiento de `EppDelivery` y el quórum de comité. Deben comprobar
+valores mínimos, máximos y fechas límite. Los dos casos de modelos localizados utilizan la
+base de datos de pruebas; no son pruebas unitarias puras aisladas de persistencia.
 
 ### 6.1.2. Core Integration Tests
 
 Pruebas que ejercitan el API completo: enrutamiento, permisos, serialización y persistencia.
 
-| # | Prueba | Módulo | Qué verifica |
-|---|---|---|---|
-| 1 | `test_operario_crea_reporte_minimo` | Reportes | Que el flujo rápido pueda crear un reporte enviando solo tipo y área, sin descripción |
-| 2 | `test_sincronizacion_offline_no_duplica` | Reportes | Que reenviar el mismo `client_uuid` devuelva `200` con el reporte existente y que la base quede con un solo registro |
-| 3 | `test_operario_no_ve_reportes_de_otros` | Reportes | Que el filtrado por rol se aplique en la consulta y no en la interfaz |
-| 4 | `test_operario_no_puede_cerrar` | Reportes | Que el cierre esté restringido a supervisor y comité, devolviendo `403` |
-| 5 | `test_supervisor_cierra_y_calcula_mttr` | Reportes / Métricas | Que al cerrar se selle la fecha y que el endpoint de MTTR refleje el hallazgo cerrado |
-| 6 | `test_asignar_pasa_a_en_proceso` | Reportes | Que la asignación cambie el estado y agregue la entrada correspondiente a la bitácora |
-| 7 | `test_supervisor_registra_el_comite` | Comité | Que el comité se cree en modo comité cuando la empresa supera los 20 trabajadores |
-| 8 | `test_operario_no_registra_el_comite` | Comité | Que un operario no pueda constituir el comité |
-| 9 | `test_no_se_puede_registrar_dos_comites` | Comité | Que una empresa no pueda tener dos comités simultáneos |
-| 10 | `test_numero_de_acta_es_consecutivo_y_lo_pone_el_servidor` | Comité | Que el número de acta lo asigne el servidor de forma correlativa e ignore el valor enviado por el cliente |
-| 11 | `test_cumplimiento_del_comite` | Comité | Que el indicador de cumplimiento de acuerdos se calcule correctamente |
-| 12 | `test_sin_comite_el_endpoint_lo_dice` | Comité | Que el endpoint responda explícitamente cuando no hay comité, en lugar de fallar |
-| 13 | `test_registro_publico_con_ruc` | Autenticación | Que el registro asocie al usuario a la empresa del RUC indicado |
-| 14 | `test_el_registro_publico_no_permite_elegir_rol` | Autenticación | Que enviar `role=ADMIN` en el registro público se ignore y el usuario quede como operario. Es la prueba de una vulnerabilidad de escalada de privilegios detectada y corregida durante el desarrollo |
-| 15 | `test_registro_con_ruc_inexistente_falla` | Autenticación | Que el registro con un RUC no registrado devuelva `400` con el mensaje correspondiente |
-| 16 | `test_registro_rechaza_area_de_otra_empresa` | Autenticación | Que no se pueda asociar un área ajena a la empresa indicada |
-| 17 | `test_contrasenas_distintas_fallan` | Autenticación | Que la confirmación de contraseña se valide |
-| 18 | `test_operario_no_lista_usuarios` | Autenticación | Que el directorio de usuarios esté restringido a los roles de gestión |
-| 19 | `test_supervisor_solo_ve_usuarios_de_su_empresa` | Autenticación | Que el aislamiento entre empresas se cumpla |
-| 20 | `test_manager_puede_crear_un_supervisor` | Autenticación | Que la creación de usuarios con rol funcione para quien sí está autorizado |
-| 21 | `test_supervisor_exporta_reportes` | Exportación | Que la exportación devuelva un `.xlsx` válido, que abra correctamente y contenga los datos |
-| 22 | `test_operario_no_exporta_evidencia` | Exportación | Que la exportación esté restringida a los roles de gestión |
-| 23 | `test_exportaciones_vacias_no_fallan` | Exportación | Que una empresa sin datos obtenga el formato con su cabecera en lugar de un error |
-| 24 | `test_filtro_por_estado_en_la_exportacion` | Exportación | Que el filtro por estado se aplique al archivo generado |
+| # | Prueba | Módulo | Qué verifica | Evidencia en el commit consultado |
+|---|---|---|---|---|
+| 1 | `test_operario_crea_reporte_minimo` | Reportes | Que el flujo rápido pueda crear un reporte enviando solo tipo y área, sin descripción | Código localizado; sin ejecución adjunta |
+| 2 | `test_sincronizacion_offline_no_duplica` | Reportes | Que reenviar el mismo `client_uuid` devuelva `200` con el reporte existente y que la base quede con un solo registro | Código localizado; sin ejecución adjunta |
+| 3 | `test_operario_no_ve_reportes_de_otros` | Reportes | Que el filtrado por rol se aplique en la consulta y no en la interfaz | Código localizado; sin ejecución adjunta |
+| 4 | `test_operario_no_puede_cerrar` | Reportes | Que el cierre esté restringido a supervisor y comité, devolviendo `403` | Código localizado; sin ejecución adjunta |
+| 5 | `test_supervisor_cierra_y_calcula_mttr` | Reportes / Métricas | Que al cerrar se selle la fecha y que el endpoint de MTTR refleje el hallazgo cerrado | Código localizado; sin ejecución adjunta |
+| 6 | `test_asignar_pasa_a_en_proceso` | Reportes | Que la asignación cambie el estado y agregue la entrada correspondiente a la bitácora | Código localizado; sin ejecución adjunta |
+| 7 | `test_supervisor_registra_el_comite` | Comité | Que el comité se cree en modo comité cuando la empresa supera los 20 trabajadores | Caso especificado; código no localizado |
+| 8 | `test_operario_no_registra_el_comite` | Comité | Que un operario no pueda constituir el comité | Caso especificado; código no localizado |
+| 9 | `test_no_se_puede_registrar_dos_comites` | Comité | Que una empresa no pueda tener dos comités simultáneos | Caso especificado; código no localizado |
+| 10 | `test_numero_de_acta_es_consecutivo_y_lo_pone_el_servidor` | Comité | Que el número de acta lo asigne el servidor de forma correlativa e ignore el valor enviado por el cliente | Caso especificado; código no localizado |
+| 11 | `test_cumplimiento_del_comite` | Comité | Que el indicador de cumplimiento de acuerdos se calcule correctamente | Caso especificado; código no localizado |
+| 12 | `test_sin_comite_el_endpoint_lo_dice` | Comité | Que el endpoint responda explícitamente cuando no hay comité, en lugar de fallar | Caso especificado; código no localizado |
+| 13 | `test_registro_publico_con_ruc` | Autenticación | Que el registro asocie al usuario a la empresa del RUC indicado | Caso especificado; código no localizado |
+| 14 | `test_el_registro_publico_no_permite_elegir_rol` | Autenticación | Que enviar `role=ADMIN` en el registro público se ignore y el usuario quede como operario. Es la prueba de una vulnerabilidad de escalada de privilegios detectada y corregida durante el desarrollo | Caso especificado; código no localizado |
+| 15 | `test_registro_con_ruc_inexistente_falla` | Autenticación | Que el registro con un RUC no registrado devuelva `400` con el mensaje correspondiente | Caso especificado; código no localizado |
+| 16 | `test_registro_rechaza_area_de_otra_empresa` | Autenticación | Que no se pueda asociar un área ajena a la empresa indicada | Caso especificado; código no localizado |
+| 17 | `test_contrasenas_distintas_fallan` | Autenticación | Que la confirmación de contraseña se valide | Caso especificado; código no localizado |
+| 18 | `test_operario_no_lista_usuarios` | Autenticación | Que el directorio de usuarios esté restringido a los roles de gestión | Caso especificado; código no localizado |
+| 19 | `test_supervisor_solo_ve_usuarios_de_su_empresa` | Autenticación | Que el aislamiento entre empresas se cumpla | Caso especificado; código no localizado |
+| 20 | `test_manager_puede_crear_un_supervisor` | Autenticación | Que la creación de usuarios con rol funcione para quien sí está autorizado | Caso especificado; código no localizado |
+| 21 | `test_supervisor_exporta_reportes` | Exportación | Que la exportación devuelva un `.xlsx` válido, que abra correctamente y contenga los datos | Caso especificado; código no localizado |
+| 22 | `test_operario_no_exporta_evidencia` | Exportación | Que la exportación esté restringida a los roles de gestión | Caso especificado; código no localizado |
+| 23 | `test_exportaciones_vacias_no_fallan` | Exportación | Que una empresa sin datos obtenga el formato con su cabecera en lugar de un error | Caso especificado; código no localizado |
+| 24 | `test_filtro_por_estado_en_la_exportacion` | Exportación | Que el filtro por estado se aplique al archivo generado | Caso especificado; código no localizado |
 
 <!-- IMAGEN REQUERIDA: captura de la ejecución de pytest mostrando el resumen de pruebas
      aprobadas, en assets/img/evidencia-pytest.png -->
+
 
 ### 6.1.3. Core Behavior-Driven Development
 
 Los criterios de aceptación de las historias de usuario del Capítulo III están redactados en
 formato Gherkin y constituyen la especificación del comportamiento esperado. La tabla siguiente
-relaciona cada escenario con la prueba automatizada que lo verifica.
+relaciona escenarios y pruebas del catálogo. Solo los ocho casos identificados en 6.1.1 y 6.1.2
+se localizaron en el código. No se encontraron archivos `.feature` ni configuración de
+`pytest-bdd`; la trazabilidad documental no acredita un ejecutor BDD instalado.
 
 | Historia | Escenario Gherkin | Prueba que lo cubre |
 |---|---|---|
@@ -3147,10 +3424,40 @@ relaciona cada escenario con la prueba automatizada que lo verifica.
 | US37 | Exportación y su permiso | `test_supervisor_exporta_reportes`, `test_operario_no_exporta_evidencia` |
 | US38 | Estabilidad de la variante | `test_variante_es_estable_por_usuario` |
 
+**Escenarios de aceptación expresados en Gherkin.**
+
+```gherkin
+# language: es
+Característica: Gestión trazable de hallazgos
+  Escenario: Reintentar un reporte sin duplicarlo
+    Dado un operario autenticado y un reporte aceptado con un UUID
+    Cuando el dispositivo reenvía ese reporte con el mismo UUID
+    Entonces el API devuelve el identificador ya registrado
+    Y existe un solo hallazgo para ese envío
+
+  Escenario: Impedir el cierre por un operario
+    Dado un hallazgo abierto y una sesión con rol operario
+    Cuando el operario solicita cerrar el hallazgo
+    Entonces el API responde con acceso denegado
+    Y el hallazgo permanece abierto
+
+  Escenario: Recuperar un reporte guardado sin conexión
+    Dado un operario con sesión iniciada y el dispositivo sin red
+    Cuando guarda un hallazgo y vuelve a abrir la aplicación
+    Entonces el hallazgo sigue visible como pendiente de envío
+    Cuando se recupera la conectividad
+    Entonces se sincroniza conservando su UUID y fecha de ocurrencia
+```
+
+Los dos primeros escenarios se relacionan con pruebas HTTP localizadas. El tercero requiere
+validación del cliente Android y del API juntos; no queda cubierto únicamente por comprobar
+idempotencia en el servidor.
+
 ### 6.1.4. Core System Tests
 
-Pruebas de extremo a extremo sobre el sistema desplegado, ejecutadas manualmente sobre los
-escenarios principales.
+Plan de pruebas de extremo a extremo para una versión integrada. No se adjuntan actas de
+ejecución, por lo que los escenarios siguientes se registran como **por ejecutar**. ST03 y
+ST05 requieren resolver primero las diferencias de alcance móvil y exportaciones del Anexo G.
 
 | # | Escenario | Pasos | Resultado esperado |
 |---|---|---|---|
@@ -3160,6 +3467,23 @@ escenarios principales.
 | ST04 | Aislamiento entre empresas | Un usuario de la empresa A consulta reportes | No aparece ningún dato de la empresa B |
 | ST05 | Evidencia ante auditoría | Se exportan los cinco registros a Excel | Los archivos abren correctamente y contienen la trazabilidad completa |
 | ST06 | Asignación del experimento | Dos operarios de distinta variante abren el formulario | Cada uno ve la variante que le corresponde, de forma estable |
+
+**Condiciones y criterios de salida.** Utilizar dos empresas de prueba, cuentas de operario
+y supervisor, navegador y dispositivo identificados, y datos sintéticos. Para ST02 se conserva
+el UUID antes y después del reintento; para ST04 se comprueban consultas, acceso directo por ID
+y reenvío con UUID de otra empresa. El control debe aplicarse a todas esas vías.
+
+| Registro por escenario | Contenido requerido |
+|---|---|
+| Identificación | ID ST, historia vinculada, ejecutor y fecha |
+| Entorno | SHA del API, web y móvil; navegador, dispositivo y base |
+| Ejecución | Datos de entrada, pasos y resultado observado |
+| Dictamen | Aprobado, fallido o bloqueado, con captura o video |
+| Seguimiento | Incidencia, cambio correctivo y resultado de repetición |
+
+La versión candidata se acepta cuando el ciclo principal y el aislamiento pasan, no hay
+fallos críticos abiertos y las evidencias corresponden a la misma combinación de versiones.
+Una pantalla existente o un pipeline de compilación no sustituye este registro.
 
 ## 6.2. Static testing & Verification
 
@@ -3274,21 +3598,32 @@ finalización sin ayuda, y errores cometidos.
 
 # Capítulo VII: DevOps Practices
 
+Se distingue entre integración continua (verificar cambios), entrega continua (preparar una
+versión desplegable) y despliegue continuo (publicarla automáticamente). En los repositorios
+consultados existen workflows de CI de producto; no se acredita todavía un pipeline de
+promoción a pruebas y producción. Los diagramas de 7.2 y 7.3 describen el flujo propuesto.
+
 ## 7.1. Continuous Integration
+
+La integración debe comprobar cada cambio antes de combinarlo con el trabajo del equipo.
+Los tres workflows de producto consultados responden a push y Pull Request sobre `main` y
+`develop`. Un workflow define jobs y pasos, como describe
+[GitHub Actions](https://docs.github.com/en/actions/get-started/understand-github-actions);
+su existencia no demuestra una ejecución exitosa.
 
 ### 7.1.1. Tools and Practices
 
 | Herramienta | Rol en el pipeline |
 |---|---|
-| GitHub Actions | Orquestador de la integración continua en los cuatro repositorios |
+| GitHub Actions | Workflows de CI localizados en API, web y Android; no hay `.github/workflows/` en este checkout del informe |
 | pytest + pytest-django | Suite de pruebas del API |
 | ruff | Análisis estático de Python |
 | ESLint + TypeScript | Análisis estático y verificación de tipos de la aplicación web |
 | Gradle | Compilación y pruebas unitarias de la aplicación Android |
-| Hook `commit-msg` + workflow de commitlint | Verificación de Conventional Commits |
-| Reglas de protección de rama | Impiden integrar sin pasar por Pull Request |
+| Hook `commit-msg` + workflow de commitlint | Hook localizado en el informe y workflows localizados en los tres repositorios de producto |
+| Reglas de protección de rama | Política prevista; configuración efectiva no acreditada |
 
-**Prácticas adoptadas**
+**Prácticas previstas y verificaciones configuradas**
 
 1. **Integración frecuente en ramas cortas.** Cada funcionalidad vive en una rama `feature/`
    que se integra a `develop` mediante Pull Request, en lugar de acumular semanas de trabajo.
@@ -3317,15 +3652,15 @@ flowchart LR
     E1 --> E2[gradle assembleDebug]
     E2 --> E3[gradle testDebugUnitTest]
     E3 --> E4[Publicar APK como artefacto]
-    B -->|sst-report| F1[python tools/build.py]
+    B -->|sst-report: propuesto| F1[python tools/build.py]
     F1 --> F2[Verificar índice actualizado]
-    F2 --> F3[Publicar informe compilado]
+    F2 --> F3[Publicar README como artefacto]
     C4 --> G{Resultado}
     D4 --> G
     E4 --> G
     F3 --> G
-    G -->|verde| H[PR integrable]
-    G -->|rojo| I[PR bloqueado]
+    G -->|verde| H[Candidato a revisión]
+    G -->|rojo| I[Corregir antes de integrar]
 ```
 
 **Componentes por repositorio**
@@ -3338,13 +3673,29 @@ flowchart LR
 | `sst-web` | `commitlint.yml` | Validar el formato de los commits del PR |
 | `sst-mobile` | `ci.yml` | Checkout → JDK 17 Temurin → Gradle → `assembleDebug` → `testDebugUnitTest` → publicar `app-debug.apk` como artefacto |
 | `sst-mobile` | `commitlint.yml` | Validar el formato de los commits del PR |
-| `sst-report` | `informe.yml` | Verificar que el índice esté actualizado y publicar `README.md` |
-| `sst-report` | `commitlint.yml` | Validar el formato de los commits del PR |
+| `sst-report` | Propuesto: `informe.yml` | No localizado en este checkout; se dispone de `tools/build.py` para regenerar el índice localmente |
+| `sst-report` | Propuesto: `commitlint.yml` | No localizado en este checkout; el hook local sí está presente |
 
 <!-- IMAGEN REQUERIDA: capturas de la pestaña Actions de cada repositorio mostrando
      ejecuciones exitosas, en assets/img/pipeline-ci-<repo>.png -->
 
+**Fuentes y alcance del pipeline.** Configuraciones consultadas:
+[API](https://github.com/sst-peru/sst-api/blob/1b5e02e07108b4358f168133ee380563bf2da4c3/.github/workflows/ci.yml),
+[web](https://github.com/sst-peru/sst-web/blob/2fd0a59df9465c464915b51894a60e5b5a9667c8/.github/workflows/ci.yml) y
+[Android](https://github.com/sst-peru/sst-mobile/blob/aeef3a8b1170d1a4bda12631ae3b2c54e47d3368/.github/workflows/ci.yml).
+El workflow móvil configura la publicación de un APK de depuración; no se ha descargado ni
+verificado un artefacto de ejecución. El workflow web construye `dist/` sin un paso de
+publicación del bundle, y el del API ejecuta controles sin empaquetado desplegable.
+
+El registro de CI debe enlazar la ejecución y su SHA, indicar el resultado de cada job y
+conservar logs de fallos. Para bloquear merges se necesita además configurar las
+verificaciones como obligatorias en la protección de rama.
+
 ## 7.2. Continuous Delivery
+
+**Estado: diseño de entrega continua.** Existe configuración de construcción, pero falta
+acreditar almacenamiento de los artefactos web/API y promoción a un entorno de pruebas. Esta
+sección define los componentes necesarios para completar TS28 y TS34.
 
 ### 7.2.1. Tools and Practices
 
@@ -3355,16 +3706,16 @@ ser desplegado, sin trabajo manual adicional.
 |---|---|
 | GitHub Actions | Construcción de artefactos desplegables |
 | Artefactos de Actions | APK de depuración publicado en cada ejecución del pipeline móvil |
-| Docker | <!-- COMPLETAR: empaquetado del API si se adopta --> |
-| Render / Railway / Fly.io | Entorno de despliegue del API |
-| Vercel / Netlify | Entorno de despliegue de la aplicación web |
+| Docker | Empaquetado propuesto del API; no se localizó Dockerfile en la versión consultada |
+| Proveedor de backend por definir | Ejecutar API, base de datos y almacenamiento persistente |
+| Proveedor de frontend por definir | Servir el bundle web mediante HTTPS |
 
-**Prácticas adoptadas**
+**Prácticas propuestas**
 
-1. **El artefacto se construye una sola vez** y es el mismo que se promueve entre entornos; no
-   se reconstruye por entorno.
-2. **La configuración viaja por variables de entorno**, no dentro del artefacto, de modo que el
-   mismo build sirve para desarrollo y producción.
+1. **Cada artefacto se identifica por versión y SHA.** Se conserva el mismo artefacto cuando
+   la configuración lo permite; los builds Vite con distintas URLs se identifican por entorno.
+2. **Los secretos se inyectan al desplegar el backend.** La configuración pública de Vite se
+   incorpora al construir, según la restricción explicada en 5.1.4.
 3. **Toda migración de base de datos se ejecuta como parte del despliegue**, no manualmente.
 
 ### 7.2.2. Stages Deployment Pipeline Components
@@ -3385,7 +3736,27 @@ flowchart LR
     G -->|No| I[Revertir y corregir]
 ```
 
+**Entradas, salidas y controles de la entrega propuesta.**
+
+| Etapa | Entrada | Salida y condición de avance |
+|---|---|---|
+| Verificar | SHA integrado en `develop` | CI aprobada sobre ese mismo SHA |
+| Empaquetar | Código y dependencias fijadas | Paquete API, bundle web y APK con identificación de versión |
+| Preparar entorno | Configuración de pruebas y respaldo | Conexión a base, archivos persistentes y secretos disponibles |
+| Migrar y desplegar | Artefactos compatibles | Migraciones aplicadas y servicios accesibles |
+| Probar humo | URL del entorno y usuarios de prueba | Acceso, creación, consulta y cierre comprobados |
+| Preparar promoción | Evidencias de los pasos anteriores | Versión candidata lista para decisión de publicación |
+
+Si una migración o la prueba de humo falla, se detiene la promoción y se registra el incidente.
+La reversión de código debe evaluar compatibilidad con el esquema; recuperar la base requiere
+un procedimiento probado y no se presume automático.
+
 ## 7.3. Continuous Deployment
+
+**Estado: flujo de producción propuesto, sin despliegue acreditado.** Se mantiene este
+apartado para documentar la decisión de publicación del producto y los componentes que
+faltan. La aprobación manual elegida corresponde a entrega continua; no se declara un
+proceso de despliegue automático pleno.
 
 ### 7.3.1. Tools and Practices
 
@@ -3404,6 +3775,11 @@ usuario. La promoción a producción requiere aprobación explícita.
 | Migraciones de Django | Ejecutadas automáticamente antes de activar la nueva versión |
 | Etiquetas de versión | Cada despliegue a producción corresponde a un tag en `main` |
 
+La aprobación se puede configurar mediante un entorno de GitHub Actions con revisores,
+según la [documentación de revisión de despliegues](https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/review-deployments).
+Su disponibilidad debe verificarse para el repositorio y plan utilizados. No hay evidencia
+adjunta de un entorno de producción configurado con esa protección.
+
 ### 7.3.2. Production Deployment Pipeline Components
 
 ```mermaid
@@ -3420,6 +3796,22 @@ flowchart LR
     I -->|No| K[Rollback a la versión anterior]
     D -->|Rechazado| L[Permanece en preproducción]
 ```
+
+**Control de una publicación de producción.** La versión debe registrar tag, SHA de cada
+componente, referencia del artefacto, aprobación, respaldo previo y resultado de la prueba de
+humo. Para activar tráfico, las migraciones deben haber finalizado y ser compatibles con los
+clientes publicados. El APK de depuración de CI no equivale a distribución Android de producción.
+
+| Condición | Acción prevista |
+|---|---|
+| CI o revisión rechazada | Mantener la versión activa y corregir la candidata |
+| Migración fallida | Detener la activación y evaluar el estado de la base antes de reintentar |
+| Fallo funcional después de activar | Restaurar el artefacto anterior si es compatible con el esquema |
+| Incompatibilidad de datos | Aplicar el procedimiento de recuperación ensayado y registrar el alcance |
+| Publicación satisfactoria | Registrar URL, versión, hora, métricas iniciales y responsable |
+
+La evidencia de cierre será una ejecución enlazada, las URLs activas y una recuperación
+probada. Al no estar adjuntas, no se atribuyen disponibilidad o tiempos de recuperación reales.
 
 ## 7.4. Continuous Monitoring
 
@@ -3935,14 +4327,36 @@ un fin contratado sin cuestionarse el fin en sí mismo— y evidenciar pensamien
 
 # Conclusiones
 
+
+## Avance de conclusiones
+
+El avance permite definir un ciclo de gestión trazable del hallazgo y una planificación de
+162 elementos. La revisión de código confirma componentes de captura, sincronización,
+gestión web y API, pero también diferencias respecto del alcance declarado. Por ello, los
+estados históricos de los sprints no bastan para concluir que todas las capacidades están
+aceptadas ni que existe paridad completa entre plataformas.
+
+La separación entre fecha de ocurrencia y recepción, junto con un UUID persistente, responde
+al contexto de trabajo sin conexión. Su aceptación requiere pruebas integradas de Android y
+API, además de resolver el alcance entre empresas de la búsqueda por UUID. Compartir backend
+facilita la consistencia de las reglas; no garantiza por sí solo la consistencia de las interfaces.
+
+Los workflows localizados proporcionan una base de integración continua. El despliegue, los
+respaldos, la disponibilidad SaaS y la recuperación siguen como diseño hasta que existan
+registros de ejecución. Las ocho funciones de prueba localizadas tampoco permiten afirmar
+cobertura total o una suite aprobada sin ejecutar y conservar sus resultados.
+
+No se concluye todavía que Resguardo reduzca accidentes, MTTR o abandono del reporte: faltan
+mediciones y validación con usuarios. La prioridad para el siguiente avance es conciliar las
+versiones del informe y del código, completar la evidencia del flujo principal y ejecutar la
+validación propuesta usando datos reales separados de los datos de demostración.
 ## Conclusiones y recomendaciones
 
 **Sobre la arquitectura y la paridad entre plataformas.** Concentrar la totalidad de la lógica de
 negocio en un único API REST consumido por ambos clientes resultó ser la decisión más
-consecuente del proyecto. No solo evita la duplicación: hace **imposible** que la regla de
-negocio diverja entre la web y el móvil, que es el requisito de paridad que el proyecto debía
-satisfacer. Cuando el registro público dejó de aceptar el rol como campo de entrada, la
-corrección aplicó simultáneamente a los tres clientes posibles sin tocar ninguno.
+consecuente del proyecto. Reduce la duplicación de reglas entre clientes. La paridad sigue requiriendo verificar
+interfaces y contratos; la corrección del registro público descrita anteriormente no aparece
+en el commit del API consultado y no puede darse por validada en este avance.
 
 **Sobre el diseño para el contexto real de uso.** La operación sin conexión no es una
 funcionalidad adicional sino una condición de existencia del producto. Un sistema de reporte de
@@ -3951,12 +4365,10 @@ peligros son mayores. La consecuencia técnica —guardar localmente antes de in
 identificar cada reporte con un UUID generado en el dispositivo para que el reintento no
 duplique— nace de una restricción del dominio, no de una preferencia de ingeniería.
 
-**Sobre la separación de responsabilidades como requisito de negocio.** La restricción de que
-quien reporta no pueda cerrar su propio hallazgo no es una decisión de diseño de software: es lo
-que la normativa de SST exige, y su implementación en el backend —verificada por pruebas
-automatizadas— convierte un requisito legal en una propiedad del sistema. Descubrir que el
-endpoint de registro permitía saltarse ese control, y corregirlo, fue el hallazgo de seguridad
-más relevante del desarrollo.
+**Sobre la separación de responsabilidades.** El producto requiere reservar las acciones de
+gestión a roles autorizados. Se localizó una prueba del rechazo del cierre por un operario;
+su existencia no permite certificar todas las vías de autorización. La aceptación del rol en
+el registro público y el aislamiento en reintentos requieren corrección y pruebas adicionales.
 
 **Sobre la medición como parte del producto.** Instrumentar el experimento dentro del propio
 modelo de datos, en lugar de delegarlo a una herramienta de analítica externa, resultó coherente
@@ -3991,6 +4403,28 @@ no significativo en esas condiciones no refuta nada.
 ---
 
 # Bibliografía
+
+Este avance conserva las referencias de dominio y metodología e incorpora fuentes técnicas
+consultadas para los capítulos V–VII. Los enlaces de código del Anexo G fijan las versiones
+inspeccionadas. Una referencia bibliográfica respalda el método o la herramienta, no acredita
+que el producto haya ejecutado una prueba o cumplido un nivel de servicio.
+
+GitHub. (s.f.). *Understanding GitHub Actions*. GitHub Docs.
+https://docs.github.com/en/actions/get-started/understand-github-actions
+
+GitHub. (s.f.). *Reviewing deployments*. GitHub Docs.
+https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/review-deployments
+
+Vite. (s.f.). *Env Variables and Modes*.
+https://vite.dev/guide/env-and-mode
+
+pytest. (s.f.). *Managing pytest’s output*.
+https://docs.pytest.org/en/stable/how-to/output.html
+
+drf-spectacular. (s.f.). *Client generation*.
+https://drf-spectacular.readthedocs.io/en/latest/client_generation.html
+
+Las cinco fuentes técnicas anteriores se consultaron el 6 de octubre de 2026.
 
 Congreso de la República del Perú. (2011). *Ley N° 29783, Ley de Seguridad y Salud en el
 Trabajo*. Diario Oficial El Peruano.
@@ -4048,11 +4482,15 @@ https://nvie.com/posts/a-successful-git-branching-model/
 
 # Anexos
 
+Los anexos reúnen accesos, material de demostración y trazabilidad técnica. Los videos y
+URLs de despliegue que aún no se han incorporado se identifican expresamente como no
+disponibles; los enlaces a repositorios no sustituyen esos entregables.
+
 ## Anexo A. Videos de Exposiciones
 
 | Entrega | Enlace del video | Duración |
 |---|---|---|
-| Trabajo Final (TF) | <!-- COMPLETAR --> | <!-- COMPLETAR --> |
+| Trabajo Final (TF) | No incorporado en este avance | Sin duración registrada |
 
 ## Anexo B. Enlaces del proyecto
 
@@ -4063,9 +4501,9 @@ https://nvie.com/posts/a-successful-git-branching-model/
 | API (backend) | https://github.com/sst-peru/sst-api |
 | Aplicación web | https://github.com/sst-peru/sst-web |
 | Aplicación móvil Android | https://github.com/sst-peru/sst-mobile |
-| Landing page desplegada | <!-- COMPLETAR --> |
-| Aplicación web desplegada | <!-- COMPLETAR --> |
-| Documentación del API (Swagger) | <!-- COMPLETAR: URL pública + `/api/docs/` --> |
+| Landing page desplegada | Sin URL acreditada en este avance |
+| Aplicación web desplegada | Sin URL acreditada en este avance |
+| Documentación del API (Swagger) | Ruta local `/api/docs/`; sin URL pública acreditada |
 
 ## Anexo C. Credenciales de demostración
 
@@ -4108,3 +4546,51 @@ mínimo detectable para muestras menores.
 ## Anexo F. Student Outcome
 
 Ver la sección [Student Outcome](#student-outcome) de este informe.
+
+
+## Anexo G. Corte de evidencia técnica
+
+Inspección de las ramas públicas `develop` al 6 de octubre de 2026. Se consultó código y
+configuración; no se ejecutaron las aplicaciones, sus suites ni sus despliegues en esta
+actualización del informe.
+
+| Componente | Commit consultado | Evidencia disponible |
+|---|---|---|
+| API | [`1b5e02e`](https://github.com/sst-peru/sst-api/tree/1b5e02e07108b4358f168133ee380563bf2da4c3) | Rutas, serializadores, modelos, ocho funciones de prueba y workflows |
+| Web | [`2fd0a59`](https://github.com/sst-peru/sst-web/tree/2fd0a59df9465c464915b51894a60e5b5a9667c8) | Rutas e interfaces React, cliente HTTP y workflow de construcción |
+| Android | [`aeef3a8`](https://github.com/sst-peru/sst-mobile/tree/aeef3a8b1170d1a4bda12631ae3b2c54e47d3368) | Login, lista, formularios, persistencia local, worker y workflow APK |
+| Informe | `c5bb93c` como base local previa a esta edición | Markdown, herramientas de generación del índice y hook de commits |
+
+| Diferencia encontrada | Consecuencia para la aceptación |
+|---|---|
+| El backend consultado no registra comité, exportaciones ni `auth/users/` | Las pantallas y contratos asociados requieren una versión compatible o implementación adicional |
+| El serializador de registro acepta `role` | La restricción del alta pública no queda acreditada; requiere corrección y prueba |
+| La búsqueda de reintento por UUID no filtra empresa | La no duplicación dentro de una empresa no demuestra aislamiento entre empresas |
+| La navegación Android contiene tres destinos | No queda acreditada la paridad de detalle, gestión, IPERC, EPP, inspecciones y tablero |
+| Se localizaron ocho pruebas frente al catálogo más amplio del informe | Los casos restantes son especificación sin código localizado; no hay resultados de corrida adjuntos |
+| No existe `.github/workflows/` en el checkout del informe | Sus pipelines se documentan como propuestos, aunque el generador local sí existe |
+
+Este corte no descarta cambios en otras ramas o versiones no aportadas. Una evidencia posterior
+debe actualizar el commit y el dictamen correspondiente, conservando la trazabilidad.
+
+## Anexo H. Matriz de evidencias del avance
+
+| Sección | Artefacto disponible | Evidencia restante |
+|---|---|---|
+| 3.1–3.4 | Mapas Mermaid, historias y backlog | Validación de los escenarios con usuarios |
+| 5.1–5.2.1 | Configuración y planificación por work-items | Registro de aceptación por incremento y combinación de versiones |
+| 5.2.2 | Criterios de la landing page | Sitio, URL, commit y capturas |
+| 5.2.3 | Código de rutas web y protocolo de demostración | Capturas de ejecución y validación integrada |
+| 5.2.4 | Propuesta de acuerdo SaaS | Medición operativa y formalización del servicio |
+| 5.2.5 | Código Android y protocolo sin conexión | APK, dispositivo y grabación del ciclo |
+| 5.2.6–5.2.7 | Rutas, ejemplos y diferencias de contrato | Esquema validado y documentación de una versión desplegada |
+| 5.2.8 | Enlaces de colaboración e historial local | Capturas de Insights y relación de aportes revisada por el equipo |
+| 5.3 | Guion de demostración | Video publicado, duración y versión |
+| 6.1 | Catálogo, ocho pruebas localizadas y escenarios BDD | JUnit XML, resultados de sistema y validación con usuarios |
+| 7.1 | Tres workflows de CI de producto | Ejecuciones exitosas enlazadas y protecciones verificadas |
+| 7.2–7.3 | Diseño de promoción y recuperación | Entornos, artefactos, despliegue y restauración ensayados |
+
+Para incorporar una evidencia se registrarán ID, sección, historia, commit, entorno, fecha,
+responsable, enlace y resultado observado. Las capturas se guardarán en `assets/img/` y los
+registros de ejecución se enlazarán al commit que prueban. Los nombres de archivos sugeridos
+en el informe no representan archivos ya existentes.
