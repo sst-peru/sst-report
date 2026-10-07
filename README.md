@@ -27,6 +27,7 @@
 |---|---|
 |u202310837| Esquirva León Miguel Juan Diego|
 |u20231c069| Mora Blas Diego Alonzo|
+|U202310670| Villafuerte Tapia Renzo Alonso|
 
 **Septiembre de 2026**
 
@@ -375,7 +376,7 @@ API REST que ambos consumen.
 
 | | |
 |---|---|
-| <img src="assets/img/perfil-3.jpg" width="130"> | **<!-- COMPLETAR: Apellidos y Nombres -->**<br>**Código:** <!-- COMPLETAR --><br>**Carrera:** <!-- COMPLETAR --><br><br><!-- COMPLETAR: párrafo de resumen con los conocimientos técnicos y habilidades que aporta al equipo. --> |
+| <img src="assets/img/perfil-3.jpg" width="130"> | **Villafuerte Tapia Renzo Alonso**<br>**Código:** U202310670<br>**Carrera:** Ingeniería de Software<br><br>Aporta al equipo el desarrollo de extremo a extremo de las tres piezas del producto: el API REST en Python con Django y Django REST Framework, incluida la autenticación con JWT y el aislamiento de datos entre empresas; el panel web en React con TypeScript y Vite; y la aplicación Android nativa en Kotlin con Jetpack Compose, donde implementó la operación sin conexión con Room y WorkManager. Se encargó también de la configuración del flujo de trabajo del equipo —GitFlow, Conventional Commits con validación por hooks e integración continua en GitHub Actions— y de la especificación del backlog y de los Sprint Backlogs del informe. |
 
 ## 1.2. Solution Profile
 
