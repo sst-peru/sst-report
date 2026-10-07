@@ -6,7 +6,7 @@
 
 <!-- COMPLETAR: nombre del startup. Reemplazar [NOMBRE DEL STARTUP] en todo el documento. -->
 
-**[NOMBRE DEL STARTUP]** es una startup de software peruana dedicada a llevar la gestión de
+**Resguardo** es una startup de software peruana dedicada a llevar la gestión de
 la seguridad y salud en el trabajo del papel al dato en tiempo real. Nace de una observación
 concreta: en la mayoría de empresas medianas y pequeñas del país el sistema de gestión de SST
 existe formalmente —hay matriz IPERC, hay comité, hay registros— pero funciona con semanas de
