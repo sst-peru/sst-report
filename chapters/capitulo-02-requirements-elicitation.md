@@ -129,35 +129,118 @@ pregunta "¿te gustaría una app?" sino qué hizo la última vez), parten de lo 
 reciente antes de lo general, y dejan las preguntas sobre la solución para el final, de modo
 que no contaminen el relato del problema.
 
-### 2.2.2. Registro de entrevistas
+## 2.2.2. Registro de entrevistas
 
-> **PENDIENTE — trabajo de campo.** Esta sección debe contener entrevistas reales, grabadas en
-> video y editadas en el video de evidencia. Por cada entrevistado se registra: nombre y
-> apellidos, edad, distrito de residencia, cargo, fecha de la entrevista, duración, enlace al
-> video con el minuto de inicio, y un resumen de entre 150 y 250 palabras de lo que respondió.
->
-> Mínimo recomendado: cuatro entrevistas por segmento. **Este contenido no puede redactarse sin
-> haber realizado las entrevistas**; inventarlo invalidaría todo el needfinding que se construye
-> encima, y es exactamente lo que el jurado verifica preguntando por los entrevistados.
->
-> Plantilla por entrevistado:
->
-> | Campo | Contenido |
-> |---|---|
-> | Nombre y apellidos | |
-> | Edad / Distrito | |
-> | Cargo y empresa | |
-> | Fecha y duración | |
-> | Enlace al video (con minuto) | |
-> | Resumen de la entrevista | |
+Minuto de inicio calculado con los 4 audios unidos en este orden en un solo video de evidencia: Jhonatan → Luis → Karina → Ricardo.
 
-### 2.2.3. Análisis de entrevistas
+### Segmento 1 – Trabajador de campo (operario)
 
-> **PENDIENTE.** Se completa después del registro. Estructura esperada: hallazgos por segmento,
-> cada uno con el porcentaje de entrevistados que lo manifestó, citas textuales breves que lo
-> respalden, y la conexión explícita con los supuestos del Lean UX que confirma o refuta. Los
-> supuestos refutados deben marcarse como tales: un needfinding que confirma todo lo que se
-> asumió antes de entrevistar suele significar que se preguntó mal.
+**Entrevista 1**
+
+| Campo | Contenido |
+|---|---|
+| Nombre y apellidos | Jhonatan Quispe Huamán |
+| Edad / Distrito | 34 años / San Juan de Lurigancho |
+| Cargo y empresa | Oficial de encofrado – constructora de edificios de vivienda (obra en Surco) |
+| Fecha y duración | 01/10/2026 – 4 min 37 s |
+| Enlace al video (con minuto) | [enlace] – min 00:00 |
+| Resumen de la entrevista | Jhonatan tiene ocho años en construcción y uno en la obra actual. Lleva un smartphone durante la jornada, aunque casi no lo usa porque trabaja con las manos ocupadas, y en los sótanos la señal es casi nula. El último peligro que detectó fue una baranda floja en el cuarto piso, en una zona de tránsito de carretillas: avisó al capataz de palabra y la aseguró él mismo con alambre. Se enteró de que la cambiaron solo porque preguntó. Reconoce que una vez no reportó a un maestro que trabajaba sin arnés por temor a que lo llamen "soplón", pues el compañero tenía más antigüedad. El reporte formal es una hoja de actos y condiciones inseguras que se deja en la caseta del prevencionista; llenarla le toma entre 10 y 15 minutos y debe hacerlo en el refrigerio o a la salida, por lo que casi nadie la usa. Nunca recibe respuesta sobre lo reportado. Afirma que reportaría más si fuera una foto rápida desde el celular, pero condiciona su uso al anonimato. Teme represalias del jefe, como no ser llamado a la siguiente obra. Firma la entrega de EPP en un cuaderno del almacenero y desconoce qué acuerda el comité de SST. |
+
+**Entrevista 2**
+
+| Campo | Contenido |
+|---|---|
+| Nombre y apellidos | Luis Alberto Ramos Ccahuana |
+| Edad / Distrito | 27 años / Ate |
+| Cargo y empresa | Operador de máquina inyectora – planta de envases plásticos (Ate) |
+| Fecha y duración | 02/10/2026 – 4 min 53 s |
+| Enlace al video (con minuto) | [enlace] – min 04:37 |
+| Resumen de la entrevista | Luis trabaja hace tres años como operador de inyectora. Tiene smartphone, pero en la zona de producción está prohibido: debe dejarlo en el casillero y solo lo revisa en el refrigerio. El último peligro que detectó fue una guarda de protección rota en una inyectora en funcionamiento; detuvo la máquina y avisó en persona al jefe de turno. Mantenimiento tardó tres días en repararla. Admite que no reporta condiciones "pequeñas", como cables pelados o aceite en el piso, porque cree que no se atenderán y porque salir de su puesto afecta su meta de producción. El canal formal es una tarjeta que se deposita en un buzón; llenarla toma unos cinco minutos, pero el buzón está lejos de la línea, por lo que deja el reporte para después y lo olvida. Nunca supo qué pasó con una tarjeta que dejó sobre un montacargas que circulaba a exceso de velocidad. Reportaría más desde el celular, pero señala dos barreras: la prohibición de usar el teléfono en planta, para lo que sugiere una tablet en la línea, y el consumo de sus datos. Le preocupa que los jefes lo vean como "problemático". Firma la entrega de EPP en una lista de recursos humanos y solo conoce el comité por los papeles del periódico mural. |
+
+### Segmento 2 – Supervisor de SST / miembro del comité
+
+**Entrevista 3**
+
+| Campo | Contenido |
+|---|---|
+| Nombre y apellidos | Karina Salazar Rojas |
+| Edad / Distrito | 36 años / Jesús María |
+| Cargo y empresa | Jefa de SSOMA – constructora de edificios de vivienda (3 obras) |
+| Fecha y duración | 02/10/2026 – 5 min 20 s |
+| Enlace al video (con minuto) | [enlace] – min 09:30 |
+| Resumen de la entrevista | Karina es ingeniera industrial con diplomado en SST y gestiona tres obras con unos 180 trabajadores, apoyada por un prevencionista por obra. Su sistema se basa en varios Excel (IPERC, inspecciones, EPP), reportes por WhatsApp y correo, y fotos en Google Drive. El flujo de un peligro es largo: el trabajador avisa de palabra, el prevencionista lo anota y lo transcribe al formato, ella recibe un consolidado semanal, asigna responsables y hace seguimiento por correo. No conoce con exactitud el tiempo de cierre (estima entre una y tres semanas) porque la fecha de cierre rara vez se registra. Admite que la IPERC se revisa a fondo solo ante auditorías y que el programa de inspecciones se cumple en un 70 %. Los cargos de EPP en papel son difíciles de recuperar cuando la obra ya cerró. Reunir la evidencia para la última auditoría de un cliente le tomó unos cuatro días. Le falta información de tendencias por obra y subcontratista. Valora recibir reportes en tiempo real, pero teme saturarse con reportes menores y pide un filtro de validación. Descartó un software extranjero por costo, complejidad y falta de adaptación a la norma peruana. La compra la decide la gerencia, y el argumento decisivo es evitar multas de SUNAFIL. |
+
+**Entrevista 4**
+
+| Campo | Contenido |
+|---|---|
+| Nombre y apellidos | Ricardo Villanueva Mendoza |
+| Edad / Distrito | 45 años / Chorrillos |
+| Cargo y empresa | Supervisor de Seguridad – planta metalmecánica (Lurín) |
+| Fecha y duración | 03/10/2026 – 5 min 14 s |
+| Enlace al video (con minuto) | [enlace] – min 14:51 |
+| Resumen de la entrevista | Ricardo es ingeniero mecánico con maestría en gestión de riesgos y supervisa una planta de 220 trabajadores en dos turnos. Usa un módulo de seguridad del ERP corporativo, que considera limitado, y en la práctica trabaja con Excel y formularios de Google. Recoge las tarjetas del buzón dos veces por semana, las digita, las deriva al área responsable y espera respuesta por correo, que muchas veces no llega. Su indicador marca 12 días promedio de cierre, pero reconoce que está sesgado porque excluye los hallazgos sin fecha de cierre. La IPERC se revisa semestralmente y está relativamente al día por exigencia corporativa. Las inspecciones se cumplen en un 85 %, pero el problema es el seguimiento de lo encontrado. Para el EPP mantiene un kárdex en Excel y fotografía los cargos físicos, lo que duplica el trabajo. Ante una inspección de SUNAFIL por denuncia tuvo cinco días hábiles para reunir el expediente y trabajó noches enteras. Su principal vacío son los reportes que nunca llegan. Con reportes en tiempo real ahorraría casi un día semanal de digitación y podría responder al trabajador. Evaluó una app chilena, pero la corporación no aprobó otro proveedor; la compra la decide el gerente de planta con aval corporativo, priorizando costo, integración y seguridad de la información. |
+
+---
+
+## 2.2.3. Análisis de entrevistas
+
+Con dos entrevistados por segmento, cada persona equivale al 50 %. Los porcentajes son indicativos y se validarán al ampliar la muestra.
+
+### Segmento 1 – Trabajador de campo (n = 2)
+
+| # | Hallazgo | % | Citas de respaldo |
+|---|---|---|---|
+| H1 | El reporte real es informal (de palabra al capataz o al jefe de turno), no por el canal formal | 100 % (2/2) | "La mayoría avisa de boca" (E1); "Al jefe de turno, le dije en persona" (E2) |
+| H2 | El canal formal es incómodo: toma de 5 a 15 minutos y está lejos del puesto o fuera del horario de trabajo | 100 % (2/2) | "Lo tienes que hacer en tu refrigerio o a la salida" (E1); "el buzón está en la entrada, lejos de la línea" (E2) |
+| H3 | El trabajador no recibe retroalimentación sobre el cierre de lo que reporta | 100 % (2/2) | "Nadie te dice nada. No hay una respuesta" (E1); "Nunca supe nada" (E2) |
+| H4 | Alguna vez se decidió no reportar un peligro, por presión social o por percibir que no sirve | 100 % (2/2) | "Te dicen soplón" (E1); "Sabes que no van a hacer nada" (E2) |
+| H5 | Miedo a represalias o a ser etiquetado al reportar | 100 % (2/2) | "No te llamen para la siguiente obra" (E1); "Que soy problemático" (E2) |
+| H6 | Reportaría más si tomara menos de un minuto desde el celular, pero con condiciones | 100 % (2/2) | Condiciones: anonimato (E1); poder usarlo en planta y no gastar datos (E2) |
+| H7 | Hay restricciones reales al uso del celular: zonas sin señal o prohibición en planta | 100 % (2/2) | "En los sótanos casi no agarra" (E1); "En la zona de producción no se puede usar" (E2) |
+| H8 | La entrega de EPP se firma en papel (cuaderno o lista) | 100 % (2/2) | "Firmas en un cuaderno que tiene el almacenero" (E1) |
+| H9 | Desconoce qué acuerda el comité de SST | 100 % (2/2) | "Nunca nos cuentan nada" (E1); "Qué acuerdan, no sé" (E2) |
+
+### Segmento 2 – Supervisor de SST (n = 2)
+
+| # | Hallazgo | % | Citas de respaldo |
+|---|---|---|---|
+| H10 | El circuito reporte → corrección es manual y fragmentado (papel, WhatsApp, Excel, correo) | 100 % (2/2) | "Al final del día lo pasa al formato" (E3); "Las digito en Excel" (E4) |
+| H11 | El tiempo real de cierre no se mide con confiabilidad | 100 % (2/2) | "No lo sé con exactitud" (E3); "Ese número está sesgado" (E4) |
+| H12 | Hay reportes que nunca llegan al responsable de SST | 50 % (1/2) | "Si solo veo una parte, estoy decidiendo a ciegas" (E4) |
+| H13 | La IPERC solo se revisa a fondo ante auditorías | 50 % (1/2) | "La reviso a fondo cuando viene una auditoría" (E3). En cambio, E4 la mantiene al día por exigencia corporativa |
+| H14 | El programa de inspecciones no se cumple totalmente (70–85 %) o su seguimiento es débil | 100 % (2/2) | "El problema no es hacerlas, es hacer seguimiento" (E4) |
+| H15 | Los cargos de EPP en papel son difíciles de recuperar o duplican trabajo | 100 % (2/2) | "A veces la obra ya se cerró" (E3); "Es doble trabajo" (E4) |
+| H16 | Preparar una auditoría o inspección toma de 4 a 5 días de recolección manual | 100 % (2/2) | "Me tomó como cuatro días juntar todo" (E3); "Fueron noches enteras armando el expediente" (E4) |
+| H17 | Falta información de tendencias (peligros repetidos, obras o subcontratistas críticos) | 50 % (1/2) | "Me falta ver tendencias" (E3) |
+| H18 | Valora el reporte en tiempo real con foto y ubicación | 100 % (2/2) | "Podría actuar el mismo día" (E3); "Me ahorraría la digitación" (E4) |
+| H19 | Teme saturarse con reportes menores y pide una validación previa | 50 % (1/2) | "Me lleguen cien reportes de cosas menores" (E3) |
+| H20 | Evaluó software de SST y no lo adoptó (costo, complejidad, norma local o política corporativa) | 100 % (2/2) | "Era caro, en euros, y muy complejo" (E3); "La corporación no aprobó otro proveedor" (E4) |
+| H21 | La compra la decide la gerencia, no el responsable de SST | 100 % (2/2) | "El gerente de planta, con aprobación de corporativo" (E4) |
+| H22 | El argumento de compra varía: evitar multas o auditorías (E3) frente a costo, integración y seguridad de la información (E4) | 50 % / 50 % | "Evitar multas de SUNAFIL" (E3); "Que se integre con lo que ya tenemos" (E4) |
+
+### Contraste con los supuestos del Lean UX
+
+> Ajusta la numeración (S1…S6) a la de tu sección de Lean UX Assumptions.
+
+| Supuesto | Resultado | Evidencia |
+|---|---|---|
+| S1. Los trabajadores no reportan porque el proceso formal es lento y engorroso | **Confirmado parcialmente.** La lentitud existe (H2), pero el miedo a represalias y la sensación de que "no sirve" pesan igual (H4, H5) y no estaban contemplados | H2, H4, H5 |
+| S2. Los trabajadores llevan un smartphone con datos y pueden usarlo durante la jornada | **Refutado.** Ambos tienen smartphone, pero ninguno puede usarlo libremente: hay sótanos sin señal y prohibición en planta | H7 |
+| S3. El trabajador quiere saber qué pasó con su reporte | **Confirmado.** Ninguno recibe retroalimentación, y E4 lo identifica como la principal queja de los trabajadores | H3, H18 |
+| S4. El supervisor pierde mucho tiempo consolidando información y evidencias | **Confirmado.** Digitación semanal y de 4 a 5 días para cada auditoría | H10, H15, H16 |
+| S5. El supervisor quiere recibir más reportes | **Matizado.** E4 sí quiere los que hoy no llegan, pero E3 teme la saturación: buscan reportes completos y validados, no solo más volumen | H12, H19 |
+| S6. El responsable de SST es quien decide la compra | **Refutado.** En ambos casos decide la gerencia, con argumentos distintos: multas en un caso y costo e integración en el otro | H21, H22 |
+
+**Implicancias para la solución:**
+1. Reporte anónimo opcional desde el inicio.
+2. Funcionamiento sin conexión y alternativa de dispositivo compartido (tablet en línea o quiosco) donde el celular está prohibido; consumo mínimo de datos.
+3. Captura en menos de un minuto, sin trámites previos.
+4. Notificación de cierre al trabajador.
+5. Bandeja de validación para el supervisor que evite la saturación.
+6. Exportación o integración con los sistemas existentes (Excel o ERP).
+7. Propuesta de valor dirigida a la gerencia: horas ahorradas, expediente de auditoría o SUNAFIL listo en minutos y menor riesgo de multas.
+
 
 ## 2.3. Needfinding
 
