@@ -40,6 +40,7 @@
 | Versión | Fecha | Autor | Descripción de modificación |
 |---|---|---|---|
 | 1.0 | 2026-09-13 | Esquirva León Miguel Juan Diego | Creación del repositorio del informe y de la estructura completa de capítulos según el enunciado del trabajo final. |
+| 1.1 | 2026-10-07 | Villafuerte Tapia Renzo Alonso | Especificación de requisitos del Capítulo III: diecinueve épicas, 128 historias de usuario con criterios de aceptación en Gherkin y columna de plataforma, 34 historias técnicas y Product Backlog priorizado de 162 elementos con sus Story Points. Capítulo V: Sprint Backlogs desglosados en work-items con estimación en horas y área responsable, acuerdo de nivel de servicio del producto como SaaS, y documentación del flujo de trabajo con GitFlow y Conventional Commits. Capítulo IV: arquitectura de información y sistema de navegación verificados contra el código, y diagrama entidad-relación completo contrastado con los modelos de datos. Desarrollo del API REST, del panel web y de la aplicación Android. |
 
 ---
 
