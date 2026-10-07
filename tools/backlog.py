@@ -27,25 +27,26 @@ HITOS = {
 
 ALCANCE = {
     "Sprint 1": "El ciclo de vida del hallazgo",
-    "Sprint 2": "Operación sin conexión, evidencia y experimento A/B",
-    "Sprint 3": "Cuentas, matriz IPERC y control de EPP",
-    "Sprint 4": "Inspecciones, comité de SST y evidencia exportable",
+    "Sprint 2": "Captura en campo, accidentes y experimento A/B",
+    "Sprint 3": "Cuentas, registros obligatorios, capacitación y despliegue",
+    "Sprint 4": "Comité, evidencia, contratistas, notificaciones y seguridad",
 }
 
 ORDEN = ["Sprint 1", "Sprint 2", "Sprint 3", "Sprint 4"]
 
-# Prioridad dentro de cada sprint, en el orden en que se construyo.
-PRIORIDAD = [
-    "US02", "US06", "US07", "US08", "US13", "US43", "US70", "US14", "US16", "US15",
-    "US17", "US18", "US09", "US35", "US50", "US49", "US10", "US11", "US12", "US44",
-    "US45", "US46", "US47", "US48", "US51", "US38", "US39", "US40", "US64", "US01",
-    "US03", "US05", "US04", "US41", "US42", "US19", "US20", "US21", "US22", "US52",
-    "US53", "US54", "US23", "US24", "US25", "US26", "US55", "US27", "US28", "US29",
-    "US56", "US36", "US57", "US30", "US31", "US32", "US33", "US34", "US58", "US59",
-    "US60", "US37", "US61", "US62", "US63", "US65", "US66", "US67", "US68", "US69",
-    "TS02", "TS07", "TS05", "TS06", "TS01", "TS13", "TS03", "TS08", "TS09", "TS10",
-    "TS11", "TS12", "TS04", "TS14", "TS15", "TS16",
-]
+# Prioridad dentro de cada sprint. Los construidos van en el orden en que se levantaron;
+# el resto, por epica.
+PRIORIDAD = (
+    ["US02", "US06", "US07", "US08", "US13", "US43", "US70", "US14", "US16", "US15",
+     "US17", "US18", "US09", "US35", "US50", "US49", "US10", "US11", "US12", "US44",
+     "US45", "US46", "US47", "US48", "US51", "US38", "US39", "US40", "US64", "US01",
+     "US03", "US05", "US04", "US41", "US42", "US19", "US20", "US21", "US22", "US52",
+     "US53", "US54", "US23", "US24", "US25", "US26", "US55", "US27", "US28", "US29",
+     "US56", "US36", "US57", "US30", "US31", "US32", "US33", "US34", "US58", "US59",
+     "US60", "US37", "US61", "US62", "US63", "US65", "US66", "US67", "US68", "US69"]
+    + ["US%d" % n for n in range(71, 129)]
+    + ["TS%02d" % n for n in range(1, 35)]
+)
 
 PUNTOS = {
     "US01": 5, "US02": 3, "US03": 3, "US04": 5, "US05": 2, "US06": 8, "US07": 13,
@@ -154,11 +155,6 @@ def main():
         if estado in grupos:
             grupos[estado].append(ident)
 
-    pendientes = [
-        i for i in sorted(historias, key=lambda x: (x[:2], int(x[2:])))
-        if historias[i]["estado"] == "Propuesta"
-    ]
-
     resumen = [
         "| Sprint | Hito | Semanas | Fechas | Alcance | Elementos | Story Points |",
         "|---|---|---|---|---|---|---|",
@@ -195,37 +191,22 @@ def main():
 """ % (sprint, ALCANCE[sprint], hito, desde, hasta,
        a.strftime("%d/%m/%Y"), b.strftime("%d/%m/%Y"), len(items), puntos, cuerpo))
 
-    cuerpo_pend, puntos_pend = tabla(pendientes, historias)
-    tablas.append("""
-### Backlog pendiente
-
-Elementos especificados y estimados cuya construcción no está comprometida en ninguno de los
-cuatro sprints de este ciclo. No son relleno: cada uno corresponde a una obligación de la Ley
-N° 29783 o de su Reglamento que el producto debe cubrir para reemplazar por completo el
-expediente en papel, y por eso queda escrito y estimado aunque no entre en el alcance.
-
-| Campo | Valor |
-|---|---|
-| Elementos | %d |
-| Story Points | %d |
-
-%s
-""" % (len(pendientes), puntos_pend, cuerpo_pend))
-
     cierre = """
 ### Totales del backlog
 
-| Alcance | Elementos | Story Points |
-|---|---|---|
-| Comprometido en los cuatro sprints | %d | %d |
-| Backlog pendiente | %d | %d |
-| **Backlog completo** | **%d** | **%d** |
+| Sprint | Alcance | Elementos | Story Points |
+|---|---|---|---|
+%s
+| **Total** | | **%d** | **%d** |
 
-Los cuatro sprints cubren el %.0f %% de los Story Points del backlog.
+Los cuatro sprints cubren la totalidad del backlog: no queda ningún elemento sin asignar.
+Lo que no entre en un sprint tendría que salir del alcance del producto, y todo lo
+especificado corresponde a una obligación de la Ley N° 29783 o de su Reglamento.
 
-""" % (total_elementos, total_puntos, len(pendientes), puntos_pend,
-       total_elementos + len(pendientes), total_puntos + puntos_pend,
-       100.0 * total_puntos / (total_puntos + puntos_pend))
+""" % ("\n".join(
+        "| %s | %s | %d | %d |" % (s, ALCANCE[s], len(grupos[s]),
+                                   sum(PUNTOS[i] for i in grupos[s]))
+        for s in ORDEN), total_elementos, total_puntos)
 
     seccion = INTRO + "\n".join(resumen) + "\n" + "".join(tablas) + cierre
 
@@ -237,9 +218,7 @@ Los cuatro sprints cubren el %.0f %% de los Story Points del backlog.
         a, b = fechas(sprint)
         print("%s: %2d elementos, %s a %s" % (sprint, len(grupos[sprint]),
                                               a.strftime("%d/%m"), b.strftime("%d/%m")))
-    print("Pendiente: %d elementos, %d SP" % (len(pendientes), puntos_pend))
-    print("Total: %d elementos, %d SP" % (total_elementos + len(pendientes),
-                                          total_puntos + puntos_pend))
+    print("Total: %d elementos, %d SP" % (total_elementos, total_puntos))
 
 
 if __name__ == "__main__":

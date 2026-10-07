@@ -118,12 +118,10 @@ incorpora mediante Pull Request.
     - [EP19 — Seguridad y privacidad de datos](#ep19--seguridad-y-privacidad-de-datos)
     - [Ampliaciones propuestas sobre épicas existentes](#ampliaciones-propuestas-sobre-épicas-existentes)
     - [Historias técnicas](#historias-técnicas)
-  - [3.3. Product Backlog](#33-product-backlog)
     - [Sprint 1 — El ciclo de vida del hallazgo](#sprint-1--el-ciclo-de-vida-del-hallazgo)
-    - [Sprint 2 — Operación sin conexión, evidencia y experimento A/B](#sprint-2--operación-sin-conexión-evidencia-y-experimento-ab)
-    - [Sprint 3 — Cuentas, matriz IPERC y control de EPP](#sprint-3--cuentas-matriz-iperc-y-control-de-epp)
-    - [Sprint 4 — Inspecciones, comité de SST y evidencia exportable](#sprint-4--inspecciones-comité-de-sst-y-evidencia-exportable)
-    - [Backlog pendiente](#backlog-pendiente)
+    - [Sprint 2 — Captura en campo, accidentes y experimento A/B](#sprint-2--captura-en-campo-accidentes-y-experimento-ab)
+    - [Sprint 3 — Cuentas, registros obligatorios, capacitación y despliegue](#sprint-3--cuentas-registros-obligatorios-capacitación-y-despliegue)
+    - [Sprint 4 — Comité, evidencia, contratistas, notificaciones y seguridad](#sprint-4--comité-evidencia-contratistas-notificaciones-y-seguridad)
     - [Totales del backlog](#totales-del-backlog)
   - [3.4. Impact Mapping](#34-impact-mapping)
 - [Capítulo IV: Product Design](#capítulo-iv-product-design)
@@ -1024,40 +1022,40 @@ Dos columnas ordenan la lectura:
   del operario y vive en el móvil; lo que exige pantalla grande y decisión —configurar el IPERC,
   redactar un acta, administrar usuarios, leer el tablero— es del supervisor y del comité, y vive
   en la web. Ambas plataformas comparten todo lo que un mismo rol necesita en los dos sitios.
-- **Estado** separa tres situaciones. *Sprint 1* marca los quince elementos comprometidos y
-  entregados en el primer sprint: el ciclo de vida completo de un hallazgo. *Sprint 2* marca los
-  setenta y un elementos del segundo sprint, que construyen el resto del sistema de gestión sobre
-  ese ciclo. Los dos juntos son el alcance efectivamente construido y son los que detallan los
-  Sprint Backlogs del Capítulo V. *Propuesta* marca lo que está escrito y estimado pero todavía no
-  se construye. Un backlog contiene siempre más de lo que cabe en un ciclo; declarar por escrito
-  cuál es cuál evita atribuirle al prototipo capacidades que no tiene.
+- **Estado** dice en qué sprint se construye cada elemento. Los cuatro sprints cubren la
+  totalidad del backlog: no queda ninguno sin asignar. *Sprint 1* es el ciclo de vida completo de
+  un hallazgo; *Sprint 2*, la captura completa en campo, el registro de accidentes y el
+  experimento A/B; *Sprint 3*, las cuentas, los registros obligatorios del SGSST, la capacitación
+  y el despliegue; *Sprint 4*, el comité, la evidencia exportable, los contratistas, las
+  notificaciones y la seguridad de los datos. El reparto completo, con fechas y Story Points, está
+  en el Product Backlog de la sección 3.3.
 
 Las historias técnicas (TS) corresponden a trabajo de infraestructura
 sin valor directo para el usuario final pero necesario para sostener el producto.
 
 ### Épicas
 
-| ID | Épica | Descripción | Historias | Alcance |
+| ID | Épica | Descripción | Historias | Sprints |
 |---|---|---|---|---|
-| EP01 | Acceso y cuentas | Registro, autenticación y administración de usuarios y roles. | 8 | Construida (2 en el Sprint 1 y 6 en el Sprint 2) |
-| EP02 | Reporte de actos y condiciones inseguras | Captura del hallazgo en campo, con evidencia y operación sin conexión. | 14 | 13 construidas, 1 propuesta |
-| EP03 | Gestión del hallazgo | Seguimiento desde la recepción hasta el cierre verificado. | 8 | Construida (4 en el Sprint 1 y 4 en el Sprint 2) |
-| EP04 | Matriz IPERC | Identificación de peligros, evaluación de riesgos y controles. | 7 | Construida (7 en el Sprint 2) |
-| EP05 | Control de EPP | Catálogo, entregas, vencimientos y conformidad del trabajador. | 6 | 5 construidas, 1 propuesta |
-| EP06 | Inspecciones periódicas | Programación, ejecución con checklist y cumplimiento. | 7 | 5 construidas, 2 propuestas |
-| EP07 | Comité de SST | Constitución, miembros, actas de reunión y acuerdos. | 10 | 8 construidas, 2 propuestas |
-| EP08 | Métricas y evidencia | Indicadores de gestión y exportación para auditorías. | 8 | 6 construidas, 2 propuestas |
-| EP09 | Experimento A/B | Asignación de variantes y medición de resultados. | 6 | 4 construidas, 2 propuestas |
-| EP10 | Calidad de uso y operación | Atributos transversales: consistencia visual, uso en campo, manejo de errores y respuesta ante fallos de red. | 8 | 6 construidas, 2 propuestas |
-| EP11 | Accidentes e incidentes | Registro e investigación de accidentes de trabajo, incidentes peligrosos y enfermedades ocupacionales, con notificación a la autoridad. | 8 | Propuesta |
-| EP12 | Capacitación e inducción | Registro de inducción, capacitación, entrenamiento y simulacros de emergencia. | 6 | Propuesta |
-| EP13 | Mapa de riesgos y señalización | Representación gráfica de los riesgos por área y control de la señalización obligatoria. | 4 | Propuesta |
-| EP14 | Documentación del SGSST | Política de SST, Reglamento Interno, plan y programa anual, y su control de versiones. | 4 | Propuesta |
-| EP15 | Monitoreo de agentes ocupacionales | Mediciones de agentes físicos, químicos, biológicos, ergonómicos y psicosociales. | 3 | Propuesta |
-| EP16 | Contratistas y terceros | Gestión de empresas contratistas, sus trabajadores y su documentación de seguridad. | 4 | Propuesta |
-| EP17 | Notificaciones y alertas | Avisos automáticos sobre hallazgos críticos, vencimientos y compromisos del comité. | 6 | Propuesta |
-| EP18 | Cuenta y servicio | Alta de empresas, suscripción, respaldo y continuidad del servicio. | 5 | Propuesta |
-| EP19 | Seguridad y privacidad de datos | Protección de datos personales, trazabilidad de accesos y control de sesiones. | 6 | Propuesta |
+| EP01 | Acceso y cuentas | Registro, autenticación y administración de usuarios y roles. | 8 | S1 (2), S3 (6) |
+| EP02 | Reporte de actos y condiciones inseguras | Captura del hallazgo en campo, con evidencia y operación sin conexión. | 14 | S1 (6), S2 (8) |
+| EP03 | Gestión del hallazgo | Seguimiento desde la recepción hasta el cierre verificado. | 8 | S1 (4), S2 (4) |
+| EP04 | Matriz IPERC | Identificación de peligros, evaluación de riesgos y controles. | 7 | S3 (7) |
+| EP05 | Control de EPP | Catálogo, entregas, vencimientos y conformidad del trabajador. | 6 | S3 (6) |
+| EP06 | Inspecciones periódicas | Programación, ejecución con checklist y cumplimiento. | 7 | S3 (7) |
+| EP07 | Comité de SST | Constitución, miembros, actas de reunión y acuerdos. | 10 | S4 (10) |
+| EP08 | Métricas y evidencia | Indicadores de gestión y exportación para auditorías. | 8 | S2 (1), S4 (7) |
+| EP09 | Experimento A/B | Asignación de variantes y medición de resultados. | 6 | S2 (6) |
+| EP10 | Calidad de uso y operación | Atributos transversales: consistencia visual, uso en campo, manejo de errores y respuesta ante fallos de red. | 8 | S2 (2), S4 (6) |
+| EP11 | Accidentes e incidentes | Registro e investigación de accidentes de trabajo, incidentes peligrosos y enfermedades ocupacionales, con notificación a la autoridad. | 8 | S2 (8) |
+| EP12 | Capacitación e inducción | Registro de inducción, capacitación, entrenamiento y simulacros de emergencia. | 6 | S3 (6) |
+| EP13 | Mapa de riesgos y señalización | Representación gráfica de los riesgos por área y control de la señalización obligatoria. | 4 | S3 (4) |
+| EP14 | Documentación del SGSST | Política de SST, Reglamento Interno, plan y programa anual, y su control de versiones. | 4 | S3 (4) |
+| EP15 | Monitoreo de agentes ocupacionales | Mediciones de agentes físicos, químicos, biológicos, ergonómicos y psicosociales. | 3 | S4 (3) |
+| EP16 | Contratistas y terceros | Gestión de empresas contratistas, sus trabajadores y su documentación de seguridad. | 4 | S4 (4) |
+| EP17 | Notificaciones y alertas | Avisos automáticos sobre hallazgos críticos, vencimientos y compromisos del comité. | 6 | S4 (6) |
+| EP18 | Cuenta y servicio | Alta de empresas, suscripción, respaldo y continuidad del servicio. | 5 | S4 (5) |
+| EP19 | Seguridad y privacidad de datos | Protección de datos personales, trazabilidad de accesos y control de sesiones. | 6 | S2 (3), S4 (3) |
 
 Las épicas EP01 a EP10 son las que el equipo construyó en este ciclo. Las épicas EP11 a EP19 cubren las obligaciones de la Ley N° 29783 y su Reglamento que el producto todavía no atiende —registro e investigación de accidentes, capacitación, mapa de riesgos, documentación del sistema de gestión, monitoreo de agentes, contratistas, notificaciones, gestión de la cuenta y protección de datos personales— y quedan especificadas para los siguientes ciclos.
 
@@ -1126,11 +1124,11 @@ Las épicas EP01 a EP10 son las que el equipo construyó en este ciclo. Las épi
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US27 | Programa de inspecciones | **Como** supervisor **quiero** definir qué se inspecciona, cada cuánto y con qué checklist **para** sistematizar el programa anual. | **Escenario: alta de programa**<br>**Cuando** creo un programa con área, frecuencia y checklist<br>**Entonces** queda disponible para generar sus ocurrencias | Web | Sprint 4 | EP06|
-| US28 | Ejecución con checklist | **Como** inspector **quiero** realizar la inspección marcando el checklist desde el celular **para** registrarla en el lugar y no después. | **Escenario: ejecución**<br>**Cuando** marco los ítems y registro los hallazgos<br>**Entonces** la inspección queda como realizada con su fecha y responsable | Android y Web | Sprint 4 | EP06|
-| US29 | Inspecciones vencidas | **Como** responsable de SST **quiero** ver las inspecciones que pasaron su fecha sin realizarse **para** actuar sobre el incumplimiento. | **Escenario: vencida**<br>**Dado** que la fecha programada ya pasó y la inspección sigue pendiente<br>**Entonces** el sistema la marca como vencida | Android y Web | Sprint 4 | EP06|
-| US56 | Programar la siguiente inspección | **Como** supervisor **quiero** generar la siguiente ocurrencia según la frecuencia **para** no calcular fechas a mano. | **Cuando** genero la siguiente<br>**Entonces** el sistema crea la ocurrencia con la fecha que corresponde a la frecuencia del programa | Web | Sprint 4 | EP06|
-| US57 | Cumplimiento por área | **Como** responsable de SST **quiero** ver el cumplimiento desagregado por área **para** actuar sobre la que incumple. | **Cuando** consulto el indicador<br>**Entonces** veo programadas, realizadas y porcentaje por cada área | Web | Sprint 4 | EP06|
+| US27 | Programa de inspecciones | **Como** supervisor **quiero** definir qué se inspecciona, cada cuánto y con qué checklist **para** sistematizar el programa anual. | **Escenario: alta de programa**<br>**Cuando** creo un programa con área, frecuencia y checklist<br>**Entonces** queda disponible para generar sus ocurrencias | Web | Sprint 3 | EP06|
+| US28 | Ejecución con checklist | **Como** inspector **quiero** realizar la inspección marcando el checklist desde el celular **para** registrarla en el lugar y no después. | **Escenario: ejecución**<br>**Cuando** marco los ítems y registro los hallazgos<br>**Entonces** la inspección queda como realizada con su fecha y responsable | Android y Web | Sprint 3 | EP06|
+| US29 | Inspecciones vencidas | **Como** responsable de SST **quiero** ver las inspecciones que pasaron su fecha sin realizarse **para** actuar sobre el incumplimiento. | **Escenario: vencida**<br>**Dado** que la fecha programada ya pasó y la inspección sigue pendiente<br>**Entonces** el sistema la marca como vencida | Android y Web | Sprint 3 | EP06|
+| US56 | Programar la siguiente inspección | **Como** supervisor **quiero** generar la siguiente ocurrencia según la frecuencia **para** no calcular fechas a mano. | **Cuando** genero la siguiente<br>**Entonces** el sistema crea la ocurrencia con la fecha que corresponde a la frecuencia del programa | Web | Sprint 3 | EP06|
+| US57 | Cumplimiento por área | **Como** responsable de SST **quiero** ver el cumplimiento desagregado por área **para** actuar sobre la que incumple. | **Cuando** consulto el indicador<br>**Entonces** veo programadas, realizadas y porcentaje por cada área | Web | Sprint 3 | EP06|
 ### EP07 — Comité de SST
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
@@ -1179,110 +1177,100 @@ registro obligatorio que el producto aún no cubre y el primero del backlog futu
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US71 | Registro de accidente de trabajo | **Como** supervisor de SST **quiero** registrar un accidente con fecha, hora, lugar, trabajadores involucrados y descripción **para** cumplir el registro obligatorio. | **Cuando** registro un accidente<br>**Entonces** queda con su número correlativo, su gravedad y los días de descanso médico asociados | Web | Propuesta | EP11 |
-| US72 | Registro de incidente peligroso | **Como** supervisor **quiero** registrar un incidente peligroso que no causó lesión **para** actuar antes de que se repita con consecuencias. | **Cuando** registro un incidente peligroso<br>**Entonces** se clasifica como tal y entra al mismo ciclo de investigación | Android y Web | Propuesta | EP11 |
-| US73 | Reportar un accidente desde el celular | **Como** operario **quiero** dar aviso de un accidente desde el celular **para** que la ayuda y el registro empiecen de inmediato. | **Cuando** reporto un accidente<br>**Entonces** el supervisor recibe el aviso y el registro queda abierto para completarse | Android | Propuesta | EP11 |
-| US74 | Investigación de causa raíz | **Como** miembro del comité **quiero** documentar la investigación con el método de los cinco porqués **para** llegar a la causa real y no a la aparente. | **Cuando** completo la investigación<br>**Entonces** el accidente queda con sus causas inmediatas, básicas y de gestión, y sus medidas correctivas | Web | Propuesta | EP11 |
-| US75 | Medidas correctivas con responsable y plazo | **Como** supervisor **quiero** que cada medida correctiva tenga responsable y plazo **para** poder hacerles seguimiento. | **Cuando** registro una medida correctiva<br>**Entonces** aparece en el seguimiento con su estado hasta que se cierra | Web | Propuesta | EP11 |
-| US76 | Aviso de accidente mortal dentro del plazo legal | **Como** empresa **quiero** que el sistema me alerte del plazo de notificación de un accidente mortal **para** no incurrir en infracción. | **Dado** que registro un accidente mortal<br>**Entonces** el sistema advierte el plazo de 24 horas para notificar a la autoridad y deja constancia de la fecha de aviso | Web | Propuesta | EP11 |
-| US77 | Indicadores de accidentabilidad | **Como** responsable de SST **quiero** los índices de frecuencia, gravedad y accidentabilidad **para** reportarlos como exige la norma. | **Cuando** consulto las estadísticas del periodo<br>**Entonces** obtengo los tres índices calculados sobre las horas-hombre trabajadas | Android y Web | Propuesta | EP11 |
-| US78 | Registro de enfermedad ocupacional | **Como** responsable de SST **quiero** registrar una enfermedad ocupacional diagnosticada **para** completar el registro que la ley exige. | **Cuando** registro una enfermedad ocupacional<br>**Entonces** queda asociada al puesto y al agente que la origina, sin exponer el diagnóstico a usuarios sin autorización | Web | Propuesta | EP11 |
-
+| US71 | Registro de accidente de trabajo | **Como** supervisor de SST **quiero** registrar un accidente con fecha, hora, lugar, trabajadores involucrados y descripción **para** cumplir el registro obligatorio. | **Cuando** registro un accidente<br>**Entonces** queda con su número correlativo, su gravedad y los días de descanso médico asociados | Web | Sprint 2 | EP11 |
+| US72 | Registro de incidente peligroso | **Como** supervisor **quiero** registrar un incidente peligroso que no causó lesión **para** actuar antes de que se repita con consecuencias. | **Cuando** registro un incidente peligroso<br>**Entonces** se clasifica como tal y entra al mismo ciclo de investigación | Android y Web | Sprint 2 | EP11 |
+| US73 | Reportar un accidente desde el celular | **Como** operario **quiero** dar aviso de un accidente desde el celular **para** que la ayuda y el registro empiecen de inmediato. | **Cuando** reporto un accidente<br>**Entonces** el supervisor recibe el aviso y el registro queda abierto para completarse | Android | Sprint 2 | EP11 |
+| US74 | Investigación de causa raíz | **Como** miembro del comité **quiero** documentar la investigación con el método de los cinco porqués **para** llegar a la causa real y no a la aparente. | **Cuando** completo la investigación<br>**Entonces** el accidente queda con sus causas inmediatas, básicas y de gestión, y sus medidas correctivas | Web | Sprint 2 | EP11 |
+| US75 | Medidas correctivas con responsable y plazo | **Como** supervisor **quiero** que cada medida correctiva tenga responsable y plazo **para** poder hacerles seguimiento. | **Cuando** registro una medida correctiva<br>**Entonces** aparece en el seguimiento con su estado hasta que se cierra | Web | Sprint 2 | EP11 |
+| US76 | Aviso de accidente mortal dentro del plazo legal | **Como** empresa **quiero** que el sistema me alerte del plazo de notificación de un accidente mortal **para** no incurrir en infracción. | **Dado** que registro un accidente mortal<br>**Entonces** el sistema advierte el plazo de 24 horas para notificar a la autoridad y deja constancia de la fecha de aviso | Web | Sprint 2 | EP11 |
+| US77 | Indicadores de accidentabilidad | **Como** responsable de SST **quiero** los índices de frecuencia, gravedad y accidentabilidad **para** reportarlos como exige la norma. | **Cuando** consulto las estadísticas del periodo<br>**Entonces** obtengo los tres índices calculados sobre las horas-hombre trabajadas | Android y Web | Sprint 2 | EP11 |
+| US78 | Registro de enfermedad ocupacional | **Como** responsable de SST **quiero** registrar una enfermedad ocupacional diagnosticada **para** completar el registro que la ley exige. | **Cuando** registro una enfermedad ocupacional<br>**Entonces** queda asociada al puesto y al agente que la origina, sin exponer el diagnóstico a usuarios sin autorización | Web | Sprint 2 | EP11 |
 ### EP12 — Capacitación e inducción
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US79 | Programa anual de capacitación | **Como** responsable de SST **quiero** planificar las capacitaciones del año **para** cumplir las cuatro anuales que exige la ley. | **Cuando** registro el programa<br>**Entonces** cada capacitación queda con su tema, fecha prevista, responsable y público objetivo | Web | Propuesta | EP12 |
-| US80 | Registro de asistencia a capacitación | **Como** capacitador **quiero** registrar la asistencia desde el celular **para** no transcribir una hoja de firmas después. | **Cuando** marco a los asistentes<br>**Entonces** cada trabajador queda con su registro de capacitación y la sesión con su lista | Android | Propuesta | EP12 |
-| US81 | Inducción del personal nuevo | **Como** supervisor **quiero** registrar la inducción de un trabajador que ingresa **para** evidenciar que no empezó a trabajar sin ella. | **Cuando** completo la inducción<br>**Entonces** el trabajador queda habilitado y la fecha se conserva como evidencia | Web | Propuesta | EP12 |
-| US82 | Alerta de capacitación vencida | **Como** responsable de SST **quiero** saber qué trabajadores tienen capacitación vencida **para** reprogramarla antes de una fiscalización. | **Dado** que pasó la vigencia de una capacitación<br>**Entonces** el trabajador aparece en la lista de pendientes | Web | Propuesta | EP12 |
-| US83 | Consultar mis capacitaciones | **Como** trabajador **quiero** ver qué capacitaciones tengo y cuáles me faltan **para** saber si estoy habilitado. | **Cuando** abro mi perfil<br>**Entonces** veo mis capacitaciones con su fecha y vigencia | Android | Propuesta | EP12 |
-| US84 | Registro de simulacros | **Como** responsable de SST **quiero** registrar los simulacros de emergencia con sus resultados **para** cumplir el registro obligatorio. | **Cuando** registro un simulacro<br>**Entonces** queda con su tipo, fecha, participantes, tiempo de evacuación y observaciones | Web | Propuesta | EP12 |
-
+| US79 | Programa anual de capacitación | **Como** responsable de SST **quiero** planificar las capacitaciones del año **para** cumplir las cuatro anuales que exige la ley. | **Cuando** registro el programa<br>**Entonces** cada capacitación queda con su tema, fecha prevista, responsable y público objetivo | Web | Sprint 3 | EP12 |
+| US80 | Registro de asistencia a capacitación | **Como** capacitador **quiero** registrar la asistencia desde el celular **para** no transcribir una hoja de firmas después. | **Cuando** marco a los asistentes<br>**Entonces** cada trabajador queda con su registro de capacitación y la sesión con su lista | Android | Sprint 3 | EP12 |
+| US81 | Inducción del personal nuevo | **Como** supervisor **quiero** registrar la inducción de un trabajador que ingresa **para** evidenciar que no empezó a trabajar sin ella. | **Cuando** completo la inducción<br>**Entonces** el trabajador queda habilitado y la fecha se conserva como evidencia | Web | Sprint 3 | EP12 |
+| US82 | Alerta de capacitación vencida | **Como** responsable de SST **quiero** saber qué trabajadores tienen capacitación vencida **para** reprogramarla antes de una fiscalización. | **Dado** que pasó la vigencia de una capacitación<br>**Entonces** el trabajador aparece en la lista de pendientes | Web | Sprint 3 | EP12 |
+| US83 | Consultar mis capacitaciones | **Como** trabajador **quiero** ver qué capacitaciones tengo y cuáles me faltan **para** saber si estoy habilitado. | **Cuando** abro mi perfil<br>**Entonces** veo mis capacitaciones con su fecha y vigencia | Android | Sprint 3 | EP12 |
+| US84 | Registro de simulacros | **Como** responsable de SST **quiero** registrar los simulacros de emergencia con sus resultados **para** cumplir el registro obligatorio. | **Cuando** registro un simulacro<br>**Entonces** queda con su tipo, fecha, participantes, tiempo de evacuación y observaciones | Web | Sprint 3 | EP12 |
 ### EP13 — Mapa de riesgos y señalización
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US85 | Mapa de riesgos por área | **Como** responsable de SST **quiero** publicar el mapa de riesgos de cada área **para** cumplir la obligación de exhibirlo. | **Cuando** subo el plano y ubico los riesgos<br>**Entonces** el mapa queda disponible para consulta y descarga | Web | Propuesta | EP13 |
-| US86 | Consultar el mapa de riesgos en campo | **Como** operario **quiero** ver el mapa de riesgos de mi área desde el celular **para** conocer los peligros antes de empezar. | **Cuando** abro mi área<br>**Entonces** veo su mapa de riesgos y los peligros señalados | Android | Propuesta | EP13 |
-| US87 | Inventario de señalización | **Como** supervisor **quiero** registrar la señalización instalada y su estado **para** detectar la que falta o está deteriorada. | **Cuando** reviso el inventario<br>**Entonces** veo por área qué señales debería haber, cuáles hay y cuáles están observadas | Web | Propuesta | EP13 |
-| US88 | Ubicar el área por código QR | **Como** operario **quiero** escanear un código en el área **para** reportar sin tener que buscarla en una lista. | **Cuando** escaneo el código del área<br>**Entonces** el formulario de reporte queda precargado con esa área | Android | Propuesta | EP13 |
-
+| US85 | Mapa de riesgos por área | **Como** responsable de SST **quiero** publicar el mapa de riesgos de cada área **para** cumplir la obligación de exhibirlo. | **Cuando** subo el plano y ubico los riesgos<br>**Entonces** el mapa queda disponible para consulta y descarga | Web | Sprint 3 | EP13 |
+| US86 | Consultar el mapa de riesgos en campo | **Como** operario **quiero** ver el mapa de riesgos de mi área desde el celular **para** conocer los peligros antes de empezar. | **Cuando** abro mi área<br>**Entonces** veo su mapa de riesgos y los peligros señalados | Android | Sprint 3 | EP13 |
+| US87 | Inventario de señalización | **Como** supervisor **quiero** registrar la señalización instalada y su estado **para** detectar la que falta o está deteriorada. | **Cuando** reviso el inventario<br>**Entonces** veo por área qué señales debería haber, cuáles hay y cuáles están observadas | Web | Sprint 3 | EP13 |
+| US88 | Ubicar el área por código QR | **Como** operario **quiero** escanear un código en el área **para** reportar sin tener que buscarla en una lista. | **Cuando** escaneo el código del área<br>**Entonces** el formulario de reporte queda precargado con esa área | Android | Sprint 3 | EP13 |
 ### EP14 — Documentación del SGSST
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US89 | Política de SST publicada | **Como** empresa **quiero** publicar la política de SST firmada por la alta dirección **para** exhibirla como exige la ley. | **Cuando** publico la política<br>**Entonces** queda visible para todos los trabajadores con su fecha de aprobación | Android y Web | Propuesta | EP14 |
-| US90 | Reglamento Interno de SST | **Como** responsable de SST **quiero** publicar el RISST y registrar su entrega a cada trabajador **para** evidenciar que lo conocen. | **Cuando** un trabajador confirma la recepción<br>**Entonces** queda registrada la fecha y la versión del reglamento entregada | Android y Web | Propuesta | EP14 |
-| US91 | Plan y programa anual de SST | **Como** responsable de SST **quiero** registrar el plan anual con sus objetivos y actividades **para** hacerle seguimiento durante el año. | **Cuando** consulto el plan<br>**Entonces** veo el avance de cada actividad programada frente a lo ejecutado | Web | Propuesta | EP14 |
-| US92 | Control de versiones de documentos | **Como** auditor interno **quiero** ver el histórico de versiones de cada documento del sistema **para** verificar su evolución. | **Cuando** abro un documento<br>**Entonces** veo su versión vigente y las anteriores con su fecha de vigencia | Web | Propuesta | EP14 |
-
+| US89 | Política de SST publicada | **Como** empresa **quiero** publicar la política de SST firmada por la alta dirección **para** exhibirla como exige la ley. | **Cuando** publico la política<br>**Entonces** queda visible para todos los trabajadores con su fecha de aprobación | Android y Web | Sprint 3 | EP14 |
+| US90 | Reglamento Interno de SST | **Como** responsable de SST **quiero** publicar el RISST y registrar su entrega a cada trabajador **para** evidenciar que lo conocen. | **Cuando** un trabajador confirma la recepción<br>**Entonces** queda registrada la fecha y la versión del reglamento entregada | Android y Web | Sprint 3 | EP14 |
+| US91 | Plan y programa anual de SST | **Como** responsable de SST **quiero** registrar el plan anual con sus objetivos y actividades **para** hacerle seguimiento durante el año. | **Cuando** consulto el plan<br>**Entonces** veo el avance de cada actividad programada frente a lo ejecutado | Web | Sprint 3 | EP14 |
+| US92 | Control de versiones de documentos | **Como** auditor interno **quiero** ver el histórico de versiones de cada documento del sistema **para** verificar su evolución. | **Cuando** abro un documento<br>**Entonces** veo su versión vigente y las anteriores con su fecha de vigencia | Web | Sprint 3 | EP14 |
 ### EP15 — Monitoreo de agentes ocupacionales
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US93 | Registro de monitoreo de agentes | **Como** responsable de SST **quiero** registrar las mediciones de agentes físicos, químicos, biológicos, ergonómicos y psicosociales **para** completar el registro obligatorio. | **Cuando** registro una medición<br>**Entonces** queda con su agente, área, valor medido, límite permisible y si lo excede | Web | Propuesta | EP15 |
-| US94 | Alerta por exceder el límite permisible | **Como** responsable de SST **quiero** que el sistema señale las mediciones fuera de límite **para** priorizar la intervención. | **Dado** que el valor medido supera el límite<br>**Entonces** la medición se destaca y sugiere generar una entrada en la matriz IPERC | Web | Propuesta | EP15 |
-| US95 | Programa de monitoreo | **Como** responsable de SST **quiero** programar los monitoreos periódicos **para** que no se venzan sin aviso. | **Cuando** vence un monitoreo programado<br>**Entonces** aparece como pendiente junto a las inspecciones vencidas | Web | Propuesta | EP15 |
-
+| US93 | Registro de monitoreo de agentes | **Como** responsable de SST **quiero** registrar las mediciones de agentes físicos, químicos, biológicos, ergonómicos y psicosociales **para** completar el registro obligatorio. | **Cuando** registro una medición<br>**Entonces** queda con su agente, área, valor medido, límite permisible y si lo excede | Web | Sprint 4 | EP15 |
+| US94 | Alerta por exceder el límite permisible | **Como** responsable de SST **quiero** que el sistema señale las mediciones fuera de límite **para** priorizar la intervención. | **Dado** que el valor medido supera el límite<br>**Entonces** la medición se destaca y sugiere generar una entrada en la matriz IPERC | Web | Sprint 4 | EP15 |
+| US95 | Programa de monitoreo | **Como** responsable de SST **quiero** programar los monitoreos periódicos **para** que no se venzan sin aviso. | **Cuando** vence un monitoreo programado<br>**Entonces** aparece como pendiente junto a las inspecciones vencidas | Web | Sprint 4 | EP15 |
 ### EP16 — Contratistas y terceros
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US96 | Registro de empresa contratista | **Como** responsable de SST **quiero** registrar a las contratistas que operan en mis instalaciones **para** exigirles el mismo estándar. | **Cuando** registro una contratista<br>**Entonces** queda con su RUC, actividad, vigencia del contrato y responsable de SST | Web | Propuesta | EP16 |
-| US97 | Documentación de seguridad de la contratista | **Como** responsable de SST **quiero** controlar la vigencia de los documentos de cada contratista **para** no permitir el ingreso de quien no cumple. | **Dado** que un documento está vencido<br>**Entonces** la contratista aparece observada y el sistema lo advierte | Web | Propuesta | EP16 |
-| US98 | Trabajadores de contratista reportando | **Como** trabajador de una contratista **quiero** reportar hallazgos con mi propia cuenta **para** que la empresa principal también los vea. | **Cuando** reporto un hallazgo<br>**Entonces** queda asociado a mi contratista y visible para el comité de la empresa principal | Android | Propuesta | EP16 |
-| US99 | Permiso de trabajo de alto riesgo | **Como** supervisor **quiero** emitir y controlar permisos para trabajos de alto riesgo **para** que no se ejecuten sin autorización. | **Cuando** emito un permiso<br>**Entonces** queda con su vigencia, responsables y las condiciones verificadas antes de autorizar | Android y Web | Propuesta | EP16 |
-
+| US96 | Registro de empresa contratista | **Como** responsable de SST **quiero** registrar a las contratistas que operan en mis instalaciones **para** exigirles el mismo estándar. | **Cuando** registro una contratista<br>**Entonces** queda con su RUC, actividad, vigencia del contrato y responsable de SST | Web | Sprint 4 | EP16 |
+| US97 | Documentación de seguridad de la contratista | **Como** responsable de SST **quiero** controlar la vigencia de los documentos de cada contratista **para** no permitir el ingreso de quien no cumple. | **Dado** que un documento está vencido<br>**Entonces** la contratista aparece observada y el sistema lo advierte | Web | Sprint 4 | EP16 |
+| US98 | Trabajadores de contratista reportando | **Como** trabajador de una contratista **quiero** reportar hallazgos con mi propia cuenta **para** que la empresa principal también los vea. | **Cuando** reporto un hallazgo<br>**Entonces** queda asociado a mi contratista y visible para el comité de la empresa principal | Android | Sprint 4 | EP16 |
+| US99 | Permiso de trabajo de alto riesgo | **Como** supervisor **quiero** emitir y controlar permisos para trabajos de alto riesgo **para** que no se ejecuten sin autorización. | **Cuando** emito un permiso<br>**Entonces** queda con su vigencia, responsables y las condiciones verificadas antes de autorizar | Android y Web | Sprint 4 | EP16 |
 ### EP17 — Notificaciones y alertas
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US100 | Aviso de hallazgo crítico sin asignar | **Como** supervisor **quiero** recibir aviso de un hallazgo crítico que lleva horas sin responsable **para** que no se quede esperando en la bandeja. | **Dado** que un hallazgo crítico lleva más de 24 horas abierto<br>**Entonces** el sistema me notifica y registra el envío | Android y Web | Propuesta | EP17 |
-| US101 | Aviso de cierre al reportante | **Como** operario **quiero** enterarme cuando mi hallazgo se cierra **para** saber que sirvió de algo. | **Cuando** se cierra un hallazgo que reporté<br>**Entonces** recibo la notificación con la acción correctiva aplicada | Android | Propuesta | EP17 |
-| US102 | Aviso de asignación | **Como** responsable asignado **quiero** que me avisen cuando me asignan un hallazgo **para** no depender de que alguien me lo diga. | **Cuando** me asignan un hallazgo<br>**Entonces** recibo la notificación con su severidad y plazo | Android y Web | Propuesta | EP17 |
-| US103 | Resumen diario para el comité | **Como** miembro del comité **quiero** un resumen diario de lo abierto y lo vencido **para** empezar el día sabiendo qué priorizar. | **Cuando** llega la hora configurada<br>**Entonces** recibo por correo el resumen de hallazgos abiertos, inspecciones vencidas y acuerdos por vencer | Web | Propuesta | EP17 |
-| US104 | Aviso de acuerdo del comité por vencer | **Como** responsable de un acuerdo **quiero** que me avisen antes del plazo **para** cumplirlo a tiempo. | **Dado** que faltan tres días para el plazo<br>**Entonces** recibo el aviso con el acuerdo y su fecha límite | Android y Web | Propuesta | EP17 |
-| US105 | Preferencias de notificación | **Como** usuario **quiero** elegir qué avisos recibir y por qué canal **para** que el sistema no se vuelva ruido. | **Cuando** cambio mis preferencias<br>**Entonces** solo recibo los avisos que habilité | Android y Web | Propuesta | EP17 |
-
+| US100 | Aviso de hallazgo crítico sin asignar | **Como** supervisor **quiero** recibir aviso de un hallazgo crítico que lleva horas sin responsable **para** que no se quede esperando en la bandeja. | **Dado** que un hallazgo crítico lleva más de 24 horas abierto<br>**Entonces** el sistema me notifica y registra el envío | Android y Web | Sprint 4 | EP17 |
+| US101 | Aviso de cierre al reportante | **Como** operario **quiero** enterarme cuando mi hallazgo se cierra **para** saber que sirvió de algo. | **Cuando** se cierra un hallazgo que reporté<br>**Entonces** recibo la notificación con la acción correctiva aplicada | Android | Sprint 4 | EP17 |
+| US102 | Aviso de asignación | **Como** responsable asignado **quiero** que me avisen cuando me asignan un hallazgo **para** no depender de que alguien me lo diga. | **Cuando** me asignan un hallazgo<br>**Entonces** recibo la notificación con su severidad y plazo | Android y Web | Sprint 4 | EP17 |
+| US103 | Resumen diario para el comité | **Como** miembro del comité **quiero** un resumen diario de lo abierto y lo vencido **para** empezar el día sabiendo qué priorizar. | **Cuando** llega la hora configurada<br>**Entonces** recibo por correo el resumen de hallazgos abiertos, inspecciones vencidas y acuerdos por vencer | Web | Sprint 4 | EP17 |
+| US104 | Aviso de acuerdo del comité por vencer | **Como** responsable de un acuerdo **quiero** que me avisen antes del plazo **para** cumplirlo a tiempo. | **Dado** que faltan tres días para el plazo<br>**Entonces** recibo el aviso con el acuerdo y su fecha límite | Android y Web | Sprint 4 | EP17 |
+| US105 | Preferencias de notificación | **Como** usuario **quiero** elegir qué avisos recibir y por qué canal **para** que el sistema no se vuelva ruido. | **Cuando** cambio mis preferencias<br>**Entonces** solo recibo los avisos que habilité | Android y Web | Sprint 4 | EP17 |
 ### EP18 — Cuenta y servicio
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US106 | Alta de empresa desde la landing | **Como** responsable de SST de una empresa nueva **quiero** registrar mi empresa por mi cuenta **para** empezar a usar el sistema sin depender de una demostración. | **Cuando** completo el registro con el RUC y los datos de la empresa<br>**Entonces** la empresa queda creada y yo como su primer administrador | Web | Propuesta | EP18 |
-| US107 | Datos y configuración de la empresa | **Como** administrador **quiero** editar la razón social, el RUC y el número de trabajadores **para** que el sistema aplique las reglas que me corresponden. | **Cuando** cambio el número de trabajadores a menos de veinte<br>**Entonces** el sistema pasa a admitir supervisor de SST en lugar de comité paritario | Web | Propuesta | EP18 |
-| US108 | Planes y suscripción | **Como** administrador **quiero** conocer y cambiar mi plan **para** ajustar el servicio al tamaño de la empresa. | **Cuando** consulto la suscripción<br>**Entonces** veo el plan vigente, el número de trabajadores cubiertos y la fecha de renovación | Web | Propuesta | EP18 |
-| US109 | Exportación completa de mis datos | **Como** administrador **quiero** poder llevarme toda la información de mi empresa **para** no quedar atado al proveedor. | **Cuando** solicito la exportación completa<br>**Entonces** recibo todos los registros en formato abierto | Web | Propuesta | EP18 |
-| US110 | Respaldo y continuidad | **Como** empresa cliente **quiero** que mis registros estén respaldados **para** no perder la evidencia de años de gestión. | **Cuando** ocurre una falla del servicio<br>**Entonces** la información se restablece desde el último respaldo dentro del tiempo comprometido en el acuerdo de servicio | — | Propuesta | EP18 |
-
+| US106 | Alta de empresa desde la landing | **Como** responsable de SST de una empresa nueva **quiero** registrar mi empresa por mi cuenta **para** empezar a usar el sistema sin depender de una demostración. | **Cuando** completo el registro con el RUC y los datos de la empresa<br>**Entonces** la empresa queda creada y yo como su primer administrador | Web | Sprint 4 | EP18 |
+| US107 | Datos y configuración de la empresa | **Como** administrador **quiero** editar la razón social, el RUC y el número de trabajadores **para** que el sistema aplique las reglas que me corresponden. | **Cuando** cambio el número de trabajadores a menos de veinte<br>**Entonces** el sistema pasa a admitir supervisor de SST en lugar de comité paritario | Web | Sprint 4 | EP18 |
+| US108 | Planes y suscripción | **Como** administrador **quiero** conocer y cambiar mi plan **para** ajustar el servicio al tamaño de la empresa. | **Cuando** consulto la suscripción<br>**Entonces** veo el plan vigente, el número de trabajadores cubiertos y la fecha de renovación | Web | Sprint 4 | EP18 |
+| US109 | Exportación completa de mis datos | **Como** administrador **quiero** poder llevarme toda la información de mi empresa **para** no quedar atado al proveedor. | **Cuando** solicito la exportación completa<br>**Entonces** recibo todos los registros en formato abierto | Web | Sprint 4 | EP18 |
+| US110 | Respaldo y continuidad | **Como** empresa cliente **quiero** que mis registros estén respaldados **para** no perder la evidencia de años de gestión. | **Cuando** ocurre una falla del servicio<br>**Entonces** la información se restablece desde el último respaldo dentro del tiempo comprometido en el acuerdo de servicio | — | Sprint 4 | EP18 |
 ### EP19 — Seguridad y privacidad de datos
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US111 | Consentimiento informado de datos personales | **Como** trabajador **quiero** saber qué datos míos guarda el sistema y para qué **para** dar mi consentimiento con información. | **Cuando** creo mi cuenta<br>**Entonces** se me informa qué datos se tratan, con qué finalidad y por cuánto tiempo, conforme a la Ley N° 29733 | Android y Web | Propuesta | EP19 |
-| US112 | Ubicación opcional y revocable | **Como** trabajador **quiero** poder negar o revocar el permiso de ubicación **para** que no se registre dónde estoy. | **Cuando** niego el permiso<br>**Entonces** el reporte se envía igual, sin coordenadas, y nada se degrada salvo la ubicación | Android y Web | Propuesta | EP19 |
-| US113 | Registro de auditoría de accesos | **Como** responsable de datos personales **quiero** saber quién consultó o exportó información **para** rendir cuentas de su tratamiento. | **Cuando** un usuario exporta evidencia o consulta datos sensibles<br>**Entonces** queda registrado el usuario, la acción y la fecha | Web | Propuesta | EP19 |
-| US114 | Cierre de sesión remoto | **Como** usuario **quiero** cerrar la sesión de un dispositivo que perdí **para** que nadie use mi cuenta. | **Cuando** cierro las sesiones activas<br>**Entonces** los tokens de ese dispositivo dejan de ser válidos | Web | Propuesta | EP19 |
-| US115 | Política de retención de evidencia | **Como** responsable de datos **quiero** que las fotografías se eliminen al vencer el plazo legal de conservación **para** no almacenar datos personales más de lo necesario. | **Dado** que un hallazgo cerrado superó el plazo de retención<br>**Entonces** su fotografía se elimina y el registro documental se conserva | — | Propuesta | EP19 |
-| US116 | Reporte anónimo de actos inseguros | **Como** trabajador **quiero** poder reportar el acto inseguro de un compañero sin dar mi nombre **para** no exponerme a represalias. | **Cuando** elijo reportar de forma anónima<br>**Entonces** el hallazgo se registra sin identificar al reportante, conservando área, tipo y evidencia | Android y Web | Propuesta | EP19 |
-
+| US111 | Consentimiento informado de datos personales | **Como** trabajador **quiero** saber qué datos míos guarda el sistema y para qué **para** dar mi consentimiento con información. | **Cuando** creo mi cuenta<br>**Entonces** se me informa qué datos se tratan, con qué finalidad y por cuánto tiempo, conforme a la Ley N° 29733 | Android y Web | Sprint 2 | EP19 |
+| US112 | Ubicación opcional y revocable | **Como** trabajador **quiero** poder negar o revocar el permiso de ubicación **para** que no se registre dónde estoy. | **Cuando** niego el permiso<br>**Entonces** el reporte se envía igual, sin coordenadas, y nada se degrada salvo la ubicación | Android y Web | Sprint 2 | EP19 |
+| US113 | Registro de auditoría de accesos | **Como** responsable de datos personales **quiero** saber quién consultó o exportó información **para** rendir cuentas de su tratamiento. | **Cuando** un usuario exporta evidencia o consulta datos sensibles<br>**Entonces** queda registrado el usuario, la acción y la fecha | Web | Sprint 4 | EP19 |
+| US114 | Cierre de sesión remoto | **Como** usuario **quiero** cerrar la sesión de un dispositivo que perdí **para** que nadie use mi cuenta. | **Cuando** cierro las sesiones activas<br>**Entonces** los tokens de ese dispositivo dejan de ser válidos | Web | Sprint 4 | EP19 |
+| US115 | Política de retención de evidencia | **Como** responsable de datos **quiero** que las fotografías se eliminen al vencer el plazo legal de conservación **para** no almacenar datos personales más de lo necesario. | **Dado** que un hallazgo cerrado superó el plazo de retención<br>**Entonces** su fotografía se elimina y el registro documental se conserva | — | Sprint 4 | EP19 |
+| US116 | Reporte anónimo de actos inseguros | **Como** trabajador **quiero** poder reportar el acto inseguro de un compañero sin dar mi nombre **para** no exponerme a represalias. | **Cuando** elijo reportar de forma anónima<br>**Entonces** el hallazgo se registra sin identificar al reportante, conservando área, tipo y evidencia | Android y Web | Sprint 2 | EP19 |
 ### Ampliaciones propuestas sobre épicas existentes
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US117 | Reporte por voz | **Como** operario con guantes **quiero** dictar la descripción en lugar de escribirla **para** reportar sin quitarme el equipo. | **Cuando** uso el dictado<br>**Entonces** el texto queda en la descripción y puedo corregirlo antes de enviar | Android | Propuesta | EP02 |
-| US118 | Firma del trabajador en la entrega de EPP | **Como** supervisor **quiero** capturar la firma del trabajador en pantalla **para** que la conformidad tenga el mismo valor que la del papel. | **Cuando** el trabajador firma en pantalla<br>**Entonces** la firma queda adjunta a la entrega y aparece en la exportación | Android | Propuesta | EP05 |
-| US119 | Adjuntar evidencia en inspecciones | **Como** inspector **quiero** adjuntar fotos a los ítems observados del checklist **para** sustentar el hallazgo. | **Cuando** marco un ítem como observado<br>**Entonces** puedo adjuntarle una fotografía que queda en el registro | Android | Propuesta | EP06 |
-| US120 | Generar hallazgo desde una inspección | **Como** inspector **quiero** convertir una observación de la inspección en un hallazgo **para** que entre al ciclo de corrección. | **Cuando** genero el hallazgo desde la observación<br>**Entonces** queda enlazado a la inspección que lo originó | Android y Web | Propuesta | EP06 |
-| US121 | Convocatoria y asistencia del comité | **Como** secretario del comité **quiero** convocar la reunión y registrar la asistencia efectiva **para** sustentar el quórum. | **Cuando** registro quién asistió<br>**Entonces** el quórum se calcula sobre los asistentes reales y no sobre los miembros activos | Web | Propuesta | EP07 |
-| US122 | Elección de representantes de los trabajadores | **Como** empresa **quiero** registrar el proceso de elección de los representantes **para** evidenciar que el comité se constituyó como manda la ley. | **Cuando** registro la elección<br>**Entonces** quedan el acta, los candidatos y los elegidos con su periodo | Web | Propuesta | EP07 |
-| US123 | Exportar el tablero a PDF | **Como** responsable de SST **quiero** exportar el tablero de indicadores a PDF **para** adjuntarlo al informe mensual a la gerencia. | **Cuando** exporto el tablero<br>**Entonces** obtengo un PDF con los indicadores del periodo y la fecha de generación | Web | Propuesta | EP08 |
-| US124 | Comparar periodos | **Como** responsable de SST **quiero** comparar el MTTR y el cumplimiento con el periodo anterior **para** saber si mejoramos. | **Cuando** elijo comparar<br>**Entonces** veo la variación de cada indicador frente al periodo previo | Web | Propuesta | EP08 |
-| US125 | Aviso de datos de demostración | **Como** evaluador **quiero** distinguir los datos de demostración de los reales **para** no interpretar resultados simulados como evidencia. | **Dado** que los datos provienen de la carga de demostración<br>**Entonces** el panel del experimento muestra un aviso visible que lo declara | Web | Propuesta | EP09 |
-| US126 | Intervalo de confianza en los resultados | **Como** analista **quiero** ver el intervalo de confianza de la diferencia entre variantes **para** comunicar la precisión y no solo el promedio. | **Cuando** consulto los resultados<br>**Entonces** veo la diferencia estimada con su intervalo al 95 % y el tamaño de cada grupo | Web | Propuesta | EP09 |
-| US127 | Interfaz accesible para lectores de pantalla | **Como** trabajador con discapacidad visual **quiero** usar la aplicación con el lector de pantalla **para** poder reportar como cualquiera. | **Cuando** navego con TalkBack<br>**Entonces** cada control tiene una descripción comprensible y el orden de lectura sigue el flujo de la tarea | Android y Web | Propuesta | EP10 |
-| US128 | Modo de alto contraste | **Como** trabajador que opera bajo el sol **quiero** un modo de alto contraste **para** leer la pantalla en exteriores. | **Cuando** activo el alto contraste<br>**Entonces** la interfaz aumenta el contraste conservando el significado de los colores de estado | Android y Web | Propuesta | EP10 |
-
+| US117 | Reporte por voz | **Como** operario con guantes **quiero** dictar la descripción en lugar de escribirla **para** reportar sin quitarme el equipo. | **Cuando** uso el dictado<br>**Entonces** el texto queda en la descripción y puedo corregirlo antes de enviar | Android | Sprint 2 | EP02 |
+| US118 | Firma del trabajador en la entrega de EPP | **Como** supervisor **quiero** capturar la firma del trabajador en pantalla **para** que la conformidad tenga el mismo valor que la del papel. | **Cuando** el trabajador firma en pantalla<br>**Entonces** la firma queda adjunta a la entrega y aparece en la exportación | Android | Sprint 3 | EP05 |
+| US119 | Adjuntar evidencia en inspecciones | **Como** inspector **quiero** adjuntar fotos a los ítems observados del checklist **para** sustentar el hallazgo. | **Cuando** marco un ítem como observado<br>**Entonces** puedo adjuntarle una fotografía que queda en el registro | Android | Sprint 3 | EP06 |
+| US120 | Generar hallazgo desde una inspección | **Como** inspector **quiero** convertir una observación de la inspección en un hallazgo **para** que entre al ciclo de corrección. | **Cuando** genero el hallazgo desde la observación<br>**Entonces** queda enlazado a la inspección que lo originó | Android y Web | Sprint 3 | EP06 |
+| US121 | Convocatoria y asistencia del comité | **Como** secretario del comité **quiero** convocar la reunión y registrar la asistencia efectiva **para** sustentar el quórum. | **Cuando** registro quién asistió<br>**Entonces** el quórum se calcula sobre los asistentes reales y no sobre los miembros activos | Web | Sprint 4 | EP07 |
+| US122 | Elección de representantes de los trabajadores | **Como** empresa **quiero** registrar el proceso de elección de los representantes **para** evidenciar que el comité se constituyó como manda la ley. | **Cuando** registro la elección<br>**Entonces** quedan el acta, los candidatos y los elegidos con su periodo | Web | Sprint 4 | EP07 |
+| US123 | Exportar el tablero a PDF | **Como** responsable de SST **quiero** exportar el tablero de indicadores a PDF **para** adjuntarlo al informe mensual a la gerencia. | **Cuando** exporto el tablero<br>**Entonces** obtengo un PDF con los indicadores del periodo y la fecha de generación | Web | Sprint 4 | EP08 |
+| US124 | Comparar periodos | **Como** responsable de SST **quiero** comparar el MTTR y el cumplimiento con el periodo anterior **para** saber si mejoramos. | **Cuando** elijo comparar<br>**Entonces** veo la variación de cada indicador frente al periodo previo | Web | Sprint 4 | EP08 |
+| US125 | Aviso de datos de demostración | **Como** evaluador **quiero** distinguir los datos de demostración de los reales **para** no interpretar resultados simulados como evidencia. | **Dado** que los datos provienen de la carga de demostración<br>**Entonces** el panel del experimento muestra un aviso visible que lo declara | Web | Sprint 2 | EP09 |
+| US126 | Intervalo de confianza en los resultados | **Como** analista **quiero** ver el intervalo de confianza de la diferencia entre variantes **para** comunicar la precisión y no solo el promedio. | **Cuando** consulto los resultados<br>**Entonces** veo la diferencia estimada con su intervalo al 95 % y el tamaño de cada grupo | Web | Sprint 2 | EP09 |
+| US127 | Interfaz accesible para lectores de pantalla | **Como** trabajador con discapacidad visual **quiero** usar la aplicación con el lector de pantalla **para** poder reportar como cualquiera. | **Cuando** navego con TalkBack<br>**Entonces** cada control tiene una descripción comprensible y el orden de lectura sigue el flujo de la tarea | Android y Web | Sprint 4 | EP10 |
+| US128 | Modo de alto contraste | **Como** trabajador que opera bajo el sol **quiero** un modo de alto contraste **para** leer la pantalla en exteriores. | **Cuando** activo el alto contraste<br>**Entonces** la interfaz aumenta el contraste conservando el significado de los colores de estado | Android y Web | Sprint 4 | EP10 |
 ### Historias técnicas
 
 Trabajo de infraestructura sin valor directo para el usuario final, pero necesario para sostener
@@ -1309,26 +1297,24 @@ propuestas y quedan en el backlog.
 | TS14 | APK publicado por el pipeline | **Como** equipo **quiero** que cada construcción publique el APK **para** poder instalarlo y probarlo sin compilar. | **Cuando** el pipeline móvil termina correctamente<br>**Entonces** el APK de depuración queda disponible como artefacto de la ejecución | sst-mobile | Sprint 4 | —|
 | TS15 | Generación de evidencia en Excel | **Como** responsable de SST **quiero** que la evidencia se genere en el formato que la auditoría espera **para** entregarla sin retrabajo. | **Cuando** solicito una exportación<br>**Entonces** el sistema genera un .xlsx con cabecera formateada, anchos ajustados y los datos del registro | sst-api | Sprint 4 | —|
 | TS16 | Informe compilable y con índice verificado | **Como** equipo **quiero** que el informe se arme solo y su índice no se desactualice **para** exportar el PDF sin revisiones manuales. | **Cuando** abro un Pull Request con el índice desfasado<br>**Entonces** el pipeline del informe falla e indica cómo regenerarlo | sst-report | Sprint 4 | —|
-| TS17 | Servicio de notificaciones push | **Como** equipo **quiero** un servicio de notificaciones push integrado **para** que el móvil reciba avisos aunque la aplicación esté cerrada. | **Cuando** el backend emite un aviso dirigido a un usuario<br>**Entonces** el dispositivo registrado lo recibe aunque la aplicación no esté en primer plano | sst-api, sst-mobile | Propuesta | EP17 |
-| TS18 | Tareas programadas en el servidor | **Como** equipo **quiero** un ejecutor de tareas periódicas **para** calcular vencimientos y enviar recordatorios sin intervención manual. | **Cuando** llega la hora programada<br>**Entonces** la tarea se ejecuta, deja registro de su resultado y reintenta si falla | sst-api | Propuesta | EP17 |
-| TS19 | Correo transaccional | **Como** equipo **quiero** un proveedor de correo configurado **para** enviar recuperaciones de contraseña y resúmenes sin depender del cliente. | **Cuando** el sistema necesita enviar un correo<br>**Entonces** sale por el proveedor configurado y el envío queda registrado con su estado | sst-api | Propuesta | EP18 |
-| TS20 | Registro de auditoría | **Como** auditor **quiero** que toda operación que modifica datos quede registrada **para** poder reconstruir quién hizo qué y cuándo. | **Cuando** un usuario crea, modifica o elimina un registro<br>**Entonces** se guarda una entrada con usuario, acción, recurso, valores anteriores y fecha, y esa entrada no puede editarse | sst-api | Propuesta | EP19 |
-| TS21 | Respaldo automático y restauración probada | **Como** empresa cliente **quiero** respaldos automáticos verificados **para** no perder el expediente de SST ante una falla. | **Cuando** se cumple la ventana de respaldo<br>**Entonces** se genera una copia cifrada y, en la prueba periódica, se restaura en un entorno aparte con éxito verificado | sst-api | Propuesta | EP19 |
-| TS22 | Almacenamiento de archivos en servicio de objetos | **Como** equipo **quiero** que las fotos vivan en un servicio de objetos y no en el disco del servidor **para** poder escalar y respaldar la evidencia. | **Cuando** se sube una fotografía<br>**Entonces** queda en el servicio de objetos y el API entrega un enlace temporal firmado | sst-api | Propuesta | EP19 |
-| TS23 | Observabilidad del backend | **Como** responsable de operación **quiero** registros estructurados y trazas **para** diagnosticar un problema sin reproducirlo a ciegas. | **Cuando** una petición falla<br>**Entonces** el registro incluye identificador de correlación, usuario, recurso y tiempo de respuesta | sst-api | Propuesta | EP10 |
-| TS24 | Reporte de errores del cliente | **Como** equipo **quiero** que los errores no controlados de los clientes lleguen a un panel **para** enterarme antes de que el usuario reclame. | **Cuando** ocurre un error no controlado en la web o en el móvil<br>**Entonces** se reporta con versión, plataforma y traza, sin datos personales del reporte | sst-web, sst-mobile | Propuesta | EP10 |
-| TS25 | Limitación de tasa de peticiones | **Como** responsable del servicio **quiero** limitar la tasa por usuario y por IP **para** que un cliente defectuoso no degrade el servicio de los demás. | **Cuando** un origen supera el límite configurado<br>**Entonces** el API responde 429 indicando cuándo reintentar | sst-api | Propuesta | EP19 |
-| TS26 | Pruebas de extremo a extremo de la web | **Como** equipo **quiero** pruebas automatizadas que recorran los flujos críticos en un navegador real **para** detectar regresiones de integración. | **Cuando** se ejecuta el pipeline<br>**Entonces** se recorren los flujos de inicio de sesión, reporte, asignación y cierre, y el fallo de cualquiera bloquea la integración | sst-web | Propuesta | EP10 |
-| TS27 | Pruebas instrumentadas del cliente móvil | **Como** equipo **quiero** pruebas instrumentadas sobre el flujo de reporte y sincronización **para** verificar el comportamiento sin conexión de forma automática. | **Cuando** se ejecuta el pipeline móvil<br>**Entonces** se ejecutan las pruebas instrumentadas en un emulador, incluido el caso sin conexión y su posterior sincronización | sst-mobile | Propuesta | EP10 |
-| TS28 | Despliegue automatizado al entorno de pruebas | **Como** equipo **quiero** que cada integración en develop despliegue sola **para** que el cliente valide sobre la versión vigente. | **Cuando** un Pull Request se integra a develop<br>**Entonces** el pipeline despliega el API y la web al entorno de pruebas y publica la URL en la ejecución | sst-api, sst-web | Propuesta | EP10 |
-| TS29 | Cifrado de datos personales en reposo | **Como** empresa cliente **quiero** que los datos personales estén cifrados en reposo **para** cumplir la Ley 29733 de protección de datos personales. | **Cuando** se almacenan documento de identidad, teléfono o fotografía de una persona<br>**Entonces** quedan cifrados en reposo y solo se descifran para el usuario autorizado | sst-api | Propuesta | EP19 |
-| TS30 | Versionado del API | **Como** equipo de los clientes **quiero** que el API esté versionado **para** que una versión antigua del móvil siga funcionando tras un cambio. | **Cuando** se publica un cambio incompatible<br>**Entonces** convive bajo una nueva versión de ruta y la anterior sigue respondiendo durante el periodo de transición | sst-api | Propuesta | EP19 |
-| TS31 | Resolución de conflictos de sincronización | **Como** equipo de datos **quiero** una regla explícita de resolución de conflictos **para** que dos ediciones simultáneas no se pisen en silencio. | **Cuando** llega una actualización sobre un registro modificado después de la copia local<br>**Entonces** el API rechaza el cambio indicando el conflicto y el cliente muestra ambas versiones | sst-api, sst-mobile | Propuesta | EP02 |
-| TS32 | Accesibilidad verificada en el pipeline | **Como** equipo **quiero** que el pipeline revise contraste y etiquetas accesibles **para** que la accesibilidad no dependa de acordarse. | **Cuando** se ejecuta el pipeline de la web<br>**Entonces** falla si aparecen violaciones de contraste o controles sin nombre accesible | sst-web, sst-mobile | Propuesta | EP10 |
-| TS33 | Textos externalizados para traducción | **Como** empresa con personal quechuahablante **quiero** que los textos estén externalizados **para** poder ofrecer la aplicación en otro idioma sin recompilar la lógica. | **Cuando** se agrega un idioma<br>**Entonces** basta añadir el archivo de textos y la interfaz cambia según la preferencia del usuario | sst-web, sst-mobile | Propuesta | EP18 |
-| TS34 | Entorno reproducible con contenedores | **Como** nuevo integrante del equipo **quiero** levantar todo el entorno con un comando **para** empezar a trabajar el primer día. | **Cuando** ejecuto el comando de composición<br>**Entonces** quedan corriendo el API, la base de datos y la web, con datos de demostración cargados | sst-api, sst-web | Propuesta | EP10 |
-
-## 3.3. Product Backlog
+| TS17 | Servicio de notificaciones push | **Como** equipo **quiero** un servicio de notificaciones push integrado **para** que el móvil reciba avisos aunque la aplicación esté cerrada. | **Cuando** el backend emite un aviso dirigido a un usuario<br>**Entonces** el dispositivo registrado lo recibe aunque la aplicación no esté en primer plano | sst-api, sst-mobile | Sprint 4 | EP17 |
+| TS18 | Tareas programadas en el servidor | **Como** equipo **quiero** un ejecutor de tareas periódicas **para** calcular vencimientos y enviar recordatorios sin intervención manual. | **Cuando** llega la hora programada<br>**Entonces** la tarea se ejecuta, deja registro de su resultado y reintenta si falla | sst-api | Sprint 4 | EP17 |
+| TS19 | Correo transaccional | **Como** equipo **quiero** un proveedor de correo configurado **para** enviar recuperaciones de contraseña y resúmenes sin depender del cliente. | **Cuando** el sistema necesita enviar un correo<br>**Entonces** sale por el proveedor configurado y el envío queda registrado con su estado | sst-api | Sprint 3 | EP18 |
+| TS20 | Registro de auditoría | **Como** auditor **quiero** que toda operación que modifica datos quede registrada **para** poder reconstruir quién hizo qué y cuándo. | **Cuando** un usuario crea, modifica o elimina un registro<br>**Entonces** se guarda una entrada con usuario, acción, recurso, valores anteriores y fecha, y esa entrada no puede editarse | sst-api | Sprint 4 | EP19 |
+| TS21 | Respaldo automático y restauración probada | **Como** empresa cliente **quiero** respaldos automáticos verificados **para** no perder el expediente de SST ante una falla. | **Cuando** se cumple la ventana de respaldo<br>**Entonces** se genera una copia cifrada y, en la prueba periódica, se restaura en un entorno aparte con éxito verificado | sst-api | Sprint 3 | EP19 |
+| TS22 | Almacenamiento de archivos en servicio de objetos | **Como** equipo **quiero** que las fotos vivan en un servicio de objetos y no en el disco del servidor **para** poder escalar y respaldar la evidencia. | **Cuando** se sube una fotografía<br>**Entonces** queda en el servicio de objetos y el API entrega un enlace temporal firmado | sst-api | Sprint 3 | EP19 |
+| TS23 | Observabilidad del backend | **Como** responsable de operación **quiero** registros estructurados y trazas **para** diagnosticar un problema sin reproducirlo a ciegas. | **Cuando** una petición falla<br>**Entonces** el registro incluye identificador de correlación, usuario, recurso y tiempo de respuesta | sst-api | Sprint 3 | EP10 |
+| TS24 | Reporte de errores del cliente | **Como** equipo **quiero** que los errores no controlados de los clientes lleguen a un panel **para** enterarme antes de que el usuario reclame. | **Cuando** ocurre un error no controlado en la web o en el móvil<br>**Entonces** se reporta con versión, plataforma y traza, sin datos personales del reporte | sst-web, sst-mobile | Sprint 3 | EP10 |
+| TS25 | Limitación de tasa de peticiones | **Como** responsable del servicio **quiero** limitar la tasa por usuario y por IP **para** que un cliente defectuoso no degrade el servicio de los demás. | **Cuando** un origen supera el límite configurado<br>**Entonces** el API responde 429 indicando cuándo reintentar | sst-api | Sprint 3 | EP19 |
+| TS26 | Pruebas de extremo a extremo de la web | **Como** equipo **quiero** pruebas automatizadas que recorran los flujos críticos en un navegador real **para** detectar regresiones de integración. | **Cuando** se ejecuta el pipeline<br>**Entonces** se recorren los flujos de inicio de sesión, reporte, asignación y cierre, y el fallo de cualquiera bloquea la integración | sst-web | Sprint 4 | EP10 |
+| TS27 | Pruebas instrumentadas del cliente móvil | **Como** equipo **quiero** pruebas instrumentadas sobre el flujo de reporte y sincronización **para** verificar el comportamiento sin conexión de forma automática. | **Cuando** se ejecuta el pipeline móvil<br>**Entonces** se ejecutan las pruebas instrumentadas en un emulador, incluido el caso sin conexión y su posterior sincronización | sst-mobile | Sprint 4 | EP10 |
+| TS28 | Despliegue automatizado al entorno de pruebas | **Como** equipo **quiero** que cada integración en develop despliegue sola **para** que el cliente valide sobre la versión vigente. | **Cuando** un Pull Request se integra a develop<br>**Entonces** el pipeline despliega el API y la web al entorno de pruebas y publica la URL en la ejecución | sst-api, sst-web | Sprint 3 | EP10 |
+| TS29 | Cifrado de datos personales en reposo | **Como** empresa cliente **quiero** que los datos personales estén cifrados en reposo **para** cumplir la Ley 29733 de protección de datos personales. | **Cuando** se almacenan documento de identidad, teléfono o fotografía de una persona<br>**Entonces** quedan cifrados en reposo y solo se descifran para el usuario autorizado | sst-api | Sprint 4 | EP19 |
+| TS30 | Versionado del API | **Como** equipo de los clientes **quiero** que el API esté versionado **para** que una versión antigua del móvil siga funcionando tras un cambio. | **Cuando** se publica un cambio incompatible<br>**Entonces** convive bajo una nueva versión de ruta y la anterior sigue respondiendo durante el periodo de transición | sst-api | Sprint 3 | EP19 |
+| TS31 | Resolución de conflictos de sincronización | **Como** equipo de datos **quiero** una regla explícita de resolución de conflictos **para** que dos ediciones simultáneas no se pisen en silencio. | **Cuando** llega una actualización sobre un registro modificado después de la copia local<br>**Entonces** el API rechaza el cambio indicando el conflicto y el cliente muestra ambas versiones | sst-api, sst-mobile | Sprint 2 | EP02 |
+| TS32 | Accesibilidad verificada en el pipeline | **Como** equipo **quiero** que el pipeline revise contraste y etiquetas accesibles **para** que la accesibilidad no dependa de acordarse. | **Cuando** se ejecuta el pipeline de la web<br>**Entonces** falla si aparecen violaciones de contraste o controles sin nombre accesible | sst-web, sst-mobile | Sprint 4 | EP10 |
+| TS33 | Textos externalizados para traducción | **Como** empresa con personal quechuahablante **quiero** que los textos estén externalizados **para** poder ofrecer la aplicación en otro idioma sin recompilar la lógica. | **Cuando** se agrega un idioma<br>**Entonces** basta añadir el archivo de textos y la interfaz cambia según la preferencia del usuario | sst-web, sst-mobile | Sprint 4 | EP18 |
+| TS34 | Entorno reproducible con contenedores | **Como** nuevo integrante del equipo **quiero** levantar todo el entorno con un comando **para** empezar a trabajar el primer día. | **Cuando** ejecuto el comando de composición<br>**Entonces** quedan corriendo el API, la base de datos y la web, con datos de demostración cargados | sst-api, sst-web | Sprint 4 | EP10 |## 3.3. Product Backlog
 
 El backlog completo son **162 elementos**: las 128 historias de usuario, agrupadas en diecinueve
 épicas, y las 34 historias técnicas. El orden es de prioridad de negocio, no cronológico: primero
@@ -1354,9 +1340,9 @@ Dos columnas de las tablas que siguen merecen una aclaración:
 | Sprint | Hito | Semanas | Fechas | Alcance | Elementos | Story Points |
 |---|---|---|---|---|---|---|
 | **Sprint 1** | Primer hito | 1 a 4 | 24/08/2026 – 20/09/2026 | El ciclo de vida del hallazgo | 15 | 60 |
-| **Sprint 2** | Segundo hito | 5 a 7 | 21/09/2026 – 11/10/2026 | Operación sin conexión, evidencia y experimento A/B | 21 | 86 |
-| **Sprint 3** | Tercer hito | 8 a 12 | 12/10/2026 – 15/11/2026 | Cuentas, matriz IPERC y control de EPP | 25 | 80 |
-| **Sprint 4** | Cuarto hito | 13 a 15 | 16/11/2026 – 06/12/2026 | Inspecciones, comité de SST y evidencia exportable | 25 | 93 |
+| **Sprint 2** | Segundo hito | 5 a 7 | 21/09/2026 – 11/10/2026 | Captura en campo, accidentes y experimento A/B | 36 | 161 |
+| **Sprint 3** | Tercer hito | 8 a 12 | 12/10/2026 – 15/11/2026 | Cuentas, registros obligatorios, capacitación y despliegue | 55 | 200 |
+| **Sprint 4** | Cuarto hito | 13 a 15 | 16/11/2026 – 06/12/2026 | Comité, evidencia, contratistas, notificaciones y seguridad | 56 | 239 |
 
 ### Sprint 1 — El ciclo de vida del hallazgo
 
@@ -1382,19 +1368,19 @@ Dos columnas de las tablas que siguen merecen una aclaración:
 | 10 | US10 | Geolocalización del hallazgo | EP02 | Android y Web | **Web:** Reportar → paso 2, «Ubicación»<br>**Android:** Pestaña «Reportar» → paso 2, «Ubicación» | 5 |
 | 11 | US11 | Fecha real de ocurrencia | EP02 | Android y Web | **Web:** Reportar → paso 3, «Fecha de ocurrencia»<br>**Android:** Pestaña «Reportar» → paso 3, «Fecha de ocurrencia» | 3 |
 | 12 | US47 | Categorías según el tipo de hallazgo | EP02 | Android y Web | **Web:** Reportar → paso 1, «Tipo de hallazgo»<br>**Android:** Pestaña «Reportar» → paso 1, «Tipo de hallazgo» | 2 |
-| 13 | TS02 | Convenciones de commits | — | Los cuatro | — | 2 |
-| 14 | TS05 | Flujo de ramas GitFlow | — | Los cuatro | — | 3 |
-| 15 | TS01 | Integración continua | — | Los cuatro | — | 5 |
+| 13 | TS01 | Integración continua | — | Los cuatro | — | 5 |
+| 14 | TS02 | Convenciones de commits | — | Los cuatro | — | 2 |
+| 15 | TS05 | Flujo de ramas GitFlow | — | Los cuatro | — | 3 |
 
-### Sprint 2 — Operación sin conexión, evidencia y experimento A/B
+### Sprint 2 — Captura en campo, accidentes y experimento A/B
 
 | Campo | Valor |
 |---|---|
 | Hito | Segundo hito — TRABAJO PARCIAL · Stage Review |
 | Semanas del ciclo | 5 a 7 |
 | Fechas | 21/09/2026 al 11/10/2026 |
-| Elementos | 21 |
-| Story Points | 86 |
+| Elementos | 36 |
+| Story Points | 161 |
 
 | # | ID | Historia | Épica | Plataforma | Dónde encontrarlo | Story Points |
 |---|---|---|---|---|---|---|
@@ -1416,19 +1402,34 @@ Dos columnas de las tablas que siguen merecen una aclaración:
 | 16 | US40 | Resultados del experimento | EP09 | Web | **Web:** Experimento A/B (`/experimento`) | 5 |
 | 17 | US64 | Variante disponible sin conexión | EP09 | Android | **Android:** Pestaña «Reportar»: la variante se conserva sin conexión | 3 |
 | 18 | US69 | Reintento ante fallo de red | EP10 | Android | **Android:** Pestaña «Reportar»: reintento automático al fallar la red | 3 |
-| 19 | TS09 | Proxy de desarrollo | — | sst-web | — | 2 |
-| 20 | TS10 | Renovación transparente del token | — | sst-web, sst-mobile | — | 5 |
-| 21 | TS12 | Idempotencia en la creación de reportes | — | sst-api | — | 5 |
+| 19 | US71 | Registro de accidente de trabajo | EP11 | Web | — | 8 |
+| 20 | US72 | Registro de incidente peligroso | EP11 | Android y Web | — | 5 |
+| 21 | US73 | Reportar un accidente desde el celular | EP11 | Android | — | 5 |
+| 22 | US74 | Investigación de causa raíz | EP11 | Web | — | 8 |
+| 23 | US75 | Medidas correctivas con responsable y plazo | EP11 | Web | — | 5 |
+| 24 | US76 | Aviso de accidente mortal dentro del plazo legal | EP11 | Web | — | 3 |
+| 25 | US77 | Indicadores de accidentabilidad | EP11 | Android y Web | — | 5 |
+| 26 | US78 | Registro de enfermedad ocupacional | EP11 | Web | — | 5 |
+| 27 | US111 | Consentimiento informado de datos personales | EP19 | Android y Web | — | 3 |
+| 28 | US112 | Ubicación opcional y revocable | EP19 | Android y Web | — | 3 |
+| 29 | US116 | Reporte anónimo de actos inseguros | EP19 | Android y Web | — | 5 |
+| 30 | US117 | Reporte por voz | EP02 | Android | — | 8 |
+| 31 | US125 | Aviso de datos de demostración | EP09 | Web | — | 1 |
+| 32 | US126 | Intervalo de confianza en los resultados | EP09 | Web | — | 3 |
+| 33 | TS09 | Proxy de desarrollo | — | sst-web | — | 2 |
+| 34 | TS10 | Renovación transparente del token | — | sst-web, sst-mobile | — | 5 |
+| 35 | TS12 | Idempotencia en la creación de reportes | — | sst-api | — | 5 |
+| 36 | TS31 | Resolución de conflictos de sincronización | EP02 | sst-api, sst-mobile | — | 8 |
 
-### Sprint 3 — Cuentas, matriz IPERC y control de EPP
+### Sprint 3 — Cuentas, registros obligatorios, capacitación y despliegue
 
 | Campo | Valor |
 |---|---|
 | Hito | Tercer hito — AVANCE 2 · Sprint Review |
 | Semanas del ciclo | 8 a 12 |
 | Fechas | 12/10/2026 al 15/11/2026 |
-| Elementos | 25 |
-| Story Points | 80 |
+| Elementos | 55 |
+| Story Points | 200 |
 
 | # | ID | Historia | Épica | Plataforma | Dónde encontrarlo | Story Points |
 |---|---|---|---|---|---|---|
@@ -1450,152 +1451,126 @@ Dos columnas de las tablas que siguen merecen una aclaración:
 | 16 | US25 | Conformidad del trabajador | EP05 | Android y Web | **Web:** Equipos de protección → columna «Conformidad»<br>**Android:** Pestaña «Mis EPP» → «Dar conformidad» | 3 |
 | 17 | US26 | Alerta de EPP vencido | EP05 | Android y Web | **Web:** Equipos de protección → aviso de vencimiento en la entrega<br>**Android:** Pestaña «Mis EPP» → aviso de vencimiento | 2 |
 | 18 | US55 | Control de stock del catálogo | EP05 | Web | **Web:** Equipos de protección → pestaña Catálogo, columna Stock | 2 |
-| 19 | TS07 | Validación local del mensaje de commit | — | Los cuatro | — | 2 |
-| 20 | TS06 | Fin de línea normalizado | — | Los cuatro | — | 2 |
-| 21 | TS13 | Migraciones verificadas en integración | — | sst-api | — | 2 |
-| 22 | TS03 | Documentación viva del API | — | sst-api | — | 2 |
-| 23 | TS08 | Configuración por variables de entorno | — | sst-api | — | 3 |
-| 24 | TS11 | Aislamiento entre empresas | — | sst-api | — | 5 |
-| 25 | TS04 | Datos de demostración | — | sst-api | — | 5 |
+| 19 | US27 | Programa de inspecciones | EP06 | Web | **Web:** Inspecciones (`/inspecciones`) → «Nuevo programa» | 5 |
+| 20 | US28 | Ejecución con checklist | EP06 | Android y Web | **Web:** Inspecciones → «Realizar» con checklist<br>**Android:** Pestaña «Inspecciones» → «Realizar» con checklist | 5 |
+| 21 | US29 | Inspecciones vencidas | EP06 | Android y Web | **Web:** Inspecciones → listado, marca de vencida<br>**Android:** Pestaña «Inspecciones» → marca de vencida | 3 |
+| 22 | US56 | Programar la siguiente inspección | EP06 | Web | **Web:** Inspecciones → «Generar siguiente» | 3 |
+| 23 | US57 | Cumplimiento por área | EP06 | Web | **Web:** Inspecciones → indicadores por área | 3 |
+| 24 | US79 | Programa anual de capacitación | EP12 | Web | — | 5 |
+| 25 | US80 | Registro de asistencia a capacitación | EP12 | Android | — | 5 |
+| 26 | US81 | Inducción del personal nuevo | EP12 | Web | — | 5 |
+| 27 | US82 | Alerta de capacitación vencida | EP12 | Web | — | 3 |
+| 28 | US83 | Consultar mis capacitaciones | EP12 | Android | — | 3 |
+| 29 | US84 | Registro de simulacros | EP12 | Web | — | 3 |
+| 30 | US85 | Mapa de riesgos por área | EP13 | Web | — | 8 |
+| 31 | US86 | Consultar el mapa de riesgos en campo | EP13 | Android | — | 3 |
+| 32 | US87 | Inventario de señalización | EP13 | Web | — | 3 |
+| 33 | US88 | Ubicar el área por código QR | EP13 | Android | — | 5 |
+| 34 | US89 | Política de SST publicada | EP14 | Android y Web | — | 3 |
+| 35 | US90 | Reglamento Interno de SST | EP14 | Android y Web | — | 3 |
+| 36 | US91 | Plan y programa anual de SST | EP14 | Web | — | 5 |
+| 37 | US92 | Control de versiones de documentos | EP14 | Web | — | 5 |
+| 38 | US118 | Firma del trabajador en la entrega de EPP | EP05 | Android | — | 5 |
+| 39 | US119 | Adjuntar evidencia en inspecciones | EP06 | Android | — | 3 |
+| 40 | US120 | Generar hallazgo desde una inspección | EP06 | Android y Web | — | 3 |
+| 41 | TS03 | Documentación viva del API | — | sst-api | — | 2 |
+| 42 | TS04 | Datos de demostración | — | sst-api | — | 5 |
+| 43 | TS06 | Fin de línea normalizado | — | Los cuatro | — | 2 |
+| 44 | TS07 | Validación local del mensaje de commit | — | Los cuatro | — | 2 |
+| 45 | TS08 | Configuración por variables de entorno | — | sst-api | — | 3 |
+| 46 | TS11 | Aislamiento entre empresas | — | sst-api | — | 5 |
+| 47 | TS13 | Migraciones verificadas en integración | — | sst-api | — | 2 |
+| 48 | TS19 | Correo transaccional | EP18 | sst-api | — | 3 |
+| 49 | TS21 | Respaldo automático y restauración probada | EP19 | sst-api | — | 5 |
+| 50 | TS22 | Almacenamiento de archivos en servicio de objetos | EP19 | sst-api | — | 5 |
+| 51 | TS23 | Observabilidad del backend | EP10 | sst-api | — | 3 |
+| 52 | TS24 | Reporte de errores del cliente | EP10 | sst-web, sst-mobile | — | 3 |
+| 53 | TS25 | Limitación de tasa de peticiones | EP19 | sst-api | — | 2 |
+| 54 | TS28 | Despliegue automatizado al entorno de pruebas | EP10 | sst-api, sst-web | — | 5 |
+| 55 | TS30 | Versionado del API | EP19 | sst-api | — | 5 |
 
-### Sprint 4 — Inspecciones, comité de SST y evidencia exportable
+### Sprint 4 — Comité, evidencia, contratistas, notificaciones y seguridad
 
 | Campo | Valor |
 |---|---|
 | Hito | Cuarto hito — TB2 · Release Review |
 | Semanas del ciclo | 13 a 15 |
 | Fechas | 16/11/2026 al 06/12/2026 |
-| Elementos | 25 |
-| Story Points | 93 |
+| Elementos | 56 |
+| Story Points | 239 |
 
 | # | ID | Historia | Épica | Plataforma | Dónde encontrarlo | Story Points |
 |---|---|---|---|---|---|---|
-| 1 | US27 | Programa de inspecciones | EP06 | Web | **Web:** Inspecciones (`/inspecciones`) → «Nuevo programa» | 5 |
-| 2 | US28 | Ejecución con checklist | EP06 | Android y Web | **Web:** Inspecciones → «Realizar» con checklist<br>**Android:** Pestaña «Inspecciones» → «Realizar» con checklist | 5 |
-| 3 | US29 | Inspecciones vencidas | EP06 | Android y Web | **Web:** Inspecciones → listado, marca de vencida<br>**Android:** Pestaña «Inspecciones» → marca de vencida | 3 |
-| 4 | US56 | Programar la siguiente inspección | EP06 | Web | **Web:** Inspecciones → «Generar siguiente» | 3 |
-| 5 | US36 | Tasa de cumplimiento de inspecciones | EP08 | Android y Web | **Web:** Tablero → cumplimiento de inspecciones<br>**Android:** Pestaña «Tablero» → cumplimiento de inspecciones | 5 |
-| 6 | US57 | Cumplimiento por área | EP06 | Web | **Web:** Inspecciones → indicadores por área | 3 |
-| 7 | US30 | Constitución del comité | EP07 | Web | **Web:** Comité de SST (`/comite`) → «Constituir comité» | 3 |
-| 8 | US31 | Miembros y paridad | EP07 | Web | **Web:** Comité de SST → pestaña Miembros | 5 |
-| 9 | US32 | Acta de reunión | EP07 | Web | **Web:** Comité de SST → pestaña Actas → «Nueva acta» | 5 |
-| 10 | US33 | Control de quórum | EP07 | Android y Web | **Web:** Comité de SST → Actas: verificación de quórum<br>**Android:** «Más» → «Comité de SST» → Actas | 3 |
-| 11 | US34 | Acuerdos con responsable y plazo | EP07 | Web | **Web:** Comité de SST → Actas → «Agregar acuerdo» | 3 |
-| 12 | US58 | Advertencia de comité no paritario | EP07 | Web | **Web:** Comité de SST → Miembros: aviso de comité no paritario | 2 |
-| 13 | US59 | Seguimiento del estado de los acuerdos | EP07 | Web | **Web:** Comité de SST → Acuerdos: estado y plazo | 2 |
-| 14 | US60 | Consultar las actas desde el celular | EP07 | Android | **Android:** «Más» → «Comité de SST» → Actas | 3 |
-| 15 | US37 | Exportación de evidencia | EP08 | Web | **Web:** Botón «Exportar» en reportes, IPERC, EPP, inspecciones y comité | 8 |
-| 16 | US61 | MTTR por severidad | EP08 | Android y Web | **Web:** Tablero → MTTR desglosado por severidad<br>**Android:** Pestaña «Tablero» → MTTR por severidad | 3 |
-| 17 | US62 | Exportar cada registro obligatorio | EP08 | Web | **Web:** Botón «Exportar» en cada módulo del panel | 3 |
-| 18 | US63 | Resumen de hallazgos | EP08 | Android y Web | **Web:** Tablero → resumen de hallazgos por estado<br>**Android:** Pestaña «Tablero» → resumen de hallazgos | 3 |
-| 19 | US65 | Identidad visual consistente | EP10 | Android y Web | **Web:** Transversal: misma identidad visual en todo el panel<br>**Android:** Transversal: misma identidad visual en toda la aplicación | 5 |
-| 20 | US66 | Navegación siempre accesible | EP10 | Android y Web | **Web:** Barra lateral fija, visible en todas las pantallas<br>**Android:** Barra inferior fija, visible en todas las pantallas | 2 |
-| 21 | US67 | Uso desde pantallas pequeñas | EP10 | Web | **Web:** Transversal: el panel se adapta a pantallas pequeñas | 5 |
-| 22 | US68 | Errores comprensibles | EP10 | Android y Web | **Web:** Transversal: mensajes de error con la acción a seguir<br>**Android:** Transversal: mensajes de error con la acción a seguir | 3 |
-| 23 | TS14 | APK publicado por el pipeline | — | sst-mobile | — | 3 |
-| 24 | TS15 | Generación de evidencia en Excel | — | sst-api | — | 5 |
-| 25 | TS16 | Informe compilable y con índice verificado | — | sst-report | — | 3 |
-
-### Backlog pendiente
-
-Elementos especificados y estimados cuya construcción no está comprometida en ninguno de los
-cuatro sprints de este ciclo. No son relleno: cada uno corresponde a una obligación de la Ley
-N° 29783 o de su Reglamento que el producto debe cubrir para reemplazar por completo el
-expediente en papel, y por eso queda escrito y estimado aunque no entre en el alcance.
-
-| Campo | Valor |
-|---|---|
-| Elementos | 76 |
-| Story Points | 341 |
-
-| # | ID | Historia | Épica | Plataforma | Dónde encontrarlo | Story Points |
-|---|---|---|---|---|---|---|
-| 1 | TS17 | Servicio de notificaciones push | EP17 | sst-api, sst-mobile | — | 5 |
-| 2 | TS18 | Tareas programadas en el servidor | EP17 | sst-api | — | 5 |
-| 3 | TS19 | Correo transaccional | EP18 | sst-api | — | 3 |
-| 4 | TS20 | Registro de auditoría | EP19 | sst-api | — | 5 |
-| 5 | TS21 | Respaldo automático y restauración probada | EP19 | sst-api | — | 5 |
-| 6 | TS22 | Almacenamiento de archivos en servicio de objetos | EP19 | sst-api | — | 5 |
-| 7 | TS23 | Observabilidad del backend | EP10 | sst-api | — | 3 |
-| 8 | TS24 | Reporte de errores del cliente | EP10 | sst-web, sst-mobile | — | 3 |
-| 9 | TS25 | Limitación de tasa de peticiones | EP19 | sst-api | — | 2 |
-| 10 | TS26 | Pruebas de extremo a extremo de la web | EP10 | sst-web | — | 8 |
-| 11 | TS27 | Pruebas instrumentadas del cliente móvil | EP10 | sst-mobile | — | 8 |
-| 12 | TS28 | Despliegue automatizado al entorno de pruebas | EP10 | sst-api, sst-web | — | 5 |
-| 13 | TS29 | Cifrado de datos personales en reposo | EP19 | sst-api | — | 8 |
-| 14 | TS30 | Versionado del API | EP19 | sst-api | — | 5 |
-| 15 | TS31 | Resolución de conflictos de sincronización | EP02 | sst-api, sst-mobile | — | 8 |
-| 16 | TS32 | Accesibilidad verificada en el pipeline | EP10 | sst-web, sst-mobile | — | 3 |
-| 17 | TS33 | Textos externalizados para traducción | EP18 | sst-web, sst-mobile | — | 5 |
-| 18 | TS34 | Entorno reproducible con contenedores | EP10 | sst-api, sst-web | — | 3 |
-| 19 | US71 | Registro de accidente de trabajo | EP11 | Web | — | 8 |
-| 20 | US72 | Registro de incidente peligroso | EP11 | Android y Web | — | 5 |
-| 21 | US73 | Reportar un accidente desde el celular | EP11 | Android | — | 5 |
-| 22 | US74 | Investigación de causa raíz | EP11 | Web | — | 8 |
-| 23 | US75 | Medidas correctivas con responsable y plazo | EP11 | Web | — | 5 |
-| 24 | US76 | Aviso de accidente mortal dentro del plazo legal | EP11 | Web | — | 3 |
-| 25 | US77 | Indicadores de accidentabilidad | EP11 | Android y Web | — | 5 |
-| 26 | US78 | Registro de enfermedad ocupacional | EP11 | Web | — | 5 |
-| 27 | US79 | Programa anual de capacitación | EP12 | Web | — | 5 |
-| 28 | US80 | Registro de asistencia a capacitación | EP12 | Android | — | 5 |
-| 29 | US81 | Inducción del personal nuevo | EP12 | Web | — | 5 |
-| 30 | US82 | Alerta de capacitación vencida | EP12 | Web | — | 3 |
-| 31 | US83 | Consultar mis capacitaciones | EP12 | Android | — | 3 |
-| 32 | US84 | Registro de simulacros | EP12 | Web | — | 3 |
-| 33 | US85 | Mapa de riesgos por área | EP13 | Web | — | 8 |
-| 34 | US86 | Consultar el mapa de riesgos en campo | EP13 | Android | — | 3 |
-| 35 | US87 | Inventario de señalización | EP13 | Web | — | 3 |
-| 36 | US88 | Ubicar el área por código QR | EP13 | Android | — | 5 |
-| 37 | US89 | Política de SST publicada | EP14 | Android y Web | — | 3 |
-| 38 | US90 | Reglamento Interno de SST | EP14 | Android y Web | — | 3 |
-| 39 | US91 | Plan y programa anual de SST | EP14 | Web | — | 5 |
-| 40 | US92 | Control de versiones de documentos | EP14 | Web | — | 5 |
-| 41 | US93 | Registro de monitoreo de agentes | EP15 | Web | — | 5 |
-| 42 | US94 | Alerta por exceder el límite permisible | EP15 | Web | — | 3 |
-| 43 | US95 | Programa de monitoreo | EP15 | Web | — | 3 |
-| 44 | US96 | Registro de empresa contratista | EP16 | Web | — | 5 |
-| 45 | US97 | Documentación de seguridad de la contratista | EP16 | Web | — | 5 |
-| 46 | US98 | Trabajadores de contratista reportando | EP16 | Android | — | 5 |
-| 47 | US99 | Permiso de trabajo de alto riesgo | EP16 | Android y Web | — | 8 |
-| 48 | US100 | Aviso de hallazgo crítico sin asignar | EP17 | Android y Web | — | 3 |
-| 49 | US101 | Aviso de cierre al reportante | EP17 | Android | — | 2 |
-| 50 | US102 | Aviso de asignación | EP17 | Android y Web | — | 2 |
-| 51 | US103 | Resumen diario para el comité | EP17 | Web | — | 3 |
-| 52 | US104 | Aviso de acuerdo del comité por vencer | EP17 | Android y Web | — | 2 |
-| 53 | US105 | Preferencias de notificación | EP17 | Android y Web | — | 3 |
-| 54 | US106 | Alta de empresa desde la landing | EP18 | Web | — | 8 |
-| 55 | US107 | Datos y configuración de la empresa | EP18 | Web | — | 3 |
-| 56 | US108 | Planes y suscripción | EP18 | Web | — | 5 |
-| 57 | US109 | Exportación completa de mis datos | EP18 | Web | — | 5 |
-| 58 | US110 | Respaldo y continuidad | EP18 | — | — | 5 |
-| 59 | US111 | Consentimiento informado de datos personales | EP19 | Android y Web | — | 3 |
-| 60 | US112 | Ubicación opcional y revocable | EP19 | Android y Web | — | 3 |
-| 61 | US113 | Registro de auditoría de accesos | EP19 | Web | — | 5 |
-| 62 | US114 | Cierre de sesión remoto | EP19 | Web | — | 3 |
-| 63 | US115 | Política de retención de evidencia | EP19 | — | — | 5 |
-| 64 | US116 | Reporte anónimo de actos inseguros | EP19 | Android y Web | — | 5 |
-| 65 | US117 | Reporte por voz | EP02 | Android | — | 8 |
-| 66 | US118 | Firma del trabajador en la entrega de EPP | EP05 | Android | — | 5 |
-| 67 | US119 | Adjuntar evidencia en inspecciones | EP06 | Android | — | 3 |
-| 68 | US120 | Generar hallazgo desde una inspección | EP06 | Android y Web | — | 3 |
-| 69 | US121 | Convocatoria y asistencia del comité | EP07 | Web | — | 3 |
-| 70 | US122 | Elección de representantes de los trabajadores | EP07 | Web | — | 5 |
-| 71 | US123 | Exportar el tablero a PDF | EP08 | Web | — | 5 |
-| 72 | US124 | Comparar periodos | EP08 | Web | — | 3 |
-| 73 | US125 | Aviso de datos de demostración | EP09 | Web | — | 1 |
-| 74 | US126 | Intervalo de confianza en los resultados | EP09 | Web | — | 3 |
-| 75 | US127 | Interfaz accesible para lectores de pantalla | EP10 | Android y Web | — | 8 |
-| 76 | US128 | Modo de alto contraste | EP10 | Android y Web | — | 3 |
+| 1 | US36 | Tasa de cumplimiento de inspecciones | EP08 | Android y Web | **Web:** Tablero → cumplimiento de inspecciones<br>**Android:** Pestaña «Tablero» → cumplimiento de inspecciones | 5 |
+| 2 | US30 | Constitución del comité | EP07 | Web | **Web:** Comité de SST (`/comite`) → «Constituir comité» | 3 |
+| 3 | US31 | Miembros y paridad | EP07 | Web | **Web:** Comité de SST → pestaña Miembros | 5 |
+| 4 | US32 | Acta de reunión | EP07 | Web | **Web:** Comité de SST → pestaña Actas → «Nueva acta» | 5 |
+| 5 | US33 | Control de quórum | EP07 | Android y Web | **Web:** Comité de SST → Actas: verificación de quórum<br>**Android:** «Más» → «Comité de SST» → Actas | 3 |
+| 6 | US34 | Acuerdos con responsable y plazo | EP07 | Web | **Web:** Comité de SST → Actas → «Agregar acuerdo» | 3 |
+| 7 | US58 | Advertencia de comité no paritario | EP07 | Web | **Web:** Comité de SST → Miembros: aviso de comité no paritario | 2 |
+| 8 | US59 | Seguimiento del estado de los acuerdos | EP07 | Web | **Web:** Comité de SST → Acuerdos: estado y plazo | 2 |
+| 9 | US60 | Consultar las actas desde el celular | EP07 | Android | **Android:** «Más» → «Comité de SST» → Actas | 3 |
+| 10 | US37 | Exportación de evidencia | EP08 | Web | **Web:** Botón «Exportar» en reportes, IPERC, EPP, inspecciones y comité | 8 |
+| 11 | US61 | MTTR por severidad | EP08 | Android y Web | **Web:** Tablero → MTTR desglosado por severidad<br>**Android:** Pestaña «Tablero» → MTTR por severidad | 3 |
+| 12 | US62 | Exportar cada registro obligatorio | EP08 | Web | **Web:** Botón «Exportar» en cada módulo del panel | 3 |
+| 13 | US63 | Resumen de hallazgos | EP08 | Android y Web | **Web:** Tablero → resumen de hallazgos por estado<br>**Android:** Pestaña «Tablero» → resumen de hallazgos | 3 |
+| 14 | US65 | Identidad visual consistente | EP10 | Android y Web | **Web:** Transversal: misma identidad visual en todo el panel<br>**Android:** Transversal: misma identidad visual en toda la aplicación | 5 |
+| 15 | US66 | Navegación siempre accesible | EP10 | Android y Web | **Web:** Barra lateral fija, visible en todas las pantallas<br>**Android:** Barra inferior fija, visible en todas las pantallas | 2 |
+| 16 | US67 | Uso desde pantallas pequeñas | EP10 | Web | **Web:** Transversal: el panel se adapta a pantallas pequeñas | 5 |
+| 17 | US68 | Errores comprensibles | EP10 | Android y Web | **Web:** Transversal: mensajes de error con la acción a seguir<br>**Android:** Transversal: mensajes de error con la acción a seguir | 3 |
+| 18 | US93 | Registro de monitoreo de agentes | EP15 | Web | — | 5 |
+| 19 | US94 | Alerta por exceder el límite permisible | EP15 | Web | — | 3 |
+| 20 | US95 | Programa de monitoreo | EP15 | Web | — | 3 |
+| 21 | US96 | Registro de empresa contratista | EP16 | Web | — | 5 |
+| 22 | US97 | Documentación de seguridad de la contratista | EP16 | Web | — | 5 |
+| 23 | US98 | Trabajadores de contratista reportando | EP16 | Android | — | 5 |
+| 24 | US99 | Permiso de trabajo de alto riesgo | EP16 | Android y Web | — | 8 |
+| 25 | US100 | Aviso de hallazgo crítico sin asignar | EP17 | Android y Web | — | 3 |
+| 26 | US101 | Aviso de cierre al reportante | EP17 | Android | — | 2 |
+| 27 | US102 | Aviso de asignación | EP17 | Android y Web | — | 2 |
+| 28 | US103 | Resumen diario para el comité | EP17 | Web | — | 3 |
+| 29 | US104 | Aviso de acuerdo del comité por vencer | EP17 | Android y Web | — | 2 |
+| 30 | US105 | Preferencias de notificación | EP17 | Android y Web | — | 3 |
+| 31 | US106 | Alta de empresa desde la landing | EP18 | Web | — | 8 |
+| 32 | US107 | Datos y configuración de la empresa | EP18 | Web | — | 3 |
+| 33 | US108 | Planes y suscripción | EP18 | Web | — | 5 |
+| 34 | US109 | Exportación completa de mis datos | EP18 | Web | — | 5 |
+| 35 | US110 | Respaldo y continuidad | EP18 | — | — | 5 |
+| 36 | US113 | Registro de auditoría de accesos | EP19 | Web | — | 5 |
+| 37 | US114 | Cierre de sesión remoto | EP19 | Web | — | 3 |
+| 38 | US115 | Política de retención de evidencia | EP19 | — | — | 5 |
+| 39 | US121 | Convocatoria y asistencia del comité | EP07 | Web | — | 3 |
+| 40 | US122 | Elección de representantes de los trabajadores | EP07 | Web | — | 5 |
+| 41 | US123 | Exportar el tablero a PDF | EP08 | Web | — | 5 |
+| 42 | US124 | Comparar periodos | EP08 | Web | — | 3 |
+| 43 | US127 | Interfaz accesible para lectores de pantalla | EP10 | Android y Web | — | 8 |
+| 44 | US128 | Modo de alto contraste | EP10 | Android y Web | — | 3 |
+| 45 | TS14 | APK publicado por el pipeline | — | sst-mobile | — | 3 |
+| 46 | TS15 | Generación de evidencia en Excel | — | sst-api | — | 5 |
+| 47 | TS16 | Informe compilable y con índice verificado | — | sst-report | — | 3 |
+| 48 | TS17 | Servicio de notificaciones push | EP17 | sst-api, sst-mobile | — | 5 |
+| 49 | TS18 | Tareas programadas en el servidor | EP17 | sst-api | — | 5 |
+| 50 | TS20 | Registro de auditoría | EP19 | sst-api | — | 5 |
+| 51 | TS26 | Pruebas de extremo a extremo de la web | EP10 | sst-web | — | 8 |
+| 52 | TS27 | Pruebas instrumentadas del cliente móvil | EP10 | sst-mobile | — | 8 |
+| 53 | TS29 | Cifrado de datos personales en reposo | EP19 | sst-api | — | 8 |
+| 54 | TS32 | Accesibilidad verificada en el pipeline | EP10 | sst-web, sst-mobile | — | 3 |
+| 55 | TS33 | Textos externalizados para traducción | EP18 | sst-web, sst-mobile | — | 5 |
+| 56 | TS34 | Entorno reproducible con contenedores | EP10 | sst-api, sst-web | — | 3 |
 
 ### Totales del backlog
 
-| Alcance | Elementos | Story Points |
-|---|---|---|
-| Comprometido en los cuatro sprints | 86 | 319 |
-| Backlog pendiente | 76 | 341 |
-| **Backlog completo** | **162** | **660** |
+| Sprint | Alcance | Elementos | Story Points |
+|---|---|---|---|
+| Sprint 1 | El ciclo de vida del hallazgo | 15 | 60 |
+| Sprint 2 | Captura en campo, accidentes y experimento A/B | 36 | 161 |
+| Sprint 3 | Cuentas, registros obligatorios, capacitación y despliegue | 55 | 200 |
+| Sprint 4 | Comité, evidencia, contratistas, notificaciones y seguridad | 56 | 239 |
+| **Total** | | **162** | **660** |
 
-Los cuatro sprints cubren el 48 % de los Story Points del backlog.
+Los cuatro sprints cubren la totalidad del backlog: no queda ningún elemento sin asignar.
+Lo que no entre en un sprint tendría que salir del alcance del producto, y todo lo
+especificado corresponde a una obligación de la Ley N° 29783 o de su Reglamento.
 
 ## 3.4. Impact Mapping
 
@@ -1926,7 +1901,7 @@ Estructura prevista de arriba hacia abajo, con la intención de cada bloque:
 
 | Restricción | Razón |
 |---|---|
-| Solo se anuncian capacidades implementadas | Ninguna historia marcada *Propuesta* en el Capítulo III puede aparecer en la página: publicitar lo que no existe es la forma más rápida de perder al primer cliente |
+| Solo se anuncian capacidades ya construidas | Ninguna historia cuyo sprint todavía no haya cerrado puede aparecer en la página: publicitar lo que no existe es la forma más rápida de perder al primer cliente |
 | Sin precios publicados en los planes | El precio depende del número de trabajadores y del acompañamiento; una cifra inventada es peor que ninguna |
 | Sin formulario que no envíe a ningún servidor | Un formulario que no llega a nadie es una promesa falsa; mientras no haya backend de contacto, se usa una vía de contacto directa |
 | La cifra del MTPE solo se publica con su fuente | Mismo criterio que el Capítulo I: antes que un número sin respaldo, ninguno |
