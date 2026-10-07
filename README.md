@@ -119,6 +119,12 @@ incorpora mediante Pull Request.
     - [Ampliaciones propuestas sobre épicas existentes](#ampliaciones-propuestas-sobre-épicas-existentes)
     - [Historias técnicas](#historias-técnicas)
   - [3.3. Product Backlog](#33-product-backlog)
+    - [Sprint 1 — El ciclo de vida del hallazgo](#sprint-1--el-ciclo-de-vida-del-hallazgo)
+    - [Sprint 2 — Operación sin conexión, evidencia y experimento A/B](#sprint-2--operación-sin-conexión-evidencia-y-experimento-ab)
+    - [Sprint 3 — Cuentas, matriz IPERC y control de EPP](#sprint-3--cuentas-matriz-iperc-y-control-de-epp)
+    - [Sprint 4 — Inspecciones, comité de SST y evidencia exportable](#sprint-4--inspecciones-comité-de-sst-y-evidencia-exportable)
+    - [Backlog pendiente](#backlog-pendiente)
+    - [Totales del backlog](#totales-del-backlog)
   - [3.4. Impact Mapping](#34-impact-mapping)
 - [Capítulo IV: Product Design](#capítulo-iv-product-design)
   - [4.1. Style Guidelines](#41-style-guidelines)
@@ -1059,13 +1065,13 @@ Las épicas EP01 a EP10 son las que el equipo construyó en este ciclo. Las épi
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US01 | Registro de trabajador | **Como** trabajador **quiero** crear mi cuenta indicando el RUC de mi empresa **para** empezar a reportar sin depender de que alguien me la cree. | **Escenario: registro exitoso**<br>**Dado** que ingreso al formulario de registro<br>**Cuando** completo mis datos y el RUC de una empresa registrada<br>**Entonces** el sistema crea mi cuenta con rol operario y me deja dentro de la aplicación<br><br>**Escenario: RUC inexistente**<br>**Dado** que ingreso un RUC no registrado<br>**Cuando** envío el formulario<br>**Entonces** el sistema me indica que debo solicitar el RUC a mi supervisor y no crea la cuenta | Ambas | Sprint 2 | EP01|
+| US01 | Registro de trabajador | **Como** trabajador **quiero** crear mi cuenta indicando el RUC de mi empresa **para** empezar a reportar sin depender de que alguien me la cree. | **Escenario: registro exitoso**<br>**Dado** que ingreso al formulario de registro<br>**Cuando** completo mis datos y el RUC de una empresa registrada<br>**Entonces** el sistema crea mi cuenta con rol operario y me deja dentro de la aplicación<br><br>**Escenario: RUC inexistente**<br>**Dado** que ingreso un RUC no registrado<br>**Cuando** envío el formulario<br>**Entonces** el sistema me indica que debo solicitar el RUC a mi supervisor y no crea la cuenta | Ambas | Sprint 3 | EP01|
 | US02 | Inicio de sesión | **Como** usuario **quiero** iniciar sesión con usuario y contraseña **para** acceder a la información de mi empresa. | **Escenario: credenciales válidas**<br>**Dado** que tengo una cuenta activa<br>**Cuando** ingreso mis credenciales correctas<br>**Entonces** el sistema me autentica y me lleva a la pantalla inicial de mi rol<br><br>**Escenario: credenciales inválidas**<br>**Cuando** ingreso credenciales incorrectas<br>**Entonces** el sistema muestra un mensaje de error sin revelar si el usuario existe | Ambas | Sprint 1 | EP01|
-| US03 | Sesión persistente en campo | **Como** operario **quiero** permanecer autenticado varios días **para** no tener que iniciar sesión cuando estoy en una zona sin señal. | **Escenario: renovación automática**<br>**Dado** que mi token de acceso expiró<br>**Cuando** la aplicación realiza una petición<br>**Entonces** el sistema renueva el token automáticamente y la petición se completa sin pedirme la contraseña | Ambas | Sprint 2 | EP01|
-| US04 | Administración de usuarios | **Como** supervisor de SST **quiero** crear usuarios y asignarles rol **para** incorporar al equipo de seguridad con los permisos correctos. | **Escenario: alta de supervisor**<br>**Dado** que tengo rol de supervisor<br>**Cuando** creo un usuario con rol supervisor<br>**Entonces** el usuario queda creado en mi empresa con ese rol<br><br>**Escenario: operario sin permiso**<br>**Dado** que tengo rol operario<br>**Cuando** intento listar los usuarios<br>**Entonces** el sistema deniega el acceso | Web | Sprint 2 | EP01|
-| US05 | Gestión de áreas | **Como** supervisor **quiero** registrar las áreas o frentes de trabajo **para** clasificar los hallazgos por ubicación organizativa. | **Escenario: alta de área**<br>**Cuando** registro un área con nombre y descripción<br>**Entonces** queda disponible para clasificar reportes, inspecciones y entradas IPERC | Web | Sprint 2 | EP01|
-| US41 | Cambio de rol de un usuario | **Como** supervisor **quiero** cambiar el rol de un usuario existente **para** incorporarlo al comité sin crearle una cuenta nueva. | **Cuando** cambio el rol desde la pantalla de usuarios<br>**Entonces** el usuario pasa a tener los permisos de ese rol en web y en móvil | Web | Sprint 2 | EP01|
-| US42 | Cierre de sesión | **Como** usuario **quiero** cerrar sesión **para** que nadie use mi cuenta en un equipo compartido. | **Cuando** cierro sesión<br>**Entonces** el sistema descarta mis credenciales y me devuelve a la pantalla de acceso | Ambas | Sprint 2 | EP01|
+| US03 | Sesión persistente en campo | **Como** operario **quiero** permanecer autenticado varios días **para** no tener que iniciar sesión cuando estoy en una zona sin señal. | **Escenario: renovación automática**<br>**Dado** que mi token de acceso expiró<br>**Cuando** la aplicación realiza una petición<br>**Entonces** el sistema renueva el token automáticamente y la petición se completa sin pedirme la contraseña | Ambas | Sprint 3 | EP01|
+| US04 | Administración de usuarios | **Como** supervisor de SST **quiero** crear usuarios y asignarles rol **para** incorporar al equipo de seguridad con los permisos correctos. | **Escenario: alta de supervisor**<br>**Dado** que tengo rol de supervisor<br>**Cuando** creo un usuario con rol supervisor<br>**Entonces** el usuario queda creado en mi empresa con ese rol<br><br>**Escenario: operario sin permiso**<br>**Dado** que tengo rol operario<br>**Cuando** intento listar los usuarios<br>**Entonces** el sistema deniega el acceso | Web | Sprint 3 | EP01|
+| US05 | Gestión de áreas | **Como** supervisor **quiero** registrar las áreas o frentes de trabajo **para** clasificar los hallazgos por ubicación organizativa. | **Escenario: alta de área**<br>**Cuando** registro un área con nombre y descripción<br>**Entonces** queda disponible para clasificar reportes, inspecciones y entradas IPERC | Web | Sprint 3 | EP01|
+| US41 | Cambio de rol de un usuario | **Como** supervisor **quiero** cambiar el rol de un usuario existente **para** incorporarlo al comité sin crearle una cuenta nueva. | **Cuando** cambio el rol desde la pantalla de usuarios<br>**Entonces** el usuario pasa a tener los permisos de ese rol en web y en móvil | Web | Sprint 3 | EP01|
+| US42 | Cierre de sesión | **Como** usuario **quiero** cerrar sesión **para** que nadie use mi cuenta en un equipo compartido. | **Cuando** cierro sesión<br>**Entonces** el sistema descarta mis credenciales y me devuelve a la pantalla de acceso | Ambas | Sprint 3 | EP01|
 | US43 | Menú según mi rol | **Como** operario **quiero** ver solo las opciones que me corresponden **para** no perderme entre funciones que no puedo usar. | **Dado** que tengo rol operario<br>**Entonces** el menú muestra únicamente reportar, mis reportes, mis EPP y las consultas, y no las opciones de gestión | Ambas | Sprint 1 | EP01|
 ### EP02 — Reporte de actos y condiciones inseguras
 
@@ -1100,53 +1106,53 @@ Las épicas EP01 a EP10 son las que el equipo construyó en este ciclo. Las épi
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US19 | Consulta de la matriz en campo | **Como** operario **quiero** consultar los peligros y controles de mi puesto desde el celular **para** saber cómo trabajar seguro. | **Escenario: consulta**<br>**Cuando** abro la matriz IPERC<br>**Entonces** veo los peligros con su nivel de riesgo y los controles existentes | Ambas | Sprint 2 | EP04|
-| US20 | Registro de peligros | **Como** supervisor **quiero** agregar y editar entradas de la matriz **para** mantenerla actualizada. | **Escenario: cálculo del nivel**<br>**Cuando** registro una entrada con probabilidad y consecuencia<br>**Entonces** el sistema calcula el puntaje y el nivel de riesgo resultante | Web | Sprint 2 | EP04|
-| US21 | Versionado de la matriz | **Como** responsable de SST **quiero** que la matriz se versione **para** mostrar su histórico ante una auditoría. | **Escenario: nueva versión**<br>**Cuando** creo una nueva matriz<br>**Entonces** el sistema le asigna el número de versión siguiente y conserva la anterior | Web | Sprint 2 | EP04|
-| US22 | Trazabilidad con el hallazgo de origen | **Como** miembro del comité **quiero** saber qué entradas de la matriz nacieron de un hallazgo real **para** demostrar que la matriz se alimenta del campo. | **Escenario: origen**<br>**Cuando** una entrada proviene de un reporte<br>**Entonces** el sistema muestra el número de ese reporte y permite abrirlo | Ambas | Sprint 2 | EP04|
-| US52 | Consultar versiones anteriores de la matriz | **Como** auditor interno **quiero** consultar versiones anteriores de la IPERC **para** verificar cómo evolucionaron los controles. | **Cuando** elijo una versión en el selector<br>**Entonces** la tabla muestra las entradas de esa versión y advierte que es histórica | Web | Sprint 2 | EP04|
-| US53 | Publicar una nueva versión de la matriz | **Como** responsable de SST **quiero** crear una versión nueva y ponerla vigente **para** actualizar la matriz sin borrar la anterior. | **Cuando** pongo vigente una versión<br>**Entonces** la anterior pasa a histórica y solo queda una vigente<br><br>**Escenario: versión histórica**<br>**Dado** que consulto una versión histórica<br>**Entonces** el sistema no permite editarla | Web | Sprint 2 | EP04|
-| US54 | Retirar un peligro de la matriz | **Como** responsable de SST **quiero** quitar una entrada que ya no aplica **para** que la matriz refleje la operación actual. | **Cuando** quito una entrada de la versión vigente<br>**Entonces** desaparece de la matriz y las versiones históricas la conservan | Web | Sprint 2 | EP04|
+| US19 | Consulta de la matriz en campo | **Como** operario **quiero** consultar los peligros y controles de mi puesto desde el celular **para** saber cómo trabajar seguro. | **Escenario: consulta**<br>**Cuando** abro la matriz IPERC<br>**Entonces** veo los peligros con su nivel de riesgo y los controles existentes | Ambas | Sprint 3 | EP04|
+| US20 | Registro de peligros | **Como** supervisor **quiero** agregar y editar entradas de la matriz **para** mantenerla actualizada. | **Escenario: cálculo del nivel**<br>**Cuando** registro una entrada con probabilidad y consecuencia<br>**Entonces** el sistema calcula el puntaje y el nivel de riesgo resultante | Web | Sprint 3 | EP04|
+| US21 | Versionado de la matriz | **Como** responsable de SST **quiero** que la matriz se versione **para** mostrar su histórico ante una auditoría. | **Escenario: nueva versión**<br>**Cuando** creo una nueva matriz<br>**Entonces** el sistema le asigna el número de versión siguiente y conserva la anterior | Web | Sprint 3 | EP04|
+| US22 | Trazabilidad con el hallazgo de origen | **Como** miembro del comité **quiero** saber qué entradas de la matriz nacieron de un hallazgo real **para** demostrar que la matriz se alimenta del campo. | **Escenario: origen**<br>**Cuando** una entrada proviene de un reporte<br>**Entonces** el sistema muestra el número de ese reporte y permite abrirlo | Ambas | Sprint 3 | EP04|
+| US52 | Consultar versiones anteriores de la matriz | **Como** auditor interno **quiero** consultar versiones anteriores de la IPERC **para** verificar cómo evolucionaron los controles. | **Cuando** elijo una versión en el selector<br>**Entonces** la tabla muestra las entradas de esa versión y advierte que es histórica | Web | Sprint 3 | EP04|
+| US53 | Publicar una nueva versión de la matriz | **Como** responsable de SST **quiero** crear una versión nueva y ponerla vigente **para** actualizar la matriz sin borrar la anterior. | **Cuando** pongo vigente una versión<br>**Entonces** la anterior pasa a histórica y solo queda una vigente<br><br>**Escenario: versión histórica**<br>**Dado** que consulto una versión histórica<br>**Entonces** el sistema no permite editarla | Web | Sprint 3 | EP04|
+| US54 | Retirar un peligro de la matriz | **Como** responsable de SST **quiero** quitar una entrada que ya no aplica **para** que la matriz refleje la operación actual. | **Cuando** quito una entrada de la versión vigente<br>**Entonces** desaparece de la matriz y las versiones históricas la conservan | Web | Sprint 3 | EP04|
 ### EP05 — Control de EPP
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US23 | Catálogo de EPP | **Como** supervisor **quiero** registrar los EPP con su vida útil **para** controlar reposiciones. | **Escenario: alta de EPP**<br>**Cuando** registro un EPP con su vida útil en días<br>**Entonces** queda disponible para registrar entregas | Web | Sprint 2 | EP05|
-| US24 | Registro de entrega | **Como** supervisor **quiero** registrar la entrega de un EPP a un trabajador **para** cumplir el registro obligatorio de la ley. | **Escenario: vencimiento automático**<br>**Cuando** registro una entrega<br>**Entonces** el sistema calcula la fecha de vencimiento a partir de la vida útil del EPP | Web | Sprint 2 | EP05|
-| US25 | Conformidad del trabajador | **Como** operario **quiero** dar conformidad de la entrega desde mi celular **para** que quede constancia sin firmar papeles. | **Escenario: conformidad**<br>**Dado** que soy el trabajador de la entrega<br>**Cuando** doy conformidad<br>**Entonces** la entrega queda marcada como conforme con la fecha | Ambas | Sprint 2 | EP05|
-| US26 | Alerta de EPP vencido | **Como** supervisor **quiero** identificar los EPP vencidos **para** reponerlos antes de que generen un riesgo. | **Escenario: marca de vencido**<br>**Cuando** la fecha de vencimiento es anterior a hoy<br>**Entonces** la entrega se muestra destacada como vencida | Ambas | Sprint 2 | EP05|
-| US55 | Control de stock del catálogo | **Como** supervisor **quiero** ver el stock y la vida útil de cada EPP **para** anticipar reposiciones. | **Cuando** abro el catálogo<br>**Entonces** veo por cada EPP su vida útil, su stock y cuántas entregas acumula | Web | Sprint 2 | EP05|
+| US23 | Catálogo de EPP | **Como** supervisor **quiero** registrar los EPP con su vida útil **para** controlar reposiciones. | **Escenario: alta de EPP**<br>**Cuando** registro un EPP con su vida útil en días<br>**Entonces** queda disponible para registrar entregas | Web | Sprint 3 | EP05|
+| US24 | Registro de entrega | **Como** supervisor **quiero** registrar la entrega de un EPP a un trabajador **para** cumplir el registro obligatorio de la ley. | **Escenario: vencimiento automático**<br>**Cuando** registro una entrega<br>**Entonces** el sistema calcula la fecha de vencimiento a partir de la vida útil del EPP | Web | Sprint 3 | EP05|
+| US25 | Conformidad del trabajador | **Como** operario **quiero** dar conformidad de la entrega desde mi celular **para** que quede constancia sin firmar papeles. | **Escenario: conformidad**<br>**Dado** que soy el trabajador de la entrega<br>**Cuando** doy conformidad<br>**Entonces** la entrega queda marcada como conforme con la fecha | Ambas | Sprint 3 | EP05|
+| US26 | Alerta de EPP vencido | **Como** supervisor **quiero** identificar los EPP vencidos **para** reponerlos antes de que generen un riesgo. | **Escenario: marca de vencido**<br>**Cuando** la fecha de vencimiento es anterior a hoy<br>**Entonces** la entrega se muestra destacada como vencida | Ambas | Sprint 3 | EP05|
+| US55 | Control de stock del catálogo | **Como** supervisor **quiero** ver el stock y la vida útil de cada EPP **para** anticipar reposiciones. | **Cuando** abro el catálogo<br>**Entonces** veo por cada EPP su vida útil, su stock y cuántas entregas acumula | Web | Sprint 3 | EP05|
 ### EP06 — Inspecciones periódicas
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US27 | Programa de inspecciones | **Como** supervisor **quiero** definir qué se inspecciona, cada cuánto y con qué checklist **para** sistematizar el programa anual. | **Escenario: alta de programa**<br>**Cuando** creo un programa con área, frecuencia y checklist<br>**Entonces** queda disponible para generar sus ocurrencias | Web | Sprint 2 | EP06|
-| US28 | Ejecución con checklist | **Como** inspector **quiero** realizar la inspección marcando el checklist desde el celular **para** registrarla en el lugar y no después. | **Escenario: ejecución**<br>**Cuando** marco los ítems y registro los hallazgos<br>**Entonces** la inspección queda como realizada con su fecha y responsable | Ambas | Sprint 2 | EP06|
-| US29 | Inspecciones vencidas | **Como** responsable de SST **quiero** ver las inspecciones que pasaron su fecha sin realizarse **para** actuar sobre el incumplimiento. | **Escenario: vencida**<br>**Dado** que la fecha programada ya pasó y la inspección sigue pendiente<br>**Entonces** el sistema la marca como vencida | Ambas | Sprint 2 | EP06|
-| US56 | Programar la siguiente inspección | **Como** supervisor **quiero** generar la siguiente ocurrencia según la frecuencia **para** no calcular fechas a mano. | **Cuando** genero la siguiente<br>**Entonces** el sistema crea la ocurrencia con la fecha que corresponde a la frecuencia del programa | Web | Sprint 2 | EP06|
-| US57 | Cumplimiento por área | **Como** responsable de SST **quiero** ver el cumplimiento desagregado por área **para** actuar sobre la que incumple. | **Cuando** consulto el indicador<br>**Entonces** veo programadas, realizadas y porcentaje por cada área | Web | Sprint 2 | EP06|
+| US27 | Programa de inspecciones | **Como** supervisor **quiero** definir qué se inspecciona, cada cuánto y con qué checklist **para** sistematizar el programa anual. | **Escenario: alta de programa**<br>**Cuando** creo un programa con área, frecuencia y checklist<br>**Entonces** queda disponible para generar sus ocurrencias | Web | Sprint 4 | EP06|
+| US28 | Ejecución con checklist | **Como** inspector **quiero** realizar la inspección marcando el checklist desde el celular **para** registrarla en el lugar y no después. | **Escenario: ejecución**<br>**Cuando** marco los ítems y registro los hallazgos<br>**Entonces** la inspección queda como realizada con su fecha y responsable | Ambas | Sprint 4 | EP06|
+| US29 | Inspecciones vencidas | **Como** responsable de SST **quiero** ver las inspecciones que pasaron su fecha sin realizarse **para** actuar sobre el incumplimiento. | **Escenario: vencida**<br>**Dado** que la fecha programada ya pasó y la inspección sigue pendiente<br>**Entonces** el sistema la marca como vencida | Ambas | Sprint 4 | EP06|
+| US56 | Programar la siguiente inspección | **Como** supervisor **quiero** generar la siguiente ocurrencia según la frecuencia **para** no calcular fechas a mano. | **Cuando** genero la siguiente<br>**Entonces** el sistema crea la ocurrencia con la fecha que corresponde a la frecuencia del programa | Web | Sprint 4 | EP06|
+| US57 | Cumplimiento por área | **Como** responsable de SST **quiero** ver el cumplimiento desagregado por área **para** actuar sobre la que incumple. | **Cuando** consulto el indicador<br>**Entonces** veo programadas, realizadas y porcentaje por cada área | Web | Sprint 4 | EP06|
 ### EP07 — Comité de SST
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US30 | Constitución del comité | **Como** responsable de SST **quiero** registrar el comité y su periodo **para** documentar su vigencia. | **Escenario: modo supervisor**<br>**Dado** que la empresa tiene menos de 20 trabajadores<br>**Cuando** registro el comité<br>**Entonces** el sistema lo marca como modo supervisor, conforme admite la ley | Web | Sprint 2 | EP07|
-| US31 | Miembros y paridad | **Como** responsable de SST **quiero** registrar los miembros con su cargo y representación **para** verificar que el comité sea paritario. | **Escenario: verificación de paridad**<br>**Cuando** el número de representantes del empleador difiere del de los trabajadores<br>**Entonces** el sistema advierte que el comité no es paritario | Web | Sprint 2 | EP07|
-| US32 | Acta de reunión | **Como** secretario del comité **quiero** registrar el acta con agenda, asistentes y desarrollo **para** cumplir con el registro obligatorio. | **Escenario: numeración correlativa**<br>**Cuando** registro una nueva acta<br>**Entonces** el sistema le asigna el número consecutivo siguiente, sin aceptarlo del cliente | Web | Sprint 2 | EP07|
-| US33 | Control de quórum | **Como** miembro del comité **quiero** saber si la reunión alcanzó quórum **para** conocer la validez del acta. | **Escenario: sin quórum**<br>**Dado** que asistieron menos de la mitad más uno de los titulares<br>**Entonces** el acta se muestra marcada como sin quórum | Ambas | Sprint 2 | EP07|
-| US34 | Acuerdos con responsable y plazo | **Como** presidente del comité **quiero** registrar los acuerdos con responsable y plazo **para** hacerles seguimiento. | **Escenario: seguimiento**<br>**Cuando** actualizo el estado de un acuerdo a cumplido<br>**Entonces** el indicador de cumplimiento de acuerdos se recalcula | Web | Sprint 2 | EP07|
-| US58 | Advertencia de comité no paritario | **Como** responsable de SST **quiero** que el sistema me advierta si el comité no es paritario **para** corregirlo antes de una fiscalización. | **Dado** que los representantes del empleador y de los trabajadores no son iguales en número<br>**Entonces** la pantalla muestra una advertencia explicando qué exige la ley | Web | Sprint 2 | EP07|
-| US59 | Seguimiento del estado de los acuerdos | **Como** presidente del comité **quiero** actualizar el estado de cada acuerdo **para** reflejar su avance real. | **Cuando** cambio el estado de un acuerdo<br>**Entonces** el indicador de cumplimiento del comité se recalcula | Web | Sprint 2 | EP07|
-| US60 | Consultar las actas desde el celular | **Como** trabajador **quiero** leer las actas y acuerdos del comité desde mi celular **para** enterarme de lo que se decidió. | **Cuando** abro la sección del comité<br>**Entonces** veo las actas con su fecha, quórum y acuerdos | Móvil | Sprint 2 | EP07|
+| US30 | Constitución del comité | **Como** responsable de SST **quiero** registrar el comité y su periodo **para** documentar su vigencia. | **Escenario: modo supervisor**<br>**Dado** que la empresa tiene menos de 20 trabajadores<br>**Cuando** registro el comité<br>**Entonces** el sistema lo marca como modo supervisor, conforme admite la ley | Web | Sprint 4 | EP07|
+| US31 | Miembros y paridad | **Como** responsable de SST **quiero** registrar los miembros con su cargo y representación **para** verificar que el comité sea paritario. | **Escenario: verificación de paridad**<br>**Cuando** el número de representantes del empleador difiere del de los trabajadores<br>**Entonces** el sistema advierte que el comité no es paritario | Web | Sprint 4 | EP07|
+| US32 | Acta de reunión | **Como** secretario del comité **quiero** registrar el acta con agenda, asistentes y desarrollo **para** cumplir con el registro obligatorio. | **Escenario: numeración correlativa**<br>**Cuando** registro una nueva acta<br>**Entonces** el sistema le asigna el número consecutivo siguiente, sin aceptarlo del cliente | Web | Sprint 4 | EP07|
+| US33 | Control de quórum | **Como** miembro del comité **quiero** saber si la reunión alcanzó quórum **para** conocer la validez del acta. | **Escenario: sin quórum**<br>**Dado** que asistieron menos de la mitad más uno de los titulares<br>**Entonces** el acta se muestra marcada como sin quórum | Ambas | Sprint 4 | EP07|
+| US34 | Acuerdos con responsable y plazo | **Como** presidente del comité **quiero** registrar los acuerdos con responsable y plazo **para** hacerles seguimiento. | **Escenario: seguimiento**<br>**Cuando** actualizo el estado de un acuerdo a cumplido<br>**Entonces** el indicador de cumplimiento de acuerdos se recalcula | Web | Sprint 4 | EP07|
+| US58 | Advertencia de comité no paritario | **Como** responsable de SST **quiero** que el sistema me advierta si el comité no es paritario **para** corregirlo antes de una fiscalización. | **Dado** que los representantes del empleador y de los trabajadores no son iguales en número<br>**Entonces** la pantalla muestra una advertencia explicando qué exige la ley | Web | Sprint 4 | EP07|
+| US59 | Seguimiento del estado de los acuerdos | **Como** presidente del comité **quiero** actualizar el estado de cada acuerdo **para** reflejar su avance real. | **Cuando** cambio el estado de un acuerdo<br>**Entonces** el indicador de cumplimiento del comité se recalcula | Web | Sprint 4 | EP07|
+| US60 | Consultar las actas desde el celular | **Como** trabajador **quiero** leer las actas y acuerdos del comité desde mi celular **para** enterarme de lo que se decidió. | **Cuando** abro la sección del comité<br>**Entonces** veo las actas con su fecha, quórum y acuerdos | Móvil | Sprint 4 | EP07|
 ### EP08 — Métricas y evidencia
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
 | US35 | Indicador MTTR | **Como** responsable de SST **quiero** conocer el tiempo promedio entre el reporte y el cierre **para** evaluar la capacidad de respuesta. | **Escenario: cálculo**<br>**Cuando** consulto el tablero<br>**Entonces** veo el MTTR del periodo, total y desagregado por severidad | Ambas | Sprint 2 | EP08|
-| US36 | Tasa de cumplimiento de inspecciones | **Como** responsable de SST **quiero** conocer qué proporción de inspecciones programadas se realizó **para** detectar áreas que incumplen. | **Escenario: desagregación**<br>**Cuando** consulto el indicador<br>**Entonces** veo el total y el detalle por área | Ambas | Sprint 2 | EP08|
-| US37 | Exportación de evidencia | **Como** responsable de SST **quiero** exportar a Excel los registros obligatorios **para** preparar el expediente de una inspección de SUNAFIL. | **Escenario: exportación**<br>**Cuando** exporto el registro de actos y condiciones inseguras<br>**Entonces** obtengo un archivo .xlsx con los campos del registro y su trazabilidad<br><br>**Escenario: permiso**<br>**Dado** que tengo rol operario<br>**Cuando** intento exportar<br>**Entonces** el sistema deniega la operación | Web | Sprint 2 | EP08|
-| US61 | MTTR por severidad | **Como** responsable de SST **quiero** ver el MTTR desagregado por severidad **para** distinguir si los críticos se atienden rápido. | **Cuando** consulto el tablero<br>**Entonces** veo el MTTR total y una fila por severidad con su promedio y cantidad de cerrados | Ambas | Sprint 2 | EP08|
-| US62 | Exportar cada registro obligatorio | **Como** responsable de SST **quiero** exportar por separado reportes, IPERC, EPP, inspecciones y actas **para** armar el expediente por tipo de registro. | **Cuando** exporto cualquiera de los cinco<br>**Entonces** obtengo un archivo .xlsx con la cabecera y los datos de ese registro | Web | Sprint 2 | EP08|
-| US63 | Resumen de hallazgos | **Como** responsable de SST **quiero** un resumen por estado, tipo, severidad y área **para** ver la distribución del riesgo de un vistazo. | **Cuando** consulto el resumen<br>**Entonces** obtengo los conteos por cada dimensión y el total de críticos sin atender | Ambas | Sprint 2 | EP08|
+| US36 | Tasa de cumplimiento de inspecciones | **Como** responsable de SST **quiero** conocer qué proporción de inspecciones programadas se realizó **para** detectar áreas que incumplen. | **Escenario: desagregación**<br>**Cuando** consulto el indicador<br>**Entonces** veo el total y el detalle por área | Ambas | Sprint 4 | EP08|
+| US37 | Exportación de evidencia | **Como** responsable de SST **quiero** exportar a Excel los registros obligatorios **para** preparar el expediente de una inspección de SUNAFIL. | **Escenario: exportación**<br>**Cuando** exporto el registro de actos y condiciones inseguras<br>**Entonces** obtengo un archivo .xlsx con los campos del registro y su trazabilidad<br><br>**Escenario: permiso**<br>**Dado** que tengo rol operario<br>**Cuando** intento exportar<br>**Entonces** el sistema deniega la operación | Web | Sprint 4 | EP08|
+| US61 | MTTR por severidad | **Como** responsable de SST **quiero** ver el MTTR desagregado por severidad **para** distinguir si los críticos se atienden rápido. | **Cuando** consulto el tablero<br>**Entonces** veo el MTTR total y una fila por severidad con su promedio y cantidad de cerrados | Ambas | Sprint 4 | EP08|
+| US62 | Exportar cada registro obligatorio | **Como** responsable de SST **quiero** exportar por separado reportes, IPERC, EPP, inspecciones y actas **para** armar el expediente por tipo de registro. | **Cuando** exporto cualquiera de los cinco<br>**Entonces** obtengo un archivo .xlsx con la cabecera y los datos de ese registro | Web | Sprint 4 | EP08|
+| US63 | Resumen de hallazgos | **Como** responsable de SST **quiero** un resumen por estado, tipo, severidad y área **para** ver la distribución del riesgo de un vistazo. | **Cuando** consulto el resumen<br>**Entonces** obtengo los conteos por cada dimensión y el total de críticos sin atender | Ambas | Sprint 4 | EP08|
 ### EP09 — Experimento A/B
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
@@ -1159,10 +1165,10 @@ Las épicas EP01 a EP10 son las que el equipo construyó en este ciclo. Las épi
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US65 | Identidad visual consistente | **Como** usuario **quiero** una interfaz sobria y uniforme **para** confiar en que es un sistema de gestión formal y no un prototipo. | **Cuando** navego entre pantallas<br>**Entonces** encuentro la misma paleta, tipografía y tratamiento de estados en todas | Ambas | Sprint 2 | EP10|
-| US66 | Navegación siempre accesible | **Como** supervisor **quiero** que el menú permanezca visible al desplazarme **para** cambiar de sección sin volver arriba. | **Cuando** bajo por una tabla larga<br>**Entonces** la navegación sigue en pantalla | Ambas | Sprint 2 | EP10|
-| US67 | Uso desde pantallas pequeñas | **Como** supervisor en obra **quiero** usar el panel desde una pantalla angosta **para** no depender de la laptop. | **Cuando** reduzco el ancho de la ventana<br>**Entonces** la navegación pasa a barra superior y las tablas se desplazan sin romper el diseño | Web | Sprint 2 | EP10|
-| US68 | Errores comprensibles | **Como** usuario **quiero** entender qué salió mal **para** poder corregirlo yo mismo. | **Cuando** el servidor rechaza una operación<br>**Entonces** la pantalla muestra el motivo en lenguaje claro, indicando el campo cuando corresponde | Ambas | Sprint 2 | EP10|
+| US65 | Identidad visual consistente | **Como** usuario **quiero** una interfaz sobria y uniforme **para** confiar en que es un sistema de gestión formal y no un prototipo. | **Cuando** navego entre pantallas<br>**Entonces** encuentro la misma paleta, tipografía y tratamiento de estados en todas | Ambas | Sprint 4 | EP10|
+| US66 | Navegación siempre accesible | **Como** supervisor **quiero** que el menú permanezca visible al desplazarme **para** cambiar de sección sin volver arriba. | **Cuando** bajo por una tabla larga<br>**Entonces** la navegación sigue en pantalla | Ambas | Sprint 4 | EP10|
+| US67 | Uso desde pantallas pequeñas | **Como** supervisor en obra **quiero** usar el panel desde una pantalla angosta **para** no depender de la laptop. | **Cuando** reduzco el ancho de la ventana<br>**Entonces** la navegación pasa a barra superior y las tablas se desplazan sin romper el diseño | Web | Sprint 4 | EP10|
+| US68 | Errores comprensibles | **Como** usuario **quiero** entender qué salió mal **para** poder corregirlo yo mismo. | **Cuando** el servidor rechaza una operación<br>**Entonces** la pantalla muestra el motivo en lenguaje claro, indicando el campo cuando corresponde | Ambas | Sprint 4 | EP10|
 | US69 | Reintento ante fallo de red | **Como** operario **quiero** reintentar una consulta que falló **para** no tener que reiniciar la aplicación. | **Dado** que una pantalla no pudo cargar<br>**Entonces** muestra el motivo y un botón para reintentar | Móvil | Sprint 2 | EP10|
 | US70 | Sesión que no expira en campo | **Como** operario **quiero** seguir trabajando sin volver a iniciar sesión **para** no quedarme fuera en una zona sin señal. | **Cuando** mi token de acceso caduca<br>**Entonces** el sistema lo renueva automáticamente y la operación continúa | Ambas | Sprint 2 | EP10|
 ### EP11 — Accidentes e incidentes
@@ -1289,20 +1295,20 @@ propuestas y quedan en el backlog.
 |---|---|---|---|---|---|---|
 | TS01 | Integración continua | **Como** equipo de desarrollo **quiero** que cada Pull Request ejecute pruebas y análisis estático **para** no integrar código roto. | **Escenario: PR con pruebas fallidas**<br>**Cuando** abro un PR cuyas pruebas fallan<br>**Entonces** el pipeline marca el PR en rojo y bloquea la integración | Los cuatro | Sprint 1 | —|
 | TS02 | Convenciones de commits | **Como** equipo **quiero** que los mensajes de commit sigan Conventional Commits **para** mantener un historial legible y auditable. | **Escenario: mensaje inválido**<br>**Cuando** intento commitear con un mensaje fuera del formato<br>**Entonces** el hook local lo rechaza y el workflow de CI también | Los cuatro | Sprint 1 | —|
-| TS03 | Documentación viva del API | **Como** desarrollador de los clientes **quiero** una especificación OpenAPI generada del código **para** que el contrato no se desactualice. | **Escenario: documentación**<br>**Cuando** accedo a la ruta de documentación<br>**Entonces** obtengo la especificación de todos los endpoints vigentes | sst-api | Sprint 2 | —|
-| TS04 | Datos de demostración | **Como** equipo **quiero** un comando que genere datos realistas **para** poder demostrar y probar el sistema. | **Escenario: carga**<br>**Cuando** ejecuto el comando de carga<br>**Entonces** el sistema queda con empresa, usuarios, reportes, IPERC, EPP, inspecciones y actas de ejemplo, claramente identificados como datos de demostración | sst-api | Sprint 2 | —|
+| TS03 | Documentación viva del API | **Como** desarrollador de los clientes **quiero** una especificación OpenAPI generada del código **para** que el contrato no se desactualice. | **Escenario: documentación**<br>**Cuando** accedo a la ruta de documentación<br>**Entonces** obtengo la especificación de todos los endpoints vigentes | sst-api | Sprint 3 | —|
+| TS04 | Datos de demostración | **Como** equipo **quiero** un comando que genere datos realistas **para** poder demostrar y probar el sistema. | **Escenario: carga**<br>**Cuando** ejecuto el comando de carga<br>**Entonces** el sistema queda con empresa, usuarios, reportes, IPERC, EPP, inspecciones y actas de ejemplo, claramente identificados como datos de demostración | sst-api | Sprint 3 | —|
 | TS05 | Flujo de ramas GitFlow | **Como** equipo **quiero** un flujo de ramas definido y protegido **para** que nada llegue a la línea principal sin revisión. | **Dado** que intento empujar directamente a main o develop<br>**Entonces** la protección de rama lo rechaza y obliga a pasar por Pull Request | Los cuatro | Sprint 1 | —|
-| TS06 | Fin de línea normalizado | **Como** equipo que trabaja en Windows **quiero** que el repositorio guarde siempre LF **para** que no aparezcan diferencias falsas en cada archivo. | **Cuando** edito un archivo en Windows y lo commiteo<br>**Entonces** el repositorio lo guarda con LF y el diff muestra solo lo que cambié de verdad | Los cuatro | Sprint 2 | —|
-| TS07 | Validación local del mensaje de commit | **Como** desarrollador **quiero** que el formato del commit se valide antes de crearlo **para** enterarme al momento y no en el Pull Request. | **Cuando** intento commitear con un mensaje fuera de formato<br>**Entonces** el hook lo rechaza mostrando los tipos válidos y un ejemplo | Los cuatro | Sprint 2 | —|
-| TS08 | Configuración por variables de entorno | **Como** responsable del despliegue **quiero** que la configuración viva fuera del código **para** usar el mismo artefacto en desarrollo y en producción. | **Cuando** cambio la base de datos o el origen permitido<br>**Entonces** basta modificar el archivo de entorno, sin tocar ni reconstruir el código | sst-api | Sprint 2 | —|
+| TS06 | Fin de línea normalizado | **Como** equipo que trabaja en Windows **quiero** que el repositorio guarde siempre LF **para** que no aparezcan diferencias falsas en cada archivo. | **Cuando** edito un archivo en Windows y lo commiteo<br>**Entonces** el repositorio lo guarda con LF y el diff muestra solo lo que cambié de verdad | Los cuatro | Sprint 3 | —|
+| TS07 | Validación local del mensaje de commit | **Como** desarrollador **quiero** que el formato del commit se valide antes de crearlo **para** enterarme al momento y no en el Pull Request. | **Cuando** intento commitear con un mensaje fuera de formato<br>**Entonces** el hook lo rechaza mostrando los tipos válidos y un ejemplo | Los cuatro | Sprint 3 | —|
+| TS08 | Configuración por variables de entorno | **Como** responsable del despliegue **quiero** que la configuración viva fuera del código **para** usar el mismo artefacto en desarrollo y en producción. | **Cuando** cambio la base de datos o el origen permitido<br>**Entonces** basta modificar el archivo de entorno, sin tocar ni reconstruir el código | sst-api | Sprint 3 | —|
 | TS09 | Proxy de desarrollo | **Como** desarrollador de la web **quiero** que las peticiones al API pasen por el servidor de desarrollo **para** no lidiar con CORS en local. | **Cuando** levanto la web en desarrollo<br>**Entonces** las llamadas a /api llegan al backend sin error de origen cruzado | sst-web | Sprint 2 | —|
 | TS10 | Renovación transparente del token | **Como** usuario **quiero** no perder lo que estoy haciendo cuando expira mi sesión **para** no repetir el trabajo. | **Dado** que varias peticiones fallan a la vez por token expirado<br>**Entonces** el cliente renueva una sola vez y reintenta todas, sin pedir la contraseña | sst-web, sst-mobile | Sprint 2 | —|
-| TS11 | Aislamiento entre empresas | **Como** empresa cliente **quiero** que mis datos sean invisibles para otras empresas **para** poder usar un servicio compartido. | **Cuando** un usuario consulta cualquier recurso<br>**Entonces** la consulta se restringe a su empresa en el backend, no en la interfaz | sst-api | Sprint 2 | —|
+| TS11 | Aislamiento entre empresas | **Como** empresa cliente **quiero** que mis datos sean invisibles para otras empresas **para** poder usar un servicio compartido. | **Cuando** un usuario consulta cualquier recurso<br>**Entonces** la consulta se restringe a su empresa en el backend, no en la interfaz | sst-api | Sprint 3 | —|
 | TS12 | Idempotencia en la creación de reportes | **Como** equipo de datos **quiero** que un reintento no genere un hallazgo duplicado **para** que las métricas sean confiables. | **Cuando** llega dos veces el mismo identificador de cliente<br>**Entonces** el API devuelve el reporte existente y no crea otro | sst-api | Sprint 2 | —|
-| TS13 | Migraciones verificadas en integración | **Como** equipo **quiero** que un modelo cambiado sin migración rompa la construcción **para** no descubrirlo en el despliegue. | **Cuando** abro un Pull Request con un modelo modificado y sin migración<br>**Entonces** el pipeline falla indicando que faltan migraciones | sst-api | Sprint 2 | —|
-| TS14 | APK publicado por el pipeline | **Como** equipo **quiero** que cada construcción publique el APK **para** poder instalarlo y probarlo sin compilar. | **Cuando** el pipeline móvil termina correctamente<br>**Entonces** el APK de depuración queda disponible como artefacto de la ejecución | sst-mobile | Sprint 2 | —|
-| TS15 | Generación de evidencia en Excel | **Como** responsable de SST **quiero** que la evidencia se genere en el formato que la auditoría espera **para** entregarla sin retrabajo. | **Cuando** solicito una exportación<br>**Entonces** el sistema genera un .xlsx con cabecera formateada, anchos ajustados y los datos del registro | sst-api | Sprint 2 | —|
-| TS16 | Informe compilable y con índice verificado | **Como** equipo **quiero** que el informe se arme solo y su índice no se desactualice **para** exportar el PDF sin revisiones manuales. | **Cuando** abro un Pull Request con el índice desfasado<br>**Entonces** el pipeline del informe falla e indica cómo regenerarlo | sst-report | Sprint 2 | —|
+| TS13 | Migraciones verificadas en integración | **Como** equipo **quiero** que un modelo cambiado sin migración rompa la construcción **para** no descubrirlo en el despliegue. | **Cuando** abro un Pull Request con un modelo modificado y sin migración<br>**Entonces** el pipeline falla indicando que faltan migraciones | sst-api | Sprint 3 | —|
+| TS14 | APK publicado por el pipeline | **Como** equipo **quiero** que cada construcción publique el APK **para** poder instalarlo y probarlo sin compilar. | **Cuando** el pipeline móvil termina correctamente<br>**Entonces** el APK de depuración queda disponible como artefacto de la ejecución | sst-mobile | Sprint 4 | —|
+| TS15 | Generación de evidencia en Excel | **Como** responsable de SST **quiero** que la evidencia se genere en el formato que la auditoría espera **para** entregarla sin retrabajo. | **Cuando** solicito una exportación<br>**Entonces** el sistema genera un .xlsx con cabecera formateada, anchos ajustados y los datos del registro | sst-api | Sprint 4 | —|
+| TS16 | Informe compilable y con índice verificado | **Como** equipo **quiero** que el informe se arme solo y su índice no se desactualice **para** exportar el PDF sin revisiones manuales. | **Cuando** abro un Pull Request con el índice desfasado<br>**Entonces** el pipeline del informe falla e indica cómo regenerarlo | sst-report | Sprint 4 | —|
 | TS17 | Servicio de notificaciones push | **Como** equipo **quiero** un servicio de notificaciones push integrado **para** que el móvil reciba avisos aunque la aplicación esté cerrada. | **Cuando** el backend emite un aviso dirigido a un usuario<br>**Entonces** el dispositivo registrado lo recibe aunque la aplicación no esté en primer plano | sst-api, sst-mobile | Propuesta | EP17 |
 | TS18 | Tareas programadas en el servidor | **Como** equipo **quiero** un ejecutor de tareas periódicas **para** calcular vencimientos y enviar recordatorios sin intervención manual. | **Cuando** llega la hora programada<br>**Entonces** la tarea se ejecuta, deja registro de su resultado y reintenta si falla | sst-api | Propuesta | EP17 |
 | TS19 | Correo transaccional | **Como** equipo **quiero** un proveedor de correo configurado **para** enviar recuperaciones de contraseña y resúmenes sin depender del cliente. | **Cuando** el sistema necesita enviar un correo<br>**Entonces** sale por el proveedor configurado y el envío queda registrado con su estado | sst-api | Propuesta | EP18 |
@@ -1324,214 +1330,262 @@ propuestas y quedan en el backlog.
 
 ## 3.3. Product Backlog
 
-**Gestión de prioridad.** El orden se revisa considerando valor para el operario, dependencia
-técnica, riesgo de pérdida de información y esfuerzo estimado. El acceso y el registro del
-hallazgo preceden a la asignación y al cierre; las métricas dependen de esos registros. Los
-Story Points expresan esfuerzo relativo y no representan horas observadas ni productividad.
+El backlog completo son **162 elementos**: las 128 historias de usuario, agrupadas en diecinueve
+épicas, y las 34 historias técnicas. El orden es de prioridad de negocio, no cronológico: primero
+lo que hace que el sistema capture el hallazgo, después lo que permite gestionarlo, luego lo que
+sostiene la operación, y al final lo que amplía la cobertura legal del sistema de gestión.
 
-**Definición de preparado (Ready).** Actor, necesidad, criterios de aceptación, dependencias y
-estimación acordados. **Definición de terminado (Done).** Código integrado, revisión registrada,
-pruebas pertinentes aprobadas, documentación actualizada y demostración del escenario. Hasta
-reunir esa evidencia, una etiqueta de sprint identifica planificación o entrega declarada.
+El backlog se reparte en **cuatro sprints, uno por cada hito del curso**. Las fechas no las fija el
+equipo: salen del calendario del trabajo final, que sitúa los hitos en las semanas 4, 7, 12 y 15
+del ciclo 2026-20, iniciado el lunes 24 de agosto de 2026. Esa es también la razón de que los
+sprints sean desiguales en duración: entre el primer hito y el segundo median tres semanas, y
+entre el segundo y el tercero, cinco.
 
-El backlog reúne los 162 elementos del producto: las 128 historias de usuario, agrupadas en
-diecinueve épicas, y las 34 historias técnicas. El orden es de prioridad de negocio, no
-cronológico: primero lo que hace que el sistema capture el hallazgo, después lo que permite
-gestionarlo, luego lo que sostiene la operación, y al final lo que amplía la cobertura legal del
-sistema de gestión.
-
-La columna **Estado** distingue tres situaciones que conviene no confundir:
-
-| Estado | Significado |
-|---|---|
-| **Sprint 1** | Comprometido y entregado en el Sprint 1: el ciclo de vida completo de un hallazgo |
-| **Sprint 2** | Comprometido y entregado en el Sprint 2: los registros obligatorios del SGSST y el resto del producto construido |
-| **Propuesta** | Especificado y estimado, pero cuya construcción todavía no ha empezado |
-
-Los dos sprints juntos son el alcance efectivamente construido en este ciclo: 86 elementos y 319
-Story Points. Lo marcado como *Propuesta* es el backlog que da continuidad al producto y no se
-construyó, de modo que declararlo por escrito evita atribuirle al prototipo capacidades que
-todavía no tiene.
-
-La columna **Plataforma** se repite aquí para que la paridad web/móvil sea verificable sin
-volver a la sección anterior. El guion (`—`) marca los elementos sin interfaz propia: trabajo de
-backend o de infraestructura.
-
-| # | ID | Historia | Épica | Plataforma | Estado | Story Points |
+| Sprint | Hito | Semanas | Fechas | Alcance | Elementos | Story Points |
 |---|---|---|---|---|---|---|
-| 1 | US02 | Inicio de sesión | EP01 | Ambas | Sprint 1 | 3 |
-| 2 | US06 | Reporte rápido desde el celular | EP02 | Ambas | Sprint 1 | 8 |
-| 3 | US07 | Reporte sin conexión | EP02 | Móvil | Sprint 2 | 13 |
-| 4 | US08 | Sincronización sin duplicados | EP02 | Ambas | Sprint 2 | 8 |
-| 5 | US13 | Consulta de mis reportes | EP02 | Ambas | Sprint 1 | 3 |
-| 6 | US43 | Menú según mi rol | EP01 | Ambas | Sprint 1 | 3 |
-| 7 | US70 | Sesión que no expira en campo | EP10 | Ambas | Sprint 2 | 5 |
-| 8 | US14 | Bandeja de hallazgos | EP03 | Ambas | Sprint 1 | 5 |
-| 9 | US16 | Cierre con acción correctiva | EP03 | Ambas | Sprint 1 | 5 |
-| 10 | US15 | Asignación de responsable | EP03 | Ambas | Sprint 1 | 5 |
-| 11 | US17 | Separación de responsabilidades | EP03 | Ambas | Sprint 2 | 3 |
-| 12 | US18 | Bitácora del hallazgo | EP03 | Ambas | Sprint 1 | 3 |
-| 13 | US09 | Evidencia fotográfica | EP02 | Ambas | Sprint 1 | 5 |
-| 14 | US35 | Indicador MTTR | EP08 | Ambas | Sprint 2 | 5 |
-| 15 | US50 | Filtrar la bandeja | EP03 | Ambas | Sprint 2 | 3 |
-| 16 | US49 | Descartar un reporte | EP03 | Web | Sprint 2 | 2 |
-| 17 | US10 | Geolocalización del hallazgo | EP02 | Ambas | Sprint 1 | 5 |
-| 18 | US11 | Fecha real de ocurrencia | EP02 | Ambas | Sprint 1 | 3 |
-| 19 | US12 | Reporte desde la web | EP02 | Web | Sprint 2 | 5 |
-| 20 | US44 | Vista previa de la evidencia | EP02 | Web | Sprint 2 | 3 |
-| 21 | US45 | Ampliar la evidencia | EP02 | Web | Sprint 2 | 3 |
-| 22 | US46 | Reemplazar la foto elegida | EP02 | Web | Sprint 2 | 2 |
-| 23 | US47 | Categorías según el tipo de hallazgo | EP02 | Ambas | Sprint 1 | 2 |
-| 24 | US48 | Estado de envío de mis reportes | EP02 | Móvil | Sprint 2 | 3 |
-| 25 | US51 | Ubicar el hallazgo en el mapa | EP03 | Web | Sprint 2 | 1 |
-| 26 | US38 | Asignación de variante | EP09 | Ambas | Sprint 2 | 5 |
-| 27 | US39 | Registro de la variante en el reporte | EP09 | Ambas | Sprint 2 | 2 |
-| 28 | US40 | Resultados del experimento | EP09 | Web | Sprint 2 | 5 |
-| 29 | US64 | Variante disponible sin conexión | EP09 | Móvil | Sprint 2 | 3 |
-| 30 | US01 | Registro de trabajador | EP01 | Ambas | Sprint 2 | 5 |
-| 31 | US03 | Sesión persistente en campo | EP01 | Ambas | Sprint 2 | 3 |
-| 32 | US05 | Gestión de áreas | EP01 | Web | Sprint 2 | 2 |
-| 33 | US04 | Administración de usuarios | EP01 | Web | Sprint 2 | 5 |
-| 34 | US41 | Cambio de rol de un usuario | EP01 | Web | Sprint 2 | 2 |
-| 35 | US42 | Cierre de sesión | EP01 | Ambas | Sprint 2 | 1 |
-| 36 | US19 | Consulta de la matriz en campo | EP04 | Ambas | Sprint 2 | 3 |
-| 37 | US20 | Registro de peligros | EP04 | Web | Sprint 2 | 5 |
-| 38 | US21 | Versionado de la matriz | EP04 | Web | Sprint 2 | 5 |
-| 39 | US22 | Trazabilidad con el hallazgo de origen | EP04 | Ambas | Sprint 2 | 3 |
-| 40 | US52 | Consultar versiones anteriores de la matriz | EP04 | Web | Sprint 2 | 5 |
-| 41 | US53 | Publicar una nueva versión de la matriz | EP04 | Web | Sprint 2 | 5 |
-| 42 | US54 | Retirar un peligro de la matriz | EP04 | Web | Sprint 2 | 2 |
-| 43 | US23 | Catálogo de EPP | EP05 | Web | Sprint 2 | 3 |
-| 44 | US24 | Registro de entrega | EP05 | Web | Sprint 2 | 3 |
-| 45 | US25 | Conformidad del trabajador | EP05 | Ambas | Sprint 2 | 3 |
-| 46 | US26 | Alerta de EPP vencido | EP05 | Ambas | Sprint 2 | 2 |
-| 47 | US55 | Control de stock del catálogo | EP05 | Web | Sprint 2 | 2 |
-| 48 | US27 | Programa de inspecciones | EP06 | Web | Sprint 2 | 5 |
-| 49 | US28 | Ejecución con checklist | EP06 | Ambas | Sprint 2 | 5 |
-| 50 | US29 | Inspecciones vencidas | EP06 | Ambas | Sprint 2 | 3 |
-| 51 | US56 | Programar la siguiente inspección | EP06 | Web | Sprint 2 | 3 |
-| 52 | US36 | Tasa de cumplimiento de inspecciones | EP08 | Ambas | Sprint 2 | 5 |
-| 53 | US57 | Cumplimiento por área | EP06 | Web | Sprint 2 | 3 |
-| 54 | US30 | Constitución del comité | EP07 | Web | Sprint 2 | 3 |
-| 55 | US31 | Miembros y paridad | EP07 | Web | Sprint 2 | 5 |
-| 56 | US32 | Acta de reunión | EP07 | Web | Sprint 2 | 5 |
-| 57 | US33 | Control de quórum | EP07 | Ambas | Sprint 2 | 3 |
-| 58 | US34 | Acuerdos con responsable y plazo | EP07 | Web | Sprint 2 | 3 |
-| 59 | US58 | Advertencia de comité no paritario | EP07 | Web | Sprint 2 | 2 |
-| 60 | US59 | Seguimiento del estado de los acuerdos | EP07 | Web | Sprint 2 | 2 |
-| 61 | US60 | Consultar las actas desde el celular | EP07 | Móvil | Sprint 2 | 3 |
-| 62 | US37 | Exportación de evidencia | EP08 | Web | Sprint 2 | 8 |
-| 63 | US61 | MTTR por severidad | EP08 | Ambas | Sprint 2 | 3 |
-| 64 | US62 | Exportar cada registro obligatorio | EP08 | Web | Sprint 2 | 3 |
-| 65 | US63 | Resumen de hallazgos | EP08 | Ambas | Sprint 2 | 3 |
-| 66 | US65 | Identidad visual consistente | EP10 | Ambas | Sprint 2 | 5 |
-| 67 | US66 | Navegación siempre accesible | EP10 | Ambas | Sprint 2 | 2 |
-| 68 | US67 | Uso desde pantallas pequeñas | EP10 | Web | Sprint 2 | 5 |
-| 69 | US68 | Errores comprensibles | EP10 | Ambas | Sprint 2 | 3 |
-| 70 | US69 | Reintento ante fallo de red | EP10 | Móvil | Sprint 2 | 3 |
-| 71 | TS02 | Convenciones de commits | — | Los cuatro | Sprint 1 | 2 |
-| 72 | TS07 | Validación local del mensaje de commit | — | Los cuatro | Sprint 2 | 2 |
-| 73 | TS05 | Flujo de ramas GitFlow | — | Los cuatro | Sprint 1 | 3 |
-| 74 | TS06 | Fin de línea normalizado | — | Los cuatro | Sprint 2 | 2 |
-| 75 | TS01 | Integración continua | — | Los cuatro | Sprint 1 | 5 |
-| 76 | TS13 | Migraciones verificadas en integración | — | sst-api | Sprint 2 | 2 |
-| 77 | TS03 | Documentación viva del API | — | sst-api | Sprint 2 | 2 |
-| 78 | TS08 | Configuración por variables de entorno | — | sst-api | Sprint 2 | 3 |
-| 79 | TS09 | Proxy de desarrollo | — | sst-web | Sprint 2 | 2 |
-| 80 | TS10 | Renovación transparente del token | — | sst-web, sst-mobile | Sprint 2 | 5 |
-| 81 | TS11 | Aislamiento entre empresas | — | sst-api | Sprint 2 | 5 |
-| 82 | TS12 | Idempotencia en la creación de reportes | — | sst-api | Sprint 2 | 5 |
-| 83 | TS04 | Datos de demostración | — | sst-api | Sprint 2 | 5 |
-| 84 | TS14 | APK publicado por el pipeline | — | sst-mobile | Sprint 2 | 3 |
-| 85 | TS15 | Generación de evidencia en Excel | — | sst-api | Sprint 2 | 5 |
-| 86 | TS16 | Informe compilable y con índice verificado | — | sst-report | Sprint 2 | 3 |
-| 87 | US71 | Registro de accidente de trabajo | EP11 | Web | Propuesta | 8 |
-| 88 | US72 | Registro de incidente peligroso | EP11 | Ambas | Propuesta | 5 |
-| 89 | US73 | Reportar un accidente desde el celular | EP11 | Móvil | Propuesta | 5 |
-| 90 | US74 | Investigación de causa raíz | EP11 | Web | Propuesta | 8 |
-| 91 | US75 | Medidas correctivas con responsable y plazo | EP11 | Web | Propuesta | 5 |
-| 92 | US76 | Aviso de accidente mortal dentro del plazo legal | EP11 | Web | Propuesta | 3 |
-| 93 | US77 | Indicadores de accidentabilidad | EP11 | Ambas | Propuesta | 5 |
-| 94 | US78 | Registro de enfermedad ocupacional | EP11 | Web | Propuesta | 5 |
-| 95 | US79 | Programa anual de capacitación | EP12 | Web | Propuesta | 5 |
-| 96 | US80 | Registro de asistencia a capacitación | EP12 | Móvil | Propuesta | 5 |
-| 97 | US81 | Inducción del personal nuevo | EP12 | Web | Propuesta | 5 |
-| 98 | US82 | Alerta de capacitación vencida | EP12 | Web | Propuesta | 3 |
-| 99 | US83 | Consultar mis capacitaciones | EP12 | Móvil | Propuesta | 3 |
-| 100 | US84 | Registro de simulacros | EP12 | Web | Propuesta | 3 |
-| 101 | US85 | Mapa de riesgos por área | EP13 | Web | Propuesta | 8 |
-| 102 | US86 | Consultar el mapa de riesgos en campo | EP13 | Móvil | Propuesta | 3 |
-| 103 | US87 | Inventario de señalización | EP13 | Web | Propuesta | 3 |
-| 104 | US88 | Ubicar el área por código QR | EP13 | Móvil | Propuesta | 5 |
-| 105 | US89 | Política de SST publicada | EP14 | Ambas | Propuesta | 3 |
-| 106 | US90 | Reglamento Interno de SST | EP14 | Ambas | Propuesta | 3 |
-| 107 | US91 | Plan y programa anual de SST | EP14 | Web | Propuesta | 5 |
-| 108 | US92 | Control de versiones de documentos | EP14 | Web | Propuesta | 5 |
-| 109 | US93 | Registro de monitoreo de agentes | EP15 | Web | Propuesta | 5 |
-| 110 | US94 | Alerta por exceder el límite permisible | EP15 | Web | Propuesta | 3 |
-| 111 | US95 | Programa de monitoreo | EP15 | Web | Propuesta | 3 |
-| 112 | US96 | Registro de empresa contratista | EP16 | Web | Propuesta | 5 |
-| 113 | US97 | Documentación de seguridad de la contratista | EP16 | Web | Propuesta | 5 |
-| 114 | US98 | Trabajadores de contratista reportando | EP16 | Móvil | Propuesta | 5 |
-| 115 | US99 | Permiso de trabajo de alto riesgo | EP16 | Ambas | Propuesta | 8 |
-| 116 | US100 | Aviso de hallazgo crítico sin asignar | EP17 | Ambas | Propuesta | 3 |
-| 117 | US101 | Aviso de cierre al reportante | EP17 | Móvil | Propuesta | 2 |
-| 118 | US102 | Aviso de asignación | EP17 | Ambas | Propuesta | 2 |
-| 119 | US103 | Resumen diario para el comité | EP17 | Web | Propuesta | 3 |
-| 120 | US104 | Aviso de acuerdo del comité por vencer | EP17 | Ambas | Propuesta | 2 |
-| 121 | US105 | Preferencias de notificación | EP17 | Ambas | Propuesta | 3 |
-| 122 | US106 | Alta de empresa desde la landing | EP18 | Web | Propuesta | 8 |
-| 123 | US107 | Datos y configuración de la empresa | EP18 | Web | Propuesta | 3 |
-| 124 | US108 | Planes y suscripción | EP18 | Web | Propuesta | 5 |
-| 125 | US109 | Exportación completa de mis datos | EP18 | Web | Propuesta | 5 |
-| 126 | US110 | Respaldo y continuidad | EP18 | — | Propuesta | 5 |
-| 127 | US111 | Consentimiento informado de datos personales | EP19 | Ambas | Propuesta | 3 |
-| 128 | US112 | Ubicación opcional y revocable | EP19 | Ambas | Propuesta | 3 |
-| 129 | US113 | Registro de auditoría de accesos | EP19 | Web | Propuesta | 5 |
-| 130 | US114 | Cierre de sesión remoto | EP19 | Web | Propuesta | 3 |
-| 131 | US115 | Política de retención de evidencia | EP19 | — | Propuesta | 5 |
-| 132 | US116 | Reporte anónimo de actos inseguros | EP19 | Ambas | Propuesta | 5 |
-| 133 | US117 | Reporte por voz | EP02 | Móvil | Propuesta | 8 |
-| 134 | US118 | Firma del trabajador en la entrega de EPP | EP05 | Móvil | Propuesta | 5 |
-| 135 | US119 | Adjuntar evidencia en inspecciones | EP06 | Móvil | Propuesta | 3 |
-| 136 | US120 | Generar hallazgo desde una inspección | EP06 | Ambas | Propuesta | 3 |
-| 137 | US121 | Convocatoria y asistencia del comité | EP07 | Web | Propuesta | 3 |
-| 138 | US122 | Elección de representantes de los trabajadores | EP07 | Web | Propuesta | 5 |
-| 139 | US123 | Exportar el tablero a PDF | EP08 | Web | Propuesta | 5 |
-| 140 | US124 | Comparar periodos | EP08 | Web | Propuesta | 3 |
-| 141 | US125 | Aviso de datos de demostración | EP09 | Web | Propuesta | 1 |
-| 142 | US126 | Intervalo de confianza en los resultados | EP09 | Web | Propuesta | 3 |
-| 143 | US127 | Interfaz accesible para lectores de pantalla | EP10 | Ambas | Propuesta | 8 |
-| 144 | US128 | Modo de alto contraste | EP10 | Ambas | Propuesta | 3 |
-| 145 | TS17 | Servicio de notificaciones push | EP17 | sst-api, sst-mobile | Propuesta | 5 |
-| 146 | TS18 | Tareas programadas en el servidor | EP17 | sst-api | Propuesta | 5 |
-| 147 | TS19 | Correo transaccional | EP18 | sst-api | Propuesta | 3 |
-| 148 | TS20 | Registro de auditoría | EP19 | sst-api | Propuesta | 5 |
-| 149 | TS21 | Respaldo automático y restauración probada | EP19 | sst-api | Propuesta | 5 |
-| 150 | TS22 | Almacenamiento de archivos en servicio de objetos | EP19 | sst-api | Propuesta | 5 |
-| 151 | TS23 | Observabilidad del backend | EP10 | sst-api | Propuesta | 3 |
-| 152 | TS24 | Reporte de errores del cliente | EP10 | sst-web, sst-mobile | Propuesta | 3 |
-| 153 | TS25 | Limitación de tasa de peticiones | EP19 | sst-api | Propuesta | 2 |
-| 154 | TS26 | Pruebas de extremo a extremo de la web | EP10 | sst-web | Propuesta | 8 |
-| 155 | TS27 | Pruebas instrumentadas del cliente móvil | EP10 | sst-mobile | Propuesta | 8 |
-| 156 | TS28 | Despliegue automatizado al entorno de pruebas | EP10 | sst-api, sst-web | Propuesta | 5 |
-| 157 | TS29 | Cifrado de datos personales en reposo | EP19 | sst-api | Propuesta | 8 |
-| 158 | TS30 | Versionado del API | EP19 | sst-api | Propuesta | 5 |
-| 159 | TS31 | Resolución de conflictos de sincronización | EP02 | sst-api, sst-mobile | Propuesta | 8 |
-| 160 | TS32 | Accesibilidad verificada en el pipeline | EP10 | sst-web, sst-mobile | Propuesta | 3 |
-| 161 | TS33 | Textos externalizados para traducción | EP18 | sst-web, sst-mobile | Propuesta | 5 |
-| 162 | TS34 | Entorno reproducible con contenedores | EP10 | sst-api, sst-web | Propuesta | 3 |
+| **Sprint 1** | Primer hito | 1 a 4 | 24/08/2026 – 20/09/2026 | El ciclo de vida del hallazgo | 15 | 60 |
+| **Sprint 2** | Segundo hito | 5 a 7 | 21/09/2026 – 11/10/2026 | Operación sin conexión, evidencia y experimento A/B | 21 | 86 |
+| **Sprint 3** | Tercer hito | 8 a 12 | 12/10/2026 – 15/11/2026 | Cuentas, matriz IPERC y control de EPP | 25 | 80 |
+| **Sprint 4** | Cuarto hito | 13 a 15 | 16/11/2026 – 06/12/2026 | Inspecciones, comité de SST y evidencia exportable | 25 | 93 |
 
-**Total:** 162 elementos (128 historias de usuario y 34 historias técnicas), 660 Story Points.
+### Sprint 1 — El ciclo de vida del hallazgo
 
-| Alcance | Elementos | Historias de usuario | Historias técnicas | Story Points |
-|---|---|---|---|---|
-| Comprometido y entregado en el Sprint 1 | 15 | 12 | 3 | 60 |
-| Comprometido y entregado en el Sprint 2 | 71 | 58 | 13 | 259 |
-| Propuesto (sin construir) | 76 | 58 | 18 | 341 |
-| **Backlog completo** | **162** | **128** | **34** | **660** |
+| Campo | Valor |
+|---|---|
+| Hito | Primer hito — AVANCE 1 · Sprint Review |
+| Semanas del ciclo | 1 a 4 |
+| Fechas | 24/08/2026 al 20/09/2026 |
+| Elementos | 15 |
+| Story Points | 60 |
 
-Los dos sprints suman 319 Story Points, el 48 % del backlog. Lo propuesto no es relleno: cada elemento pendiente corresponde a una obligación de la Ley N° 29783 o de su Reglamento que el producto debe cubrir para reemplazar por completo el expediente en papel, y por eso queda especificado y estimado aunque no se construya en este ciclo.
+| # | ID | Historia | Épica | Plataforma | Story Points |
+|---|---|---|---|---|---|
+| 1 | US02 | Inicio de sesión | EP01 | Ambas | 3 |
+| 2 | US06 | Reporte rápido desde el celular | EP02 | Ambas | 8 |
+| 3 | US13 | Consulta de mis reportes | EP02 | Ambas | 3 |
+| 4 | US43 | Menú según mi rol | EP01 | Ambas | 3 |
+| 5 | US14 | Bandeja de hallazgos | EP03 | Ambas | 5 |
+| 6 | US16 | Cierre con acción correctiva | EP03 | Ambas | 5 |
+| 7 | US15 | Asignación de responsable | EP03 | Ambas | 5 |
+| 8 | US18 | Bitácora del hallazgo | EP03 | Ambas | 3 |
+| 9 | US09 | Evidencia fotográfica | EP02 | Ambas | 5 |
+| 10 | US10 | Geolocalización del hallazgo | EP02 | Ambas | 5 |
+| 11 | US11 | Fecha real de ocurrencia | EP02 | Ambas | 3 |
+| 12 | US47 | Categorías según el tipo de hallazgo | EP02 | Ambas | 2 |
+| 13 | TS02 | Convenciones de commits | — | Los cuatro | 2 |
+| 14 | TS05 | Flujo de ramas GitFlow | — | Los cuatro | 3 |
+| 15 | TS01 | Integración continua | — | Los cuatro | 5 |
+
+### Sprint 2 — Operación sin conexión, evidencia y experimento A/B
+
+| Campo | Valor |
+|---|---|
+| Hito | Segundo hito — TRABAJO PARCIAL · Stage Review |
+| Semanas del ciclo | 5 a 7 |
+| Fechas | 21/09/2026 al 11/10/2026 |
+| Elementos | 21 |
+| Story Points | 86 |
+
+| # | ID | Historia | Épica | Plataforma | Story Points |
+|---|---|---|---|---|---|
+| 1 | US07 | Reporte sin conexión | EP02 | Móvil | 13 |
+| 2 | US08 | Sincronización sin duplicados | EP02 | Ambas | 8 |
+| 3 | US70 | Sesión que no expira en campo | EP10 | Ambas | 5 |
+| 4 | US17 | Separación de responsabilidades | EP03 | Ambas | 3 |
+| 5 | US35 | Indicador MTTR | EP08 | Ambas | 5 |
+| 6 | US50 | Filtrar la bandeja | EP03 | Ambas | 3 |
+| 7 | US49 | Descartar un reporte | EP03 | Web | 2 |
+| 8 | US12 | Reporte desde la web | EP02 | Web | 5 |
+| 9 | US44 | Vista previa de la evidencia | EP02 | Web | 3 |
+| 10 | US45 | Ampliar la evidencia | EP02 | Web | 3 |
+| 11 | US46 | Reemplazar la foto elegida | EP02 | Web | 2 |
+| 12 | US48 | Estado de envío de mis reportes | EP02 | Móvil | 3 |
+| 13 | US51 | Ubicar el hallazgo en el mapa | EP03 | Web | 1 |
+| 14 | US38 | Asignación de variante | EP09 | Ambas | 5 |
+| 15 | US39 | Registro de la variante en el reporte | EP09 | Ambas | 2 |
+| 16 | US40 | Resultados del experimento | EP09 | Web | 5 |
+| 17 | US64 | Variante disponible sin conexión | EP09 | Móvil | 3 |
+| 18 | US69 | Reintento ante fallo de red | EP10 | Móvil | 3 |
+| 19 | TS09 | Proxy de desarrollo | — | sst-web | 2 |
+| 20 | TS10 | Renovación transparente del token | — | sst-web, sst-mobile | 5 |
+| 21 | TS12 | Idempotencia en la creación de reportes | — | sst-api | 5 |
+
+### Sprint 3 — Cuentas, matriz IPERC y control de EPP
+
+| Campo | Valor |
+|---|---|
+| Hito | Tercer hito — AVANCE 2 · Sprint Review |
+| Semanas del ciclo | 8 a 12 |
+| Fechas | 12/10/2026 al 15/11/2026 |
+| Elementos | 25 |
+| Story Points | 80 |
+
+| # | ID | Historia | Épica | Plataforma | Story Points |
+|---|---|---|---|---|---|
+| 1 | US01 | Registro de trabajador | EP01 | Ambas | 5 |
+| 2 | US03 | Sesión persistente en campo | EP01 | Ambas | 3 |
+| 3 | US05 | Gestión de áreas | EP01 | Web | 2 |
+| 4 | US04 | Administración de usuarios | EP01 | Web | 5 |
+| 5 | US41 | Cambio de rol de un usuario | EP01 | Web | 2 |
+| 6 | US42 | Cierre de sesión | EP01 | Ambas | 1 |
+| 7 | US19 | Consulta de la matriz en campo | EP04 | Ambas | 3 |
+| 8 | US20 | Registro de peligros | EP04 | Web | 5 |
+| 9 | US21 | Versionado de la matriz | EP04 | Web | 5 |
+| 10 | US22 | Trazabilidad con el hallazgo de origen | EP04 | Ambas | 3 |
+| 11 | US52 | Consultar versiones anteriores de la matriz | EP04 | Web | 5 |
+| 12 | US53 | Publicar una nueva versión de la matriz | EP04 | Web | 5 |
+| 13 | US54 | Retirar un peligro de la matriz | EP04 | Web | 2 |
+| 14 | US23 | Catálogo de EPP | EP05 | Web | 3 |
+| 15 | US24 | Registro de entrega | EP05 | Web | 3 |
+| 16 | US25 | Conformidad del trabajador | EP05 | Ambas | 3 |
+| 17 | US26 | Alerta de EPP vencido | EP05 | Ambas | 2 |
+| 18 | US55 | Control de stock del catálogo | EP05 | Web | 2 |
+| 19 | TS07 | Validación local del mensaje de commit | — | Los cuatro | 2 |
+| 20 | TS06 | Fin de línea normalizado | — | Los cuatro | 2 |
+| 21 | TS13 | Migraciones verificadas en integración | — | sst-api | 2 |
+| 22 | TS03 | Documentación viva del API | — | sst-api | 2 |
+| 23 | TS08 | Configuración por variables de entorno | — | sst-api | 3 |
+| 24 | TS11 | Aislamiento entre empresas | — | sst-api | 5 |
+| 25 | TS04 | Datos de demostración | — | sst-api | 5 |
+
+### Sprint 4 — Inspecciones, comité de SST y evidencia exportable
+
+| Campo | Valor |
+|---|---|
+| Hito | Cuarto hito — TB2 · Release Review |
+| Semanas del ciclo | 13 a 15 |
+| Fechas | 16/11/2026 al 06/12/2026 |
+| Elementos | 25 |
+| Story Points | 93 |
+
+| # | ID | Historia | Épica | Plataforma | Story Points |
+|---|---|---|---|---|---|
+| 1 | US27 | Programa de inspecciones | EP06 | Web | 5 |
+| 2 | US28 | Ejecución con checklist | EP06 | Ambas | 5 |
+| 3 | US29 | Inspecciones vencidas | EP06 | Ambas | 3 |
+| 4 | US56 | Programar la siguiente inspección | EP06 | Web | 3 |
+| 5 | US36 | Tasa de cumplimiento de inspecciones | EP08 | Ambas | 5 |
+| 6 | US57 | Cumplimiento por área | EP06 | Web | 3 |
+| 7 | US30 | Constitución del comité | EP07 | Web | 3 |
+| 8 | US31 | Miembros y paridad | EP07 | Web | 5 |
+| 9 | US32 | Acta de reunión | EP07 | Web | 5 |
+| 10 | US33 | Control de quórum | EP07 | Ambas | 3 |
+| 11 | US34 | Acuerdos con responsable y plazo | EP07 | Web | 3 |
+| 12 | US58 | Advertencia de comité no paritario | EP07 | Web | 2 |
+| 13 | US59 | Seguimiento del estado de los acuerdos | EP07 | Web | 2 |
+| 14 | US60 | Consultar las actas desde el celular | EP07 | Móvil | 3 |
+| 15 | US37 | Exportación de evidencia | EP08 | Web | 8 |
+| 16 | US61 | MTTR por severidad | EP08 | Ambas | 3 |
+| 17 | US62 | Exportar cada registro obligatorio | EP08 | Web | 3 |
+| 18 | US63 | Resumen de hallazgos | EP08 | Ambas | 3 |
+| 19 | US65 | Identidad visual consistente | EP10 | Ambas | 5 |
+| 20 | US66 | Navegación siempre accesible | EP10 | Ambas | 2 |
+| 21 | US67 | Uso desde pantallas pequeñas | EP10 | Web | 5 |
+| 22 | US68 | Errores comprensibles | EP10 | Ambas | 3 |
+| 23 | TS14 | APK publicado por el pipeline | — | sst-mobile | 3 |
+| 24 | TS15 | Generación de evidencia en Excel | — | sst-api | 5 |
+| 25 | TS16 | Informe compilable y con índice verificado | — | sst-report | 3 |
+
+### Backlog pendiente
+
+Elementos especificados y estimados cuya construcción no está comprometida en ninguno de los
+cuatro sprints de este ciclo. No son relleno: cada uno corresponde a una obligación de la Ley
+N° 29783 o de su Reglamento que el producto debe cubrir para reemplazar por completo el
+expediente en papel, y por eso queda escrito y estimado aunque no entre en el alcance.
+
+| Campo | Valor |
+|---|---|
+| Elementos | 76 |
+| Story Points | 341 |
+
+| # | ID | Historia | Épica | Plataforma | Story Points |
+|---|---|---|---|---|---|
+| 1 | TS17 | Servicio de notificaciones push | EP17 | sst-api, sst-mobile | 5 |
+| 2 | TS18 | Tareas programadas en el servidor | EP17 | sst-api | 5 |
+| 3 | TS19 | Correo transaccional | EP18 | sst-api | 3 |
+| 4 | TS20 | Registro de auditoría | EP19 | sst-api | 5 |
+| 5 | TS21 | Respaldo automático y restauración probada | EP19 | sst-api | 5 |
+| 6 | TS22 | Almacenamiento de archivos en servicio de objetos | EP19 | sst-api | 5 |
+| 7 | TS23 | Observabilidad del backend | EP10 | sst-api | 3 |
+| 8 | TS24 | Reporte de errores del cliente | EP10 | sst-web, sst-mobile | 3 |
+| 9 | TS25 | Limitación de tasa de peticiones | EP19 | sst-api | 2 |
+| 10 | TS26 | Pruebas de extremo a extremo de la web | EP10 | sst-web | 8 |
+| 11 | TS27 | Pruebas instrumentadas del cliente móvil | EP10 | sst-mobile | 8 |
+| 12 | TS28 | Despliegue automatizado al entorno de pruebas | EP10 | sst-api, sst-web | 5 |
+| 13 | TS29 | Cifrado de datos personales en reposo | EP19 | sst-api | 8 |
+| 14 | TS30 | Versionado del API | EP19 | sst-api | 5 |
+| 15 | TS31 | Resolución de conflictos de sincronización | EP02 | sst-api, sst-mobile | 8 |
+| 16 | TS32 | Accesibilidad verificada en el pipeline | EP10 | sst-web, sst-mobile | 3 |
+| 17 | TS33 | Textos externalizados para traducción | EP18 | sst-web, sst-mobile | 5 |
+| 18 | TS34 | Entorno reproducible con contenedores | EP10 | sst-api, sst-web | 3 |
+| 19 | US71 | Registro de accidente de trabajo | EP11 | Web | 8 |
+| 20 | US72 | Registro de incidente peligroso | EP11 | Ambas | 5 |
+| 21 | US73 | Reportar un accidente desde el celular | EP11 | Móvil | 5 |
+| 22 | US74 | Investigación de causa raíz | EP11 | Web | 8 |
+| 23 | US75 | Medidas correctivas con responsable y plazo | EP11 | Web | 5 |
+| 24 | US76 | Aviso de accidente mortal dentro del plazo legal | EP11 | Web | 3 |
+| 25 | US77 | Indicadores de accidentabilidad | EP11 | Ambas | 5 |
+| 26 | US78 | Registro de enfermedad ocupacional | EP11 | Web | 5 |
+| 27 | US79 | Programa anual de capacitación | EP12 | Web | 5 |
+| 28 | US80 | Registro de asistencia a capacitación | EP12 | Móvil | 5 |
+| 29 | US81 | Inducción del personal nuevo | EP12 | Web | 5 |
+| 30 | US82 | Alerta de capacitación vencida | EP12 | Web | 3 |
+| 31 | US83 | Consultar mis capacitaciones | EP12 | Móvil | 3 |
+| 32 | US84 | Registro de simulacros | EP12 | Web | 3 |
+| 33 | US85 | Mapa de riesgos por área | EP13 | Web | 8 |
+| 34 | US86 | Consultar el mapa de riesgos en campo | EP13 | Móvil | 3 |
+| 35 | US87 | Inventario de señalización | EP13 | Web | 3 |
+| 36 | US88 | Ubicar el área por código QR | EP13 | Móvil | 5 |
+| 37 | US89 | Política de SST publicada | EP14 | Ambas | 3 |
+| 38 | US90 | Reglamento Interno de SST | EP14 | Ambas | 3 |
+| 39 | US91 | Plan y programa anual de SST | EP14 | Web | 5 |
+| 40 | US92 | Control de versiones de documentos | EP14 | Web | 5 |
+| 41 | US93 | Registro de monitoreo de agentes | EP15 | Web | 5 |
+| 42 | US94 | Alerta por exceder el límite permisible | EP15 | Web | 3 |
+| 43 | US95 | Programa de monitoreo | EP15 | Web | 3 |
+| 44 | US96 | Registro de empresa contratista | EP16 | Web | 5 |
+| 45 | US97 | Documentación de seguridad de la contratista | EP16 | Web | 5 |
+| 46 | US98 | Trabajadores de contratista reportando | EP16 | Móvil | 5 |
+| 47 | US99 | Permiso de trabajo de alto riesgo | EP16 | Ambas | 8 |
+| 48 | US100 | Aviso de hallazgo crítico sin asignar | EP17 | Ambas | 3 |
+| 49 | US101 | Aviso de cierre al reportante | EP17 | Móvil | 2 |
+| 50 | US102 | Aviso de asignación | EP17 | Ambas | 2 |
+| 51 | US103 | Resumen diario para el comité | EP17 | Web | 3 |
+| 52 | US104 | Aviso de acuerdo del comité por vencer | EP17 | Ambas | 2 |
+| 53 | US105 | Preferencias de notificación | EP17 | Ambas | 3 |
+| 54 | US106 | Alta de empresa desde la landing | EP18 | Web | 8 |
+| 55 | US107 | Datos y configuración de la empresa | EP18 | Web | 3 |
+| 56 | US108 | Planes y suscripción | EP18 | Web | 5 |
+| 57 | US109 | Exportación completa de mis datos | EP18 | Web | 5 |
+| 58 | US110 | Respaldo y continuidad | EP18 | — | 5 |
+| 59 | US111 | Consentimiento informado de datos personales | EP19 | Ambas | 3 |
+| 60 | US112 | Ubicación opcional y revocable | EP19 | Ambas | 3 |
+| 61 | US113 | Registro de auditoría de accesos | EP19 | Web | 5 |
+| 62 | US114 | Cierre de sesión remoto | EP19 | Web | 3 |
+| 63 | US115 | Política de retención de evidencia | EP19 | — | 5 |
+| 64 | US116 | Reporte anónimo de actos inseguros | EP19 | Ambas | 5 |
+| 65 | US117 | Reporte por voz | EP02 | Móvil | 8 |
+| 66 | US118 | Firma del trabajador en la entrega de EPP | EP05 | Móvil | 5 |
+| 67 | US119 | Adjuntar evidencia en inspecciones | EP06 | Móvil | 3 |
+| 68 | US120 | Generar hallazgo desde una inspección | EP06 | Ambas | 3 |
+| 69 | US121 | Convocatoria y asistencia del comité | EP07 | Web | 3 |
+| 70 | US122 | Elección de representantes de los trabajadores | EP07 | Web | 5 |
+| 71 | US123 | Exportar el tablero a PDF | EP08 | Web | 5 |
+| 72 | US124 | Comparar periodos | EP08 | Web | 3 |
+| 73 | US125 | Aviso de datos de demostración | EP09 | Web | 1 |
+| 74 | US126 | Intervalo de confianza en los resultados | EP09 | Web | 3 |
+| 75 | US127 | Interfaz accesible para lectores de pantalla | EP10 | Ambas | 8 |
+| 76 | US128 | Modo de alto contraste | EP10 | Ambas | 3 |
+
+### Totales del backlog
+
+| Alcance | Elementos | Story Points |
+|---|---|---|
+| Comprometido en los cuatro sprints | 86 | 319 |
+| Backlog pendiente | 76 | 341 |
+| **Backlog completo** | **162** | **660** |
+
+Los cuatro sprints cubren el 48 % de los Story Points del backlog.
 
 ## 3.4. Impact Mapping
 
