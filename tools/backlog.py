@@ -136,7 +136,12 @@ Dos columnas de las tablas que siguen merecen una aclaración:
 - **Dónde encontrarlo** indica la ruta exacta para llegar a esa funcionalidad en cada cliente: la
   opción de la barra lateral o la ruta en el panel web, y la pestaña de la barra inferior o la
   entrada de la pantalla «Más» en la aplicación Android. Permite verificar cada historia sobre el
-  producto en ejecución sin tener que buscarla.
+  producto en ejecución sin tener que buscarla. Para las historias técnicas, que no viven en una
+  pantalla, se indica dónde se comprueba su efecto. Un guion significa que la historia todavía no
+  se puede verificar sobre el producto en ejecución, y cuando una historia especificada para los
+  dos clientes solo muestra la ruta de uno, es que en el otro aún no está construida. Nunca se
+  escribe la ruta de algo que no existe: la columna sirve para comprobar el producto, y una ruta
+  falsa la volvería inútil.
 
 """
 

@@ -85,7 +85,7 @@ UBICACIONES = {
 
     # --- Experimento A/B ---
     "US38": ("Reportar: la variante se asigna al abrir el formulario", "Pestaña «Reportar»: la variante se asigna al abrir el formulario"),
-    "US39": ("Reportes → detalle → campo «Variante»", "Pestaña «Reportes» → detalle → «Variante»"),
+    "US39": ("Reportes → detalle: la variante aparece en el subtítulo del hallazgo", "Pestaña «Reportes» → detalle → «Variante»"),
     "US40": ("Experimento A/B (`/experimento`)", ""),
     "US64": ("", "Pestaña «Reportar»: la variante se conserva sin conexión"),
 
@@ -96,11 +96,49 @@ UBICACIONES = {
     "US68": ("Transversal: mensajes de error con la acción a seguir", "Transversal: mensajes de error con la acción a seguir"),
     "US69": ("", "Pestaña «Reportar»: reintento automático al fallar la red"),
     "US70": ("Transversal: la sesión se renueva sin pedir la contraseña", "Transversal: la sesión se renueva sin pedir la contraseña"),
+
+    # --- Registro de accidentes, incidentes y enfermedades ocupacionales ---
+    "US71": ("Accidentes e incidentes (`/accidentes`) → «Registrar accidente» → tipo «Accidente de trabajo»", ""),
+    "US72": ("Accidentes e incidentes → «Registrar accidente» → tipo «Incidente peligroso»", ""),
+    "US74": ("Accidentes e incidentes → seleccionar el accidente → «Registrar investigación»", ""),
+    "US75": ("Accidentes e incidentes → expediente del accidente → «Agregar medida»", ""),
+    "US76": ("Accidentes e incidentes → aviso «Avisos al Ministerio de Trabajo pendientes», y en el expediente → «Registrar aviso»", ""),
+    "US77": ("Accidentes e incidentes → «Índices de accidentabilidad · últimos 90 días»", ""),
+    "US78": ("Accidentes e incidentes → «Enfermedades ocupacionales» → «Registrar enfermedad»", ""),
+
+    # --- Privacidad y datos personales ---
+    "US111": ("Pantalla de política de privacidad al iniciar sesión; después en Privacidad (`/privacidad`) → «Tu consentimiento»", ""),
+    "US112": ("Privacidad (`/privacidad`) → «Ubicación de los hallazgos»", ""),
+    "US116": ("Reportar (`/reportes/nuevo`) → casilla «Reportar de forma anónima»", ""),
+
+    # --- Experimento A/B: lectura de los resultados ---
+    "US125": ("Experimento A/B (`/experimento`) → aviso de datos de demostración sobre los resultados", ""),
+    "US126": ("Experimento A/B (`/experimento`) → bloque «Diferencia en reportes por usuario»", ""),
+}
+
+
+# Historias tecnicas: no viven en una pantalla, asi que se describe donde se comprueban.
+NOTAS_TECNICAS = {
+    "TS01": "Sin interfaz: workflows de GitHub Actions en `.github/workflows/` de cada repositorio; se comprueban en la pestaña Actions de cada Pull Request",
+    "TS02": "Sin interfaz: hook `commit-msg` en `.githooks/` y workflow «Conventional Commits», que rechazan el mensaje que no cumple el formato",
+    "TS05": "Sin interfaz: ramas `main` y `develop` en los cuatro repositorios, con una rama de feature por historia",
+    "TS09": "Sin interfaz: `server.proxy` de `/api` en `vite.config.ts` del panel web",
+    "TS10": "Transversal en los dos clientes: la sesión se renueva sin volver a pedir la contraseña",
+    "TS12": "Sin interfaz: `POST /api/v1/reports/` es idempotente por `client_uuid`; un reintento responde 200 con la cabecera `X-Idempotent-Replay`",
+    "TS31": "Sin interfaz: al editar un reporte, `base_updated_at` desactualizado devuelve 409 con la versión del servidor",
 }
 
 
 def ubicacion(identificador):
-    """Devuelve la celda de la columna «Dónde encontrarlo» para una historia."""
+    """Devuelve la celda de la columna «Dónde encontrarlo» para una historia.
+
+    Un guion significa que la historia todavia no se puede verificar sobre el producto en
+    ejecucion, sea porque no tiene interfaz propia o porque falta construirla en ese
+    cliente. Nunca se escribe una ruta de algo que no existe: la columna sirve para
+    comprobar el producto, y una ruta falsa la vuelve inutil.
+    """
+    if identificador in NOTAS_TECNICAS:
+        return NOTAS_TECNICAS[identificador]
     web, android = UBICACIONES.get(identificador, ("", ""))
     partes = []
     if web:

@@ -1337,7 +1337,12 @@ Dos columnas de las tablas que siguen merecen una aclaración:
 - **Dónde encontrarlo** indica la ruta exacta para llegar a esa funcionalidad en cada cliente: la
   opción de la barra lateral o la ruta en el panel web, y la pestaña de la barra inferior o la
   entrada de la pantalla «Más» en la aplicación Android. Permite verificar cada historia sobre el
-  producto en ejecución sin tener que buscarla.
+  producto en ejecución sin tener que buscarla. Para las historias técnicas, que no viven en una
+  pantalla, se indica dónde se comprueba su efecto. Un guion significa que la historia todavía no
+  se puede verificar sobre el producto en ejecución, y cuando una historia especificada para los
+  dos clientes solo muestra la ruta de uno, es que en el otro aún no está construida. Nunca se
+  escribe la ruta de algo que no existe: la columna sirve para comprobar el producto, y una ruta
+  falsa la volvería inútil.
 
 | Sprint | Hito | Semanas | Fechas | Alcance | Elementos | Story Points |
 |---|---|---|---|---|---|---|
@@ -1370,9 +1375,9 @@ Dos columnas de las tablas que siguen merecen una aclaración:
 | 10 | US10 | Geolocalización del hallazgo | EP02 | Android y Web | **Web:** Reportar → paso 2, «Ubicación»<br>**Android:** Pestaña «Reportar» → paso 2, «Ubicación» | 5 |
 | 11 | US11 | Fecha real de ocurrencia | EP02 | Android y Web | **Web:** Reportar → paso 3, «Fecha de ocurrencia»<br>**Android:** Pestaña «Reportar» → paso 3, «Fecha de ocurrencia» | 3 |
 | 12 | US47 | Categorías según el tipo de hallazgo | EP02 | Android y Web | **Web:** Reportar → paso 1, «Tipo de hallazgo»<br>**Android:** Pestaña «Reportar» → paso 1, «Tipo de hallazgo» | 2 |
-| 13 | TS01 | Integración continua | — | Los cuatro | — | 5 |
-| 14 | TS02 | Convenciones de commits | — | Los cuatro | — | 2 |
-| 15 | TS05 | Flujo de ramas GitFlow | — | Los cuatro | — | 3 |
+| 13 | TS01 | Integración continua | — | Los cuatro | Sin interfaz: workflows de GitHub Actions en `.github/workflows/` de cada repositorio; se comprueban en la pestaña Actions de cada Pull Request | 5 |
+| 14 | TS02 | Convenciones de commits | — | Los cuatro | Sin interfaz: hook `commit-msg` en `.githooks/` y workflow «Conventional Commits», que rechazan el mensaje que no cumple el formato | 2 |
+| 15 | TS05 | Flujo de ramas GitFlow | — | Los cuatro | Sin interfaz: ramas `main` y `develop` en los cuatro repositorios, con una rama de feature por historia | 3 |
 
 ### Sprint 2 — Captura en campo, accidentes y experimento A/B
 
@@ -1400,28 +1405,28 @@ Dos columnas de las tablas que siguen merecen una aclaración:
 | 12 | US48 | Estado de envío de mis reportes | EP02 | Android | **Android:** «Más» → «Reportes guardados en el celular»: estado Enviado o Pendiente | 3 |
 | 13 | US51 | Ubicar el hallazgo en el mapa | EP03 | Web | **Web:** Reportes → detalle → enlace de ubicación | 1 |
 | 14 | US38 | Asignación de variante | EP09 | Android y Web | **Web:** Reportar: la variante se asigna al abrir el formulario<br>**Android:** Pestaña «Reportar»: la variante se asigna al abrir el formulario | 5 |
-| 15 | US39 | Registro de la variante en el reporte | EP09 | Android y Web | **Web:** Reportes → detalle → campo «Variante»<br>**Android:** Pestaña «Reportes» → detalle → «Variante» | 2 |
+| 15 | US39 | Registro de la variante en el reporte | EP09 | Android y Web | **Web:** Reportes → detalle: la variante aparece en el subtítulo del hallazgo<br>**Android:** Pestaña «Reportes» → detalle → «Variante» | 2 |
 | 16 | US40 | Resultados del experimento | EP09 | Web | **Web:** Experimento A/B (`/experimento`) | 5 |
 | 17 | US64 | Variante disponible sin conexión | EP09 | Android | **Android:** Pestaña «Reportar»: la variante se conserva sin conexión | 3 |
 | 18 | US69 | Reintento ante fallo de red | EP10 | Android | **Android:** Pestaña «Reportar»: reintento automático al fallar la red | 3 |
-| 19 | US71 | Registro de accidente de trabajo | EP11 | Web | — | 8 |
-| 20 | US72 | Registro de incidente peligroso | EP11 | Android y Web | — | 5 |
+| 19 | US71 | Registro de accidente de trabajo | EP11 | Web | **Web:** Accidentes e incidentes (`/accidentes`) → «Registrar accidente» → tipo «Accidente de trabajo» | 8 |
+| 20 | US72 | Registro de incidente peligroso | EP11 | Android y Web | **Web:** Accidentes e incidentes → «Registrar accidente» → tipo «Incidente peligroso» | 5 |
 | 21 | US73 | Reportar un accidente desde el celular | EP11 | Android | — | 5 |
-| 22 | US74 | Investigación de causa raíz | EP11 | Web | — | 8 |
-| 23 | US75 | Medidas correctivas con responsable y plazo | EP11 | Web | — | 5 |
-| 24 | US76 | Aviso de accidente mortal dentro del plazo legal | EP11 | Web | — | 3 |
-| 25 | US77 | Indicadores de accidentabilidad | EP11 | Android y Web | — | 5 |
-| 26 | US78 | Registro de enfermedad ocupacional | EP11 | Web | — | 5 |
-| 27 | US111 | Consentimiento informado de datos personales | EP19 | Android y Web | — | 3 |
-| 28 | US112 | Ubicación opcional y revocable | EP19 | Android y Web | — | 3 |
-| 29 | US116 | Reporte anónimo de actos inseguros | EP19 | Android y Web | — | 5 |
+| 22 | US74 | Investigación de causa raíz | EP11 | Web | **Web:** Accidentes e incidentes → seleccionar el accidente → «Registrar investigación» | 8 |
+| 23 | US75 | Medidas correctivas con responsable y plazo | EP11 | Web | **Web:** Accidentes e incidentes → expediente del accidente → «Agregar medida» | 5 |
+| 24 | US76 | Aviso de accidente mortal dentro del plazo legal | EP11 | Web | **Web:** Accidentes e incidentes → aviso «Avisos al Ministerio de Trabajo pendientes», y en el expediente → «Registrar aviso» | 3 |
+| 25 | US77 | Indicadores de accidentabilidad | EP11 | Android y Web | **Web:** Accidentes e incidentes → «Índices de accidentabilidad · últimos 90 días» | 5 |
+| 26 | US78 | Registro de enfermedad ocupacional | EP11 | Web | **Web:** Accidentes e incidentes → «Enfermedades ocupacionales» → «Registrar enfermedad» | 5 |
+| 27 | US111 | Consentimiento informado de datos personales | EP19 | Android y Web | **Web:** Pantalla de política de privacidad al iniciar sesión; después en Privacidad (`/privacidad`) → «Tu consentimiento» | 3 |
+| 28 | US112 | Ubicación opcional y revocable | EP19 | Android y Web | **Web:** Privacidad (`/privacidad`) → «Ubicación de los hallazgos» | 3 |
+| 29 | US116 | Reporte anónimo de actos inseguros | EP19 | Android y Web | **Web:** Reportar (`/reportes/nuevo`) → casilla «Reportar de forma anónima» | 5 |
 | 30 | US117 | Reporte por voz | EP02 | Android | — | 8 |
-| 31 | US125 | Aviso de datos de demostración | EP09 | Web | — | 1 |
-| 32 | US126 | Intervalo de confianza en los resultados | EP09 | Web | — | 3 |
-| 33 | TS09 | Proxy de desarrollo | — | sst-web | — | 2 |
-| 34 | TS10 | Renovación transparente del token | — | sst-web, sst-mobile | — | 5 |
-| 35 | TS12 | Idempotencia en la creación de reportes | — | sst-api | — | 5 |
-| 36 | TS31 | Resolución de conflictos de sincronización | EP02 | sst-api, sst-mobile | — | 8 |
+| 31 | US125 | Aviso de datos de demostración | EP09 | Web | **Web:** Experimento A/B (`/experimento`) → aviso de datos de demostración sobre los resultados | 1 |
+| 32 | US126 | Intervalo de confianza en los resultados | EP09 | Web | **Web:** Experimento A/B (`/experimento`) → bloque «Diferencia en reportes por usuario» | 3 |
+| 33 | TS09 | Proxy de desarrollo | — | sst-web | Sin interfaz: `server.proxy` de `/api` en `vite.config.ts` del panel web | 2 |
+| 34 | TS10 | Renovación transparente del token | — | sst-web, sst-mobile | Transversal en los dos clientes: la sesión se renueva sin volver a pedir la contraseña | 5 |
+| 35 | TS12 | Idempotencia en la creación de reportes | — | sst-api | Sin interfaz: `POST /api/v1/reports/` es idempotente por `client_uuid`; un reintento responde 200 con la cabecera `X-Idempotent-Replay` | 5 |
+| 36 | TS31 | Resolución de conflictos de sincronización | EP02 | sst-api, sst-mobile | Sin interfaz: al editar un reporte, `base_updated_at` desactualizado devuelve 409 con la versión del servidor | 8 |
 
 ### Sprint 3 — Cuentas, registros obligatorios, capacitación y despliegue
 
