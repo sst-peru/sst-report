@@ -175,9 +175,11 @@ incorpora mediante Pull Request.
     - [5.1.4. Software Deployment Configuration](#514-software-deployment-configuration)
   - [5.2. Product Implementation & Deployment](#52-product-implementation--deployment)
     - [5.2.1. Sprint Backlogs](#521-sprint-backlogs)
-      - [Sprint 1](#sprint-1)
-      - [Sprint 2](#sprint-2)
-      - [Resumen de los dos sprints](#resumen-de-los-dos-sprints)
+      - [Sprint 1 — El ciclo de vida del hallazgo](#sprint-1--el-ciclo-de-vida-del-hallazgo-1)
+      - [Sprint 2 — Captura en campo, accidentes y experimento A/B](#sprint-2--captura-en-campo-accidentes-y-experimento-ab-1)
+      - [Sprint 3 — Cuentas, registros obligatorios, capacitación y despliegue](#sprint-3--cuentas-registros-obligatorios-capacitación-y-despliegue-1)
+      - [Sprint 4 — Comité, evidencia, contratistas, notificaciones y seguridad](#sprint-4--comité-evidencia-contratistas-notificaciones-y-seguridad-1)
+      - [Resumen de los cuatro sprints](#resumen-de-los-cuatro-sprints)
     - [5.2.2. Implemented Landing Page Evidence](#522-implemented-landing-page-evidence)
     - [5.2.3. Implemented Frontend-Web Application Evidence](#523-implemented-frontend-web-application-evidence)
     - [5.2.4. Acuerdo de Servicio - SaaS](#524-acuerdo-de-servicio---saas)
@@ -2740,17 +2742,10 @@ al cierre de esta revisión.
 
 ### 5.2.1. Sprint Backlogs
 
-El ciclo se organizó en dos sprints. El Capítulo III contiene el catálogo completo de las 128
-historias de usuario y las 34 historias técnicas, con su Product Backlog priorizado; esta sección
-toma de ese backlog únicamente lo que cada sprint se comprometió a entregar y lo **desglosa en
-work-items**: la tarea concreta, su estimación en horas y el área responsable.
-
-**Criterio de división.** El Sprint 1 cierra el **ciclo de vida de un hallazgo** de extremo a
-extremo: que el operario lo registre con evidencia y que el supervisor lo reciba, lo asigne y lo
-cierre. El Sprint 2 construye sobre ese cimiento **el resto del sistema de gestión**: la matriz
-IPERC, el control de EPP, las inspecciones, el comité, las métricas y la evidencia exportable, más
-las cuentas, los roles y la calidad de uso. Sin el ciclo del hallazgo funcionando, ninguno de los
-registros del Sprint 2 tendría de dónde alimentarse.
+El ciclo se organizó en cuatro sprints, uno por cada hito del curso. La sección 3.3 del Capítulo
+III contiene el Product Backlog completo con los 162 elementos repartidos entre ellos; esta
+sección toma el alcance de cada sprint y lo **desglosa en work-items**: la tarea concreta, su
+estimación en horas y el área responsable.
 
 **Cómo se desglosó cada historia.** Una historia de usuario no es una tarea: atraviesa el API, la
 web y el móvil. El desglose sigue esa estructura, de modo que cada work-item cae en un único
@@ -2765,363 +2760,613 @@ repositorio y en una única área responsable:
 | Historia técnica | Configuración · verificación en el pipeline |
 
 **Cómo se estimaron las horas.** Cada Story Point equivale a **2 horas** de trabajo, y las horas
-de la historia se reparten entre sus work-items según el peso de cada capa. La conversión es una
-regla declarada, no una medición: sirve para dimensionar el esfuerzo relativo entre tareas, no para
-afirmar cuánto tardó realmente cada una.
+de la historia se reparten entre sus work-items según el peso de cada capa. Ninguna tarea baja de
+una hora. La conversión es una regla declarada, no una medición: sirve para dimensionar el
+esfuerzo relativo entre tareas, no para afirmar cuánto tardó realmente cada una.
 
 ---
 
-#### Sprint 1
+#### Sprint 1 — El ciclo de vida del hallazgo
 
 | Campo | Valor |
 |---|---|
+| Hito | Primer hito — AVANCE 1 · Sprint Review |
+| Semanas del ciclo | 1 a 4 |
+| Fechas | 24/08/2026 al 20/09/2026 |
 | Objetivo | Cerrar el ciclo del hallazgo de extremo a extremo: registrarlo en campo con evidencia, recibirlo, asignarlo y cerrarlo con la acción correctiva aplicada. |
-| Elementos del backlog comprometidos | 15 |
+| Elementos del backlog | 15 |
 | Story Points | 60 |
 | Work-items | 54 |
 | Horas estimadas | 120 |
 | Incremento entregable | Un operario registra un acto o condición insegura con foto, ubicación y fecha real desde el celular o la web; el supervisor lo ve en su bandeja, lo asigna y lo cierra; la bitácora queda con quién hizo qué y cuándo. |
 
-Las doce historias de usuario de este sprint están marcadas `Android y Web` en el Capítulo III: el
-incremento es demostrable tanto desde el panel web como desde la aplicación Android, que es la
-condición de paridad que el proyecto se impuso.
+Las doce historias de usuario de este sprint están marcadas `Android y Web`: el incremento es demostrable tanto desde el panel web como desde la aplicación Android, que es la condición de paridad que el proyecto se impuso.
 
-| Sprint | User Story | Título | Work-Item | Descripción de la tarea | Estimación (h) | Área responsable | Estado |
-|---|---|---|---|---|---|---|---|
-| Sprint 1 | US02 | Inicio de sesión | Sprint1-T01 | Implementar en el API la lógica y el endpoint de «Inicio de sesión» | 1 | Backend | Terminado |
-| Sprint 1 | US02 | Inicio de sesión | Sprint1-T02 | Construir en el panel web la interfaz de «Inicio de sesión» | 2 | Web | Terminado |
-| Sprint 1 | US02 | Inicio de sesión | Sprint1-T03 | Construir en la aplicación Android la interfaz de «Inicio de sesión» | 2 | Android | Terminado |
-| Sprint 1 | US02 | Inicio de sesión | Sprint1-T04 | Cubrir «Inicio de sesión» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 1 | US06 | Reporte rápido desde el celular | Sprint1-T05 | Implementar en el API la lógica y el endpoint de «Reporte rápido desde el celular» | 4 | Backend | Terminado |
-| Sprint 1 | US06 | Reporte rápido desde el celular | Sprint1-T06 | Construir en el panel web la interfaz de «Reporte rápido desde el celular» | 5 | Web | Terminado |
-| Sprint 1 | US06 | Reporte rápido desde el celular | Sprint1-T07 | Construir en la aplicación Android la interfaz de «Reporte rápido desde el celular» | 5 | Android | Terminado |
-| Sprint 1 | US06 | Reporte rápido desde el celular | Sprint1-T08 | Cubrir «Reporte rápido desde el celular» con pruebas automatizadas | 2 | QA | Terminado |
-| Sprint 1 | US13 | Consulta de mis reportes | Sprint1-T09 | Implementar en el API la lógica y el endpoint de «Consulta de mis reportes» | 1 | Backend | Terminado |
-| Sprint 1 | US13 | Consulta de mis reportes | Sprint1-T10 | Construir en el panel web la interfaz de «Consulta de mis reportes» | 2 | Web | Terminado |
-| Sprint 1 | US13 | Consulta de mis reportes | Sprint1-T11 | Construir en la aplicación Android la interfaz de «Consulta de mis reportes» | 2 | Android | Terminado |
-| Sprint 1 | US13 | Consulta de mis reportes | Sprint1-T12 | Cubrir «Consulta de mis reportes» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 1 | US43 | Menú según mi rol | Sprint1-T13 | Implementar en el API la lógica y el endpoint de «Menú según mi rol» | 1 | Backend | Terminado |
-| Sprint 1 | US43 | Menú según mi rol | Sprint1-T14 | Construir en el panel web la interfaz de «Menú según mi rol» | 2 | Web | Terminado |
-| Sprint 1 | US43 | Menú según mi rol | Sprint1-T15 | Construir en la aplicación Android la interfaz de «Menú según mi rol» | 2 | Android | Terminado |
-| Sprint 1 | US43 | Menú según mi rol | Sprint1-T16 | Cubrir «Menú según mi rol» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 1 | US14 | Bandeja de hallazgos | Sprint1-T17 | Implementar en el API la lógica y el endpoint de «Bandeja de hallazgos» | 3 | Backend | Terminado |
-| Sprint 1 | US14 | Bandeja de hallazgos | Sprint1-T18 | Construir en el panel web la interfaz de «Bandeja de hallazgos» | 3 | Web | Terminado |
-| Sprint 1 | US14 | Bandeja de hallazgos | Sprint1-T19 | Construir en la aplicación Android la interfaz de «Bandeja de hallazgos» | 3 | Android | Terminado |
-| Sprint 1 | US14 | Bandeja de hallazgos | Sprint1-T20 | Cubrir «Bandeja de hallazgos» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 1 | US16 | Cierre con acción correctiva | Sprint1-T21 | Implementar en el API la lógica y el endpoint de «Cierre con acción correctiva» | 3 | Backend | Terminado |
-| Sprint 1 | US16 | Cierre con acción correctiva | Sprint1-T22 | Construir en el panel web la interfaz de «Cierre con acción correctiva» | 3 | Web | Terminado |
-| Sprint 1 | US16 | Cierre con acción correctiva | Sprint1-T23 | Construir en la aplicación Android la interfaz de «Cierre con acción correctiva» | 3 | Android | Terminado |
-| Sprint 1 | US16 | Cierre con acción correctiva | Sprint1-T24 | Cubrir «Cierre con acción correctiva» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 1 | US15 | Asignación de responsable | Sprint1-T25 | Implementar en el API la lógica y el endpoint de «Asignación de responsable» | 3 | Backend | Terminado |
-| Sprint 1 | US15 | Asignación de responsable | Sprint1-T26 | Construir en el panel web la interfaz de «Asignación de responsable» | 3 | Web | Terminado |
-| Sprint 1 | US15 | Asignación de responsable | Sprint1-T27 | Construir en la aplicación Android la interfaz de «Asignación de responsable» | 3 | Android | Terminado |
-| Sprint 1 | US15 | Asignación de responsable | Sprint1-T28 | Cubrir «Asignación de responsable» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 1 | US18 | Bitácora del hallazgo | Sprint1-T29 | Implementar en el API la lógica y el endpoint de «Bitácora del hallazgo» | 1 | Backend | Terminado |
-| Sprint 1 | US18 | Bitácora del hallazgo | Sprint1-T30 | Construir en el panel web la interfaz de «Bitácora del hallazgo» | 2 | Web | Terminado |
-| Sprint 1 | US18 | Bitácora del hallazgo | Sprint1-T31 | Construir en la aplicación Android la interfaz de «Bitácora del hallazgo» | 2 | Android | Terminado |
-| Sprint 1 | US18 | Bitácora del hallazgo | Sprint1-T32 | Cubrir «Bitácora del hallazgo» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 1 | US09 | Evidencia fotográfica | Sprint1-T33 | Implementar en el API la lógica y el endpoint de «Evidencia fotográfica» | 3 | Backend | Terminado |
-| Sprint 1 | US09 | Evidencia fotográfica | Sprint1-T34 | Construir en el panel web la interfaz de «Evidencia fotográfica» | 3 | Web | Terminado |
-| Sprint 1 | US09 | Evidencia fotográfica | Sprint1-T35 | Construir en la aplicación Android la interfaz de «Evidencia fotográfica» | 3 | Android | Terminado |
-| Sprint 1 | US09 | Evidencia fotográfica | Sprint1-T36 | Cubrir «Evidencia fotográfica» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 1 | US10 | Geolocalización del hallazgo | Sprint1-T37 | Implementar en el API la lógica y el endpoint de «Geolocalización del hallazgo» | 3 | Backend | Terminado |
-| Sprint 1 | US10 | Geolocalización del hallazgo | Sprint1-T38 | Construir en el panel web la interfaz de «Geolocalización del hallazgo» | 3 | Web | Terminado |
-| Sprint 1 | US10 | Geolocalización del hallazgo | Sprint1-T39 | Construir en la aplicación Android la interfaz de «Geolocalización del hallazgo» | 3 | Android | Terminado |
-| Sprint 1 | US10 | Geolocalización del hallazgo | Sprint1-T40 | Cubrir «Geolocalización del hallazgo» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 1 | US11 | Fecha real de ocurrencia | Sprint1-T41 | Implementar en el API la lógica y el endpoint de «Fecha real de ocurrencia» | 1 | Backend | Terminado |
-| Sprint 1 | US11 | Fecha real de ocurrencia | Sprint1-T42 | Construir en el panel web la interfaz de «Fecha real de ocurrencia» | 2 | Web | Terminado |
-| Sprint 1 | US11 | Fecha real de ocurrencia | Sprint1-T43 | Construir en la aplicación Android la interfaz de «Fecha real de ocurrencia» | 2 | Android | Terminado |
-| Sprint 1 | US11 | Fecha real de ocurrencia | Sprint1-T44 | Cubrir «Fecha real de ocurrencia» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 1 | US47 | Categorías según el tipo de hallazgo | Sprint1-T45 | Implementar en el API la lógica y el endpoint de «Categorías según el tipo de hallazgo» | 1 | Backend | Terminado |
-| Sprint 1 | US47 | Categorías según el tipo de hallazgo | Sprint1-T46 | Construir en el panel web la interfaz de «Categorías según el tipo de hallazgo» | 1 | Web | Terminado |
-| Sprint 1 | US47 | Categorías según el tipo de hallazgo | Sprint1-T47 | Construir en la aplicación Android la interfaz de «Categorías según el tipo de hallazgo» | 1 | Android | Terminado |
-| Sprint 1 | US47 | Categorías según el tipo de hallazgo | Sprint1-T48 | Cubrir «Categorías según el tipo de hallazgo» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 1 | TS02 | Convenciones de commits | Sprint1-T49 | Configurar «Convenciones de commits» | 3 | DevOps | Terminado |
-| Sprint 1 | TS02 | Convenciones de commits | Sprint1-T50 | Verificar «Convenciones de commits» en el pipeline | 1 | DevOps | Terminado |
-| Sprint 1 | TS05 | Flujo de ramas GitFlow | Sprint1-T51 | Configurar «Flujo de ramas GitFlow» | 4 | DevOps | Terminado |
-| Sprint 1 | TS05 | Flujo de ramas GitFlow | Sprint1-T52 | Verificar «Flujo de ramas GitFlow» en el pipeline | 2 | DevOps | Terminado |
-| Sprint 1 | TS01 | Integración continua | Sprint1-T53 | Configurar «Integración continua» | 7 | DevOps | Terminado |
-| Sprint 1 | TS01 | Integración continua | Sprint1-T54 | Verificar «Integración continua» en el pipeline | 3 | DevOps | Terminado |
+| Sprint | User Story | Título | Work-Item | Descripción de la tarea | Estimación (h) | Área responsable |
+|---|---|---|---|---|---|---|
+| Sprint 1 | US02 | Inicio de sesión | Sprint1-T001 | Implementar en el API la lógica y el endpoint de «Inicio de sesión» | 1 | Backend |
+| Sprint 1 | US02 | Inicio de sesión | Sprint1-T002 | Construir en el panel web la interfaz de «Inicio de sesión» | 2 | Web |
+| Sprint 1 | US02 | Inicio de sesión | Sprint1-T003 | Construir en la aplicación Android la interfaz de «Inicio de sesión» | 2 | Móvil |
+| Sprint 1 | US02 | Inicio de sesión | Sprint1-T004 | Cubrir «Inicio de sesión» con pruebas automatizadas | 1 | QA |
+| Sprint 1 | US06 | Reporte rápido desde el celular | Sprint1-T005 | Implementar en el API la lógica y el endpoint de «Reporte rápido desde el celular» | 4 | Backend |
+| Sprint 1 | US06 | Reporte rápido desde el celular | Sprint1-T006 | Construir en el panel web la interfaz de «Reporte rápido desde el celular» | 5 | Web |
+| Sprint 1 | US06 | Reporte rápido desde el celular | Sprint1-T007 | Construir en la aplicación Android la interfaz de «Reporte rápido desde el celular» | 5 | Móvil |
+| Sprint 1 | US06 | Reporte rápido desde el celular | Sprint1-T008 | Cubrir «Reporte rápido desde el celular» con pruebas automatizadas | 2 | QA |
+| Sprint 1 | US13 | Consulta de mis reportes | Sprint1-T009 | Implementar en el API la lógica y el endpoint de «Consulta de mis reportes» | 1 | Backend |
+| Sprint 1 | US13 | Consulta de mis reportes | Sprint1-T010 | Construir en el panel web la interfaz de «Consulta de mis reportes» | 2 | Web |
+| Sprint 1 | US13 | Consulta de mis reportes | Sprint1-T011 | Construir en la aplicación Android la interfaz de «Consulta de mis reportes» | 2 | Móvil |
+| Sprint 1 | US13 | Consulta de mis reportes | Sprint1-T012 | Cubrir «Consulta de mis reportes» con pruebas automatizadas | 1 | QA |
+| Sprint 1 | US43 | Menú según mi rol | Sprint1-T013 | Implementar en el API la lógica y el endpoint de «Menú según mi rol» | 1 | Backend |
+| Sprint 1 | US43 | Menú según mi rol | Sprint1-T014 | Construir en el panel web la interfaz de «Menú según mi rol» | 2 | Web |
+| Sprint 1 | US43 | Menú según mi rol | Sprint1-T015 | Construir en la aplicación Android la interfaz de «Menú según mi rol» | 2 | Móvil |
+| Sprint 1 | US43 | Menú según mi rol | Sprint1-T016 | Cubrir «Menú según mi rol» con pruebas automatizadas | 1 | QA |
+| Sprint 1 | US14 | Bandeja de hallazgos | Sprint1-T017 | Implementar en el API la lógica y el endpoint de «Bandeja de hallazgos» | 3 | Backend |
+| Sprint 1 | US14 | Bandeja de hallazgos | Sprint1-T018 | Construir en el panel web la interfaz de «Bandeja de hallazgos» | 3 | Web |
+| Sprint 1 | US14 | Bandeja de hallazgos | Sprint1-T019 | Construir en la aplicación Android la interfaz de «Bandeja de hallazgos» | 3 | Móvil |
+| Sprint 1 | US14 | Bandeja de hallazgos | Sprint1-T020 | Cubrir «Bandeja de hallazgos» con pruebas automatizadas | 1 | QA |
+| Sprint 1 | US16 | Cierre con acción correctiva | Sprint1-T021 | Implementar en el API la lógica y el endpoint de «Cierre con acción correctiva» | 3 | Backend |
+| Sprint 1 | US16 | Cierre con acción correctiva | Sprint1-T022 | Construir en el panel web la interfaz de «Cierre con acción correctiva» | 3 | Web |
+| Sprint 1 | US16 | Cierre con acción correctiva | Sprint1-T023 | Construir en la aplicación Android la interfaz de «Cierre con acción correctiva» | 3 | Móvil |
+| Sprint 1 | US16 | Cierre con acción correctiva | Sprint1-T024 | Cubrir «Cierre con acción correctiva» con pruebas automatizadas | 1 | QA |
+| Sprint 1 | US15 | Asignación de responsable | Sprint1-T025 | Implementar en el API la lógica y el endpoint de «Asignación de responsable» | 3 | Backend |
+| Sprint 1 | US15 | Asignación de responsable | Sprint1-T026 | Construir en el panel web la interfaz de «Asignación de responsable» | 3 | Web |
+| Sprint 1 | US15 | Asignación de responsable | Sprint1-T027 | Construir en la aplicación Android la interfaz de «Asignación de responsable» | 3 | Móvil |
+| Sprint 1 | US15 | Asignación de responsable | Sprint1-T028 | Cubrir «Asignación de responsable» con pruebas automatizadas | 1 | QA |
+| Sprint 1 | US18 | Bitácora del hallazgo | Sprint1-T029 | Implementar en el API la lógica y el endpoint de «Bitácora del hallazgo» | 1 | Backend |
+| Sprint 1 | US18 | Bitácora del hallazgo | Sprint1-T030 | Construir en el panel web la interfaz de «Bitácora del hallazgo» | 2 | Web |
+| Sprint 1 | US18 | Bitácora del hallazgo | Sprint1-T031 | Construir en la aplicación Android la interfaz de «Bitácora del hallazgo» | 2 | Móvil |
+| Sprint 1 | US18 | Bitácora del hallazgo | Sprint1-T032 | Cubrir «Bitácora del hallazgo» con pruebas automatizadas | 1 | QA |
+| Sprint 1 | US09 | Evidencia fotográfica | Sprint1-T033 | Implementar en el API la lógica y el endpoint de «Evidencia fotográfica» | 3 | Backend |
+| Sprint 1 | US09 | Evidencia fotográfica | Sprint1-T034 | Construir en el panel web la interfaz de «Evidencia fotográfica» | 3 | Web |
+| Sprint 1 | US09 | Evidencia fotográfica | Sprint1-T035 | Construir en la aplicación Android la interfaz de «Evidencia fotográfica» | 3 | Móvil |
+| Sprint 1 | US09 | Evidencia fotográfica | Sprint1-T036 | Cubrir «Evidencia fotográfica» con pruebas automatizadas | 1 | QA |
+| Sprint 1 | US10 | Geolocalización del hallazgo | Sprint1-T037 | Implementar en el API la lógica y el endpoint de «Geolocalización del hallazgo» | 3 | Backend |
+| Sprint 1 | US10 | Geolocalización del hallazgo | Sprint1-T038 | Construir en el panel web la interfaz de «Geolocalización del hallazgo» | 3 | Web |
+| Sprint 1 | US10 | Geolocalización del hallazgo | Sprint1-T039 | Construir en la aplicación Android la interfaz de «Geolocalización del hallazgo» | 3 | Móvil |
+| Sprint 1 | US10 | Geolocalización del hallazgo | Sprint1-T040 | Cubrir «Geolocalización del hallazgo» con pruebas automatizadas | 1 | QA |
+| Sprint 1 | US11 | Fecha real de ocurrencia | Sprint1-T041 | Implementar en el API la lógica y el endpoint de «Fecha real de ocurrencia» | 1 | Backend |
+| Sprint 1 | US11 | Fecha real de ocurrencia | Sprint1-T042 | Construir en el panel web la interfaz de «Fecha real de ocurrencia» | 2 | Web |
+| Sprint 1 | US11 | Fecha real de ocurrencia | Sprint1-T043 | Construir en la aplicación Android la interfaz de «Fecha real de ocurrencia» | 2 | Móvil |
+| Sprint 1 | US11 | Fecha real de ocurrencia | Sprint1-T044 | Cubrir «Fecha real de ocurrencia» con pruebas automatizadas | 1 | QA |
+| Sprint 1 | US47 | Categorías según el tipo de hallazgo | Sprint1-T045 | Implementar en el API la lógica y el endpoint de «Categorías según el tipo de hallazgo» | 1 | Backend |
+| Sprint 1 | US47 | Categorías según el tipo de hallazgo | Sprint1-T046 | Construir en el panel web la interfaz de «Categorías según el tipo de hallazgo» | 1 | Web |
+| Sprint 1 | US47 | Categorías según el tipo de hallazgo | Sprint1-T047 | Construir en la aplicación Android la interfaz de «Categorías según el tipo de hallazgo» | 1 | Móvil |
+| Sprint 1 | US47 | Categorías según el tipo de hallazgo | Sprint1-T048 | Cubrir «Categorías según el tipo de hallazgo» con pruebas automatizadas | 1 | QA |
+| Sprint 1 | TS01 | Integración continua | Sprint1-T049 | Configurar «Integración continua» | 7 | DevOps |
+| Sprint 1 | TS01 | Integración continua | Sprint1-T050 | Verificar «Integración continua» en el pipeline | 3 | DevOps |
+| Sprint 1 | TS02 | Convenciones de commits | Sprint1-T051 | Configurar «Convenciones de commits» | 3 | DevOps |
+| Sprint 1 | TS02 | Convenciones de commits | Sprint1-T052 | Verificar «Convenciones de commits» en el pipeline | 1 | DevOps |
+| Sprint 1 | TS05 | Flujo de ramas GitFlow | Sprint1-T053 | Configurar «Flujo de ramas GitFlow» | 4 | DevOps |
+| Sprint 1 | TS05 | Flujo de ramas GitFlow | Sprint1-T054 | Verificar «Flujo de ramas GitFlow» en el pipeline | 2 | DevOps |
 
 ---
 
-#### Sprint 2
+#### Sprint 2 — Captura en campo, accidentes y experimento A/B
 
 | Campo | Valor |
 |---|---|
-| Objetivo | Completar el sistema de gestión sobre el ciclo del hallazgo ya funcionando: matriz IPERC, control de EPP, inspecciones, comité de SST, métricas, evidencia exportable, cuentas y calidad de uso. |
-| Elementos del backlog comprometidos | 71 |
-| Story Points | 259 |
-| Work-items | 220 |
-| Horas estimadas | 518 |
-| Incremento entregable | El supervisor y el comité disponen de los registros obligatorios de la Ley N° 29783 en el sistema: peligros evaluados y versionados, entregas de EPP con conformidad, inspecciones programadas y ejecutadas con checklist, actas del comité con quórum y acuerdos, indicadores de gestión y exportación de la evidencia a Excel. |
+| Hito | Segundo hito — TRABAJO PARCIAL · Stage Review |
+| Semanas del ciclo | 5 a 7 |
+| Fechas | 21/09/2026 al 11/10/2026 |
+| Objetivo | Endurecer la captura para el campo real y completar el registro de lo que ocurre: operación sin conexión, evidencia verificable, accidentes e incidentes, privacidad del reporte y el experimento A/B en marcha. |
+| Elementos del backlog | 36 |
+| Story Points | 161 |
+| Work-items | 114 |
+| Horas estimadas | 322 |
+| Incremento entregable | El operario reporta sin cobertura y su reporte llega solo al recuperar la señal, sin duplicados; puede hacerlo de forma anónima y negar la ubicación sin perder la funcionalidad. Los accidentes e incidentes se registran e investigan hasta su causa raíz. Cada reporte queda atribuido a su variante y los resultados del experimento son consultables con su intervalo de confianza. |
 
-| Sprint | User Story | Título | Work-Item | Descripción de la tarea | Estimación (h) | Área responsable | Estado |
-|---|---|---|---|---|---|---|---|
-| Sprint 2 | US07 | Reporte sin conexión | Sprint2-T01 | Implementar en el API la lógica y el endpoint de «Reporte sin conexión» | 9 | Backend | Terminado |
-| Sprint 2 | US07 | Reporte sin conexión | Sprint2-T02 | Construir en la aplicación Android la interfaz de «Reporte sin conexión» | 12 | Android | Terminado |
-| Sprint 2 | US07 | Reporte sin conexión | Sprint2-T03 | Cubrir «Reporte sin conexión» con pruebas automatizadas | 5 | QA | Terminado |
-| Sprint 2 | US08 | Sincronización sin duplicados | Sprint2-T04 | Implementar en el API la lógica y el endpoint de «Sincronización sin duplicados» | 4 | Backend | Terminado |
-| Sprint 2 | US08 | Sincronización sin duplicados | Sprint2-T05 | Construir en el panel web la interfaz de «Sincronización sin duplicados» | 5 | Web | Terminado |
-| Sprint 2 | US08 | Sincronización sin duplicados | Sprint2-T06 | Construir en la aplicación Android la interfaz de «Sincronización sin duplicados» | 5 | Android | Terminado |
-| Sprint 2 | US08 | Sincronización sin duplicados | Sprint2-T07 | Cubrir «Sincronización sin duplicados» con pruebas automatizadas | 2 | QA | Terminado |
-| Sprint 2 | US70 | Sesión que no expira en campo | Sprint2-T08 | Implementar en el API la lógica y el endpoint de «Sesión que no expira en campo» | 3 | Backend | Terminado |
-| Sprint 2 | US70 | Sesión que no expira en campo | Sprint2-T09 | Construir en el panel web la interfaz de «Sesión que no expira en campo» | 3 | Web | Terminado |
-| Sprint 2 | US70 | Sesión que no expira en campo | Sprint2-T10 | Construir en la aplicación Android la interfaz de «Sesión que no expira en campo» | 3 | Android | Terminado |
-| Sprint 2 | US70 | Sesión que no expira en campo | Sprint2-T11 | Cubrir «Sesión que no expira en campo» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US17 | Separación de responsabilidades | Sprint2-T12 | Implementar en el API la lógica y el endpoint de «Separación de responsabilidades» | 1 | Backend | Terminado |
-| Sprint 2 | US17 | Separación de responsabilidades | Sprint2-T13 | Construir en el panel web la interfaz de «Separación de responsabilidades» | 2 | Web | Terminado |
-| Sprint 2 | US17 | Separación de responsabilidades | Sprint2-T14 | Construir en la aplicación Android la interfaz de «Separación de responsabilidades» | 2 | Android | Terminado |
-| Sprint 2 | US17 | Separación de responsabilidades | Sprint2-T15 | Cubrir «Separación de responsabilidades» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US35 | Indicador MTTR | Sprint2-T16 | Implementar en el API la lógica y el endpoint de «Indicador MTTR» | 3 | Backend | Terminado |
-| Sprint 2 | US35 | Indicador MTTR | Sprint2-T17 | Construir en el panel web la interfaz de «Indicador MTTR» | 3 | Web | Terminado |
-| Sprint 2 | US35 | Indicador MTTR | Sprint2-T18 | Construir en la aplicación Android la interfaz de «Indicador MTTR» | 3 | Android | Terminado |
-| Sprint 2 | US35 | Indicador MTTR | Sprint2-T19 | Cubrir «Indicador MTTR» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US50 | Filtrar la bandeja | Sprint2-T20 | Implementar en el API la lógica y el endpoint de «Filtrar la bandeja» | 1 | Backend | Terminado |
-| Sprint 2 | US50 | Filtrar la bandeja | Sprint2-T21 | Construir en el panel web la interfaz de «Filtrar la bandeja» | 2 | Web | Terminado |
-| Sprint 2 | US50 | Filtrar la bandeja | Sprint2-T22 | Construir en la aplicación Android la interfaz de «Filtrar la bandeja» | 2 | Android | Terminado |
-| Sprint 2 | US50 | Filtrar la bandeja | Sprint2-T23 | Cubrir «Filtrar la bandeja» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US49 | Descartar un reporte | Sprint2-T24 | Implementar en el API la lógica y el endpoint de «Descartar un reporte» | 1 | Backend | Terminado |
-| Sprint 2 | US49 | Descartar un reporte | Sprint2-T25 | Construir en el panel web la interfaz de «Descartar un reporte» | 2 | Web | Terminado |
-| Sprint 2 | US49 | Descartar un reporte | Sprint2-T26 | Cubrir «Descartar un reporte» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US12 | Reporte desde la web | Sprint2-T27 | Implementar en el API la lógica y el endpoint de «Reporte desde la web» | 4 | Backend | Terminado |
-| Sprint 2 | US12 | Reporte desde la web | Sprint2-T28 | Construir en el panel web la interfaz de «Reporte desde la web» | 4 | Web | Terminado |
-| Sprint 2 | US12 | Reporte desde la web | Sprint2-T29 | Cubrir «Reporte desde la web» con pruebas automatizadas | 2 | QA | Terminado |
-| Sprint 2 | US44 | Vista previa de la evidencia | Sprint2-T30 | Implementar en el API la lógica y el endpoint de «Vista previa de la evidencia» | 2 | Backend | Terminado |
-| Sprint 2 | US44 | Vista previa de la evidencia | Sprint2-T31 | Construir en el panel web la interfaz de «Vista previa de la evidencia» | 3 | Web | Terminado |
-| Sprint 2 | US44 | Vista previa de la evidencia | Sprint2-T32 | Cubrir «Vista previa de la evidencia» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US45 | Ampliar la evidencia | Sprint2-T33 | Implementar en el API la lógica y el endpoint de «Ampliar la evidencia» | 2 | Backend | Terminado |
-| Sprint 2 | US45 | Ampliar la evidencia | Sprint2-T34 | Construir en el panel web la interfaz de «Ampliar la evidencia» | 3 | Web | Terminado |
-| Sprint 2 | US45 | Ampliar la evidencia | Sprint2-T35 | Cubrir «Ampliar la evidencia» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US46 | Reemplazar la foto elegida | Sprint2-T36 | Implementar en el API la lógica y el endpoint de «Reemplazar la foto elegida» | 1 | Backend | Terminado |
-| Sprint 2 | US46 | Reemplazar la foto elegida | Sprint2-T37 | Construir en el panel web la interfaz de «Reemplazar la foto elegida» | 2 | Web | Terminado |
-| Sprint 2 | US46 | Reemplazar la foto elegida | Sprint2-T38 | Cubrir «Reemplazar la foto elegida» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US48 | Estado de envío de mis reportes | Sprint2-T39 | Implementar en el API la lógica y el endpoint de «Estado de envío de mis reportes» | 2 | Backend | Terminado |
-| Sprint 2 | US48 | Estado de envío de mis reportes | Sprint2-T40 | Construir en la aplicación Android la interfaz de «Estado de envío de mis reportes» | 3 | Android | Terminado |
-| Sprint 2 | US48 | Estado de envío de mis reportes | Sprint2-T41 | Cubrir «Estado de envío de mis reportes» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US51 | Ubicar el hallazgo en el mapa | Sprint2-T42 | Implementar en el API la lógica y el endpoint de «Ubicar el hallazgo en el mapa» | 1 | Backend | Terminado |
-| Sprint 2 | US51 | Ubicar el hallazgo en el mapa | Sprint2-T43 | Construir en el panel web la interfaz de «Ubicar el hallazgo en el mapa» | 1 | Web | Terminado |
-| Sprint 2 | US38 | Asignación de variante | Sprint2-T44 | Implementar en el API la lógica y el endpoint de «Asignación de variante» | 3 | Backend | Terminado |
-| Sprint 2 | US38 | Asignación de variante | Sprint2-T45 | Construir en el panel web la interfaz de «Asignación de variante» | 3 | Web | Terminado |
-| Sprint 2 | US38 | Asignación de variante | Sprint2-T46 | Construir en la aplicación Android la interfaz de «Asignación de variante» | 3 | Android | Terminado |
-| Sprint 2 | US38 | Asignación de variante | Sprint2-T47 | Cubrir «Asignación de variante» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US39 | Registro de la variante en el reporte | Sprint2-T48 | Implementar en el API la lógica y el endpoint de «Registro de la variante en el reporte» | 1 | Backend | Terminado |
-| Sprint 2 | US39 | Registro de la variante en el reporte | Sprint2-T49 | Construir en el panel web la interfaz de «Registro de la variante en el reporte» | 1 | Web | Terminado |
-| Sprint 2 | US39 | Registro de la variante en el reporte | Sprint2-T50 | Construir en la aplicación Android la interfaz de «Registro de la variante en el reporte» | 1 | Android | Terminado |
-| Sprint 2 | US39 | Registro de la variante en el reporte | Sprint2-T51 | Cubrir «Registro de la variante en el reporte» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US40 | Resultados del experimento | Sprint2-T52 | Implementar en el API la lógica y el endpoint de «Resultados del experimento» | 4 | Backend | Terminado |
-| Sprint 2 | US40 | Resultados del experimento | Sprint2-T53 | Construir en el panel web la interfaz de «Resultados del experimento» | 4 | Web | Terminado |
-| Sprint 2 | US40 | Resultados del experimento | Sprint2-T54 | Cubrir «Resultados del experimento» con pruebas automatizadas | 2 | QA | Terminado |
-| Sprint 2 | US64 | Variante disponible sin conexión | Sprint2-T55 | Implementar en el API la lógica y el endpoint de «Variante disponible sin conexión» | 2 | Backend | Terminado |
-| Sprint 2 | US64 | Variante disponible sin conexión | Sprint2-T56 | Construir en la aplicación Android la interfaz de «Variante disponible sin conexión» | 3 | Android | Terminado |
-| Sprint 2 | US64 | Variante disponible sin conexión | Sprint2-T57 | Cubrir «Variante disponible sin conexión» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US01 | Registro de trabajador | Sprint2-T58 | Implementar en el API la lógica y el endpoint de «Registro de trabajador» | 3 | Backend | Terminado |
-| Sprint 2 | US01 | Registro de trabajador | Sprint2-T59 | Construir en el panel web la interfaz de «Registro de trabajador» | 3 | Web | Terminado |
-| Sprint 2 | US01 | Registro de trabajador | Sprint2-T60 | Construir en la aplicación Android la interfaz de «Registro de trabajador» | 3 | Android | Terminado |
-| Sprint 2 | US01 | Registro de trabajador | Sprint2-T61 | Cubrir «Registro de trabajador» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US03 | Sesión persistente en campo | Sprint2-T62 | Implementar en el API la lógica y el endpoint de «Sesión persistente en campo» | 1 | Backend | Terminado |
-| Sprint 2 | US03 | Sesión persistente en campo | Sprint2-T63 | Construir en el panel web la interfaz de «Sesión persistente en campo» | 2 | Web | Terminado |
-| Sprint 2 | US03 | Sesión persistente en campo | Sprint2-T64 | Construir en la aplicación Android la interfaz de «Sesión persistente en campo» | 2 | Android | Terminado |
-| Sprint 2 | US03 | Sesión persistente en campo | Sprint2-T65 | Cubrir «Sesión persistente en campo» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US05 | Gestión de áreas | Sprint2-T66 | Implementar en el API la lógica y el endpoint de «Gestión de áreas» | 1 | Backend | Terminado |
-| Sprint 2 | US05 | Gestión de áreas | Sprint2-T67 | Construir en el panel web la interfaz de «Gestión de áreas» | 2 | Web | Terminado |
-| Sprint 2 | US05 | Gestión de áreas | Sprint2-T68 | Cubrir «Gestión de áreas» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US04 | Administración de usuarios | Sprint2-T69 | Implementar en el API la lógica y el endpoint de «Administración de usuarios» | 4 | Backend | Terminado |
-| Sprint 2 | US04 | Administración de usuarios | Sprint2-T70 | Construir en el panel web la interfaz de «Administración de usuarios» | 4 | Web | Terminado |
-| Sprint 2 | US04 | Administración de usuarios | Sprint2-T71 | Cubrir «Administración de usuarios» con pruebas automatizadas | 2 | QA | Terminado |
-| Sprint 2 | US41 | Cambio de rol de un usuario | Sprint2-T72 | Implementar en el API la lógica y el endpoint de «Cambio de rol de un usuario» | 1 | Backend | Terminado |
-| Sprint 2 | US41 | Cambio de rol de un usuario | Sprint2-T73 | Construir en el panel web la interfaz de «Cambio de rol de un usuario» | 2 | Web | Terminado |
-| Sprint 2 | US41 | Cambio de rol de un usuario | Sprint2-T74 | Cubrir «Cambio de rol de un usuario» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US42 | Cierre de sesión | Sprint2-T75 | Implementar en el API la lógica y el endpoint de «Cierre de sesión» | 1 | Backend | Terminado |
-| Sprint 2 | US42 | Cierre de sesión | Sprint2-T76 | Construir en el panel web la interfaz de «Cierre de sesión» | 1 | Web | Terminado |
-| Sprint 2 | US19 | Consulta de la matriz en campo | Sprint2-T77 | Implementar en el API la lógica y el endpoint de «Consulta de la matriz en campo» | 1 | Backend | Terminado |
-| Sprint 2 | US19 | Consulta de la matriz en campo | Sprint2-T78 | Construir en el panel web la interfaz de «Consulta de la matriz en campo» | 2 | Web | Terminado |
-| Sprint 2 | US19 | Consulta de la matriz en campo | Sprint2-T79 | Construir en la aplicación Android la interfaz de «Consulta de la matriz en campo» | 2 | Android | Terminado |
-| Sprint 2 | US19 | Consulta de la matriz en campo | Sprint2-T80 | Cubrir «Consulta de la matriz en campo» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US20 | Registro de peligros | Sprint2-T81 | Implementar en el API la lógica y el endpoint de «Registro de peligros» | 4 | Backend | Terminado |
-| Sprint 2 | US20 | Registro de peligros | Sprint2-T82 | Construir en el panel web la interfaz de «Registro de peligros» | 4 | Web | Terminado |
-| Sprint 2 | US20 | Registro de peligros | Sprint2-T83 | Cubrir «Registro de peligros» con pruebas automatizadas | 2 | QA | Terminado |
-| Sprint 2 | US21 | Versionado de la matriz | Sprint2-T84 | Implementar en el API la lógica y el endpoint de «Versionado de la matriz» | 4 | Backend | Terminado |
-| Sprint 2 | US21 | Versionado de la matriz | Sprint2-T85 | Construir en el panel web la interfaz de «Versionado de la matriz» | 4 | Web | Terminado |
-| Sprint 2 | US21 | Versionado de la matriz | Sprint2-T86 | Cubrir «Versionado de la matriz» con pruebas automatizadas | 2 | QA | Terminado |
-| Sprint 2 | US22 | Trazabilidad con el hallazgo de origen | Sprint2-T87 | Implementar en el API la lógica y el endpoint de «Trazabilidad con el hallazgo de origen» | 1 | Backend | Terminado |
-| Sprint 2 | US22 | Trazabilidad con el hallazgo de origen | Sprint2-T88 | Construir en el panel web la interfaz de «Trazabilidad con el hallazgo de origen» | 2 | Web | Terminado |
-| Sprint 2 | US22 | Trazabilidad con el hallazgo de origen | Sprint2-T89 | Construir en la aplicación Android la interfaz de «Trazabilidad con el hallazgo de origen» | 2 | Android | Terminado |
-| Sprint 2 | US22 | Trazabilidad con el hallazgo de origen | Sprint2-T90 | Cubrir «Trazabilidad con el hallazgo de origen» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US52 | Consultar versiones anteriores de la matriz | Sprint2-T91 | Implementar en el API la lógica y el endpoint de «Consultar versiones anteriores de la matriz» | 4 | Backend | Terminado |
-| Sprint 2 | US52 | Consultar versiones anteriores de la matriz | Sprint2-T92 | Construir en el panel web la interfaz de «Consultar versiones anteriores de la matriz» | 4 | Web | Terminado |
-| Sprint 2 | US52 | Consultar versiones anteriores de la matriz | Sprint2-T93 | Cubrir «Consultar versiones anteriores de la matriz» con pruebas automatizadas | 2 | QA | Terminado |
-| Sprint 2 | US53 | Publicar una nueva versión de la matriz | Sprint2-T94 | Implementar en el API la lógica y el endpoint de «Publicar una nueva versión de la matriz» | 4 | Backend | Terminado |
-| Sprint 2 | US53 | Publicar una nueva versión de la matriz | Sprint2-T95 | Construir en el panel web la interfaz de «Publicar una nueva versión de la matriz» | 4 | Web | Terminado |
-| Sprint 2 | US53 | Publicar una nueva versión de la matriz | Sprint2-T96 | Cubrir «Publicar una nueva versión de la matriz» con pruebas automatizadas | 2 | QA | Terminado |
-| Sprint 2 | US54 | Retirar un peligro de la matriz | Sprint2-T97 | Implementar en el API la lógica y el endpoint de «Retirar un peligro de la matriz» | 1 | Backend | Terminado |
-| Sprint 2 | US54 | Retirar un peligro de la matriz | Sprint2-T98 | Construir en el panel web la interfaz de «Retirar un peligro de la matriz» | 2 | Web | Terminado |
-| Sprint 2 | US54 | Retirar un peligro de la matriz | Sprint2-T99 | Cubrir «Retirar un peligro de la matriz» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US23 | Catálogo de EPP | Sprint2-T100 | Implementar en el API la lógica y el endpoint de «Catálogo de EPP» | 2 | Backend | Terminado |
-| Sprint 2 | US23 | Catálogo de EPP | Sprint2-T101 | Construir en el panel web la interfaz de «Catálogo de EPP» | 3 | Web | Terminado |
-| Sprint 2 | US23 | Catálogo de EPP | Sprint2-T102 | Cubrir «Catálogo de EPP» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US24 | Registro de entrega | Sprint2-T103 | Implementar en el API la lógica y el endpoint de «Registro de entrega» | 2 | Backend | Terminado |
-| Sprint 2 | US24 | Registro de entrega | Sprint2-T104 | Construir en el panel web la interfaz de «Registro de entrega» | 3 | Web | Terminado |
-| Sprint 2 | US24 | Registro de entrega | Sprint2-T105 | Cubrir «Registro de entrega» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US25 | Conformidad del trabajador | Sprint2-T106 | Implementar en el API la lógica y el endpoint de «Conformidad del trabajador» | 1 | Backend | Terminado |
-| Sprint 2 | US25 | Conformidad del trabajador | Sprint2-T107 | Construir en el panel web la interfaz de «Conformidad del trabajador» | 2 | Web | Terminado |
-| Sprint 2 | US25 | Conformidad del trabajador | Sprint2-T108 | Construir en la aplicación Android la interfaz de «Conformidad del trabajador» | 2 | Android | Terminado |
-| Sprint 2 | US25 | Conformidad del trabajador | Sprint2-T109 | Cubrir «Conformidad del trabajador» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US26 | Alerta de EPP vencido | Sprint2-T110 | Implementar en el API la lógica y el endpoint de «Alerta de EPP vencido» | 1 | Backend | Terminado |
-| Sprint 2 | US26 | Alerta de EPP vencido | Sprint2-T111 | Construir en el panel web la interfaz de «Alerta de EPP vencido» | 1 | Web | Terminado |
-| Sprint 2 | US26 | Alerta de EPP vencido | Sprint2-T112 | Construir en la aplicación Android la interfaz de «Alerta de EPP vencido» | 1 | Android | Terminado |
-| Sprint 2 | US26 | Alerta de EPP vencido | Sprint2-T113 | Cubrir «Alerta de EPP vencido» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US55 | Control de stock del catálogo | Sprint2-T114 | Implementar en el API la lógica y el endpoint de «Control de stock del catálogo» | 1 | Backend | Terminado |
-| Sprint 2 | US55 | Control de stock del catálogo | Sprint2-T115 | Construir en el panel web la interfaz de «Control de stock del catálogo» | 2 | Web | Terminado |
-| Sprint 2 | US55 | Control de stock del catálogo | Sprint2-T116 | Cubrir «Control de stock del catálogo» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US27 | Programa de inspecciones | Sprint2-T117 | Implementar en el API la lógica y el endpoint de «Programa de inspecciones» | 4 | Backend | Terminado |
-| Sprint 2 | US27 | Programa de inspecciones | Sprint2-T118 | Construir en el panel web la interfaz de «Programa de inspecciones» | 4 | Web | Terminado |
-| Sprint 2 | US27 | Programa de inspecciones | Sprint2-T119 | Cubrir «Programa de inspecciones» con pruebas automatizadas | 2 | QA | Terminado |
-| Sprint 2 | US28 | Ejecución con checklist | Sprint2-T120 | Implementar en el API la lógica y el endpoint de «Ejecución con checklist» | 3 | Backend | Terminado |
-| Sprint 2 | US28 | Ejecución con checklist | Sprint2-T121 | Construir en el panel web la interfaz de «Ejecución con checklist» | 3 | Web | Terminado |
-| Sprint 2 | US28 | Ejecución con checklist | Sprint2-T122 | Construir en la aplicación Android la interfaz de «Ejecución con checklist» | 3 | Android | Terminado |
-| Sprint 2 | US28 | Ejecución con checklist | Sprint2-T123 | Cubrir «Ejecución con checklist» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US29 | Inspecciones vencidas | Sprint2-T124 | Implementar en el API la lógica y el endpoint de «Inspecciones vencidas» | 1 | Backend | Terminado |
-| Sprint 2 | US29 | Inspecciones vencidas | Sprint2-T125 | Construir en el panel web la interfaz de «Inspecciones vencidas» | 2 | Web | Terminado |
-| Sprint 2 | US29 | Inspecciones vencidas | Sprint2-T126 | Construir en la aplicación Android la interfaz de «Inspecciones vencidas» | 2 | Android | Terminado |
-| Sprint 2 | US29 | Inspecciones vencidas | Sprint2-T127 | Cubrir «Inspecciones vencidas» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US56 | Programar la siguiente inspección | Sprint2-T128 | Implementar en el API la lógica y el endpoint de «Programar la siguiente inspección» | 2 | Backend | Terminado |
-| Sprint 2 | US56 | Programar la siguiente inspección | Sprint2-T129 | Construir en el panel web la interfaz de «Programar la siguiente inspección» | 3 | Web | Terminado |
-| Sprint 2 | US56 | Programar la siguiente inspección | Sprint2-T130 | Cubrir «Programar la siguiente inspección» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US36 | Tasa de cumplimiento de inspecciones | Sprint2-T131 | Implementar en el API la lógica y el endpoint de «Tasa de cumplimiento de inspecciones» | 3 | Backend | Terminado |
-| Sprint 2 | US36 | Tasa de cumplimiento de inspecciones | Sprint2-T132 | Construir en el panel web la interfaz de «Tasa de cumplimiento de inspecciones» | 3 | Web | Terminado |
-| Sprint 2 | US36 | Tasa de cumplimiento de inspecciones | Sprint2-T133 | Construir en la aplicación Android la interfaz de «Tasa de cumplimiento de inspecciones» | 3 | Android | Terminado |
-| Sprint 2 | US36 | Tasa de cumplimiento de inspecciones | Sprint2-T134 | Cubrir «Tasa de cumplimiento de inspecciones» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US57 | Cumplimiento por área | Sprint2-T135 | Implementar en el API la lógica y el endpoint de «Cumplimiento por área» | 2 | Backend | Terminado |
-| Sprint 2 | US57 | Cumplimiento por área | Sprint2-T136 | Construir en el panel web la interfaz de «Cumplimiento por área» | 3 | Web | Terminado |
-| Sprint 2 | US57 | Cumplimiento por área | Sprint2-T137 | Cubrir «Cumplimiento por área» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US30 | Constitución del comité | Sprint2-T138 | Implementar en el API la lógica y el endpoint de «Constitución del comité» | 2 | Backend | Terminado |
-| Sprint 2 | US30 | Constitución del comité | Sprint2-T139 | Construir en el panel web la interfaz de «Constitución del comité» | 3 | Web | Terminado |
-| Sprint 2 | US30 | Constitución del comité | Sprint2-T140 | Cubrir «Constitución del comité» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US31 | Miembros y paridad | Sprint2-T141 | Implementar en el API la lógica y el endpoint de «Miembros y paridad» | 4 | Backend | Terminado |
-| Sprint 2 | US31 | Miembros y paridad | Sprint2-T142 | Construir en el panel web la interfaz de «Miembros y paridad» | 4 | Web | Terminado |
-| Sprint 2 | US31 | Miembros y paridad | Sprint2-T143 | Cubrir «Miembros y paridad» con pruebas automatizadas | 2 | QA | Terminado |
-| Sprint 2 | US32 | Acta de reunión | Sprint2-T144 | Implementar en el API la lógica y el endpoint de «Acta de reunión» | 4 | Backend | Terminado |
-| Sprint 2 | US32 | Acta de reunión | Sprint2-T145 | Construir en el panel web la interfaz de «Acta de reunión» | 4 | Web | Terminado |
-| Sprint 2 | US32 | Acta de reunión | Sprint2-T146 | Cubrir «Acta de reunión» con pruebas automatizadas | 2 | QA | Terminado |
-| Sprint 2 | US33 | Control de quórum | Sprint2-T147 | Implementar en el API la lógica y el endpoint de «Control de quórum» | 1 | Backend | Terminado |
-| Sprint 2 | US33 | Control de quórum | Sprint2-T148 | Construir en el panel web la interfaz de «Control de quórum» | 2 | Web | Terminado |
-| Sprint 2 | US33 | Control de quórum | Sprint2-T149 | Construir en la aplicación Android la interfaz de «Control de quórum» | 2 | Android | Terminado |
-| Sprint 2 | US33 | Control de quórum | Sprint2-T150 | Cubrir «Control de quórum» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US34 | Acuerdos con responsable y plazo | Sprint2-T151 | Implementar en el API la lógica y el endpoint de «Acuerdos con responsable y plazo» | 2 | Backend | Terminado |
-| Sprint 2 | US34 | Acuerdos con responsable y plazo | Sprint2-T152 | Construir en el panel web la interfaz de «Acuerdos con responsable y plazo» | 3 | Web | Terminado |
-| Sprint 2 | US34 | Acuerdos con responsable y plazo | Sprint2-T153 | Cubrir «Acuerdos con responsable y plazo» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US58 | Advertencia de comité no paritario | Sprint2-T154 | Implementar en el API la lógica y el endpoint de «Advertencia de comité no paritario» | 1 | Backend | Terminado |
-| Sprint 2 | US58 | Advertencia de comité no paritario | Sprint2-T155 | Construir en el panel web la interfaz de «Advertencia de comité no paritario» | 2 | Web | Terminado |
-| Sprint 2 | US58 | Advertencia de comité no paritario | Sprint2-T156 | Cubrir «Advertencia de comité no paritario» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US59 | Seguimiento del estado de los acuerdos | Sprint2-T157 | Implementar en el API la lógica y el endpoint de «Seguimiento del estado de los acuerdos» | 1 | Backend | Terminado |
-| Sprint 2 | US59 | Seguimiento del estado de los acuerdos | Sprint2-T158 | Construir en el panel web la interfaz de «Seguimiento del estado de los acuerdos» | 2 | Web | Terminado |
-| Sprint 2 | US59 | Seguimiento del estado de los acuerdos | Sprint2-T159 | Cubrir «Seguimiento del estado de los acuerdos» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US60 | Consultar las actas desde el celular | Sprint2-T160 | Implementar en el API la lógica y el endpoint de «Consultar las actas desde el celular» | 2 | Backend | Terminado |
-| Sprint 2 | US60 | Consultar las actas desde el celular | Sprint2-T161 | Construir en la aplicación Android la interfaz de «Consultar las actas desde el celular» | 3 | Android | Terminado |
-| Sprint 2 | US60 | Consultar las actas desde el celular | Sprint2-T162 | Cubrir «Consultar las actas desde el celular» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US37 | Exportación de evidencia | Sprint2-T163 | Implementar en el API la lógica y el endpoint de «Exportación de evidencia» | 6 | Backend | Terminado |
-| Sprint 2 | US37 | Exportación de evidencia | Sprint2-T164 | Construir en el panel web la interfaz de «Exportación de evidencia» | 7 | Web | Terminado |
-| Sprint 2 | US37 | Exportación de evidencia | Sprint2-T165 | Cubrir «Exportación de evidencia» con pruebas automatizadas | 3 | QA | Terminado |
-| Sprint 2 | US61 | MTTR por severidad | Sprint2-T166 | Implementar en el API la lógica y el endpoint de «MTTR por severidad» | 1 | Backend | Terminado |
-| Sprint 2 | US61 | MTTR por severidad | Sprint2-T167 | Construir en el panel web la interfaz de «MTTR por severidad» | 2 | Web | Terminado |
-| Sprint 2 | US61 | MTTR por severidad | Sprint2-T168 | Construir en la aplicación Android la interfaz de «MTTR por severidad» | 2 | Android | Terminado |
-| Sprint 2 | US61 | MTTR por severidad | Sprint2-T169 | Cubrir «MTTR por severidad» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US62 | Exportar cada registro obligatorio | Sprint2-T170 | Implementar en el API la lógica y el endpoint de «Exportar cada registro obligatorio» | 2 | Backend | Terminado |
-| Sprint 2 | US62 | Exportar cada registro obligatorio | Sprint2-T171 | Construir en el panel web la interfaz de «Exportar cada registro obligatorio» | 3 | Web | Terminado |
-| Sprint 2 | US62 | Exportar cada registro obligatorio | Sprint2-T172 | Cubrir «Exportar cada registro obligatorio» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US63 | Resumen de hallazgos | Sprint2-T173 | Implementar en el API la lógica y el endpoint de «Resumen de hallazgos» | 1 | Backend | Terminado |
-| Sprint 2 | US63 | Resumen de hallazgos | Sprint2-T174 | Construir en el panel web la interfaz de «Resumen de hallazgos» | 2 | Web | Terminado |
-| Sprint 2 | US63 | Resumen de hallazgos | Sprint2-T175 | Construir en la aplicación Android la interfaz de «Resumen de hallazgos» | 2 | Android | Terminado |
-| Sprint 2 | US63 | Resumen de hallazgos | Sprint2-T176 | Cubrir «Resumen de hallazgos» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US65 | Identidad visual consistente | Sprint2-T177 | Implementar en el API la lógica y el endpoint de «Identidad visual consistente» | 3 | Backend | Terminado |
-| Sprint 2 | US65 | Identidad visual consistente | Sprint2-T178 | Construir en el panel web la interfaz de «Identidad visual consistente» | 3 | Web | Terminado |
-| Sprint 2 | US65 | Identidad visual consistente | Sprint2-T179 | Construir en la aplicación Android la interfaz de «Identidad visual consistente» | 3 | Android | Terminado |
-| Sprint 2 | US65 | Identidad visual consistente | Sprint2-T180 | Cubrir «Identidad visual consistente» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US66 | Navegación siempre accesible | Sprint2-T181 | Implementar en el API la lógica y el endpoint de «Navegación siempre accesible» | 1 | Backend | Terminado |
-| Sprint 2 | US66 | Navegación siempre accesible | Sprint2-T182 | Construir en el panel web la interfaz de «Navegación siempre accesible» | 1 | Web | Terminado |
-| Sprint 2 | US66 | Navegación siempre accesible | Sprint2-T183 | Construir en la aplicación Android la interfaz de «Navegación siempre accesible» | 1 | Android | Terminado |
-| Sprint 2 | US66 | Navegación siempre accesible | Sprint2-T184 | Cubrir «Navegación siempre accesible» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US67 | Uso desde pantallas pequeñas | Sprint2-T185 | Implementar en el API la lógica y el endpoint de «Uso desde pantallas pequeñas» | 4 | Backend | Terminado |
-| Sprint 2 | US67 | Uso desde pantallas pequeñas | Sprint2-T186 | Construir en el panel web la interfaz de «Uso desde pantallas pequeñas» | 4 | Web | Terminado |
-| Sprint 2 | US67 | Uso desde pantallas pequeñas | Sprint2-T187 | Cubrir «Uso desde pantallas pequeñas» con pruebas automatizadas | 2 | QA | Terminado |
-| Sprint 2 | US68 | Errores comprensibles | Sprint2-T188 | Implementar en el API la lógica y el endpoint de «Errores comprensibles» | 1 | Backend | Terminado |
-| Sprint 2 | US68 | Errores comprensibles | Sprint2-T189 | Construir en el panel web la interfaz de «Errores comprensibles» | 2 | Web | Terminado |
-| Sprint 2 | US68 | Errores comprensibles | Sprint2-T190 | Construir en la aplicación Android la interfaz de «Errores comprensibles» | 2 | Android | Terminado |
-| Sprint 2 | US68 | Errores comprensibles | Sprint2-T191 | Cubrir «Errores comprensibles» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | US69 | Reintento ante fallo de red | Sprint2-T192 | Implementar en el API la lógica y el endpoint de «Reintento ante fallo de red» | 2 | Backend | Terminado |
-| Sprint 2 | US69 | Reintento ante fallo de red | Sprint2-T193 | Construir en la aplicación Android la interfaz de «Reintento ante fallo de red» | 3 | Android | Terminado |
-| Sprint 2 | US69 | Reintento ante fallo de red | Sprint2-T194 | Cubrir «Reintento ante fallo de red» con pruebas automatizadas | 1 | QA | Terminado |
-| Sprint 2 | TS07 | Validación local del mensaje de commit | Sprint2-T195 | Configurar «Validación local del mensaje de commit» | 3 | DevOps | Terminado |
-| Sprint 2 | TS07 | Validación local del mensaje de commit | Sprint2-T196 | Verificar «Validación local del mensaje de commit» en el pipeline | 1 | DevOps | Terminado |
-| Sprint 2 | TS06 | Fin de línea normalizado | Sprint2-T197 | Configurar «Fin de línea normalizado» | 3 | DevOps | Terminado |
-| Sprint 2 | TS06 | Fin de línea normalizado | Sprint2-T198 | Verificar «Fin de línea normalizado» en el pipeline | 1 | DevOps | Terminado |
-| Sprint 2 | TS13 | Migraciones verificadas en integración | Sprint2-T199 | Configurar «Migraciones verificadas en integración» | 3 | DevOps | Terminado |
-| Sprint 2 | TS13 | Migraciones verificadas en integración | Sprint2-T200 | Verificar «Migraciones verificadas en integración» en el pipeline | 1 | DevOps | Terminado |
-| Sprint 2 | TS03 | Documentación viva del API | Sprint2-T201 | Configurar «Documentación viva del API» | 3 | DevOps | Terminado |
-| Sprint 2 | TS03 | Documentación viva del API | Sprint2-T202 | Verificar «Documentación viva del API» en el pipeline | 1 | DevOps | Terminado |
-| Sprint 2 | TS08 | Configuración por variables de entorno | Sprint2-T203 | Configurar «Configuración por variables de entorno» | 4 | DevOps | Terminado |
-| Sprint 2 | TS08 | Configuración por variables de entorno | Sprint2-T204 | Verificar «Configuración por variables de entorno» en el pipeline | 2 | DevOps | Terminado |
-| Sprint 2 | TS09 | Proxy de desarrollo | Sprint2-T205 | Configurar «Proxy de desarrollo» | 3 | DevOps | Terminado |
-| Sprint 2 | TS09 | Proxy de desarrollo | Sprint2-T206 | Verificar «Proxy de desarrollo» en el pipeline | 1 | DevOps | Terminado |
-| Sprint 2 | TS10 | Renovación transparente del token | Sprint2-T207 | Configurar «Renovación transparente del token» | 7 | DevOps | Terminado |
-| Sprint 2 | TS10 | Renovación transparente del token | Sprint2-T208 | Verificar «Renovación transparente del token» en el pipeline | 3 | DevOps | Terminado |
-| Sprint 2 | TS11 | Aislamiento entre empresas | Sprint2-T209 | Configurar «Aislamiento entre empresas» | 7 | DevOps | Terminado |
-| Sprint 2 | TS11 | Aislamiento entre empresas | Sprint2-T210 | Verificar «Aislamiento entre empresas» en el pipeline | 3 | DevOps | Terminado |
-| Sprint 2 | TS12 | Idempotencia en la creación de reportes | Sprint2-T211 | Configurar «Idempotencia en la creación de reportes» | 7 | DevOps | Terminado |
-| Sprint 2 | TS12 | Idempotencia en la creación de reportes | Sprint2-T212 | Verificar «Idempotencia en la creación de reportes» en el pipeline | 3 | DevOps | Terminado |
-| Sprint 2 | TS04 | Datos de demostración | Sprint2-T213 | Configurar «Datos de demostración» | 7 | DevOps | Terminado |
-| Sprint 2 | TS04 | Datos de demostración | Sprint2-T214 | Verificar «Datos de demostración» en el pipeline | 3 | DevOps | Terminado |
-| Sprint 2 | TS14 | APK publicado por el pipeline | Sprint2-T215 | Configurar «APK publicado por el pipeline» | 4 | DevOps | Terminado |
-| Sprint 2 | TS14 | APK publicado por el pipeline | Sprint2-T216 | Verificar «APK publicado por el pipeline» en el pipeline | 2 | DevOps | Terminado |
-| Sprint 2 | TS15 | Generación de evidencia en Excel | Sprint2-T217 | Configurar «Generación de evidencia en Excel» | 7 | DevOps | Terminado |
-| Sprint 2 | TS15 | Generación de evidencia en Excel | Sprint2-T218 | Verificar «Generación de evidencia en Excel» en el pipeline | 3 | DevOps | Terminado |
-| Sprint 2 | TS16 | Informe compilable y con índice verificado | Sprint2-T219 | Configurar «Informe compilable y con índice verificado» | 4 | DevOps | Terminado |
-| Sprint 2 | TS16 | Informe compilable y con índice verificado | Sprint2-T220 | Verificar «Informe compilable y con índice verificado» en el pipeline | 2 | DevOps | Terminado |
+Este sprint contiene la historia más costosa del backlog, US07 «Reporte sin conexión» con 13 Story Points, porque exige almacenamiento local, cola de envío y reintento automático. Es también la que sostiene la propuesta de valor del producto.
+
+| Sprint | User Story | Título | Work-Item | Descripción de la tarea | Estimación (h) | Área responsable |
+|---|---|---|---|---|---|---|
+| Sprint 2 | US07 | Reporte sin conexión | Sprint2-T001 | Implementar en el API la lógica y el endpoint de «Reporte sin conexión» | 9 | Backend |
+| Sprint 2 | US07 | Reporte sin conexión | Sprint2-T002 | Construir en la aplicación Android la interfaz de «Reporte sin conexión» | 12 | Móvil |
+| Sprint 2 | US07 | Reporte sin conexión | Sprint2-T003 | Cubrir «Reporte sin conexión» con pruebas automatizadas | 5 | QA |
+| Sprint 2 | US08 | Sincronización sin duplicados | Sprint2-T004 | Implementar en el API la lógica y el endpoint de «Sincronización sin duplicados» | 4 | Backend |
+| Sprint 2 | US08 | Sincronización sin duplicados | Sprint2-T005 | Construir en el panel web la interfaz de «Sincronización sin duplicados» | 5 | Web |
+| Sprint 2 | US08 | Sincronización sin duplicados | Sprint2-T006 | Construir en la aplicación Android la interfaz de «Sincronización sin duplicados» | 5 | Móvil |
+| Sprint 2 | US08 | Sincronización sin duplicados | Sprint2-T007 | Cubrir «Sincronización sin duplicados» con pruebas automatizadas | 2 | QA |
+| Sprint 2 | US70 | Sesión que no expira en campo | Sprint2-T008 | Implementar en el API la lógica y el endpoint de «Sesión que no expira en campo» | 3 | Backend |
+| Sprint 2 | US70 | Sesión que no expira en campo | Sprint2-T009 | Construir en el panel web la interfaz de «Sesión que no expira en campo» | 3 | Web |
+| Sprint 2 | US70 | Sesión que no expira en campo | Sprint2-T010 | Construir en la aplicación Android la interfaz de «Sesión que no expira en campo» | 3 | Móvil |
+| Sprint 2 | US70 | Sesión que no expira en campo | Sprint2-T011 | Cubrir «Sesión que no expira en campo» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US17 | Separación de responsabilidades | Sprint2-T012 | Implementar en el API la lógica y el endpoint de «Separación de responsabilidades» | 1 | Backend |
+| Sprint 2 | US17 | Separación de responsabilidades | Sprint2-T013 | Construir en el panel web la interfaz de «Separación de responsabilidades» | 2 | Web |
+| Sprint 2 | US17 | Separación de responsabilidades | Sprint2-T014 | Construir en la aplicación Android la interfaz de «Separación de responsabilidades» | 2 | Móvil |
+| Sprint 2 | US17 | Separación de responsabilidades | Sprint2-T015 | Cubrir «Separación de responsabilidades» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US35 | Indicador MTTR | Sprint2-T016 | Implementar en el API la lógica y el endpoint de «Indicador MTTR» | 3 | Backend |
+| Sprint 2 | US35 | Indicador MTTR | Sprint2-T017 | Construir en el panel web la interfaz de «Indicador MTTR» | 3 | Web |
+| Sprint 2 | US35 | Indicador MTTR | Sprint2-T018 | Construir en la aplicación Android la interfaz de «Indicador MTTR» | 3 | Móvil |
+| Sprint 2 | US35 | Indicador MTTR | Sprint2-T019 | Cubrir «Indicador MTTR» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US50 | Filtrar la bandeja | Sprint2-T020 | Implementar en el API la lógica y el endpoint de «Filtrar la bandeja» | 1 | Backend |
+| Sprint 2 | US50 | Filtrar la bandeja | Sprint2-T021 | Construir en el panel web la interfaz de «Filtrar la bandeja» | 2 | Web |
+| Sprint 2 | US50 | Filtrar la bandeja | Sprint2-T022 | Construir en la aplicación Android la interfaz de «Filtrar la bandeja» | 2 | Móvil |
+| Sprint 2 | US50 | Filtrar la bandeja | Sprint2-T023 | Cubrir «Filtrar la bandeja» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US49 | Descartar un reporte | Sprint2-T024 | Implementar en el API la lógica y el endpoint de «Descartar un reporte» | 1 | Backend |
+| Sprint 2 | US49 | Descartar un reporte | Sprint2-T025 | Construir en el panel web la interfaz de «Descartar un reporte» | 2 | Web |
+| Sprint 2 | US49 | Descartar un reporte | Sprint2-T026 | Cubrir «Descartar un reporte» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US12 | Reporte desde la web | Sprint2-T027 | Implementar en el API la lógica y el endpoint de «Reporte desde la web» | 4 | Backend |
+| Sprint 2 | US12 | Reporte desde la web | Sprint2-T028 | Construir en el panel web la interfaz de «Reporte desde la web» | 4 | Web |
+| Sprint 2 | US12 | Reporte desde la web | Sprint2-T029 | Cubrir «Reporte desde la web» con pruebas automatizadas | 2 | QA |
+| Sprint 2 | US44 | Vista previa de la evidencia | Sprint2-T030 | Implementar en el API la lógica y el endpoint de «Vista previa de la evidencia» | 2 | Backend |
+| Sprint 2 | US44 | Vista previa de la evidencia | Sprint2-T031 | Construir en el panel web la interfaz de «Vista previa de la evidencia» | 3 | Web |
+| Sprint 2 | US44 | Vista previa de la evidencia | Sprint2-T032 | Cubrir «Vista previa de la evidencia» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US45 | Ampliar la evidencia | Sprint2-T033 | Implementar en el API la lógica y el endpoint de «Ampliar la evidencia» | 2 | Backend |
+| Sprint 2 | US45 | Ampliar la evidencia | Sprint2-T034 | Construir en el panel web la interfaz de «Ampliar la evidencia» | 3 | Web |
+| Sprint 2 | US45 | Ampliar la evidencia | Sprint2-T035 | Cubrir «Ampliar la evidencia» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US46 | Reemplazar la foto elegida | Sprint2-T036 | Implementar en el API la lógica y el endpoint de «Reemplazar la foto elegida» | 1 | Backend |
+| Sprint 2 | US46 | Reemplazar la foto elegida | Sprint2-T037 | Construir en el panel web la interfaz de «Reemplazar la foto elegida» | 2 | Web |
+| Sprint 2 | US46 | Reemplazar la foto elegida | Sprint2-T038 | Cubrir «Reemplazar la foto elegida» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US48 | Estado de envío de mis reportes | Sprint2-T039 | Implementar en el API la lógica y el endpoint de «Estado de envío de mis reportes» | 2 | Backend |
+| Sprint 2 | US48 | Estado de envío de mis reportes | Sprint2-T040 | Construir en la aplicación Android la interfaz de «Estado de envío de mis reportes» | 3 | Móvil |
+| Sprint 2 | US48 | Estado de envío de mis reportes | Sprint2-T041 | Cubrir «Estado de envío de mis reportes» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US51 | Ubicar el hallazgo en el mapa | Sprint2-T042 | Implementar en el API la lógica y el endpoint de «Ubicar el hallazgo en el mapa» | 1 | Backend |
+| Sprint 2 | US51 | Ubicar el hallazgo en el mapa | Sprint2-T043 | Construir en el panel web la interfaz de «Ubicar el hallazgo en el mapa» | 1 | Web |
+| Sprint 2 | US38 | Asignación de variante | Sprint2-T044 | Implementar en el API la lógica y el endpoint de «Asignación de variante» | 3 | Backend |
+| Sprint 2 | US38 | Asignación de variante | Sprint2-T045 | Construir en el panel web la interfaz de «Asignación de variante» | 3 | Web |
+| Sprint 2 | US38 | Asignación de variante | Sprint2-T046 | Construir en la aplicación Android la interfaz de «Asignación de variante» | 3 | Móvil |
+| Sprint 2 | US38 | Asignación de variante | Sprint2-T047 | Cubrir «Asignación de variante» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US39 | Registro de la variante en el reporte | Sprint2-T048 | Implementar en el API la lógica y el endpoint de «Registro de la variante en el reporte» | 1 | Backend |
+| Sprint 2 | US39 | Registro de la variante en el reporte | Sprint2-T049 | Construir en el panel web la interfaz de «Registro de la variante en el reporte» | 1 | Web |
+| Sprint 2 | US39 | Registro de la variante en el reporte | Sprint2-T050 | Construir en la aplicación Android la interfaz de «Registro de la variante en el reporte» | 1 | Móvil |
+| Sprint 2 | US39 | Registro de la variante en el reporte | Sprint2-T051 | Cubrir «Registro de la variante en el reporte» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US40 | Resultados del experimento | Sprint2-T052 | Implementar en el API la lógica y el endpoint de «Resultados del experimento» | 4 | Backend |
+| Sprint 2 | US40 | Resultados del experimento | Sprint2-T053 | Construir en el panel web la interfaz de «Resultados del experimento» | 4 | Web |
+| Sprint 2 | US40 | Resultados del experimento | Sprint2-T054 | Cubrir «Resultados del experimento» con pruebas automatizadas | 2 | QA |
+| Sprint 2 | US64 | Variante disponible sin conexión | Sprint2-T055 | Implementar en el API la lógica y el endpoint de «Variante disponible sin conexión» | 2 | Backend |
+| Sprint 2 | US64 | Variante disponible sin conexión | Sprint2-T056 | Construir en la aplicación Android la interfaz de «Variante disponible sin conexión» | 3 | Móvil |
+| Sprint 2 | US64 | Variante disponible sin conexión | Sprint2-T057 | Cubrir «Variante disponible sin conexión» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US69 | Reintento ante fallo de red | Sprint2-T058 | Implementar en el API la lógica y el endpoint de «Reintento ante fallo de red» | 2 | Backend |
+| Sprint 2 | US69 | Reintento ante fallo de red | Sprint2-T059 | Construir en la aplicación Android la interfaz de «Reintento ante fallo de red» | 3 | Móvil |
+| Sprint 2 | US69 | Reintento ante fallo de red | Sprint2-T060 | Cubrir «Reintento ante fallo de red» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US71 | Registro de accidente de trabajo | Sprint2-T061 | Implementar en el API la lógica y el endpoint de «Registro de accidente de trabajo» | 6 | Backend |
+| Sprint 2 | US71 | Registro de accidente de trabajo | Sprint2-T062 | Construir en el panel web la interfaz de «Registro de accidente de trabajo» | 7 | Web |
+| Sprint 2 | US71 | Registro de accidente de trabajo | Sprint2-T063 | Cubrir «Registro de accidente de trabajo» con pruebas automatizadas | 3 | QA |
+| Sprint 2 | US72 | Registro de incidente peligroso | Sprint2-T064 | Implementar en el API la lógica y el endpoint de «Registro de incidente peligroso» | 3 | Backend |
+| Sprint 2 | US72 | Registro de incidente peligroso | Sprint2-T065 | Construir en el panel web la interfaz de «Registro de incidente peligroso» | 3 | Web |
+| Sprint 2 | US72 | Registro de incidente peligroso | Sprint2-T066 | Construir en la aplicación Android la interfaz de «Registro de incidente peligroso» | 3 | Móvil |
+| Sprint 2 | US72 | Registro de incidente peligroso | Sprint2-T067 | Cubrir «Registro de incidente peligroso» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US73 | Reportar un accidente desde el celular | Sprint2-T068 | Implementar en el API la lógica y el endpoint de «Reportar un accidente desde el celular» | 4 | Backend |
+| Sprint 2 | US73 | Reportar un accidente desde el celular | Sprint2-T069 | Construir en la aplicación Android la interfaz de «Reportar un accidente desde el celular» | 4 | Móvil |
+| Sprint 2 | US73 | Reportar un accidente desde el celular | Sprint2-T070 | Cubrir «Reportar un accidente desde el celular» con pruebas automatizadas | 2 | QA |
+| Sprint 2 | US74 | Investigación de causa raíz | Sprint2-T071 | Implementar en el API la lógica y el endpoint de «Investigación de causa raíz» | 6 | Backend |
+| Sprint 2 | US74 | Investigación de causa raíz | Sprint2-T072 | Construir en el panel web la interfaz de «Investigación de causa raíz» | 7 | Web |
+| Sprint 2 | US74 | Investigación de causa raíz | Sprint2-T073 | Cubrir «Investigación de causa raíz» con pruebas automatizadas | 3 | QA |
+| Sprint 2 | US75 | Medidas correctivas con responsable y plazo | Sprint2-T074 | Implementar en el API la lógica y el endpoint de «Medidas correctivas con responsable y plazo» | 4 | Backend |
+| Sprint 2 | US75 | Medidas correctivas con responsable y plazo | Sprint2-T075 | Construir en el panel web la interfaz de «Medidas correctivas con responsable y plazo» | 4 | Web |
+| Sprint 2 | US75 | Medidas correctivas con responsable y plazo | Sprint2-T076 | Cubrir «Medidas correctivas con responsable y plazo» con pruebas automatizadas | 2 | QA |
+| Sprint 2 | US76 | Aviso de accidente mortal dentro del plazo legal | Sprint2-T077 | Implementar en el API la lógica y el endpoint de «Aviso de accidente mortal dentro del plazo legal» | 2 | Backend |
+| Sprint 2 | US76 | Aviso de accidente mortal dentro del plazo legal | Sprint2-T078 | Construir en el panel web la interfaz de «Aviso de accidente mortal dentro del plazo legal» | 3 | Web |
+| Sprint 2 | US76 | Aviso de accidente mortal dentro del plazo legal | Sprint2-T079 | Cubrir «Aviso de accidente mortal dentro del plazo legal» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US77 | Indicadores de accidentabilidad | Sprint2-T080 | Implementar en el API la lógica y el endpoint de «Indicadores de accidentabilidad» | 3 | Backend |
+| Sprint 2 | US77 | Indicadores de accidentabilidad | Sprint2-T081 | Construir en el panel web la interfaz de «Indicadores de accidentabilidad» | 3 | Web |
+| Sprint 2 | US77 | Indicadores de accidentabilidad | Sprint2-T082 | Construir en la aplicación Android la interfaz de «Indicadores de accidentabilidad» | 3 | Móvil |
+| Sprint 2 | US77 | Indicadores de accidentabilidad | Sprint2-T083 | Cubrir «Indicadores de accidentabilidad» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US78 | Registro de enfermedad ocupacional | Sprint2-T084 | Implementar en el API la lógica y el endpoint de «Registro de enfermedad ocupacional» | 4 | Backend |
+| Sprint 2 | US78 | Registro de enfermedad ocupacional | Sprint2-T085 | Construir en el panel web la interfaz de «Registro de enfermedad ocupacional» | 4 | Web |
+| Sprint 2 | US78 | Registro de enfermedad ocupacional | Sprint2-T086 | Cubrir «Registro de enfermedad ocupacional» con pruebas automatizadas | 2 | QA |
+| Sprint 2 | US111 | Consentimiento informado de datos personales | Sprint2-T087 | Implementar en el API la lógica y el endpoint de «Consentimiento informado de datos personales» | 1 | Backend |
+| Sprint 2 | US111 | Consentimiento informado de datos personales | Sprint2-T088 | Construir en el panel web la interfaz de «Consentimiento informado de datos personales» | 2 | Web |
+| Sprint 2 | US111 | Consentimiento informado de datos personales | Sprint2-T089 | Construir en la aplicación Android la interfaz de «Consentimiento informado de datos personales» | 2 | Móvil |
+| Sprint 2 | US111 | Consentimiento informado de datos personales | Sprint2-T090 | Cubrir «Consentimiento informado de datos personales» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US112 | Ubicación opcional y revocable | Sprint2-T091 | Implementar en el API la lógica y el endpoint de «Ubicación opcional y revocable» | 1 | Backend |
+| Sprint 2 | US112 | Ubicación opcional y revocable | Sprint2-T092 | Construir en el panel web la interfaz de «Ubicación opcional y revocable» | 2 | Web |
+| Sprint 2 | US112 | Ubicación opcional y revocable | Sprint2-T093 | Construir en la aplicación Android la interfaz de «Ubicación opcional y revocable» | 2 | Móvil |
+| Sprint 2 | US112 | Ubicación opcional y revocable | Sprint2-T094 | Cubrir «Ubicación opcional y revocable» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US116 | Reporte anónimo de actos inseguros | Sprint2-T095 | Implementar en el API la lógica y el endpoint de «Reporte anónimo de actos inseguros» | 3 | Backend |
+| Sprint 2 | US116 | Reporte anónimo de actos inseguros | Sprint2-T096 | Construir en el panel web la interfaz de «Reporte anónimo de actos inseguros» | 3 | Web |
+| Sprint 2 | US116 | Reporte anónimo de actos inseguros | Sprint2-T097 | Construir en la aplicación Android la interfaz de «Reporte anónimo de actos inseguros» | 3 | Móvil |
+| Sprint 2 | US116 | Reporte anónimo de actos inseguros | Sprint2-T098 | Cubrir «Reporte anónimo de actos inseguros» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | US117 | Reporte por voz | Sprint2-T099 | Implementar en el API la lógica y el endpoint de «Reporte por voz» | 6 | Backend |
+| Sprint 2 | US117 | Reporte por voz | Sprint2-T100 | Construir en la aplicación Android la interfaz de «Reporte por voz» | 7 | Móvil |
+| Sprint 2 | US117 | Reporte por voz | Sprint2-T101 | Cubrir «Reporte por voz» con pruebas automatizadas | 3 | QA |
+| Sprint 2 | US125 | Aviso de datos de demostración | Sprint2-T102 | Implementar en el API la lógica y el endpoint de «Aviso de datos de demostración» | 1 | Backend |
+| Sprint 2 | US125 | Aviso de datos de demostración | Sprint2-T103 | Construir en el panel web la interfaz de «Aviso de datos de demostración» | 1 | Web |
+| Sprint 2 | US126 | Intervalo de confianza en los resultados | Sprint2-T104 | Implementar en el API la lógica y el endpoint de «Intervalo de confianza en los resultados» | 2 | Backend |
+| Sprint 2 | US126 | Intervalo de confianza en los resultados | Sprint2-T105 | Construir en el panel web la interfaz de «Intervalo de confianza en los resultados» | 3 | Web |
+| Sprint 2 | US126 | Intervalo de confianza en los resultados | Sprint2-T106 | Cubrir «Intervalo de confianza en los resultados» con pruebas automatizadas | 1 | QA |
+| Sprint 2 | TS09 | Proxy de desarrollo | Sprint2-T107 | Configurar «Proxy de desarrollo» | 3 | DevOps |
+| Sprint 2 | TS09 | Proxy de desarrollo | Sprint2-T108 | Verificar «Proxy de desarrollo» en el pipeline | 1 | DevOps |
+| Sprint 2 | TS10 | Renovación transparente del token | Sprint2-T109 | Configurar «Renovación transparente del token» | 7 | DevOps |
+| Sprint 2 | TS10 | Renovación transparente del token | Sprint2-T110 | Verificar «Renovación transparente del token» en el pipeline | 3 | DevOps |
+| Sprint 2 | TS12 | Idempotencia en la creación de reportes | Sprint2-T111 | Configurar «Idempotencia en la creación de reportes» | 7 | DevOps |
+| Sprint 2 | TS12 | Idempotencia en la creación de reportes | Sprint2-T112 | Verificar «Idempotencia en la creación de reportes» en el pipeline | 3 | DevOps |
+| Sprint 2 | TS31 | Resolución de conflictos de sincronización | Sprint2-T113 | Configurar «Resolución de conflictos de sincronización» | 11 | DevOps |
+| Sprint 2 | TS31 | Resolución de conflictos de sincronización | Sprint2-T114 | Verificar «Resolución de conflictos de sincronización» en el pipeline | 5 | DevOps |
 
 ---
 
-#### Resumen de los dos sprints
+#### Sprint 3 — Cuentas, registros obligatorios, capacitación y despliegue
 
-| Sprint | Elementos | Story Points | Work-items | Horas | Objetivo |
-|---|---|---|---|---|---|
-| Sprint 1 | 15 | 60 | 54 | 120 | Cerrar el ciclo del hallazgo de extremo a extremo. |
-| Sprint 2 | 71 | 259 | 220 | 518 | Completar los registros del SGSST sobre ese ciclo. |
-| **Total** | **86** | **319** | **274** | **638** | |
+| Campo | Valor |
+|---|---|
+| Hito | Tercer hito — AVANCE 2 · Sprint Review |
+| Semanas del ciclo | 8 a 12 |
+| Fechas | 12/10/2026 al 15/11/2026 |
+| Objetivo | Dar al sistema su estructura y sus registros obligatorios —cuentas y áreas, matriz IPERC, control de EPP, inspecciones, capacitación, mapa de riesgos y documentación del SGSST— y dejar el producto desplegado en un entorno de pruebas. |
+| Elementos del backlog | 55 |
+| Story Points | 200 |
+| Work-items | 160 |
+| Horas estimadas | 400 |
+| Incremento entregable | La empresa tiene usuarios con rol y áreas de trabajo; la matriz IPERC se registra, versiona y conserva su histórico; las entregas de EPP quedan con conformidad firmada y aviso de vencimiento; las inspecciones se programan y ejecutan con checklist; la capacitación, el mapa de riesgos y la documentación del SGSST están en el sistema. El producto corre en un entorno desplegado, no solo en las máquinas del equipo. |
 
-**Velocidad.** Los dos sprints completaron la totalidad de lo comprometido; no hubo arrastre de uno
-al siguiente. Conviene señalar, sin embargo, que los sprints son marcadamente desiguales: el
-Sprint 2 cuadruplica en Story Points al Sprint 1. Eso no es una buena práctica de planificación
-—un sprint debe caber en una capacidad estable— y refleja que el alcance se agrupó por afinidad
-funcional antes que por capacidad del equipo. Se documenta como lo que es: una decisión de
-organización del trabajo, no una velocidad sostenible sobre la cual planificar.
+El orden importa: la matriz IPERC, las entregas de EPP y las inspecciones se clasifican por área y por rol, de modo que la estructura organizativa tiene que existir antes que los registros que la referencian. El despliegue se incluye aquí y no antes porque desplegar un producto cuyo alcance todavía cambia obliga a rehacer la configuración en cada iteración.
 
-**Sobre el periodo de ejecución.** Conviene decirlo con precisión, porque el historial de los
-repositorios es público y cualquiera puede contrastarlo: los sprints **organizan el alcance, no
-ventanas de calendario**. El trabajo se ejecutó en sesiones intensivas de desarrollo entre el 12 y
-el 16 de septiembre de 2026, que es lo que muestran las fechas de los commits en `sst-api`,
-`sst-web`, `sst-mobile` y `sst-report`. Por eso las tablas no declaran fechas de inicio y fin:
-declararlas repartidas en semanas sería contradecir un dato verificable en un clic. Por la misma
-razón las horas estimadas son una conversión declarada de los Story Points y no un registro de
-tiempo real.
+| Sprint | User Story | Título | Work-Item | Descripción de la tarea | Estimación (h) | Área responsable |
+|---|---|---|---|---|---|---|
+| Sprint 3 | US01 | Registro de trabajador | Sprint3-T001 | Implementar en el API la lógica y el endpoint de «Registro de trabajador» | 3 | Backend |
+| Sprint 3 | US01 | Registro de trabajador | Sprint3-T002 | Construir en el panel web la interfaz de «Registro de trabajador» | 3 | Web |
+| Sprint 3 | US01 | Registro de trabajador | Sprint3-T003 | Construir en la aplicación Android la interfaz de «Registro de trabajador» | 3 | Móvil |
+| Sprint 3 | US01 | Registro de trabajador | Sprint3-T004 | Cubrir «Registro de trabajador» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US03 | Sesión persistente en campo | Sprint3-T005 | Implementar en el API la lógica y el endpoint de «Sesión persistente en campo» | 1 | Backend |
+| Sprint 3 | US03 | Sesión persistente en campo | Sprint3-T006 | Construir en el panel web la interfaz de «Sesión persistente en campo» | 2 | Web |
+| Sprint 3 | US03 | Sesión persistente en campo | Sprint3-T007 | Construir en la aplicación Android la interfaz de «Sesión persistente en campo» | 2 | Móvil |
+| Sprint 3 | US03 | Sesión persistente en campo | Sprint3-T008 | Cubrir «Sesión persistente en campo» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US05 | Gestión de áreas | Sprint3-T009 | Implementar en el API la lógica y el endpoint de «Gestión de áreas» | 1 | Backend |
+| Sprint 3 | US05 | Gestión de áreas | Sprint3-T010 | Construir en el panel web la interfaz de «Gestión de áreas» | 2 | Web |
+| Sprint 3 | US05 | Gestión de áreas | Sprint3-T011 | Cubrir «Gestión de áreas» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US04 | Administración de usuarios | Sprint3-T012 | Implementar en el API la lógica y el endpoint de «Administración de usuarios» | 4 | Backend |
+| Sprint 3 | US04 | Administración de usuarios | Sprint3-T013 | Construir en el panel web la interfaz de «Administración de usuarios» | 4 | Web |
+| Sprint 3 | US04 | Administración de usuarios | Sprint3-T014 | Cubrir «Administración de usuarios» con pruebas automatizadas | 2 | QA |
+| Sprint 3 | US41 | Cambio de rol de un usuario | Sprint3-T015 | Implementar en el API la lógica y el endpoint de «Cambio de rol de un usuario» | 1 | Backend |
+| Sprint 3 | US41 | Cambio de rol de un usuario | Sprint3-T016 | Construir en el panel web la interfaz de «Cambio de rol de un usuario» | 2 | Web |
+| Sprint 3 | US41 | Cambio de rol de un usuario | Sprint3-T017 | Cubrir «Cambio de rol de un usuario» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US42 | Cierre de sesión | Sprint3-T018 | Implementar en el API la lógica y el endpoint de «Cierre de sesión» | 1 | Backend |
+| Sprint 3 | US42 | Cierre de sesión | Sprint3-T019 | Construir en el panel web la interfaz de «Cierre de sesión» | 1 | Web |
+| Sprint 3 | US19 | Consulta de la matriz en campo | Sprint3-T020 | Implementar en el API la lógica y el endpoint de «Consulta de la matriz en campo» | 1 | Backend |
+| Sprint 3 | US19 | Consulta de la matriz en campo | Sprint3-T021 | Construir en el panel web la interfaz de «Consulta de la matriz en campo» | 2 | Web |
+| Sprint 3 | US19 | Consulta de la matriz en campo | Sprint3-T022 | Construir en la aplicación Android la interfaz de «Consulta de la matriz en campo» | 2 | Móvil |
+| Sprint 3 | US19 | Consulta de la matriz en campo | Sprint3-T023 | Cubrir «Consulta de la matriz en campo» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US20 | Registro de peligros | Sprint3-T024 | Implementar en el API la lógica y el endpoint de «Registro de peligros» | 4 | Backend |
+| Sprint 3 | US20 | Registro de peligros | Sprint3-T025 | Construir en el panel web la interfaz de «Registro de peligros» | 4 | Web |
+| Sprint 3 | US20 | Registro de peligros | Sprint3-T026 | Cubrir «Registro de peligros» con pruebas automatizadas | 2 | QA |
+| Sprint 3 | US21 | Versionado de la matriz | Sprint3-T027 | Implementar en el API la lógica y el endpoint de «Versionado de la matriz» | 4 | Backend |
+| Sprint 3 | US21 | Versionado de la matriz | Sprint3-T028 | Construir en el panel web la interfaz de «Versionado de la matriz» | 4 | Web |
+| Sprint 3 | US21 | Versionado de la matriz | Sprint3-T029 | Cubrir «Versionado de la matriz» con pruebas automatizadas | 2 | QA |
+| Sprint 3 | US22 | Trazabilidad con el hallazgo de origen | Sprint3-T030 | Implementar en el API la lógica y el endpoint de «Trazabilidad con el hallazgo de origen» | 1 | Backend |
+| Sprint 3 | US22 | Trazabilidad con el hallazgo de origen | Sprint3-T031 | Construir en el panel web la interfaz de «Trazabilidad con el hallazgo de origen» | 2 | Web |
+| Sprint 3 | US22 | Trazabilidad con el hallazgo de origen | Sprint3-T032 | Construir en la aplicación Android la interfaz de «Trazabilidad con el hallazgo de origen» | 2 | Móvil |
+| Sprint 3 | US22 | Trazabilidad con el hallazgo de origen | Sprint3-T033 | Cubrir «Trazabilidad con el hallazgo de origen» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US52 | Consultar versiones anteriores de la matriz | Sprint3-T034 | Implementar en el API la lógica y el endpoint de «Consultar versiones anteriores de la matriz» | 4 | Backend |
+| Sprint 3 | US52 | Consultar versiones anteriores de la matriz | Sprint3-T035 | Construir en el panel web la interfaz de «Consultar versiones anteriores de la matriz» | 4 | Web |
+| Sprint 3 | US52 | Consultar versiones anteriores de la matriz | Sprint3-T036 | Cubrir «Consultar versiones anteriores de la matriz» con pruebas automatizadas | 2 | QA |
+| Sprint 3 | US53 | Publicar una nueva versión de la matriz | Sprint3-T037 | Implementar en el API la lógica y el endpoint de «Publicar una nueva versión de la matriz» | 4 | Backend |
+| Sprint 3 | US53 | Publicar una nueva versión de la matriz | Sprint3-T038 | Construir en el panel web la interfaz de «Publicar una nueva versión de la matriz» | 4 | Web |
+| Sprint 3 | US53 | Publicar una nueva versión de la matriz | Sprint3-T039 | Cubrir «Publicar una nueva versión de la matriz» con pruebas automatizadas | 2 | QA |
+| Sprint 3 | US54 | Retirar un peligro de la matriz | Sprint3-T040 | Implementar en el API la lógica y el endpoint de «Retirar un peligro de la matriz» | 1 | Backend |
+| Sprint 3 | US54 | Retirar un peligro de la matriz | Sprint3-T041 | Construir en el panel web la interfaz de «Retirar un peligro de la matriz» | 2 | Web |
+| Sprint 3 | US54 | Retirar un peligro de la matriz | Sprint3-T042 | Cubrir «Retirar un peligro de la matriz» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US23 | Catálogo de EPP | Sprint3-T043 | Implementar en el API la lógica y el endpoint de «Catálogo de EPP» | 2 | Backend |
+| Sprint 3 | US23 | Catálogo de EPP | Sprint3-T044 | Construir en el panel web la interfaz de «Catálogo de EPP» | 3 | Web |
+| Sprint 3 | US23 | Catálogo de EPP | Sprint3-T045 | Cubrir «Catálogo de EPP» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US24 | Registro de entrega | Sprint3-T046 | Implementar en el API la lógica y el endpoint de «Registro de entrega» | 2 | Backend |
+| Sprint 3 | US24 | Registro de entrega | Sprint3-T047 | Construir en el panel web la interfaz de «Registro de entrega» | 3 | Web |
+| Sprint 3 | US24 | Registro de entrega | Sprint3-T048 | Cubrir «Registro de entrega» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US25 | Conformidad del trabajador | Sprint3-T049 | Implementar en el API la lógica y el endpoint de «Conformidad del trabajador» | 1 | Backend |
+| Sprint 3 | US25 | Conformidad del trabajador | Sprint3-T050 | Construir en el panel web la interfaz de «Conformidad del trabajador» | 2 | Web |
+| Sprint 3 | US25 | Conformidad del trabajador | Sprint3-T051 | Construir en la aplicación Android la interfaz de «Conformidad del trabajador» | 2 | Móvil |
+| Sprint 3 | US25 | Conformidad del trabajador | Sprint3-T052 | Cubrir «Conformidad del trabajador» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US26 | Alerta de EPP vencido | Sprint3-T053 | Implementar en el API la lógica y el endpoint de «Alerta de EPP vencido» | 1 | Backend |
+| Sprint 3 | US26 | Alerta de EPP vencido | Sprint3-T054 | Construir en el panel web la interfaz de «Alerta de EPP vencido» | 1 | Web |
+| Sprint 3 | US26 | Alerta de EPP vencido | Sprint3-T055 | Construir en la aplicación Android la interfaz de «Alerta de EPP vencido» | 1 | Móvil |
+| Sprint 3 | US26 | Alerta de EPP vencido | Sprint3-T056 | Cubrir «Alerta de EPP vencido» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US55 | Control de stock del catálogo | Sprint3-T057 | Implementar en el API la lógica y el endpoint de «Control de stock del catálogo» | 1 | Backend |
+| Sprint 3 | US55 | Control de stock del catálogo | Sprint3-T058 | Construir en el panel web la interfaz de «Control de stock del catálogo» | 2 | Web |
+| Sprint 3 | US55 | Control de stock del catálogo | Sprint3-T059 | Cubrir «Control de stock del catálogo» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US27 | Programa de inspecciones | Sprint3-T060 | Implementar en el API la lógica y el endpoint de «Programa de inspecciones» | 4 | Backend |
+| Sprint 3 | US27 | Programa de inspecciones | Sprint3-T061 | Construir en el panel web la interfaz de «Programa de inspecciones» | 4 | Web |
+| Sprint 3 | US27 | Programa de inspecciones | Sprint3-T062 | Cubrir «Programa de inspecciones» con pruebas automatizadas | 2 | QA |
+| Sprint 3 | US28 | Ejecución con checklist | Sprint3-T063 | Implementar en el API la lógica y el endpoint de «Ejecución con checklist» | 3 | Backend |
+| Sprint 3 | US28 | Ejecución con checklist | Sprint3-T064 | Construir en el panel web la interfaz de «Ejecución con checklist» | 3 | Web |
+| Sprint 3 | US28 | Ejecución con checklist | Sprint3-T065 | Construir en la aplicación Android la interfaz de «Ejecución con checklist» | 3 | Móvil |
+| Sprint 3 | US28 | Ejecución con checklist | Sprint3-T066 | Cubrir «Ejecución con checklist» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US29 | Inspecciones vencidas | Sprint3-T067 | Implementar en el API la lógica y el endpoint de «Inspecciones vencidas» | 1 | Backend |
+| Sprint 3 | US29 | Inspecciones vencidas | Sprint3-T068 | Construir en el panel web la interfaz de «Inspecciones vencidas» | 2 | Web |
+| Sprint 3 | US29 | Inspecciones vencidas | Sprint3-T069 | Construir en la aplicación Android la interfaz de «Inspecciones vencidas» | 2 | Móvil |
+| Sprint 3 | US29 | Inspecciones vencidas | Sprint3-T070 | Cubrir «Inspecciones vencidas» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US56 | Programar la siguiente inspección | Sprint3-T071 | Implementar en el API la lógica y el endpoint de «Programar la siguiente inspección» | 2 | Backend |
+| Sprint 3 | US56 | Programar la siguiente inspección | Sprint3-T072 | Construir en el panel web la interfaz de «Programar la siguiente inspección» | 3 | Web |
+| Sprint 3 | US56 | Programar la siguiente inspección | Sprint3-T073 | Cubrir «Programar la siguiente inspección» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US57 | Cumplimiento por área | Sprint3-T074 | Implementar en el API la lógica y el endpoint de «Cumplimiento por área» | 2 | Backend |
+| Sprint 3 | US57 | Cumplimiento por área | Sprint3-T075 | Construir en el panel web la interfaz de «Cumplimiento por área» | 3 | Web |
+| Sprint 3 | US57 | Cumplimiento por área | Sprint3-T076 | Cubrir «Cumplimiento por área» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US79 | Programa anual de capacitación | Sprint3-T077 | Implementar en el API la lógica y el endpoint de «Programa anual de capacitación» | 4 | Backend |
+| Sprint 3 | US79 | Programa anual de capacitación | Sprint3-T078 | Construir en el panel web la interfaz de «Programa anual de capacitación» | 4 | Web |
+| Sprint 3 | US79 | Programa anual de capacitación | Sprint3-T079 | Cubrir «Programa anual de capacitación» con pruebas automatizadas | 2 | QA |
+| Sprint 3 | US80 | Registro de asistencia a capacitación | Sprint3-T080 | Implementar en el API la lógica y el endpoint de «Registro de asistencia a capacitación» | 4 | Backend |
+| Sprint 3 | US80 | Registro de asistencia a capacitación | Sprint3-T081 | Construir en la aplicación Android la interfaz de «Registro de asistencia a capacitación» | 4 | Móvil |
+| Sprint 3 | US80 | Registro de asistencia a capacitación | Sprint3-T082 | Cubrir «Registro de asistencia a capacitación» con pruebas automatizadas | 2 | QA |
+| Sprint 3 | US81 | Inducción del personal nuevo | Sprint3-T083 | Implementar en el API la lógica y el endpoint de «Inducción del personal nuevo» | 4 | Backend |
+| Sprint 3 | US81 | Inducción del personal nuevo | Sprint3-T084 | Construir en el panel web la interfaz de «Inducción del personal nuevo» | 4 | Web |
+| Sprint 3 | US81 | Inducción del personal nuevo | Sprint3-T085 | Cubrir «Inducción del personal nuevo» con pruebas automatizadas | 2 | QA |
+| Sprint 3 | US82 | Alerta de capacitación vencida | Sprint3-T086 | Implementar en el API la lógica y el endpoint de «Alerta de capacitación vencida» | 2 | Backend |
+| Sprint 3 | US82 | Alerta de capacitación vencida | Sprint3-T087 | Construir en el panel web la interfaz de «Alerta de capacitación vencida» | 3 | Web |
+| Sprint 3 | US82 | Alerta de capacitación vencida | Sprint3-T088 | Cubrir «Alerta de capacitación vencida» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US83 | Consultar mis capacitaciones | Sprint3-T089 | Implementar en el API la lógica y el endpoint de «Consultar mis capacitaciones» | 2 | Backend |
+| Sprint 3 | US83 | Consultar mis capacitaciones | Sprint3-T090 | Construir en la aplicación Android la interfaz de «Consultar mis capacitaciones» | 3 | Móvil |
+| Sprint 3 | US83 | Consultar mis capacitaciones | Sprint3-T091 | Cubrir «Consultar mis capacitaciones» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US84 | Registro de simulacros | Sprint3-T092 | Implementar en el API la lógica y el endpoint de «Registro de simulacros» | 2 | Backend |
+| Sprint 3 | US84 | Registro de simulacros | Sprint3-T093 | Construir en el panel web la interfaz de «Registro de simulacros» | 3 | Web |
+| Sprint 3 | US84 | Registro de simulacros | Sprint3-T094 | Cubrir «Registro de simulacros» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US85 | Mapa de riesgos por área | Sprint3-T095 | Implementar en el API la lógica y el endpoint de «Mapa de riesgos por área» | 6 | Backend |
+| Sprint 3 | US85 | Mapa de riesgos por área | Sprint3-T096 | Construir en el panel web la interfaz de «Mapa de riesgos por área» | 7 | Web |
+| Sprint 3 | US85 | Mapa de riesgos por área | Sprint3-T097 | Cubrir «Mapa de riesgos por área» con pruebas automatizadas | 3 | QA |
+| Sprint 3 | US86 | Consultar el mapa de riesgos en campo | Sprint3-T098 | Implementar en el API la lógica y el endpoint de «Consultar el mapa de riesgos en campo» | 2 | Backend |
+| Sprint 3 | US86 | Consultar el mapa de riesgos en campo | Sprint3-T099 | Construir en la aplicación Android la interfaz de «Consultar el mapa de riesgos en campo» | 3 | Móvil |
+| Sprint 3 | US86 | Consultar el mapa de riesgos en campo | Sprint3-T100 | Cubrir «Consultar el mapa de riesgos en campo» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US87 | Inventario de señalización | Sprint3-T101 | Implementar en el API la lógica y el endpoint de «Inventario de señalización» | 2 | Backend |
+| Sprint 3 | US87 | Inventario de señalización | Sprint3-T102 | Construir en el panel web la interfaz de «Inventario de señalización» | 3 | Web |
+| Sprint 3 | US87 | Inventario de señalización | Sprint3-T103 | Cubrir «Inventario de señalización» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US88 | Ubicar el área por código QR | Sprint3-T104 | Implementar en el API la lógica y el endpoint de «Ubicar el área por código QR» | 4 | Backend |
+| Sprint 3 | US88 | Ubicar el área por código QR | Sprint3-T105 | Construir en la aplicación Android la interfaz de «Ubicar el área por código QR» | 4 | Móvil |
+| Sprint 3 | US88 | Ubicar el área por código QR | Sprint3-T106 | Cubrir «Ubicar el área por código QR» con pruebas automatizadas | 2 | QA |
+| Sprint 3 | US89 | Política de SST publicada | Sprint3-T107 | Implementar en el API la lógica y el endpoint de «Política de SST publicada» | 1 | Backend |
+| Sprint 3 | US89 | Política de SST publicada | Sprint3-T108 | Construir en el panel web la interfaz de «Política de SST publicada» | 2 | Web |
+| Sprint 3 | US89 | Política de SST publicada | Sprint3-T109 | Construir en la aplicación Android la interfaz de «Política de SST publicada» | 2 | Móvil |
+| Sprint 3 | US89 | Política de SST publicada | Sprint3-T110 | Cubrir «Política de SST publicada» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US90 | Reglamento Interno de SST | Sprint3-T111 | Implementar en el API la lógica y el endpoint de «Reglamento Interno de SST» | 1 | Backend |
+| Sprint 3 | US90 | Reglamento Interno de SST | Sprint3-T112 | Construir en el panel web la interfaz de «Reglamento Interno de SST» | 2 | Web |
+| Sprint 3 | US90 | Reglamento Interno de SST | Sprint3-T113 | Construir en la aplicación Android la interfaz de «Reglamento Interno de SST» | 2 | Móvil |
+| Sprint 3 | US90 | Reglamento Interno de SST | Sprint3-T114 | Cubrir «Reglamento Interno de SST» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US91 | Plan y programa anual de SST | Sprint3-T115 | Implementar en el API la lógica y el endpoint de «Plan y programa anual de SST» | 4 | Backend |
+| Sprint 3 | US91 | Plan y programa anual de SST | Sprint3-T116 | Construir en el panel web la interfaz de «Plan y programa anual de SST» | 4 | Web |
+| Sprint 3 | US91 | Plan y programa anual de SST | Sprint3-T117 | Cubrir «Plan y programa anual de SST» con pruebas automatizadas | 2 | QA |
+| Sprint 3 | US92 | Control de versiones de documentos | Sprint3-T118 | Implementar en el API la lógica y el endpoint de «Control de versiones de documentos» | 4 | Backend |
+| Sprint 3 | US92 | Control de versiones de documentos | Sprint3-T119 | Construir en el panel web la interfaz de «Control de versiones de documentos» | 4 | Web |
+| Sprint 3 | US92 | Control de versiones de documentos | Sprint3-T120 | Cubrir «Control de versiones de documentos» con pruebas automatizadas | 2 | QA |
+| Sprint 3 | US118 | Firma del trabajador en la entrega de EPP | Sprint3-T121 | Implementar en el API la lógica y el endpoint de «Firma del trabajador en la entrega de EPP» | 4 | Backend |
+| Sprint 3 | US118 | Firma del trabajador en la entrega de EPP | Sprint3-T122 | Construir en la aplicación Android la interfaz de «Firma del trabajador en la entrega de EPP» | 4 | Móvil |
+| Sprint 3 | US118 | Firma del trabajador en la entrega de EPP | Sprint3-T123 | Cubrir «Firma del trabajador en la entrega de EPP» con pruebas automatizadas | 2 | QA |
+| Sprint 3 | US119 | Adjuntar evidencia en inspecciones | Sprint3-T124 | Implementar en el API la lógica y el endpoint de «Adjuntar evidencia en inspecciones» | 2 | Backend |
+| Sprint 3 | US119 | Adjuntar evidencia en inspecciones | Sprint3-T125 | Construir en la aplicación Android la interfaz de «Adjuntar evidencia en inspecciones» | 3 | Móvil |
+| Sprint 3 | US119 | Adjuntar evidencia en inspecciones | Sprint3-T126 | Cubrir «Adjuntar evidencia en inspecciones» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | US120 | Generar hallazgo desde una inspección | Sprint3-T127 | Implementar en el API la lógica y el endpoint de «Generar hallazgo desde una inspección» | 1 | Backend |
+| Sprint 3 | US120 | Generar hallazgo desde una inspección | Sprint3-T128 | Construir en el panel web la interfaz de «Generar hallazgo desde una inspección» | 2 | Web |
+| Sprint 3 | US120 | Generar hallazgo desde una inspección | Sprint3-T129 | Construir en la aplicación Android la interfaz de «Generar hallazgo desde una inspección» | 2 | Móvil |
+| Sprint 3 | US120 | Generar hallazgo desde una inspección | Sprint3-T130 | Cubrir «Generar hallazgo desde una inspección» con pruebas automatizadas | 1 | QA |
+| Sprint 3 | TS03 | Documentación viva del API | Sprint3-T131 | Configurar «Documentación viva del API» | 3 | DevOps |
+| Sprint 3 | TS03 | Documentación viva del API | Sprint3-T132 | Verificar «Documentación viva del API» en el pipeline | 1 | DevOps |
+| Sprint 3 | TS04 | Datos de demostración | Sprint3-T133 | Configurar «Datos de demostración» | 7 | DevOps |
+| Sprint 3 | TS04 | Datos de demostración | Sprint3-T134 | Verificar «Datos de demostración» en el pipeline | 3 | DevOps |
+| Sprint 3 | TS06 | Fin de línea normalizado | Sprint3-T135 | Configurar «Fin de línea normalizado» | 3 | DevOps |
+| Sprint 3 | TS06 | Fin de línea normalizado | Sprint3-T136 | Verificar «Fin de línea normalizado» en el pipeline | 1 | DevOps |
+| Sprint 3 | TS07 | Validación local del mensaje de commit | Sprint3-T137 | Configurar «Validación local del mensaje de commit» | 3 | DevOps |
+| Sprint 3 | TS07 | Validación local del mensaje de commit | Sprint3-T138 | Verificar «Validación local del mensaje de commit» en el pipeline | 1 | DevOps |
+| Sprint 3 | TS08 | Configuración por variables de entorno | Sprint3-T139 | Configurar «Configuración por variables de entorno» | 4 | DevOps |
+| Sprint 3 | TS08 | Configuración por variables de entorno | Sprint3-T140 | Verificar «Configuración por variables de entorno» en el pipeline | 2 | DevOps |
+| Sprint 3 | TS11 | Aislamiento entre empresas | Sprint3-T141 | Configurar «Aislamiento entre empresas» | 7 | DevOps |
+| Sprint 3 | TS11 | Aislamiento entre empresas | Sprint3-T142 | Verificar «Aislamiento entre empresas» en el pipeline | 3 | DevOps |
+| Sprint 3 | TS13 | Migraciones verificadas en integración | Sprint3-T143 | Configurar «Migraciones verificadas en integración» | 3 | DevOps |
+| Sprint 3 | TS13 | Migraciones verificadas en integración | Sprint3-T144 | Verificar «Migraciones verificadas en integración» en el pipeline | 1 | DevOps |
+| Sprint 3 | TS19 | Correo transaccional | Sprint3-T145 | Configurar «Correo transaccional» | 4 | DevOps |
+| Sprint 3 | TS19 | Correo transaccional | Sprint3-T146 | Verificar «Correo transaccional» en el pipeline | 2 | DevOps |
+| Sprint 3 | TS21 | Respaldo automático y restauración probada | Sprint3-T147 | Configurar «Respaldo automático y restauración probada» | 7 | DevOps |
+| Sprint 3 | TS21 | Respaldo automático y restauración probada | Sprint3-T148 | Verificar «Respaldo automático y restauración probada» en el pipeline | 3 | DevOps |
+| Sprint 3 | TS22 | Almacenamiento de archivos en servicio de objetos | Sprint3-T149 | Configurar «Almacenamiento de archivos en servicio de objetos» | 7 | DevOps |
+| Sprint 3 | TS22 | Almacenamiento de archivos en servicio de objetos | Sprint3-T150 | Verificar «Almacenamiento de archivos en servicio de objetos» en el pipeline | 3 | DevOps |
+| Sprint 3 | TS23 | Observabilidad del backend | Sprint3-T151 | Configurar «Observabilidad del backend» | 4 | DevOps |
+| Sprint 3 | TS23 | Observabilidad del backend | Sprint3-T152 | Verificar «Observabilidad del backend» en el pipeline | 2 | DevOps |
+| Sprint 3 | TS24 | Reporte de errores del cliente | Sprint3-T153 | Configurar «Reporte de errores del cliente» | 4 | DevOps |
+| Sprint 3 | TS24 | Reporte de errores del cliente | Sprint3-T154 | Verificar «Reporte de errores del cliente» en el pipeline | 2 | DevOps |
+| Sprint 3 | TS25 | Limitación de tasa de peticiones | Sprint3-T155 | Configurar «Limitación de tasa de peticiones» | 3 | DevOps |
+| Sprint 3 | TS25 | Limitación de tasa de peticiones | Sprint3-T156 | Verificar «Limitación de tasa de peticiones» en el pipeline | 1 | DevOps |
+| Sprint 3 | TS28 | Despliegue automatizado al entorno de pruebas | Sprint3-T157 | Configurar «Despliegue automatizado al entorno de pruebas» | 7 | DevOps |
+| Sprint 3 | TS28 | Despliegue automatizado al entorno de pruebas | Sprint3-T158 | Verificar «Despliegue automatizado al entorno de pruebas» en el pipeline | 3 | DevOps |
+| Sprint 3 | TS30 | Versionado del API | Sprint3-T159 | Configurar «Versionado del API» | 7 | DevOps |
+| Sprint 3 | TS30 | Versionado del API | Sprint3-T160 | Verificar «Versionado del API» en el pipeline | 3 | DevOps |
 
-> **Limitación reconocida.** Un ciclo de desarrollo comprimido impide observar lo que la práctica
-> iterativa busca: retroalimentación del usuario entre iteraciones que reoriente el alcance de la
-> siguiente. Los dos sprints se ejecutaron sobre un plan fijado de antemano. Se documenta como
-> limitación del trabajo, no como práctica recomendable.
+---
 
-**Validación del cierre de sprint.** El desglose anterior conserva la planificación histórica
-(54 y 220 work-items); los estados de tarea no reemplazan las evidencias de aceptación. Para
-cerrar cada incremento se propone el siguiente control:
+#### Sprint 4 — Comité, evidencia, contratistas, notificaciones y seguridad
 
-| Incremento | Demostración de aceptación | Evidencia por completar |
-|---|---|---|
-| Sprint 1 | Crear un hallazgo en Android, verlo en web, asignarlo y cerrarlo | Commit de los tres componentes, prueba ST01 y grabación del flujo |
-| Sprint 2 | Sincronizar sin duplicados y comprobar módulos de gestión | Prueba ST02 y evidencia por módulo, incluidas las diferencias del Anexo G |
+| Campo | Valor |
+|---|---|
+| Hito | Cuarto hito — TB2 · Release Review |
+| Semanas del ciclo | 13 a 15 |
+| Fechas | 16/11/2026 al 06/12/2026 |
+| Objetivo | Cerrar el expediente y el servicio: comité de SST con sus actas, indicadores y evidencia exportable, contratistas, monitoreo de agentes, notificaciones, gestión de la cuenta, seguridad de los datos personales y calidad de uso. |
+| Elementos del backlog | 56 |
+| Story Points | 239 |
+| Work-items | 168 |
+| Horas estimadas | 478 |
+| Incremento entregable | El comité queda constituido con representación paritaria, sus actas verifican quórum y sus acuerdos tienen responsable y plazo. Los indicadores y cada registro obligatorio se exportan a Excel. El sistema avisa por notificación lo que vence o queda sin atender, gestiona contratistas y monitoreo de agentes, y protege los datos personales con auditoría de accesos, cifrado y política de retención. |
 
-Las 638 horas son estimadas; no se registra esfuerzo real ni se deduce una velocidad empírica.
-La aceptación final debe revisar especialmente la paridad móvil, el comité y las exportaciones,
-pues no se encuentran completos en el código público consultado.
+Este sprint cierra el alcance del producto: a partir de aquí Resguardo sustituye el expediente en papel para los registros que la Ley N° 29783 exige, y lo que quede fuera tendría que salir del alcance, no quedar pendiente.
+
+| Sprint | User Story | Título | Work-Item | Descripción de la tarea | Estimación (h) | Área responsable |
+|---|---|---|---|---|---|---|
+| Sprint 4 | US36 | Tasa de cumplimiento de inspecciones | Sprint4-T001 | Implementar en el API la lógica y el endpoint de «Tasa de cumplimiento de inspecciones» | 3 | Backend |
+| Sprint 4 | US36 | Tasa de cumplimiento de inspecciones | Sprint4-T002 | Construir en el panel web la interfaz de «Tasa de cumplimiento de inspecciones» | 3 | Web |
+| Sprint 4 | US36 | Tasa de cumplimiento de inspecciones | Sprint4-T003 | Construir en la aplicación Android la interfaz de «Tasa de cumplimiento de inspecciones» | 3 | Móvil |
+| Sprint 4 | US36 | Tasa de cumplimiento de inspecciones | Sprint4-T004 | Cubrir «Tasa de cumplimiento de inspecciones» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US30 | Constitución del comité | Sprint4-T005 | Implementar en el API la lógica y el endpoint de «Constitución del comité» | 2 | Backend |
+| Sprint 4 | US30 | Constitución del comité | Sprint4-T006 | Construir en el panel web la interfaz de «Constitución del comité» | 3 | Web |
+| Sprint 4 | US30 | Constitución del comité | Sprint4-T007 | Cubrir «Constitución del comité» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US31 | Miembros y paridad | Sprint4-T008 | Implementar en el API la lógica y el endpoint de «Miembros y paridad» | 4 | Backend |
+| Sprint 4 | US31 | Miembros y paridad | Sprint4-T009 | Construir en el panel web la interfaz de «Miembros y paridad» | 4 | Web |
+| Sprint 4 | US31 | Miembros y paridad | Sprint4-T010 | Cubrir «Miembros y paridad» con pruebas automatizadas | 2 | QA |
+| Sprint 4 | US32 | Acta de reunión | Sprint4-T011 | Implementar en el API la lógica y el endpoint de «Acta de reunión» | 4 | Backend |
+| Sprint 4 | US32 | Acta de reunión | Sprint4-T012 | Construir en el panel web la interfaz de «Acta de reunión» | 4 | Web |
+| Sprint 4 | US32 | Acta de reunión | Sprint4-T013 | Cubrir «Acta de reunión» con pruebas automatizadas | 2 | QA |
+| Sprint 4 | US33 | Control de quórum | Sprint4-T014 | Implementar en el API la lógica y el endpoint de «Control de quórum» | 1 | Backend |
+| Sprint 4 | US33 | Control de quórum | Sprint4-T015 | Construir en el panel web la interfaz de «Control de quórum» | 2 | Web |
+| Sprint 4 | US33 | Control de quórum | Sprint4-T016 | Construir en la aplicación Android la interfaz de «Control de quórum» | 2 | Móvil |
+| Sprint 4 | US33 | Control de quórum | Sprint4-T017 | Cubrir «Control de quórum» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US34 | Acuerdos con responsable y plazo | Sprint4-T018 | Implementar en el API la lógica y el endpoint de «Acuerdos con responsable y plazo» | 2 | Backend |
+| Sprint 4 | US34 | Acuerdos con responsable y plazo | Sprint4-T019 | Construir en el panel web la interfaz de «Acuerdos con responsable y plazo» | 3 | Web |
+| Sprint 4 | US34 | Acuerdos con responsable y plazo | Sprint4-T020 | Cubrir «Acuerdos con responsable y plazo» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US58 | Advertencia de comité no paritario | Sprint4-T021 | Implementar en el API la lógica y el endpoint de «Advertencia de comité no paritario» | 1 | Backend |
+| Sprint 4 | US58 | Advertencia de comité no paritario | Sprint4-T022 | Construir en el panel web la interfaz de «Advertencia de comité no paritario» | 2 | Web |
+| Sprint 4 | US58 | Advertencia de comité no paritario | Sprint4-T023 | Cubrir «Advertencia de comité no paritario» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US59 | Seguimiento del estado de los acuerdos | Sprint4-T024 | Implementar en el API la lógica y el endpoint de «Seguimiento del estado de los acuerdos» | 1 | Backend |
+| Sprint 4 | US59 | Seguimiento del estado de los acuerdos | Sprint4-T025 | Construir en el panel web la interfaz de «Seguimiento del estado de los acuerdos» | 2 | Web |
+| Sprint 4 | US59 | Seguimiento del estado de los acuerdos | Sprint4-T026 | Cubrir «Seguimiento del estado de los acuerdos» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US60 | Consultar las actas desde el celular | Sprint4-T027 | Implementar en el API la lógica y el endpoint de «Consultar las actas desde el celular» | 2 | Backend |
+| Sprint 4 | US60 | Consultar las actas desde el celular | Sprint4-T028 | Construir en la aplicación Android la interfaz de «Consultar las actas desde el celular» | 3 | Móvil |
+| Sprint 4 | US60 | Consultar las actas desde el celular | Sprint4-T029 | Cubrir «Consultar las actas desde el celular» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US37 | Exportación de evidencia | Sprint4-T030 | Implementar en el API la lógica y el endpoint de «Exportación de evidencia» | 6 | Backend |
+| Sprint 4 | US37 | Exportación de evidencia | Sprint4-T031 | Construir en el panel web la interfaz de «Exportación de evidencia» | 7 | Web |
+| Sprint 4 | US37 | Exportación de evidencia | Sprint4-T032 | Cubrir «Exportación de evidencia» con pruebas automatizadas | 3 | QA |
+| Sprint 4 | US61 | MTTR por severidad | Sprint4-T033 | Implementar en el API la lógica y el endpoint de «MTTR por severidad» | 1 | Backend |
+| Sprint 4 | US61 | MTTR por severidad | Sprint4-T034 | Construir en el panel web la interfaz de «MTTR por severidad» | 2 | Web |
+| Sprint 4 | US61 | MTTR por severidad | Sprint4-T035 | Construir en la aplicación Android la interfaz de «MTTR por severidad» | 2 | Móvil |
+| Sprint 4 | US61 | MTTR por severidad | Sprint4-T036 | Cubrir «MTTR por severidad» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US62 | Exportar cada registro obligatorio | Sprint4-T037 | Implementar en el API la lógica y el endpoint de «Exportar cada registro obligatorio» | 2 | Backend |
+| Sprint 4 | US62 | Exportar cada registro obligatorio | Sprint4-T038 | Construir en el panel web la interfaz de «Exportar cada registro obligatorio» | 3 | Web |
+| Sprint 4 | US62 | Exportar cada registro obligatorio | Sprint4-T039 | Cubrir «Exportar cada registro obligatorio» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US63 | Resumen de hallazgos | Sprint4-T040 | Implementar en el API la lógica y el endpoint de «Resumen de hallazgos» | 1 | Backend |
+| Sprint 4 | US63 | Resumen de hallazgos | Sprint4-T041 | Construir en el panel web la interfaz de «Resumen de hallazgos» | 2 | Web |
+| Sprint 4 | US63 | Resumen de hallazgos | Sprint4-T042 | Construir en la aplicación Android la interfaz de «Resumen de hallazgos» | 2 | Móvil |
+| Sprint 4 | US63 | Resumen de hallazgos | Sprint4-T043 | Cubrir «Resumen de hallazgos» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US65 | Identidad visual consistente | Sprint4-T044 | Implementar en el API la lógica y el endpoint de «Identidad visual consistente» | 3 | Backend |
+| Sprint 4 | US65 | Identidad visual consistente | Sprint4-T045 | Construir en el panel web la interfaz de «Identidad visual consistente» | 3 | Web |
+| Sprint 4 | US65 | Identidad visual consistente | Sprint4-T046 | Construir en la aplicación Android la interfaz de «Identidad visual consistente» | 3 | Móvil |
+| Sprint 4 | US65 | Identidad visual consistente | Sprint4-T047 | Cubrir «Identidad visual consistente» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US66 | Navegación siempre accesible | Sprint4-T048 | Implementar en el API la lógica y el endpoint de «Navegación siempre accesible» | 1 | Backend |
+| Sprint 4 | US66 | Navegación siempre accesible | Sprint4-T049 | Construir en el panel web la interfaz de «Navegación siempre accesible» | 1 | Web |
+| Sprint 4 | US66 | Navegación siempre accesible | Sprint4-T050 | Construir en la aplicación Android la interfaz de «Navegación siempre accesible» | 1 | Móvil |
+| Sprint 4 | US66 | Navegación siempre accesible | Sprint4-T051 | Cubrir «Navegación siempre accesible» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US67 | Uso desde pantallas pequeñas | Sprint4-T052 | Implementar en el API la lógica y el endpoint de «Uso desde pantallas pequeñas» | 4 | Backend |
+| Sprint 4 | US67 | Uso desde pantallas pequeñas | Sprint4-T053 | Construir en el panel web la interfaz de «Uso desde pantallas pequeñas» | 4 | Web |
+| Sprint 4 | US67 | Uso desde pantallas pequeñas | Sprint4-T054 | Cubrir «Uso desde pantallas pequeñas» con pruebas automatizadas | 2 | QA |
+| Sprint 4 | US68 | Errores comprensibles | Sprint4-T055 | Implementar en el API la lógica y el endpoint de «Errores comprensibles» | 1 | Backend |
+| Sprint 4 | US68 | Errores comprensibles | Sprint4-T056 | Construir en el panel web la interfaz de «Errores comprensibles» | 2 | Web |
+| Sprint 4 | US68 | Errores comprensibles | Sprint4-T057 | Construir en la aplicación Android la interfaz de «Errores comprensibles» | 2 | Móvil |
+| Sprint 4 | US68 | Errores comprensibles | Sprint4-T058 | Cubrir «Errores comprensibles» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US93 | Registro de monitoreo de agentes | Sprint4-T059 | Implementar en el API la lógica y el endpoint de «Registro de monitoreo de agentes» | 4 | Backend |
+| Sprint 4 | US93 | Registro de monitoreo de agentes | Sprint4-T060 | Construir en el panel web la interfaz de «Registro de monitoreo de agentes» | 4 | Web |
+| Sprint 4 | US93 | Registro de monitoreo de agentes | Sprint4-T061 | Cubrir «Registro de monitoreo de agentes» con pruebas automatizadas | 2 | QA |
+| Sprint 4 | US94 | Alerta por exceder el límite permisible | Sprint4-T062 | Implementar en el API la lógica y el endpoint de «Alerta por exceder el límite permisible» | 2 | Backend |
+| Sprint 4 | US94 | Alerta por exceder el límite permisible | Sprint4-T063 | Construir en el panel web la interfaz de «Alerta por exceder el límite permisible» | 3 | Web |
+| Sprint 4 | US94 | Alerta por exceder el límite permisible | Sprint4-T064 | Cubrir «Alerta por exceder el límite permisible» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US95 | Programa de monitoreo | Sprint4-T065 | Implementar en el API la lógica y el endpoint de «Programa de monitoreo» | 2 | Backend |
+| Sprint 4 | US95 | Programa de monitoreo | Sprint4-T066 | Construir en el panel web la interfaz de «Programa de monitoreo» | 3 | Web |
+| Sprint 4 | US95 | Programa de monitoreo | Sprint4-T067 | Cubrir «Programa de monitoreo» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US96 | Registro de empresa contratista | Sprint4-T068 | Implementar en el API la lógica y el endpoint de «Registro de empresa contratista» | 4 | Backend |
+| Sprint 4 | US96 | Registro de empresa contratista | Sprint4-T069 | Construir en el panel web la interfaz de «Registro de empresa contratista» | 4 | Web |
+| Sprint 4 | US96 | Registro de empresa contratista | Sprint4-T070 | Cubrir «Registro de empresa contratista» con pruebas automatizadas | 2 | QA |
+| Sprint 4 | US97 | Documentación de seguridad de la contratista | Sprint4-T071 | Implementar en el API la lógica y el endpoint de «Documentación de seguridad de la contratista» | 4 | Backend |
+| Sprint 4 | US97 | Documentación de seguridad de la contratista | Sprint4-T072 | Construir en el panel web la interfaz de «Documentación de seguridad de la contratista» | 4 | Web |
+| Sprint 4 | US97 | Documentación de seguridad de la contratista | Sprint4-T073 | Cubrir «Documentación de seguridad de la contratista» con pruebas automatizadas | 2 | QA |
+| Sprint 4 | US98 | Trabajadores de contratista reportando | Sprint4-T074 | Implementar en el API la lógica y el endpoint de «Trabajadores de contratista reportando» | 4 | Backend |
+| Sprint 4 | US98 | Trabajadores de contratista reportando | Sprint4-T075 | Construir en la aplicación Android la interfaz de «Trabajadores de contratista reportando» | 4 | Móvil |
+| Sprint 4 | US98 | Trabajadores de contratista reportando | Sprint4-T076 | Cubrir «Trabajadores de contratista reportando» con pruebas automatizadas | 2 | QA |
+| Sprint 4 | US99 | Permiso de trabajo de alto riesgo | Sprint4-T077 | Implementar en el API la lógica y el endpoint de «Permiso de trabajo de alto riesgo» | 4 | Backend |
+| Sprint 4 | US99 | Permiso de trabajo de alto riesgo | Sprint4-T078 | Construir en el panel web la interfaz de «Permiso de trabajo de alto riesgo» | 5 | Web |
+| Sprint 4 | US99 | Permiso de trabajo de alto riesgo | Sprint4-T079 | Construir en la aplicación Android la interfaz de «Permiso de trabajo de alto riesgo» | 5 | Móvil |
+| Sprint 4 | US99 | Permiso de trabajo de alto riesgo | Sprint4-T080 | Cubrir «Permiso de trabajo de alto riesgo» con pruebas automatizadas | 2 | QA |
+| Sprint 4 | US100 | Aviso de hallazgo crítico sin asignar | Sprint4-T081 | Implementar en el API la lógica y el endpoint de «Aviso de hallazgo crítico sin asignar» | 1 | Backend |
+| Sprint 4 | US100 | Aviso de hallazgo crítico sin asignar | Sprint4-T082 | Construir en el panel web la interfaz de «Aviso de hallazgo crítico sin asignar» | 2 | Web |
+| Sprint 4 | US100 | Aviso de hallazgo crítico sin asignar | Sprint4-T083 | Construir en la aplicación Android la interfaz de «Aviso de hallazgo crítico sin asignar» | 2 | Móvil |
+| Sprint 4 | US100 | Aviso de hallazgo crítico sin asignar | Sprint4-T084 | Cubrir «Aviso de hallazgo crítico sin asignar» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US101 | Aviso de cierre al reportante | Sprint4-T085 | Implementar en el API la lógica y el endpoint de «Aviso de cierre al reportante» | 1 | Backend |
+| Sprint 4 | US101 | Aviso de cierre al reportante | Sprint4-T086 | Construir en la aplicación Android la interfaz de «Aviso de cierre al reportante» | 2 | Móvil |
+| Sprint 4 | US101 | Aviso de cierre al reportante | Sprint4-T087 | Cubrir «Aviso de cierre al reportante» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US102 | Aviso de asignación | Sprint4-T088 | Implementar en el API la lógica y el endpoint de «Aviso de asignación» | 1 | Backend |
+| Sprint 4 | US102 | Aviso de asignación | Sprint4-T089 | Construir en el panel web la interfaz de «Aviso de asignación» | 1 | Web |
+| Sprint 4 | US102 | Aviso de asignación | Sprint4-T090 | Construir en la aplicación Android la interfaz de «Aviso de asignación» | 1 | Móvil |
+| Sprint 4 | US102 | Aviso de asignación | Sprint4-T091 | Cubrir «Aviso de asignación» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US103 | Resumen diario para el comité | Sprint4-T092 | Implementar en el API la lógica y el endpoint de «Resumen diario para el comité» | 2 | Backend |
+| Sprint 4 | US103 | Resumen diario para el comité | Sprint4-T093 | Construir en el panel web la interfaz de «Resumen diario para el comité» | 3 | Web |
+| Sprint 4 | US103 | Resumen diario para el comité | Sprint4-T094 | Cubrir «Resumen diario para el comité» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US104 | Aviso de acuerdo del comité por vencer | Sprint4-T095 | Implementar en el API la lógica y el endpoint de «Aviso de acuerdo del comité por vencer» | 1 | Backend |
+| Sprint 4 | US104 | Aviso de acuerdo del comité por vencer | Sprint4-T096 | Construir en el panel web la interfaz de «Aviso de acuerdo del comité por vencer» | 1 | Web |
+| Sprint 4 | US104 | Aviso de acuerdo del comité por vencer | Sprint4-T097 | Construir en la aplicación Android la interfaz de «Aviso de acuerdo del comité por vencer» | 1 | Móvil |
+| Sprint 4 | US104 | Aviso de acuerdo del comité por vencer | Sprint4-T098 | Cubrir «Aviso de acuerdo del comité por vencer» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US105 | Preferencias de notificación | Sprint4-T099 | Implementar en el API la lógica y el endpoint de «Preferencias de notificación» | 1 | Backend |
+| Sprint 4 | US105 | Preferencias de notificación | Sprint4-T100 | Construir en el panel web la interfaz de «Preferencias de notificación» | 2 | Web |
+| Sprint 4 | US105 | Preferencias de notificación | Sprint4-T101 | Construir en la aplicación Android la interfaz de «Preferencias de notificación» | 2 | Móvil |
+| Sprint 4 | US105 | Preferencias de notificación | Sprint4-T102 | Cubrir «Preferencias de notificación» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US106 | Alta de empresa desde la landing | Sprint4-T103 | Implementar en el API la lógica y el endpoint de «Alta de empresa desde la landing» | 6 | Backend |
+| Sprint 4 | US106 | Alta de empresa desde la landing | Sprint4-T104 | Construir en el panel web la interfaz de «Alta de empresa desde la landing» | 7 | Web |
+| Sprint 4 | US106 | Alta de empresa desde la landing | Sprint4-T105 | Cubrir «Alta de empresa desde la landing» con pruebas automatizadas | 3 | QA |
+| Sprint 4 | US107 | Datos y configuración de la empresa | Sprint4-T106 | Implementar en el API la lógica y el endpoint de «Datos y configuración de la empresa» | 2 | Backend |
+| Sprint 4 | US107 | Datos y configuración de la empresa | Sprint4-T107 | Construir en el panel web la interfaz de «Datos y configuración de la empresa» | 3 | Web |
+| Sprint 4 | US107 | Datos y configuración de la empresa | Sprint4-T108 | Cubrir «Datos y configuración de la empresa» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US108 | Planes y suscripción | Sprint4-T109 | Implementar en el API la lógica y el endpoint de «Planes y suscripción» | 4 | Backend |
+| Sprint 4 | US108 | Planes y suscripción | Sprint4-T110 | Construir en el panel web la interfaz de «Planes y suscripción» | 4 | Web |
+| Sprint 4 | US108 | Planes y suscripción | Sprint4-T111 | Cubrir «Planes y suscripción» con pruebas automatizadas | 2 | QA |
+| Sprint 4 | US109 | Exportación completa de mis datos | Sprint4-T112 | Implementar en el API la lógica y el endpoint de «Exportación completa de mis datos» | 4 | Backend |
+| Sprint 4 | US109 | Exportación completa de mis datos | Sprint4-T113 | Construir en el panel web la interfaz de «Exportación completa de mis datos» | 4 | Web |
+| Sprint 4 | US109 | Exportación completa de mis datos | Sprint4-T114 | Cubrir «Exportación completa de mis datos» con pruebas automatizadas | 2 | QA |
+| Sprint 4 | US110 | Respaldo y continuidad | Sprint4-T115 | Implementar en el API la lógica y el endpoint de «Respaldo y continuidad» | 8 | Backend |
+| Sprint 4 | US110 | Respaldo y continuidad | Sprint4-T116 | Cubrir «Respaldo y continuidad» con pruebas automatizadas | 2 | QA |
+| Sprint 4 | US113 | Registro de auditoría de accesos | Sprint4-T117 | Implementar en el API la lógica y el endpoint de «Registro de auditoría de accesos» | 4 | Backend |
+| Sprint 4 | US113 | Registro de auditoría de accesos | Sprint4-T118 | Construir en el panel web la interfaz de «Registro de auditoría de accesos» | 4 | Web |
+| Sprint 4 | US113 | Registro de auditoría de accesos | Sprint4-T119 | Cubrir «Registro de auditoría de accesos» con pruebas automatizadas | 2 | QA |
+| Sprint 4 | US114 | Cierre de sesión remoto | Sprint4-T120 | Implementar en el API la lógica y el endpoint de «Cierre de sesión remoto» | 2 | Backend |
+| Sprint 4 | US114 | Cierre de sesión remoto | Sprint4-T121 | Construir en el panel web la interfaz de «Cierre de sesión remoto» | 3 | Web |
+| Sprint 4 | US114 | Cierre de sesión remoto | Sprint4-T122 | Cubrir «Cierre de sesión remoto» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US115 | Política de retención de evidencia | Sprint4-T123 | Implementar en el API la lógica y el endpoint de «Política de retención de evidencia» | 8 | Backend |
+| Sprint 4 | US115 | Política de retención de evidencia | Sprint4-T124 | Cubrir «Política de retención de evidencia» con pruebas automatizadas | 2 | QA |
+| Sprint 4 | US121 | Convocatoria y asistencia del comité | Sprint4-T125 | Implementar en el API la lógica y el endpoint de «Convocatoria y asistencia del comité» | 2 | Backend |
+| Sprint 4 | US121 | Convocatoria y asistencia del comité | Sprint4-T126 | Construir en el panel web la interfaz de «Convocatoria y asistencia del comité» | 3 | Web |
+| Sprint 4 | US121 | Convocatoria y asistencia del comité | Sprint4-T127 | Cubrir «Convocatoria y asistencia del comité» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US122 | Elección de representantes de los trabajadores | Sprint4-T128 | Implementar en el API la lógica y el endpoint de «Elección de representantes de los trabajadores» | 4 | Backend |
+| Sprint 4 | US122 | Elección de representantes de los trabajadores | Sprint4-T129 | Construir en el panel web la interfaz de «Elección de representantes de los trabajadores» | 4 | Web |
+| Sprint 4 | US122 | Elección de representantes de los trabajadores | Sprint4-T130 | Cubrir «Elección de representantes de los trabajadores» con pruebas automatizadas | 2 | QA |
+| Sprint 4 | US123 | Exportar el tablero a PDF | Sprint4-T131 | Implementar en el API la lógica y el endpoint de «Exportar el tablero a PDF» | 4 | Backend |
+| Sprint 4 | US123 | Exportar el tablero a PDF | Sprint4-T132 | Construir en el panel web la interfaz de «Exportar el tablero a PDF» | 4 | Web |
+| Sprint 4 | US123 | Exportar el tablero a PDF | Sprint4-T133 | Cubrir «Exportar el tablero a PDF» con pruebas automatizadas | 2 | QA |
+| Sprint 4 | US124 | Comparar periodos | Sprint4-T134 | Implementar en el API la lógica y el endpoint de «Comparar periodos» | 2 | Backend |
+| Sprint 4 | US124 | Comparar periodos | Sprint4-T135 | Construir en el panel web la interfaz de «Comparar periodos» | 3 | Web |
+| Sprint 4 | US124 | Comparar periodos | Sprint4-T136 | Cubrir «Comparar periodos» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | US127 | Interfaz accesible para lectores de pantalla | Sprint4-T137 | Implementar en el API la lógica y el endpoint de «Interfaz accesible para lectores de pantalla» | 4 | Backend |
+| Sprint 4 | US127 | Interfaz accesible para lectores de pantalla | Sprint4-T138 | Construir en el panel web la interfaz de «Interfaz accesible para lectores de pantalla» | 5 | Web |
+| Sprint 4 | US127 | Interfaz accesible para lectores de pantalla | Sprint4-T139 | Construir en la aplicación Android la interfaz de «Interfaz accesible para lectores de pantalla» | 5 | Móvil |
+| Sprint 4 | US127 | Interfaz accesible para lectores de pantalla | Sprint4-T140 | Cubrir «Interfaz accesible para lectores de pantalla» con pruebas automatizadas | 2 | QA |
+| Sprint 4 | US128 | Modo de alto contraste | Sprint4-T141 | Implementar en el API la lógica y el endpoint de «Modo de alto contraste» | 1 | Backend |
+| Sprint 4 | US128 | Modo de alto contraste | Sprint4-T142 | Construir en el panel web la interfaz de «Modo de alto contraste» | 2 | Web |
+| Sprint 4 | US128 | Modo de alto contraste | Sprint4-T143 | Construir en la aplicación Android la interfaz de «Modo de alto contraste» | 2 | Móvil |
+| Sprint 4 | US128 | Modo de alto contraste | Sprint4-T144 | Cubrir «Modo de alto contraste» con pruebas automatizadas | 1 | QA |
+| Sprint 4 | TS14 | APK publicado por el pipeline | Sprint4-T145 | Configurar «APK publicado por el pipeline» | 4 | DevOps |
+| Sprint 4 | TS14 | APK publicado por el pipeline | Sprint4-T146 | Verificar «APK publicado por el pipeline» en el pipeline | 2 | DevOps |
+| Sprint 4 | TS15 | Generación de evidencia en Excel | Sprint4-T147 | Configurar «Generación de evidencia en Excel» | 7 | DevOps |
+| Sprint 4 | TS15 | Generación de evidencia en Excel | Sprint4-T148 | Verificar «Generación de evidencia en Excel» en el pipeline | 3 | DevOps |
+| Sprint 4 | TS16 | Informe compilable y con índice verificado | Sprint4-T149 | Configurar «Informe compilable y con índice verificado» | 4 | DevOps |
+| Sprint 4 | TS16 | Informe compilable y con índice verificado | Sprint4-T150 | Verificar «Informe compilable y con índice verificado» en el pipeline | 2 | DevOps |
+| Sprint 4 | TS17 | Servicio de notificaciones push | Sprint4-T151 | Configurar «Servicio de notificaciones push» | 7 | DevOps |
+| Sprint 4 | TS17 | Servicio de notificaciones push | Sprint4-T152 | Verificar «Servicio de notificaciones push» en el pipeline | 3 | DevOps |
+| Sprint 4 | TS18 | Tareas programadas en el servidor | Sprint4-T153 | Configurar «Tareas programadas en el servidor» | 7 | DevOps |
+| Sprint 4 | TS18 | Tareas programadas en el servidor | Sprint4-T154 | Verificar «Tareas programadas en el servidor» en el pipeline | 3 | DevOps |
+| Sprint 4 | TS20 | Registro de auditoría | Sprint4-T155 | Configurar «Registro de auditoría» | 7 | DevOps |
+| Sprint 4 | TS20 | Registro de auditoría | Sprint4-T156 | Verificar «Registro de auditoría» en el pipeline | 3 | DevOps |
+| Sprint 4 | TS26 | Pruebas de extremo a extremo de la web | Sprint4-T157 | Configurar «Pruebas de extremo a extremo de la web» | 11 | DevOps |
+| Sprint 4 | TS26 | Pruebas de extremo a extremo de la web | Sprint4-T158 | Verificar «Pruebas de extremo a extremo de la web» en el pipeline | 5 | DevOps |
+| Sprint 4 | TS27 | Pruebas instrumentadas del cliente móvil | Sprint4-T159 | Configurar «Pruebas instrumentadas del cliente móvil» | 11 | DevOps |
+| Sprint 4 | TS27 | Pruebas instrumentadas del cliente móvil | Sprint4-T160 | Verificar «Pruebas instrumentadas del cliente móvil» en el pipeline | 5 | DevOps |
+| Sprint 4 | TS29 | Cifrado de datos personales en reposo | Sprint4-T161 | Configurar «Cifrado de datos personales en reposo» | 11 | DevOps |
+| Sprint 4 | TS29 | Cifrado de datos personales en reposo | Sprint4-T162 | Verificar «Cifrado de datos personales en reposo» en el pipeline | 5 | DevOps |
+| Sprint 4 | TS32 | Accesibilidad verificada en el pipeline | Sprint4-T163 | Configurar «Accesibilidad verificada en el pipeline» | 4 | DevOps |
+| Sprint 4 | TS32 | Accesibilidad verificada en el pipeline | Sprint4-T164 | Verificar «Accesibilidad verificada en el pipeline» en el pipeline | 2 | DevOps |
+| Sprint 4 | TS33 | Textos externalizados para traducción | Sprint4-T165 | Configurar «Textos externalizados para traducción» | 7 | DevOps |
+| Sprint 4 | TS33 | Textos externalizados para traducción | Sprint4-T166 | Verificar «Textos externalizados para traducción» en el pipeline | 3 | DevOps |
+| Sprint 4 | TS34 | Entorno reproducible con contenedores | Sprint4-T167 | Configurar «Entorno reproducible con contenedores» | 4 | DevOps |
+| Sprint 4 | TS34 | Entorno reproducible con contenedores | Sprint4-T168 | Verificar «Entorno reproducible con contenedores» en el pipeline | 2 | DevOps |
+
+---
+
+#### Resumen de los cuatro sprints
+
+| Sprint | Alcance | Fechas | Elementos | Story Points | Work-items | Horas |
+|---|---|---|---|---|---|---|
+| Sprint 1 | El ciclo de vida del hallazgo | 24/08/2026 – 20/09/2026 | 15 | 60 | 54 | 120 |
+| Sprint 2 | Captura en campo, accidentes y experimento A/B | 21/09/2026 – 11/10/2026 | 36 | 161 | 114 | 322 |
+| Sprint 3 | Cuentas, registros obligatorios, capacitación y despliegue | 12/10/2026 – 15/11/2026 | 55 | 200 | 160 | 400 |
+| Sprint 4 | Comité, evidencia, contratistas, notificaciones y seguridad | 16/11/2026 – 06/12/2026 | 56 | 239 | 168 | 478 |
+| **Total** | | | **162** | **660** | **496** | **1320** |
+
+**Sobre la carga por sprint.** Los Story Points por sprint son 60, 161, 200, 239. La diferencia no es un
+descuido de planificación: los sprints duran lo que el calendario del curso marca entre hitos
+—cuatro semanas el primero, tres el segundo, cinco el tercero y tres el cuarto— y el alcance se
+agrupó por dependencia funcional, porque cada sprint necesita que el anterior esté funcionando.
+Forzar una carga pareja habría obligado a partir capacidades a la mitad y a desplegar antes de
+que el alcance estuviera estable.
+
+> **Limitación reconocida.** Las horas estimadas son una conversión declarada de los Story
+> Points, no un registro de tiempo real, y la velocidad de un sprint no se ha medido contra una
+> capacidad observada del equipo. Mientras no haya sprints cerrados con su esfuerzo registrado,
+> estas cifras sirven para dimensionar el trabajo, no para predecirlo.
 
 ### 5.2.2. Implemented Landing Page Evidence
 
