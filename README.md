@@ -302,7 +302,7 @@ Outcome 4.
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---|---|---|
-| **4.c.1** Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | **Esquirva León Miguel Juan Diego**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Mora Blas Diego Alonzo**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Villafuerte Tapia Renzo Alonso**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --> | <!-- COMPLETAR: conclusiones del grupo, acumulables entre entregas --> |
+| **4.c.1** Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | **Esquirva León Miguel Juan Diego**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Mora Blas Diego Alonzo**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Villafuerte Tapia Renzo Alonso**<br>**TF:** Declaró en el Capítulo V el periodo real de ejecución del trabajo en lugar de repartir fechas de sprint que el historial público de commits no respalda. Separó en el Product Backlog lo construido de lo propuesto, para no atribuirle al prototipo capacidades que no tiene. Etiquetó los datos del comando `seed_demo` como datos de demostración, de modo que no puedan presentarse como evidencia del experimento. Declaró la conversión de Story Points a horas como una regla de estimación y no como una medición de tiempo real. Mantuvo sin publicar la cifra de accidentes del MTPE mientras no contara con su fuente citada. | <!-- COMPLETAR: conclusiones del grupo, acumulables entre entregas --> |
 | **4.c.2** Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | **Esquirva León Miguel Juan Diego**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Mora Blas Diego Alonzo**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Villafuerte Tapia Renzo Alonso**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --> | <!-- COMPLETAR: conclusiones del grupo, acumulables entre entregas --> |
 
 El enunciado del trabajo final pide, además del cuadro anterior, **una subsección por cada
@@ -319,7 +319,33 @@ trabajo que ha realizado. Esas subsecciones son las que siguen; cada integrante 
 
 ### Villafuerte Tapia Renzo Alonso
 
-<!-- COMPLETAR: redacción propia del integrante sobre los criterios 4.c.1 y 4.c.2. -->
+**Sobre el criterio 4.c.1 — responsabilidad ética y profesional.**
+
+La tentación más fuerte de un informe académico no es escribir mal: es presentar más de lo que se
+construyó. Me tocó enfrentarla varias veces y en todas la decisión fue la misma, declarar el
+límite en lugar de disimularlo.
+
+El caso más claro fueron las fechas de los sprints. El informe describía sprints repartidos en
+semanas, pero el historial de commits de los cuatro repositorios muestra que el desarrollo se
+concentró en pocos días. Poner fechas semanales habría sido cómodo y lo habría desmentido
+cualquiera que abriera GitHub, así que escribí en el Capítulo V que los sprints organizan el
+alcance y no ventanas de calendario, con el periodo real, y añadí la limitación que eso implica:
+un ciclo comprimido no permite la retroalimentación entre iteraciones que la práctica iterativa
+busca.
+
+El segundo caso fue el Product Backlog. Al especificar 162 elementos quedó claro que el producto
+no cubre todo lo que la Ley N° 29783 exige. En lugar de redactar las historias en pasado como si
+estuvieran hechas, separé por estado lo construido de lo propuesto, de modo que el lector sepe
+exactamente qué puede demostrarse delante de él y qué no.
+
+El tercero fue el de los datos de demostración. El comando `seed_demo` genera reportes, hallazgos
+e inspecciones realistas, y esos datos podrían pasar por resultados del experimento A/B. Quedaron
+etiquetados como datos de demostración en el propio panel, porque presentar datos simulados como
+evidencia experimental no es un error de forma: es una afirmación falsa sobre lo que se midió.
+
+Lo que aprendí es que la responsabilidad profesional en ingeniería de software se juega casi
+siempre en lo que uno decide *no* afirmar. Un informe que declara sus límites es verificable; uno
+que los esconde se cae con una sola pregunta.
 
 ---
 
