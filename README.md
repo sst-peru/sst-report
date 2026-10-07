@@ -303,7 +303,7 @@ Outcome 4.
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---|---|---|
 | **4.c.1** Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | **Esquirva León Miguel Juan Diego**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Mora Blas Diego Alonzo**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Villafuerte Tapia Renzo Alonso**<br>**TF:** Declaró en el Capítulo V el periodo real de ejecución del trabajo en lugar de repartir fechas de sprint que el historial público de commits no respalda. Separó en el Product Backlog lo construido de lo propuesto, para no atribuirle al prototipo capacidades que no tiene. Etiquetó los datos del comando `seed_demo` como datos de demostración, de modo que no puedan presentarse como evidencia del experimento. Declaró la conversión de Story Points a horas como una regla de estimación y no como una medición de tiempo real. Mantuvo sin publicar la cifra de accidentes del MTPE mientras no contara con su fuente citada. | <!-- COMPLETAR: conclusiones del grupo, acumulables entre entregas --> |
-| **4.c.2** Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | **Esquirva León Miguel Juan Diego**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Mora Blas Diego Alonzo**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Villafuerte Tapia Renzo Alonso**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --> | <!-- COMPLETAR: conclusiones del grupo, acumulables entre entregas --> |
+| **4.c.2** Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | **Esquirva León Miguel Juan Diego**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Mora Blas Diego Alonzo**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Villafuerte Tapia Renzo Alonso**<br>**TF:** Restringió el alcance a Android nativo por la distribución de dispositivos del segmento objetivo, y dejó la decisión documentada como tal en lugar de presentarla como omisión. Diseñó la captura sin conexión porque la conectividad en obra, planta y unidad minera es intermitente: una decisión tomada por el contexto del usuario y no por preferencia técnica. Dejó fuera del alcance la vigilancia médica ocupacional, por tratarse de datos de salud cuyo tratamiento excede lo que el equipo puede sostener. Especificó la geolocalización como opcional y revocable y el reporte anónimo de actos inseguros, reconociendo que el trabajador puede temer represalias. Sujetó el tratamiento de DNI, teléfono, fotografías y ubicación a la Ley N° 29733 en el acuerdo de servicio del producto. | <!-- COMPLETAR: conclusiones del grupo, acumulables entre entregas --> |
 
 El enunciado del trabajo final pide, además del cuadro anterior, **una subsección por cada
 integrante** en la que describa por escrito la relación entre el outcome, sus dimensiones y el
@@ -335,7 +335,7 @@ busca.
 
 El segundo caso fue el Product Backlog. Al especificar 162 elementos quedó claro que el producto
 no cubre todo lo que la Ley N° 29783 exige. En lugar de redactar las historias en pasado como si
-estuvieran hechas, separé por estado lo construido de lo propuesto, de modo que el lector sepe
+estuvieran hechas, separé por estado lo construido de lo propuesto, de modo que el lector sepa
 exactamente qué puede demostrarse delante de él y qué no.
 
 El tercero fue el de los datos de demostración. El comando `seed_demo` genera reportes, hallazgos
@@ -346,6 +346,45 @@ evidencia experimental no es un error de forma: es una afirmación falsa sobre l
 Lo que aprendí es que la responsabilidad profesional en ingeniería de software se juega casi
 siempre en lo que uno decide *no* afirmar. Un informe que declara sus límites es verificable; uno
 que los esconde se cae con una sola pregunta.
+
+**Sobre el criterio 4.c.2 — juicios informados y su impacto.**
+
+Las decisiones de diseño de este producto no se tomaron por elegancia técnica sino por quién lo
+va a usar y en qué condiciones, y eso cambió el resultado en cuatro puntos concretos.
+
+En lo **social**, el usuario principal no es el profesional de SST sino el operario: una persona
+de pie, con casco y guantes, con un celular Android de gama media que suele ser su único
+dispositivo digital. Las plataformas del mercado están construidas alrededor del profesional y de
+sus obligaciones documentales; un formulario de diez campos es gratis para quien trabaja sentado y
+caro para quien está en un andamio. De ahí salió el formulario de tres pasos y, por el mismo
+razonamiento, la geolocalización opcional y el reporte anónimo: un trabajador que teme la reacción
+de su supervisor, o que no quiere que se registre dónde está, deja de reportar, y un sistema de
+seguridad sin reportes no protege a nadie.
+
+En lo **técnico condicionado por el contexto**, la operación sin conexión no es una funcionalidad
+agregada: en obra, planta y unidad minera la señal falla, y un sistema que exige conectividad
+permanente simplemente no recoge el dato. Por la misma lógica el alcance se limitó a Android
+nativo en lugar de cubrir iOS, porque es lo que el segmento objetivo tiene en la mano, y la
+decisión quedó escrita como tal y no como una omisión.
+
+En lo **económico**, el modelo se propuso como suscripción escalonada por número de trabajadores,
+de modo que una empresa pequeña pueda cumplir la ley sin pagar una plataforma dimensionada para
+una grande. El beneficio para el cliente se midió en dos dimensiones verificables: el tiempo de
+exposición al riesgo mientras el peligro no se corrige, que es el MTTR, y la exposición a multas
+por no poder evidenciar la gestión ante SUNAFIL.
+
+En lo **ético-legal**, el sistema almacena DNI, teléfono, fotografías tomadas en campo y
+coordenadas de trabajadores. Eso es dato personal bajo la Ley N° 29733, y el acuerdo de servicio
+quedó redactado sujetando su tratamiento a esa norma: finalidad limitada a la gestión de SST, sin
+cesión a terceros, con aislamiento entre empresas aplicado en el backend y con devolución de la
+información al terminar el servicio. Por la misma razón se dejó fuera del alcance la vigilancia
+médica ocupacional: son datos de salud, y asumirlos sin la capacidad de protegerlos habría sido
+peor que no cubrirlos.
+
+Lo que me queda de esto es que un juicio informado en ingeniería no se parece a elegir la mejor
+tecnología, sino a entender a quién le cuesta qué. La misma funcionalidad puede ser trivial para
+un usuario y prohibitiva para otro, y el diseño correcto depende de cuál de los dos tienes
+delante.
 
 ---
 
