@@ -1015,7 +1015,7 @@ El catálogo completo son **128 historias de usuario** agrupadas en **diecinueve
 
 Dos columnas ordenan la lectura:
 
-- **Plataforma** indica dónde vive cada historia: `Web`, `Móvil`, `Ambas` o `—` cuando no tiene
+- **Plataforma** indica dónde vive cada historia: `Web`, `Android`, `Android y Web` o `—` cuando no tiene
   interfaz propia. Esa columna es la evidencia de la paridad exigida: para un mismo rol, ninguna
   capacidad existe en una plataforma y falta en la otra. Las historias marcadas con una sola
   plataforma lo están por una razón de dominio que se explica en la propia fila, no por una
@@ -1065,51 +1065,51 @@ Las épicas EP01 a EP10 son las que el equipo construyó en este ciclo. Las épi
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US01 | Registro de trabajador | **Como** trabajador **quiero** crear mi cuenta indicando el RUC de mi empresa **para** empezar a reportar sin depender de que alguien me la cree. | **Escenario: registro exitoso**<br>**Dado** que ingreso al formulario de registro<br>**Cuando** completo mis datos y el RUC de una empresa registrada<br>**Entonces** el sistema crea mi cuenta con rol operario y me deja dentro de la aplicación<br><br>**Escenario: RUC inexistente**<br>**Dado** que ingreso un RUC no registrado<br>**Cuando** envío el formulario<br>**Entonces** el sistema me indica que debo solicitar el RUC a mi supervisor y no crea la cuenta | Ambas | Sprint 3 | EP01|
-| US02 | Inicio de sesión | **Como** usuario **quiero** iniciar sesión con usuario y contraseña **para** acceder a la información de mi empresa. | **Escenario: credenciales válidas**<br>**Dado** que tengo una cuenta activa<br>**Cuando** ingreso mis credenciales correctas<br>**Entonces** el sistema me autentica y me lleva a la pantalla inicial de mi rol<br><br>**Escenario: credenciales inválidas**<br>**Cuando** ingreso credenciales incorrectas<br>**Entonces** el sistema muestra un mensaje de error sin revelar si el usuario existe | Ambas | Sprint 1 | EP01|
-| US03 | Sesión persistente en campo | **Como** operario **quiero** permanecer autenticado varios días **para** no tener que iniciar sesión cuando estoy en una zona sin señal. | **Escenario: renovación automática**<br>**Dado** que mi token de acceso expiró<br>**Cuando** la aplicación realiza una petición<br>**Entonces** el sistema renueva el token automáticamente y la petición se completa sin pedirme la contraseña | Ambas | Sprint 3 | EP01|
+| US01 | Registro de trabajador | **Como** trabajador **quiero** crear mi cuenta indicando el RUC de mi empresa **para** empezar a reportar sin depender de que alguien me la cree. | **Escenario: registro exitoso**<br>**Dado** que ingreso al formulario de registro<br>**Cuando** completo mis datos y el RUC de una empresa registrada<br>**Entonces** el sistema crea mi cuenta con rol operario y me deja dentro de la aplicación<br><br>**Escenario: RUC inexistente**<br>**Dado** que ingreso un RUC no registrado<br>**Cuando** envío el formulario<br>**Entonces** el sistema me indica que debo solicitar el RUC a mi supervisor y no crea la cuenta | Android y Web | Sprint 3 | EP01|
+| US02 | Inicio de sesión | **Como** usuario **quiero** iniciar sesión con usuario y contraseña **para** acceder a la información de mi empresa. | **Escenario: credenciales válidas**<br>**Dado** que tengo una cuenta activa<br>**Cuando** ingreso mis credenciales correctas<br>**Entonces** el sistema me autentica y me lleva a la pantalla inicial de mi rol<br><br>**Escenario: credenciales inválidas**<br>**Cuando** ingreso credenciales incorrectas<br>**Entonces** el sistema muestra un mensaje de error sin revelar si el usuario existe | Android y Web | Sprint 1 | EP01|
+| US03 | Sesión persistente en campo | **Como** operario **quiero** permanecer autenticado varios días **para** no tener que iniciar sesión cuando estoy en una zona sin señal. | **Escenario: renovación automática**<br>**Dado** que mi token de acceso expiró<br>**Cuando** la aplicación realiza una petición<br>**Entonces** el sistema renueva el token automáticamente y la petición se completa sin pedirme la contraseña | Android y Web | Sprint 3 | EP01|
 | US04 | Administración de usuarios | **Como** supervisor de SST **quiero** crear usuarios y asignarles rol **para** incorporar al equipo de seguridad con los permisos correctos. | **Escenario: alta de supervisor**<br>**Dado** que tengo rol de supervisor<br>**Cuando** creo un usuario con rol supervisor<br>**Entonces** el usuario queda creado en mi empresa con ese rol<br><br>**Escenario: operario sin permiso**<br>**Dado** que tengo rol operario<br>**Cuando** intento listar los usuarios<br>**Entonces** el sistema deniega el acceso | Web | Sprint 3 | EP01|
 | US05 | Gestión de áreas | **Como** supervisor **quiero** registrar las áreas o frentes de trabajo **para** clasificar los hallazgos por ubicación organizativa. | **Escenario: alta de área**<br>**Cuando** registro un área con nombre y descripción<br>**Entonces** queda disponible para clasificar reportes, inspecciones y entradas IPERC | Web | Sprint 3 | EP01|
 | US41 | Cambio de rol de un usuario | **Como** supervisor **quiero** cambiar el rol de un usuario existente **para** incorporarlo al comité sin crearle una cuenta nueva. | **Cuando** cambio el rol desde la pantalla de usuarios<br>**Entonces** el usuario pasa a tener los permisos de ese rol en web y en móvil | Web | Sprint 3 | EP01|
-| US42 | Cierre de sesión | **Como** usuario **quiero** cerrar sesión **para** que nadie use mi cuenta en un equipo compartido. | **Cuando** cierro sesión<br>**Entonces** el sistema descarta mis credenciales y me devuelve a la pantalla de acceso | Ambas | Sprint 3 | EP01|
-| US43 | Menú según mi rol | **Como** operario **quiero** ver solo las opciones que me corresponden **para** no perderme entre funciones que no puedo usar. | **Dado** que tengo rol operario<br>**Entonces** el menú muestra únicamente reportar, mis reportes, mis EPP y las consultas, y no las opciones de gestión | Ambas | Sprint 1 | EP01|
+| US42 | Cierre de sesión | **Como** usuario **quiero** cerrar sesión **para** que nadie use mi cuenta en un equipo compartido. | **Cuando** cierro sesión<br>**Entonces** el sistema descarta mis credenciales y me devuelve a la pantalla de acceso | Android y Web | Sprint 3 | EP01|
+| US43 | Menú según mi rol | **Como** operario **quiero** ver solo las opciones que me corresponden **para** no perderme entre funciones que no puedo usar. | **Dado** que tengo rol operario<br>**Entonces** el menú muestra únicamente reportar, mis reportes, mis EPP y las consultas, y no las opciones de gestión | Android y Web | Sprint 1 | EP01|
 ### EP02 — Reporte de actos y condiciones inseguras
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US06 | Reporte rápido desde el celular | **Como** operario **quiero** reportar un peligro en tres toques con una foto **para** no perder tiempo de trabajo. | **Escenario: reporte en tres pasos**<br>**Dado** que estoy en el frente de trabajo<br>**Cuando** elijo el tipo de hallazgo, la categoría y tomo la foto<br>**Entonces** el sistema registra el reporte y me confirma que quedó guardado<br><br>**Escenario: descripción opcional**<br>**Cuando** envío el reporte sin escribir descripción<br>**Entonces** el sistema lo acepta igualmente | Ambas | Sprint 1 | EP02|
-| US07 | Reporte sin conexión | **Como** operario en obra o mina **quiero** que mi reporte se guarde aunque no haya señal **para** no perderlo. | **Escenario: sin conectividad**<br>**Dado** que el dispositivo no tiene conexión<br>**Cuando** envío el reporte<br>**Entonces** se almacena localmente y se muestra como pendiente de envío<br><br>**Escenario: recuperación de señal**<br>**Cuando** el dispositivo recupera la conexión<br>**Entonces** el sistema sincroniza los reportes pendientes sin intervención del usuario | Móvil | Sprint 2 | EP02|
-| US08 | Sincronización sin duplicados | **Como** responsable de SST **quiero** que un reintento de envío no genere reportes repetidos **para** que las métricas sean confiables. | **Escenario: reintento del mismo reporte**<br>**Dado** un reporte con un identificador de cliente ya recibido<br>**Cuando** el dispositivo reintenta el envío<br>**Entonces** el sistema devuelve el reporte existente y no crea uno nuevo | Ambas | Sprint 2 | EP02|
-| US09 | Evidencia fotográfica | **Como** miembro del comité **quiero** ver la foto del hallazgo **para** entender el peligro sin desplazarme al lugar. | **Escenario: foto adjunta**<br>**Cuando** abro el detalle de un reporte con foto<br>**Entonces** veo la imagen y puedo ampliarla a pantalla completa | Ambas | Sprint 1 | EP02|
-| US10 | Geolocalización del hallazgo | **Como** supervisor **quiero** saber dónde ocurrió el hallazgo **para** ubicarlo dentro de la operación. | **Escenario: captura de coordenadas**<br>**Cuando** el operario autoriza la ubicación al tomar la foto<br>**Entonces** el reporte guarda latitud y longitud y el panel ofrece verlas en un mapa<br><br>**Escenario: permiso denegado**<br>**Cuando** el operario no autoriza la ubicación<br>**Entonces** el reporte se envía igualmente, sin coordenadas | Ambas | Sprint 1 | EP02|
-| US11 | Fecha real de ocurrencia | **Como** analista **quiero** que el reporte conserve la fecha en que ocurrió el hecho **para** que el indicador de tiempo de respuesta no se distorsione. | **Escenario: sincronización diferida**<br>**Dado** un reporte creado sin conexión el lunes<br>**Cuando** se sincroniza el miércoles<br>**Entonces** conserva la fecha de ocurrencia del lunes y registra además su fecha de recepción | Ambas | Sprint 1 | EP02|
+| US06 | Reporte rápido desde el celular | **Como** operario **quiero** reportar un peligro en tres toques con una foto **para** no perder tiempo de trabajo. | **Escenario: reporte en tres pasos**<br>**Dado** que estoy en el frente de trabajo<br>**Cuando** elijo el tipo de hallazgo, la categoría y tomo la foto<br>**Entonces** el sistema registra el reporte y me confirma que quedó guardado<br><br>**Escenario: descripción opcional**<br>**Cuando** envío el reporte sin escribir descripción<br>**Entonces** el sistema lo acepta igualmente | Android y Web | Sprint 1 | EP02|
+| US07 | Reporte sin conexión | **Como** operario en obra o mina **quiero** que mi reporte se guarde aunque no haya señal **para** no perderlo. | **Escenario: sin conectividad**<br>**Dado** que el dispositivo no tiene conexión<br>**Cuando** envío el reporte<br>**Entonces** se almacena localmente y se muestra como pendiente de envío<br><br>**Escenario: recuperación de señal**<br>**Cuando** el dispositivo recupera la conexión<br>**Entonces** el sistema sincroniza los reportes pendientes sin intervención del usuario | Android | Sprint 2 | EP02|
+| US08 | Sincronización sin duplicados | **Como** responsable de SST **quiero** que un reintento de envío no genere reportes repetidos **para** que las métricas sean confiables. | **Escenario: reintento del mismo reporte**<br>**Dado** un reporte con un identificador de cliente ya recibido<br>**Cuando** el dispositivo reintenta el envío<br>**Entonces** el sistema devuelve el reporte existente y no crea uno nuevo | Android y Web | Sprint 2 | EP02|
+| US09 | Evidencia fotográfica | **Como** miembro del comité **quiero** ver la foto del hallazgo **para** entender el peligro sin desplazarme al lugar. | **Escenario: foto adjunta**<br>**Cuando** abro el detalle de un reporte con foto<br>**Entonces** veo la imagen y puedo ampliarla a pantalla completa | Android y Web | Sprint 1 | EP02|
+| US10 | Geolocalización del hallazgo | **Como** supervisor **quiero** saber dónde ocurrió el hallazgo **para** ubicarlo dentro de la operación. | **Escenario: captura de coordenadas**<br>**Cuando** el operario autoriza la ubicación al tomar la foto<br>**Entonces** el reporte guarda latitud y longitud y el panel ofrece verlas en un mapa<br><br>**Escenario: permiso denegado**<br>**Cuando** el operario no autoriza la ubicación<br>**Entonces** el reporte se envía igualmente, sin coordenadas | Android y Web | Sprint 1 | EP02|
+| US11 | Fecha real de ocurrencia | **Como** analista **quiero** que el reporte conserve la fecha en que ocurrió el hecho **para** que el indicador de tiempo de respuesta no se distorsione. | **Escenario: sincronización diferida**<br>**Dado** un reporte creado sin conexión el lunes<br>**Cuando** se sincroniza el miércoles<br>**Entonces** conserva la fecha de ocurrencia del lunes y registra además su fecha de recepción | Android y Web | Sprint 1 | EP02|
 | US12 | Reporte desde la web | **Como** trabajador administrativo **quiero** reportar desde el navegador **para** no depender del celular. | **Escenario: paridad de canal**<br>**Cuando** reporto desde la web<br>**Entonces** el hallazgo se crea con los mismos campos y reglas que desde la aplicación móvil | Web | Sprint 2 | EP02|
-| US13 | Consulta de mis reportes | **Como** operario **quiero** ver los reportes que hice y su estado **para** saber si se atendieron. | **Escenario: alcance por rol**<br>**Dado** que tengo rol operario<br>**Cuando** consulto la lista de reportes<br>**Entonces** veo únicamente los míos | Ambas | Sprint 1 | EP02|
+| US13 | Consulta de mis reportes | **Como** operario **quiero** ver los reportes que hice y su estado **para** saber si se atendieron. | **Escenario: alcance por rol**<br>**Dado** que tengo rol operario<br>**Cuando** consulto la lista de reportes<br>**Entonces** veo únicamente los míos | Android y Web | Sprint 1 | EP02|
 | US44 | Vista previa de la evidencia | **Como** quien reporta **quiero** ver en pequeño la foto que elegí **para** confirmar que subí la correcta antes de enviar. | **Cuando** elijo una imagen<br>**Entonces** se muestra una miniatura con el nombre y el peso del archivo | Web | Sprint 2 | EP02|
 | US45 | Ampliar la evidencia | **Como** miembro del comité **quiero** ampliar la foto a pantalla completa **para** distinguir el detalle del peligro. | **Cuando** toco la imagen<br>**Entonces** se abre a pantalla completa y se cierra con Escape o tocando fuera | Web | Sprint 2 | EP02|
 | US46 | Reemplazar la foto elegida | **Como** quien reporta **quiero** quitar la foto y elegir otra **para** corregirme sin perder lo ya escrito. | **Cuando** quito la foto<br>**Entonces** el formulario conserva el resto de los datos y admite elegir una imagen nueva, incluso la misma | Web | Sprint 2 | EP02|
-| US47 | Categorías según el tipo de hallazgo | **Como** quien reporta **quiero** ver solo las categorías que aplican **para** no equivocarme entre actos y condiciones. | **Dado** que elegí condición insegura<br>**Entonces** solo se ofrecen categorías de condición | Ambas | Sprint 1 | EP02|
-| US48 | Estado de envío de mis reportes | **Como** operario **quiero** saber cuántos reportes tengo sin enviar **para** confiar en que no se perdieron. | **Dado** que hay reportes en la cola local<br>**Entonces** la pantalla muestra cuántos esperan señal, y cada uno indica si ya se envió | Móvil | Sprint 2 | EP02|
+| US47 | Categorías según el tipo de hallazgo | **Como** quien reporta **quiero** ver solo las categorías que aplican **para** no equivocarme entre actos y condiciones. | **Dado** que elegí condición insegura<br>**Entonces** solo se ofrecen categorías de condición | Android y Web | Sprint 1 | EP02|
+| US48 | Estado de envío de mis reportes | **Como** operario **quiero** saber cuántos reportes tengo sin enviar **para** confiar en que no se perdieron. | **Dado** que hay reportes en la cola local<br>**Entonces** la pantalla muestra cuántos esperan señal, y cada uno indica si ya se envió | Android | Sprint 2 | EP02|
 ### EP03 — Gestión del hallazgo
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US14 | Bandeja de hallazgos | **Como** supervisor **quiero** ver todos los hallazgos de la empresa filtrados por estado, tipo y área **para** priorizar mi trabajo. | **Escenario: filtro por estado**<br>**Cuando** filtro por estado abierto<br>**Entonces** la lista muestra solo los hallazgos sin atender | Ambas | Sprint 1 | EP03|
-| US15 | Asignación de responsable | **Como** supervisor **quiero** asignar un responsable al hallazgo **para** que alguien se haga cargo de la corrección. | **Escenario: asignación**<br>**Cuando** asigno un responsable<br>**Entonces** el hallazgo pasa a estado en proceso y queda registrado en la bitácora quién asignó, a quién y cuándo | Ambas | Sprint 1 | EP03|
-| US16 | Cierre con acción correctiva | **Como** supervisor **quiero** cerrar el hallazgo describiendo la acción aplicada **para** dejar evidencia de la corrección. | **Escenario: cierre**<br>**Cuando** cierro el hallazgo con la acción correctiva<br>**Entonces** el sistema registra la fecha de cierre y calcula el tiempo de resolución | Ambas | Sprint 1 | EP03|
-| US17 | Separación de responsabilidades | **Como** empresa **quiero** que quien reporta no sea quien valida el cierre **para** cumplir el control que exige la normativa. | **Escenario: operario intenta cerrar**<br>**Dado** que tengo rol operario<br>**Cuando** intento cerrar un hallazgo<br>**Entonces** el sistema deniega la operación | Ambas | Sprint 2 | EP03|
-| US18 | Bitácora del hallazgo | **Como** auditor interno **quiero** ver la secuencia completa de acciones sobre un hallazgo **para** verificar la trazabilidad. | **Escenario: historial**<br>**Cuando** abro el detalle de un hallazgo<br>**Entonces** veo en orden cronológico el reporte, las asignaciones, los comentarios y el cierre, cada uno con su autor y fecha | Ambas | Sprint 1 | EP03|
+| US14 | Bandeja de hallazgos | **Como** supervisor **quiero** ver todos los hallazgos de la empresa filtrados por estado, tipo y área **para** priorizar mi trabajo. | **Escenario: filtro por estado**<br>**Cuando** filtro por estado abierto<br>**Entonces** la lista muestra solo los hallazgos sin atender | Android y Web | Sprint 1 | EP03|
+| US15 | Asignación de responsable | **Como** supervisor **quiero** asignar un responsable al hallazgo **para** que alguien se haga cargo de la corrección. | **Escenario: asignación**<br>**Cuando** asigno un responsable<br>**Entonces** el hallazgo pasa a estado en proceso y queda registrado en la bitácora quién asignó, a quién y cuándo | Android y Web | Sprint 1 | EP03|
+| US16 | Cierre con acción correctiva | **Como** supervisor **quiero** cerrar el hallazgo describiendo la acción aplicada **para** dejar evidencia de la corrección. | **Escenario: cierre**<br>**Cuando** cierro el hallazgo con la acción correctiva<br>**Entonces** el sistema registra la fecha de cierre y calcula el tiempo de resolución | Android y Web | Sprint 1 | EP03|
+| US17 | Separación de responsabilidades | **Como** empresa **quiero** que quien reporta no sea quien valida el cierre **para** cumplir el control que exige la normativa. | **Escenario: operario intenta cerrar**<br>**Dado** que tengo rol operario<br>**Cuando** intento cerrar un hallazgo<br>**Entonces** el sistema deniega la operación | Android y Web | Sprint 2 | EP03|
+| US18 | Bitácora del hallazgo | **Como** auditor interno **quiero** ver la secuencia completa de acciones sobre un hallazgo **para** verificar la trazabilidad. | **Escenario: historial**<br>**Cuando** abro el detalle de un hallazgo<br>**Entonces** veo en orden cronológico el reporte, las asignaciones, los comentarios y el cierre, cada uno con su autor y fecha | Android y Web | Sprint 1 | EP03|
 | US49 | Descartar un reporte | **Como** supervisor **quiero** descartar un reporte que no corresponde a un hallazgo de SST **para** que no distorsione los indicadores. | **Cuando** descarto un reporte<br>**Entonces** pasa a estado descartado, queda registrado en la bitácora y deja de contarse como hallazgo abierto | Web | Sprint 2 | EP03|
-| US50 | Filtrar la bandeja | **Como** supervisor **quiero** filtrar por estado, tipo y área **para** trabajar por lotes en lugar de revisar todo. | **Cuando** aplico un filtro<br>**Entonces** la lista se reduce a los hallazgos que lo cumplen y el total se actualiza | Ambas | Sprint 2 | EP03|
+| US50 | Filtrar la bandeja | **Como** supervisor **quiero** filtrar por estado, tipo y área **para** trabajar por lotes en lugar de revisar todo. | **Cuando** aplico un filtro<br>**Entonces** la lista se reduce a los hallazgos que lo cumplen y el total se actualiza | Android y Web | Sprint 2 | EP03|
 | US51 | Ubicar el hallazgo en el mapa | **Como** supervisor **quiero** abrir la ubicación del hallazgo en un mapa **para** llegar al punto exacto. | **Dado** que el reporte tiene coordenadas<br>**Entonces** el detalle ofrece un enlace que abre esa posición en un mapa | Web | Sprint 2 | EP03|
 ### EP04 — Matriz IPERC
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US19 | Consulta de la matriz en campo | **Como** operario **quiero** consultar los peligros y controles de mi puesto desde el celular **para** saber cómo trabajar seguro. | **Escenario: consulta**<br>**Cuando** abro la matriz IPERC<br>**Entonces** veo los peligros con su nivel de riesgo y los controles existentes | Ambas | Sprint 3 | EP04|
+| US19 | Consulta de la matriz en campo | **Como** operario **quiero** consultar los peligros y controles de mi puesto desde el celular **para** saber cómo trabajar seguro. | **Escenario: consulta**<br>**Cuando** abro la matriz IPERC<br>**Entonces** veo los peligros con su nivel de riesgo y los controles existentes | Android y Web | Sprint 3 | EP04|
 | US20 | Registro de peligros | **Como** supervisor **quiero** agregar y editar entradas de la matriz **para** mantenerla actualizada. | **Escenario: cálculo del nivel**<br>**Cuando** registro una entrada con probabilidad y consecuencia<br>**Entonces** el sistema calcula el puntaje y el nivel de riesgo resultante | Web | Sprint 3 | EP04|
 | US21 | Versionado de la matriz | **Como** responsable de SST **quiero** que la matriz se versione **para** mostrar su histórico ante una auditoría. | **Escenario: nueva versión**<br>**Cuando** creo una nueva matriz<br>**Entonces** el sistema le asigna el número de versión siguiente y conserva la anterior | Web | Sprint 3 | EP04|
-| US22 | Trazabilidad con el hallazgo de origen | **Como** miembro del comité **quiero** saber qué entradas de la matriz nacieron de un hallazgo real **para** demostrar que la matriz se alimenta del campo. | **Escenario: origen**<br>**Cuando** una entrada proviene de un reporte<br>**Entonces** el sistema muestra el número de ese reporte y permite abrirlo | Ambas | Sprint 3 | EP04|
+| US22 | Trazabilidad con el hallazgo de origen | **Como** miembro del comité **quiero** saber qué entradas de la matriz nacieron de un hallazgo real **para** demostrar que la matriz se alimenta del campo. | **Escenario: origen**<br>**Cuando** una entrada proviene de un reporte<br>**Entonces** el sistema muestra el número de ese reporte y permite abrirlo | Android y Web | Sprint 3 | EP04|
 | US52 | Consultar versiones anteriores de la matriz | **Como** auditor interno **quiero** consultar versiones anteriores de la IPERC **para** verificar cómo evolucionaron los controles. | **Cuando** elijo una versión en el selector<br>**Entonces** la tabla muestra las entradas de esa versión y advierte que es histórica | Web | Sprint 3 | EP04|
 | US53 | Publicar una nueva versión de la matriz | **Como** responsable de SST **quiero** crear una versión nueva y ponerla vigente **para** actualizar la matriz sin borrar la anterior. | **Cuando** pongo vigente una versión<br>**Entonces** la anterior pasa a histórica y solo queda una vigente<br><br>**Escenario: versión histórica**<br>**Dado** que consulto una versión histórica<br>**Entonces** el sistema no permite editarla | Web | Sprint 3 | EP04|
 | US54 | Retirar un peligro de la matriz | **Como** responsable de SST **quiero** quitar una entrada que ya no aplica **para** que la matriz refleje la operación actual. | **Cuando** quito una entrada de la versión vigente<br>**Entonces** desaparece de la matriz y las versiones históricas la conservan | Web | Sprint 3 | EP04|
@@ -1119,16 +1119,16 @@ Las épicas EP01 a EP10 son las que el equipo construyó en este ciclo. Las épi
 |---|---|---|---|---|---|---|
 | US23 | Catálogo de EPP | **Como** supervisor **quiero** registrar los EPP con su vida útil **para** controlar reposiciones. | **Escenario: alta de EPP**<br>**Cuando** registro un EPP con su vida útil en días<br>**Entonces** queda disponible para registrar entregas | Web | Sprint 3 | EP05|
 | US24 | Registro de entrega | **Como** supervisor **quiero** registrar la entrega de un EPP a un trabajador **para** cumplir el registro obligatorio de la ley. | **Escenario: vencimiento automático**<br>**Cuando** registro una entrega<br>**Entonces** el sistema calcula la fecha de vencimiento a partir de la vida útil del EPP | Web | Sprint 3 | EP05|
-| US25 | Conformidad del trabajador | **Como** operario **quiero** dar conformidad de la entrega desde mi celular **para** que quede constancia sin firmar papeles. | **Escenario: conformidad**<br>**Dado** que soy el trabajador de la entrega<br>**Cuando** doy conformidad<br>**Entonces** la entrega queda marcada como conforme con la fecha | Ambas | Sprint 3 | EP05|
-| US26 | Alerta de EPP vencido | **Como** supervisor **quiero** identificar los EPP vencidos **para** reponerlos antes de que generen un riesgo. | **Escenario: marca de vencido**<br>**Cuando** la fecha de vencimiento es anterior a hoy<br>**Entonces** la entrega se muestra destacada como vencida | Ambas | Sprint 3 | EP05|
+| US25 | Conformidad del trabajador | **Como** operario **quiero** dar conformidad de la entrega desde mi celular **para** que quede constancia sin firmar papeles. | **Escenario: conformidad**<br>**Dado** que soy el trabajador de la entrega<br>**Cuando** doy conformidad<br>**Entonces** la entrega queda marcada como conforme con la fecha | Android y Web | Sprint 3 | EP05|
+| US26 | Alerta de EPP vencido | **Como** supervisor **quiero** identificar los EPP vencidos **para** reponerlos antes de que generen un riesgo. | **Escenario: marca de vencido**<br>**Cuando** la fecha de vencimiento es anterior a hoy<br>**Entonces** la entrega se muestra destacada como vencida | Android y Web | Sprint 3 | EP05|
 | US55 | Control de stock del catálogo | **Como** supervisor **quiero** ver el stock y la vida útil de cada EPP **para** anticipar reposiciones. | **Cuando** abro el catálogo<br>**Entonces** veo por cada EPP su vida útil, su stock y cuántas entregas acumula | Web | Sprint 3 | EP05|
 ### EP06 — Inspecciones periódicas
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
 | US27 | Programa de inspecciones | **Como** supervisor **quiero** definir qué se inspecciona, cada cuánto y con qué checklist **para** sistematizar el programa anual. | **Escenario: alta de programa**<br>**Cuando** creo un programa con área, frecuencia y checklist<br>**Entonces** queda disponible para generar sus ocurrencias | Web | Sprint 4 | EP06|
-| US28 | Ejecución con checklist | **Como** inspector **quiero** realizar la inspección marcando el checklist desde el celular **para** registrarla en el lugar y no después. | **Escenario: ejecución**<br>**Cuando** marco los ítems y registro los hallazgos<br>**Entonces** la inspección queda como realizada con su fecha y responsable | Ambas | Sprint 4 | EP06|
-| US29 | Inspecciones vencidas | **Como** responsable de SST **quiero** ver las inspecciones que pasaron su fecha sin realizarse **para** actuar sobre el incumplimiento. | **Escenario: vencida**<br>**Dado** que la fecha programada ya pasó y la inspección sigue pendiente<br>**Entonces** el sistema la marca como vencida | Ambas | Sprint 4 | EP06|
+| US28 | Ejecución con checklist | **Como** inspector **quiero** realizar la inspección marcando el checklist desde el celular **para** registrarla en el lugar y no después. | **Escenario: ejecución**<br>**Cuando** marco los ítems y registro los hallazgos<br>**Entonces** la inspección queda como realizada con su fecha y responsable | Android y Web | Sprint 4 | EP06|
+| US29 | Inspecciones vencidas | **Como** responsable de SST **quiero** ver las inspecciones que pasaron su fecha sin realizarse **para** actuar sobre el incumplimiento. | **Escenario: vencida**<br>**Dado** que la fecha programada ya pasó y la inspección sigue pendiente<br>**Entonces** el sistema la marca como vencida | Android y Web | Sprint 4 | EP06|
 | US56 | Programar la siguiente inspección | **Como** supervisor **quiero** generar la siguiente ocurrencia según la frecuencia **para** no calcular fechas a mano. | **Cuando** genero la siguiente<br>**Entonces** el sistema crea la ocurrencia con la fecha que corresponde a la frecuencia del programa | Web | Sprint 4 | EP06|
 | US57 | Cumplimiento por área | **Como** responsable de SST **quiero** ver el cumplimiento desagregado por área **para** actuar sobre la que incumple. | **Cuando** consulto el indicador<br>**Entonces** veo programadas, realizadas y porcentaje por cada área | Web | Sprint 4 | EP06|
 ### EP07 — Comité de SST
@@ -1138,39 +1138,39 @@ Las épicas EP01 a EP10 son las que el equipo construyó en este ciclo. Las épi
 | US30 | Constitución del comité | **Como** responsable de SST **quiero** registrar el comité y su periodo **para** documentar su vigencia. | **Escenario: modo supervisor**<br>**Dado** que la empresa tiene menos de 20 trabajadores<br>**Cuando** registro el comité<br>**Entonces** el sistema lo marca como modo supervisor, conforme admite la ley | Web | Sprint 4 | EP07|
 | US31 | Miembros y paridad | **Como** responsable de SST **quiero** registrar los miembros con su cargo y representación **para** verificar que el comité sea paritario. | **Escenario: verificación de paridad**<br>**Cuando** el número de representantes del empleador difiere del de los trabajadores<br>**Entonces** el sistema advierte que el comité no es paritario | Web | Sprint 4 | EP07|
 | US32 | Acta de reunión | **Como** secretario del comité **quiero** registrar el acta con agenda, asistentes y desarrollo **para** cumplir con el registro obligatorio. | **Escenario: numeración correlativa**<br>**Cuando** registro una nueva acta<br>**Entonces** el sistema le asigna el número consecutivo siguiente, sin aceptarlo del cliente | Web | Sprint 4 | EP07|
-| US33 | Control de quórum | **Como** miembro del comité **quiero** saber si la reunión alcanzó quórum **para** conocer la validez del acta. | **Escenario: sin quórum**<br>**Dado** que asistieron menos de la mitad más uno de los titulares<br>**Entonces** el acta se muestra marcada como sin quórum | Ambas | Sprint 4 | EP07|
+| US33 | Control de quórum | **Como** miembro del comité **quiero** saber si la reunión alcanzó quórum **para** conocer la validez del acta. | **Escenario: sin quórum**<br>**Dado** que asistieron menos de la mitad más uno de los titulares<br>**Entonces** el acta se muestra marcada como sin quórum | Android y Web | Sprint 4 | EP07|
 | US34 | Acuerdos con responsable y plazo | **Como** presidente del comité **quiero** registrar los acuerdos con responsable y plazo **para** hacerles seguimiento. | **Escenario: seguimiento**<br>**Cuando** actualizo el estado de un acuerdo a cumplido<br>**Entonces** el indicador de cumplimiento de acuerdos se recalcula | Web | Sprint 4 | EP07|
 | US58 | Advertencia de comité no paritario | **Como** responsable de SST **quiero** que el sistema me advierta si el comité no es paritario **para** corregirlo antes de una fiscalización. | **Dado** que los representantes del empleador y de los trabajadores no son iguales en número<br>**Entonces** la pantalla muestra una advertencia explicando qué exige la ley | Web | Sprint 4 | EP07|
 | US59 | Seguimiento del estado de los acuerdos | **Como** presidente del comité **quiero** actualizar el estado de cada acuerdo **para** reflejar su avance real. | **Cuando** cambio el estado de un acuerdo<br>**Entonces** el indicador de cumplimiento del comité se recalcula | Web | Sprint 4 | EP07|
-| US60 | Consultar las actas desde el celular | **Como** trabajador **quiero** leer las actas y acuerdos del comité desde mi celular **para** enterarme de lo que se decidió. | **Cuando** abro la sección del comité<br>**Entonces** veo las actas con su fecha, quórum y acuerdos | Móvil | Sprint 4 | EP07|
+| US60 | Consultar las actas desde el celular | **Como** trabajador **quiero** leer las actas y acuerdos del comité desde mi celular **para** enterarme de lo que se decidió. | **Cuando** abro la sección del comité<br>**Entonces** veo las actas con su fecha, quórum y acuerdos | Android | Sprint 4 | EP07|
 ### EP08 — Métricas y evidencia
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US35 | Indicador MTTR | **Como** responsable de SST **quiero** conocer el tiempo promedio entre el reporte y el cierre **para** evaluar la capacidad de respuesta. | **Escenario: cálculo**<br>**Cuando** consulto el tablero<br>**Entonces** veo el MTTR del periodo, total y desagregado por severidad | Ambas | Sprint 2 | EP08|
-| US36 | Tasa de cumplimiento de inspecciones | **Como** responsable de SST **quiero** conocer qué proporción de inspecciones programadas se realizó **para** detectar áreas que incumplen. | **Escenario: desagregación**<br>**Cuando** consulto el indicador<br>**Entonces** veo el total y el detalle por área | Ambas | Sprint 4 | EP08|
+| US35 | Indicador MTTR | **Como** responsable de SST **quiero** conocer el tiempo promedio entre el reporte y el cierre **para** evaluar la capacidad de respuesta. | **Escenario: cálculo**<br>**Cuando** consulto el tablero<br>**Entonces** veo el MTTR del periodo, total y desagregado por severidad | Android y Web | Sprint 2 | EP08|
+| US36 | Tasa de cumplimiento de inspecciones | **Como** responsable de SST **quiero** conocer qué proporción de inspecciones programadas se realizó **para** detectar áreas que incumplen. | **Escenario: desagregación**<br>**Cuando** consulto el indicador<br>**Entonces** veo el total y el detalle por área | Android y Web | Sprint 4 | EP08|
 | US37 | Exportación de evidencia | **Como** responsable de SST **quiero** exportar a Excel los registros obligatorios **para** preparar el expediente de una inspección de SUNAFIL. | **Escenario: exportación**<br>**Cuando** exporto el registro de actos y condiciones inseguras<br>**Entonces** obtengo un archivo .xlsx con los campos del registro y su trazabilidad<br><br>**Escenario: permiso**<br>**Dado** que tengo rol operario<br>**Cuando** intento exportar<br>**Entonces** el sistema deniega la operación | Web | Sprint 4 | EP08|
-| US61 | MTTR por severidad | **Como** responsable de SST **quiero** ver el MTTR desagregado por severidad **para** distinguir si los críticos se atienden rápido. | **Cuando** consulto el tablero<br>**Entonces** veo el MTTR total y una fila por severidad con su promedio y cantidad de cerrados | Ambas | Sprint 4 | EP08|
+| US61 | MTTR por severidad | **Como** responsable de SST **quiero** ver el MTTR desagregado por severidad **para** distinguir si los críticos se atienden rápido. | **Cuando** consulto el tablero<br>**Entonces** veo el MTTR total y una fila por severidad con su promedio y cantidad de cerrados | Android y Web | Sprint 4 | EP08|
 | US62 | Exportar cada registro obligatorio | **Como** responsable de SST **quiero** exportar por separado reportes, IPERC, EPP, inspecciones y actas **para** armar el expediente por tipo de registro. | **Cuando** exporto cualquiera de los cinco<br>**Entonces** obtengo un archivo .xlsx con la cabecera y los datos de ese registro | Web | Sprint 4 | EP08|
-| US63 | Resumen de hallazgos | **Como** responsable de SST **quiero** un resumen por estado, tipo, severidad y área **para** ver la distribución del riesgo de un vistazo. | **Cuando** consulto el resumen<br>**Entonces** obtengo los conteos por cada dimensión y el total de críticos sin atender | Ambas | Sprint 4 | EP08|
+| US63 | Resumen de hallazgos | **Como** responsable de SST **quiero** un resumen por estado, tipo, severidad y área **para** ver la distribución del riesgo de un vistazo. | **Cuando** consulto el resumen<br>**Entonces** obtengo los conteos por cada dimensión y el total de críticos sin atender | Android y Web | Sprint 4 | EP08|
 ### EP09 — Experimento A/B
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US38 | Asignación de variante | **Como** equipo de producto **quiero** que cada usuario quede asignado de forma estable a una variante **para** que la comparación sea válida. | **Escenario: estabilidad**<br>**Cuando** el mismo usuario consulta su variante en distintos momentos<br>**Entonces** obtiene siempre la misma | Ambas | Sprint 2 | EP09|
-| US39 | Registro de la variante en el reporte | **Como** analista **quiero** saber con qué formulario se creó cada reporte **para** atribuir correctamente los resultados. | **Escenario: atribución**<br>**Cuando** se crea un reporte<br>**Entonces** queda registrada la variante del formulario utilizado | Ambas | Sprint 2 | EP09|
+| US38 | Asignación de variante | **Como** equipo de producto **quiero** que cada usuario quede asignado de forma estable a una variante **para** que la comparación sea válida. | **Escenario: estabilidad**<br>**Cuando** el mismo usuario consulta su variante en distintos momentos<br>**Entonces** obtiene siempre la misma | Android y Web | Sprint 2 | EP09|
+| US39 | Registro de la variante en el reporte | **Como** analista **quiero** saber con qué formulario se creó cada reporte **para** atribuir correctamente los resultados. | **Escenario: atribución**<br>**Cuando** se crea un reporte<br>**Entonces** queda registrada la variante del formulario utilizado | Android y Web | Sprint 2 | EP09|
 | US40 | Resultados del experimento | **Como** analista **quiero** comparar los reportes por usuario de cada variante **para** contrastar la hipótesis. | **Escenario: comparación**<br>**Cuando** consulto los resultados<br>**Entonces** veo, por variante, el número de usuarios, de reportes, el promedio por usuario y la diferencia porcentual | Web | Sprint 2 | EP09|
-| US64 | Variante disponible sin conexión | **Como** operario **quiero** que la aplicación sepa qué formulario mostrarme aunque no tenga señal **para** poder reportar igual. | **Dado** que la variante se guardó al iniciar sesión<br>**Cuando** abro el formulario sin conexión<br>**Entonces** se muestra la variante que me corresponde | Móvil | Sprint 2 | EP09|
+| US64 | Variante disponible sin conexión | **Como** operario **quiero** que la aplicación sepa qué formulario mostrarme aunque no tenga señal **para** poder reportar igual. | **Dado** que la variante se guardó al iniciar sesión<br>**Cuando** abro el formulario sin conexión<br>**Entonces** se muestra la variante que me corresponde | Android | Sprint 2 | EP09|
 ### EP10 — Calidad de uso y operación
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US65 | Identidad visual consistente | **Como** usuario **quiero** una interfaz sobria y uniforme **para** confiar en que es un sistema de gestión formal y no un prototipo. | **Cuando** navego entre pantallas<br>**Entonces** encuentro la misma paleta, tipografía y tratamiento de estados en todas | Ambas | Sprint 4 | EP10|
-| US66 | Navegación siempre accesible | **Como** supervisor **quiero** que el menú permanezca visible al desplazarme **para** cambiar de sección sin volver arriba. | **Cuando** bajo por una tabla larga<br>**Entonces** la navegación sigue en pantalla | Ambas | Sprint 4 | EP10|
+| US65 | Identidad visual consistente | **Como** usuario **quiero** una interfaz sobria y uniforme **para** confiar en que es un sistema de gestión formal y no un prototipo. | **Cuando** navego entre pantallas<br>**Entonces** encuentro la misma paleta, tipografía y tratamiento de estados en todas | Android y Web | Sprint 4 | EP10|
+| US66 | Navegación siempre accesible | **Como** supervisor **quiero** que el menú permanezca visible al desplazarme **para** cambiar de sección sin volver arriba. | **Cuando** bajo por una tabla larga<br>**Entonces** la navegación sigue en pantalla | Android y Web | Sprint 4 | EP10|
 | US67 | Uso desde pantallas pequeñas | **Como** supervisor en obra **quiero** usar el panel desde una pantalla angosta **para** no depender de la laptop. | **Cuando** reduzco el ancho de la ventana<br>**Entonces** la navegación pasa a barra superior y las tablas se desplazan sin romper el diseño | Web | Sprint 4 | EP10|
-| US68 | Errores comprensibles | **Como** usuario **quiero** entender qué salió mal **para** poder corregirlo yo mismo. | **Cuando** el servidor rechaza una operación<br>**Entonces** la pantalla muestra el motivo en lenguaje claro, indicando el campo cuando corresponde | Ambas | Sprint 4 | EP10|
-| US69 | Reintento ante fallo de red | **Como** operario **quiero** reintentar una consulta que falló **para** no tener que reiniciar la aplicación. | **Dado** que una pantalla no pudo cargar<br>**Entonces** muestra el motivo y un botón para reintentar | Móvil | Sprint 2 | EP10|
-| US70 | Sesión que no expira en campo | **Como** operario **quiero** seguir trabajando sin volver a iniciar sesión **para** no quedarme fuera en una zona sin señal. | **Cuando** mi token de acceso caduca<br>**Entonces** el sistema lo renueva automáticamente y la operación continúa | Ambas | Sprint 2 | EP10|
+| US68 | Errores comprensibles | **Como** usuario **quiero** entender qué salió mal **para** poder corregirlo yo mismo. | **Cuando** el servidor rechaza una operación<br>**Entonces** la pantalla muestra el motivo en lenguaje claro, indicando el campo cuando corresponde | Android y Web | Sprint 4 | EP10|
+| US69 | Reintento ante fallo de red | **Como** operario **quiero** reintentar una consulta que falló **para** no tener que reiniciar la aplicación. | **Dado** que una pantalla no pudo cargar<br>**Entonces** muestra el motivo y un botón para reintentar | Android | Sprint 2 | EP10|
+| US70 | Sesión que no expira en campo | **Como** operario **quiero** seguir trabajando sin volver a iniciar sesión **para** no quedarme fuera en una zona sin señal. | **Cuando** mi token de acceso caduca<br>**Entonces** el sistema lo renueva automáticamente y la operación continúa | Android y Web | Sprint 2 | EP10|
 ### EP11 — Accidentes e incidentes
 
 La Ley N° 29783 obliga a registrar e investigar los accidentes de trabajo, los incidentes
@@ -1180,12 +1180,12 @@ registro obligatorio que el producto aún no cubre y el primero del backlog futu
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
 | US71 | Registro de accidente de trabajo | **Como** supervisor de SST **quiero** registrar un accidente con fecha, hora, lugar, trabajadores involucrados y descripción **para** cumplir el registro obligatorio. | **Cuando** registro un accidente<br>**Entonces** queda con su número correlativo, su gravedad y los días de descanso médico asociados | Web | Propuesta | EP11 |
-| US72 | Registro de incidente peligroso | **Como** supervisor **quiero** registrar un incidente peligroso que no causó lesión **para** actuar antes de que se repita con consecuencias. | **Cuando** registro un incidente peligroso<br>**Entonces** se clasifica como tal y entra al mismo ciclo de investigación | Ambas | Propuesta | EP11 |
-| US73 | Reportar un accidente desde el celular | **Como** operario **quiero** dar aviso de un accidente desde el celular **para** que la ayuda y el registro empiecen de inmediato. | **Cuando** reporto un accidente<br>**Entonces** el supervisor recibe el aviso y el registro queda abierto para completarse | Móvil | Propuesta | EP11 |
+| US72 | Registro de incidente peligroso | **Como** supervisor **quiero** registrar un incidente peligroso que no causó lesión **para** actuar antes de que se repita con consecuencias. | **Cuando** registro un incidente peligroso<br>**Entonces** se clasifica como tal y entra al mismo ciclo de investigación | Android y Web | Propuesta | EP11 |
+| US73 | Reportar un accidente desde el celular | **Como** operario **quiero** dar aviso de un accidente desde el celular **para** que la ayuda y el registro empiecen de inmediato. | **Cuando** reporto un accidente<br>**Entonces** el supervisor recibe el aviso y el registro queda abierto para completarse | Android | Propuesta | EP11 |
 | US74 | Investigación de causa raíz | **Como** miembro del comité **quiero** documentar la investigación con el método de los cinco porqués **para** llegar a la causa real y no a la aparente. | **Cuando** completo la investigación<br>**Entonces** el accidente queda con sus causas inmediatas, básicas y de gestión, y sus medidas correctivas | Web | Propuesta | EP11 |
 | US75 | Medidas correctivas con responsable y plazo | **Como** supervisor **quiero** que cada medida correctiva tenga responsable y plazo **para** poder hacerles seguimiento. | **Cuando** registro una medida correctiva<br>**Entonces** aparece en el seguimiento con su estado hasta que se cierra | Web | Propuesta | EP11 |
 | US76 | Aviso de accidente mortal dentro del plazo legal | **Como** empresa **quiero** que el sistema me alerte del plazo de notificación de un accidente mortal **para** no incurrir en infracción. | **Dado** que registro un accidente mortal<br>**Entonces** el sistema advierte el plazo de 24 horas para notificar a la autoridad y deja constancia de la fecha de aviso | Web | Propuesta | EP11 |
-| US77 | Indicadores de accidentabilidad | **Como** responsable de SST **quiero** los índices de frecuencia, gravedad y accidentabilidad **para** reportarlos como exige la norma. | **Cuando** consulto las estadísticas del periodo<br>**Entonces** obtengo los tres índices calculados sobre las horas-hombre trabajadas | Ambas | Propuesta | EP11 |
+| US77 | Indicadores de accidentabilidad | **Como** responsable de SST **quiero** los índices de frecuencia, gravedad y accidentabilidad **para** reportarlos como exige la norma. | **Cuando** consulto las estadísticas del periodo<br>**Entonces** obtengo los tres índices calculados sobre las horas-hombre trabajadas | Android y Web | Propuesta | EP11 |
 | US78 | Registro de enfermedad ocupacional | **Como** responsable de SST **quiero** registrar una enfermedad ocupacional diagnosticada **para** completar el registro que la ley exige. | **Cuando** registro una enfermedad ocupacional<br>**Entonces** queda asociada al puesto y al agente que la origina, sin exponer el diagnóstico a usuarios sin autorización | Web | Propuesta | EP11 |
 
 ### EP12 — Capacitación e inducción
@@ -1193,10 +1193,10 @@ registro obligatorio que el producto aún no cubre y el primero del backlog futu
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
 | US79 | Programa anual de capacitación | **Como** responsable de SST **quiero** planificar las capacitaciones del año **para** cumplir las cuatro anuales que exige la ley. | **Cuando** registro el programa<br>**Entonces** cada capacitación queda con su tema, fecha prevista, responsable y público objetivo | Web | Propuesta | EP12 |
-| US80 | Registro de asistencia a capacitación | **Como** capacitador **quiero** registrar la asistencia desde el celular **para** no transcribir una hoja de firmas después. | **Cuando** marco a los asistentes<br>**Entonces** cada trabajador queda con su registro de capacitación y la sesión con su lista | Móvil | Propuesta | EP12 |
+| US80 | Registro de asistencia a capacitación | **Como** capacitador **quiero** registrar la asistencia desde el celular **para** no transcribir una hoja de firmas después. | **Cuando** marco a los asistentes<br>**Entonces** cada trabajador queda con su registro de capacitación y la sesión con su lista | Android | Propuesta | EP12 |
 | US81 | Inducción del personal nuevo | **Como** supervisor **quiero** registrar la inducción de un trabajador que ingresa **para** evidenciar que no empezó a trabajar sin ella. | **Cuando** completo la inducción<br>**Entonces** el trabajador queda habilitado y la fecha se conserva como evidencia | Web | Propuesta | EP12 |
 | US82 | Alerta de capacitación vencida | **Como** responsable de SST **quiero** saber qué trabajadores tienen capacitación vencida **para** reprogramarla antes de una fiscalización. | **Dado** que pasó la vigencia de una capacitación<br>**Entonces** el trabajador aparece en la lista de pendientes | Web | Propuesta | EP12 |
-| US83 | Consultar mis capacitaciones | **Como** trabajador **quiero** ver qué capacitaciones tengo y cuáles me faltan **para** saber si estoy habilitado. | **Cuando** abro mi perfil<br>**Entonces** veo mis capacitaciones con su fecha y vigencia | Móvil | Propuesta | EP12 |
+| US83 | Consultar mis capacitaciones | **Como** trabajador **quiero** ver qué capacitaciones tengo y cuáles me faltan **para** saber si estoy habilitado. | **Cuando** abro mi perfil<br>**Entonces** veo mis capacitaciones con su fecha y vigencia | Android | Propuesta | EP12 |
 | US84 | Registro de simulacros | **Como** responsable de SST **quiero** registrar los simulacros de emergencia con sus resultados **para** cumplir el registro obligatorio. | **Cuando** registro un simulacro<br>**Entonces** queda con su tipo, fecha, participantes, tiempo de evacuación y observaciones | Web | Propuesta | EP12 |
 
 ### EP13 — Mapa de riesgos y señalización
@@ -1204,16 +1204,16 @@ registro obligatorio que el producto aún no cubre y el primero del backlog futu
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
 | US85 | Mapa de riesgos por área | **Como** responsable de SST **quiero** publicar el mapa de riesgos de cada área **para** cumplir la obligación de exhibirlo. | **Cuando** subo el plano y ubico los riesgos<br>**Entonces** el mapa queda disponible para consulta y descarga | Web | Propuesta | EP13 |
-| US86 | Consultar el mapa de riesgos en campo | **Como** operario **quiero** ver el mapa de riesgos de mi área desde el celular **para** conocer los peligros antes de empezar. | **Cuando** abro mi área<br>**Entonces** veo su mapa de riesgos y los peligros señalados | Móvil | Propuesta | EP13 |
+| US86 | Consultar el mapa de riesgos en campo | **Como** operario **quiero** ver el mapa de riesgos de mi área desde el celular **para** conocer los peligros antes de empezar. | **Cuando** abro mi área<br>**Entonces** veo su mapa de riesgos y los peligros señalados | Android | Propuesta | EP13 |
 | US87 | Inventario de señalización | **Como** supervisor **quiero** registrar la señalización instalada y su estado **para** detectar la que falta o está deteriorada. | **Cuando** reviso el inventario<br>**Entonces** veo por área qué señales debería haber, cuáles hay y cuáles están observadas | Web | Propuesta | EP13 |
-| US88 | Ubicar el área por código QR | **Como** operario **quiero** escanear un código en el área **para** reportar sin tener que buscarla en una lista. | **Cuando** escaneo el código del área<br>**Entonces** el formulario de reporte queda precargado con esa área | Móvil | Propuesta | EP13 |
+| US88 | Ubicar el área por código QR | **Como** operario **quiero** escanear un código en el área **para** reportar sin tener que buscarla en una lista. | **Cuando** escaneo el código del área<br>**Entonces** el formulario de reporte queda precargado con esa área | Android | Propuesta | EP13 |
 
 ### EP14 — Documentación del SGSST
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US89 | Política de SST publicada | **Como** empresa **quiero** publicar la política de SST firmada por la alta dirección **para** exhibirla como exige la ley. | **Cuando** publico la política<br>**Entonces** queda visible para todos los trabajadores con su fecha de aprobación | Ambas | Propuesta | EP14 |
-| US90 | Reglamento Interno de SST | **Como** responsable de SST **quiero** publicar el RISST y registrar su entrega a cada trabajador **para** evidenciar que lo conocen. | **Cuando** un trabajador confirma la recepción<br>**Entonces** queda registrada la fecha y la versión del reglamento entregada | Ambas | Propuesta | EP14 |
+| US89 | Política de SST publicada | **Como** empresa **quiero** publicar la política de SST firmada por la alta dirección **para** exhibirla como exige la ley. | **Cuando** publico la política<br>**Entonces** queda visible para todos los trabajadores con su fecha de aprobación | Android y Web | Propuesta | EP14 |
+| US90 | Reglamento Interno de SST | **Como** responsable de SST **quiero** publicar el RISST y registrar su entrega a cada trabajador **para** evidenciar que lo conocen. | **Cuando** un trabajador confirma la recepción<br>**Entonces** queda registrada la fecha y la versión del reglamento entregada | Android y Web | Propuesta | EP14 |
 | US91 | Plan y programa anual de SST | **Como** responsable de SST **quiero** registrar el plan anual con sus objetivos y actividades **para** hacerle seguimiento durante el año. | **Cuando** consulto el plan<br>**Entonces** veo el avance de cada actividad programada frente a lo ejecutado | Web | Propuesta | EP14 |
 | US92 | Control de versiones de documentos | **Como** auditor interno **quiero** ver el histórico de versiones de cada documento del sistema **para** verificar su evolución. | **Cuando** abro un documento<br>**Entonces** veo su versión vigente y las anteriores con su fecha de vigencia | Web | Propuesta | EP14 |
 
@@ -1231,19 +1231,19 @@ registro obligatorio que el producto aún no cubre y el primero del backlog futu
 |---|---|---|---|---|---|---|
 | US96 | Registro de empresa contratista | **Como** responsable de SST **quiero** registrar a las contratistas que operan en mis instalaciones **para** exigirles el mismo estándar. | **Cuando** registro una contratista<br>**Entonces** queda con su RUC, actividad, vigencia del contrato y responsable de SST | Web | Propuesta | EP16 |
 | US97 | Documentación de seguridad de la contratista | **Como** responsable de SST **quiero** controlar la vigencia de los documentos de cada contratista **para** no permitir el ingreso de quien no cumple. | **Dado** que un documento está vencido<br>**Entonces** la contratista aparece observada y el sistema lo advierte | Web | Propuesta | EP16 |
-| US98 | Trabajadores de contratista reportando | **Como** trabajador de una contratista **quiero** reportar hallazgos con mi propia cuenta **para** que la empresa principal también los vea. | **Cuando** reporto un hallazgo<br>**Entonces** queda asociado a mi contratista y visible para el comité de la empresa principal | Móvil | Propuesta | EP16 |
-| US99 | Permiso de trabajo de alto riesgo | **Como** supervisor **quiero** emitir y controlar permisos para trabajos de alto riesgo **para** que no se ejecuten sin autorización. | **Cuando** emito un permiso<br>**Entonces** queda con su vigencia, responsables y las condiciones verificadas antes de autorizar | Ambas | Propuesta | EP16 |
+| US98 | Trabajadores de contratista reportando | **Como** trabajador de una contratista **quiero** reportar hallazgos con mi propia cuenta **para** que la empresa principal también los vea. | **Cuando** reporto un hallazgo<br>**Entonces** queda asociado a mi contratista y visible para el comité de la empresa principal | Android | Propuesta | EP16 |
+| US99 | Permiso de trabajo de alto riesgo | **Como** supervisor **quiero** emitir y controlar permisos para trabajos de alto riesgo **para** que no se ejecuten sin autorización. | **Cuando** emito un permiso<br>**Entonces** queda con su vigencia, responsables y las condiciones verificadas antes de autorizar | Android y Web | Propuesta | EP16 |
 
 ### EP17 — Notificaciones y alertas
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US100 | Aviso de hallazgo crítico sin asignar | **Como** supervisor **quiero** recibir aviso de un hallazgo crítico que lleva horas sin responsable **para** que no se quede esperando en la bandeja. | **Dado** que un hallazgo crítico lleva más de 24 horas abierto<br>**Entonces** el sistema me notifica y registra el envío | Ambas | Propuesta | EP17 |
-| US101 | Aviso de cierre al reportante | **Como** operario **quiero** enterarme cuando mi hallazgo se cierra **para** saber que sirvió de algo. | **Cuando** se cierra un hallazgo que reporté<br>**Entonces** recibo la notificación con la acción correctiva aplicada | Móvil | Propuesta | EP17 |
-| US102 | Aviso de asignación | **Como** responsable asignado **quiero** que me avisen cuando me asignan un hallazgo **para** no depender de que alguien me lo diga. | **Cuando** me asignan un hallazgo<br>**Entonces** recibo la notificación con su severidad y plazo | Ambas | Propuesta | EP17 |
+| US100 | Aviso de hallazgo crítico sin asignar | **Como** supervisor **quiero** recibir aviso de un hallazgo crítico que lleva horas sin responsable **para** que no se quede esperando en la bandeja. | **Dado** que un hallazgo crítico lleva más de 24 horas abierto<br>**Entonces** el sistema me notifica y registra el envío | Android y Web | Propuesta | EP17 |
+| US101 | Aviso de cierre al reportante | **Como** operario **quiero** enterarme cuando mi hallazgo se cierra **para** saber que sirvió de algo. | **Cuando** se cierra un hallazgo que reporté<br>**Entonces** recibo la notificación con la acción correctiva aplicada | Android | Propuesta | EP17 |
+| US102 | Aviso de asignación | **Como** responsable asignado **quiero** que me avisen cuando me asignan un hallazgo **para** no depender de que alguien me lo diga. | **Cuando** me asignan un hallazgo<br>**Entonces** recibo la notificación con su severidad y plazo | Android y Web | Propuesta | EP17 |
 | US103 | Resumen diario para el comité | **Como** miembro del comité **quiero** un resumen diario de lo abierto y lo vencido **para** empezar el día sabiendo qué priorizar. | **Cuando** llega la hora configurada<br>**Entonces** recibo por correo el resumen de hallazgos abiertos, inspecciones vencidas y acuerdos por vencer | Web | Propuesta | EP17 |
-| US104 | Aviso de acuerdo del comité por vencer | **Como** responsable de un acuerdo **quiero** que me avisen antes del plazo **para** cumplirlo a tiempo. | **Dado** que faltan tres días para el plazo<br>**Entonces** recibo el aviso con el acuerdo y su fecha límite | Ambas | Propuesta | EP17 |
-| US105 | Preferencias de notificación | **Como** usuario **quiero** elegir qué avisos recibir y por qué canal **para** que el sistema no se vuelva ruido. | **Cuando** cambio mis preferencias<br>**Entonces** solo recibo los avisos que habilité | Ambas | Propuesta | EP17 |
+| US104 | Aviso de acuerdo del comité por vencer | **Como** responsable de un acuerdo **quiero** que me avisen antes del plazo **para** cumplirlo a tiempo. | **Dado** que faltan tres días para el plazo<br>**Entonces** recibo el aviso con el acuerdo y su fecha límite | Android y Web | Propuesta | EP17 |
+| US105 | Preferencias de notificación | **Como** usuario **quiero** elegir qué avisos recibir y por qué canal **para** que el sistema no se vuelva ruido. | **Cuando** cambio mis preferencias<br>**Entonces** solo recibo los avisos que habilité | Android y Web | Propuesta | EP17 |
 
 ### EP18 — Cuenta y servicio
 
@@ -1259,29 +1259,29 @@ registro obligatorio que el producto aún no cubre y el primero del backlog futu
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US111 | Consentimiento informado de datos personales | **Como** trabajador **quiero** saber qué datos míos guarda el sistema y para qué **para** dar mi consentimiento con información. | **Cuando** creo mi cuenta<br>**Entonces** se me informa qué datos se tratan, con qué finalidad y por cuánto tiempo, conforme a la Ley N° 29733 | Ambas | Propuesta | EP19 |
-| US112 | Ubicación opcional y revocable | **Como** trabajador **quiero** poder negar o revocar el permiso de ubicación **para** que no se registre dónde estoy. | **Cuando** niego el permiso<br>**Entonces** el reporte se envía igual, sin coordenadas, y nada se degrada salvo la ubicación | Ambas | Propuesta | EP19 |
+| US111 | Consentimiento informado de datos personales | **Como** trabajador **quiero** saber qué datos míos guarda el sistema y para qué **para** dar mi consentimiento con información. | **Cuando** creo mi cuenta<br>**Entonces** se me informa qué datos se tratan, con qué finalidad y por cuánto tiempo, conforme a la Ley N° 29733 | Android y Web | Propuesta | EP19 |
+| US112 | Ubicación opcional y revocable | **Como** trabajador **quiero** poder negar o revocar el permiso de ubicación **para** que no se registre dónde estoy. | **Cuando** niego el permiso<br>**Entonces** el reporte se envía igual, sin coordenadas, y nada se degrada salvo la ubicación | Android y Web | Propuesta | EP19 |
 | US113 | Registro de auditoría de accesos | **Como** responsable de datos personales **quiero** saber quién consultó o exportó información **para** rendir cuentas de su tratamiento. | **Cuando** un usuario exporta evidencia o consulta datos sensibles<br>**Entonces** queda registrado el usuario, la acción y la fecha | Web | Propuesta | EP19 |
 | US114 | Cierre de sesión remoto | **Como** usuario **quiero** cerrar la sesión de un dispositivo que perdí **para** que nadie use mi cuenta. | **Cuando** cierro las sesiones activas<br>**Entonces** los tokens de ese dispositivo dejan de ser válidos | Web | Propuesta | EP19 |
 | US115 | Política de retención de evidencia | **Como** responsable de datos **quiero** que las fotografías se eliminen al vencer el plazo legal de conservación **para** no almacenar datos personales más de lo necesario. | **Dado** que un hallazgo cerrado superó el plazo de retención<br>**Entonces** su fotografía se elimina y el registro documental se conserva | — | Propuesta | EP19 |
-| US116 | Reporte anónimo de actos inseguros | **Como** trabajador **quiero** poder reportar el acto inseguro de un compañero sin dar mi nombre **para** no exponerme a represalias. | **Cuando** elijo reportar de forma anónima<br>**Entonces** el hallazgo se registra sin identificar al reportante, conservando área, tipo y evidencia | Ambas | Propuesta | EP19 |
+| US116 | Reporte anónimo de actos inseguros | **Como** trabajador **quiero** poder reportar el acto inseguro de un compañero sin dar mi nombre **para** no exponerme a represalias. | **Cuando** elijo reportar de forma anónima<br>**Entonces** el hallazgo se registra sin identificar al reportante, conservando área, tipo y evidencia | Android y Web | Propuesta | EP19 |
 
 ### Ampliaciones propuestas sobre épicas existentes
 
 | ID | Título | Descripción | Criterios de aceptación | Plataforma | Estado | Épica |
 |---|---|---|---|---|---|---|
-| US117 | Reporte por voz | **Como** operario con guantes **quiero** dictar la descripción en lugar de escribirla **para** reportar sin quitarme el equipo. | **Cuando** uso el dictado<br>**Entonces** el texto queda en la descripción y puedo corregirlo antes de enviar | Móvil | Propuesta | EP02 |
-| US118 | Firma del trabajador en la entrega de EPP | **Como** supervisor **quiero** capturar la firma del trabajador en pantalla **para** que la conformidad tenga el mismo valor que la del papel. | **Cuando** el trabajador firma en pantalla<br>**Entonces** la firma queda adjunta a la entrega y aparece en la exportación | Móvil | Propuesta | EP05 |
-| US119 | Adjuntar evidencia en inspecciones | **Como** inspector **quiero** adjuntar fotos a los ítems observados del checklist **para** sustentar el hallazgo. | **Cuando** marco un ítem como observado<br>**Entonces** puedo adjuntarle una fotografía que queda en el registro | Móvil | Propuesta | EP06 |
-| US120 | Generar hallazgo desde una inspección | **Como** inspector **quiero** convertir una observación de la inspección en un hallazgo **para** que entre al ciclo de corrección. | **Cuando** genero el hallazgo desde la observación<br>**Entonces** queda enlazado a la inspección que lo originó | Ambas | Propuesta | EP06 |
+| US117 | Reporte por voz | **Como** operario con guantes **quiero** dictar la descripción en lugar de escribirla **para** reportar sin quitarme el equipo. | **Cuando** uso el dictado<br>**Entonces** el texto queda en la descripción y puedo corregirlo antes de enviar | Android | Propuesta | EP02 |
+| US118 | Firma del trabajador en la entrega de EPP | **Como** supervisor **quiero** capturar la firma del trabajador en pantalla **para** que la conformidad tenga el mismo valor que la del papel. | **Cuando** el trabajador firma en pantalla<br>**Entonces** la firma queda adjunta a la entrega y aparece en la exportación | Android | Propuesta | EP05 |
+| US119 | Adjuntar evidencia en inspecciones | **Como** inspector **quiero** adjuntar fotos a los ítems observados del checklist **para** sustentar el hallazgo. | **Cuando** marco un ítem como observado<br>**Entonces** puedo adjuntarle una fotografía que queda en el registro | Android | Propuesta | EP06 |
+| US120 | Generar hallazgo desde una inspección | **Como** inspector **quiero** convertir una observación de la inspección en un hallazgo **para** que entre al ciclo de corrección. | **Cuando** genero el hallazgo desde la observación<br>**Entonces** queda enlazado a la inspección que lo originó | Android y Web | Propuesta | EP06 |
 | US121 | Convocatoria y asistencia del comité | **Como** secretario del comité **quiero** convocar la reunión y registrar la asistencia efectiva **para** sustentar el quórum. | **Cuando** registro quién asistió<br>**Entonces** el quórum se calcula sobre los asistentes reales y no sobre los miembros activos | Web | Propuesta | EP07 |
 | US122 | Elección de representantes de los trabajadores | **Como** empresa **quiero** registrar el proceso de elección de los representantes **para** evidenciar que el comité se constituyó como manda la ley. | **Cuando** registro la elección<br>**Entonces** quedan el acta, los candidatos y los elegidos con su periodo | Web | Propuesta | EP07 |
 | US123 | Exportar el tablero a PDF | **Como** responsable de SST **quiero** exportar el tablero de indicadores a PDF **para** adjuntarlo al informe mensual a la gerencia. | **Cuando** exporto el tablero<br>**Entonces** obtengo un PDF con los indicadores del periodo y la fecha de generación | Web | Propuesta | EP08 |
 | US124 | Comparar periodos | **Como** responsable de SST **quiero** comparar el MTTR y el cumplimiento con el periodo anterior **para** saber si mejoramos. | **Cuando** elijo comparar<br>**Entonces** veo la variación de cada indicador frente al periodo previo | Web | Propuesta | EP08 |
 | US125 | Aviso de datos de demostración | **Como** evaluador **quiero** distinguir los datos de demostración de los reales **para** no interpretar resultados simulados como evidencia. | **Dado** que los datos provienen de la carga de demostración<br>**Entonces** el panel del experimento muestra un aviso visible que lo declara | Web | Propuesta | EP09 |
 | US126 | Intervalo de confianza en los resultados | **Como** analista **quiero** ver el intervalo de confianza de la diferencia entre variantes **para** comunicar la precisión y no solo el promedio. | **Cuando** consulto los resultados<br>**Entonces** veo la diferencia estimada con su intervalo al 95 % y el tamaño de cada grupo | Web | Propuesta | EP09 |
-| US127 | Interfaz accesible para lectores de pantalla | **Como** trabajador con discapacidad visual **quiero** usar la aplicación con el lector de pantalla **para** poder reportar como cualquiera. | **Cuando** navego con TalkBack<br>**Entonces** cada control tiene una descripción comprensible y el orden de lectura sigue el flujo de la tarea | Ambas | Propuesta | EP10 |
-| US128 | Modo de alto contraste | **Como** trabajador que opera bajo el sol **quiero** un modo de alto contraste **para** leer la pantalla en exteriores. | **Cuando** activo el alto contraste<br>**Entonces** la interfaz aumenta el contraste conservando el significado de los colores de estado | Ambas | Propuesta | EP10 |
+| US127 | Interfaz accesible para lectores de pantalla | **Como** trabajador con discapacidad visual **quiero** usar la aplicación con el lector de pantalla **para** poder reportar como cualquiera. | **Cuando** navego con TalkBack<br>**Entonces** cada control tiene una descripción comprensible y el orden de lectura sigue el flujo de la tarea | Android y Web | Propuesta | EP10 |
+| US128 | Modo de alto contraste | **Como** trabajador que opera bajo el sol **quiero** un modo de alto contraste **para** leer la pantalla en exteriores. | **Cuando** activo el alto contraste<br>**Entonces** la interfaz aumenta el contraste conservando el significado de los colores de estado | Android y Web | Propuesta | EP10 |
 
 ### Historias técnicas
 
@@ -1341,6 +1341,16 @@ del ciclo 2026-20, iniciado el lunes 24 de agosto de 2026. Esa es también la ra
 sprints sean desiguales en duración: entre el primer hito y el segundo median tres semanas, y
 entre el segundo y el tercero, cinco.
 
+Dos columnas de las tablas que siguen merecen una aclaración:
+
+- **Plataforma** nombra el cliente concreto en el que vive la historia —`Web`, `Android`, o
+  `Android y Web` cuando existe en los dos para el mismo rol—, y `—` cuando no tiene interfaz
+  propia porque es trabajo de backend o de infraestructura.
+- **Dónde encontrarlo** indica la ruta exacta para llegar a esa funcionalidad en cada cliente: la
+  opción de la barra lateral o la ruta en el panel web, y la pestaña de la barra inferior o la
+  entrada de la pantalla «Más» en la aplicación Android. Permite verificar cada historia sobre el
+  producto en ejecución sin tener que buscarla.
+
 | Sprint | Hito | Semanas | Fechas | Alcance | Elementos | Story Points |
 |---|---|---|---|---|---|---|
 | **Sprint 1** | Primer hito | 1 a 4 | 24/08/2026 – 20/09/2026 | El ciclo de vida del hallazgo | 15 | 60 |
@@ -1358,23 +1368,23 @@ entre el segundo y el tercero, cinco.
 | Elementos | 15 |
 | Story Points | 60 |
 
-| # | ID | Historia | Épica | Plataforma | Story Points |
-|---|---|---|---|---|---|
-| 1 | US02 | Inicio de sesión | EP01 | Ambas | 3 |
-| 2 | US06 | Reporte rápido desde el celular | EP02 | Ambas | 8 |
-| 3 | US13 | Consulta de mis reportes | EP02 | Ambas | 3 |
-| 4 | US43 | Menú según mi rol | EP01 | Ambas | 3 |
-| 5 | US14 | Bandeja de hallazgos | EP03 | Ambas | 5 |
-| 6 | US16 | Cierre con acción correctiva | EP03 | Ambas | 5 |
-| 7 | US15 | Asignación de responsable | EP03 | Ambas | 5 |
-| 8 | US18 | Bitácora del hallazgo | EP03 | Ambas | 3 |
-| 9 | US09 | Evidencia fotográfica | EP02 | Ambas | 5 |
-| 10 | US10 | Geolocalización del hallazgo | EP02 | Ambas | 5 |
-| 11 | US11 | Fecha real de ocurrencia | EP02 | Ambas | 3 |
-| 12 | US47 | Categorías según el tipo de hallazgo | EP02 | Ambas | 2 |
-| 13 | TS02 | Convenciones de commits | — | Los cuatro | 2 |
-| 14 | TS05 | Flujo de ramas GitFlow | — | Los cuatro | 3 |
-| 15 | TS01 | Integración continua | — | Los cuatro | 5 |
+| # | ID | Historia | Épica | Plataforma | Dónde encontrarlo | Story Points |
+|---|---|---|---|---|---|---|
+| 1 | US02 | Inicio de sesión | EP01 | Android y Web | **Web:** Pantalla de acceso (`/login`)<br>**Android:** Pantalla de acceso al abrir la aplicación | 3 |
+| 2 | US06 | Reporte rápido desde el celular | EP02 | Android y Web | **Web:** Reportar (`/reportes/nuevo`)<br>**Android:** Pestaña «Reportar» | 8 |
+| 3 | US13 | Consulta de mis reportes | EP02 | Android y Web | **Web:** Reportes (`/reportes`)<br>**Android:** Pestaña «Mis reportes» | 3 |
+| 4 | US43 | Menú según mi rol | EP01 | Android y Web | **Web:** Barra lateral: las opciones cambian según el rol<br>**Android:** Barra inferior y pantalla «Más»: cambian según el rol | 3 |
+| 5 | US14 | Bandeja de hallazgos | EP03 | Android y Web | **Web:** Reportes (`/reportes`)<br>**Android:** Pestaña «Reportes» | 5 |
+| 6 | US16 | Cierre con acción correctiva | EP03 | Android y Web | **Web:** Reportes → detalle del hallazgo → «Cerrar»<br>**Android:** Pestaña «Reportes» → detalle → «Cerrar» | 5 |
+| 7 | US15 | Asignación de responsable | EP03 | Android y Web | **Web:** Reportes → detalle del hallazgo → «Asignar»<br>**Android:** Pestaña «Reportes» → detalle → «Asignar» | 5 |
+| 8 | US18 | Bitácora del hallazgo | EP03 | Android y Web | **Web:** Reportes → detalle → sección «Bitácora»<br>**Android:** Pestaña «Reportes» → detalle → «Bitácora» | 3 |
+| 9 | US09 | Evidencia fotográfica | EP02 | Android y Web | **Web:** Reportar → paso 2, «Evidencia»<br>**Android:** Pestaña «Reportar» → paso 2, «Evidencia» | 5 |
+| 10 | US10 | Geolocalización del hallazgo | EP02 | Android y Web | **Web:** Reportar → paso 2, «Ubicación»<br>**Android:** Pestaña «Reportar» → paso 2, «Ubicación» | 5 |
+| 11 | US11 | Fecha real de ocurrencia | EP02 | Android y Web | **Web:** Reportar → paso 3, «Fecha de ocurrencia»<br>**Android:** Pestaña «Reportar» → paso 3, «Fecha de ocurrencia» | 3 |
+| 12 | US47 | Categorías según el tipo de hallazgo | EP02 | Android y Web | **Web:** Reportar → paso 1, «Tipo de hallazgo»<br>**Android:** Pestaña «Reportar» → paso 1, «Tipo de hallazgo» | 2 |
+| 13 | TS02 | Convenciones de commits | — | Los cuatro | — | 2 |
+| 14 | TS05 | Flujo de ramas GitFlow | — | Los cuatro | — | 3 |
+| 15 | TS01 | Integración continua | — | Los cuatro | — | 5 |
 
 ### Sprint 2 — Operación sin conexión, evidencia y experimento A/B
 
@@ -1386,29 +1396,29 @@ entre el segundo y el tercero, cinco.
 | Elementos | 21 |
 | Story Points | 86 |
 
-| # | ID | Historia | Épica | Plataforma | Story Points |
-|---|---|---|---|---|---|
-| 1 | US07 | Reporte sin conexión | EP02 | Móvil | 13 |
-| 2 | US08 | Sincronización sin duplicados | EP02 | Ambas | 8 |
-| 3 | US70 | Sesión que no expira en campo | EP10 | Ambas | 5 |
-| 4 | US17 | Separación de responsabilidades | EP03 | Ambas | 3 |
-| 5 | US35 | Indicador MTTR | EP08 | Ambas | 5 |
-| 6 | US50 | Filtrar la bandeja | EP03 | Ambas | 3 |
-| 7 | US49 | Descartar un reporte | EP03 | Web | 2 |
-| 8 | US12 | Reporte desde la web | EP02 | Web | 5 |
-| 9 | US44 | Vista previa de la evidencia | EP02 | Web | 3 |
-| 10 | US45 | Ampliar la evidencia | EP02 | Web | 3 |
-| 11 | US46 | Reemplazar la foto elegida | EP02 | Web | 2 |
-| 12 | US48 | Estado de envío de mis reportes | EP02 | Móvil | 3 |
-| 13 | US51 | Ubicar el hallazgo en el mapa | EP03 | Web | 1 |
-| 14 | US38 | Asignación de variante | EP09 | Ambas | 5 |
-| 15 | US39 | Registro de la variante en el reporte | EP09 | Ambas | 2 |
-| 16 | US40 | Resultados del experimento | EP09 | Web | 5 |
-| 17 | US64 | Variante disponible sin conexión | EP09 | Móvil | 3 |
-| 18 | US69 | Reintento ante fallo de red | EP10 | Móvil | 3 |
-| 19 | TS09 | Proxy de desarrollo | — | sst-web | 2 |
-| 20 | TS10 | Renovación transparente del token | — | sst-web, sst-mobile | 5 |
-| 21 | TS12 | Idempotencia en la creación de reportes | — | sst-api | 5 |
+| # | ID | Historia | Épica | Plataforma | Dónde encontrarlo | Story Points |
+|---|---|---|---|---|---|---|
+| 1 | US07 | Reporte sin conexión | EP02 | Android | **Android:** Pestaña «Reportar» sin señal; la cola se ve en «Más» → «Reportes guardados en el celular» | 13 |
+| 2 | US08 | Sincronización sin duplicados | EP02 | Android y Web | **Web:** Reportar: un reintento no duplica el hallazgo<br>**Android:** La cola se envía sola al recuperar la señal, sin duplicar | 8 |
+| 3 | US70 | Sesión que no expira en campo | EP10 | Android y Web | **Web:** Transversal: la sesión se renueva sin pedir la contraseña<br>**Android:** Transversal: la sesión se renueva sin pedir la contraseña | 5 |
+| 4 | US17 | Separación de responsabilidades | EP03 | Android y Web | **Web:** Reportes → detalle: las acciones solo aparecen para supervisor y comité<br>**Android:** Pestaña «Reportes» → detalle: las acciones dependen del rol | 3 |
+| 5 | US35 | Indicador MTTR | EP08 | Android y Web | **Web:** Tablero (`/`) → indicador MTTR<br>**Android:** Pestaña «Tablero» → indicador MTTR | 5 |
+| 6 | US50 | Filtrar la bandeja | EP03 | Android y Web | **Web:** Reportes → filtros de estado, tipo y área<br>**Android:** Pestaña «Reportes» → filtros | 3 |
+| 7 | US49 | Descartar un reporte | EP03 | Web | **Web:** Reportes → detalle → «Descartar» | 2 |
+| 8 | US12 | Reporte desde la web | EP02 | Web | **Web:** Reportar (`/reportes/nuevo`) | 5 |
+| 9 | US44 | Vista previa de la evidencia | EP02 | Web | **Web:** Reportar → paso 2: miniatura de la foto elegida | 3 |
+| 10 | US45 | Ampliar la evidencia | EP02 | Web | **Web:** Reportar → paso 2 y detalle del hallazgo: tocar la foto la amplía | 3 |
+| 11 | US46 | Reemplazar la foto elegida | EP02 | Web | **Web:** Reportar → paso 2 → «Quitar» | 2 |
+| 12 | US48 | Estado de envío de mis reportes | EP02 | Android | **Android:** «Más» → «Reportes guardados en el celular»: estado Enviado o Pendiente | 3 |
+| 13 | US51 | Ubicar el hallazgo en el mapa | EP03 | Web | **Web:** Reportes → detalle → enlace de ubicación | 1 |
+| 14 | US38 | Asignación de variante | EP09 | Android y Web | **Web:** Reportar: la variante se asigna al abrir el formulario<br>**Android:** Pestaña «Reportar»: la variante se asigna al abrir el formulario | 5 |
+| 15 | US39 | Registro de la variante en el reporte | EP09 | Android y Web | **Web:** Reportes → detalle → campo «Variante»<br>**Android:** Pestaña «Reportes» → detalle → «Variante» | 2 |
+| 16 | US40 | Resultados del experimento | EP09 | Web | **Web:** Experimento A/B (`/experimento`) | 5 |
+| 17 | US64 | Variante disponible sin conexión | EP09 | Android | **Android:** Pestaña «Reportar»: la variante se conserva sin conexión | 3 |
+| 18 | US69 | Reintento ante fallo de red | EP10 | Android | **Android:** Pestaña «Reportar»: reintento automático al fallar la red | 3 |
+| 19 | TS09 | Proxy de desarrollo | — | sst-web | — | 2 |
+| 20 | TS10 | Renovación transparente del token | — | sst-web, sst-mobile | — | 5 |
+| 21 | TS12 | Idempotencia en la creación de reportes | — | sst-api | — | 5 |
 
 ### Sprint 3 — Cuentas, matriz IPERC y control de EPP
 
@@ -1420,33 +1430,33 @@ entre el segundo y el tercero, cinco.
 | Elementos | 25 |
 | Story Points | 80 |
 
-| # | ID | Historia | Épica | Plataforma | Story Points |
-|---|---|---|---|---|---|
-| 1 | US01 | Registro de trabajador | EP01 | Ambas | 5 |
-| 2 | US03 | Sesión persistente en campo | EP01 | Ambas | 3 |
-| 3 | US05 | Gestión de áreas | EP01 | Web | 2 |
-| 4 | US04 | Administración de usuarios | EP01 | Web | 5 |
-| 5 | US41 | Cambio de rol de un usuario | EP01 | Web | 2 |
-| 6 | US42 | Cierre de sesión | EP01 | Ambas | 1 |
-| 7 | US19 | Consulta de la matriz en campo | EP04 | Ambas | 3 |
-| 8 | US20 | Registro de peligros | EP04 | Web | 5 |
-| 9 | US21 | Versionado de la matriz | EP04 | Web | 5 |
-| 10 | US22 | Trazabilidad con el hallazgo de origen | EP04 | Ambas | 3 |
-| 11 | US52 | Consultar versiones anteriores de la matriz | EP04 | Web | 5 |
-| 12 | US53 | Publicar una nueva versión de la matriz | EP04 | Web | 5 |
-| 13 | US54 | Retirar un peligro de la matriz | EP04 | Web | 2 |
-| 14 | US23 | Catálogo de EPP | EP05 | Web | 3 |
-| 15 | US24 | Registro de entrega | EP05 | Web | 3 |
-| 16 | US25 | Conformidad del trabajador | EP05 | Ambas | 3 |
-| 17 | US26 | Alerta de EPP vencido | EP05 | Ambas | 2 |
-| 18 | US55 | Control de stock del catálogo | EP05 | Web | 2 |
-| 19 | TS07 | Validación local del mensaje de commit | — | Los cuatro | 2 |
-| 20 | TS06 | Fin de línea normalizado | — | Los cuatro | 2 |
-| 21 | TS13 | Migraciones verificadas en integración | — | sst-api | 2 |
-| 22 | TS03 | Documentación viva del API | — | sst-api | 2 |
-| 23 | TS08 | Configuración por variables de entorno | — | sst-api | 3 |
-| 24 | TS11 | Aislamiento entre empresas | — | sst-api | 5 |
-| 25 | TS04 | Datos de demostración | — | sst-api | 5 |
+| # | ID | Historia | Épica | Plataforma | Dónde encontrarlo | Story Points |
+|---|---|---|---|---|---|---|
+| 1 | US01 | Registro de trabajador | EP01 | Android y Web | **Web:** Registro (`/registro`)<br>**Android:** Pantalla de acceso → «Crear cuenta» | 5 |
+| 2 | US03 | Sesión persistente en campo | EP01 | Android y Web | **Web:** Transversal: la sesión se restaura al volver a abrir<br>**Android:** Transversal: la sesión se restaura al volver a abrir | 3 |
+| 3 | US05 | Gestión de áreas | EP01 | Web | **Web:** Usuarios y áreas (`/usuarios`) → pestaña Áreas | 2 |
+| 4 | US04 | Administración de usuarios | EP01 | Web | **Web:** Usuarios y áreas (`/usuarios`) | 5 |
+| 5 | US41 | Cambio de rol de un usuario | EP01 | Web | **Web:** Usuarios y áreas (`/usuarios`) → columna Rol | 2 |
+| 6 | US42 | Cierre de sesión | EP01 | Android y Web | **Web:** Pie de la barra lateral → «Cerrar sesión»<br>**Android:** «Más» → «Cerrar sesión» | 1 |
+| 7 | US19 | Consulta de la matriz en campo | EP04 | Android y Web | **Web:** Matriz IPERC (`/iperc`)<br>**Android:** «Más» → «Matriz IPERC» | 3 |
+| 8 | US20 | Registro de peligros | EP04 | Web | **Web:** Matriz IPERC → «Agregar peligro» | 5 |
+| 9 | US21 | Versionado de la matriz | EP04 | Web | **Web:** Matriz IPERC → selector de versión | 5 |
+| 10 | US22 | Trazabilidad con el hallazgo de origen | EP04 | Android y Web | **Web:** Matriz IPERC → columna «Hallazgo de origen»<br>**Android:** «Más» → «Matriz IPERC» | 3 |
+| 11 | US52 | Consultar versiones anteriores de la matriz | EP04 | Web | **Web:** Matriz IPERC → selector de versión → versiones históricas | 5 |
+| 12 | US53 | Publicar una nueva versión de la matriz | EP04 | Web | **Web:** Matriz IPERC → «Nueva versión» | 5 |
+| 13 | US54 | Retirar un peligro de la matriz | EP04 | Web | **Web:** Matriz IPERC → «Retirar» en la fila del peligro | 2 |
+| 14 | US23 | Catálogo de EPP | EP05 | Web | **Web:** Equipos de protección (`/epp`) → pestaña Catálogo | 3 |
+| 15 | US24 | Registro de entrega | EP05 | Web | **Web:** Equipos de protección → «Registrar entrega» | 3 |
+| 16 | US25 | Conformidad del trabajador | EP05 | Android y Web | **Web:** Equipos de protección → columna «Conformidad»<br>**Android:** Pestaña «Mis EPP» → «Dar conformidad» | 3 |
+| 17 | US26 | Alerta de EPP vencido | EP05 | Android y Web | **Web:** Equipos de protección → aviso de vencimiento en la entrega<br>**Android:** Pestaña «Mis EPP» → aviso de vencimiento | 2 |
+| 18 | US55 | Control de stock del catálogo | EP05 | Web | **Web:** Equipos de protección → pestaña Catálogo, columna Stock | 2 |
+| 19 | TS07 | Validación local del mensaje de commit | — | Los cuatro | — | 2 |
+| 20 | TS06 | Fin de línea normalizado | — | Los cuatro | — | 2 |
+| 21 | TS13 | Migraciones verificadas en integración | — | sst-api | — | 2 |
+| 22 | TS03 | Documentación viva del API | — | sst-api | — | 2 |
+| 23 | TS08 | Configuración por variables de entorno | — | sst-api | — | 3 |
+| 24 | TS11 | Aislamiento entre empresas | — | sst-api | — | 5 |
+| 25 | TS04 | Datos de demostración | — | sst-api | — | 5 |
 
 ### Sprint 4 — Inspecciones, comité de SST y evidencia exportable
 
@@ -1458,33 +1468,33 @@ entre el segundo y el tercero, cinco.
 | Elementos | 25 |
 | Story Points | 93 |
 
-| # | ID | Historia | Épica | Plataforma | Story Points |
-|---|---|---|---|---|---|
-| 1 | US27 | Programa de inspecciones | EP06 | Web | 5 |
-| 2 | US28 | Ejecución con checklist | EP06 | Ambas | 5 |
-| 3 | US29 | Inspecciones vencidas | EP06 | Ambas | 3 |
-| 4 | US56 | Programar la siguiente inspección | EP06 | Web | 3 |
-| 5 | US36 | Tasa de cumplimiento de inspecciones | EP08 | Ambas | 5 |
-| 6 | US57 | Cumplimiento por área | EP06 | Web | 3 |
-| 7 | US30 | Constitución del comité | EP07 | Web | 3 |
-| 8 | US31 | Miembros y paridad | EP07 | Web | 5 |
-| 9 | US32 | Acta de reunión | EP07 | Web | 5 |
-| 10 | US33 | Control de quórum | EP07 | Ambas | 3 |
-| 11 | US34 | Acuerdos con responsable y plazo | EP07 | Web | 3 |
-| 12 | US58 | Advertencia de comité no paritario | EP07 | Web | 2 |
-| 13 | US59 | Seguimiento del estado de los acuerdos | EP07 | Web | 2 |
-| 14 | US60 | Consultar las actas desde el celular | EP07 | Móvil | 3 |
-| 15 | US37 | Exportación de evidencia | EP08 | Web | 8 |
-| 16 | US61 | MTTR por severidad | EP08 | Ambas | 3 |
-| 17 | US62 | Exportar cada registro obligatorio | EP08 | Web | 3 |
-| 18 | US63 | Resumen de hallazgos | EP08 | Ambas | 3 |
-| 19 | US65 | Identidad visual consistente | EP10 | Ambas | 5 |
-| 20 | US66 | Navegación siempre accesible | EP10 | Ambas | 2 |
-| 21 | US67 | Uso desde pantallas pequeñas | EP10 | Web | 5 |
-| 22 | US68 | Errores comprensibles | EP10 | Ambas | 3 |
-| 23 | TS14 | APK publicado por el pipeline | — | sst-mobile | 3 |
-| 24 | TS15 | Generación de evidencia en Excel | — | sst-api | 5 |
-| 25 | TS16 | Informe compilable y con índice verificado | — | sst-report | 3 |
+| # | ID | Historia | Épica | Plataforma | Dónde encontrarlo | Story Points |
+|---|---|---|---|---|---|---|
+| 1 | US27 | Programa de inspecciones | EP06 | Web | **Web:** Inspecciones (`/inspecciones`) → «Nuevo programa» | 5 |
+| 2 | US28 | Ejecución con checklist | EP06 | Android y Web | **Web:** Inspecciones → «Realizar» con checklist<br>**Android:** Pestaña «Inspecciones» → «Realizar» con checklist | 5 |
+| 3 | US29 | Inspecciones vencidas | EP06 | Android y Web | **Web:** Inspecciones → listado, marca de vencida<br>**Android:** Pestaña «Inspecciones» → marca de vencida | 3 |
+| 4 | US56 | Programar la siguiente inspección | EP06 | Web | **Web:** Inspecciones → «Generar siguiente» | 3 |
+| 5 | US36 | Tasa de cumplimiento de inspecciones | EP08 | Android y Web | **Web:** Tablero → cumplimiento de inspecciones<br>**Android:** Pestaña «Tablero» → cumplimiento de inspecciones | 5 |
+| 6 | US57 | Cumplimiento por área | EP06 | Web | **Web:** Inspecciones → indicadores por área | 3 |
+| 7 | US30 | Constitución del comité | EP07 | Web | **Web:** Comité de SST (`/comite`) → «Constituir comité» | 3 |
+| 8 | US31 | Miembros y paridad | EP07 | Web | **Web:** Comité de SST → pestaña Miembros | 5 |
+| 9 | US32 | Acta de reunión | EP07 | Web | **Web:** Comité de SST → pestaña Actas → «Nueva acta» | 5 |
+| 10 | US33 | Control de quórum | EP07 | Android y Web | **Web:** Comité de SST → Actas: verificación de quórum<br>**Android:** «Más» → «Comité de SST» → Actas | 3 |
+| 11 | US34 | Acuerdos con responsable y plazo | EP07 | Web | **Web:** Comité de SST → Actas → «Agregar acuerdo» | 3 |
+| 12 | US58 | Advertencia de comité no paritario | EP07 | Web | **Web:** Comité de SST → Miembros: aviso de comité no paritario | 2 |
+| 13 | US59 | Seguimiento del estado de los acuerdos | EP07 | Web | **Web:** Comité de SST → Acuerdos: estado y plazo | 2 |
+| 14 | US60 | Consultar las actas desde el celular | EP07 | Android | **Android:** «Más» → «Comité de SST» → Actas | 3 |
+| 15 | US37 | Exportación de evidencia | EP08 | Web | **Web:** Botón «Exportar» en reportes, IPERC, EPP, inspecciones y comité | 8 |
+| 16 | US61 | MTTR por severidad | EP08 | Android y Web | **Web:** Tablero → MTTR desglosado por severidad<br>**Android:** Pestaña «Tablero» → MTTR por severidad | 3 |
+| 17 | US62 | Exportar cada registro obligatorio | EP08 | Web | **Web:** Botón «Exportar» en cada módulo del panel | 3 |
+| 18 | US63 | Resumen de hallazgos | EP08 | Android y Web | **Web:** Tablero → resumen de hallazgos por estado<br>**Android:** Pestaña «Tablero» → resumen de hallazgos | 3 |
+| 19 | US65 | Identidad visual consistente | EP10 | Android y Web | **Web:** Transversal: misma identidad visual en todo el panel<br>**Android:** Transversal: misma identidad visual en toda la aplicación | 5 |
+| 20 | US66 | Navegación siempre accesible | EP10 | Android y Web | **Web:** Barra lateral fija, visible en todas las pantallas<br>**Android:** Barra inferior fija, visible en todas las pantallas | 2 |
+| 21 | US67 | Uso desde pantallas pequeñas | EP10 | Web | **Web:** Transversal: el panel se adapta a pantallas pequeñas | 5 |
+| 22 | US68 | Errores comprensibles | EP10 | Android y Web | **Web:** Transversal: mensajes de error con la acción a seguir<br>**Android:** Transversal: mensajes de error con la acción a seguir | 3 |
+| 23 | TS14 | APK publicado por el pipeline | — | sst-mobile | — | 3 |
+| 24 | TS15 | Generación de evidencia en Excel | — | sst-api | — | 5 |
+| 25 | TS16 | Informe compilable y con índice verificado | — | sst-report | — | 3 |
 
 ### Backlog pendiente
 
@@ -1498,84 +1508,84 @@ expediente en papel, y por eso queda escrito y estimado aunque no entre en el al
 | Elementos | 76 |
 | Story Points | 341 |
 
-| # | ID | Historia | Épica | Plataforma | Story Points |
-|---|---|---|---|---|---|
-| 1 | TS17 | Servicio de notificaciones push | EP17 | sst-api, sst-mobile | 5 |
-| 2 | TS18 | Tareas programadas en el servidor | EP17 | sst-api | 5 |
-| 3 | TS19 | Correo transaccional | EP18 | sst-api | 3 |
-| 4 | TS20 | Registro de auditoría | EP19 | sst-api | 5 |
-| 5 | TS21 | Respaldo automático y restauración probada | EP19 | sst-api | 5 |
-| 6 | TS22 | Almacenamiento de archivos en servicio de objetos | EP19 | sst-api | 5 |
-| 7 | TS23 | Observabilidad del backend | EP10 | sst-api | 3 |
-| 8 | TS24 | Reporte de errores del cliente | EP10 | sst-web, sst-mobile | 3 |
-| 9 | TS25 | Limitación de tasa de peticiones | EP19 | sst-api | 2 |
-| 10 | TS26 | Pruebas de extremo a extremo de la web | EP10 | sst-web | 8 |
-| 11 | TS27 | Pruebas instrumentadas del cliente móvil | EP10 | sst-mobile | 8 |
-| 12 | TS28 | Despliegue automatizado al entorno de pruebas | EP10 | sst-api, sst-web | 5 |
-| 13 | TS29 | Cifrado de datos personales en reposo | EP19 | sst-api | 8 |
-| 14 | TS30 | Versionado del API | EP19 | sst-api | 5 |
-| 15 | TS31 | Resolución de conflictos de sincronización | EP02 | sst-api, sst-mobile | 8 |
-| 16 | TS32 | Accesibilidad verificada en el pipeline | EP10 | sst-web, sst-mobile | 3 |
-| 17 | TS33 | Textos externalizados para traducción | EP18 | sst-web, sst-mobile | 5 |
-| 18 | TS34 | Entorno reproducible con contenedores | EP10 | sst-api, sst-web | 3 |
-| 19 | US71 | Registro de accidente de trabajo | EP11 | Web | 8 |
-| 20 | US72 | Registro de incidente peligroso | EP11 | Ambas | 5 |
-| 21 | US73 | Reportar un accidente desde el celular | EP11 | Móvil | 5 |
-| 22 | US74 | Investigación de causa raíz | EP11 | Web | 8 |
-| 23 | US75 | Medidas correctivas con responsable y plazo | EP11 | Web | 5 |
-| 24 | US76 | Aviso de accidente mortal dentro del plazo legal | EP11 | Web | 3 |
-| 25 | US77 | Indicadores de accidentabilidad | EP11 | Ambas | 5 |
-| 26 | US78 | Registro de enfermedad ocupacional | EP11 | Web | 5 |
-| 27 | US79 | Programa anual de capacitación | EP12 | Web | 5 |
-| 28 | US80 | Registro de asistencia a capacitación | EP12 | Móvil | 5 |
-| 29 | US81 | Inducción del personal nuevo | EP12 | Web | 5 |
-| 30 | US82 | Alerta de capacitación vencida | EP12 | Web | 3 |
-| 31 | US83 | Consultar mis capacitaciones | EP12 | Móvil | 3 |
-| 32 | US84 | Registro de simulacros | EP12 | Web | 3 |
-| 33 | US85 | Mapa de riesgos por área | EP13 | Web | 8 |
-| 34 | US86 | Consultar el mapa de riesgos en campo | EP13 | Móvil | 3 |
-| 35 | US87 | Inventario de señalización | EP13 | Web | 3 |
-| 36 | US88 | Ubicar el área por código QR | EP13 | Móvil | 5 |
-| 37 | US89 | Política de SST publicada | EP14 | Ambas | 3 |
-| 38 | US90 | Reglamento Interno de SST | EP14 | Ambas | 3 |
-| 39 | US91 | Plan y programa anual de SST | EP14 | Web | 5 |
-| 40 | US92 | Control de versiones de documentos | EP14 | Web | 5 |
-| 41 | US93 | Registro de monitoreo de agentes | EP15 | Web | 5 |
-| 42 | US94 | Alerta por exceder el límite permisible | EP15 | Web | 3 |
-| 43 | US95 | Programa de monitoreo | EP15 | Web | 3 |
-| 44 | US96 | Registro de empresa contratista | EP16 | Web | 5 |
-| 45 | US97 | Documentación de seguridad de la contratista | EP16 | Web | 5 |
-| 46 | US98 | Trabajadores de contratista reportando | EP16 | Móvil | 5 |
-| 47 | US99 | Permiso de trabajo de alto riesgo | EP16 | Ambas | 8 |
-| 48 | US100 | Aviso de hallazgo crítico sin asignar | EP17 | Ambas | 3 |
-| 49 | US101 | Aviso de cierre al reportante | EP17 | Móvil | 2 |
-| 50 | US102 | Aviso de asignación | EP17 | Ambas | 2 |
-| 51 | US103 | Resumen diario para el comité | EP17 | Web | 3 |
-| 52 | US104 | Aviso de acuerdo del comité por vencer | EP17 | Ambas | 2 |
-| 53 | US105 | Preferencias de notificación | EP17 | Ambas | 3 |
-| 54 | US106 | Alta de empresa desde la landing | EP18 | Web | 8 |
-| 55 | US107 | Datos y configuración de la empresa | EP18 | Web | 3 |
-| 56 | US108 | Planes y suscripción | EP18 | Web | 5 |
-| 57 | US109 | Exportación completa de mis datos | EP18 | Web | 5 |
-| 58 | US110 | Respaldo y continuidad | EP18 | — | 5 |
-| 59 | US111 | Consentimiento informado de datos personales | EP19 | Ambas | 3 |
-| 60 | US112 | Ubicación opcional y revocable | EP19 | Ambas | 3 |
-| 61 | US113 | Registro de auditoría de accesos | EP19 | Web | 5 |
-| 62 | US114 | Cierre de sesión remoto | EP19 | Web | 3 |
-| 63 | US115 | Política de retención de evidencia | EP19 | — | 5 |
-| 64 | US116 | Reporte anónimo de actos inseguros | EP19 | Ambas | 5 |
-| 65 | US117 | Reporte por voz | EP02 | Móvil | 8 |
-| 66 | US118 | Firma del trabajador en la entrega de EPP | EP05 | Móvil | 5 |
-| 67 | US119 | Adjuntar evidencia en inspecciones | EP06 | Móvil | 3 |
-| 68 | US120 | Generar hallazgo desde una inspección | EP06 | Ambas | 3 |
-| 69 | US121 | Convocatoria y asistencia del comité | EP07 | Web | 3 |
-| 70 | US122 | Elección de representantes de los trabajadores | EP07 | Web | 5 |
-| 71 | US123 | Exportar el tablero a PDF | EP08 | Web | 5 |
-| 72 | US124 | Comparar periodos | EP08 | Web | 3 |
-| 73 | US125 | Aviso de datos de demostración | EP09 | Web | 1 |
-| 74 | US126 | Intervalo de confianza en los resultados | EP09 | Web | 3 |
-| 75 | US127 | Interfaz accesible para lectores de pantalla | EP10 | Ambas | 8 |
-| 76 | US128 | Modo de alto contraste | EP10 | Ambas | 3 |
+| # | ID | Historia | Épica | Plataforma | Dónde encontrarlo | Story Points |
+|---|---|---|---|---|---|---|
+| 1 | TS17 | Servicio de notificaciones push | EP17 | sst-api, sst-mobile | — | 5 |
+| 2 | TS18 | Tareas programadas en el servidor | EP17 | sst-api | — | 5 |
+| 3 | TS19 | Correo transaccional | EP18 | sst-api | — | 3 |
+| 4 | TS20 | Registro de auditoría | EP19 | sst-api | — | 5 |
+| 5 | TS21 | Respaldo automático y restauración probada | EP19 | sst-api | — | 5 |
+| 6 | TS22 | Almacenamiento de archivos en servicio de objetos | EP19 | sst-api | — | 5 |
+| 7 | TS23 | Observabilidad del backend | EP10 | sst-api | — | 3 |
+| 8 | TS24 | Reporte de errores del cliente | EP10 | sst-web, sst-mobile | — | 3 |
+| 9 | TS25 | Limitación de tasa de peticiones | EP19 | sst-api | — | 2 |
+| 10 | TS26 | Pruebas de extremo a extremo de la web | EP10 | sst-web | — | 8 |
+| 11 | TS27 | Pruebas instrumentadas del cliente móvil | EP10 | sst-mobile | — | 8 |
+| 12 | TS28 | Despliegue automatizado al entorno de pruebas | EP10 | sst-api, sst-web | — | 5 |
+| 13 | TS29 | Cifrado de datos personales en reposo | EP19 | sst-api | — | 8 |
+| 14 | TS30 | Versionado del API | EP19 | sst-api | — | 5 |
+| 15 | TS31 | Resolución de conflictos de sincronización | EP02 | sst-api, sst-mobile | — | 8 |
+| 16 | TS32 | Accesibilidad verificada en el pipeline | EP10 | sst-web, sst-mobile | — | 3 |
+| 17 | TS33 | Textos externalizados para traducción | EP18 | sst-web, sst-mobile | — | 5 |
+| 18 | TS34 | Entorno reproducible con contenedores | EP10 | sst-api, sst-web | — | 3 |
+| 19 | US71 | Registro de accidente de trabajo | EP11 | Web | — | 8 |
+| 20 | US72 | Registro de incidente peligroso | EP11 | Android y Web | — | 5 |
+| 21 | US73 | Reportar un accidente desde el celular | EP11 | Android | — | 5 |
+| 22 | US74 | Investigación de causa raíz | EP11 | Web | — | 8 |
+| 23 | US75 | Medidas correctivas con responsable y plazo | EP11 | Web | — | 5 |
+| 24 | US76 | Aviso de accidente mortal dentro del plazo legal | EP11 | Web | — | 3 |
+| 25 | US77 | Indicadores de accidentabilidad | EP11 | Android y Web | — | 5 |
+| 26 | US78 | Registro de enfermedad ocupacional | EP11 | Web | — | 5 |
+| 27 | US79 | Programa anual de capacitación | EP12 | Web | — | 5 |
+| 28 | US80 | Registro de asistencia a capacitación | EP12 | Android | — | 5 |
+| 29 | US81 | Inducción del personal nuevo | EP12 | Web | — | 5 |
+| 30 | US82 | Alerta de capacitación vencida | EP12 | Web | — | 3 |
+| 31 | US83 | Consultar mis capacitaciones | EP12 | Android | — | 3 |
+| 32 | US84 | Registro de simulacros | EP12 | Web | — | 3 |
+| 33 | US85 | Mapa de riesgos por área | EP13 | Web | — | 8 |
+| 34 | US86 | Consultar el mapa de riesgos en campo | EP13 | Android | — | 3 |
+| 35 | US87 | Inventario de señalización | EP13 | Web | — | 3 |
+| 36 | US88 | Ubicar el área por código QR | EP13 | Android | — | 5 |
+| 37 | US89 | Política de SST publicada | EP14 | Android y Web | — | 3 |
+| 38 | US90 | Reglamento Interno de SST | EP14 | Android y Web | — | 3 |
+| 39 | US91 | Plan y programa anual de SST | EP14 | Web | — | 5 |
+| 40 | US92 | Control de versiones de documentos | EP14 | Web | — | 5 |
+| 41 | US93 | Registro de monitoreo de agentes | EP15 | Web | — | 5 |
+| 42 | US94 | Alerta por exceder el límite permisible | EP15 | Web | — | 3 |
+| 43 | US95 | Programa de monitoreo | EP15 | Web | — | 3 |
+| 44 | US96 | Registro de empresa contratista | EP16 | Web | — | 5 |
+| 45 | US97 | Documentación de seguridad de la contratista | EP16 | Web | — | 5 |
+| 46 | US98 | Trabajadores de contratista reportando | EP16 | Android | — | 5 |
+| 47 | US99 | Permiso de trabajo de alto riesgo | EP16 | Android y Web | — | 8 |
+| 48 | US100 | Aviso de hallazgo crítico sin asignar | EP17 | Android y Web | — | 3 |
+| 49 | US101 | Aviso de cierre al reportante | EP17 | Android | — | 2 |
+| 50 | US102 | Aviso de asignación | EP17 | Android y Web | — | 2 |
+| 51 | US103 | Resumen diario para el comité | EP17 | Web | — | 3 |
+| 52 | US104 | Aviso de acuerdo del comité por vencer | EP17 | Android y Web | — | 2 |
+| 53 | US105 | Preferencias de notificación | EP17 | Android y Web | — | 3 |
+| 54 | US106 | Alta de empresa desde la landing | EP18 | Web | — | 8 |
+| 55 | US107 | Datos y configuración de la empresa | EP18 | Web | — | 3 |
+| 56 | US108 | Planes y suscripción | EP18 | Web | — | 5 |
+| 57 | US109 | Exportación completa de mis datos | EP18 | Web | — | 5 |
+| 58 | US110 | Respaldo y continuidad | EP18 | — | — | 5 |
+| 59 | US111 | Consentimiento informado de datos personales | EP19 | Android y Web | — | 3 |
+| 60 | US112 | Ubicación opcional y revocable | EP19 | Android y Web | — | 3 |
+| 61 | US113 | Registro de auditoría de accesos | EP19 | Web | — | 5 |
+| 62 | US114 | Cierre de sesión remoto | EP19 | Web | — | 3 |
+| 63 | US115 | Política de retención de evidencia | EP19 | — | — | 5 |
+| 64 | US116 | Reporte anónimo de actos inseguros | EP19 | Android y Web | — | 5 |
+| 65 | US117 | Reporte por voz | EP02 | Android | — | 8 |
+| 66 | US118 | Firma del trabajador en la entrega de EPP | EP05 | Android | — | 5 |
+| 67 | US119 | Adjuntar evidencia en inspecciones | EP06 | Android | — | 3 |
+| 68 | US120 | Generar hallazgo desde una inspección | EP06 | Android y Web | — | 3 |
+| 69 | US121 | Convocatoria y asistencia del comité | EP07 | Web | — | 3 |
+| 70 | US122 | Elección de representantes de los trabajadores | EP07 | Web | — | 5 |
+| 71 | US123 | Exportar el tablero a PDF | EP08 | Web | — | 5 |
+| 72 | US124 | Comparar periodos | EP08 | Web | — | 3 |
+| 73 | US125 | Aviso de datos de demostración | EP09 | Web | — | 1 |
+| 74 | US126 | Intervalo de confianza en los resultados | EP09 | Web | — | 3 |
+| 75 | US127 | Interfaz accesible para lectores de pantalla | EP10 | Android y Web | — | 8 |
+| 76 | US128 | Modo de alto contraste | EP10 | Android y Web | — | 3 |
 
 ### Totales del backlog
 
@@ -1793,7 +1803,7 @@ corresponden, y esa filtración ocurre en el mismo lugar en las dos plataformas.
 
 #### Niveles de navegación
 
-| Nivel | Web | Móvil | Propósito |
+| Nivel | Web | Android | Propósito |
 |---|---|---|---|
 | **Global** | Barra lateral fija de 236 px, siempre visible | Barra inferior de cuatro destinos más una pantalla "Más" | Moverse entre procesos del sistema de gestión |
 | **Local** | Acciones dentro de la pantalla: *Asignar*, *Cerrar*, *Nueva versión*, *Registrar entrega* | Las mismas acciones, como botones de ancho completo | Actuar sobre el registro que se está viendo |
@@ -2615,7 +2625,7 @@ entrega debe conservar esas referencias junto con sus resultados de construcció
 | Frontend web | React + TypeScript + Vite | 18.3 / 5.7 / 6.0 | TypeScript da verificación estática del contrato del API; Vite acelera el ciclo de desarrollo |
 | Estado del servidor en la web | TanStack Query | 5.62 | Manejo de caché e invalidación sin escribir un reducer por pantalla |
 | Cliente HTTP web | Axios | 1.7 | Interceptores para JWT y renovación de token |
-| Móvil | Kotlin + Jetpack Compose | 2.0.21 / BOM 2024.12 | Android nativo con interfaz declarativa |
+| Android | Kotlin + Jetpack Compose | 2.0.21 / BOM 2024.12 | Android nativo con interfaz declarativa |
 | Persistencia local móvil | Room | 2.6.1 | Cola de reportes pendientes de envío |
 | Sincronización móvil | WorkManager | 2.10.0 | Reintento con backoff al recuperar la conectividad |
 | Red móvil | Retrofit + OkHttp | 2.11 / 4.12 | Cliente HTTP con interceptor de autenticación |
@@ -2723,7 +2733,7 @@ locales que formalizan el flujo y las convenciones.
 |---|---|
 | API | Variables de entorno mediante archivo `.env` (`DEBUG`, `SECRET_KEY`, `ALLOWED_HOSTS`, `DATABASE_URL`, `CORS_ALLOWED_ORIGINS`). `DATABASE_URL` vacío usa SQLite; con valor, PostgreSQL |
 | Web | `VITE_API_URL` define el API consumido. En desarrollo, Vite hace proxy de `/api` al backend, evitando CORS |
-| Móvil | `API_BASE_URL` se inyecta como `buildConfigField` en Gradle. En emulador, `http://10.0.2.2:8000/api/v1/`, que es la dirección con la que el emulador alcanza el `localhost` del anfitrión |
+| Android | `API_BASE_URL` se inyecta como `buildConfigField` en Gradle. En emulador, `http://10.0.2.2:8000/api/v1/`, que es la dirección con la que el emulador alcanza el `localhost` del anfitrión |
 | Tráfico en claro | `network_security_config.xml` permite HTTP sin cifrar únicamente contra direcciones de desarrollo; en producción el API va por HTTPS |
 | Secretos | Ningún secreto se versiona: `.env` está en `.gitignore` y se distribuye `.env.example` con los nombres de variable |
 
@@ -2773,9 +2783,9 @@ repositorio y en una única área responsable:
 
 | Plataforma de la historia | Work-items que genera |
 |---|---|
-| `Ambas` | Lógica y endpoint en el API · interfaz en el panel web · interfaz en Android · pruebas automatizadas |
+| `Android y Web` | Lógica y endpoint en el API · interfaz en el panel web · interfaz en Android · pruebas automatizadas |
 | `Web` | Lógica y endpoint en el API · interfaz en el panel web · pruebas automatizadas |
-| `Móvil` | Lógica y endpoint en el API · interfaz en Android · pruebas automatizadas |
+| `Android` | Lógica y endpoint en el API · interfaz en Android · pruebas automatizadas |
 | `—` (sin interfaz) | Lógica en el API · pruebas automatizadas |
 | Historia técnica | Configuración · verificación en el pipeline |
 
@@ -2797,7 +2807,7 @@ afirmar cuánto tardó realmente cada una.
 | Horas estimadas | 120 |
 | Incremento entregable | Un operario registra un acto o condición insegura con foto, ubicación y fecha real desde el celular o la web; el supervisor lo ve en su bandeja, lo asigna y lo cierra; la bitácora queda con quién hizo qué y cuándo. |
 
-Las doce historias de usuario de este sprint están marcadas `Ambas` en el Capítulo III: el
+Las doce historias de usuario de este sprint están marcadas `Android y Web` en el Capítulo III: el
 incremento es demostrable tanto desde el panel web como desde la aplicación Android, que es la
 condición de paridad que el proyecto se impuso.
 
@@ -2805,51 +2815,51 @@ condición de paridad que el proyecto se impuso.
 |---|---|---|---|---|---|---|---|
 | Sprint 1 | US02 | Inicio de sesión | Sprint1-T01 | Implementar en el API la lógica y el endpoint de «Inicio de sesión» | 1 | Backend | Terminado |
 | Sprint 1 | US02 | Inicio de sesión | Sprint1-T02 | Construir en el panel web la interfaz de «Inicio de sesión» | 2 | Web | Terminado |
-| Sprint 1 | US02 | Inicio de sesión | Sprint1-T03 | Construir en la aplicación Android la interfaz de «Inicio de sesión» | 2 | Móvil | Terminado |
+| Sprint 1 | US02 | Inicio de sesión | Sprint1-T03 | Construir en la aplicación Android la interfaz de «Inicio de sesión» | 2 | Android | Terminado |
 | Sprint 1 | US02 | Inicio de sesión | Sprint1-T04 | Cubrir «Inicio de sesión» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 1 | US06 | Reporte rápido desde el celular | Sprint1-T05 | Implementar en el API la lógica y el endpoint de «Reporte rápido desde el celular» | 4 | Backend | Terminado |
 | Sprint 1 | US06 | Reporte rápido desde el celular | Sprint1-T06 | Construir en el panel web la interfaz de «Reporte rápido desde el celular» | 5 | Web | Terminado |
-| Sprint 1 | US06 | Reporte rápido desde el celular | Sprint1-T07 | Construir en la aplicación Android la interfaz de «Reporte rápido desde el celular» | 5 | Móvil | Terminado |
+| Sprint 1 | US06 | Reporte rápido desde el celular | Sprint1-T07 | Construir en la aplicación Android la interfaz de «Reporte rápido desde el celular» | 5 | Android | Terminado |
 | Sprint 1 | US06 | Reporte rápido desde el celular | Sprint1-T08 | Cubrir «Reporte rápido desde el celular» con pruebas automatizadas | 2 | QA | Terminado |
 | Sprint 1 | US13 | Consulta de mis reportes | Sprint1-T09 | Implementar en el API la lógica y el endpoint de «Consulta de mis reportes» | 1 | Backend | Terminado |
 | Sprint 1 | US13 | Consulta de mis reportes | Sprint1-T10 | Construir en el panel web la interfaz de «Consulta de mis reportes» | 2 | Web | Terminado |
-| Sprint 1 | US13 | Consulta de mis reportes | Sprint1-T11 | Construir en la aplicación Android la interfaz de «Consulta de mis reportes» | 2 | Móvil | Terminado |
+| Sprint 1 | US13 | Consulta de mis reportes | Sprint1-T11 | Construir en la aplicación Android la interfaz de «Consulta de mis reportes» | 2 | Android | Terminado |
 | Sprint 1 | US13 | Consulta de mis reportes | Sprint1-T12 | Cubrir «Consulta de mis reportes» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 1 | US43 | Menú según mi rol | Sprint1-T13 | Implementar en el API la lógica y el endpoint de «Menú según mi rol» | 1 | Backend | Terminado |
 | Sprint 1 | US43 | Menú según mi rol | Sprint1-T14 | Construir en el panel web la interfaz de «Menú según mi rol» | 2 | Web | Terminado |
-| Sprint 1 | US43 | Menú según mi rol | Sprint1-T15 | Construir en la aplicación Android la interfaz de «Menú según mi rol» | 2 | Móvil | Terminado |
+| Sprint 1 | US43 | Menú según mi rol | Sprint1-T15 | Construir en la aplicación Android la interfaz de «Menú según mi rol» | 2 | Android | Terminado |
 | Sprint 1 | US43 | Menú según mi rol | Sprint1-T16 | Cubrir «Menú según mi rol» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 1 | US14 | Bandeja de hallazgos | Sprint1-T17 | Implementar en el API la lógica y el endpoint de «Bandeja de hallazgos» | 3 | Backend | Terminado |
 | Sprint 1 | US14 | Bandeja de hallazgos | Sprint1-T18 | Construir en el panel web la interfaz de «Bandeja de hallazgos» | 3 | Web | Terminado |
-| Sprint 1 | US14 | Bandeja de hallazgos | Sprint1-T19 | Construir en la aplicación Android la interfaz de «Bandeja de hallazgos» | 3 | Móvil | Terminado |
+| Sprint 1 | US14 | Bandeja de hallazgos | Sprint1-T19 | Construir en la aplicación Android la interfaz de «Bandeja de hallazgos» | 3 | Android | Terminado |
 | Sprint 1 | US14 | Bandeja de hallazgos | Sprint1-T20 | Cubrir «Bandeja de hallazgos» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 1 | US16 | Cierre con acción correctiva | Sprint1-T21 | Implementar en el API la lógica y el endpoint de «Cierre con acción correctiva» | 3 | Backend | Terminado |
 | Sprint 1 | US16 | Cierre con acción correctiva | Sprint1-T22 | Construir en el panel web la interfaz de «Cierre con acción correctiva» | 3 | Web | Terminado |
-| Sprint 1 | US16 | Cierre con acción correctiva | Sprint1-T23 | Construir en la aplicación Android la interfaz de «Cierre con acción correctiva» | 3 | Móvil | Terminado |
+| Sprint 1 | US16 | Cierre con acción correctiva | Sprint1-T23 | Construir en la aplicación Android la interfaz de «Cierre con acción correctiva» | 3 | Android | Terminado |
 | Sprint 1 | US16 | Cierre con acción correctiva | Sprint1-T24 | Cubrir «Cierre con acción correctiva» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 1 | US15 | Asignación de responsable | Sprint1-T25 | Implementar en el API la lógica y el endpoint de «Asignación de responsable» | 3 | Backend | Terminado |
 | Sprint 1 | US15 | Asignación de responsable | Sprint1-T26 | Construir en el panel web la interfaz de «Asignación de responsable» | 3 | Web | Terminado |
-| Sprint 1 | US15 | Asignación de responsable | Sprint1-T27 | Construir en la aplicación Android la interfaz de «Asignación de responsable» | 3 | Móvil | Terminado |
+| Sprint 1 | US15 | Asignación de responsable | Sprint1-T27 | Construir en la aplicación Android la interfaz de «Asignación de responsable» | 3 | Android | Terminado |
 | Sprint 1 | US15 | Asignación de responsable | Sprint1-T28 | Cubrir «Asignación de responsable» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 1 | US18 | Bitácora del hallazgo | Sprint1-T29 | Implementar en el API la lógica y el endpoint de «Bitácora del hallazgo» | 1 | Backend | Terminado |
 | Sprint 1 | US18 | Bitácora del hallazgo | Sprint1-T30 | Construir en el panel web la interfaz de «Bitácora del hallazgo» | 2 | Web | Terminado |
-| Sprint 1 | US18 | Bitácora del hallazgo | Sprint1-T31 | Construir en la aplicación Android la interfaz de «Bitácora del hallazgo» | 2 | Móvil | Terminado |
+| Sprint 1 | US18 | Bitácora del hallazgo | Sprint1-T31 | Construir en la aplicación Android la interfaz de «Bitácora del hallazgo» | 2 | Android | Terminado |
 | Sprint 1 | US18 | Bitácora del hallazgo | Sprint1-T32 | Cubrir «Bitácora del hallazgo» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 1 | US09 | Evidencia fotográfica | Sprint1-T33 | Implementar en el API la lógica y el endpoint de «Evidencia fotográfica» | 3 | Backend | Terminado |
 | Sprint 1 | US09 | Evidencia fotográfica | Sprint1-T34 | Construir en el panel web la interfaz de «Evidencia fotográfica» | 3 | Web | Terminado |
-| Sprint 1 | US09 | Evidencia fotográfica | Sprint1-T35 | Construir en la aplicación Android la interfaz de «Evidencia fotográfica» | 3 | Móvil | Terminado |
+| Sprint 1 | US09 | Evidencia fotográfica | Sprint1-T35 | Construir en la aplicación Android la interfaz de «Evidencia fotográfica» | 3 | Android | Terminado |
 | Sprint 1 | US09 | Evidencia fotográfica | Sprint1-T36 | Cubrir «Evidencia fotográfica» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 1 | US10 | Geolocalización del hallazgo | Sprint1-T37 | Implementar en el API la lógica y el endpoint de «Geolocalización del hallazgo» | 3 | Backend | Terminado |
 | Sprint 1 | US10 | Geolocalización del hallazgo | Sprint1-T38 | Construir en el panel web la interfaz de «Geolocalización del hallazgo» | 3 | Web | Terminado |
-| Sprint 1 | US10 | Geolocalización del hallazgo | Sprint1-T39 | Construir en la aplicación Android la interfaz de «Geolocalización del hallazgo» | 3 | Móvil | Terminado |
+| Sprint 1 | US10 | Geolocalización del hallazgo | Sprint1-T39 | Construir en la aplicación Android la interfaz de «Geolocalización del hallazgo» | 3 | Android | Terminado |
 | Sprint 1 | US10 | Geolocalización del hallazgo | Sprint1-T40 | Cubrir «Geolocalización del hallazgo» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 1 | US11 | Fecha real de ocurrencia | Sprint1-T41 | Implementar en el API la lógica y el endpoint de «Fecha real de ocurrencia» | 1 | Backend | Terminado |
 | Sprint 1 | US11 | Fecha real de ocurrencia | Sprint1-T42 | Construir en el panel web la interfaz de «Fecha real de ocurrencia» | 2 | Web | Terminado |
-| Sprint 1 | US11 | Fecha real de ocurrencia | Sprint1-T43 | Construir en la aplicación Android la interfaz de «Fecha real de ocurrencia» | 2 | Móvil | Terminado |
+| Sprint 1 | US11 | Fecha real de ocurrencia | Sprint1-T43 | Construir en la aplicación Android la interfaz de «Fecha real de ocurrencia» | 2 | Android | Terminado |
 | Sprint 1 | US11 | Fecha real de ocurrencia | Sprint1-T44 | Cubrir «Fecha real de ocurrencia» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 1 | US47 | Categorías según el tipo de hallazgo | Sprint1-T45 | Implementar en el API la lógica y el endpoint de «Categorías según el tipo de hallazgo» | 1 | Backend | Terminado |
 | Sprint 1 | US47 | Categorías según el tipo de hallazgo | Sprint1-T46 | Construir en el panel web la interfaz de «Categorías según el tipo de hallazgo» | 1 | Web | Terminado |
-| Sprint 1 | US47 | Categorías según el tipo de hallazgo | Sprint1-T47 | Construir en la aplicación Android la interfaz de «Categorías según el tipo de hallazgo» | 1 | Móvil | Terminado |
+| Sprint 1 | US47 | Categorías según el tipo de hallazgo | Sprint1-T47 | Construir en la aplicación Android la interfaz de «Categorías según el tipo de hallazgo» | 1 | Android | Terminado |
 | Sprint 1 | US47 | Categorías según el tipo de hallazgo | Sprint1-T48 | Cubrir «Categorías según el tipo de hallazgo» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 1 | TS02 | Convenciones de commits | Sprint1-T49 | Configurar «Convenciones de commits» | 3 | DevOps | Terminado |
 | Sprint 1 | TS02 | Convenciones de commits | Sprint1-T50 | Verificar «Convenciones de commits» en el pipeline | 1 | DevOps | Terminado |
@@ -2874,27 +2884,27 @@ condición de paridad que el proyecto se impuso.
 | Sprint | User Story | Título | Work-Item | Descripción de la tarea | Estimación (h) | Área responsable | Estado |
 |---|---|---|---|---|---|---|---|
 | Sprint 2 | US07 | Reporte sin conexión | Sprint2-T01 | Implementar en el API la lógica y el endpoint de «Reporte sin conexión» | 9 | Backend | Terminado |
-| Sprint 2 | US07 | Reporte sin conexión | Sprint2-T02 | Construir en la aplicación Android la interfaz de «Reporte sin conexión» | 12 | Móvil | Terminado |
+| Sprint 2 | US07 | Reporte sin conexión | Sprint2-T02 | Construir en la aplicación Android la interfaz de «Reporte sin conexión» | 12 | Android | Terminado |
 | Sprint 2 | US07 | Reporte sin conexión | Sprint2-T03 | Cubrir «Reporte sin conexión» con pruebas automatizadas | 5 | QA | Terminado |
 | Sprint 2 | US08 | Sincronización sin duplicados | Sprint2-T04 | Implementar en el API la lógica y el endpoint de «Sincronización sin duplicados» | 4 | Backend | Terminado |
 | Sprint 2 | US08 | Sincronización sin duplicados | Sprint2-T05 | Construir en el panel web la interfaz de «Sincronización sin duplicados» | 5 | Web | Terminado |
-| Sprint 2 | US08 | Sincronización sin duplicados | Sprint2-T06 | Construir en la aplicación Android la interfaz de «Sincronización sin duplicados» | 5 | Móvil | Terminado |
+| Sprint 2 | US08 | Sincronización sin duplicados | Sprint2-T06 | Construir en la aplicación Android la interfaz de «Sincronización sin duplicados» | 5 | Android | Terminado |
 | Sprint 2 | US08 | Sincronización sin duplicados | Sprint2-T07 | Cubrir «Sincronización sin duplicados» con pruebas automatizadas | 2 | QA | Terminado |
 | Sprint 2 | US70 | Sesión que no expira en campo | Sprint2-T08 | Implementar en el API la lógica y el endpoint de «Sesión que no expira en campo» | 3 | Backend | Terminado |
 | Sprint 2 | US70 | Sesión que no expira en campo | Sprint2-T09 | Construir en el panel web la interfaz de «Sesión que no expira en campo» | 3 | Web | Terminado |
-| Sprint 2 | US70 | Sesión que no expira en campo | Sprint2-T10 | Construir en la aplicación Android la interfaz de «Sesión que no expira en campo» | 3 | Móvil | Terminado |
+| Sprint 2 | US70 | Sesión que no expira en campo | Sprint2-T10 | Construir en la aplicación Android la interfaz de «Sesión que no expira en campo» | 3 | Android | Terminado |
 | Sprint 2 | US70 | Sesión que no expira en campo | Sprint2-T11 | Cubrir «Sesión que no expira en campo» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US17 | Separación de responsabilidades | Sprint2-T12 | Implementar en el API la lógica y el endpoint de «Separación de responsabilidades» | 1 | Backend | Terminado |
 | Sprint 2 | US17 | Separación de responsabilidades | Sprint2-T13 | Construir en el panel web la interfaz de «Separación de responsabilidades» | 2 | Web | Terminado |
-| Sprint 2 | US17 | Separación de responsabilidades | Sprint2-T14 | Construir en la aplicación Android la interfaz de «Separación de responsabilidades» | 2 | Móvil | Terminado |
+| Sprint 2 | US17 | Separación de responsabilidades | Sprint2-T14 | Construir en la aplicación Android la interfaz de «Separación de responsabilidades» | 2 | Android | Terminado |
 | Sprint 2 | US17 | Separación de responsabilidades | Sprint2-T15 | Cubrir «Separación de responsabilidades» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US35 | Indicador MTTR | Sprint2-T16 | Implementar en el API la lógica y el endpoint de «Indicador MTTR» | 3 | Backend | Terminado |
 | Sprint 2 | US35 | Indicador MTTR | Sprint2-T17 | Construir en el panel web la interfaz de «Indicador MTTR» | 3 | Web | Terminado |
-| Sprint 2 | US35 | Indicador MTTR | Sprint2-T18 | Construir en la aplicación Android la interfaz de «Indicador MTTR» | 3 | Móvil | Terminado |
+| Sprint 2 | US35 | Indicador MTTR | Sprint2-T18 | Construir en la aplicación Android la interfaz de «Indicador MTTR» | 3 | Android | Terminado |
 | Sprint 2 | US35 | Indicador MTTR | Sprint2-T19 | Cubrir «Indicador MTTR» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US50 | Filtrar la bandeja | Sprint2-T20 | Implementar en el API la lógica y el endpoint de «Filtrar la bandeja» | 1 | Backend | Terminado |
 | Sprint 2 | US50 | Filtrar la bandeja | Sprint2-T21 | Construir en el panel web la interfaz de «Filtrar la bandeja» | 2 | Web | Terminado |
-| Sprint 2 | US50 | Filtrar la bandeja | Sprint2-T22 | Construir en la aplicación Android la interfaz de «Filtrar la bandeja» | 2 | Móvil | Terminado |
+| Sprint 2 | US50 | Filtrar la bandeja | Sprint2-T22 | Construir en la aplicación Android la interfaz de «Filtrar la bandeja» | 2 | Android | Terminado |
 | Sprint 2 | US50 | Filtrar la bandeja | Sprint2-T23 | Cubrir «Filtrar la bandeja» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US49 | Descartar un reporte | Sprint2-T24 | Implementar en el API la lógica y el endpoint de «Descartar un reporte» | 1 | Backend | Terminado |
 | Sprint 2 | US49 | Descartar un reporte | Sprint2-T25 | Construir en el panel web la interfaz de «Descartar un reporte» | 2 | Web | Terminado |
@@ -2912,31 +2922,31 @@ condición de paridad que el proyecto se impuso.
 | Sprint 2 | US46 | Reemplazar la foto elegida | Sprint2-T37 | Construir en el panel web la interfaz de «Reemplazar la foto elegida» | 2 | Web | Terminado |
 | Sprint 2 | US46 | Reemplazar la foto elegida | Sprint2-T38 | Cubrir «Reemplazar la foto elegida» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US48 | Estado de envío de mis reportes | Sprint2-T39 | Implementar en el API la lógica y el endpoint de «Estado de envío de mis reportes» | 2 | Backend | Terminado |
-| Sprint 2 | US48 | Estado de envío de mis reportes | Sprint2-T40 | Construir en la aplicación Android la interfaz de «Estado de envío de mis reportes» | 3 | Móvil | Terminado |
+| Sprint 2 | US48 | Estado de envío de mis reportes | Sprint2-T40 | Construir en la aplicación Android la interfaz de «Estado de envío de mis reportes» | 3 | Android | Terminado |
 | Sprint 2 | US48 | Estado de envío de mis reportes | Sprint2-T41 | Cubrir «Estado de envío de mis reportes» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US51 | Ubicar el hallazgo en el mapa | Sprint2-T42 | Implementar en el API la lógica y el endpoint de «Ubicar el hallazgo en el mapa» | 1 | Backend | Terminado |
 | Sprint 2 | US51 | Ubicar el hallazgo en el mapa | Sprint2-T43 | Construir en el panel web la interfaz de «Ubicar el hallazgo en el mapa» | 1 | Web | Terminado |
 | Sprint 2 | US38 | Asignación de variante | Sprint2-T44 | Implementar en el API la lógica y el endpoint de «Asignación de variante» | 3 | Backend | Terminado |
 | Sprint 2 | US38 | Asignación de variante | Sprint2-T45 | Construir en el panel web la interfaz de «Asignación de variante» | 3 | Web | Terminado |
-| Sprint 2 | US38 | Asignación de variante | Sprint2-T46 | Construir en la aplicación Android la interfaz de «Asignación de variante» | 3 | Móvil | Terminado |
+| Sprint 2 | US38 | Asignación de variante | Sprint2-T46 | Construir en la aplicación Android la interfaz de «Asignación de variante» | 3 | Android | Terminado |
 | Sprint 2 | US38 | Asignación de variante | Sprint2-T47 | Cubrir «Asignación de variante» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US39 | Registro de la variante en el reporte | Sprint2-T48 | Implementar en el API la lógica y el endpoint de «Registro de la variante en el reporte» | 1 | Backend | Terminado |
 | Sprint 2 | US39 | Registro de la variante en el reporte | Sprint2-T49 | Construir en el panel web la interfaz de «Registro de la variante en el reporte» | 1 | Web | Terminado |
-| Sprint 2 | US39 | Registro de la variante en el reporte | Sprint2-T50 | Construir en la aplicación Android la interfaz de «Registro de la variante en el reporte» | 1 | Móvil | Terminado |
+| Sprint 2 | US39 | Registro de la variante en el reporte | Sprint2-T50 | Construir en la aplicación Android la interfaz de «Registro de la variante en el reporte» | 1 | Android | Terminado |
 | Sprint 2 | US39 | Registro de la variante en el reporte | Sprint2-T51 | Cubrir «Registro de la variante en el reporte» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US40 | Resultados del experimento | Sprint2-T52 | Implementar en el API la lógica y el endpoint de «Resultados del experimento» | 4 | Backend | Terminado |
 | Sprint 2 | US40 | Resultados del experimento | Sprint2-T53 | Construir en el panel web la interfaz de «Resultados del experimento» | 4 | Web | Terminado |
 | Sprint 2 | US40 | Resultados del experimento | Sprint2-T54 | Cubrir «Resultados del experimento» con pruebas automatizadas | 2 | QA | Terminado |
 | Sprint 2 | US64 | Variante disponible sin conexión | Sprint2-T55 | Implementar en el API la lógica y el endpoint de «Variante disponible sin conexión» | 2 | Backend | Terminado |
-| Sprint 2 | US64 | Variante disponible sin conexión | Sprint2-T56 | Construir en la aplicación Android la interfaz de «Variante disponible sin conexión» | 3 | Móvil | Terminado |
+| Sprint 2 | US64 | Variante disponible sin conexión | Sprint2-T56 | Construir en la aplicación Android la interfaz de «Variante disponible sin conexión» | 3 | Android | Terminado |
 | Sprint 2 | US64 | Variante disponible sin conexión | Sprint2-T57 | Cubrir «Variante disponible sin conexión» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US01 | Registro de trabajador | Sprint2-T58 | Implementar en el API la lógica y el endpoint de «Registro de trabajador» | 3 | Backend | Terminado |
 | Sprint 2 | US01 | Registro de trabajador | Sprint2-T59 | Construir en el panel web la interfaz de «Registro de trabajador» | 3 | Web | Terminado |
-| Sprint 2 | US01 | Registro de trabajador | Sprint2-T60 | Construir en la aplicación Android la interfaz de «Registro de trabajador» | 3 | Móvil | Terminado |
+| Sprint 2 | US01 | Registro de trabajador | Sprint2-T60 | Construir en la aplicación Android la interfaz de «Registro de trabajador» | 3 | Android | Terminado |
 | Sprint 2 | US01 | Registro de trabajador | Sprint2-T61 | Cubrir «Registro de trabajador» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US03 | Sesión persistente en campo | Sprint2-T62 | Implementar en el API la lógica y el endpoint de «Sesión persistente en campo» | 1 | Backend | Terminado |
 | Sprint 2 | US03 | Sesión persistente en campo | Sprint2-T63 | Construir en el panel web la interfaz de «Sesión persistente en campo» | 2 | Web | Terminado |
-| Sprint 2 | US03 | Sesión persistente en campo | Sprint2-T64 | Construir en la aplicación Android la interfaz de «Sesión persistente en campo» | 2 | Móvil | Terminado |
+| Sprint 2 | US03 | Sesión persistente en campo | Sprint2-T64 | Construir en la aplicación Android la interfaz de «Sesión persistente en campo» | 2 | Android | Terminado |
 | Sprint 2 | US03 | Sesión persistente en campo | Sprint2-T65 | Cubrir «Sesión persistente en campo» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US05 | Gestión de áreas | Sprint2-T66 | Implementar en el API la lógica y el endpoint de «Gestión de áreas» | 1 | Backend | Terminado |
 | Sprint 2 | US05 | Gestión de áreas | Sprint2-T67 | Construir en el panel web la interfaz de «Gestión de áreas» | 2 | Web | Terminado |
@@ -2951,7 +2961,7 @@ condición de paridad que el proyecto se impuso.
 | Sprint 2 | US42 | Cierre de sesión | Sprint2-T76 | Construir en el panel web la interfaz de «Cierre de sesión» | 1 | Web | Terminado |
 | Sprint 2 | US19 | Consulta de la matriz en campo | Sprint2-T77 | Implementar en el API la lógica y el endpoint de «Consulta de la matriz en campo» | 1 | Backend | Terminado |
 | Sprint 2 | US19 | Consulta de la matriz en campo | Sprint2-T78 | Construir en el panel web la interfaz de «Consulta de la matriz en campo» | 2 | Web | Terminado |
-| Sprint 2 | US19 | Consulta de la matriz en campo | Sprint2-T79 | Construir en la aplicación Android la interfaz de «Consulta de la matriz en campo» | 2 | Móvil | Terminado |
+| Sprint 2 | US19 | Consulta de la matriz en campo | Sprint2-T79 | Construir en la aplicación Android la interfaz de «Consulta de la matriz en campo» | 2 | Android | Terminado |
 | Sprint 2 | US19 | Consulta de la matriz en campo | Sprint2-T80 | Cubrir «Consulta de la matriz en campo» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US20 | Registro de peligros | Sprint2-T81 | Implementar en el API la lógica y el endpoint de «Registro de peligros» | 4 | Backend | Terminado |
 | Sprint 2 | US20 | Registro de peligros | Sprint2-T82 | Construir en el panel web la interfaz de «Registro de peligros» | 4 | Web | Terminado |
@@ -2961,7 +2971,7 @@ condición de paridad que el proyecto se impuso.
 | Sprint 2 | US21 | Versionado de la matriz | Sprint2-T86 | Cubrir «Versionado de la matriz» con pruebas automatizadas | 2 | QA | Terminado |
 | Sprint 2 | US22 | Trazabilidad con el hallazgo de origen | Sprint2-T87 | Implementar en el API la lógica y el endpoint de «Trazabilidad con el hallazgo de origen» | 1 | Backend | Terminado |
 | Sprint 2 | US22 | Trazabilidad con el hallazgo de origen | Sprint2-T88 | Construir en el panel web la interfaz de «Trazabilidad con el hallazgo de origen» | 2 | Web | Terminado |
-| Sprint 2 | US22 | Trazabilidad con el hallazgo de origen | Sprint2-T89 | Construir en la aplicación Android la interfaz de «Trazabilidad con el hallazgo de origen» | 2 | Móvil | Terminado |
+| Sprint 2 | US22 | Trazabilidad con el hallazgo de origen | Sprint2-T89 | Construir en la aplicación Android la interfaz de «Trazabilidad con el hallazgo de origen» | 2 | Android | Terminado |
 | Sprint 2 | US22 | Trazabilidad con el hallazgo de origen | Sprint2-T90 | Cubrir «Trazabilidad con el hallazgo de origen» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US52 | Consultar versiones anteriores de la matriz | Sprint2-T91 | Implementar en el API la lógica y el endpoint de «Consultar versiones anteriores de la matriz» | 4 | Backend | Terminado |
 | Sprint 2 | US52 | Consultar versiones anteriores de la matriz | Sprint2-T92 | Construir en el panel web la interfaz de «Consultar versiones anteriores de la matriz» | 4 | Web | Terminado |
@@ -2980,11 +2990,11 @@ condición de paridad que el proyecto se impuso.
 | Sprint 2 | US24 | Registro de entrega | Sprint2-T105 | Cubrir «Registro de entrega» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US25 | Conformidad del trabajador | Sprint2-T106 | Implementar en el API la lógica y el endpoint de «Conformidad del trabajador» | 1 | Backend | Terminado |
 | Sprint 2 | US25 | Conformidad del trabajador | Sprint2-T107 | Construir en el panel web la interfaz de «Conformidad del trabajador» | 2 | Web | Terminado |
-| Sprint 2 | US25 | Conformidad del trabajador | Sprint2-T108 | Construir en la aplicación Android la interfaz de «Conformidad del trabajador» | 2 | Móvil | Terminado |
+| Sprint 2 | US25 | Conformidad del trabajador | Sprint2-T108 | Construir en la aplicación Android la interfaz de «Conformidad del trabajador» | 2 | Android | Terminado |
 | Sprint 2 | US25 | Conformidad del trabajador | Sprint2-T109 | Cubrir «Conformidad del trabajador» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US26 | Alerta de EPP vencido | Sprint2-T110 | Implementar en el API la lógica y el endpoint de «Alerta de EPP vencido» | 1 | Backend | Terminado |
 | Sprint 2 | US26 | Alerta de EPP vencido | Sprint2-T111 | Construir en el panel web la interfaz de «Alerta de EPP vencido» | 1 | Web | Terminado |
-| Sprint 2 | US26 | Alerta de EPP vencido | Sprint2-T112 | Construir en la aplicación Android la interfaz de «Alerta de EPP vencido» | 1 | Móvil | Terminado |
+| Sprint 2 | US26 | Alerta de EPP vencido | Sprint2-T112 | Construir en la aplicación Android la interfaz de «Alerta de EPP vencido» | 1 | Android | Terminado |
 | Sprint 2 | US26 | Alerta de EPP vencido | Sprint2-T113 | Cubrir «Alerta de EPP vencido» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US55 | Control de stock del catálogo | Sprint2-T114 | Implementar en el API la lógica y el endpoint de «Control de stock del catálogo» | 1 | Backend | Terminado |
 | Sprint 2 | US55 | Control de stock del catálogo | Sprint2-T115 | Construir en el panel web la interfaz de «Control de stock del catálogo» | 2 | Web | Terminado |
@@ -2994,18 +3004,18 @@ condición de paridad que el proyecto se impuso.
 | Sprint 2 | US27 | Programa de inspecciones | Sprint2-T119 | Cubrir «Programa de inspecciones» con pruebas automatizadas | 2 | QA | Terminado |
 | Sprint 2 | US28 | Ejecución con checklist | Sprint2-T120 | Implementar en el API la lógica y el endpoint de «Ejecución con checklist» | 3 | Backend | Terminado |
 | Sprint 2 | US28 | Ejecución con checklist | Sprint2-T121 | Construir en el panel web la interfaz de «Ejecución con checklist» | 3 | Web | Terminado |
-| Sprint 2 | US28 | Ejecución con checklist | Sprint2-T122 | Construir en la aplicación Android la interfaz de «Ejecución con checklist» | 3 | Móvil | Terminado |
+| Sprint 2 | US28 | Ejecución con checklist | Sprint2-T122 | Construir en la aplicación Android la interfaz de «Ejecución con checklist» | 3 | Android | Terminado |
 | Sprint 2 | US28 | Ejecución con checklist | Sprint2-T123 | Cubrir «Ejecución con checklist» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US29 | Inspecciones vencidas | Sprint2-T124 | Implementar en el API la lógica y el endpoint de «Inspecciones vencidas» | 1 | Backend | Terminado |
 | Sprint 2 | US29 | Inspecciones vencidas | Sprint2-T125 | Construir en el panel web la interfaz de «Inspecciones vencidas» | 2 | Web | Terminado |
-| Sprint 2 | US29 | Inspecciones vencidas | Sprint2-T126 | Construir en la aplicación Android la interfaz de «Inspecciones vencidas» | 2 | Móvil | Terminado |
+| Sprint 2 | US29 | Inspecciones vencidas | Sprint2-T126 | Construir en la aplicación Android la interfaz de «Inspecciones vencidas» | 2 | Android | Terminado |
 | Sprint 2 | US29 | Inspecciones vencidas | Sprint2-T127 | Cubrir «Inspecciones vencidas» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US56 | Programar la siguiente inspección | Sprint2-T128 | Implementar en el API la lógica y el endpoint de «Programar la siguiente inspección» | 2 | Backend | Terminado |
 | Sprint 2 | US56 | Programar la siguiente inspección | Sprint2-T129 | Construir en el panel web la interfaz de «Programar la siguiente inspección» | 3 | Web | Terminado |
 | Sprint 2 | US56 | Programar la siguiente inspección | Sprint2-T130 | Cubrir «Programar la siguiente inspección» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US36 | Tasa de cumplimiento de inspecciones | Sprint2-T131 | Implementar en el API la lógica y el endpoint de «Tasa de cumplimiento de inspecciones» | 3 | Backend | Terminado |
 | Sprint 2 | US36 | Tasa de cumplimiento de inspecciones | Sprint2-T132 | Construir en el panel web la interfaz de «Tasa de cumplimiento de inspecciones» | 3 | Web | Terminado |
-| Sprint 2 | US36 | Tasa de cumplimiento de inspecciones | Sprint2-T133 | Construir en la aplicación Android la interfaz de «Tasa de cumplimiento de inspecciones» | 3 | Móvil | Terminado |
+| Sprint 2 | US36 | Tasa de cumplimiento de inspecciones | Sprint2-T133 | Construir en la aplicación Android la interfaz de «Tasa de cumplimiento de inspecciones» | 3 | Android | Terminado |
 | Sprint 2 | US36 | Tasa de cumplimiento de inspecciones | Sprint2-T134 | Cubrir «Tasa de cumplimiento de inspecciones» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US57 | Cumplimiento por área | Sprint2-T135 | Implementar en el API la lógica y el endpoint de «Cumplimiento por área» | 2 | Backend | Terminado |
 | Sprint 2 | US57 | Cumplimiento por área | Sprint2-T136 | Construir en el panel web la interfaz de «Cumplimiento por área» | 3 | Web | Terminado |
@@ -3021,7 +3031,7 @@ condición de paridad que el proyecto se impuso.
 | Sprint 2 | US32 | Acta de reunión | Sprint2-T146 | Cubrir «Acta de reunión» con pruebas automatizadas | 2 | QA | Terminado |
 | Sprint 2 | US33 | Control de quórum | Sprint2-T147 | Implementar en el API la lógica y el endpoint de «Control de quórum» | 1 | Backend | Terminado |
 | Sprint 2 | US33 | Control de quórum | Sprint2-T148 | Construir en el panel web la interfaz de «Control de quórum» | 2 | Web | Terminado |
-| Sprint 2 | US33 | Control de quórum | Sprint2-T149 | Construir en la aplicación Android la interfaz de «Control de quórum» | 2 | Móvil | Terminado |
+| Sprint 2 | US33 | Control de quórum | Sprint2-T149 | Construir en la aplicación Android la interfaz de «Control de quórum» | 2 | Android | Terminado |
 | Sprint 2 | US33 | Control de quórum | Sprint2-T150 | Cubrir «Control de quórum» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US34 | Acuerdos con responsable y plazo | Sprint2-T151 | Implementar en el API la lógica y el endpoint de «Acuerdos con responsable y plazo» | 2 | Backend | Terminado |
 | Sprint 2 | US34 | Acuerdos con responsable y plazo | Sprint2-T152 | Construir en el panel web la interfaz de «Acuerdos con responsable y plazo» | 3 | Web | Terminado |
@@ -3033,39 +3043,39 @@ condición de paridad que el proyecto se impuso.
 | Sprint 2 | US59 | Seguimiento del estado de los acuerdos | Sprint2-T158 | Construir en el panel web la interfaz de «Seguimiento del estado de los acuerdos» | 2 | Web | Terminado |
 | Sprint 2 | US59 | Seguimiento del estado de los acuerdos | Sprint2-T159 | Cubrir «Seguimiento del estado de los acuerdos» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US60 | Consultar las actas desde el celular | Sprint2-T160 | Implementar en el API la lógica y el endpoint de «Consultar las actas desde el celular» | 2 | Backend | Terminado |
-| Sprint 2 | US60 | Consultar las actas desde el celular | Sprint2-T161 | Construir en la aplicación Android la interfaz de «Consultar las actas desde el celular» | 3 | Móvil | Terminado |
+| Sprint 2 | US60 | Consultar las actas desde el celular | Sprint2-T161 | Construir en la aplicación Android la interfaz de «Consultar las actas desde el celular» | 3 | Android | Terminado |
 | Sprint 2 | US60 | Consultar las actas desde el celular | Sprint2-T162 | Cubrir «Consultar las actas desde el celular» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US37 | Exportación de evidencia | Sprint2-T163 | Implementar en el API la lógica y el endpoint de «Exportación de evidencia» | 6 | Backend | Terminado |
 | Sprint 2 | US37 | Exportación de evidencia | Sprint2-T164 | Construir en el panel web la interfaz de «Exportación de evidencia» | 7 | Web | Terminado |
 | Sprint 2 | US37 | Exportación de evidencia | Sprint2-T165 | Cubrir «Exportación de evidencia» con pruebas automatizadas | 3 | QA | Terminado |
 | Sprint 2 | US61 | MTTR por severidad | Sprint2-T166 | Implementar en el API la lógica y el endpoint de «MTTR por severidad» | 1 | Backend | Terminado |
 | Sprint 2 | US61 | MTTR por severidad | Sprint2-T167 | Construir en el panel web la interfaz de «MTTR por severidad» | 2 | Web | Terminado |
-| Sprint 2 | US61 | MTTR por severidad | Sprint2-T168 | Construir en la aplicación Android la interfaz de «MTTR por severidad» | 2 | Móvil | Terminado |
+| Sprint 2 | US61 | MTTR por severidad | Sprint2-T168 | Construir en la aplicación Android la interfaz de «MTTR por severidad» | 2 | Android | Terminado |
 | Sprint 2 | US61 | MTTR por severidad | Sprint2-T169 | Cubrir «MTTR por severidad» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US62 | Exportar cada registro obligatorio | Sprint2-T170 | Implementar en el API la lógica y el endpoint de «Exportar cada registro obligatorio» | 2 | Backend | Terminado |
 | Sprint 2 | US62 | Exportar cada registro obligatorio | Sprint2-T171 | Construir en el panel web la interfaz de «Exportar cada registro obligatorio» | 3 | Web | Terminado |
 | Sprint 2 | US62 | Exportar cada registro obligatorio | Sprint2-T172 | Cubrir «Exportar cada registro obligatorio» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US63 | Resumen de hallazgos | Sprint2-T173 | Implementar en el API la lógica y el endpoint de «Resumen de hallazgos» | 1 | Backend | Terminado |
 | Sprint 2 | US63 | Resumen de hallazgos | Sprint2-T174 | Construir en el panel web la interfaz de «Resumen de hallazgos» | 2 | Web | Terminado |
-| Sprint 2 | US63 | Resumen de hallazgos | Sprint2-T175 | Construir en la aplicación Android la interfaz de «Resumen de hallazgos» | 2 | Móvil | Terminado |
+| Sprint 2 | US63 | Resumen de hallazgos | Sprint2-T175 | Construir en la aplicación Android la interfaz de «Resumen de hallazgos» | 2 | Android | Terminado |
 | Sprint 2 | US63 | Resumen de hallazgos | Sprint2-T176 | Cubrir «Resumen de hallazgos» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US65 | Identidad visual consistente | Sprint2-T177 | Implementar en el API la lógica y el endpoint de «Identidad visual consistente» | 3 | Backend | Terminado |
 | Sprint 2 | US65 | Identidad visual consistente | Sprint2-T178 | Construir en el panel web la interfaz de «Identidad visual consistente» | 3 | Web | Terminado |
-| Sprint 2 | US65 | Identidad visual consistente | Sprint2-T179 | Construir en la aplicación Android la interfaz de «Identidad visual consistente» | 3 | Móvil | Terminado |
+| Sprint 2 | US65 | Identidad visual consistente | Sprint2-T179 | Construir en la aplicación Android la interfaz de «Identidad visual consistente» | 3 | Android | Terminado |
 | Sprint 2 | US65 | Identidad visual consistente | Sprint2-T180 | Cubrir «Identidad visual consistente» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US66 | Navegación siempre accesible | Sprint2-T181 | Implementar en el API la lógica y el endpoint de «Navegación siempre accesible» | 1 | Backend | Terminado |
 | Sprint 2 | US66 | Navegación siempre accesible | Sprint2-T182 | Construir en el panel web la interfaz de «Navegación siempre accesible» | 1 | Web | Terminado |
-| Sprint 2 | US66 | Navegación siempre accesible | Sprint2-T183 | Construir en la aplicación Android la interfaz de «Navegación siempre accesible» | 1 | Móvil | Terminado |
+| Sprint 2 | US66 | Navegación siempre accesible | Sprint2-T183 | Construir en la aplicación Android la interfaz de «Navegación siempre accesible» | 1 | Android | Terminado |
 | Sprint 2 | US66 | Navegación siempre accesible | Sprint2-T184 | Cubrir «Navegación siempre accesible» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US67 | Uso desde pantallas pequeñas | Sprint2-T185 | Implementar en el API la lógica y el endpoint de «Uso desde pantallas pequeñas» | 4 | Backend | Terminado |
 | Sprint 2 | US67 | Uso desde pantallas pequeñas | Sprint2-T186 | Construir en el panel web la interfaz de «Uso desde pantallas pequeñas» | 4 | Web | Terminado |
 | Sprint 2 | US67 | Uso desde pantallas pequeñas | Sprint2-T187 | Cubrir «Uso desde pantallas pequeñas» con pruebas automatizadas | 2 | QA | Terminado |
 | Sprint 2 | US68 | Errores comprensibles | Sprint2-T188 | Implementar en el API la lógica y el endpoint de «Errores comprensibles» | 1 | Backend | Terminado |
 | Sprint 2 | US68 | Errores comprensibles | Sprint2-T189 | Construir en el panel web la interfaz de «Errores comprensibles» | 2 | Web | Terminado |
-| Sprint 2 | US68 | Errores comprensibles | Sprint2-T190 | Construir en la aplicación Android la interfaz de «Errores comprensibles» | 2 | Móvil | Terminado |
+| Sprint 2 | US68 | Errores comprensibles | Sprint2-T190 | Construir en la aplicación Android la interfaz de «Errores comprensibles» | 2 | Android | Terminado |
 | Sprint 2 | US68 | Errores comprensibles | Sprint2-T191 | Cubrir «Errores comprensibles» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | US69 | Reintento ante fallo de red | Sprint2-T192 | Implementar en el API la lógica y el endpoint de «Reintento ante fallo de red» | 2 | Backend | Terminado |
-| Sprint 2 | US69 | Reintento ante fallo de red | Sprint2-T193 | Construir en la aplicación Android la interfaz de «Reintento ante fallo de red» | 3 | Móvil | Terminado |
+| Sprint 2 | US69 | Reintento ante fallo de red | Sprint2-T193 | Construir en la aplicación Android la interfaz de «Reintento ante fallo de red» | 3 | Android | Terminado |
 | Sprint 2 | US69 | Reintento ante fallo de red | Sprint2-T194 | Cubrir «Reintento ante fallo de red» con pruebas automatizadas | 1 | QA | Terminado |
 | Sprint 2 | TS07 | Validación local del mensaje de commit | Sprint2-T195 | Configurar «Validación local del mensaje de commit» | 3 | DevOps | Terminado |
 | Sprint 2 | TS07 | Validación local del mensaje de commit | Sprint2-T196 | Verificar «Validación local del mensaje de commit» en el pipeline | 1 | DevOps | Terminado |
@@ -4299,7 +4309,7 @@ indica el evento, su disparador y dónde queda registrado.
 |---|---|---|---|---|
 | `variante_asignada` | Primer inicio de sesión tras activarse el experimento | Usuario, experimento, variante, fecha | Web y móvil | Tabla `experiments_assignment` |
 | `reporte_creado` | El usuario envía el reporte | Usuario, tipo, categoría, área, severidad, variante del formulario, con o sin foto, con o sin GPS, fecha de ocurrencia y de recepción | Web y móvil | Tabla `reports_report` |
-| `reporte_sincronizado_offline` | El worker sube un reporte de la cola local | Marca `synced_offline` y diferencia entre ocurrencia y recepción | Móvil | Campo del mismo reporte |
+| `reporte_sincronizado_offline` | El worker sube un reporte de la cola local | Marca `synced_offline` y diferencia entre ocurrencia y recepción | Android | Campo del mismo reporte |
 | `reporte_asignado` | El supervisor asigna responsable | Autor, responsable, fecha, estado resultante | Web y móvil | Tabla `reports_reportaction` |
 | `reporte_cerrado` | El supervisor cierra el hallazgo | Fecha de cierre, acción correctiva, tiempo de resolución | Web y móvil | Campos del reporte y bitácora |
 | `inspeccion_realizada` | Se completa una inspección | Programa, fecha programada, fecha de ejecución, resultados del checklist | Web y móvil | Tabla `inspections_inspection` |

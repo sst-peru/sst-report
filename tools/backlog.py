@@ -8,6 +8,11 @@ import datetime
 import re
 from pathlib import Path
 
+from ubicaciones import ubicacion
+
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 RUTA = Path(__file__).resolve().parent.parent / "README.md"
 
 INICIO_CICLO = datetime.date(2026, 8, 24)  # lunes de la semana 1 del ciclo 2026-20
@@ -93,8 +98,8 @@ def cargar(texto):
 
 def tabla(items, historias):
     filas = [
-        "| # | ID | Historia | Épica | Plataforma | Story Points |",
-        "|---|---|---|---|---|---|",
+        "| # | ID | Historia | Épica | Plataforma | Dónde encontrarlo | Story Points |",
+        "|---|---|---|---|---|---|---|",
     ]
     total = 0
     for n, ident in enumerate(items, 1):
@@ -102,8 +107,9 @@ def tabla(items, historias):
         puntos = PUNTOS[ident]
         total += puntos
         filas.append(
-            "| %d | %s | %s | %s | %s | %d |"
-            % (n, ident, h["titulo"], h["epica"], h["plataforma"], puntos)
+            "| %d | %s | %s | %s | %s | %s | %d |"
+            % (n, ident, h["titulo"], h["epica"], h["plataforma"],
+               ubicacion(ident), puntos)
         )
     return "\n".join(filas), total
 
@@ -120,6 +126,16 @@ equipo: salen del calendario del trabajo final, que sitúa los hitos en las sema
 del ciclo 2026-20, iniciado el lunes 24 de agosto de 2026. Esa es también la razón de que los
 sprints sean desiguales en duración: entre el primer hito y el segundo median tres semanas, y
 entre el segundo y el tercero, cinco.
+
+Dos columnas de las tablas que siguen merecen una aclaración:
+
+- **Plataforma** nombra el cliente concreto en el que vive la historia —`Web`, `Android`, o
+  `Android y Web` cuando existe en los dos para el mismo rol—, y `—` cuando no tiene interfaz
+  propia porque es trabajo de backend o de infraestructura.
+- **Dónde encontrarlo** indica la ruta exacta para llegar a esa funcionalidad en cada cliente: la
+  opción de la barra lateral o la ruta en el panel web, y la pestaña de la barra inferior o la
+  entrada de la pantalla «Más» en la aplicación Android. Permite verificar cada historia sobre el
+  producto en ejecución sin tener que buscarla.
 
 """
 
