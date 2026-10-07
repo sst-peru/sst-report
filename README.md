@@ -302,8 +302,24 @@ Outcome 4.
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---|---|---|
-| **4.c.1** Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | <!-- COMPLETAR: Apellidos y Nombres --><br><br>**TF**<br><!-- COMPLETAR: acciones concretas y verificables --> | <!-- COMPLETAR: conclusiones del grupo, acumulables entre entregas --> |
-| **4.c.2** Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | <!-- COMPLETAR: Apellidos y Nombres --><br><br>**TF**<br><!-- COMPLETAR --> | <!-- COMPLETAR --> |
+| **4.c.1** Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | **Esquirva León Miguel Juan Diego**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Mora Blas Diego Alonzo**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Villafuerte Tapia Renzo Alonso**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --> | <!-- COMPLETAR: conclusiones del grupo, acumulables entre entregas --> |
+| **4.c.2** Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | **Esquirva León Miguel Juan Diego**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Mora Blas Diego Alonzo**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Villafuerte Tapia Renzo Alonso**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --> | <!-- COMPLETAR: conclusiones del grupo, acumulables entre entregas --> |
+
+El enunciado del trabajo final pide, además del cuadro anterior, **una subsección por cada
+integrante** en la que describa por escrito la relación entre el outcome, sus dimensiones y el
+trabajo que ha realizado. Esas subsecciones son las que siguen; cada integrante redacta la suya.
+
+### Esquirva León Miguel Juan Diego
+
+<!-- COMPLETAR: redacción propia del integrante sobre los criterios 4.c.1 y 4.c.2. -->
+
+### Mora Blas Diego Alonzo
+
+<!-- COMPLETAR: redacción propia del integrante sobre los criterios 4.c.1 y 4.c.2. -->
+
+### Villafuerte Tapia Renzo Alonso
+
+<!-- COMPLETAR: redacción propia del integrante sobre los criterios 4.c.1 y 4.c.2. -->
 
 ---
 
