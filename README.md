@@ -55,17 +55,23 @@ producto. La rama `main` conserva únicamente las versiones entregadas; `develop
 trabajo en curso, y cada sección del informe se redacta en una rama `docs/<sección>` que se
 incorpora mediante Pull Request.
 
-**Desarrollo de las actividades del informe.** Entre el 16 de septiembre y el 8 de noviembre
-de 2026 el repositorio `sst-report` acumuló 229 commits, en su gran mayoría con el formato de
-Conventional Commits que valida el hook `commit-msg`. El alcance de cada commit identifica el
-capítulo trabajado, lo que permite seguir el avance del informe sección por sección: los
-capítulos con más actividad fueron el VIII (42 commits), el IV (37) y el VI (20).
+**Desarrollo de las actividades del informe.** Entre el 16 de septiembre y el 9 de noviembre
+de 2026 la rama `develop` del repositorio `sst-report` acumuló 250 commits, 247 de ellos con el
+formato de Conventional Commits que valida el hook `commit-msg`. El alcance de cada commit
+identifica el capítulo trabajado, lo que permite seguir el avance del informe sección por
+sección: los capítulos con más actividad fueron el VIII (44 commits), el IV (38), el VI (21) y
+el III (20).
 
 | Integrante | Commits |
 |---|---|
-| Villafuerte Tapia Renzo Alonso | 219 |
+| Villafuerte Tapia Renzo Alonso | 242 |
 | Mora Blas Diego Alonzo | 6 |
-| Esquirva León Miguel Juan Diego | 4 |
+| Esquirva León Miguel Juan Diego | 2 |
+
+Los conteos salen del historial de Git (`git shortlog -sne develop`). La gráfica de GitHub
+Insights muestra menos commits porque solo atribuye los que se hicieron con un correo vinculado
+a la cuenta de GitHub del autor; los realizados con otro correo configurado en Git no aparecen
+en ella, aunque sí están en el historial del repositorio.
 
 <p align="center"><img src="assets/img/insights-sst-report.png" alt="GitHub Insights del repositorio sst-report" width="900"></p>
 
