@@ -1166,36 +1166,42 @@ cliente lo exija en una licitación (E8).
 <!-- IMAGEN REQUERIDA: exportar cada User Persona desde UXPressia a
      assets/img/persona-operario.png y assets/img/persona-supervisor.png -->
 
-> **Nota de método.** Los arquetipos que siguen son **hipótesis de trabajo** construidas a
-> partir del análisis del dominio y de la normativa, y deben ser **confirmados o corregidos con
-> las entrevistas reales** antes de la entrega. Se incluyen aquí para orientar el diseño, no
-> como resultado de investigación ya realizada.
+> **Nota de método.** Cada persona es un **arquetipo** que sintetiza a los cuatro entrevistados
+> de su segmento (2.2.2): el nombre y los datos personales son ficticios, pero cada rasgo proviene
+> de lo que dijeron los entrevistados, que se citan entre paréntesis. Reemplazan a los arquetipos
+> de hipótesis de la entrega anterior.
 
 ![User Persona - Operario](assets/img/persona-operario.png)
 
-| | **Persona 1 (hipótesis): el operario que ve el peligro** |
+| | **Persona 1: Wilmer, el operario que ve el peligro primero** |
 |---|---|
-| Nombre | <!-- COMPLETAR tras las entrevistas --> |
-| Edad / Distrito | <!-- COMPLETAR --> |
-| Ocupación | Operario de obra civil |
-| Dispositivos | Android de gama media, plan prepago con datos limitados |
-| Objetivos | Terminar su jornada sin accidentes; que lo que advierte se corrija; no tener problemas con su supervisor |
-| Frustraciones | Llenar formatos le quita tiempo; no sabe si lo que reportó se atendió; a veces no hay señal donde trabaja |
-| Motivaciones | La seguridad propia y la de sus compañeros; evitar la pérdida de días de trabajo por una lesión |
-| Cómo se relaciona con el producto | Lo abre solo cuando ve algo; espera resolverlo en menos de un minuto |
+| Nombre | Wilmer Huamán (arquetipo de E1 a E4) |
+| Edad / Distrito | 39 años / San Juan de Lurigancho |
+| Ocupación | Operario de construcción con más de diez años en el oficio; trabaja en obra, almacén o planta según el proyecto |
+| Dispositivos | Celular propio que lleva en el bolsillo (Android en la mayoría de casos, a veces iPhone); plan con datos limitados. En algunas plantas el celular está prohibido y queda en el casillero (E3) |
+| Contexto de trabajo | Manos con cemento, óxido o grasa; zonas sin señal como sótanos o el tajo (E1, E4); el formato de reporte está lejos de su puesto: en la oficina de seguridad, en una PC compartida o junto al botiquín (E1, E2, E3) |
+| Objetivos | Terminar la jornada sin accidentes; que lo que advierte se corrija rápido; no tener problemas con sus compañeros ni con su jefe |
+| Frustraciones | Llenar el formato le toma de 3 a 10 minutos y lo obliga a dejar su frente (E1, E2); los términos técnicos del formato no los entiende (E3); nunca le avisan si lo reportado se corrigió (E1, E3); el papel se ensucia o se rompe (E4) |
+| Miedos | Que lo tilden de «soplón» o le cueste la chamba si reporta a un compañero o al jefe (E1, E2); que le griten por parar la producción por algo que «no era para tanto» (E3) |
+| Motivaciones | Su seguridad y la de sus compañeros; ya avisa por voz, WhatsApp o radio cuando ve algo grave (E1 a E4) |
+| Cita representativa | «Ah, de hecho que sí, más rápido. Mi única duda sería si el reporte va con mi nombre.» (E1) |
+| Cómo se relaciona con el producto | Lo abre solo cuando ve algo y espera terminar en menos de un minuto; necesita que funcione sin señal, que no gaste sus datos y poder reportar sin su nombre cuando la falta es de otro |
 
 ![User Persona - Supervisor](assets/img/persona-supervisor.png)
 
-| | **Persona 2 (hipótesis): el responsable de que el sistema funcione** |
+| | **Persona 2: Paola, la responsable de que el sistema funcione** |
 |---|---|
-| Nombre | <!-- COMPLETAR tras las entrevistas --> |
-| Edad / Distrito | <!-- COMPLETAR --> |
-| Ocupación | Supervisor de SST / miembro del comité |
-| Dispositivos | Laptop de trabajo y celular; usa Excel a diario |
-| Objetivos | Que no ocurran accidentes; poder demostrar ante una inspección que el sistema opera |
-| Frustraciones | Consolidar información dispersa; enterarse tarde de los peligros; matriz IPERC desactualizada |
-| Motivaciones | Responsabilidad profesional y legal; reducir la exposición de la empresa |
-| Cómo se relaciona con el producto | Lo usa a diario desde el panel web y ocasionalmente desde el celular en obra |
+| Nombre | Paola Rojas (arquetipo de E5 a E8) |
+| Edad / Distrito | 32 años / Santiago de Surco |
+| Ocupación | Ingeniera industrial; supervisora o coordinadora de SST de entre 80 y 400 trabajadores, a veces en varias sedes o con subcontratas (E5, E6, E8) |
+| Dispositivos | Laptop de trabajo con Excel o Google Sheets todo el día y celular con decenas de grupos de WhatsApp (E5, E6, E8) |
+| Contexto de trabajo | Recibe los hallazgos por WhatsApp, a gritos en obra o por formularios, y los consolida a mano en una hoja de cálculo cada semana (E5, E6); los registros de EPP y las actas siguen en papel (E5 a E8) |
+| Objetivos | Que no ocurran accidentes; poder demostrar ante SUNAFIL que el sistema funciona; tener indicadores sin armar tablas dinámicas cada mes (E6) |
+| Frustraciones | Pasa de 4 horas a varios días reuniendo evidencia para una inspección (E5, E7); cumple apenas el 60 % de sus inspecciones porque vive «apagando incendios» (E5); la matriz IPERC de 500 filas solo se toca una vez al año (E6); el supervisor de turno transmite mal lo que dijo el operario (E7) |
+| Experiencias previas | Software evaluado o comprado y descartado: cobraba en dólares por usuario (E5), el sistema interno no tenía soporte (E6) o era lentísimo en el celular (E7) |
+| Motivaciones | Responsabilidad profesional y legal; pasar de «perseguidora de firmas y actas» a analista de tendencias (E6) |
+| Cita representativa | «Dejaría de caminar a ciegas por la obra buscando qué está mal.» (E5) |
+| Cómo se relaciona con el producto | Usa el panel web a diario para asignar, cerrar y exportar; necesita convencer a su gerencia con el argumento de evitar multas y ahorrar horas-hombre, con un precio en soles y sin depender del área de Sistemas (E5, E6, E7) |
 
 ### 2.3.2. User Task Matrix
 
