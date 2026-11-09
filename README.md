@@ -4519,6 +4519,10 @@ probada. Al no estar adjuntas, no se atribuyen disponibilidad o tiempos de recup
 
 ## 7.4. Continuous Monitoring
 
+El monitoreo continuo cierra el ciclo DevOps: observa el comportamiento de la aplicación en
+ejecución, detecta desviaciones respecto de los umbrales definidos y notifica al responsable
+para que actúe antes de que el problema llegue al usuario.
+
 ### 7.4.1. Tools and Practices
 
 El monitoreo continuo cumple aquí una doble función: vigilar la salud técnica del sistema y
