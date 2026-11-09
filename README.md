@@ -1420,10 +1420,10 @@ Dos columnas de las tablas que siguen merecen una aclaración:
 | 6 | US16 | Cierre con acción correctiva | EP03 | Android y Web | **Web:** Reportes → detalle del hallazgo → «Cerrar»<br>**Android:** Pestaña «Reportes» → detalle → «Cerrar» | 5 |
 | 7 | US15 | Asignación de responsable | EP03 | Android y Web | **Web:** Reportes → detalle del hallazgo → «Asignar»<br>**Android:** Pestaña «Reportes» → detalle → «Asignar» | 5 |
 | 8 | US18 | Bitácora del hallazgo | EP03 | Android y Web | **Web:** Reportes → detalle → sección «Bitácora»<br>**Android:** Pestaña «Reportes» → detalle → «Bitácora» | 3 |
-| 9 | US09 | Evidencia fotográfica | EP02 | Android y Web | **Web:** Reportar → paso 2, «Evidencia»<br>**Android:** Pestaña «Reportar» → paso 2, «Evidencia» | 5 |
-| 10 | US10 | Geolocalización del hallazgo | EP02 | Android y Web | **Web:** Reportar → paso 2, «Ubicación»<br>**Android:** Pestaña «Reportar» → paso 2, «Ubicación» | 5 |
-| 11 | US11 | Fecha real de ocurrencia | EP02 | Android y Web | **Web:** Reportar → paso 3, «Fecha de ocurrencia»<br>**Android:** Pestaña «Reportar» → paso 3, «Fecha de ocurrencia» | 3 |
-| 12 | US47 | Categorías según el tipo de hallazgo | EP02 | Android y Web | **Web:** Reportar → paso 1, «Tipo de hallazgo»<br>**Android:** Pestaña «Reportar» → paso 1, «Tipo de hallazgo» | 2 |
+| 9 | US09 | Evidencia fotográfica | EP02 | Android y Web | **Web:** Reportar → paso 3, «Foto» (formulario largo: «Evidencia fotográfica»); en el detalle, tocar la foto la amplía<br>**Android:** Pestaña «Reportar» → paso 2, «Evidencia» | 5 |
+| 10 | US10 | Geolocalización del hallazgo | EP02 | Android y Web | **Web:** Reportar → paso 3: la ubicación se captura al elegir la foto (formulario largo: «Capturar mi ubicación»); detalle → «Ver en el mapa»<br>**Android:** Pestaña «Reportar» → paso 2, «Ubicación» | 5 |
+| 11 | US11 | Fecha real de ocurrencia | EP02 | Android y Web | **Android:** Pestaña «Reportar» → paso 3, «Fecha de ocurrencia» | 3 |
+| 12 | US47 | Categorías según el tipo de hallazgo | EP02 | Android y Web | **Web:** Reportar → paso 1, «¿Qué viste?», y paso 2, «¿De qué tipo?»<br>**Android:** Pestaña «Reportar» → paso 1, «Tipo de hallazgo» | 2 |
 | 13 | TS01 | Integración continua | — | Los cuatro | Sin interfaz: workflows de GitHub Actions en `.github/workflows/` de cada repositorio; se comprueban en la pestaña Actions de cada Pull Request | 5 |
 | 14 | TS02 | Convenciones de commits | — | Los cuatro | Sin interfaz: hook `commit-msg` en `.githooks/` y workflow «Conventional Commits», que rechazan el mensaje que no cumple el formato | 2 |
 | 15 | TS05 | Flujo de ramas GitFlow | — | Los cuatro | Sin interfaz: ramas `main` y `develop` en los cuatro repositorios, con una rama de feature por historia | 3 |
@@ -1448,9 +1448,9 @@ Dos columnas de las tablas que siguen merecen una aclaración:
 | 6 | US50 | Filtrar la bandeja | EP03 | Android y Web | **Web:** Reportes → filtros de estado, tipo y área<br>**Android:** Pestaña «Reportes» → filtros | 3 |
 | 7 | US49 | Descartar un reporte | EP03 | Web | **Web:** Reportes → detalle → «Descartar» | 2 |
 | 8 | US12 | Reporte desde la web | EP02 | Web | **Web:** Reportar (`/reportes/nuevo`) | 5 |
-| 9 | US44 | Vista previa de la evidencia | EP02 | Web | **Web:** Reportar → paso 2: miniatura de la foto elegida | 3 |
-| 10 | US45 | Ampliar la evidencia | EP02 | Web | **Web:** Reportar → paso 2 y detalle del hallazgo: tocar la foto la amplía | 3 |
-| 11 | US46 | Reemplazar la foto elegida | EP02 | Web | **Web:** Reportar → paso 2 → «Quitar» | 2 |
+| 9 | US44 | Vista previa de la evidencia | EP02 | Web | **Web:** Reportar → paso 3: miniatura de la foto elegida | 3 |
+| 10 | US45 | Ampliar la evidencia | EP02 | Web | **Web:** Reportar → paso 3 y detalle del hallazgo: tocar la foto la amplía | 3 |
+| 11 | US46 | Reemplazar la foto elegida | EP02 | Web | **Web:** Reportar → paso 3 → «Quitar» | 2 |
 | 12 | US48 | Estado de envío de mis reportes | EP02 | Android | **Android:** «Más» → «Reportes guardados en el celular»: estado Enviado o Pendiente | 3 |
 | 13 | US51 | Ubicar el hallazgo en el mapa | EP03 | Web | **Web:** Reportes → detalle → enlace de ubicación | 1 |
 | 14 | US38 | Asignación de variante | EP09 | Android y Web | **Web:** Reportar: la variante se asigna al abrir el formulario<br>**Android:** Pestaña «Reportar»: la variante se asigna al abrir el formulario | 5 |
