@@ -1500,8 +1500,8 @@ Dos columnas de las tablas que siguen merecen una aclaración:
 | 9 | US21 | Versionado de la matriz | EP04 | Web | **Web:** Matriz IPERC → selector de versión | 5 |
 | 10 | US22 | Trazabilidad con el hallazgo de origen | EP04 | Android y Web | **Web:** Matriz IPERC → columna «Hallazgo de origen»<br>**Android:** «Más» → «Matriz IPERC» | 3 |
 | 11 | US52 | Consultar versiones anteriores de la matriz | EP04 | Web | **Web:** Matriz IPERC → selector de versión → versiones históricas | 5 |
-| 12 | US53 | Publicar una nueva versión de la matriz | EP04 | Web | **Web:** Matriz IPERC → «Nueva versión» | 5 |
-| 13 | US54 | Retirar un peligro de la matriz | EP04 | Web | **Web:** Matriz IPERC → «Retirar» en la fila del peligro | 2 |
+| 12 | US53 | Publicar una nueva versión de la matriz | EP04 | Web | **Web:** Matriz IPERC → «Nueva versión» y «Poner vigente» | 5 |
+| 13 | US54 | Retirar un peligro de la matriz | EP04 | Web | **Web:** Matriz IPERC → «Quitar» en la fila del peligro | 2 |
 | 14 | US23 | Catálogo de EPP | EP05 | Web | **Web:** Equipos de protección (`/epp`) → pestaña Catálogo | 3 |
 | 15 | US24 | Registro de entrega | EP05 | Web | **Web:** Equipos de protección → «Registrar entrega» | 3 |
 | 16 | US25 | Conformidad del trabajador | EP05 | Android y Web | **Web:** Equipos de protección → columna «Conformidad»<br>**Android:** Pestaña «Mis EPP» → «Dar conformidad» | 3 |
@@ -1510,7 +1510,7 @@ Dos columnas de las tablas que siguen merecen una aclaración:
 | 19 | US27 | Programa de inspecciones | EP06 | Web | **Web:** Inspecciones (`/inspecciones`) → «Nuevo programa» | 5 |
 | 20 | US28 | Ejecución con checklist | EP06 | Android y Web | **Web:** Inspecciones → «Realizar» con checklist<br>**Android:** Pestaña «Inspecciones» → «Realizar» con checklist | 5 |
 | 21 | US29 | Inspecciones vencidas | EP06 | Android y Web | **Web:** Inspecciones → listado, marca de vencida<br>**Android:** Pestaña «Inspecciones» → marca de vencida | 3 |
-| 22 | US56 | Programar la siguiente inspección | EP06 | Web | **Web:** Inspecciones → «Generar siguiente» | 3 |
+| 22 | US56 | Programar la siguiente inspección | EP06 | Web | **Web:** Inspecciones → «Programar la siguiente» | 3 |
 | 23 | US57 | Cumplimiento por área | EP06 | Web | **Web:** Inspecciones → indicadores por área | 3 |
 | 24 | US79 | Programa anual de capacitación | EP12 | Web | — | 5 |
 | 25 | US80 | Registro de asistencia a capacitación | EP12 | Android | — | 5 |
