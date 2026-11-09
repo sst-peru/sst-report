@@ -11,9 +11,9 @@
 
 **1ASI0732 — Diseño de Experimentos de Ingeniería de Software**
 
-**NRC:** 9108 <!-- COMPLETAR: número de referencia del curso -->
+**NRC:** 9108
 
-**Profesor:** Julio Manuel Noriega Melendez <!-- COMPLETAR: nombre del profesor -->
+**Profesor:** Julio Manuel Noriega Melendez
 
 # Informe de Trabajo Final
 
