@@ -4596,6 +4596,10 @@ siguiente ciclo.
 
 ## 8.1. Experiment Planning
 
+La planificación parte del estado actual del producto y convierte supuestos, vacíos de
+conocimiento e ideas del equipo en preguntas que pueden responderse con un experimento,
+priorizadas según la incertidumbre que reducen y el costo de equivocarse.
+
 ### 8.1.1. As-Is Summary
 
 El producto implementado cubre el ciclo completo de gestión del SGSST: captura del hallazgo en
@@ -4705,6 +4709,10 @@ La pregunta Q1 encabeza el backlog y es la que se somete a experimento en este c
 | **Decisión asociada** | Si el MTTR se deteriora, priorizar funcionalidades de capacidad de respuesta (notificaciones, asignación automática) antes que funcionalidades de captura |
 
 ## 8.2. Experiment Design
+
+El diseño traduce la pregunta priorizada en hipótesis contrastables, define qué se mide y bajo
+qué condiciones, calcula el tamaño de muestra necesario y fija el plan de seguimiento en las
+aplicaciones web y móvil.
 
 ### 8.2.1. Hypotheses
 
@@ -4882,6 +4890,10 @@ geolocalización— de trabajadores identificables. Su tratamiento queda sujeto 
 de Protección de Datos Personales y se analiza en la matriz ética de la sección 8.8.
 
 ## 8.3. Experimentation
+
+Esta sección lleva el experimento al producto: las historias To-Be que derivan del diseño, su
+priorización en el Product Backlog, el ciclo de vida apoyado por el pipeline y la planificación
+de su implementación en sprints.
 
 ### 8.3.1. To-Be User Stories
 
