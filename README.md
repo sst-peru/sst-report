@@ -470,7 +470,7 @@ API REST que ambos consumen.
 
 | | |
 |---|---|
-| <img src="assets/img/perfil-2.jpg" width="130"> | **Mora Blas Diego Alonzo**<br>**Código:** U20231C069<br>**Carrera:** <!-- COMPLETAR --><br><br><!-- COMPLETAR: párrafo de resumen con los conocimientos técnicos y habilidades que aporta al equipo. --> |
+| <img src="assets/img/perfil-2.jpg" width="130"> | **Mora Blas Diego Alonzo**<br>**Código:** U20231C069<br>**Carrera:** Ingeniería de Software<br><br><!-- COMPLETAR: párrafo de resumen con los conocimientos técnicos y habilidades que aporta al equipo. --> |
 
 **Integrante 3**
 
