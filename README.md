@@ -67,7 +67,9 @@ capítulos con más actividad fueron el VIII (42 commits), el IV (37) y el VI (2
 | Mora Blas Diego Alonzo | 6 |
 | Esquirva León Miguel Juan Diego | 4 |
 
-<!-- COMPLETAR: capturas de GitHub Insights → Contributors y Commits en assets/img/. -->
+<p align="center"><img src="assets/img/insights-sst-report.png" alt="GitHub Insights del repositorio sst-report" width="900"></p>
+
+*Figura. GitHub Insights → Contributors de sst-report (últimos tres meses, rama develop).*
 
 ---
 
@@ -2083,7 +2085,19 @@ flowchart TD
 
 ### 4.6.3. Web Applications Mock-ups
 
-<!-- IMAGEN REQUERIDA: capturas reales del panel web en assets/img/web-mockup-*.png -->
+Las pantallas implementadas reemplazan al mock-up estático: se muestran tal como se ven en ejecución, con los datos de demostración de `seed_demo`.
+
+<p align="center"><img src="assets/img/evidencia-web-tablero.png" alt="Tablero de SST" width="900"></p>
+
+*Figura. Tablero de SST con los indicadores de gestión.*
+
+<p align="center"><img src="assets/img/evidencia-web-reportes.png" alt="Bandeja de reportes" width="900"></p>
+
+*Figura. Bandeja de reportes con filtros por estado, tipo, severidad y área.*
+
+<p align="center"><img src="assets/img/evidencia-web-detalle.png" alt="Detalle del reporte" width="900"></p>
+
+*Figura. Detalle de un hallazgo con su bitácora.*
 
 ### 4.6.4. Web Applications User Flow Diagrams
 
@@ -3445,10 +3459,75 @@ no se presenta como captura de una implementación.
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
-<!-- IMAGEN REQUERIDA: capturas del panel web en ejecución, una por pantalla, en
-     assets/img/evidencia-web-<pantalla>.png. Lista sugerida:
-     acceso, registro, tablero, bandeja de hallazgos, detalle con bitácora, matriz IPERC,
-     inspecciones con checklist, EPP, comité con actas, usuarios, experimento A/B. -->
+**Capturas del panel web en ejecución** (entorno local con datos de `seed_demo`, rol supervisor, 9 de noviembre de 2026):
+
+<p align="center"><img src="assets/img/evidencia-web-acceso.png" alt="Acceso" width="900"></p>
+
+*Figura. Acceso: inicio de sesión con el enlace de recuperación de contraseña.*
+
+<p align="center"><img src="assets/img/evidencia-web-registro.png" alt="Registro" width="900"></p>
+
+*Figura. Registro: alta de trabajador con el RUC de la empresa.*
+
+<p align="center"><img src="assets/img/evidencia-web-tablero.png" alt="Tablero" width="900"></p>
+
+*Figura. Tablero: indicadores de MTTR, inspecciones y comité.*
+
+<p align="center"><img src="assets/img/evidencia-web-reportes.png" alt="Reportes" width="900"></p>
+
+*Figura. Reportes: bandeja de hallazgos con filtros.*
+
+<p align="center"><img src="assets/img/evidencia-web-nuevo-reporte.png" alt="Nuevo reporte" width="900"></p>
+
+*Figura. Nuevo reporte: formulario rápido, paso 1 de 3.*
+
+<p align="center"><img src="assets/img/evidencia-web-detalle.png" alt="Detalle" width="900"></p>
+
+*Figura. Detalle: hallazgo cerrado con su bitácora.*
+
+<p align="center"><img src="assets/img/evidencia-web-accidentes.png" alt="Accidentes" width="900"></p>
+
+*Figura. Accidentes: registro numerado, aviso pendiente al MTPE e índices.*
+
+<p align="center"><img src="assets/img/evidencia-web-iperc.png" alt="Matriz IPERC" width="900"></p>
+
+*Figura. Matriz IPERC: versión vigente con peligros enlazados a su reporte de origen.*
+
+<p align="center"><img src="assets/img/evidencia-web-inspecciones.png" alt="Inspecciones" width="900"></p>
+
+*Figura. Inspecciones: programas, ocurrencias e indicadores de cumplimiento.*
+
+<p align="center"><img src="assets/img/evidencia-web-epp.png" alt="EPP" width="900"></p>
+
+*Figura. EPP: catálogo con stock y entregas con conformidad.*
+
+<p align="center"><img src="assets/img/evidencia-web-capacitacion.png" alt="Capacitación" width="900"></p>
+
+*Figura. Capacitación: programa anual frente al mínimo legal de cuatro capacitaciones.*
+
+<p align="center"><img src="assets/img/evidencia-web-mapa-riesgos.png" alt="Mapa de riesgos" width="900"></p>
+
+*Figura. Mapa de riesgos: plano del almacén con los riesgos ubicados.*
+
+<p align="center"><img src="assets/img/evidencia-web-documentos.png" alt="Documentos del SGSST" width="900"></p>
+
+*Figura. Documentos del SGSST: política, procedimiento y RISST con su versión vigente.*
+
+<p align="center"><img src="assets/img/evidencia-web-plan-anual.png" alt="Plan anual de SST" width="900"></p>
+
+*Figura. Plan anual de SST: actividades por mes y avance de lo programado.*
+
+<p align="center"><img src="assets/img/evidencia-web-comite.png" alt="Comité de SST" width="900"></p>
+
+*Figura. Comité de SST: miembros, paridad y actas con quórum.*
+
+<p align="center"><img src="assets/img/evidencia-web-experimento.png" alt="Experimento A/B" width="900"></p>
+
+*Figura. Experimento A/B: diferencia con intervalo de confianza y aviso de datos de demostración.*
+
+<p align="center"><img src="assets/img/evidencia-web-privacidad.png" alt="Privacidad" width="900"></p>
+
+*Figura. Privacidad: consentimiento de datos personales y uso de la ubicación.*
 
 La aplicación web usa React con TypeScript. El archivo
 [App.tsx de la versión consultada](https://github.com/sst-peru/sst-web/blob/62cbf3745403c29468031f179932ccd1a4a9b50a/src/App.tsx)
@@ -3640,8 +3719,9 @@ privilegios de gestión. Sin embargo, `RegisterSerializer` de la versión consul
 no queda acreditada en ese commit y debe verificarse antes de aceptar US01 y US04.
 Fuente: [serializador de registro](https://github.com/sst-peru/sst-api/blob/1b5e02e07108b4358f168133ee380563bf2da4c3/apps/accounts/serializers.py).
 
-<!-- IMAGEN REQUERIDA: captura de la interfaz Swagger en /api/docs/ mostrando los módulos
-     desplegados, en assets/img/evidencia-api-swagger.png -->
+<p align="center"><img src="assets/img/evidencia-api-swagger.png" alt="Swagger del API" width="900"></p>
+
+*Figura. Documentación Swagger en /api/docs/ con los módulos del sistema de gestión.*
 
 ### 5.2.7. RESTful API documentation
 
@@ -3715,8 +3795,21 @@ informe y su planificación. La evaluación de aportes debe relacionar historia,
 PR y revisión. No se presentan porcentajes individuales ni capturas de Insights que no hayan
 sido incorporadas al repositorio.
 
-<!-- IMAGEN REQUERIDA: capturas de GitHub → Insights → Contributors y Commits de cada uno de
-     los cuatro repositorios, en assets/img/insights-<repo>.png -->
+<p align="center"><img src="assets/img/insights-sst-api.png" alt="Insights de sst-api" width="900"></p>
+
+*Figura. GitHub Insights → Contributors de sst-api (últimos tres meses, rama develop).*
+
+<p align="center"><img src="assets/img/insights-sst-web.png" alt="Insights de sst-web" width="900"></p>
+
+*Figura. GitHub Insights → Contributors de sst-web (últimos tres meses, rama develop).*
+
+<p align="center"><img src="assets/img/insights-sst-mobile.png" alt="Insights de sst-mobile" width="900"></p>
+
+*Figura. GitHub Insights → Contributors de sst-mobile (últimos tres meses, rama develop).*
+
+<p align="center"><img src="assets/img/insights-sst-report.png" alt="Insights de sst-report" width="900"></p>
+
+*Figura. GitHub Insights → Contributors de sst-report (últimos tres meses, rama develop).*
 
 ## 5.3. Video About-the-Product
 
@@ -3823,8 +3916,9 @@ Pruebas que ejercitan el API completo: enrutamiento, permisos, serialización y 
 | 23 | `test_exportaciones_vacias_no_fallan` | Exportación | Que una empresa sin datos obtenga el formato con su cabecera en lugar de un error | Caso especificado; código no localizado |
 | 24 | `test_filtro_por_estado_en_la_exportacion` | Exportación | Que el filtro por estado se aplique al archivo generado | Caso especificado; código no localizado |
 
-<!-- IMAGEN REQUERIDA: captura de la ejecución de pytest mostrando el resumen de pruebas
-     aprobadas, en assets/img/evidencia-pytest.png -->
+<p align="center"><img src="assets/img/evidencia-pytest.png" alt="Ejecución de pytest" width="900"></p>
+
+*Figura. Ejecución de la suite del API: 211 pruebas aprobadas.*
 
 
 ### 6.1.3. Core Behavior-Driven Development
@@ -3939,8 +4033,9 @@ herramientas usadas para evaluar la calidad y la seguridad del código.
 **Resultado de la última verificación estática de la aplicación web:** `tsc --noEmit` sin
 errores de tipo y ESLint sin advertencias sobre los 22 archivos de TypeScript del proyecto.
 
-<!-- IMAGEN REQUERIDA: captura de la ejecución de ruff, eslint y tsc sin errores, en
-     assets/img/evidencia-analisis-estatico.png -->
+<p align="center"><img src="assets/img/evidencia-analisis-estatico.png" alt="Análisis estático" width="900"></p>
+
+*Figura. ruff sobre el API y ESLint y tsc sobre la web, sin errores.*
 
 #### 6.2.1.2. Code Quality & Code Security
 
@@ -3972,8 +4067,9 @@ errores de tipo y ESLint sin advertencias sobre los 22 archivos de TypeScript de
 | Verificación automática previa | El PR no puede integrarse con el pipeline en rojo |
 | Revisión de código | Revisión del diff completo antes de integrar, con foco en reglas de negocio, permisos y comentarios que expliquen decisiones |
 
-<!-- IMAGEN REQUERIDA: captura de un Pull Request con su plantilla completada y los checks del
-     pipeline en verde, en assets/img/evidencia-pull-request.png -->
+<p align="center"><img src="assets/img/evidencia-pull-request.png" alt="Pull Request con checks" width="900"></p>
+
+*Figura. Pull Request sst-api#8 con su descripción, los commits y los dos checks del pipeline aprobados antes de integrarse a develop.*
 
 ## 6.3. Validation Interviews
 
@@ -4431,8 +4527,19 @@ flowchart LR
 | `sst-report` | Propuesto: `informe.yml` | No localizado en este checkout; se dispone de `tools/build.py` para regenerar el índice localmente |
 | `sst-report` | Propuesto: `commitlint.yml` | No localizado en este checkout; el hook local sí está presente |
 
-<!-- IMAGEN REQUERIDA: capturas de la pestaña Actions de cada repositorio mostrando
-     ejecuciones exitosas, en assets/img/pipeline-ci-<repo>.png -->
+<p align="center"><img src="assets/img/pipeline-ci-sst-api.png" alt="Actions de sst-api" width="900"></p>
+
+*Figura. Ejecuciones de CI y Conventional Commits en sst-api.*
+
+<p align="center"><img src="assets/img/pipeline-ci-sst-web.png" alt="Actions de sst-web" width="900"></p>
+
+*Figura. Ejecuciones de CI y Conventional Commits en sst-web.*
+
+<p align="center"><img src="assets/img/pipeline-ci-sst-mobile.png" alt="Actions de sst-mobile" width="900"></p>
+
+*Figura. Ejecuciones en sst-mobile: la última integración a develop pasó; las anteriores del workflow fallaron mientras se configuraba la compilación.*
+
+`sst-report` no tiene workflows en GitHub Actions: el formato de los commits se valida con el hook local.
 
 **Fuentes y alcance del pipeline.** Configuraciones consultadas:
 [API](https://github.com/sst-peru/sst-api/blob/1b5e02e07108b4358f168133ee380563bf2da4c3/.github/workflows/ci.yml),
