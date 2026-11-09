@@ -406,6 +406,41 @@ tecnología, sino a entender a quién le cuesta qué. La misma funcionalidad pue
 un usuario y prohibitiva para otro, y el diseño correcto depende de cuál de los dos tienes
 delante.
 
+#### Avance 2 (TB2)
+
+**Sobre el criterio 4.c.1 — responsabilidad ética y profesional.**
+
+En este avance la presión fue la contraria a la del anterior: ya no se trataba de no inflar lo
+construido, sino de no inflar lo medido. El panel del experimento A/B mostraba que el formulario
+rápido generaba un 40,95 % más de reportes por usuario, y esa cifra, sola, parecía confirmar la
+hipótesis. Implementé en el API y en el panel web el intervalo de confianza al 95 % con la
+aproximación de Welch y el aviso de datos de demostración (TB01 y TB02). Con eso a la vista, el
+resultado honesto fue otro: el intervalo contiene el cero, la muestra es de tres y cuatro usuarios,
+y los datos los genera `seed_demo`. En el análisis de 8.5.1 escribí que no se rechaza H₀ y que el
+experimento sirve para verificar la instrumentación, no para concluir sobre el negocio.
+
+Con el mismo criterio declaré como simuladas las entrevistas de validación de 6.3.2 y reduje la
+confianza de los aprendizajes que dependen solo de ellas. Una entrevista simulada puede ordenar
+las preguntas para el piloto, pero presentarla como trabajo de campo sería atribuirle a usuarios
+reales opiniones que nadie expresó.
+
+**Sobre el criterio 4.c.2 — juicios informados y su impacto.**
+
+Un resultado no concluyente también es una decisión con consecuencias. Si el equipo hubiera
+cambiado el formulario por defecto a partir de ese +40,95 %, habría impuesto a todos los
+trabajadores un cambio sostenido en ruido estadístico. Por eso la decisión de la sesión de
+shareback fue mantener Q1 en ejecución hasta reunir el tamaño de muestra calculado en 8.2.5.
+
+El Sprint To-Be 1 lo ordené por el impacto sobre el trabajador y no por la facilidad técnica. El
+aviso de cierre al reportante (TB05) responde a algo social: el operario que reporta y nunca ve
+resultado deja de reportar. La notificación de hallazgos críticos (TB04) reduce el tiempo en que
+una persona sigue expuesta a un peligro ya conocido. El registro de exportaciones (TB03) atiende
+la Ley N° 29733, porque cada exportación saca de la plataforma fotografías, DNI y ubicaciones de
+trabajadores, y alguien debe poder responder quién lo hizo y cuándo.
+
+Lo que me deja este avance es que medir también tiene ética: un número sin su incertidumbre es una
+forma elegante de afirmar más de lo que se sabe.
+
 ---
 
 ## Estructura del repositorio
