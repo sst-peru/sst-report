@@ -1,6 +1,5 @@
 <div align="center">
 
-<!-- COMPLETAR: logo de la universidad en assets/img/logo-upc.png -->
 <img src="assets/img/logo-upc.png" alt="Universidad Peruana de Ciencias Aplicadas" width="200">
 
 **UNIVERSIDAD PERUANA DE CIENCIAS APLICADAS**
@@ -25,11 +24,11 @@
 
 | Código | Apellidos y Nombres |
 |---|---|
-|u202310837| Esquirva León Miguel Juan Diego|
-|u20231c069| Mora Blas Diego Alonzo|
+|U202310837| Esquirva León Miguel Juan Diego|
+|U20231C069| Mora Blas Diego Alonzo|
 |U202310670| Villafuerte Tapia Renzo Alonso|
 
-**Septiembre de 2026**
+**Noviembre de 2026**
 
 </div>
 
