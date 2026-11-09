@@ -1888,8 +1888,9 @@ abrir el celular.
 
 ## 4.3. Landing Page UI Design
 
-La página pública **no forma parte de la aplicación web**. Vive en su propio repositorio, separada
-del panel de gestión, por dos razones que conviene declarar:
+La página pública **no forma parte de la aplicación web**. Se diseña para vivir en un repositorio
+propio, separado del panel de gestión, que aún no se ha creado (ver 5.2.2). La separación responde
+a dos razones que conviene declarar:
 
 | Razón | Consecuencia |
 |---|---|
