@@ -464,13 +464,13 @@ API REST que ambos consumen.
 
 | | |
 |---|---|
-| <img src="assets/img/perfil-1.jpg" width="130"> | **<!-- COMPLETAR: Esquirva León Miguel Juan Diego -->**<br>**Código:60752953** <!-- COMPLETAR --><br>**Carrera: Ingenieria de Software** <!-- COMPLETAR --><br><br><!-- COMPLETAR: párrafo de resumen. Indicar los principales conocimientos técnicos y habilidades que aporta al equipo, siendo concreto: lenguajes, frameworks, herramientas y experiencias previas relevantes. --> |
+| <img src="assets/img/perfil-1.jpg" width="130"> | **Esquirva León Miguel Juan Diego**<br>**Código:** U202310837<br>**Carrera:** Ingeniería de Software<br><br><!-- COMPLETAR: párrafo de resumen. Indicar los principales conocimientos técnicos y habilidades que aporta al equipo, siendo concreto: lenguajes, frameworks, herramientas y experiencias previas relevantes. --> |
 
 **Integrante 2**
 
 | | |
 |---|---|
-| <img src="assets/img/perfil-2.jpg" width="130"> | **<!-- COMPLETAR: Apellidos y Nombres -->**<br>**Código:** <!-- COMPLETAR --><br>**Carrera:** <!-- COMPLETAR --><br><br><!-- COMPLETAR: párrafo de resumen con los conocimientos técnicos y habilidades que aporta al equipo. --> |
+| <img src="assets/img/perfil-2.jpg" width="130"> | **Mora Blas Diego Alonzo**<br>**Código:** U20231C069<br>**Carrera:** <!-- COMPLETAR --><br><br><!-- COMPLETAR: párrafo de resumen con los conocimientos técnicos y habilidades que aporta al equipo. --> |
 
 **Integrante 3**
 
