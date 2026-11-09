@@ -4122,6 +4122,108 @@ finalización sin ayuda, y errores cometidos.
 
 ### 6.3.3. Evaluaciones según heurísticas
 
+**Carrera:** Ingeniería de Software
+**Curso:** Diseño de Experimentos de Ingeniería de Software
+**Producto evaluado:** Resguardo — Sistema de Gestión de SST (aplicación web, entorno local con datos de demostración)
+**Tareas evaluadas:**
+1. Revisar indicadores en el Tablero de SST.
+2. Encontrar el hallazgo crítico abierto hace más días.
+3. Asignar y cerrar un hallazgo.
+4. Agregar un peligro a la Matriz IPERC.
+5. Iniciar el reporte de un acto o condición insegura.
+
+**Escala de severidad (Nielsen)**
+
+| Nivel | Descripción |
+|---|---|
+| 1 | Problema cosmético: se corrige solo si hay tiempo. |
+| 2 | Problema menor: baja prioridad. |
+| 3 | Problema mayor: alta prioridad, debe corregirse. |
+| 4 | Problema muy grave: debe corregirse antes del lanzamiento. |
+
+**Tabla resumen**
+
+| # | Problema | Severidad | Heurística violada |
+|---|---|---|---|
+| 1 | La lista de reportes no permite ordenar por columnas ni buscar | 3 | Flexibilidad y eficiencia de uso |
+| 2 | Se puede cerrar un hallazgo sin haber asignado responsable | 3 | Prevención de errores |
+| 3 | La Matriz IPERC no permite elegir el control según la jerarquía de controles | 3 | Coincidencia entre el sistema y el mundo real |
+| 4 | La tabla "MTTR por severidad" está en orden alfabético, no por gravedad | 2 | Consistencia y estándares |
+| 5 | Se muestra al usuario la variante del experimento A/B ("rapido") y el módulo "Experimento A/B" | 2 | Diseño estético y minimalista |
+| 6 | Jerga técnica en el detalle del reporte ("llegó por sincronización offline · formulario rapido") | 2 | Coincidencia entre el sistema y el mundo real |
+| 7 | La ubicación se muestra como coordenadas crudas | 2 | Coincidencia entre el sistema y el mundo real |
+| 8 | Columnas "P" y "C" de la IPERC sin explicación en el encabezado | 1 | Reconocer antes que recordar |
+| 9 | Unidades de MTTR mezcladas (horas y días) | 1 | Consistencia y estándares |
+| 10 | Nombre del autor y fecha pegados en la bitácora | 1 | Diseño estético y minimalista |
+
+**Descripción de problemas**
+
+**Problema 1: La lista de reportes no permite ordenar ni buscar** — Severidad 3
+Heurística: Flexibilidad y eficiencia de uso.
+En "Reportes" solo hay filtros por estado, tipo, severidad y área. Los encabezados de la tabla
+no ordenan al hacer clic y no hay buscador. Con 72 reportes, el supervisor no puede encontrar
+directamente el hallazgo crítico con más días abierto (tarea 1 del segmento supervisor, sección
+6.3.1); tiene que filtrar y recorrer la lista.
+**Recomendación:** permitir ordenar por fecha, severidad y días abiertos; agregar búsqueda por
+número o categoría y una columna "días abiertos".
+
+**Problema 2: Se puede cerrar un hallazgo sin responsable asignado** — Severidad 3
+Heurística: Prevención de errores.
+En el detalle de un reporte en estado Abierto y con responsable "Sin asignar", el botón "Cerrar
+hallazgo" está habilitado. Esto permite cerrar hallazgos sin trazabilidad de quién los
+corrigió, que es la evidencia que pide una fiscalización.
+**Recomendación:** exigir responsable antes de cerrar, o asignar automáticamente a quien cierra
+y registrarlo en la bitácora. Pedir confirmación antes del cierre.
+
+**Problema 3: IPERC sin jerarquía de controles** — Severidad 3
+Heurística: Coincidencia entre el sistema y el mundo real.
+La columna "Controles existentes" es texto libre. La Ley N° 29783 (art. 21) establece que las
+medidas de prevención se aplican según una jerarquía (eliminación, sustitución, controles de
+ingeniería, administrativos y equipos de protección), y el usuario experto espera seleccionarla.
+**Recomendación:** agregar un selector del tipo de control por jerarquía al registrar el peligro.
+
+**Problema 4: Tabla "MTTR por severidad" en orden alfabético** — Severidad 2
+Heurística: Consistencia y estándares.
+En el Tablero, las filas aparecen como ALTA, BAJA, CRITICA, MEDIA. El orden natural para el
+usuario es por gravedad. Además, "CRITICA" aparece sin tilde.
+**Recomendación:** ordenar Crítica → Alta → Media → Baja y corregir la ortografía.
+
+**Problema 5: Elementos del experimento A/B visibles para el usuario** — Severidad 2
+Heurística: Diseño estético y minimalista.
+El formulario "Reportar" muestra "Variante del experimento asignada a tu usuario: rapido" y el
+menú lateral incluye "Experimento A/B". Es información interna del equipo que no aporta a la
+tarea y puede sesgar el comportamiento del usuario dentro del experimento.
+**Recomendación:** ocultar la variante en la interfaz y restringir el módulo a un rol
+administrador.
+
+**Problema 6: Jerga técnica en el detalle del reporte** — Severidad 2
+Heurística: Coincidencia entre el sistema y el mundo real.
+El encabezado del reporte dice "llegó por sincronización offline · formulario rapido". Para un
+supervisor estos términos no tienen significado operativo.
+**Recomendación:** reemplazar por "Enviado desde el celular sin conexión" o eliminarlo.
+
+**Problema 7: Ubicación como coordenadas crudas** — Severidad 2
+Heurística: Coincidencia entre el sistema y el mundo real.
+La ubicación aparece como coordenadas (latitud, longitud) con un enlace al mapa. El supervisor
+piensa en términos de área, frente o sede.
+**Recomendación:** mostrar un mapa en miniatura o la referencia del frente de trabajo, y dejar
+las coordenadas como dato secundario.
+
+**Problema 8: Abreviaturas "P" y "C" sin explicación** — Severidad 1
+Heurística: Reconocer antes que recordar.
+Las columnas se explican solo en una nota al pie de la tabla.
+**Recomendación:** usar "Probabilidad" y "Consecuencia" o agregar un tooltip en el encabezado.
+
+**Problema 9: Unidades de MTTR mezcladas** — Severidad 1
+Heurística: Consistencia y estándares.
+La misma columna muestra valores en horas ("23.6 h") y en días ("7.8 días").
+**Recomendación:** usar una sola unidad o el formato "1 d 6 h".
+
+**Problema 10: Autor y fecha pegados en la bitácora** — Severidad 1
+Heurística: Diseño estético y minimalista.
+En la bitácora el nombre del autor y la fecha aparecen juntos sin separación.
+**Recomendación:** agregar un separador y mostrar la fecha en un tono secundario.
+
 ## 6.4. Auditoría de Experiencias de Usuario
 
 La auditoría de experiencias de usuario es una evaluación cruzada entre equipos del curso: cada
