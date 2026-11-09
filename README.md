@@ -5110,28 +5110,49 @@ instrumentación (registro de fotos) debe corregirse de todos modos para Q1.
 
 ### 8.6.1. Shareback Session Artifacts: Learning Workflow
 
+La sesión de shareback reúne al equipo para compartir lo aprendido en el ciclo de
+experimentación y decidir qué cambia en el producto y en el backlog.
+
+| Campo | Detalle |
+|---|---|
+| Fecha | [dd/mm/2026] |
+| Modalidad | [Presencial / Google Meet] |
+| Participantes | Esquirva León Miguel Juan Diego, Mora Blas Diego Alonzo, Villafuerte Tapia Renzo Alonso |
+| Insumos | Panel del experimento A/B (8.5.1), registro de entrevistas (6.3.2), evaluación heurística (6.3.3) |
+
+**Learning Workflow**
+
 ```mermaid
 flowchart LR
-    A[Resultado del experimento] --> B[Sesión de shareback]
-    B --> C[Qué creíamos]
-    B --> D[Qué observamos]
-    B --> E[Qué aprendimos]
-    B --> F[Qué decidimos]
-    F --> G[Cambios en el backlog]
-    F --> H[Supuestos actualizados]
-    H --> I[Nuevas preguntas al backlog]
-    I --> J[Siguiente Experiment Card]
-    G --> K[Siguiente sprint]
+    A[Question Backlog<br/>priorizado] --> B[Experiment Card]
+    B --> C[Implementación To-Be<br/>y pipeline]
+    C --> D[Ejecución y<br/>recolección de datos]
+    D --> E[Análisis e<br/>interpretación]
+    E --> F[Sesión de<br/>shareback]
+    F --> G{¿Resultado<br/>concluyente?}
+    G -- Sí --> H[Decisión de producto<br/>adoptar o descartar]
+    G -- No --> I[Ajustar muestra o<br/>instrumentación]
+    H --> J[Re-scoring del<br/>Question Backlog]
+    I --> J
+    J --> A
 ```
 
-**Artefactos de la sesión de shareback**
+**Aprendizajes del ciclo**
 
-| Artefacto | Contenido |
-|---|---|
-| Resumen de una página | Pregunta, hipótesis, método, resultado y decisión |
-| Tabla de supuestos actualizada | Cada supuesto del apartado 8.1.2 marcado como confirmado, refutado o aún sin evidencia |
-| Question Backlog repriorizado | Con las preguntas nuevas surgidas del experimento |
-| Registro de decisión | Qué se decidió, quién decidió y con qué evidencia |
+| # | Aprendizaje | Evidencia | Confianza | Acción |
+|---|---|---|---|---|
+| 1 | La infraestructura del experimento funciona de punta a punta: asignación determinística, atribución por reporte e intervalo de confianza | Panel del experimento (8.5.1) | Alta | Mantenerla para el piloto real |
+| 2 | Con menos de 20 usuarios por variante no es posible concluir | Intervalo [−8,66 ; 15,82] | Alta | No decidir sobre Q1 hasta alcanzar el tamaño de muestra de 8.2.5 |
+| 3 | La métrica "reportes con foto" no se está registrando o no hay datos | 0 reportes con foto en ambas variantes | Media | Revisar la instrumentación antes del piloto |
+| 4 | El formulario rápido no perjudica el tiempo de cierre | MTTR 92,26 h frente a 93,19 h | Media | Mantener MTTR como métrica de control |
+| 5 | Los usuarios esperan ser avisados cuando su reporte avanza | Entrevistas E1 y E4 (simuladas) | Baja | Implementar TB05 y validar con usuarios reales (Q6) |
+| 6 | Mostrar la variante del experimento puede sesgar al usuario | Evaluación heurística, problema 5 | Media | Ocultar la variante en la interfaz |
+
+**Decisiones**
+
+1. Q1 continúa en ejecución con usuarios reales; no se cambia el formulario por defecto.
+2. Se corrige la instrumentación de fotos y se oculta la variante del experimento antes del piloto.
+3. Se planifica el Sprint To-Be 1 (sección 8.3.4) y se incorpora Q6 al Question Backlog (8.5.2).
 
 ## 8.7. To-Be Software Platform Pre-launch
 
