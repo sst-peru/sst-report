@@ -17,7 +17,7 @@
 
 # Informe de Trabajo Final
 
-**Startup:** SST Solutions <!-- COMPLETAR: nombre del startup -->
+**Startup:** SST Solutions
 
 **Producto:** Resguardo — Sistema de Gestión de Seguridad y Salud en el Trabajo
 
@@ -427,9 +427,7 @@ enunciado: `upc-pre-202620-1asi0732-<NRC>-<startup>-report-tf.pdf`
 
 ### 1.1.1. Descripción de la Startup
 
-<!-- COMPLETAR: nombre del startup. Reemplazar [NOMBRE DEL STARTUP] en todo el documento. -->
-
-**Dangery** es una startup de software peruana dedicada a llevar la gestión de
+**SST Solutions** es una startup de software peruana dedicada a llevar la gestión de
 la seguridad y salud en el trabajo del papel al dato en tiempo real. Nace de una observación
 concreta: en la mayoría de empresas medianas y pequeñas del país el sistema de gestión de SST
 existe formalmente —hay matriz IPERC, hay comité, hay registros— pero funciona con semanas de
@@ -702,7 +700,7 @@ normativa colombiana, relevante porque marca la tendencia regional del segmento.
 | **Competitive Analysis Landscape** | | | | |
 |---|---|---|---|---|
 | **¿Por qué llevar a cabo este análisis?** | Entender si el mercado peruano de software SST ya resuelve la captura del dato en el frente de trabajo, o si las soluciones existentes se concentran en la gestión documental del profesional de SST, para determinar dónde puede competir un entrante con recursos limitados. | | | |
-| | **[NOMBRE DEL STARTUP] — Resguardo** | **SELERIA** | **GISSAT Perú** | **SG-SST APP** |
+| | **SST Solutions — Resguardo** | **SELERIA** | **GISSAT Perú** | **SG-SST APP** |
 | **Overview** | Plataforma de gestión operativa de SST centrada en la captura del hallazgo en campo. App Android + panel web + API REST. | Suite integral de salud ocupacional y seguridad para el mercado peruano, con app móvil complementaria. | Plataforma SaaS de gestión integral de SST combinada con servicio profesional de acompañamiento. | Plataforma documental para el diseño e implementación del SG-SST colombiano. |
 | **Ventaja competitiva: ¿qué valor ofrece a los clientes?** | Reporte en tres toques con foto y GPS, operación sin conexión con sincronización posterior sin duplicados, y trazabilidad completa del hallazgo hasta su cierre. | Amplitud funcional: integra la dimensión médico-ocupacional que la mayoría de competidores no cubre. | Software más servicio: la empresa no solo compra una herramienta, subcontrata parte de la gestión. | Simplifica el cumplimiento documental para el profesional de SST colombiano. |
 | **Mercado objetivo** | Empresas medianas peruanas de 20 a 200 trabajadores en sectores de alto riesgo, con comité de SST constituido. | Empresas peruanas de diverso tamaño; declara más de 200 clientes. | Empresas peruanas de 70 a 17 000 trabajadores, incluidas las de múltiples sedes y contratistas. | Empresas colombianas de cualquier tamaño y actividad económica. |
@@ -713,7 +711,7 @@ normativa colombiana, relevante porque marca la tendencia regional del segmento.
 
 **Análisis FODA frente a la competencia**
 
-| | **[NOMBRE DEL STARTUP] — Resguardo** | **SELERIA** | **GISSAT Perú** | **SG-SST APP** |
+| | **SST Solutions — Resguardo** | **SELERIA** | **GISSAT Perú** | **SG-SST APP** |
 |---|---|---|---|---|
 | **Fortalezas** | Experiencia de reporte diseñada para el operario y no para el profesional de SST; operación sin conexión con idempotencia comprobada; trazabilidad del hallazgo hasta su cierre; evidencia exportable. | Cobertura funcional más amplia del mercado, incluyendo salud ocupacional; trayectoria y cartera consolidada; app móvil propia. | Escala comprobada y capacidad de atender operaciones multisede y con contratistas; combina producto con servicio. | Foco normativo claro y producto sencillo para un profesional que trabaja solo. |
 | **Debilidades** | Producto nuevo sin cartera ni trayectoria; alcance acotado (no cubre salud ocupacional); equipo mínimo. | El peso de la suite puede traducirse en formularios extensos, poco aptos para uso en campo; no declara operación sin conexión. | Sin canal móvil declarado, la captura del dato sigue dependiendo del escritorio. | No aplica a la normativa peruana; sin móvil, sin IPERC ni EPP. |
