@@ -4882,7 +4882,7 @@ indica el evento, su disparador y dónde queda registrado.
 | `reporte_cerrado` | El supervisor cierra el hallazgo | Fecha de cierre, acción correctiva, tiempo de resolución | Web y móvil | Campos del reporte y bitácora |
 | `inspeccion_realizada` | Se completa una inspección | Programa, fecha programada, fecha de ejecución, resultados del checklist | Web y móvil | Tabla `inspections_inspection` |
 | `epp_conformidad` | El trabajador da conformidad | Entrega, trabajador, fecha | Web y móvil | Tabla `epp_eppdelivery` |
-| `evidencia_exportada` | Se descarga un archivo de evidencia | Usuario, recurso exportado, filtros aplicados | Web | <!-- COMPLETAR: hoy la exportación no deja registro; agregar un log de auditoría --> |
+| `evidencia_exportada` | Se descarga un archivo de evidencia | Usuario, recurso exportado, filtros aplicados | Web | Pendiente: hoy la exportación no deja registro; se implementa con la historia TB03 del Sprint To-Be 1 (8.3.4) |
 
 **Consideración de privacidad.** El plan registra datos personales —DNI, fotografías,
 geolocalización— de trabajadores identificables. Su tratamiento queda sujeto a la Ley N° 29733
