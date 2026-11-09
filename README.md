@@ -56,9 +56,19 @@ producto. La rama `main` conserva únicamente las versiones entregadas; `develop
 trabajo en curso, y cada sección del informe se redacta en una rama `docs/<sección>` que se
 incorpora mediante Pull Request.
 
-<!-- COMPLETAR en cada entrega: descripción de cómo se desarrollaron las actividades de
-     elaboración del informe, más capturas de los analíticos de colaboración y commits de
-     GitHub (pestaña Insights → Contributors y Commits). Las capturas van en assets/img/. -->
+**Desarrollo de las actividades del informe.** Entre el 16 de septiembre y el 8 de noviembre
+de 2026 el repositorio `sst-report` acumuló 229 commits, en su gran mayoría con el formato de
+Conventional Commits que valida el hook `commit-msg`. El alcance de cada commit identifica el
+capítulo trabajado, lo que permite seguir el avance del informe sección por sección: los
+capítulos con más actividad fueron el VIII (42 commits), el IV (37) y el VI (20).
+
+| Integrante | Commits |
+|---|---|
+| Villafuerte Tapia Renzo Alonso | 219 |
+| Mora Blas Diego Alonzo | 6 |
+| Esquirva León Miguel Juan Diego | 4 |
+
+<!-- COMPLETAR: capturas de GitHub Insights → Contributors y Commits en assets/img/. -->
 
 ---
 
