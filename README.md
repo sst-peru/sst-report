@@ -202,6 +202,10 @@ incorpora mediante Pull Request.
   - [6.3. Validation Interviews](#63-validation-interviews)
     - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
     - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
+      - [Entrevista E1 — Jhonatan Q., operario de almacén](#entrevista-e1--jhonatan-q-operario-de-almacén)
+      - [Entrevista E2 — Rosa M., ayudante de producción](#entrevista-e2--rosa-m-ayudante-de-producción)
+      - [Entrevista E3 — Carlos V., supervisor SST de construcción](#entrevista-e3--carlos-v-supervisor-sst-de-construcción)
+      - [Entrevista E4 — Lucía P., ingeniera de seguridad y secretaria del Comité SST](#entrevista-e4--lucía-p-ingeniera-de-seguridad-y-secretaria-del-comité-sst)
     - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
   - [6.4. Auditoría de Experiencias de Usuario](#64-auditoría-de-experiencias-de-usuario)
     - [6.4.1. Auditoría realizada](#641-auditoría-realizada)
@@ -3956,6 +3960,165 @@ El entrevistado ejecuta tareas reales mientras se observa y se registra.
 finalización sin ayuda, y errores cometidos.
 
 ### 6.3.2. Registro de Entrevistas
+
+> **Nota:** Las entrevistas de esta sección son **simuladas**, elaboradas con autorización del
+> docente del curso debido a la dificultad de acceder a usuarios reales del segmento. Siguen el
+> guion definido en la sección 6.3.1 y se basan en el comportamiento esperado de cada segmento
+> descrito en la sección 1.3.
+
+**Resumen de entrevistas**
+
+| N° | Entrevistado | Segmento | Perfil | Fecha | Duración | Modalidad | Entrevistador |
+|---|---|---|---|---|---|---|---|
+| E1 | Jhonatan Q. (28) | Operario | Operario de almacén, empresa logística, Callao | 03/11/2026 | 18 min | Presencial | Mora Blas Diego Alonzo |
+| E2 | Rosa M. (41) | Operario | Ayudante de producción, planta de alimentos, Ate | 03/11/2026 | 16 min | Google Meet | Esquirva León Miguel Juan Diego |
+| E3 | Carlos V. (36) | Supervisor | Supervisor SST, constructora mediana, Surco | 04/11/2026 | 24 min | Google Meet | Villafuerte Tapia Renzo Alonso |
+| E4 | Lucía P. (33) | Supervisor / Comité | Ing. de Seguridad, secretaria del Comité SST, empresa minera contratista, Arequipa | 05/11/2026 | 22 min | Google Meet | Villafuerte Tapia Renzo Alonso |
+
+---
+
+#### Entrevista E1 — Jhonatan Q., operario de almacén
+
+**Plataforma:** aplicación móvil (Android, gama media).
+
+| Tarea | Tiempo | Toques | Sin ayuda | Errores |
+|---|---|---|---|---|
+| T1. Registro con RUC | 1 min 52 s | 14 | Sí | 1 (formato de DNI) |
+| T2. Reportar condición insegura con foto | 1 min 10 s | 9 | Sí | 0 |
+| T3. Ver estado del reporte | 0 min 40 s | 4 | Sí | 0 |
+| T4. Conformidad de entrega de EPP | 1 min 35 s | 8 | No | 1 |
+
+**Transcripción (extracto)**
+
+> **Entrevistador:** ¿Qué te resultó más confuso de lo que acabas de hacer?
+> **E1:** Lo del EPP. No sabía que tenía que entrar a "Mis registros", yo lo buscaba en el inicio.
+> Lo del reporte sí fue rápido, tomas la foto y ya.
+> **Entrevistador:** ¿Qué esperabas que pasara y no pasó?
+> **E1:** Que me avise cuando lo arreglen. Vi que dice "En atención", pero no me llegó nada.
+> **Entrevistador:** Si mañana tuvieras esto en tu trabajo, ¿lo usarías?
+> **E1:** Sí, porque ahorita le digo al supervisor de palabra y se olvida. Lo único es la señal:
+> dentro del almacén a veces no hay internet.
+> **Entrevistador:** ¿Qué le falta para reemplazar lo que usas hoy?
+> **E1:** Que funcione sin internet y lo mande después.
+
+**Hallazgos**
+- El flujo de reporte con foto es rápido e intuitivo.
+- La conformidad de EPP no se encuentra desde el inicio (problema de navegación).
+- Espera una notificación cuando su reporte cambia de estado.
+- Le preocupa la conectividad en planta y pide modo offline.
+
+---
+
+#### Entrevista E2 — Rosa M., ayudante de producción
+
+**Plataforma:** aplicación móvil (Android, gama baja).
+
+| Tarea | Tiempo | Toques | Sin ayuda | Errores |
+|---|---|---|---|---|
+| T1. Registro con RUC | 2 min 40 s | 19 | No | 2 |
+| T2. Reportar condición insegura con foto | 1 min 45 s | 11 | Sí | 1 |
+| T3. Ver estado del reporte | 0 min 55 s | 5 | Sí | 0 |
+| T4. Conformidad de entrega de EPP | 1 min 20 s | 7 | Sí | 0 |
+
+**Transcripción (extracto)**
+
+> **Entrevistador:** ¿Qué te resultó más confuso?
+> **E2:** Al registrarme me pidió una contraseña con muchas cosas, mayúscula, número... me
+> equivoqué dos veces. Y la letra es chiquita, tuve que acercarme.
+> **Entrevistador:** ¿Qué esperabas que pasara y no pasó?
+> **E2:** En el reporte elegí "riesgo alto" pero no sabía bien qué era alto o medio. Pensé que me
+> iba a explicar.
+> **Entrevistador:** ¿Lo usarías en tu trabajo?
+> **E2:** Sí, pero tendrían que enseñarnos. Mis compañeros más mayores no usan mucho el celular.
+> **Entrevistador:** ¿Qué le falta?
+> **E2:** Que se pueda mandar un audio en vez de escribir la descripción.
+
+**Hallazgos**
+- Las reglas de contraseña generan errores en usuarios con poca experiencia digital.
+- El tamaño de texto es bajo para teléfonos de gama baja.
+- La escala de nivel de riesgo no se entiende sin una explicación breve.
+- Propone una descripción por nota de voz.
+
+---
+
+#### Entrevista E3 — Carlos V., supervisor SST de construcción
+
+**Plataforma:** aplicación web (laptop) y aplicación móvil para la tarea 2.
+
+| Tarea | Tiempo | Clics | Sin ayuda | Errores |
+|---|---|---|---|---|
+| T1. Encontrar hallazgo crítico más antiguo | 0 min 50 s | 6 | Sí | 0 |
+| T2. Asignar y cerrar hallazgo | 2 min 10 s | 12 | Sí | 0 |
+| T3. Agregar peligro a la matriz IPERC | 3 min 30 s | 21 | No | 2 |
+| T4. Generar evidencia para SUNAFIL | 1 min 15 s | 7 | Sí | 0 |
+
+**Transcripción (extracto)**
+
+> **Entrevistador:** ¿Qué te resultó más confuso?
+> **E3:** La IPERC. Esperaba poder crear el peligro desde el mismo hallazgo, pero tuve que ir al
+> módulo y volver a escribir todo. Además, la matriz con muchas columnas se ve apretada.
+> **Entrevistador:** ¿Qué esperabas que pasara y no pasó?
+> **E3:** Al cerrar, que me pida foto de la corrección. En obra, si no hay foto, no pasó.
+> **Entrevistador:** ¿Lo usarías?
+> **E3:** Sí. El reporte para SUNAFIL me ahorra un día armando el archivador. Eso vende solo.
+> **Entrevistador:** ¿Qué le falta?
+> **E3:** Que el reporte salga por obra, porque manejo tres frentes a la vez.
+
+**Hallazgos**
+- El filtro por criticidad funciona, pero falta ordenar por antigüedad.
+- Falta vincular el hallazgo con la IPERC sin duplicar datos.
+- Pide evidencia fotográfica obligatoria al cerrar un hallazgo.
+- El reporte para SUNAFIL es la funcionalidad de mayor valor percibido.
+- Requiere filtrar los reportes por obra o sede.
+
+---
+
+#### Entrevista E4 — Lucía P., ingeniera de seguridad y secretaria del Comité SST
+
+**Plataforma:** aplicación web.
+
+| Tarea | Tiempo | Clics | Sin ayuda | Errores |
+|---|---|---|---|---|
+| T1. Encontrar hallazgo crítico más antiguo | 0 min 35 s | 4 | Sí | 0 |
+| T2. Asignar y cerrar hallazgo | 1 min 50 s | 10 | Sí | 0 |
+| T3. Agregar peligro a la matriz IPERC | 2 min 40 s | 16 | Sí | 1 |
+| T4. Generar evidencia para SUNAFIL | 1 min 05 s | 6 | Sí | 0 |
+
+**Transcripción (extracto)**
+
+> **Entrevistador:** ¿Qué te resultó más confuso?
+> **E4:** Nada grave. En la IPERC no encontré cómo poner el control según la jerarquía:
+> eliminación, sustitución, ingeniería... lo escribí a mano.
+> **Entrevistador:** ¿Qué esperabas que pasara y no pasó?
+> **E4:** Que al asignar le llegue un correo a la persona. En el comité nadie entra al sistema si
+> no le avisan.
+> **Entrevistador:** ¿Lo usarías?
+> **E4:** Sí, sobre todo por las contratistas. Hoy les pido todo por correo y en Excel.
+> **Entrevistador:** ¿Qué le falta?
+> **E4:** Exportar las actas del comité en el formato de la RM 050-2013-TR.
+
+**Hallazgos**
+- Usuario experto: completa todas las tareas sin ayuda.
+- Pide seleccionar el control según la jerarquía de controles en la IPERC.
+- Pide notificación por correo al responsable asignado.
+- Valora la gestión de contratistas.
+- Pide la exportación de registros en los formatos de la RM 050-2013-TR.
+
+---
+
+**Consolidado de hallazgos**
+
+| Hallazgo | Entrevistas | Prioridad |
+|---|---|---|
+| Notificar al usuario cuando su reporte cambia de estado o se le asigna algo | E1, E4 | Alta |
+| Vincular hallazgo con matriz IPERC sin duplicar datos | E3, E4 | Alta |
+| Foto de evidencia obligatoria al cerrar un hallazgo | E3 | Alta |
+| Acceso directo a la conformidad de EPP desde el inicio | E1 | Media |
+| Reglas de contraseña y tamaño de texto para gama baja | E2 | Media |
+| Explicación breve de la escala de nivel de riesgo | E2 | Media |
+| Filtrar los reportes por obra o sede | E3 | Media |
+| Modo offline en reporte de condiciones inseguras | E1 | Baja (siguiente release) |
+| Descripción por nota de voz | E2 | Baja (siguiente release) |
 
 ### 6.3.3. Evaluaciones según heurísticas
 
