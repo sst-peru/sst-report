@@ -980,7 +980,7 @@ uso con las historias, la prioridad del backlog y los resultados que se quieren 
 especificación incluye capacidades futuras; su presencia en estas tablas no acredita por sí
 sola que estén implementadas.
 
-**Corte de evidencia: 6 de octubre de 2026.** Se conserva la planificación de los dos sprints
+**Corte de evidencia: 6 de octubre de 2026.** Se conserva la planificación de los cuatro sprints
 del informe. Las etiquetas de sprint y las declaraciones históricas de entrega se deben
 contrastar con las versiones de código del [Anexo G](#anexo-g-corte-de-evidencia-técnica).
 Esa revisión encontró diferencias en el backend, el cliente móvil y las pruebas. Las secciones
