@@ -3859,7 +3859,15 @@ Una pantalla existente o un pipeline de compilación no sustituye este registro.
 
 ## 6.2. Static testing & Verification
 
+Esta sección reúne las verificaciones que se hacen sobre el código sin ejecutarlo: el
+cumplimiento de las convenciones de codificación acordadas en la sección 5.1.3, el análisis
+automatizado de calidad y seguridad, y las revisiones de código entre integrantes del equipo.
+
 ### 6.2.1. Static Code Analysis
+
+El análisis estático se aplica sobre los tres repositorios del producto (sst-api, sst-web y
+sst-mobile). Las subsecciones siguientes detallan las convenciones verificadas y las
+herramientas usadas para evaluar la calidad y la seguridad del código.
 
 #### 6.2.1.1. Coding standard & Code conventions
 
@@ -3913,6 +3921,11 @@ errores de tipo y ESLint sin advertencias sobre los 22 archivos de TypeScript de
 
 ## 6.3. Validation Interviews
 
+Las entrevistas de validación verifican que el producto implementado resuelve el problema de
+cada segmento objetivo. A diferencia de las entrevistas del Capítulo II, se realizan sobre la
+aplicación funcionando: el entrevistado ejecuta tareas reales mientras se observan el tiempo,
+los errores y la necesidad de ayuda.
+
 ### 6.3.1. Diseño de Entrevistas
 
 Las entrevistas de validación se realizan sobre el producto funcionando, no sobre el concepto.
@@ -3947,6 +3960,10 @@ finalización sin ayuda, y errores cometidos.
 ### 6.3.3. Evaluaciones según heurísticas
 
 ## 6.4. Auditoría de Experiencias de Usuario
+
+La auditoría de experiencias de usuario es una evaluación cruzada entre equipos del curso: cada
+equipo revisa el producto de otro con los mismos criterios heurísticos y recibe la revisión de
+un tercero, lo que aporta una mirada externa sin el sesgo de quien construyó el producto.
 
 ### 6.4.1. Auditoría realizada
 
