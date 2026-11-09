@@ -3970,10 +3970,9 @@ finalización sin ayuda, y errores cometidos.
 
 ### 6.3.2. Registro de Entrevistas
 
-> **Nota:** Las entrevistas de esta sección son **simuladas**, elaboradas con autorización del
-> docente del curso debido a la dificultad de acceder a usuarios reales del segmento. Siguen el
-> guion definido en la sección 6.3.1 y se basan en el comportamiento esperado de cada segmento
-> descrito en la sección 1.3.
+> **Nota:** Las entrevistas de esta sección son **simuladas**. Siguen el guion definido en la
+> sección 6.3.1 y se basan en el comportamiento esperado de cada segmento descrito en la
+> sección 1.3.
 
 **Resumen de entrevistas**
 
