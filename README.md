@@ -97,7 +97,13 @@ capítulos con más actividad fueron el VIII (42 commits), el IV (37) y el VI (2
   - [2.2. Entrevistas](#22-entrevistas)
     - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
     - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
+      - [Segmento 1 — Trabajador de campo (operario)](#segmento-1--trabajador-de-campo-operario)
+      - [Segmento 2 — Supervisor de SST y miembro del comité](#segmento-2--supervisor-de-sst-y-miembro-del-comité)
     - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
+      - [Segmento 1 — Trabajador de campo](#segmento-1--trabajador-de-campo)
+      - [Segmento 2 — Supervisor de SST y comité](#segmento-2--supervisor-de-sst-y-comité)
+      - [Contraste con los supuestos de Lean UX (1.2.2)](#contraste-con-los-supuestos-de-lean-ux-122)
+      - [Implicancias para el producto](#implicancias-para-el-producto)
   - [2.3. Needfinding](#23-needfinding)
     - [2.3.1. User Personas](#231-user-personas)
     - [2.3.2. User Task Matrix](#232-user-task-matrix)
@@ -855,7 +861,303 @@ que no contaminen el relato del problema.
 
 ### 2.2.2. Registro de entrevistas
 
+Se entrevistó a ocho personas, cuatro por segmento objetivo, siguiendo la guía de 2.2.1. Todas
+las entrevistas las condujo Villafuerte Tapia Renzo Alonso. Los entrevistados se identifican
+solo por su nombre de pila para proteger su relación con sus empleadores.
+
+<!-- COMPLETAR: fecha, duración, modalidad y enlace al video (con el minuto de inicio) de cada
+     entrevista. -->
+
+| N° | Entrevistado | Edad | Distrito / ciudad | Segmento | Cargo y rubro |
+|---|---|---|---|---|---|
+| E1 | Juan | 45 | San Juan de Lurigancho | Operario | Fierrero, construcción |
+| E2 | Luis | 25 | Callao | Operario | Operador de montacargas, almacén logístico |
+| E3 | María | 38 | Ate | Operario | Operaria de inyectoras, fábrica de plásticos |
+| E4 | Carlos | 42 | Arequipa | Operario | Técnico electricista, campamento minero |
+| E5 | Roberto | 34 | — | Supervisor | Supervisor de SST, obra de edificación (120 trabajadores) |
+| E6 | Andrea | 30 | — | Supervisor | Coordinadora de SST, logística y transporte (3 sedes, 250 trabajadores) |
+| E7 | Jorge | 45 | — | Supervisor / Comité | Jefe de SST, planta de manufactura (400 trabajadores) |
+| E8 | Silvia | 28 | — | Supervisor | Responsable de SST, empresa contratista de servicios (80 trabajadores) |
+
+#### Segmento 1 — Trabajador de campo (operario)
+
+**Entrevista E1 — Juan, fierrero**
+
+| Campo | Detalle |
+|---|---|
+| Entrevistado | Juan, 45 años, San Juan de Lurigancho |
+| Cargo | Fierrero en obras de construcción, 15 años en el oficio |
+| Entrevistador | Villafuerte Tapia Renzo Alonso |
+| Fecha, duración y modalidad | <!-- COMPLETAR --> |
+| Video | <!-- COMPLETAR: enlace con minuto de inicio --> |
+
+Juan lleva su Android en el bolsillo durante toda la jornada, pero en los sótanos, donde arma
+zapatas, la señal desaparece por completo. La última condición insegura que vio fue un andamio
+sin rodapiés; se la gritó al capataz, que mandó a un ayudante a colocar las maderas. Admite que
+no reporta los actos menores, como un compañero sin lentes, porque avisar al prevencionista
+puede paralizar la obra por horas y los compañeros lo tildan de «soplón». El canal formal es una
+tarjeta de cartulina que se pide en la oficina de seguridad: llenarla toma unos cinco minutos,
+pero con las manos llenas de óxido y cemento implica dejar el frente, lavarse y caminar hasta
+la oficina, y «da flojera». Nunca le informan si lo reportado se corrigió; se entera si vuelve a
+pasar por el lugar. Usaría un reporte de menos de un minuto desde su celular, con una condición:
+que no vaya con su nombre cuando la falta es de un compañero, porque con los compañeros arriesga
+«la bronca» y con el jefe, el trabajo. Firma la entrega de EPP en un registro impreso y sabe que
+existe un comité de SST solo por las hojas del periódico mural.
+
+**Entrevista E2 — Luis, operador de montacargas**
+
+| Campo | Detalle |
+|---|---|
+| Entrevistado | Luis, 25 años, Callao |
+| Cargo | Operador de montacargas en un almacén logístico, 3 años |
+| Entrevistador | Villafuerte Tapia Renzo Alonso |
+| Fecha, duración y modalidad | <!-- COMPLETAR --> |
+| Video | <!-- COMPLETAR: enlace con minuto de inicio --> |
+
+Luis usa un iPhone que lleva siempre en la cabina del montacargas, y el almacén tiene WiFi en
+casi todas las naves. Cuando vio la base de un rack golpeada, le tomó una foto y se la mandó por
+WhatsApp a su supervisor; horas después acordonaron el área y cambiaron el pilar. No reporta
+cajas mal apiladas ni pallets astillados porque son «el día a día». El canal formal es un
+formulario de Google en la computadora de la entrada del almacén: toma unos diez minutos y casi
+siempre hay que hacer cola porque la usan los despachadores. A veces se entera del cierre por
+una foto que el supervisor manda al grupo de WhatsApp. Usaría a diario un reporte rápido desde
+su celular, siempre que funcione con el WiFi del almacén y no consuma sus datos móviles. Evita
+reportar actos de sus compañeros —prefiere decírselo a ellos—, pero las condiciones de la
+empresa las reporta sin problema. Firma la entrega de EPP en un Excel impreso. Votó en la
+elección del comité, aunque percibe que «solo se reúnen para comer galletas» porque no ve
+cambios en el almacén.
+
+**Entrevista E3 — María, operaria de producción**
+
+| Campo | Detalle |
+|---|---|
+| Entrevistado | María, 38 años, Ate |
+| Cargo | Operaria de inyectoras en una fábrica de plásticos, 8 años |
+| Entrevistador | Villafuerte Tapia Renzo Alonso |
+| Fecha, duración y modalidad | <!-- COMPLETAR --> |
+| Video | <!-- COMPLETAR: enlace con minuto de inicio --> |
+
+María tiene un Motorola básico, pero la política de la planta prohíbe entrar con el celular:
+se queda en su casillero hasta la hora de almuerzo. Ante un cable pelado que botaba chispas
+cerca de su máquina, la detuvo y fue a buscar al mecánico de turno, que cortó la energía y lo
+aisló. Los derrames pequeños de agua no los reporta porque limpiarlos ella misma es más rápido
+que llenar el papel. El formato formal es una hoja de incidente junto al botiquín, de cinco a
+ocho minutos, que le resulta incómoda porque pide clasificar el «nivel de severidad» o el
+«tipo de riesgo ergonómico o locativo», términos que no siempre entiende. Se entera de la
+corrección cuando al día siguiente encuentra la máquina reparada. No podría reportar desde su
+celular dentro de planta: haría falta una tablet de la empresa cerca de la línea o cambiar la
+regla. Su temor es que el jefe de turno le grite por haber parado la producción si considera
+que el problema «no era para tanto». Firma un kárdex físico por sus EPP, que le cambian cada
+seis meses, y no participa en el comité.
+
+**Entrevista E4 — Carlos, técnico electricista minero**
+
+| Campo | Detalle |
+|---|---|
+| Entrevistado | Carlos, 42 años, Arequipa |
+| Cargo | Técnico electricista en un campamento minero, más de 10 años en minería |
+| Entrevistador | Villafuerte Tapia Renzo Alonso |
+| Fecha, duración y modalidad | <!-- COMPLETAR --> |
+| Video | <!-- COMPLETAR: enlace con minuto de inicio --> |
+
+Carlos usa un celular resistente a golpes que lleva siempre, aunque en el tajo hay zonas sin
+datos ni voz donde solo funciona la radio troncalizada. Al ver una camioneta estacionada en
+pendiente sin tacos, llamó por radio al centro de control y un supervisor ubicó al chofer. En
+la mina siempre se reporta: «si ves algo y te haces el loco, te pueden despedir». El canal
+formal es una libreta «Pare y Reporte» autocopiativa de tres copias que se llena en tres
+minutos; lo molesto es que con polvo o lluvia el papel se ensucia o se rompe. Sabe qué se
+corrigió porque en las charlas de cinco minutos de la semana siguiente leen las estadísticas y
+las medidas tomadas. Usaría feliz un reporte desde el celular, con una condición explícita: que
+la aplicación guarde el reporte cuando no hay señal y lo envíe al recuperar conexión. La
+política de cero represalias funciona y no teme reportar a nadie. Firma la entrega de EPP con
+su huella en un lector conectado al sistema del almacén y participa activamente en el comité,
+donde se revisan investigaciones de accidentes y el presupuesto de seguridad.
+
+#### Segmento 2 — Supervisor de SST y miembro del comité
+
+**Entrevista E5 — Roberto, supervisor de SST en construcción**
+
+| Campo | Detalle |
+|---|---|
+| Entrevistado | Roberto, 34 años |
+| Formación y cargo | Ingeniero de Higiene y Seguridad; Supervisor de SST en una obra de edificación de 20 pisos, 120 trabajadores de varias subcontratas |
+| Entrevistador | Villafuerte Tapia Renzo Alonso |
+| Fecha, duración y modalidad | <!-- COMPLETAR --> |
+| Video | <!-- COMPLETAR: enlace con minuto de inicio --> |
+
+Roberto gestiona todo con Excel, grupos de WhatsApp y un archivador de lomo ancho. Los hallazgos
+le llegan por WhatsApp o a gritos en obra; él va, toma foto, lo anota en un cuaderno y busca al
+residente para que asigne personal o compre material. Cierra en dos o tres días, y lo sabe
+porque cada viernes vacía el cuaderno a su Excel. Reconoce que la matriz IPERC solo se actualiza
+tras un accidente o al empezar una etapa fuerte de la obra, y que cumple apenas el 60 % de las
+inspecciones porque el día se le va «apagando incendios». La entrega de EPP se registra en el
+formato físico con firma y huella. En la última visita de SUNAFIL le pidieron los registros de
+entrega de arneses y las capacitaciones de trabajo en altura: le tomó casi cuatro horas
+encontrarlos y escanearlos. Le falta saber qué subcontratista genera más condiciones inseguras.
+Con reportes en tiempo real con foto y ubicación dejaría de «caminar a ciegas» y mandaría al
+prevencionista directo al punto crítico. Evaluaron un software chileno, pero cobraba en dólares
+por usuario y la constructora no lo pagó. Decide el Gerente de Proyecto, y el único argumento
+que lo mueve es evitar una multa de SUNAFIL que paralice la obra. Las actas del comité se
+llenan a mano en el libro de actas.
+
+**Entrevista E6 — Andrea, coordinadora de SST en logística**
+
+| Campo | Detalle |
+|---|---|
+| Entrevistado | Andrea, 30 años |
+| Formación y cargo | Ingeniera Industrial; Coordinadora de SST de logística y transporte en Lima, Trujillo y Arequipa, 250 trabajadores |
+| Entrevistador | Villafuerte Tapia Renzo Alonso |
+| Fecha, duración y modalidad | <!-- COMPLETAR --> |
+| Video | <!-- COMPLETAR: enlace con minuto de inicio --> |
+
+Andrea trabaja con Google Forms, Sheets, Drive y correo. El trabajador llena un formulario, a
+ella le llega la notificación, clasifica la severidad y escribe al jefe de sede para que lo
+atienda. El cierre va de una semana a meses si hay que importar un repuesto, y lo sigue a mano en
+un Excel central. La matriz IPERC, de unas 500 filas, se revisa una vez al año porque la ley lo
+exige y es «casi inmanejable». Las inspecciones las hacen los asistentes de cada sede, que le
+envían fotos por correo a fin de mes. La entrega de EPP es su mayor dolor: cada sede la registra
+en papel, la escanea y se la manda; hay escaneos ilegibles y hojas perdidas. En la última
+auditoría interna le observaron firmas faltantes en las entregas de Trujillo de tres meses atrás
+y buscar el papel «fue un caos». Quiere estadísticas sin armar tablas dinámicas cada mes. Con
+reportes en tiempo real pasaría de «perseguidora de firmas y actas» a analista de tendencias.
+TI desarrolló un sistema interno que abandonaron por errores y falta de soporte. Deciden el
+Gerente de Operaciones y el de RR. HH., para quienes pesan el ahorro de horas-hombre y la
+facilidad de uso. Las actas del comité se firman en papel y se guardan bajo llave.
+
+**Entrevista E7 — Jorge, jefe de SST en manufactura**
+
+| Campo | Detalle |
+|---|---|
+| Entrevistado | Jorge, 45 años |
+| Formación y cargo | Ingeniero Químico; Jefe de SST de una planta de manufactura, 400 trabajadores en tres turnos |
+| Entrevistador | Villafuerte Tapia Renzo Alonso |
+| Fecha, duración y modalidad | <!-- COMPLETAR --> |
+| Video | <!-- COMPLETAR: enlace con minuto de inicio --> |
+
+Jorge usa el ERP de la empresa y tableros en Power BI que se alimentan a mano cada lunes. El
+operario avisa al supervisor de turno, que registra el reporte en el ERP; Jorge lo revisa a las
+8 a. m. del día siguiente y los críticos se cierran en 24 horas con mantenimiento, que trabaja
+todo el día; el resto, en una semana. El ERP le da el tiempo entre la apertura y el cierre. La
+matriz IPERC se actualiza al entrar una máquina o cambiar de insumo químico, y las inspecciones
+se cumplen al 90 %, aunque con checklists impresos que un asistente digita al final del turno.
+Le cuesta cruzar los registros físicos de EPP del almacén para proyectar recambios de zapatos o
+filtros. Ante una denuncia por ventilación, SUNAFIL pidió evidencia de corrección de reportes
+previos y pasaron dos días buscando correos y fotos. Le falta trazabilidad de los cierres y
+saber en qué invierte su tiempo el equipo de campo. Con reportes con foto desde el origen dejaría
+de depender del «teléfono malogrado» del supervisor que redacta mal lo que dijo el operario.
+Compraron una plataforma extranjera que dieron de baja porque en el celular era lentísima y los
+supervisores «se rebelaron». Decide el Gerente General, al que convence que la implementación no
+le quite horas al área de Sistemas. Las actas se llevan en un libro legalizado.
+
+**Entrevista E8 — Silvia, responsable de SST en una contratista**
+
+| Campo | Detalle |
+|---|---|
+| Entrevistado | Silvia, 28 años |
+| Formación y cargo | Técnica en Seguridad Industrial; Responsable de SST de una contratista de servicios, 80 trabajadores repartidos en sedes de clientes |
+| Entrevistador | Villafuerte Tapia Renzo Alonso |
+| Fecha, duración y modalidad | <!-- COMPLETAR --> |
+| Video | <!-- COMPLETAR: enlace con minuto de inicio --> |
+
+Silvia gestiona todo por WhatsApp y correo. Sus trabajadores hacen limpieza, pintura y
+mantenimiento eléctrico en instalaciones de clientes: cuando la condición insegura es del
+cliente, como una escalera rota, tiene que escribirle y «rogarle» que la arregle, lo que tarda
+semanas; si es un acto de su personal, llama al trabajador de inmediato. No puede medir el
+tiempo de cierre más que revisando el historial del chat. Como los servicios cambian, hace un
+IPERC continuo o un ATS a mano antes de cada trabajo y casi no toca la matriz base. Pide a los
+capataces fotos por WhatsApp de las inspecciones y las descarga a una carpeta; las entregas de EPP
+se firman en un cuaderno que el jefe de grupo fotografía y le envía los sábados. No ha tenido
+visita de SUNAFIL, pero calcula que le tomaría una semana ordenar los expedientes y que la
+multarían por desorden. No tiene estadísticas ni indicadores: «solo sobrevivo el día a día». Con
+reportes en tiempo real tendría la trazabilidad para demostrar cuándo avisó al cliente y
+proteger a su empresa si ocurre un accidente en instalaciones ajenas. Nunca cotizaron un
+software: la gerencia cree que son carísimos y solo para mineras. El dueño solo invertiría si
+un cliente importante lo exige para una licitación. Con menos de 20 trabajadores por sede, tienen
+un supervisor de SST elegido en lugar de comité y llevan un cuadernillo.
+
 ### 2.2.3. Análisis de entrevistas
+
+Los porcentajes se calculan sobre los cuatro entrevistados de cada segmento. Ocho entrevistas
+permiten identificar patrones y contradicciones, no estimar proporciones de la población: los
+porcentajes indican qué tan repetido fue un hallazgo dentro de la muestra.
+
+#### Segmento 1 — Trabajador de campo
+
+| Hallazgo | Entrevistados | % | Evidencia |
+|---|---|---|---|
+| El primer aviso es informal: voz, WhatsApp o radio, antes que el formato | E1, E2, E3, E4 | 100 % | «le grité desde lejos» (E1); foto por WhatsApp (E2) |
+| El formato formal exige dejar el puesto o depender de papel: tarjeta en oficina, PC compartida, hoja junto al botiquín, libreta | E1, E2, E3, E4 | 100 % | 3 a 10 minutos; «da flojera» (E1); cola en la PC (E2); polvo y lluvia (E4) |
+| Deja de reportar lo que considera menor | E1, E2, E3 | 75 % | «si reporto cada caja chueca no trabajo» (E2) |
+| Teme el costo social o laboral de reportar | E1, E2, E3 | 75 % | «soplón» (E1); que el jefe le grite por parar la producción (E3) |
+| No recibe aviso formal de que lo reportado se corrigió | E1, E2, E3 | 75 % | «Nunca me avisan» (E1); solo E4 recibe las medidas en la charla de 5 minutos |
+| Lleva su celular durante la jornada | E1, E2, E4 | 75 % | En la planta de E3 el celular está prohibido |
+| Trabaja en zonas sin cobertura | E1, E4 | 50 % | Sótanos de obra (E1); tajo minero (E4) |
+| Usaría un reporte de menos de un minuto desde el celular | E1, E2, E4 | 75 % | E3 lo haría solo con una tablet de la empresa en planta |
+| Firma la entrega de EPP en papel o formato impreso | E1, E2, E3 | 75 % | E4 firma con huella en un lector del almacén |
+| No conoce lo que acuerda el comité ni percibe su efecto | E1, E2, E3 | 75 % | «dicen que solo se reúnen para comer galletas» (E2) |
+
+**Condiciones de uso que no estaban en los supuestos.** Cada entrevistado puso una condición
+distinta para adoptar la aplicación: anonimato frente a compañeros (E1), no consumir sus datos
+móviles (E2), poder usarla donde el celular personal está prohibido (E3) y guardar el reporte sin
+señal (E4). E3 añade que términos como «riesgo locativo» o «nivel de severidad» le impiden
+completar el formato: la clasificación técnica no debería recaer en el operario.
+
+**Contraste.** E4, de minería, es la excepción en casi todo: reporta siempre, no teme
+represalias, recibe retroalimentación y participa en el comité. La diferencia no es la
+herramienta —usa papel autocopiativo— sino la cultura de seguridad del rubro, lo que advierte que
+el producto por sí solo no corrige el subreporte donde reportar tiene costo social.
+
+#### Segmento 2 — Supervisor de SST y comité
+
+| Hallazgo | Entrevistados | % | Evidencia |
+|---|---|---|---|
+| Gestiona con hojas de cálculo, WhatsApp o correo y consolida a mano | E5, E6, E7, E8 | 100 % | «puro Excel» (E5); Power BI alimentado a mano los lunes (E7) |
+| Reunir evidencia para SUNAFIL o una auditoría consume horas o días | E5, E6, E7, E8 | 100 % | 4 horas (E5); 2 días (E7); una semana estimada (E8) |
+| Le faltan estadísticas e indicadores sin trabajo manual | E5, E6, E7, E8 | 100 % | «no tengo indicadores de cierre» (E8) |
+| Valora el reporte en tiempo real con foto y ubicación | E5, E6, E7, E8 | 100 % | dejaría de «caminar a ciegas» (E5); fin del «teléfono malogrado» (E7) |
+| La entrega de EPP en papel genera pérdidas o es difícil de cruzar | E5, E6, E7, E8 | 100 % | hojas perdidas y escaneos ilegibles (E6) |
+| Mide el tiempo de cierre a mano o no puede medirlo | E5, E6, E8 | 75 % | solo E7 lo obtiene del ERP |
+| La matriz IPERC se actualiza por evento o una vez al año | E5, E6, E8 | 75 % | E7 la actualiza con cada cambio de máquina o insumo |
+| Probó o evaluó un software y lo descartó | E5, E6, E7 | 75 % | precio en dólares (E5); sin soporte (E6); lento en el celular (E7) |
+| Lleva actas y registros del comité en papel | E5, E6, E7, E8 | 100 % | libro de actas a mano (E5); legalizado (E7); cuadernillo (E8) |
+| Coordina subcontratas o trabaja en instalaciones de clientes | E5, E8 | 50 % | quiere saber qué subcontrata genera más hallazgos (E5) |
+
+**Quién compra y por qué.** La decisión la toma la gerencia (proyecto, operaciones con RR. HH.,
+general o el dueño) y el argumento cambia: evitar una multa que paralice la obra (E5), ahorrar
+horas-hombre y ser fácil de usar (E6), no consumir horas de Sistemas en integrarlo (E7) o que un
+cliente lo exija en una licitación (E8).
+
+#### Contraste con los supuestos de Lean UX (1.2.2)
+
+| Supuesto | Resultado | Sustento |
+|---|---|---|
+| El valor principal es reducir la exposición a sanciones (negocio 3) | **Confirmado** | E5, E7 y E8 vinculan la herramienta con SUNAFIL; E5 lo nombra como el único argumento de compra |
+| El cliente reduce tiempo administrativo de consolidación (negocio 4) | **Confirmado** | 4 de 4 supervisores consolidan a mano y tardan horas o días en reunir evidencia |
+| Se puede atender con un SaaS por suscripción (negocio 2) | **Confirmado con condición** | El precio en dólares por usuario fue el motivo de rechazo (E5) y la gerencia de E8 cree que son caros: conviene cobrar en soles y por empresa |
+| Los clientes son empresas medianas que ya tienen comité (negocio 1) | **Refutado en parte** | E8 tiene 80 trabajadores pero, con menos de 20 por sede, solo un supervisor de SST elegido |
+| La competencia son plataformas como SELERIA o GISSAT (negocio 7) | **Refutado en parte** | Lo que se reemplaza en 3 de 4 casos es Excel, WhatsApp o un sistema interno; las plataformas evaluadas fueron extranjeras |
+| El mayor riesgo es que el trabajador no adopte la aplicación (negocio 9) | **Confirmado** | E7 dio de baja un SaaS porque los supervisores no lo usaban en el celular |
+| El usuario usa su propio Android de gama media o baja (usuario) | **Refutado en parte** | E2 usa iPhone y en la planta de E3 el celular está prohibido |
+| No ve resultado de haber reportado y teme la reacción del supervisor (usuario) | **Confirmado** | 3 de 4 operarios en ambos puntos |
+| Un formulario de tres pasos aumenta la frecuencia de reporte (función 1) | **Respaldado, no probado** | 3 de 4 dicen que reportarían más; es intención declarada, no conducta: lo mide el experimento de 8.2 |
+| Guardar el reporte sin conexión evita perderlo (función 2) | **Confirmado** | E1 y E4 trabajan en zonas sin cobertura; E4 lo pide explícitamente |
+| La foto obligatoria mejora la priorización (función 3) | **Respaldado** | E2 ya reporta con foto; E5 y E7 valoran ver la condición sin ir al lugar |
+| Mostrar el estado de los reportes sostiene la adopción (función 4) | **Confirmado** | 3 de 4 operarios no reciben retroalimentación; E2 valora la foto de cierre del supervisor |
+| Exportar la evidencia reduce la preparación ante SUNAFIL (función 5) | **Confirmado** | 4 de 4 supervisores |
+
+#### Implicancias para el producto
+
+1. **Reporte anónimo opcional** para actos de terceros, porque el costo social es la barrera que
+   la menor fricción no resuelve (E1, E2, E3). Quedó implementado como opción del formulario.
+2. **Operación sin conexión** con envío diferido (E1, E4), ya prevista en la aplicación móvil.
+3. **Clasificación técnica a cargo del supervisor**: el operario elige entre opciones en lenguaje
+   llano y el supervisor asigna la severidad (E3).
+4. **Aviso de cierre al reportante**, que corresponde a la historia TB05 del Sprint To-Be 1.
+5. **Punto de reporte compartido** (tablet de planta) para empresas que prohíben el celular
+   personal (E3), y uso de la red WiFi de la empresa para no consumir datos del trabajador (E2).
+6. **Indicadores por subcontrata y por cliente** para contratistas y obras con terceros (E5, E8).
+7. **Precio en soles por empresa** y una implementación que no requiera horas del área de
+   Sistemas (E5, E7).
 
 ## 2.3. Needfinding
 
