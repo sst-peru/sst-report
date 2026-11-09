@@ -4945,6 +4945,50 @@ verifica con las mismas pruebas.
 
 ### 8.3.4. To-Be Sprint Backlogs
 
+Las historias To-Be priorizadas en la sección 8.3.2 se planifican en un sprint propio, con el
+mismo formato de work-items que los sprints del Capítulo V: cada historia se descompone por área
+responsable y las horas estimadas equivalen a sus story points.
+
+| Campo | Valor |
+|---|---|
+| Sprint | Sprint To-Be 1 |
+| Objetivo | Hacer que el experimento comunique resultados íntegros (datos de demostración declarados e intervalo de confianza) y cerrar el circuito de retroalimentación con notificaciones al reportante y al supervisor, con trazabilidad de las exportaciones de evidencia. |
+| Elementos del backlog | 5 |
+| Story Points | 20 |
+| Work-items | 17 |
+| Horas estimadas | 20 |
+| Incremento entregable | El panel del experimento distingue datos de demostración y muestra la diferencia con su intervalo al 95 %; el operario recibe aviso cuando su reporte se cierra; el supervisor es notificado de cada hallazgo crítico; toda exportación de evidencia queda registrada con usuario y fecha. |
+
+| Sprint | User Story | Título | Work-Item | Descripción de la tarea | Estimación (h) | Área responsable |
+|---|---|---|---|---|---|---|
+| Sprint To-Be 1 | TB01 | Aviso de datos de demostración | SprintTB-T001 | Exponer en el endpoint del experimento el indicador de empresa de demostración | 0,5 | Backend |
+| Sprint To-Be 1 | TB01 | Aviso de datos de demostración | SprintTB-T002 | Mostrar en el panel web del experimento el aviso de datos de demostración | 1 | Web |
+| Sprint To-Be 1 | TB01 | Aviso de datos de demostración | SprintTB-T003 | Cubrir el aviso de datos de demostración con pruebas automatizadas | 0,5 | QA |
+| Sprint To-Be 1 | TB02 | Intervalo de confianza en los resultados | SprintTB-T004 | Calcular en el API la diferencia de medias, error estándar e intervalo al 95 % (aproximación de Welch) | 2 | Backend |
+| Sprint To-Be 1 | TB02 | Intervalo de confianza en los resultados | SprintTB-T005 | Mostrar en el panel web la diferencia, el intervalo y si se distingue del azar | 1,5 | Web |
+| Sprint To-Be 1 | TB02 | Intervalo de confianza en los resultados | SprintTB-T006 | Validar el cálculo del intervalo contra casos de prueba conocidos | 1,5 | QA |
+| Sprint To-Be 1 | TB05 | Aviso de cierre al reportante | SprintTB-T007 | Emitir en el API una notificación al reportante cuando su hallazgo cambia a Cerrado | 1,5 | Backend |
+| Sprint To-Be 1 | TB05 | Aviso de cierre al reportante | SprintTB-T008 | Mostrar en la aplicación Android la notificación de cierre con la acción correctiva aplicada | 1,5 | Móvil |
+| Sprint To-Be 1 | TB05 | Aviso de cierre al reportante | SprintTB-T009 | Mostrar en el panel web el aviso de cierre en el seguimiento del reporte | 1 | Web |
+| Sprint To-Be 1 | TB05 | Aviso de cierre al reportante | SprintTB-T010 | Cubrir el aviso de cierre con pruebas automatizadas | 1 | QA |
+| Sprint To-Be 1 | TB04 | Notificación de hallazgo crítico | SprintTB-T011 | Disparar en el API una notificación a los supervisores al registrarse un hallazgo de severidad crítica | 2 | Backend |
+| Sprint To-Be 1 | TB04 | Notificación de hallazgo crítico | SprintTB-T012 | Mostrar en el panel web la alerta de hallazgo crítico con acceso directo al detalle | 1 | Web |
+| Sprint To-Be 1 | TB04 | Notificación de hallazgo crítico | SprintTB-T013 | Mostrar en la aplicación Android la notificación de hallazgo crítico | 1 | Móvil |
+| Sprint To-Be 1 | TB04 | Notificación de hallazgo crítico | SprintTB-T014 | Cubrir la notificación de hallazgo crítico con pruebas automatizadas | 1 | QA |
+| Sprint To-Be 1 | TB03 | Registro de auditoría de exportaciones | SprintTB-T015 | Registrar en el API usuario, fecha y tipo de cada exportación de evidencia | 1,5 | Backend |
+| Sprint To-Be 1 | TB03 | Registro de auditoría de exportaciones | SprintTB-T016 | Construir en el panel web la consulta del registro de exportaciones | 1 | Web |
+| Sprint To-Be 1 | TB03 | Registro de auditoría de exportaciones | SprintTB-T017 | Cubrir el registro de exportaciones con pruebas automatizadas | 0,5 | QA |
+
+**Resumen por área**
+
+| Área | Work-items | Horas |
+|---|---|---|
+| Backend | 5 | 7,5 |
+| Web | 5 | 5,5 |
+| Móvil | 2 | 2,5 |
+| QA | 5 | 4,5 |
+| **Total** | **17** | **20** |
+
 ### 8.3.5. Implemented To-Be Landing Page Evidence
 
 ### 8.3.6. Implemented To-Be Frontend-Web Application Evidence
