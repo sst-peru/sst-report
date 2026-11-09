@@ -4906,13 +4906,13 @@ de su implementación en sprints.
 
 ### 8.3.2. To-Be Product Backlog
 
-| # | ID | Historia | Story Points | Justificación de la prioridad |
-|---|---|---|---|---|
-| 1 | TB01 | Aviso de datos de demostración | 2 | Requisito de integridad: impide que datos simulados se lean como resultados |
-| 2 | TB02 | Intervalo de confianza en los resultados | 5 | Sin él, el panel comunica una diferencia sin su precisión |
-| 3 | TB05 | Aviso de cierre al reportante | 5 | Cierra el circuito de retroalimentación que las entrevistas señalan como causa del abandono |
-| 4 | TB04 | Notificación de hallazgo crítico | 5 | Ataca el MTTR, la segunda métrica del curso |
-| 5 | TB03 | Registro de auditoría de exportaciones | 3 | Obligación derivada del tratamiento de datos personales |
+| # | ID | Historia | Story Points | Justificación de la prioridad | Estado |
+|---|---|---|---|---|---|
+| 1 | TB01 | Aviso de datos de demostración | 2 | Requisito de integridad: impide que datos simulados se lean como resultados | Implementada |
+| 2 | TB02 | Intervalo de confianza en los resultados | 5 | Sin él, el panel comunica una diferencia sin su precisión | Implementada |
+| 3 | TB05 | Aviso de cierre al reportante | 5 | Cierra el circuito de retroalimentación que las entrevistas señalan como causa del abandono | Pendiente |
+| 4 | TB04 | Notificación de hallazgo crítico | 5 | Ataca el MTTR, la segunda métrica del curso | Pendiente |
+| 5 | TB03 | Registro de auditoría de exportaciones | 3 | Obligación derivada del tratamiento de datos personales | Pendiente |
 
 ### 8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle
 
@@ -4956,6 +4956,7 @@ responsable y las horas estimadas equivalen a sus story points.
 | Story Points | 20 |
 | Work-items | 17 |
 | Horas estimadas | 20 |
+| Estado | TB01 y TB02 implementadas: el panel "Experimento A/B" del API y la web ya declara los datos de demostración y muestra la diferencia con su intervalo al 95 % (Welch). TB05, TB04 y TB03 quedan pendientes. |
 | Incremento entregable | El panel del experimento distingue datos de demostración y muestra la diferencia con su intervalo al 95 %; el operario recibe aviso cuando su reporte se cierra; el supervisor es notificado de cada hallazgo crítico; toda exportación de evidencia queda registrada con usuario y fecha. |
 
 | Sprint | User Story | Título | Work-Item | Descripción de la tarea | Estimación (h) | Área responsable |
