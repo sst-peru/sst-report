@@ -5035,7 +5035,76 @@ que el resultado del A/B.
 
 ### 8.5.1. Analysis and Interpretation of Results
 
+**Fuente de los datos.** Los resultados provienen del panel "Experimento A/B" de la aplicación
+web, ejecutada sobre la empresa de demostración que carga el comando `seed_demo`. Son datos
+**generados**, no comportamiento real de trabajadores: sirven para verificar que la
+instrumentación, la asignación y el cálculo funcionan de punta a punta, no para concluir sobre
+la hipótesis de negocio. El propio panel lo declara (historia TB01).
+
+**Resultados por variante**
+
+| Variante | Usuarios | Reportes | Reportes por usuario | Desviación estándar | MTTR (h) |
+|---|---|---|---|---|---|
+| Formulario rápido (3-4 taps) | 3 | 37 | 12,33 | 10,79 | 92,26 |
+| Formulario largo (10+ campos) | 4 | 35 | 8,75 | 0,96 | 93,19 |
+
+**Prueba estadística**
+
+| Indicador | Valor |
+|---|---|
+| Diferencia observada (rápido − largo) | +3,58 reportes por usuario |
+| Error estándar (Welch) | 6,246 |
+| Intervalo de confianza al 95 % | [−8,66 ; 15,82] |
+| Variación relativa | +40,95 % |
+| Efecto esperado por la hipótesis | ≈ +100 % |
+| ¿Se distingue del azar? (α = 0,05, dos colas) | No |
+
+**Interpretación**
+
+1. **No se rechaza H₀.** El intervalo de confianza contiene el cero, por lo que la diferencia
+   observada no se distingue del azar. El resultado no prueba que ambos formularios sean
+   iguales; solo indica que la evidencia no alcanza para afirmar que son distintos.
+2. **La muestra es insuficiente.** Cada variante tiene menos de 20 usuarios (3 y 4), por debajo
+   del mínimo que el panel considera razonable para la aproximación normal y del tamaño
+   calculado en la sección 8.2.5. Con tan pocos sujetos el intervalo es demasiado ancho para
+   concluir.
+3. **La variabilidad del grupo rápido es alta.** Su desviación estándar (10,79) es más de diez
+   veces la del grupo largo (0,96): la media del grupo rápido depende de uno o dos usuarios muy
+   activos. Esto justifica haber usado la aproximación de Welch, que no asume varianzas iguales.
+4. **La métrica de control se mantiene estable.** El MTTR es prácticamente igual en ambas
+   variantes (92,26 h y 93,19 h), así que el formulario rápido no empeora el tiempo de cierre
+   de los hallazgos.
+5. **Hallazgo de instrumentación.** La columna "con foto" registra 0 en ambas variantes, aunque
+   la hipótesis describe un formulario "con foto". Antes del piloto real hay que verificar si
+   la carga de demostración no genera fotografías o si el evento no se está registrando.
+
+**Decisión.** El experimento queda **no concluyente**. No se adopta el formulario rápido como
+único flujo sobre la base de estos datos. Se mantiene la asignación aleatoria por usuario y se
+ejecutará un piloto con usuarios reales durante la ventana de 14 días definida en la sección
+8.2.5, hasta alcanzar el tamaño de muestra calculado. La infraestructura de medición queda
+validada: la asignación es determinística, los reportes se atribuyen a la variante grabada en
+cada reporte y el panel calcula el intervalo de confianza correctamente.
+
 ### 8.5.2. Re-scored and Re-prioritized Question Backlog
+
+Se recalifica el Question Backlog de la sección 8.1.4 con el mismo criterio (incertidumbre ×
+costo de equivocarse; Alta/Alto = 3, Media/Medio = 2, Baja/Bajo = 1), incorporando lo aprendido
+en el experimento, en las entrevistas de validación (6.3.2) y en la evaluación heurística
+(6.3.3). Como las entrevistas fueron simuladas, los cambios que dependen solo de ellas se
+consideran provisionales hasta validarlos con usuarios reales.
+
+| Prioridad | ID | Pregunta | Incertidumbre | Costo de equivocarse | Puntaje anterior | Puntaje nuevo | Motivo del cambio |
+|---|---|---|---|---|---|---|---|
+| 1 | Q1 | Fricción del formulario | Alta | Alto | 9 | 9 | El experimento no fue concluyente; la incertidumbre se mantiene y requiere piloto real |
+| 2 | Q4 | Captura frente a capacidad de cierre | Alta | Alto | 9 | 9 | Sin cambio; la evaluación heurística mostró que se puede cerrar sin responsable, lo que afecta la medición del cierre |
+| 3 | Q3 | Foto obligatoria | Alta | Medio | 4 | 6 | Sube la incertidumbre: el panel registra 0 reportes con foto en ambas variantes y la entrevista E3 pide foto obligatoria al cerrar |
+| 4 | Q2 | Peso real del uso sin conexión | Media | Alto | 6 | 6 | Sin cambio; hay reportes que llegan por sincronización offline y la entrevista E1 la pide, pero falta medir su volumen |
+| 5 | Q6 | ¿Avisar al reportante del cierre aumenta su frecuencia de reporte? (nueva) | Alta | Medio | — | 6 | Surge de las entrevistas E1 y E4 y de la historia TB05; se puede medir una vez implementado el aviso |
+| 6 | Q5 | Reporte anónimo | Alta | Bajo | 3 | 3 | Sin evidencia nueva |
+
+**Siguiente experimento.** Q1 se mantiene en ejecución con usuarios reales. La siguiente
+pregunta a experimentar es Q3, por ser la que más cambió de puntaje y porque su
+instrumentación (registro de fotos) debe corregirse de todos modos para Q1.
 
 ## 8.6. Continuous Learning
 
