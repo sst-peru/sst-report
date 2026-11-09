@@ -1512,38 +1512,38 @@ Dos columnas de las tablas que siguen merecen una aclaración:
 | 21 | US29 | Inspecciones vencidas | EP06 | Android y Web | **Web:** Inspecciones → listado, marca de vencida<br>**Android:** Pestaña «Inspecciones» → marca de vencida | 3 |
 | 22 | US56 | Programar la siguiente inspección | EP06 | Web | **Web:** Inspecciones → «Programar la siguiente» | 3 |
 | 23 | US57 | Cumplimiento por área | EP06 | Web | **Web:** Inspecciones → indicadores por área | 3 |
-| 24 | US79 | Programa anual de capacitación | EP12 | Web | — | 5 |
-| 25 | US80 | Registro de asistencia a capacitación | EP12 | Android | — | 5 |
-| 26 | US81 | Inducción del personal nuevo | EP12 | Web | — | 5 |
-| 27 | US82 | Alerta de capacitación vencida | EP12 | Web | — | 3 |
-| 28 | US83 | Consultar mis capacitaciones | EP12 | Android | — | 3 |
-| 29 | US84 | Registro de simulacros | EP12 | Web | — | 3 |
-| 30 | US85 | Mapa de riesgos por área | EP13 | Web | — | 8 |
-| 31 | US86 | Consultar el mapa de riesgos en campo | EP13 | Android | — | 3 |
-| 32 | US87 | Inventario de señalización | EP13 | Web | — | 3 |
+| 24 | US79 | Programa anual de capacitación | EP12 | Web | **Web:** Capacitación y simulacros (`/capacitacion`) → «Nueva capacitación» | 5 |
+| 25 | US80 | Registro de asistencia a capacitación | EP12 | Android | **Web:** Capacitación y simulacros → «Registrar asistencia»<br>**Android:** pendiente | 5 |
+| 26 | US81 | Inducción del personal nuevo | EP12 | Web | **Web:** Capacitación y simulacros → «Registrar inducción» | 5 |
+| 27 | US82 | Alerta de capacitación vencida | EP12 | Web | **Web:** Capacitación y simulacros → sección «Capacitación vencida» | 3 |
+| 28 | US83 | Consultar mis capacitaciones | EP12 | Android | **Web:** Capacitación y simulacros → «Mis capacitaciones» (rol operario)<br>**Android:** pendiente | 3 |
+| 29 | US84 | Registro de simulacros | EP12 | Web | **Web:** Capacitación y simulacros → «Registrar simulacro» | 3 |
+| 30 | US85 | Mapa de riesgos por área | EP13 | Web | **Web:** Mapa de riesgos (`/mapa-riesgos`) → «Publicar mapa» y «Ubicar riesgos» | 8 |
+| 31 | US86 | Consultar el mapa de riesgos en campo | EP13 | Android | **Web:** Mapa de riesgos → selector de área y «Descargar plano»<br>**Android:** pendiente | 3 |
+| 32 | US87 | Inventario de señalización | EP13 | Web | **Web:** Mapa de riesgos → sección «Señalización de seguridad» | 3 |
 | 33 | US88 | Ubicar el área por código QR | EP13 | Android | — | 5 |
-| 34 | US89 | Política de SST publicada | EP14 | Android y Web | — | 3 |
-| 35 | US90 | Reglamento Interno de SST | EP14 | Android y Web | — | 3 |
-| 36 | US91 | Plan y programa anual de SST | EP14 | Web | — | 5 |
-| 37 | US92 | Control de versiones de documentos | EP14 | Web | — | 5 |
+| 34 | US89 | Política de SST publicada | EP14 | Android y Web | **Web:** Documentos del SGSST (`/documentos`) → «Ver» | 3 |
+| 35 | US90 | Reglamento Interno de SST | EP14 | Android y Web | **Web:** Documentos del SGSST → «Confirmar recepción»; constancias en «Ver» | 3 |
+| 36 | US91 | Plan y programa anual de SST | EP14 | Web | **Web:** Documentos del SGSST → sección «Plan anual de SST» | 5 |
+| 37 | US92 | Control de versiones de documentos | EP14 | Web | **Web:** Documentos del SGSST → «Ver» → «Nueva versión», «Poner vigente» e historial | 5 |
 | 38 | US118 | Firma del trabajador en la entrega de EPP | EP05 | Android | — | 5 |
 | 39 | US119 | Adjuntar evidencia en inspecciones | EP06 | Android | — | 3 |
-| 40 | US120 | Generar hallazgo desde una inspección | EP06 | Android y Web | — | 3 |
-| 41 | TS03 | Documentación viva del API | — | sst-api | — | 2 |
-| 42 | TS04 | Datos de demostración | — | sst-api | — | 5 |
-| 43 | TS06 | Fin de línea normalizado | — | Los cuatro | — | 2 |
-| 44 | TS07 | Validación local del mensaje de commit | — | Los cuatro | — | 2 |
-| 45 | TS08 | Configuración por variables de entorno | — | sst-api | — | 3 |
-| 46 | TS11 | Aislamiento entre empresas | — | sst-api | — | 5 |
-| 47 | TS13 | Migraciones verificadas en integración | — | sst-api | — | 2 |
-| 48 | TS19 | Correo transaccional | EP18 | sst-api | — | 3 |
-| 49 | TS21 | Respaldo automático y restauración probada | EP19 | sst-api | — | 5 |
-| 50 | TS22 | Almacenamiento de archivos en servicio de objetos | EP19 | sst-api | — | 5 |
-| 51 | TS23 | Observabilidad del backend | EP10 | sst-api | — | 3 |
-| 52 | TS24 | Reporte de errores del cliente | EP10 | sst-web, sst-mobile | — | 3 |
-| 53 | TS25 | Limitación de tasa de peticiones | EP19 | sst-api | — | 2 |
-| 54 | TS28 | Despliegue automatizado al entorno de pruebas | EP10 | sst-api, sst-web | — | 5 |
-| 55 | TS30 | Versionado del API | EP19 | sst-api | — | 5 |
+| 40 | US120 | Generar hallazgo desde una inspección | EP06 | Android y Web | **Web:** Inspecciones → «Generar hallazgo» en una inspección realizada | 3 |
+| 41 | TS03 | Documentación viva del API | — | sst-api | **API:** `/api/docs/` (Swagger) y `/api/schema/` | 2 |
+| 42 | TS04 | Datos de demostración | — | sst-api | **API:** `python manage.py seed_demo` | 5 |
+| 43 | TS06 | Fin de línea normalizado | — | Los cuatro | **Repos:** `.gitattributes` en sst-api, sst-web y sst-report | 2 |
+| 44 | TS07 | Validación local del mensaje de commit | — | Los cuatro | **Repos:** `.githooks/commit-msg` | 2 |
+| 45 | TS08 | Configuración por variables de entorno | — | sst-api | **API:** `.env.example` y `config/settings.py` | 3 |
+| 46 | TS11 | Aislamiento entre empresas | — | sst-api | **API:** cada consulta filtra por la empresa del usuario; pruebas «no se ven entre empresas» | 5 |
+| 47 | TS13 | Migraciones verificadas en integración | — | sst-api | **API:** paso «Verificar migraciones pendientes» del workflow de CI | 2 |
+| 48 | TS19 | Correo transaccional | EP18 | sst-api | **API:** `apps/notifications` y `POST /auth/password-reset/`<br>**Web:** «Olvidé mi contraseña» (`/recuperar`) | 3 |
+| 49 | TS21 | Respaldo automático y restauración probada | EP19 | sst-api | **API:** `python manage.py respaldar` y `python manage.py probar_restauracion` | 5 |
+| 50 | TS22 | Almacenamiento de archivos en servicio de objetos | EP19 | sst-api | **API:** `STORAGES` en `config/settings.py` (bucket S3 con enlaces firmados) | 5 |
+| 51 | TS23 | Observabilidad del backend | EP10 | sst-api | **API:** `config/observability.py`, cabecera `X-Request-ID` | 3 |
+| 52 | TS24 | Reporte de errores del cliente | EP10 | sst-web, sst-mobile | **API:** `POST /client-errors/` y admin «Errores de clientes»<br>**Web:** `src/api/errores.ts` | 3 |
+| 53 | TS25 | Limitación de tasa de peticiones | EP19 | sst-api | **API:** `DEFAULT_THROTTLE_RATES` en `config/settings.py` (429 con `Retry-After`) | 2 |
+| 54 | TS28 | Despliegue automatizado al entorno de pruebas | EP10 | sst-api, sst-web | Pendiente: requiere la cuenta del entorno de pruebas; pasa al Sprint 4 | 5 |
+| 55 | TS30 | Versionado del API | EP19 | sst-api | **API:** rutas bajo `/api/v1/` | 5 |
 
 ### Sprint 4 — Comité, evidencia, contratistas, notificaciones y seguridad
 
@@ -3451,7 +3451,7 @@ no se presenta como captura de una implementación.
      inspecciones con checklist, EPP, comité con actas, usuarios, experimento A/B. -->
 
 La aplicación web usa React con TypeScript. El archivo
-[App.tsx de la versión consultada](https://github.com/sst-peru/sst-web/blob/2fd0a59df9465c464915b51894a60e5b5a9667c8/src/App.tsx)
+[App.tsx de la versión consultada](https://github.com/sst-peru/sst-web/blob/62cbf3745403c29468031f179932ccd1a4a9b50a/src/App.tsx)
 contiene las rutas de la tabla. Su presencia acredita una interfaz en el código, no el
 funcionamiento completo contra el backend: comité y administración de usuarios requieren
 contrastar las diferencias de contrato registradas en el Anexo G.
@@ -3459,15 +3459,21 @@ contrastar las diferencias de contrato registradas en el Anexo G.
 | Pantalla | Ruta | Funcionalidad descrita por la interfaz |
 |---|---|---|
 | Acceso | `/login` | Autenticación con JWT |
+| Recuperar contraseña | `/recuperar`, `/restablecer` | Enlace por correo y elección de la contraseña nueva |
 | Registro | `/registro` | Alta de trabajador por RUC de empresa |
 | Tablero | `/` | MTTR, hallazgos abiertos, cumplimiento de inspecciones, vencidas, acuerdos y actas del comité |
 | Reportes | `/reportes` | Bandeja filtrable por estado, tipo y área |
 | Nuevo reporte | `/reportes/nuevo` | Formulario en sus dos variantes del experimento, con foto, vista previa ampliable y captura de ubicación |
 | Detalle | `/reportes/:id` | Datos completos, bitácora, asignación de responsable y cierre con acción correctiva |
 | Matriz IPERC | `/iperc` | Consulta y edición de entradas con cálculo del nivel de riesgo |
-| Inspecciones | `/inspecciones` | Programas, generación de ocurrencias, ejecución con checklist e indicadores |
+| Accidentes e incidentes | `/accidentes` | Registro numerado, investigación con causas, medidas correctivas, aviso al MTPE, enfermedades ocupacionales e índices |
+| Inspecciones | `/inspecciones` | Programas, generación de ocurrencias, ejecución con checklist, hallazgo desde una observación e indicadores |
 | EPP | `/epp` | Catálogo, registro de entregas y conformidad del trabajador |
+| Capacitación y simulacros | `/capacitacion` | Programa anual frente al mínimo legal, asistencia, inducción, capacitación vencida y simulacros |
+| Mapa de riesgos | `/mapa-riesgos` | Plano por área con los riesgos ubicados, descarga, versiones anteriores e inventario de señalización |
+| Documentos del SGSST | `/documentos` | Política, RISST con constancia de recepción, control de versiones y plan anual con su avance |
 | Comité | `/comite` | Constitución, miembros, paridad, actas con quórum y acuerdos |
+| Privacidad | `/privacidad` | Consentimiento de datos personales y uso de la ubicación |
 | Usuarios y áreas | `/usuarios` | Alta de usuarios con rol y gestión de áreas |
 | Experimento | `/experimento` | Resultados comparados por variante |
 
