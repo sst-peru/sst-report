@@ -4234,19 +4234,69 @@ un tercero, lo que aporta una mirada externa sin el sesgo de quien construyó el
 
 #### 6.4.1.1. Información del grupo auditado
 
+| Campo | Detalle |
+|---|---|
+| Nombre del equipo | [Nombre del equipo] |
+| Startup | [Nombre de la startup] |
+| Producto | [Nombre del producto] |
+| Integrantes | [Apellidos y nombres de cada integrante] |
+| Sección | [Sección] |
+
 #### 6.4.1.2. Cronograma de auditoría realizada
 
+| Lugar / medio | Fecha | Hora | Auditores | Flujos revisados |
+|---|---|---|---|---|
+| [Laboratorio / Google Meet] | [dd/mm/2026] | [hh:mm] | [Integrantes de nuestro equipo] | [Ej.: registro, flujo principal, perfil] |
+
 #### 6.4.1.3. Contenido de auditoría realizada
+
+**Escala de severidad:** 1 cosmético, 2 menor, 3 mayor, 4 muy grave (Nielsen).
+
+**Tabla resumen**
+
+| # | Problema | Severidad | Heurística violada |
+|---|---|---|---|
+| 1 | [Problema] | [1-4] | [Heurística] |
+| 2 | [Problema] | [1-4] | [Heurística] |
+| 3 | [Problema] | [1-4] | [Heurística] |
+
+**Descripción de problemas**
+
+**Problema 1: [Título]** — Severidad [n]
+Heurística: [Heurística].
+[Qué se observó, en qué pantalla y por qué es un problema. Adjuntar captura.]
+**Recomendación:** [Cambio sugerido.]
 
 ### 6.4.2. Auditoría recibida
 
 #### 6.4.2.1. Información del grupo auditor
 
+| Campo | Detalle |
+|---|---|
+| Nombre del equipo | [Nombre del equipo auditor] |
+| Startup | [Nombre de la startup] |
+| Integrantes | [Apellidos y nombres] |
+| Sección | [Sección] |
+
 #### 6.4.2.2. Cronograma de auditoría recibida
+
+| Lugar / medio | Fecha | Hora | Auditores | Flujos revisados |
+|---|---|---|---|---|
+| [Laboratorio / Google Meet] | [dd/mm/2026] | [hh:mm] | [Integrantes del equipo auditor] | [Flujos de Resguardo revisados] |
 
 #### 6.4.2.3. Contenido de auditoría recibida
 
+<!-- Copiar aquí la tabla resumen y la descripción de problemas que entregó el equipo auditor. -->
+
+| # | Problema | Severidad | Heurística violada |
+|---|---|---|---|
+| 1 | [Problema reportado] | [1-4] | [Heurística] |
+
 #### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
+
+| # | Hallazgo recibido | Modificación realizada | Repositorio / commit | Estado |
+|---|---|---|---|---|
+| 1 | [Hallazgo] | [Qué se cambió] | [sst-web / hash] | [Corregido / Pendiente para Sprint 4] |
 
 ---
 
