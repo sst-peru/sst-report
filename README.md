@@ -5164,31 +5164,192 @@ La pregunta Q1 encabeza el backlog y es la que se somete a experimento en este c
 
 ### 8.1.5. Experiment Cards
 
-**Experiment Card — EXP-01**
+Cada pregunta del Question Backlog (8.1.4) tiene su Experiment Card, ordenadas por prioridad.
+Las preguntas descriptivas (Q2 y Q7) también tienen tarjeta, pero sin hipótesis: se responden
+midiendo. El tamaño de muestra de cada tarjeta se calcula como en 8.2.5 antes de su ejecución.
+
+| Tarjeta | Pregunta | Método | Métrica | Estado |
+|---|---|---|---|---|
+| EXP-01 | Q1 · Fricción del formulario | Experimento controlado A/B con asignación determinística por usuario | M01 reportes por usuario (principal) y M02 MTTR (control) | Ejecutado con datos de demostración: no concluyente (8.5.1). Pendiente el piloto real |
+| EXP-02 | Q4 · Captura frente a capacidad de cierre | Estudio observacional de serie temporal: volumen semanal de reportes frente a MTTR y tasa de cierre | M02 MTTR semanal y M04 tasa de cierre | Planificado para el siguiente ciclo |
+| EXP-03 | Q2 · Peso real del uso sin conexión | Medición descriptiva sobre los reportes del piloto | M06 proporción de reportes sin conexión (`synced_offline`) | Planificado: se ejecuta junto con el piloto real de EXP-01 |
+| EXP-04 | Q6 · Disposición a usar el celular personal | Estudio de adopción con invitación abierta y medición de uso real | M08 tasa de adopción (operarios con al menos un reporte desde su celular / operarios invitados) | Planificado |
+| EXP-05 | Q10 · Evidencia exportable como argumento de compra | Prueba de concepto con demostración guiada y elección forzada entre cuatro beneficios | M09 proporción de responsables que elige la evidencia exportable como motivo principal | Planificado |
+| EXP-06 | Q3 · Foto obligatoria | Experimento controlado A/B con asignación determinística por usuario | M07 tasa de finalización (reportes enviados / reportes iniciados) y M05 cobertura de evidencia (control) | Siguiente experimento (8.5.2). Requiere instrumentar el evento `reporte_iniciado` y corregir el registro de fotos |
+| EXP-07 | Q7 · Línea base del MTTR en papel | Revisión retrospectiva de los registros en papel de la empresa piloto | M02 MTTR en el proceso en papel | Planificado |
+| EXP-08 | Q9 · Ranking de áreas por hallazgos cerrados | Diseño antes y después por área, con áreas de control sin ranking | M04 tasa de cierre (principal) y M01 reportes por usuario (control) | En espera: baja prioridad tras la re-priorización (8.5.2) |
+| EXP-09 | Q5 · Reporte anónimo | Experimento controlado A/B con asignación determinística por usuario | M01 reportes por usuario, restringido a actos inseguros de terceros | Planificado |
+| EXP-10 | Q8 · Reporte por voz | Experimento controlado A/B entre operarios que trabajan con guantes | M01 reportes por usuario y M07 tasa de finalización | Planificado |
+
+**Experiment Card — EXP-01: Fricción del formulario**
 
 | Campo | Contenido |
 |---|---|
 | **Pregunta** | Q1: ¿Un formulario de tres pasos aumenta el número de reportes por usuario frente al formulario tradicional de diez o más campos? |
-| **Hipótesis** | Creemos que el grupo expuesto al formulario rápido registrará al menos el doble de reportes por usuario que el grupo expuesto al formulario largo, durante la ventana de medición |
+| **Hipótesis** | HW01: el grupo expuesto al formulario rápido registrará al menos el doble de reportes por usuario que el grupo expuesto al formulario largo. HW02: el formulario rápido no elevará el MTTR en más de 10 % |
 | **Método** | Experimento controlado A/B con asignación determinística por usuario |
 | **Variable independiente** | Variante del formulario de reporte: `rapido` o `largo` |
-| **Variable dependiente** | Número de reportes por usuario en la ventana de medición |
+| **Variable dependiente / métrica** | M01 reportes por usuario (principal) y M02 MTTR (control) |
 | **Variables controladas** | El resto de la aplicación es idéntico para ambos grupos: mismo acceso, misma lista, misma operación sin conexión, mismo API |
-| **Participantes** | Operarios de campo con cuenta activa |
+| **Participantes** | Operarios de campo con cuenta activa; 24 como mínimo (8.2.5) |
 | **Duración** | 14 días |
-| **Criterio de éxito** | Diferencia estadísticamente significativa (α = 0.05) a favor del grupo `rapido` |
-| **Criterio de refutación** | Ausencia de diferencia significativa, o diferencia a favor del formulario largo |
+| **Criterio de éxito** | Diferencia estadísticamente significativa (α = 0,05) a favor del grupo `rapido`, sin que el MTTR empeore más de 10 % |
+| **Criterio de refutación** | Ausencia de diferencia significativa con la muestra requerida, o diferencia a favor del formulario largo |
 | **Decisión asociada** | Si se confirma, el flujo rápido se convierte en el único formulario del producto. Si se refuta, se elimina la variante, se conserva el formulario simple por coherencia de diseño y la inversión se redirige hacia la barrera que las entrevistas señalen como dominante |
+| **Estado** | Ejecutado con datos de demostración: no concluyente (8.5.1). Pendiente el piloto real |
 
-**Experiment Card — EXP-02 (siguiente ciclo)**
+**Experiment Card — EXP-02: Captura frente a capacidad de cierre**
 
 | Campo | Contenido |
 |---|---|
 | **Pregunta** | Q4: ¿El aumento de reportes se traduce en hallazgos cerrados o solo en cola acumulada? |
-| **Hipótesis** | Creemos que un aumento del volumen de reportes sin cambios en el proceso de cierre incrementará el MTTR |
-| **Método** | Análisis observacional de la serie temporal de MTTR frente al volumen de reportes |
-| **Medida** | MTTR semanal y número de hallazgos abiertos al cierre de cada semana |
-| **Decisión asociada** | Si el MTTR se deteriora, priorizar funcionalidades de capacidad de respuesta (notificaciones, asignación automática) antes que funcionalidades de captura |
+| **Hipótesis** | HW03: un aumento del volumen semanal de reportes, sin cambios en el proceso de cierre, eleva el MTTR y reduce la tasa de cierre |
+| **Método** | Estudio observacional de serie temporal: volumen semanal de reportes frente a MTTR y tasa de cierre |
+| **Variable independiente** | Volumen semanal de reportes (no se manipula; se observa) |
+| **Variable dependiente / métrica** | M02 MTTR semanal y M04 tasa de cierre |
+| **Variables controladas** | Mismo equipo de SST y mismo procedimiento de cierre durante todo el periodo |
+| **Participantes** | Supervisores y operarios de una empresa piloto |
+| **Duración** | 8 semanas como mínimo |
+| **Criterio de éxito** | Correlación de Spearman positiva y significativa (α = 0,05) entre volumen y MTTR, con caída de la tasa de cierre en las semanas de mayor volumen |
+| **Criterio de refutación** | Correlación nula o negativa: la capacidad de cierre absorbe el volumen adicional |
+| **Decisión asociada** | Si se confirma, priorizar funcionalidades de capacidad de respuesta (notificaciones, asignación automática, TB04) antes que funcionalidades de captura |
+| **Estado** | Planificado para el siguiente ciclo |
+
+**Experiment Card — EXP-03: Peso real del uso sin conexión**
+
+| Campo | Contenido |
+|---|---|
+| **Pregunta** | Q2: ¿Qué proporción de reportes se origina sin conexión? |
+| **Hipótesis** | No aplica: es una pregunta descriptiva. Se estima la proporción con su intervalo de confianza |
+| **Método** | Medición descriptiva sobre los reportes del piloto |
+| **Variable independiente** | No aplica (no se manipula ninguna condición) |
+| **Variable dependiente / métrica** | M06 proporción de reportes sin conexión (`synced_offline`) |
+| **Variables controladas** | Se mide sobre todos los reportes del piloto, de ambas variantes de EXP-01 |
+| **Participantes** | Operarios de campo del piloto de EXP-01 |
+| **Duración** | Los mismos 14 días de EXP-01 |
+| **Criterio de éxito** | Obtener la proporción con un intervalo al 95 % de amplitud menor a ±10 puntos |
+| **Criterio de refutación** | No aplica; si el intervalo es más ancho, se amplía la ventana |
+| **Decisión asociada** | Si la proporción supera el 20 %, la cola local y la sincronización se mantienen como prioridad; si es marginal, se simplifica su mantenimiento |
+| **Estado** | Planificado: se ejecuta junto con el piloto real de EXP-01 |
+
+**Experiment Card — EXP-04: Disposición a usar el celular personal**
+
+| Campo | Contenido |
+|---|---|
+| **Pregunta** | Q6: ¿Qué proporción de operarios acepta usar su celular personal para reportar? |
+| **Hipótesis** | HW04: al menos el 70 % de los operarios invitados registrará un reporte desde su propio celular durante la ventana |
+| **Método** | Estudio de adopción con invitación abierta y medición de uso real |
+| **Variable independiente** | Invitación a instalar la aplicación en el celular personal |
+| **Variable dependiente / métrica** | M08 tasa de adopción (operarios con al menos un reporte desde su celular / operarios invitados) |
+| **Variables controladas** | Misma invitación y misma capacitación de cinco minutos para todos |
+| **Participantes** | Operarios de campo de la empresa piloto |
+| **Duración** | 14 días |
+| **Criterio de éxito** | Límite inferior del intervalo de Wilson al 95 % igual o mayor a 70 % |
+| **Criterio de refutación** | Límite superior del intervalo por debajo de 70 % |
+| **Decisión asociada** | Si se confirma, la aplicación propia sigue siendo el canal principal; si se refuta, se priorizan los equipos compartidos y el registro por el supervisor |
+| **Estado** | Planificado |
+
+**Experiment Card — EXP-05: Evidencia exportable como argumento de compra**
+
+| Campo | Contenido |
+|---|---|
+| **Pregunta** | Q10: ¿La evidencia exportable para SUNAFIL es el argumento que decide la compra? |
+| **Hipótesis** | HW05: al menos la mitad de los responsables de SST elegirá la evidencia exportable como el motivo principal para contratar el producto |
+| **Método** | Prueba de concepto con demostración guiada y elección forzada entre cuatro beneficios |
+| **Variable independiente** | No aplica: se compara la preferencia entre beneficios presentados en orden aleatorio |
+| **Variable dependiente / métrica** | M09 proporción de responsables que elige la evidencia exportable como motivo principal |
+| **Variables controladas** | Mismo guion de demostración y mismo orden aleatorizado de los beneficios |
+| **Participantes** | Al menos 10 supervisores o jefes de SST |
+| **Duración** | 2 semanas |
+| **Criterio de éxito** | Prueba binomial unilateral (α = 0,05): la proporción supera el 50 % |
+| **Criterio de refutación** | La proporción no supera el 50 % o otro beneficio domina la elección |
+| **Decisión asociada** | Si se confirma, el mensaje comercial se centra en la evidencia y se priorizan las funciones de exportación; si no, se reorienta al beneficio elegido |
+| **Estado** | Planificado |
+
+**Experiment Card — EXP-06: Foto obligatoria**
+
+| Campo | Contenido |
+|---|---|
+| **Pregunta** | Q3: ¿La foto obligatoria reduce la tasa de finalización del reporte? |
+| **Hipótesis** | HW06: exigir la foto reduce la tasa de finalización del reporte frente a dejarla opcional |
+| **Método** | Experimento controlado A/B con asignación determinística por usuario |
+| **Variable independiente** | Foto `obligatoria` u `opcional` en el formulario rápido |
+| **Variable dependiente / métrica** | M07 tasa de finalización (reportes enviados / reportes iniciados) y M05 cobertura de evidencia (control) |
+| **Variables controladas** | Mismo formulario rápido y misma aplicación en ambos grupos |
+| **Participantes** | Operarios de campo con cuenta activa |
+| **Duración** | 14 días |
+| **Criterio de éxito** | Diferencia significativa de proporciones (α = 0,05, dos colas) en la tasa de finalización |
+| **Criterio de refutación** | Sin diferencia significativa con la muestra requerida |
+| **Decisión asociada** | Si la foto obligatoria reduce la finalización, pasa a opcional con recordatorio; si no, se mantiene obligatoria por su valor como evidencia |
+| **Estado** | Siguiente experimento (8.5.2). Requiere instrumentar el evento `reporte_iniciado` y corregir el registro de fotos |
+
+**Experiment Card — EXP-07: Línea base del MTTR en papel**
+
+| Campo | Contenido |
+|---|---|
+| **Pregunta** | Q7: ¿Cuánto tiempo pasa hoy entre la detección y la corrección de un peligro con el proceso en papel? |
+| **Hipótesis** | No aplica: es una pregunta descriptiva. Se estima la mediana con su intervalo de confianza |
+| **Método** | Revisión retrospectiva de los registros en papel de la empresa piloto |
+| **Variable independiente** | No aplica (no se manipula ninguna condición) |
+| **Variable dependiente / métrica** | M02 MTTR en el proceso en papel |
+| **Variables controladas** | Solo registros con fecha de detección y de cierre legibles |
+| **Participantes** | Registros de hallazgos de los últimos 3 meses de la empresa piloto |
+| **Duración** | 1 semana de revisión |
+| **Criterio de éxito** | Obtener la mediana del MTTR en papel con un intervalo al 95 % |
+| **Criterio de refutación** | No aplica; si los registros no tienen fechas, se declara la línea base como no disponible |
+| **Decisión asociada** | Fija la línea base contra la que se compara el MTTR del producto (hipótesis Lean UX H3) |
+| **Estado** | Planificado |
+
+**Experiment Card — EXP-08: Ranking de áreas por hallazgos cerrados**
+
+| Campo | Contenido |
+|---|---|
+| **Pregunta** | Q9: ¿Un ranking de áreas por hallazgos cerrados mejora la tasa de cierre sin desalentar el reporte? |
+| **Hipótesis** | HW07: publicar un ranking de áreas aumenta la tasa de cierre sin reducir la frecuencia de reporte en más de 10 % |
+| **Método** | Diseño antes y después por área, con áreas de control sin ranking |
+| **Variable independiente** | Publicación del ranking de áreas en el tablero |
+| **Variable dependiente / métrica** | M04 tasa de cierre (principal) y M01 reportes por usuario (control) |
+| **Variables controladas** | El ranking es por área, nunca por persona (matriz ética, 8.8) |
+| **Participantes** | Áreas de la empresa piloto |
+| **Duración** | 4 semanas antes y 4 después |
+| **Criterio de éxito** | Aumento significativo de la tasa de cierre (α = 0,05) en las áreas con ranking frente a las de control, y M01 sin caída mayor a 10 % |
+| **Criterio de refutación** | Sin aumento de la tasa de cierre, o caída del reporte mayor a 10 % |
+| **Decisión asociada** | Si se confirma, se adopta el ranking por área; si el reporte cae, se descarta por su riesgo social |
+| **Estado** | En espera: baja prioridad tras la re-priorización (8.5.2) |
+
+**Experiment Card — EXP-09: Reporte anónimo**
+
+| Campo | Contenido |
+|---|---|
+| **Pregunta** | Q5: ¿La posibilidad de reportar de forma anónima aumenta los reportes de actos inseguros de terceros? |
+| **Hipótesis** | HW08: los operarios con opción de reporte anónimo registran más reportes de actos inseguros de terceros por usuario |
+| **Método** | Experimento controlado A/B con asignación determinística por usuario |
+| **Variable independiente** | Opción de reporte anónimo `disponible` o `no disponible` |
+| **Variable dependiente / métrica** | M01 reportes por usuario, restringido a actos inseguros de terceros |
+| **Variables controladas** | Mismo formulario y misma aplicación en ambos grupos |
+| **Participantes** | Operarios de campo con cuenta activa |
+| **Duración** | 14 días |
+| **Criterio de éxito** | Diferencia significativa (U de Mann-Whitney, α = 0,05, dos colas) a favor del grupo con anonimato |
+| **Criterio de refutación** | Sin diferencia significativa con la muestra requerida |
+| **Decisión asociada** | Si se confirma, se implementa el reporte anónimo opcional (idea I2); si no, el miedo a represalias se aborda por otra vía |
+| **Estado** | Planificado |
+
+**Experiment Card — EXP-10: Reporte por voz**
+
+| Campo | Contenido |
+|---|---|
+| **Pregunta** | Q8: ¿El reporte por voz aumenta los reportes de quienes trabajan con guantes o con las manos ocupadas? |
+| **Hipótesis** | HW09: los operarios que trabajan con guantes registran más reportes por usuario cuando disponen de reporte por voz |
+| **Método** | Experimento controlado A/B entre operarios que trabajan con guantes |
+| **Variable independiente** | Reporte por voz `disponible` o `no disponible` |
+| **Variable dependiente / métrica** | M01 reportes por usuario y M07 tasa de finalización |
+| **Variables controladas** | Mismo formulario rápido en ambos grupos; solo cambia el canal de captura |
+| **Participantes** | Operarios de campo que trabajan con guantes |
+| **Duración** | 14 días |
+| **Criterio de éxito** | Diferencia significativa (U de Mann-Whitney, α = 0,05, dos colas) a favor del grupo con voz |
+| **Criterio de refutación** | Sin diferencia significativa con la muestra requerida |
+| **Decisión asociada** | Si se confirma, se invierte en la captura por voz (idea I4); si no, se descarta |
+| **Estado** | Planificado |
 
 ## 8.2. Experiment Design
 
@@ -5202,14 +5363,20 @@ Cada hipótesis de trabajo (HW) tiene su hipótesis nula (H0), está vinculada a
 Card de la sección 8.1.5 y a una métrica del catálogo de 8.2.2, y se puede refutar con datos.
 Las preguntas exploratorias o descriptivas del Question Backlog (Q2 y Q7) no llevan hipótesis:
 se responden midiendo, no contrastando. **Los valores objetivo son metas de validación, no
-resultados alcanzados.** Las hipótesis se relacionan con las hipótesis Lean UX H1 y H3 de la
-sección 1.2.2.3.
+resultados alcanzados.** Las hipótesis se relacionan con las hipótesis Lean UX H1, H3 y H4 de
+la sección 1.2.2.3.
 
 | ID | Tarjeta | Métrica | Hipótesis de trabajo (HW) | Hipótesis nula (H0) | Regla de decisión |
 |---|---|---|---|---|---|
 | HW01 / H0-01 | EXP-01 | M01 | Los operarios expuestos al formulario rápido registran al menos el doble de reportes por usuario que los expuestos al formulario largo durante la ventana de 14 días. *(H1)* | No hay diferencia en la media de reportes por usuario entre ambas variantes (μ_rápido = μ_largo). | Prueba t de Welch a dos colas, α = 0,05, con intervalo de confianza al 95 % de la diferencia. Se rechaza H0 si el intervalo excluye el cero. HW01 se considera apoyada si además el *lift* es de +100 % o más; si el intervalo es positivo pero el *lift* es menor, se apoya solo un efecto menor al esperado. Con menos de 12 usuarios por grupo (8.2.5) un resultado no significativo es **no concluyente**, no una refutación. |
 | HW02 / H0-02 | EXP-01 | M02 | El formulario rápido no empeora el tiempo de cierre: el MTTR del grupo rápido no supera en más de 10 % al del grupo largo. *(H3)* | El MTTR del grupo rápido supera en más de 10 % al del grupo largo. | Prueba de no inferioridad unilateral, α = 0,05: se rechaza H0 si el límite superior del intervalo al 95 % de la diferencia (rápido − largo) es menor que el 10 % del MTTR del grupo largo. Si el intervalo cruza ese margen, el resultado es no concluyente y el MTTR se mantiene como métrica de control. |
 | HW03 / H0-03 | EXP-02 | M02, M04 | Un aumento del volumen semanal de reportes, sin cambios en el proceso de cierre, eleva el MTTR y reduce la tasa de cierre. *(H3)* | No hay asociación entre el volumen semanal de reportes y el MTTR semanal. | Correlación de Spearman entre volumen y MTTR semanales sobre al menos 8 semanas, α = 0,05, unilateral. HW03 se considera apoyada si la correlación es positiva y significativa y la tasa de cierre (M04) desciende en las semanas de mayor volumen. Con menos semanas se reporta solo la serie descriptiva. |
+| HW04 / H0-04 | EXP-04 | M08 | Al menos el 70 % de los operarios invitados registra un reporte desde su propio celular durante la ventana. *(H1)* | La tasa de adopción es menor al 70 %. | Intervalo de Wilson al 95 % de la proporción: HW04 se apoya si el límite inferior es igual o mayor a 70 % y se refuta si el límite superior es menor; en otro caso, no concluyente. |
+| HW05 / H0-05 | EXP-05 | M09 | Al menos la mitad de los responsables de SST elige la evidencia exportable como motivo principal de compra. *(H4)* | La proporción que la elige es igual o menor al 50 %. | Prueba binomial unilateral, α = 0,05, con al menos 10 responsables; con menos, solo se reporta la proporción descriptiva. |
+| HW06 / H0-06 | EXP-06 | M07 | Exigir la foto reduce la tasa de finalización del reporte frente a dejarla opcional. *(H1)* | No hay diferencia en la tasa de finalización entre foto obligatoria y opcional. | Diferencia de proporciones a dos colas, α = 0,05 (prueba exacta de Fisher si algún grupo tiene menos de 5 casos en una categoría). M05 se reporta como métrica de control. |
+| HW07 / H0-07 | EXP-08 | M04, M01 | El ranking de áreas aumenta la tasa de cierre sin reducir la frecuencia de reporte en más de 10 %. *(H3)* | El ranking no aumenta la tasa de cierre. | Comparación antes y después entre áreas con y sin ranking, α = 0,05. Si la frecuencia de reporte (M01) cae más de 10 %, la hipótesis se descarta aunque la tasa de cierre suba. |
+| HW08 / H0-08 | EXP-09 | M01 | Con la opción de reporte anónimo aumentan los reportes de actos inseguros de terceros por usuario. *(H1)* | No hay diferencia en los reportes de actos de terceros por usuario. | U de Mann-Whitney a dos colas, α = 0,05, por la asimetría esperada de los conteos. |
+| HW09 / H0-09 | EXP-10 | M01, M07 | Los operarios con guantes reportan más cuando disponen de reporte por voz. *(H1)* | No hay diferencia en los reportes por usuario entre quienes tienen y no tienen voz. | U de Mann-Whitney a dos colas, α = 0,05; M07 se reporta como métrica secundaria. |
 
 **Por qué HW01 se contrasta a dos colas.** Aunque la hipótesis de negocio es direccional, un
 formulario más corto podría producir reportes de menor calidad y desalentar su uso al
@@ -5225,6 +5392,10 @@ para confirmar lo que ya se cree.
 | M03 | **Tasa de cumplimiento de inspecciones** | Inspecciones realizadas sobre programadas | Mide la disciplina preventiva, no solo la reactiva |
 | M04 | **Tasa de cierre** | Hallazgos cerrados sobre hallazgos creados en el periodo | Detecta si la captura crece más rápido que la capacidad de atención |
 | M05 | **Cobertura de evidencia** | Proporción de hallazgos con foto y con acción correctiva registrada | Mide la calidad del expediente ante una fiscalización |
+| M06 | **Proporción de reportes sin conexión** | Reportes con `synced_offline` sobre el total del periodo | Indica si la operación sin conexión justifica su costo (EXP-03) |
+| M07 | **Tasa de finalización del reporte** | Reportes enviados sobre reportes iniciados | Detecta abandono dentro del formulario (EXP-06, EXP-10) |
+| M08 | **Tasa de adopción** | Operarios con al menos un reporte desde su celular sobre operarios invitados | Mide si el canal móvil es viable (EXP-04) |
+| M09 | **Preferencia por la evidencia exportable** | Responsables de SST que la eligen como motivo principal de compra sobre el total consultado | Valida el argumento comercial (EXP-05) |
 
 ### 8.2.3. Measures
 
@@ -5362,6 +5533,7 @@ indica el evento, su disparador y dónde queda registrado.
 | Evento | Disparador | Datos registrados | Plataforma | Dónde se almacena |
 |---|---|---|---|---|
 | `variante_asignada` | Primer inicio de sesión tras activarse el experimento | Usuario, experimento, variante, fecha | Web y móvil | Tabla `experiments_assignment` |
+| `reporte_iniciado` | El usuario abre el formulario de reporte | Usuario, variante, fecha | Web y móvil | Pendiente: se instrumenta antes de EXP-06 para calcular M07 |
 | `reporte_creado` | El usuario envía el reporte | Usuario, tipo, categoría, área, severidad, variante del formulario, con o sin foto, con o sin GPS, fecha de ocurrencia y de recepción | Web y móvil | Tabla `reports_report` |
 | `reporte_sincronizado_offline` | El worker sube un reporte de la cola local | Marca `synced_offline` y diferencia entre ocurrencia y recepción | Android | Campo del mismo reporte |
 | `reporte_asignado` | El supervisor asigna responsable | Autor, responsable, fecha, estado resultante | Web y móvil | Tabla `reports_reportaction` |
