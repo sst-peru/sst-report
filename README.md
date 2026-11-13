@@ -5137,6 +5137,11 @@ una decisión.
 | Q3 | ¿La foto obligatoria reduce la tasa de finalización del reporte? | Decide si la foto se mantiene obligatoria u opcional |
 | Q4 | ¿El aumento de reportes se traduce en más hallazgos cerrados o solo en más cola? | Decide si hay que trabajar sobre la capacidad de cierre antes de escalar la captura |
 | Q5 | ¿La posibilidad de reportar de forma anónima aumenta los reportes de actos inseguros de terceros? | Decide si se implementa el reporte anónimo |
+| Q6 | ¿Qué proporción de operarios acepta usar su celular personal para reportar? (A2) | Decide si la app propia es el canal principal o si se priorizan equipos compartidos y el reporte web |
+| Q7 | ¿Cuánto tiempo pasa hoy entre la detección y la corrección de un peligro con el proceso en papel? (K2) | Fija la línea base de MTTR contra la que se compara el producto |
+| Q8 | ¿El reporte por voz aumenta los reportes de quienes trabajan con guantes o con las manos ocupadas? (I4) | Decide si se invierte en captura por voz |
+| Q9 | ¿Un ranking de áreas por hallazgos cerrados mejora la tasa de cierre sin desalentar el reporte? (I5) | Decide si se implementa el incentivo colectivo o se descarta por su riesgo social (8.8) |
+| Q10 | ¿La evidencia exportable para SUNAFIL es el argumento que decide la compra? (C3) | Orienta el mensaje comercial y la prioridad de las funciones de exportación |
 
 ### 8.1.4. Question Backlog
 
@@ -5147,8 +5152,13 @@ Priorización por el criterio de mayor incertidumbre combinada con mayor costo d
 | 1 | Q1 | Fricción del formulario | Alta | Alto | 9 |
 | 2 | Q4 | Captura frente a capacidad de cierre | Alta | Alto | 9 |
 | 3 | Q2 | Peso real del uso sin conexión | Media | Alto | 6 |
-| 4 | Q3 | Foto obligatoria | Media | Medio | 4 |
-| 5 | Q5 | Reporte anónimo | Alta | Bajo | 3 |
+| 4 | Q6 | Disposición a usar el celular personal | Media | Alto | 6 |
+| 5 | Q10 | Evidencia exportable como argumento de compra | Media | Alto | 6 |
+| 6 | Q3 | Foto obligatoria | Media | Medio | 4 |
+| 7 | Q7 | Línea base del MTTR en papel | Media | Medio | 4 |
+| 8 | Q9 | Ranking de áreas por hallazgos cerrados | Media | Medio | 4 |
+| 9 | Q5 | Reporte anónimo | Alta | Bajo | 3 |
+| 10 | Q8 | Reporte por voz | Alta | Bajo | 3 |
 
 La pregunta Q1 encabeza el backlog y es la que se somete a experimento en este ciclo.
 
@@ -5572,8 +5582,15 @@ consideran provisionales hasta validarlos con usuarios reales.
 | 2 | Q4 | Captura frente a capacidad de cierre | Alta | Alto | 9 | 9 | Sin cambio; la evaluación heurística mostró que se puede cerrar sin responsable, lo que afecta la medición del cierre |
 | 3 | Q3 | Foto obligatoria | Alta | Medio | 4 | 6 | Sube la incertidumbre: el panel registra 0 reportes con foto en ambas variantes y la entrevista E3 pide foto obligatoria al cerrar |
 | 4 | Q2 | Peso real del uso sin conexión | Media | Alto | 6 | 6 | Sin cambio; hay reportes que llegan por sincronización offline y la entrevista E1 la pide, pero falta medir su volumen |
-| 5 | Q6 | ¿Avisar al reportante del cierre aumenta su frecuencia de reporte? (nueva) | Alta | Medio | — | 6 | Surge de las entrevistas E1 y E4 y de la historia TB05; se puede medir una vez implementado el aviso |
-| 6 | Q5 | Reporte anónimo | Alta | Bajo | 3 | 3 | Sin evidencia nueva |
+| 5 | Q11 | ¿Avisar al reportante del cierre aumenta su frecuencia de reporte? (nueva) | Alta | Medio | — | 6 | Surge de las entrevistas E1 y E4 y de la historia TB05; se puede medir una vez implementado el aviso |
+| 6 | Q6 | Disposición a usar el celular personal | Media | Alto | 6 | 6 | Sin evidencia nueva; se mide en el piloto real |
+| 7 | Q10 | Evidencia exportable como argumento de compra | Media | Alto | 6 | 6 | Sin cambio; las entrevistas a supervisores (E5 a E8) la mencionan, pero falta validarla con compradores |
+| 8 | Q7 | Línea base del MTTR en papel | Alta | Medio | 4 | 6 | Sube: sin línea base, el MTTR de 92 h del panel no se puede comparar con el proceso actual |
+| 9 | Q5 | Reporte anónimo | Alta | Bajo | 3 | 3 | Sin evidencia nueva |
+| 10 | Q8 | Reporte por voz | Alta | Bajo | 3 | 3 | Sin evidencia nueva |
+| 11 | Q9 | Ranking de áreas por hallazgos cerrados | Media | Bajo | 4 | 2 | Baja: la matriz ética (8.8) descarta indicadores punitivos y reduce el valor de responderla |
+
+El backlog queda con once preguntas: las diez de la sección 8.1.4 y Q11, que surge de este ciclo.
 
 **Siguiente experimento.** Q1 se mantiene en ejecución con usuarios reales. La siguiente
 pregunta a experimentar es Q3, por ser la que más cambió de puntaje y porque su
@@ -5618,14 +5635,14 @@ flowchart LR
 | 2 | Con menos de 20 usuarios por variante no es posible concluir | Intervalo [−8,66 ; 15,82] | Alta | No decidir sobre Q1 hasta alcanzar el tamaño de muestra de 8.2.5 |
 | 3 | La métrica "reportes con foto" no se está registrando o no hay datos | 0 reportes con foto en ambas variantes | Media | Revisar la instrumentación antes del piloto |
 | 4 | El formulario rápido no perjudica el tiempo de cierre | MTTR 92,26 h frente a 93,19 h | Media | Mantener MTTR como métrica de control |
-| 5 | Los usuarios esperan ser avisados cuando su reporte avanza | Entrevistas E1 y E4 (simuladas) | Baja | Implementar TB05 y validar con usuarios reales (Q6) |
+| 5 | Los usuarios esperan ser avisados cuando su reporte avanza | Entrevistas E1 y E4 (simuladas) | Baja | Implementar TB05 y validar con usuarios reales (Q11) |
 | 6 | Mostrar la variante del experimento puede sesgar al usuario | Evaluación heurística, problema 5 | Media | Ocultar la variante en la interfaz |
 
 **Decisiones**
 
 1. Q1 continúa en ejecución con usuarios reales; no se cambia el formulario por defecto.
 2. Se corrige la instrumentación de fotos y se oculta la variante del experimento antes del piloto.
-3. Se planifica el Sprint To-Be 1 (sección 8.3.4) y se incorpora Q6 al Question Backlog (8.5.2).
+3. Se planifica el Sprint To-Be 1 (sección 8.3.4) y se incorpora Q11 al Question Backlog (8.5.2).
 
 ## 8.7. To-Be Software Platform Pre-launch
 
