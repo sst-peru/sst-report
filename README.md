@@ -5198,30 +5198,33 @@ aplicaciones web y móvil.
 
 ### 8.2.1. Hypotheses
 
-**Hipótesis nula (H₀).** No existe diferencia en la media de reportes por usuario entre el grupo
-expuesto al formulario rápido y el expuesto al formulario largo.
+Cada hipótesis de trabajo (HW) tiene su hipótesis nula (H0), está vinculada a una Experiment
+Card de la sección 8.1.5 y a una métrica del catálogo de 8.2.2, y se puede refutar con datos.
+Las preguntas exploratorias o descriptivas del Question Backlog (Q2 y Q7) no llevan hipótesis:
+se responden midiendo, no contrastando. **Los valores objetivo son metas de validación, no
+resultados alcanzados.** Las hipótesis se relacionan con las hipótesis Lean UX H1 y H3 de la
+sección 1.2.2.3.
 
-> H₀: μ_rápido = μ_largo
+| ID | Tarjeta | Métrica | Hipótesis de trabajo (HW) | Hipótesis nula (H0) | Regla de decisión |
+|---|---|---|---|---|---|
+| HW01 / H0-01 | EXP-01 | M01 | Los operarios expuestos al formulario rápido registran al menos el doble de reportes por usuario que los expuestos al formulario largo durante la ventana de 14 días. *(H1)* | No hay diferencia en la media de reportes por usuario entre ambas variantes (μ_rápido = μ_largo). | Prueba t de Welch a dos colas, α = 0,05, con intervalo de confianza al 95 % de la diferencia. Se rechaza H0 si el intervalo excluye el cero. HW01 se considera apoyada si además el *lift* es de +100 % o más; si el intervalo es positivo pero el *lift* es menor, se apoya solo un efecto menor al esperado. Con menos de 12 usuarios por grupo (8.2.5) un resultado no significativo es **no concluyente**, no una refutación. |
+| HW02 / H0-02 | EXP-01 | M02 | El formulario rápido no empeora el tiempo de cierre: el MTTR del grupo rápido no supera en más de 10 % al del grupo largo. *(H3)* | El MTTR del grupo rápido supera en más de 10 % al del grupo largo. | Prueba de no inferioridad unilateral, α = 0,05: se rechaza H0 si el límite superior del intervalo al 95 % de la diferencia (rápido − largo) es menor que el 10 % del MTTR del grupo largo. Si el intervalo cruza ese margen, el resultado es no concluyente y el MTTR se mantiene como métrica de control. |
+| HW03 / H0-03 | EXP-02 | M02, M04 | Un aumento del volumen semanal de reportes, sin cambios en el proceso de cierre, eleva el MTTR y reduce la tasa de cierre. *(H3)* | No hay asociación entre el volumen semanal de reportes y el MTTR semanal. | Correlación de Spearman entre volumen y MTTR semanales sobre al menos 8 semanas, α = 0,05, unilateral. HW03 se considera apoyada si la correlación es positiva y significativa y la tasa de cierre (M04) desciende en las semanas de mayor volumen. Con menos semanas se reporta solo la serie descriptiva. |
 
-**Hipótesis alterna (H₁).** La media de reportes por usuario del grupo expuesto al formulario
-rápido es distinta de la del grupo expuesto al formulario largo.
-
-> H₁: μ_rápido ≠ μ_largo
-
-Se plantea la prueba **a dos colas** aunque la hipótesis de negocio sea direccional. La razón es
-metodológica: un formulario más corto podría, en principio, producir reportes de menor calidad y
-desalentar su uso al percibirse como poco serio. Cerrar esa posibilidad por anticipado sería
-diseñar el experimento para confirmar lo que ya se cree.
+**Por qué HW01 se contrasta a dos colas.** Aunque la hipótesis de negocio es direccional, un
+formulario más corto podría producir reportes de menor calidad y desalentar su uso al
+percibirse como poco serio. Cerrar esa posibilidad por anticipado sería diseñar el experimento
+para confirmar lo que ya se cree.
 
 ### 8.2.2. Domain Business Metrics
 
-| Métrica de negocio | Definición | Por qué importa |
-|---|---|---|
-| **Frecuencia de reporte** | Reportes creados por usuario activo en el periodo | Mide si el sistema captura lo que ocurre en campo; es la entrada de todo el resto |
-| **MTTR de hallazgos** | Horas promedio entre la creación del reporte y su cierre | Mide la capacidad de respuesta: cuánto tiempo permanece expuesto el peligro |
-| **Tasa de cumplimiento de inspecciones** | Inspecciones realizadas sobre programadas | Mide la disciplina preventiva, no solo la reactiva |
-| **Tasa de cierre** | Hallazgos cerrados sobre hallazgos creados en el periodo | Detecta si la captura crece más rápido que la capacidad de atención |
-| **Cobertura de evidencia** | Proporción de hallazgos con foto y con acción correctiva registrada | Mide la calidad del expediente ante una fiscalización |
+| ID | Métrica de negocio | Definición | Por qué importa |
+|---|---|---|---|
+| M01 | **Frecuencia de reporte** | Reportes creados por usuario activo en el periodo | Mide si el sistema captura lo que ocurre en campo; es la entrada de todo el resto |
+| M02 | **MTTR de hallazgos** | Horas promedio entre la creación del reporte y su cierre | Mide la capacidad de respuesta: cuánto tiempo permanece expuesto el peligro |
+| M03 | **Tasa de cumplimiento de inspecciones** | Inspecciones realizadas sobre programadas | Mide la disciplina preventiva, no solo la reactiva |
+| M04 | **Tasa de cierre** | Hallazgos cerrados sobre hallazgos creados en el periodo | Detecta si la captura crece más rápido que la capacidad de atención |
+| M05 | **Cobertura de evidencia** | Proporción de hallazgos con foto y con acción correctiva registrada | Mide la calidad del expediente ante una fiscalización |
 
 ### 8.2.3. Measures
 
@@ -5544,7 +5547,7 @@ la hipótesis de negocio. El propio panel lo declara (historia TB01).
 
 **Interpretación**
 
-1. **No se rechaza H₀.** El intervalo de confianza contiene el cero, por lo que la diferencia
+1. **No se rechaza H0-01.** El intervalo de confianza contiene el cero, por lo que la diferencia
    observada no se distingue del azar. El resultado no prueba que ambos formularios sean
    iguales; solo indica que la evidencia no alcanza para afirmar que son distintos.
 2. **La muestra es insuficiente.** Cada variante tiene menos de 20 usuarios (3 y 4), por debajo
@@ -5557,6 +5560,8 @@ la hipótesis de negocio. El propio panel lo declara (historia TB01).
 4. **La métrica de control se mantiene estable.** El MTTR es prácticamente igual en ambas
    variantes (92,26 h y 93,19 h), así que el formulario rápido no empeora el tiempo de cierre
    de los hallazgos.
+   Es una observación descriptiva: la prueba de no inferioridad de HW02 requiere el intervalo
+   del MTTR con la muestra del piloto real.
 5. **Hallazgo de instrumentación.** La columna "con foto" registra 0 en ambas variantes, aunque
    la hipótesis describe un formulario "con foto". Antes del piloto real hay que verificar si
    la carga de demostración no genera fotografías o si el evento no se está registrando.
