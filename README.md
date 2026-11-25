@@ -5944,6 +5944,41 @@ que el resultado del A/B.
 
 #### 8.3.4.2. Registro de Entrevistas
 
+**Estado.** Las entrevistas To-Be se hacen con los participantes del piloto real de EXP-01, una
+vez cerrada su ventana de 14 días, porque su propósito es explicar un resultado que todavía no
+existe. El piloto no se ha ejecutado (8.4.1), así que en este corte **no hay entrevistas To-Be que
+registrar**. Hasta entonces, el único insumo cualitativo del ciclo son las entrevistas de la
+sección 6.3.2, que están declaradas como **simuladas**. Por eso los aprendizajes que dependen
+solo de ellas figuran con confianza "Baja" en 8.5.1.
+
+**Selección de participantes.** Al cierre del piloto se entrevista como mínimo a dos operarios
+por variante: el que más reportó y el que menos reportó en cada grupo. Así la entrevista cubre
+los dos extremos de la distribución, que es donde la media del experimento es más sensible
+(8.4.1, punto 3).
+
+**Plantilla de registro.** Cada entrevista se registra con el mismo formato del Capítulo VI:
+
+| N° | Entrevistado | Variante | Reportes en la ventana | Fecha | Duración | Modalidad | Entrevistador | Enlace al video (minuto) |
+|---|---|---|---|---|---|---|---|---|
+| ET1 | | `rapido` | | | | | | |
+| ET2 | | `rapido` | | | | | | |
+| ET3 | | `largo` | | | | | | |
+| ET4 | | `largo` | | | | | | |
+
+**Cómo se analiza cada respuesta**
+
+| Pregunta del guion (8.3.4.1) | Qué hipótesis o supuesto informa | Señal que se busca |
+|---|---|---|
+| `rapido` 1–2 y `largo` 1–3 | HW01 y supuesto A1 | Si el tiempo y la cantidad de campos aparecen como motivo de abandono |
+| `rapido` 3 | HW06 y vacío K4 | Si la foto obligatoria frena el reporte |
+| `largo` 4 | Diseño del formulario rápido | Qué campos se perciben como innecesarios |
+| Pregunta común 5 | Supuesto A3 y HW08 | Si el temor a represalias o la falta de resultados visibles pesan más que la fricción |
+
+Cada respuesta se resume entre 150 y 250 palabras con una cita textual breve, y se marca si
+confirma o contradice el supuesto que informa. Si las entrevistas señalan otra barrera como
+dominante, esa barrera entra al Question Backlog con su puntaje (8.4.2), aunque el A/B haya
+favorecido al formulario rápido.
+
 ## 8.4. Experiment Aftermath & Analysis
 
 ### 8.4.1. Analysis and Interpretation of Results
