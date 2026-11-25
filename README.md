@@ -41,6 +41,7 @@
 | 1.0 | 2026-09-13 | Esquirva León Miguel Juan Diego | Creación del repositorio del informe y de la estructura completa de capítulos según el enunciado del trabajo final. |
 | 1.1 | 2026-10-07 | Villafuerte Tapia Renzo Alonso | Especificación de requisitos del Capítulo III: diecinueve épicas, 128 historias de usuario con criterios de aceptación en Gherkin y columna de plataforma, 34 historias técnicas y Product Backlog priorizado de 162 elementos con sus Story Points. Capítulo V: Sprint Backlogs desglosados en work-items con estimación en horas y área responsable, acuerdo de nivel de servicio del producto como SaaS, y documentación del flujo de trabajo con GitFlow y Conventional Commits. Capítulo IV: arquitectura de información y sistema de navegación verificados contra el código, y diagrama entidad-relación completo contrastado con los modelos de datos. Desarrollo del API REST, del panel web y de la aplicación Android. |
 | 1.2 | 2026-11-08 | Villafuerte Tapia Renzo Alonso | Avance 2 (Sprint Review): Capítulo VI completo (suites de pruebas, análisis estático, registro de entrevistas de validación simuladas y evaluación heurística de la aplicación web, auditoría de experiencias de usuario); Capítulo VII de prácticas DevOps (integración, entrega, despliegue y monitoreo continuo); Capítulo VIII con planificación, diseño y ejecución del experimento (To-Be Sprint Backlogs), análisis e interpretación de resultados, Question Backlog re-priorizado y artefactos de Continuous Learning. Corrección de artefactos de entregas anteriores. |
+| 1.3 | 2026-11-25 | Villafuerte Tapia Renzo Alonso | Trabajo Final (TB2 — Release Review): Capítulo VIII reestructurado según el enunciado. Question Backlog con categoría, historia relacionada, responsable y método; Experiment Cards con Why, Assumption, Belief, What, Design, métricas y metas; hipótesis con Hypothesis Statement, H0, H1 y expresión estadística. Renumeración de la experimentación (8.3.3.1 a 8.6.2), evidencia To-Be de landing, web, Android y API verificada contra los commits, Team Collaboration Insights del ciclo To-Be, registro de entrevistas To-Be, guion del video intro y resumen con el framework Gees. Conclusiones finales, guiones de los videos App Validation y About-the-Team, bibliografía del método experimental, anexos con el corte técnico final y Student Outcome del trabajo final. Corrección de la matriz ética y del backlog de preguntas. |
 
 ---
 
@@ -55,16 +56,16 @@ producto. La rama `main` conserva únicamente las versiones entregadas; `develop
 trabajo en curso, y cada sección del informe se redacta en una rama `docs/<sección>` que se
 incorpora mediante Pull Request.
 
-**Desarrollo de las actividades del informe.** Entre el 16 de septiembre y el 9 de noviembre
-de 2026 la rama `develop` del repositorio `sst-report` acumuló 250 commits, 247 de ellos con el
+**Desarrollo de las actividades del informe.** Entre el 16 de septiembre y el 25 de noviembre
+de 2026 la rama `develop` del repositorio `sst-report` acumuló 269 commits, 266 de ellos con el
 formato de Conventional Commits que valida el hook `commit-msg`. El alcance de cada commit
 identifica el capítulo trabajado, lo que permite seguir el avance del informe sección por
-sección: los capítulos con más actividad fueron el VIII (44 commits), el IV (38), el VI (21) y
+sección: los capítulos con más actividad fueron el VIII (57 commits), el IV (38), el VI (21) y
 el III (20).
 
 | Integrante | Commits |
 |---|---|
-| Villafuerte Tapia Renzo Alonso | 242 |
+| Villafuerte Tapia Renzo Alonso | 261 |
 | Mora Blas Diego Alonzo | 6 |
 | Esquirva León Miguel Juan Diego | 2 |
 
