@@ -5740,13 +5740,22 @@ de su implementación en sprints.
 
 ### 8.3.2. To-Be Product Backlog
 
-| # | ID | Historia | Story Points | Justificación de la prioridad | Estado |
-|---|---|---|---|---|---|
-| 1 | TB01 | Aviso de datos de demostración | 2 | Requisito de integridad: impide que datos simulados se lean como resultados | Implementada |
-| 2 | TB02 | Intervalo de confianza en los resultados | 5 | Sin él, el panel comunica una diferencia sin su precisión | Implementada |
-| 3 | TB05 | Aviso de cierre al reportante | 5 | Cierra el circuito de retroalimentación que las entrevistas señalan como causa del abandono | Pendiente |
-| 4 | TB04 | Notificación de hallazgo crítico | 5 | Ataca el MTTR, la segunda métrica del curso | Pendiente |
-| 5 | TB03 | Registro de auditoría de exportaciones | 3 | Obligación derivada del tratamiento de datos personales | Pendiente |
+La columna **Historia** muestra solo el título. La narrativa completa (*Como… quiero… para…*) y
+todos los criterios de aceptación de cada historia están en la sección 8.3.1; aquí se incluye
+solo el criterio de aceptación clave. El número (**#**) indica el orden de ejecución, y la
+**Prioridad** distingue lo crítico de lo secundario:
+
+- **Alta:** sin la historia, el resultado del experimento no se puede leer correctamente.
+- **Media:** mejora una métrica del producto o la retención del operario.
+- **Baja:** es necesaria antes de pasar a producción, pero no bloquea el experimento ni el piloto.
+
+| # | ID | Historia | Prioridad | Criterio de aceptación clave | Story Points | Origen / Evidencia | Justificación de la prioridad | Estado |
+|---|---|---|---|---|---|---|---|---|
+| 1 | TB01 | Aviso de datos de demostración | Alta | El panel del experimento muestra un aviso visible cuando los datos provienen de la carga de demostración | 2 | Análisis de resultados (8.4.1): los datos del panel los genera `seed_demo` | Impide que datos simulados se lean como resultados del experimento | Implementada |
+| 2 | TB02 | Intervalo de confianza en los resultados | Alta | Los resultados muestran la diferencia estimada con su intervalo al 95 % | 5 | Análisis de resultados (8.4.1) y selección de métodos (8.2.6) | Sin el intervalo, el panel comunica una diferencia sin su precisión | Implementada |
+| 3 | TB05 | Aviso de cierre al reportante | Media | Cuando se cierra un hallazgo, quien lo reportó recibe la notificación con la acción correctiva aplicada | 5 | Entrevistas E1 y E4 (6.3.2, simuladas) y pregunta Q11 (8.4.2) | Cierra el circuito de retroalimentación: el operario que no ve resultado deja de reportar | Pendiente |
+| 4 | TB04 | Notificación de hallazgo crítico | Media | Un hallazgo crítico abierto por más de 24 horas notifica al supervisor y deja registro del envío | 5 | Métrica M02 MTTR (8.2.2) y pregunta Q4 (EXP-02) | Reduce el tiempo medio de resolución (MTTR) ante hallazgos críticos, que es el tiempo en que el trabajador sigue expuesto al peligro | Pendiente |
+| 5 | TB03 | Registro de auditoría de exportaciones | Baja | Cada exportación de evidencia registra el usuario, el recurso exportado y la fecha | 3 | Ley N° 29733 y plan de seguimiento (8.2.8, evento `evidencia_exportada`) | Obligación del tratamiento de datos personales; se exige antes de producción, pero no bloquea el experimento | Pendiente |
 
 ### 8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle
 
