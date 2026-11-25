@@ -5791,11 +5791,96 @@ responsable y las horas estimadas equivalen a sus story points.
 
 #### 8.3.3.2. Implemented To-Be Landing Page Evidence
 
+Ninguna historia del Sprint To-Be 1 (TB01 a TB05) modifica la landing page: las cinco actúan
+sobre el panel del experimento, las notificaciones y el registro de exportaciones, que viven en
+el API, la aplicación web y la aplicación Android. Por eso este ciclo no produce un incremento
+To-Be de la landing.
+
+Además, la landing page no está desplegada en este corte. Su estructura y sus restricciones de
+contenido quedan especificadas en la sección 4.3.1, y el Anexo B la registra sin URL acreditada.
+Presentar capturas de un diseño como si fueran un sitio publicado sería atribuirle al producto
+algo que no tiene.
+
+| Elemento | Estado en el ciclo To-Be |
+|---|---|
+| Historias To-Be que la afectan | Ninguna |
+| Repositorio y despliegue | No acreditados en este corte |
+| Evidencia disponible | Especificación de contenido y estructura (4.3.1) |
+
 #### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
+
+El panel "Experimento A/B" de la aplicación web incorpora las dos historias To-Be
+implementadas. El cambio está en el commit
+[`9241253`](https://github.com/sst-peru/sst-web/commit/9241253) de `sst-web` (rama `develop`,
+7 de octubre de 2026), sobre el archivo `src/features/dashboard/ExperimentPage.tsx`.
+
+| Historia | Qué se implementó en la web | Evidencia |
+|---|---|---|
+| TB01 Aviso de datos de demostración | Lo primero que muestra el panel es el origen de los datos: si la empresa es la de demostración, lo declara, y avisa cuando la muestra no alcanza el mínimo por variante | Commit `9241253`; figura siguiente |
+| TB02 Intervalo de confianza en los resultados | El bloque de resultados muestra la diferencia observada con su intervalo al 95 % y responde en una línea si se distingue del azar. Si el intervalo contiene el cero, el bloque se muestra en ámbar y aclara que "no concluyente" no significa que las variantes sean iguales. La variación relativa (*lift*) pasa a ser un dato secundario | Commit `9241253`; figura siguiente |
+| TB05, TB04 y TB03 | Pendientes: el panel no muestra todavía el aviso de cierre, la alerta de hallazgo crítico ni la consulta del registro de exportaciones | Sin commit asociado |
+
+<p align="center"><img src="assets/img/evidencia-web-experimento.png" alt="Panel del experimento A/B con intervalo de confianza" width="900"></p>
+
+*Figura. Panel "Experimento A/B" de la aplicación web: aviso de datos de demostración (TB01) y
+diferencia con su intervalo de confianza al 95 % (TB02).*
 
 #### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
 
+En la aplicación Android, el Sprint To-Be 1 asigna dos work-items: SprintTB-T008 (notificación
+de cierre al reportante, TB05) y SprintTB-T013 (notificación de hallazgo crítico, TB04). **Ninguno
+está implementado en este corte**: la rama `develop` de `sst-mobile` no contiene commits
+posteriores al 7 de octubre de 2026, y el último
+([`811746c`](https://github.com/sst-peru/sst-mobile/commit/811746c)) integra endpoints y
+pantallas de gestión, no notificaciones.
+
+Lo que la aplicación Android sí aporta al experimento es anterior al ciclo To-Be y se conserva
+sin cambios: el formulario rápido y el largo con foto y GPS
+([`c07622c`](https://github.com/sst-peru/sst-mobile/commit/c07622c)), que son las dos variantes
+que compara EXP-01, y la cola local con sincronización por WorkManager
+([`a120a29`](https://github.com/sst-peru/sst-mobile/commit/a120a29)), de la que depende la
+marca `synced_offline` que mide EXP-03.
+
+| Work-item | Historia | Estado | Evidencia |
+|---|---|---|---|
+| SprintTB-T008 | TB05 Aviso de cierre al reportante | Pendiente | Sin commit asociado |
+| SprintTB-T013 | TB04 Notificación de hallazgo crítico | Pendiente | Sin commit asociado |
+
 #### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
+
+El API implementa TB01 y TB02 en el commit
+[`4645cde`](https://github.com/sst-peru/sst-api/commit/4645cde) de `sst-api` (rama `develop`,
+7 de octubre de 2026), que modifica `apps/experiments/views.py` y agrega
+`apps/experiments/tests/test_experiments.py`. No se añadieron endpoints nuevos: se amplió la
+respuesta de los existentes.
+
+| Endpoint | Método | Cambio To-Be | Historia |
+|---|---|---|---|
+| `/api/v1/experiments/<key>/results/` | GET | Devuelve `difference`, `standard_error`, `ci_low`, `ci_high`, `lift_pct` y una lectura en texto (`reading`) que declara el resultado no concluyente cuando el intervalo contiene el cero (Welch, Z = 1,96) | TB02 |
+| `/api/v1/experiments/<key>/results/` | GET | Devuelve `demo_data` cuando la empresa es la de demostración, y `sample_sufficient` con `min_users_per_variant` (20) para avisar si la muestra no alcanza | TB01 |
+| `/api/v1/experiments/` | POST, PUT, PATCH, DELETE | Solo un administrador puede modificar o borrar el experimento: antes cualquier operario podía borrarlo, y con él la trazabilidad de las asignaciones | Corrección asociada |
+
+El mismo commit corrige dos decisiones de método que afectaban al resultado: los reportes se
+cuentan por la variante grabada en el propio reporte y no por la asignación del autor, y los
+usuarios asignados que no reportaron cuentan como cero en lugar de quedar fuera del promedio.
+
+**Pruebas automatizadas que lo respaldan** (`apps/experiments/tests/test_experiments.py`):
+
+| Prueba | Qué verifica |
+|---|---|
+| `test_los_usuarios_sin_reportes_cuentan_como_cero` | El promedio incluye a los usuarios sin reportes |
+| `test_un_reporte_sin_variante_no_se_atribuye_a_ninguna` | Un reporte anterior al experimento no suma a ninguna variante |
+| `test_una_diferencia_pequena_sale_como_no_concluyente` | El intervalo que contiene el cero se lee como no concluyente |
+| `test_una_diferencia_grande_y_consistente_sale_como_concluyente` | Una diferencia clara sí se declara distinguible del azar |
+| `test_con_un_solo_sujeto_por_variante_no_se_calcula_intervalo` | Sin variación entre sujetos no se estima el error |
+| `test_los_resultados_avisan_cuando_la_muestra_es_insuficiente` | Aviso de muestra por debajo del mínimo (TB01) |
+| `test_los_resultados_avisan_si_la_empresa_es_de_demostracion` | Aviso de datos de demostración (TB01) |
+| `test_un_operario_no_puede_borrar_el_experimento` | Protección del experimento en curso |
+
+Los work-items de API de TB05 (SprintTB-T007), TB04 (SprintTB-T011) y TB03 (SprintTB-T015) siguen
+pendientes. El API ya tiene un módulo `apps/notifications` con registro de cada correo enviado
+(historia técnica TS19), que hoy solo usa la recuperación de contraseña. Es la base sobre la que
+se construirán las notificaciones de TB05 y TB04, pero no las implementa.
 
 #### 8.3.3.6. Team Collaboration Insights
 
