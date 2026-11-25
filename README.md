@@ -6251,7 +6251,41 @@ TB02): un número sin su incertidumbre afirma más de lo que se sabe.
 
 ## Video App Validation
 
+**Estado:** el enlace de la grabación se incorpora al publicarla. El video muestra a usuarios
+ejecutando las tareas definidas en la sección 6.3.1, con el producto en las versiones indicadas
+en el Anexo G.
+
+| Tiempo orientativo | Contenido | Evidencia visible |
+|---|---|---|
+| 00:00–00:20 | Presentación del objetivo de la validación | Tareas T1 a T4 de la sección 6.3.1 |
+| 00:20–01:20 | Operario: registro y reporte de una condición insegura con foto | Formulario rápido en Android y estado del reporte |
+| 01:20–02:20 | Operario: reporte sin señal y sincronización al recuperarla | Modo avión, cola local y un único reporte en el servidor |
+| 02:20–03:30 | Supervisor: asignación, acción correctiva y cierre del hallazgo | Bandeja web, bitácora y MTTR actualizado |
+| 03:30–04:00 | Hallazgos de la validación | Problemas observados y cambio que se derivó de cada uno |
+
+| Campo | Valor |
+|---|---|
+| Enlace | Pendiente de publicación |
+| Duración | Pendiente de publicación |
+| Participantes | Se registran con el mismo formato de la sección 6.3.2 |
+
 ## Video About-the-Team
+
+**Estado:** el enlace de la grabación se incorpora al publicarla. El video presenta al equipo,
+su forma de trabajo y los testimonios de cada integrante sobre las dimensiones del Student
+Outcome 4, como exige el enunciado.
+
+| Tiempo orientativo | Contenido |
+|---|---|
+| 00:00–00:30 | Presentación del equipo y del producto |
+| 00:30–01:30 | Forma de trabajo: GitFlow, Conventional Commits, revisión e integración continua |
+| 01:30–03:30 | Testimonio de cada integrante sobre los criterios 4.c.1 y 4.c.2 (sección Student Outcome) |
+| 03:30–04:00 | Lo que el equipo haría distinto en el siguiente ciclo |
+
+| Campo | Valor |
+|---|---|
+| Enlace | Pendiente de publicación |
+| Duración | Pendiente de publicación |
 
 ---
 
