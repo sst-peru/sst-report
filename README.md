@@ -5145,20 +5145,30 @@ una decisión.
 
 ### 8.1.4. Question Backlog
 
-Priorización por el criterio de mayor incertidumbre combinada con mayor costo de equivocarse.
+El backlog combina tres tipos de incógnitas: **deseo o problema del usuario** (UX / Usuario: ¿el
+operario realmente tiene la barrera o quiere la solución?), **valor para el negocio** (Negocio) y
+**viabilidad técnica** (Técnico, asignadas al Tech Lead). Todas se responden **antes de invertir en
+desarrollo** con la técnica más rápida y económica que las contesta: el experimento A/B sobre la
+variante ya construida, la medición descriptiva sobre los datos del piloto, la revisión de los
+registros en papel, el estudio de adopción o la demostración guiada.
 
-| Prioridad | ID | Pregunta | Incertidumbre | Costo de equivocarse | Puntaje |
-|---|---|---|---|---|---|
-| 1 | Q1 | Fricción del formulario | Alta | Alto | 9 |
-| 2 | Q4 | Captura frente a capacidad de cierre | Alta | Alto | 9 |
-| 3 | Q2 | Peso real del uso sin conexión | Media | Alto | 6 |
-| 4 | Q6 | Disposición a usar el celular personal | Media | Alto | 6 |
-| 5 | Q10 | Evidencia exportable como argumento de compra | Media | Alto | 6 |
-| 6 | Q3 | Foto obligatoria | Media | Medio | 4 |
-| 7 | Q7 | Línea base del MTTR en papel | Media | Medio | 4 |
-| 8 | Q9 | Ranking de áreas por hallazgos cerrados | Media | Medio | 4 |
-| 9 | Q5 | Reporte anónimo | Alta | Bajo | 3 |
-| 10 | Q8 | Reporte por voz | Alta | Bajo | 3 |
+La prioridad combina la incertidumbre con el costo de equivocarse (Alta/Alto = 3, Media/Medio = 2,
+Baja/Bajo = 1, y el puntaje es su producto): **Alta** corresponde a un puntaje de 9, **Media** a 6 y
+**Baja** a 4 o menos. Los responsables se indican por el rol que asume el equipo en cada
+experimento.
+
+| Prioridad | ID | Pregunta / Incógnita | Categoría | Historia relacionada | Responsable | Método / Fuente | Estado | Respuesta / Decisión |
+|---|---|---|---|---|---|---|---|---|
+| Alta (9) | Q1 | ¿Un formulario de tres pasos aumenta el número de reportes por usuario frente a uno de diez campos? | UX / Usuario | US06 Reporte rápido desde el celular · US38 Asignación de variante | Product Owner | Experimento A/B (EXP-01) | Ejecutado con datos de demostración | No concluyente (8.5.1): se repite con el piloto real |
+| Alta (9) | Q4 | ¿El aumento de reportes se traduce en más hallazgos cerrados o solo en más cola? | Negocio | US16 Cierre con acción correctiva · US35 Indicador MTTR | Product Owner | Estudio observacional de serie temporal (EXP-02) | Pendiente | - |
+| Media (6) | Q2 | ¿Qué proporción de reportes se origina sin conexión? | Técnico | US07 Reporte sin conexión · US08 Sincronización sin duplicados | Tech Lead | Medición descriptiva sobre el piloto (EXP-03) | Pendiente | - |
+| Media (6) | Q6 | ¿Qué proporción de operarios acepta usar su celular personal para reportar? | UX / Usuario | US01 Registro de trabajador · US06 Reporte rápido desde el celular | Product Owner | Estudio de adopción (EXP-04) | Pendiente | - |
+| Media (6) | Q10 | ¿La evidencia exportable para SUNAFIL es el argumento que decide la compra? | Negocio | US37 Exportación de evidencia · US62 Exportar cada registro obligatorio | Product Owner | Demostración guiada con elección forzada (EXP-05) | Pendiente | - |
+| Baja (4) | Q3 | ¿La foto obligatoria reduce la tasa de finalización del reporte? | UX / Usuario | US09 Evidencia fotográfica | UX Designer | Experimento A/B (EXP-06) | Pendiente: siguiente experimento (8.5.2) | - |
+| Baja (4) | Q7 | ¿Cuánto tiempo pasa hoy entre la detección y la corrección de un peligro con el proceso en papel? | Negocio | US35 Indicador MTTR | Data Analyst | Revisión retrospectiva de registros en papel (EXP-07) | Pendiente | - |
+| Baja (4) | Q9 | ¿Un ranking de áreas por hallazgos cerrados mejora la tasa de cierre sin desalentar el reporte? | Negocio | Sin historia todavía (idea I5) | Product Owner | Diseño antes y después con áreas de control (EXP-08) | En espera | - |
+| Baja (3) | Q5 | ¿La posibilidad de reportar de forma anónima aumenta los reportes de actos inseguros de terceros? | UX / Usuario | Sin historia todavía (idea I2) | UX Designer | Experimento A/B (EXP-09) | Pendiente | - |
+| Baja (3) | Q8 | ¿El reporte por voz aumenta los reportes de quienes trabajan con guantes o con las manos ocupadas? | UX / Usuario | Sin historia todavía (idea I4) | UX Designer | Experimento A/B (EXP-10) | Pendiente | - |
 
 La pregunta Q1 encabeza el backlog y es la que se somete a experimento en este ciclo.
 
