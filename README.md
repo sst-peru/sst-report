@@ -6291,8 +6291,9 @@ Outcome 4, como exige el enunciado.
 
 # Bibliografía
 
-Este avance conserva las referencias de dominio y metodología e incorpora fuentes técnicas
-consultadas para los capítulos V–VII. Los enlaces de código del Anexo G fijan las versiones
+Esta versión conserva las referencias de dominio y metodología, incorpora las fuentes técnicas
+consultadas para los capítulos V–VII y añade las fuentes del método experimental y de las
+pruebas estadísticas del Capítulo VIII. Los enlaces de código del Anexo G fijan las versiones
 inspeccionadas. Una referencia bibliográfica respalda el método o la herramienta, no acredita
 que el producto haya ejecutado una prueba o cumplido un nivel de servicio.
 
@@ -6350,6 +6351,21 @@ Gothelf, J., & Seiden, J. (2016). *Lean UX: Designing Great Products with Agile 
 
 Kohavi, R., Tang, D., & Xu, Y. (2020). *Trustworthy Online Controlled Experiments: A Practical
 Guide to A/B Testing*. Cambridge University Press.
+
+Rissen, P. (2019). *Experiment-Driven Product Development: How to Use a Data-Informed Approach
+to Learn, Iterate, and Succeed Faster*. Apress.
+
+Cohen, J. (1988). *Statistical Power Analysis for the Behavioral Sciences* (2.ª ed.). Lawrence
+Erlbaum Associates.
+
+Welch, B. L. (1947). The generalization of "Student's" problem when several different
+population variances are involved. *Biometrika, 34*(1–2), 28–35.
+
+Wilson, E. B. (1927). Probable inference, the law of succession, and statistical inference.
+*Journal of the American Statistical Association, 22*(158), 209–212.
+
+Mann, H. B., & Whitney, D. R. (1947). On a test of whether one of two random variables is
+stochastically larger than the other. *The Annals of Mathematical Statistics, 18*(1), 50–60.
 
 Humble, J., & Farley, D. (2010). *Continuous Delivery: Reliable Software Releases through Build,
 Test, and Deployment Automation*. Addison-Wesley.
