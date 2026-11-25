@@ -6115,7 +6115,45 @@ flowchart LR
 
 ### 8.6.1. About-the-Product Intro Video
 
+**Estado:** guion preparado; el enlace de la grabación se incorpora al publicarla. A diferencia
+del video de la sección 5.3, que recorre el flujo principal del producto, este video presenta
+el producto como resultado del ciclo de experimentación: qué se quería averiguar, qué se
+construyó para medirlo y qué se decidió con lo medido. Duración prevista: entre dos y tres
+minutos.
+
+| Tiempo orientativo | Contenido | Evidencia visible |
+|---|---|---|
+| 00:00–00:20 | El problema: el operario no reporta porque reportar le cuesta | Contexto de campo y el formulario largo de diez campos |
+| 00:20–00:50 | La pregunta: ¿un formulario de tres pasos aumenta los reportes? (Q1) | Experiment Card EXP-01 y su hipótesis HW01 |
+| 00:50–01:30 | El producto To-Be: el operario reporta en tres pasos, incluso sin señal | Formulario rápido en Android y sincronización al recuperar la red |
+| 01:30–02:15 | Cómo se mide: el panel del experimento con su intervalo de confianza | Aviso de datos de demostración (TB01) e intervalo al 95 % (TB02) |
+| 02:15–02:45 | Qué se decidió y qué sigue | Resultado no concluyente, piloto real con 24 participantes y aviso de cierre al reportante (TB05) |
+
+| Campo | Valor |
+|---|---|
+| Enlace | Pendiente de publicación |
+| Duración | Pendiente de publicación |
+| Versiones mostradas | `sst-api` `4645cde`, `sst-web` `9241253`, `sst-mobile` `c07622c` como mínimo |
+
+El video muestra los datos de `seed_demo` declarados como datos de demostración y no presenta
+el +40,95 % del panel como un resultado del experimento.
+
 ### 8.6.2. Resumen usando Gees Framework
+
+El framework resume el plan de salida al mercado de Resguardo en cuatro etapas. Cada etapa se
+apoya en algo que el informe ya validó o en una pregunta del Question Backlog que falta
+responder, para que el plan no prometa más de lo que el producto puede sostener.
+
+| Etapa | Qué se hace | En qué se apoya | Métrica de avance | Pregunta abierta |
+|---|---|---|---|---|
+| **Go to market** | Entrar por el canal de las consultoras de SST, que atienden a varias empresas medianas y sufren la consolidación manual de registros, con un modelo de referidos en lugar de venta directa. Producto mínimo: captura en campo, gestión del hallazgo y evidencia exportable | Estrategia 4 frente a competidores (2.1.2) y supuestos de negocio del Lean UX (1.2.2.2) | Empresas activas por consultora aliada | Q10: ¿la evidencia exportable es lo que decide la compra? (EXP-05) |
+| **Engage** | Lograr que el operario reporte desde el primer día: formulario rápido, operación sin conexión y aviso cuando su hallazgo se cierra, para que vea que su reporte sirvió | Hipótesis Lean UX H1 y H2; historia TB05 | M01 reportes por usuario, M08 tasa de adopción | Q1 (EXP-01, piloto real), Q6 (EXP-04) y Q11 |
+| **Expand** | Ampliar el uso dentro de cada empresa cliente: módulos de accidentes, capacitación, mapa de riesgos y documentos del SGSST, planificados en los Sprints 2 y 3, y después el monitoreo de agentes y la gestión de contratistas del Sprint 4, que la competencia sí cubre | Épicas EP11 a EP16 del Product Backlog | Módulos activos por empresa | Q4: ¿el equipo de SST puede atender más reportes sin que suba el MTTR? (EXP-02) |
+| **Sustain** | Sostener la renovación con el cumplimiento normativo recurrente de la Ley N° 29783: inspecciones, comité y registros obligatorios que se repiten todos los años. Suscripción mensual escalonada por número de trabajadores, sin penalizar de forma lineal a las empresas con más personal | Matriz de Evaluación Ética y de Impacto (dimensión económica) e historia US108 | M02 MTTR, M03 cumplimiento de inspecciones y renovación de la suscripción | Precio de la suscripción: el rango todavía no está definido (2.1.1) |
+
+**Lo que el plan no asume.** El experimento de Q1 todavía no es concluyente (8.4.1). Por eso la
+etapa Engage no presenta el formulario rápido como un hecho comprobado: es la hipótesis que el
+piloto real debe confirmar antes de usarla como argumento de venta.
 
 ## Matriz de Evaluación Ética y de Impacto
 
