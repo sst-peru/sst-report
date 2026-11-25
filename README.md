@@ -5174,9 +5174,13 @@ La pregunta Q1 encabeza el backlog y es la que se somete a experimento en este c
 
 ### 8.1.5. Experiment Cards
 
-Cada pregunta del Question Backlog (8.1.4) tiene su Experiment Card, ordenadas por prioridad.
+Para cada pregunta del Question Backlog (8.1.4) se elaboró su Experiment Card, que documenta la
+pregunta (Question), por qué es importante (Why), el supuesto y lo que creemos (Assumption /
+Belief), qué se va a construir o aplicar para validar (What), cómo se diseñará el experimento
+(Design: técnica, muestra, duración, desarrollo, criterio de éxito y riesgo), la hipótesis
+(Hypothesis), las métricas y las metas. Las tarjetas siguen el orden de prioridad del backlog.
 Las preguntas descriptivas (Q2 y Q7) también tienen tarjeta, pero sin hipótesis: se responden
-midiendo. El tamaño de muestra de cada tarjeta se calcula como en 8.2.5 antes de su ejecución.
+midiendo. Cuando la tarjeta no fija la muestra, esta se calcula como en 8.2.5 antes de ejecutarla.
 
 | Tarjeta | Pregunta | Método | Métrica | Estado |
 |---|---|---|---|---|
@@ -5191,175 +5195,165 @@ midiendo. El tamaño de muestra de cada tarjeta se calcula como en 8.2.5 antes d
 | EXP-09 | Q5 · Reporte anónimo | Experimento controlado A/B con asignación determinística por usuario | M01 reportes por usuario, restringido a actos inseguros de terceros | Planificado |
 | EXP-10 | Q8 · Reporte por voz | Experimento controlado A/B entre operarios que trabajan con guantes | M01 reportes por usuario y M07 tasa de finalización | Planificado |
 
-**Experiment Card — EXP-01: Fricción del formulario**
+**Experiment Card N° 1 — EXP-01 (Q1): Fricción del formulario**
 
 | Campo | Contenido |
 |---|---|
-| **Pregunta** | Q1: ¿Un formulario de tres pasos aumenta el número de reportes por usuario frente al formulario tradicional de diez o más campos? |
-| **Hipótesis** | HW01: el grupo expuesto al formulario rápido registrará al menos el doble de reportes por usuario que el grupo expuesto al formulario largo. HW02: el formulario rápido no elevará el MTTR en más de 10 % |
-| **Método** | Experimento controlado A/B con asignación determinística por usuario |
-| **Variable independiente** | Variante del formulario de reporte: `rapido` o `largo` |
-| **Variable dependiente / métrica** | M01 reportes por usuario (principal) y M02 MTTR (control) |
-| **Variables controladas** | El resto de la aplicación es idéntico para ambos grupos: mismo acceso, misma lista, misma operación sin conexión, mismo API |
-| **Participantes** | Operarios de campo con cuenta activa; 24 como mínimo (8.2.5) |
-| **Duración** | 14 días |
-| **Criterio de éxito** | Diferencia estadísticamente significativa (α = 0,05) a favor del grupo `rapido`, sin que el MTTR empeore más de 10 % |
-| **Criterio de refutación** | Ausencia de diferencia significativa con la muestra requerida, o diferencia a favor del formulario largo |
-| **Decisión asociada** | Si se confirma, el flujo rápido se convierte en el único formulario del producto. Si se refuta, se elimina la variante, se conserva el formulario simple por coherencia de diseño y la inversión se redirige hacia la barrera que las entrevistas señalen como dominante |
-| **Estado** | Ejecutado con datos de demostración: no concluyente (8.5.1). Pendiente el piloto real |
+| **Question** | ¿Un formulario de tres pasos aumenta el número de reportes por usuario frente al formulario tradicional de diez o más campos? |
+| **Why** | Es la creencia que sostiene la inversión más costosa del proyecto: el flujo de tres pasos con operación sin conexión. Si es falsa, el producto optimiza una barrera que no es la que frena el reporte. Si se confirma, el flujo rápido pasa a ser el único formulario del producto; si se refuta, se elimina la variante, se conserva el formulario simple por coherencia de diseño y la inversión se redirige hacia la barrera que las entrevistas señalen como dominante. |
+| **Assumption** | Supuesto A1: la fricción del formulario es la principal barrera para reportar. Un formulario con diez o más campos obligatorios desalienta al operario que trabaja con las manos ocupadas y poco tiempo. |
+| **Belief (Lo que creemos)** | Creemos que un formulario de tres pasos con foto duplicará la frecuencia de reporte (afirmación C1). |
+| **What** | No se construye nada nuevo: se usa la variante que el producto ya implementa (US38, US39 y US40). El sistema asigna a cada operario el formulario `rapido` o el `largo`, graba la variante en cada reporte y el panel "Experimento A/B" calcula los resultados. |
+| **Design** | **Técnica de validación:** Experimento controlado A/B con asignación determinística por usuario.<br>**Muestra:** 24 operarios de campo con cuenta activa, 12 por variante (8.2.5).<br>**Duración:** 14 días.<br>**Desarrollo:** Al iniciar sesión, cada operario recibe su variante por un hash estable y la conserva durante toda la ventana; el resto de la aplicación (acceso, lista, operación sin conexión, API) es idéntico para ambos grupos. Al cierre se comparan los reportes por usuario de los dos grupos, con el MTTR como métrica de control.<br>**Criterio de éxito:** El experimento será exitoso si hay una diferencia estadísticamente significativa (α = 0,05) a favor del grupo `rapido` y el MTTR no empeora más de 10 %. Se refuta si no hay diferencia significativa con la muestra requerida o si la diferencia favorece al formulario largo.<br>**Riesgo:** Que el piloto no alcance los 24 participantes y quede subpotenciado, que unos pocos usuarios muy activos dominen la media o que el efecto de novedad infle los primeros días. |
+| **Hypothesis** | Si reemplazamos el formulario largo por uno de tres pasos con foto, entonces los operarios registrarán al menos el doble de reportes por usuario sin elevar el MTTR en más de 10 %. |
+| **Métricas** | - M01 reportes por usuario (principal)<br>- *Lift* porcentual entre variantes<br>- M02 MTTR (control) |
+| **Metas** | *Lift* de +100 % o más en M01 con α = 0,05, y MTTR del grupo rápido no mayor en más de 10 % al del grupo largo. |
+| **Prioridad** | Alta |
+| **Responsable** | Product Owner |
 
-**Experiment Card — EXP-02: Captura frente a capacidad de cierre**
-
-| Campo | Contenido |
-|---|---|
-| **Pregunta** | Q4: ¿El aumento de reportes se traduce en hallazgos cerrados o solo en cola acumulada? |
-| **Hipótesis** | HW03: un aumento del volumen semanal de reportes, sin cambios en el proceso de cierre, eleva el MTTR y reduce la tasa de cierre |
-| **Método** | Estudio observacional de serie temporal: volumen semanal de reportes frente a MTTR y tasa de cierre |
-| **Variable independiente** | Volumen semanal de reportes (no se manipula; se observa) |
-| **Variable dependiente / métrica** | M02 MTTR semanal y M04 tasa de cierre |
-| **Variables controladas** | Mismo equipo de SST y mismo procedimiento de cierre durante todo el periodo |
-| **Participantes** | Supervisores y operarios de una empresa piloto |
-| **Duración** | 8 semanas como mínimo |
-| **Criterio de éxito** | Correlación de Spearman positiva y significativa (α = 0,05) entre volumen y MTTR, con caída de la tasa de cierre en las semanas de mayor volumen |
-| **Criterio de refutación** | Correlación nula o negativa: la capacidad de cierre absorbe el volumen adicional |
-| **Decisión asociada** | Si se confirma, priorizar funcionalidades de capacidad de respuesta (notificaciones, asignación automática, TB04) antes que funcionalidades de captura |
-| **Estado** | Planificado para el siguiente ciclo |
-
-**Experiment Card — EXP-03: Peso real del uso sin conexión**
+**Experiment Card N° 2 — EXP-02 (Q4): Captura frente a capacidad de cierre**
 
 | Campo | Contenido |
 |---|---|
-| **Pregunta** | Q2: ¿Qué proporción de reportes se origina sin conexión? |
-| **Hipótesis** | No aplica: es una pregunta descriptiva. Se estima la proporción con su intervalo de confianza |
-| **Método** | Medición descriptiva sobre los reportes del piloto |
-| **Variable independiente** | No aplica (no se manipula ninguna condición) |
-| **Variable dependiente / métrica** | M06 proporción de reportes sin conexión (`synced_offline`) |
-| **Variables controladas** | Se mide sobre todos los reportes del piloto, de ambas variantes de EXP-01 |
-| **Participantes** | Operarios de campo del piloto de EXP-01 |
-| **Duración** | Los mismos 14 días de EXP-01 |
-| **Criterio de éxito** | Obtener la proporción con un intervalo al 95 % de amplitud menor a ±10 puntos |
-| **Criterio de refutación** | No aplica; si el intervalo es más ancho, se amplía la ventana |
-| **Decisión asociada** | Si la proporción supera el 20 %, la cola local y la sincronización se mantienen como prioridad; si es marginal, se simplifica su mantenimiento |
-| **Estado** | Planificado: se ejecuta junto con el piloto real de EXP-01 |
+| **Question** | ¿El aumento de reportes se traduce en hallazgos cerrados o solo en cola acumulada? |
+| **Why** | Más reportes solo valen si se convierten en peligros corregidos. Si el equipo de SST no puede atender el volumen adicional, el éxito de la captura produce cola y el MTTR empeora. Si se confirma, se priorizan las funcionalidades de capacidad de respuesta (notificaciones, asignación automática, TB04) antes que nuevas funcionalidades de captura. |
+| **Assumption** | Supuestos A4 y A5: más reportes se traducen en más peligros corregidos, y el supervisor tiene capacidad para atender el volumen adicional. |
+| **Belief (Lo que creemos)** | Creemos que, sin cambios en el proceso de cierre, un aumento del volumen semanal de reportes eleva el MTTR y reduce la tasa de cierre. |
+| **What** | No se construye nada: se observa la serie semanal que el sistema ya produce (reportes creados, MTTR de `metrics/mttr/` y hallazgos cerrados). |
+| **Design** | **Técnica de validación:** Estudio observacional de serie temporal.<br>**Muestra:** Supervisores y operarios de una empresa piloto, con al menos 8 semanas de datos.<br>**Duración:** 8 semanas como mínimo.<br>**Desarrollo:** Cada semana se registra el volumen de reportes, el MTTR y la tasa de cierre, sin modificar el equipo de SST ni el procedimiento de cierre. Al final se correlaciona el volumen semanal con el MTTR semanal.<br>**Criterio de éxito:** El experimento será exitoso si la correlación de Spearman entre volumen y MTTR es positiva y significativa (α = 0,05) y la tasa de cierre cae en las semanas de mayor volumen. Se refuta si la correlación es nula o negativa: la capacidad de cierre absorbe el volumen adicional.<br>**Riesgo:** Que otros factores (feriados, paradas de planta, cambio de supervisor) muevan el MTTR al mismo tiempo que el volumen. Al ser un estudio observacional, una correlación no prueba causalidad. |
+| **Hypothesis** | Si el volumen semanal de reportes aumenta sin cambios en el proceso de cierre, entonces el MTTR subirá y la tasa de cierre bajará. |
+| **Métricas** | - M02 MTTR semanal<br>- M04 tasa de cierre<br>- Volumen semanal de reportes |
+| **Metas** | Correlación de Spearman positiva y significativa (α = 0,05) sobre al menos 8 semanas. |
+| **Prioridad** | Alta |
+| **Responsable** | Product Owner |
 
-**Experiment Card — EXP-04: Disposición a usar el celular personal**
-
-| Campo | Contenido |
-|---|---|
-| **Pregunta** | Q6: ¿Qué proporción de operarios acepta usar su celular personal para reportar? |
-| **Hipótesis** | HW04: al menos el 70 % de los operarios invitados registrará un reporte desde su propio celular durante la ventana |
-| **Método** | Estudio de adopción con invitación abierta y medición de uso real |
-| **Variable independiente** | Invitación a instalar la aplicación en el celular personal |
-| **Variable dependiente / métrica** | M08 tasa de adopción (operarios con al menos un reporte desde su celular / operarios invitados) |
-| **Variables controladas** | Misma invitación y misma capacitación de cinco minutos para todos |
-| **Participantes** | Operarios de campo de la empresa piloto |
-| **Duración** | 14 días |
-| **Criterio de éxito** | Límite inferior del intervalo de Wilson al 95 % igual o mayor a 70 % |
-| **Criterio de refutación** | Límite superior del intervalo por debajo de 70 % |
-| **Decisión asociada** | Si se confirma, la aplicación propia sigue siendo el canal principal; si se refuta, se priorizan los equipos compartidos y el registro por el supervisor |
-| **Estado** | Planificado |
-
-**Experiment Card — EXP-05: Evidencia exportable como argumento de compra**
+**Experiment Card N° 3 — EXP-03 (Q2): Peso real del uso sin conexión**
 
 | Campo | Contenido |
 |---|---|
-| **Pregunta** | Q10: ¿La evidencia exportable para SUNAFIL es el argumento que decide la compra? |
-| **Hipótesis** | HW05: al menos la mitad de los responsables de SST elegirá la evidencia exportable como el motivo principal para contratar el producto |
-| **Método** | Prueba de concepto con demostración guiada y elección forzada entre cuatro beneficios |
-| **Variable independiente** | No aplica: se compara la preferencia entre beneficios presentados en orden aleatorio |
-| **Variable dependiente / métrica** | M09 proporción de responsables que elige la evidencia exportable como motivo principal |
-| **Variables controladas** | Mismo guion de demostración y mismo orden aleatorizado de los beneficios |
-| **Participantes** | Al menos 10 supervisores o jefes de SST |
-| **Duración** | 2 semanas |
-| **Criterio de éxito** | Prueba binomial unilateral (α = 0,05): la proporción supera el 50 % |
-| **Criterio de refutación** | La proporción no supera el 50 % o otro beneficio domina la elección |
-| **Decisión asociada** | Si se confirma, el mensaje comercial se centra en la evidencia y se priorizan las funciones de exportación; si no, se reorienta al beneficio elegido |
-| **Estado** | Planificado |
+| **Question** | ¿Qué proporción de reportes se origina sin conexión? |
+| **Why** | La cola local y la sincronización son la parte más costosa de mantener en la aplicación móvil. Saber cuántos reportes nacen sin señal decide si esa inversión se justifica: si la proporción supera el 20 %, la cola local y la sincronización se mantienen como prioridad; si es marginal, se simplifica su mantenimiento. |
+| **Assumption** | Afirmación C2: sin operación offline, el sistema no sirve en obra ni en mina. |
+| **Belief (Lo que creemos)** | Creemos que una parte relevante de los reportes, más del 20 %, se crea sin conexión. |
+| **What** | No se construye nada: cada reporte ya guarda la marca `synced_offline` (US07 y US08). Se mide su proporción sobre los reportes del piloto. |
+| **Design** | **Técnica de validación:** Medición descriptiva.<br>**Muestra:** Todos los reportes de los operarios del piloto de EXP-01, de ambas variantes.<br>**Duración:** Los mismos 14 días de EXP-01.<br>**Desarrollo:** Al cierre de la ventana se cuentan los reportes con `synced_offline` verdadero sobre el total y se calcula el intervalo de confianza al 95 % de la proporción.<br>**Criterio de éxito:** El experimento será exitoso si se obtiene la proporción con un intervalo al 95 % de amplitud menor a ±10 puntos. Si el intervalo es más ancho, se amplía la ventana.<br>**Riesgo:** Que la empresa piloto tenga mejor cobertura que una obra o una mina típica y la proporción quede subestimada. |
+| **Hypothesis** | No aplica: es una pregunta descriptiva. Se estima la proporción con su intervalo de confianza. |
+| **Métricas** | - M06 proporción de reportes sin conexión<br>- Amplitud del intervalo de confianza al 95 % |
+| **Metas** | Proporción estimada con un intervalo de ±10 puntos o menos; umbral de decisión: 20 %. |
+| **Prioridad** | Media |
+| **Responsable** | Tech Lead |
 
-**Experiment Card — EXP-06: Foto obligatoria**
-
-| Campo | Contenido |
-|---|---|
-| **Pregunta** | Q3: ¿La foto obligatoria reduce la tasa de finalización del reporte? |
-| **Hipótesis** | HW06: exigir la foto reduce la tasa de finalización del reporte frente a dejarla opcional |
-| **Método** | Experimento controlado A/B con asignación determinística por usuario |
-| **Variable independiente** | Foto `obligatoria` u `opcional` en el formulario rápido |
-| **Variable dependiente / métrica** | M07 tasa de finalización (reportes enviados / reportes iniciados) y M05 cobertura de evidencia (control) |
-| **Variables controladas** | Mismo formulario rápido y misma aplicación en ambos grupos |
-| **Participantes** | Operarios de campo con cuenta activa |
-| **Duración** | 14 días |
-| **Criterio de éxito** | Diferencia significativa de proporciones (α = 0,05, dos colas) en la tasa de finalización |
-| **Criterio de refutación** | Sin diferencia significativa con la muestra requerida |
-| **Decisión asociada** | Si la foto obligatoria reduce la finalización, pasa a opcional con recordatorio; si no, se mantiene obligatoria por su valor como evidencia |
-| **Estado** | Siguiente experimento (8.5.2). Requiere instrumentar el evento `reporte_iniciado` y corregir el registro de fotos |
-
-**Experiment Card — EXP-07: Línea base del MTTR en papel**
+**Experiment Card N° 4 — EXP-04 (Q6): Disposición a usar el celular personal**
 
 | Campo | Contenido |
 |---|---|
-| **Pregunta** | Q7: ¿Cuánto tiempo pasa hoy entre la detección y la corrección de un peligro con el proceso en papel? |
-| **Hipótesis** | No aplica: es una pregunta descriptiva. Se estima la mediana con su intervalo de confianza |
-| **Método** | Revisión retrospectiva de los registros en papel de la empresa piloto |
-| **Variable independiente** | No aplica (no se manipula ninguna condición) |
-| **Variable dependiente / métrica** | M02 MTTR en el proceso en papel |
-| **Variables controladas** | Solo registros con fecha de detección y de cierre legibles |
-| **Participantes** | Registros de hallazgos de los últimos 3 meses de la empresa piloto |
-| **Duración** | 1 semana de revisión |
-| **Criterio de éxito** | Obtener la mediana del MTTR en papel con un intervalo al 95 % |
-| **Criterio de refutación** | No aplica; si los registros no tienen fechas, se declara la línea base como no disponible |
-| **Decisión asociada** | Fija la línea base contra la que se compara el MTTR del producto (hipótesis Lean UX H3) |
-| **Estado** | Planificado |
+| **Question** | ¿Qué proporción de operarios acepta usar su celular personal para reportar? |
+| **Why** | Todo el canal móvil supone que el operario usará su propio celular. Si no lo acepta, la aplicación queda vacía aunque funcione bien. Si se confirma, la aplicación propia sigue siendo el canal principal; si se refuta, se priorizan los equipos compartidos y el registro por el supervisor. |
+| **Assumption** | Supuesto A2: el operario está dispuesto a usar su celular personal para tareas de la empresa. |
+| **Belief (Lo que creemos)** | Creemos que al menos el 70 % de los operarios aceptará instalar la aplicación y reportar desde su celular. |
+| **What** | Se invita a los operarios de la empresa piloto a instalar la aplicación en su celular personal, con una capacitación de cinco minutos. No se construye nada nuevo: se mide el uso real. |
+| **Design** | **Técnica de validación:** Estudio de adopción con invitación abierta y medición de uso real.<br>**Muestra:** Todos los operarios de campo de la empresa piloto; el mínimo se fija con el cálculo de 8.2.5 antes de ejecutar.<br>**Duración:** 14 días.<br>**Desarrollo:** Todos reciben la misma invitación y la misma capacitación. Al cierre se cuenta cuántos registraron al menos un reporte desde su propio celular.<br>**Criterio de éxito:** El experimento será exitoso si el límite inferior del intervalo de Wilson al 95 % es igual o mayor a 70 %. Se refuta si el límite superior queda por debajo de 70 %; en otro caso, el resultado es no concluyente.<br>**Riesgo:** Que la empresa piloto presione a sus operarios para participar y la adopción no sea voluntaria, o que el costo de los datos móviles frene el uso fuera del piloto. |
+| **Hypothesis** | Si invitamos a los operarios a usar su celular personal con una capacitación breve, entonces al menos el 70 % registrará un reporte desde él durante la ventana. |
+| **Métricas** | - M08 tasa de adopción<br>- Reportes por operario que adoptó la aplicación |
+| **Metas** | Tasa de adopción de al menos 70 % (límite inferior del intervalo de Wilson). |
+| **Prioridad** | Media |
+| **Responsable** | Product Owner |
 
-**Experiment Card — EXP-08: Ranking de áreas por hallazgos cerrados**
-
-| Campo | Contenido |
-|---|---|
-| **Pregunta** | Q9: ¿Un ranking de áreas por hallazgos cerrados mejora la tasa de cierre sin desalentar el reporte? |
-| **Hipótesis** | HW07: publicar un ranking de áreas aumenta la tasa de cierre sin reducir la frecuencia de reporte en más de 10 % |
-| **Método** | Diseño antes y después por área, con áreas de control sin ranking |
-| **Variable independiente** | Publicación del ranking de áreas en el tablero |
-| **Variable dependiente / métrica** | M04 tasa de cierre (principal) y M01 reportes por usuario (control) |
-| **Variables controladas** | El ranking es por área, nunca por persona (matriz ética, 8.8) |
-| **Participantes** | Áreas de la empresa piloto |
-| **Duración** | 4 semanas antes y 4 después |
-| **Criterio de éxito** | Aumento significativo de la tasa de cierre (α = 0,05) en las áreas con ranking frente a las de control, y M01 sin caída mayor a 10 % |
-| **Criterio de refutación** | Sin aumento de la tasa de cierre, o caída del reporte mayor a 10 % |
-| **Decisión asociada** | Si se confirma, se adopta el ranking por área; si el reporte cae, se descarta por su riesgo social |
-| **Estado** | En espera: baja prioridad tras la re-priorización (8.5.2) |
-
-**Experiment Card — EXP-09: Reporte anónimo**
+**Experiment Card N° 5 — EXP-05 (Q10): Evidencia exportable como argumento de compra**
 
 | Campo | Contenido |
 |---|---|
-| **Pregunta** | Q5: ¿La posibilidad de reportar de forma anónima aumenta los reportes de actos inseguros de terceros? |
-| **Hipótesis** | HW08: los operarios con opción de reporte anónimo registran más reportes de actos inseguros de terceros por usuario |
-| **Método** | Experimento controlado A/B con asignación determinística por usuario |
-| **Variable independiente** | Opción de reporte anónimo `disponible` o `no disponible` |
-| **Variable dependiente / métrica** | M01 reportes por usuario, restringido a actos inseguros de terceros |
-| **Variables controladas** | Mismo formulario y misma aplicación en ambos grupos |
-| **Participantes** | Operarios de campo con cuenta activa |
-| **Duración** | 14 días |
-| **Criterio de éxito** | Diferencia significativa (U de Mann-Whitney, α = 0,05, dos colas) a favor del grupo con anonimato |
-| **Criterio de refutación** | Sin diferencia significativa con la muestra requerida |
-| **Decisión asociada** | Si se confirma, se implementa el reporte anónimo opcional (idea I2); si no, el miedo a represalias se aborda por otra vía |
-| **Estado** | Planificado |
+| **Question** | ¿La evidencia exportable para SUNAFIL es el argumento que decide la compra? |
+| **Why** | Orienta el mensaje comercial y la prioridad de las funciones de exportación. Si la evidencia no es lo que decide la compra, se estaría vendiendo con el argumento equivocado. Si se confirma, el mensaje comercial se centra en la evidencia y se priorizan las funciones de exportación; si no, se reorienta al beneficio elegido. |
+| **Assumption** | Afirmación C3: la evidencia exportable es el argumento que cierra la venta. |
+| **Belief (Lo que creemos)** | Creemos que más de la mitad de los responsables de SST elegirá la evidencia exportable como el motivo principal para contratar el producto. |
+| **What** | Se presenta una demostración guiada del producto y al final se pide elegir un único motivo principal entre cuatro beneficios, uno por cada hipótesis Lean UX (1.2.2.3): reporte rápido en campo, operación sin conexión, trazabilidad del hallazgo y evidencia exportable. No se construye nada nuevo. |
+| **Design** | **Técnica de validación:** Prueba de concepto con demostración guiada y elección forzada.<br>**Muestra:** Al menos 10 supervisores o jefes de SST.<br>**Duración:** 2 semanas.<br>**Desarrollo:** Se usa el mismo guion de demostración con todos y los cuatro beneficios se presentan en orden aleatorio, para que la posición no sesgue la elección.<br>**Criterio de éxito:** El experimento será exitoso si una prueba binomial unilateral (α = 0,05) indica que la proporción supera el 50 %. Se refuta si no la supera o si otro beneficio domina la elección.<br>**Riesgo:** Que el presentador enfatice sin querer la exportación, o que quien responde no sea quien decide la compra en su empresa. |
+| **Hypothesis** | Si presentamos la evidencia exportable junto con otros tres beneficios, entonces más de la mitad de los responsables de SST la elegirá como motivo principal de compra. |
+| **Métricas** | - M09 preferencia por la evidencia exportable<br>- Distribución de la elección entre los cuatro beneficios |
+| **Metas** | M09 mayor a 50 % con al menos 10 responsables consultados. |
+| **Prioridad** | Media |
+| **Responsable** | Product Owner |
 
-**Experiment Card — EXP-10: Reporte por voz**
+**Experiment Card N° 6 — EXP-06 (Q3): Foto obligatoria**
 
 | Campo | Contenido |
 |---|---|
-| **Pregunta** | Q8: ¿El reporte por voz aumenta los reportes de quienes trabajan con guantes o con las manos ocupadas? |
-| **Hipótesis** | HW09: los operarios que trabajan con guantes registran más reportes por usuario cuando disponen de reporte por voz |
-| **Método** | Experimento controlado A/B entre operarios que trabajan con guantes |
-| **Variable independiente** | Reporte por voz `disponible` o `no disponible` |
-| **Variable dependiente / métrica** | M01 reportes por usuario y M07 tasa de finalización |
-| **Variables controladas** | Mismo formulario rápido en ambos grupos; solo cambia el canal de captura |
-| **Participantes** | Operarios de campo que trabajan con guantes |
-| **Duración** | 14 días |
-| **Criterio de éxito** | Diferencia significativa (U de Mann-Whitney, α = 0,05, dos colas) a favor del grupo con voz |
-| **Criterio de refutación** | Sin diferencia significativa con la muestra requerida |
-| **Decisión asociada** | Si se confirma, se invierte en la captura por voz (idea I4); si no, se descarta |
-| **Estado** | Planificado |
+| **Question** | ¿La foto obligatoria reduce la tasa de finalización del reporte? |
+| **Why** | La foto es la evidencia más valiosa ante una fiscalización (M05), pero cada paso obligatorio añade fricción. Si la foto obligatoria reduce la finalización, pasa a opcional con recordatorio; si no, se mantiene obligatoria por su valor como evidencia. |
+| **Assumption** | Vacío de conocimiento K4: no se sabe si la foto obligatoria acelera o frena el reporte. |
+| **Belief (Lo que creemos)** | Creemos que exigir la foto hace que algunos operarios abandonen el reporte antes de enviarlo. |
+| **What** | Se configura el formulario rápido en dos variantes, foto `obligatoria` y foto `opcional`, con la misma asignación determinística de EXP-01. Antes hay que instrumentar el evento `reporte_iniciado` (8.2.8) y corregir el registro de fotos observado en 8.5.1. |
+| **Design** | **Técnica de validación:** Experimento controlado A/B con asignación determinística por usuario.<br>**Muestra:** Operarios de campo con cuenta activa; el tamaño se calcula como en 8.2.5 sobre la tasa de finalización.<br>**Duración:** 14 días.<br>**Desarrollo:** Se registran los reportes iniciados y enviados por variante, y la proporción de reportes con foto como métrica de control.<br>**Criterio de éxito:** El experimento será exitoso si hay una diferencia significativa de proporciones (α = 0,05, dos colas) en la tasa de finalización. Se refuta si no hay diferencia con la muestra requerida.<br>**Riesgo:** Que el defecto en el registro de fotos (8.5.1) contamine la métrica de control, o que fallas de cámara en algunos equipos se confundan con abandono. |
+| **Hypothesis** | Si exigimos la foto para enviar el reporte, entonces la tasa de finalización será menor que con la foto opcional. |
+| **Métricas** | - M07 tasa de finalización del reporte<br>- M05 cobertura de evidencia (control) |
+| **Metas** | Detectar la diferencia en M07 con α = 0,05; M05 se reporta como métrica de control. |
+| **Prioridad** | Baja en 8.1.4; sube a Media en la re-priorización (8.5.2) |
+| **Responsable** | UX Designer |
+
+**Experiment Card N° 7 — EXP-07 (Q7): Línea base del MTTR en papel**
+
+| Campo | Contenido |
+|---|---|
+| **Question** | ¿Cuánto tiempo pasa hoy entre la detección y la corrección de un peligro con el proceso en papel? |
+| **Why** | Sin línea base, el MTTR que mide el producto no puede compararse con el proceso actual y la hipótesis Lean UX H3 no se puede contrastar. Esta tarjeta fija la línea base contra la que se compara el MTTR del producto. |
+| **Assumption** | Vacío de conocimiento K2: no se sabe cuánto tiempo transcurre hoy entre la detección y la corrección de un peligro. |
+| **Belief (Lo que creemos)** | Creemos que con el proceso en papel un peligro tarda más en corregirse que con el producto. |
+| **What** | Se revisan los registros de hallazgos en papel de la empresa piloto. No se construye nada. |
+| **Design** | **Técnica de validación:** Revisión retrospectiva de registros.<br>**Muestra:** Registros de hallazgos de los últimos 3 meses de la empresa piloto, solo los que tengan fecha de detección y de cierre legibles.<br>**Duración:** 1 semana de revisión.<br>**Desarrollo:** Se transcriben ambas fechas de cada registro, se calcula el tiempo de corrección y se reporta la mediana con su intervalo de confianza al 95 %.<br>**Criterio de éxito:** El experimento será exitoso si se obtiene la mediana del MTTR en papel con su intervalo al 95 %. Si los registros no tienen fechas, la línea base se declara no disponible.<br>**Riesgo:** Que los registros estén incompletos o se hayan llenado después del cierre, lo que subestimaría el tiempo real. |
+| **Hypothesis** | No aplica: es una pregunta descriptiva. Se estima la mediana con su intervalo de confianza. |
+| **Métricas** | - M02 MTTR en el proceso en papel (mediana)<br>- Intervalo de confianza al 95 % |
+| **Metas** | Mediana del MTTR en papel con su intervalo al 95 %. |
+| **Prioridad** | Baja en 8.1.4; sube a Media en la re-priorización (8.5.2) |
+| **Responsable** | Data Analyst |
+
+**Experiment Card N° 8 — EXP-08 (Q9): Ranking de áreas por hallazgos cerrados**
+
+| Campo | Contenido |
+|---|---|
+| **Question** | ¿Un ranking de áreas por hallazgos cerrados mejora la tasa de cierre sin desalentar el reporte? |
+| **Why** | Un incentivo colectivo podría acelerar el cierre, pero también puede llevar a que las áreas dejen de reportar para no quedar mal. Si se confirma sin caída del reporte, se adopta el ranking por área; si el reporte cae, se descarta por su riesgo social (8.8). |
+| **Assumption** | Idea I5: un ranking de áreas por hallazgos cerrados funciona como incentivo colectivo. |
+| **Belief (Lo que creemos)** | Creemos que publicar un ranking de áreas aumentará la tasa de cierre sin desalentar el reporte. |
+| **What** | Se publica en el tablero un ranking de áreas por hallazgos cerrados solo para algunas áreas; las demás quedan como control. El ranking es por área, nunca por persona (matriz ética, 8.8). |
+| **Design** | **Técnica de validación:** Diseño antes y después por área, con áreas de control sin ranking.<br>**Muestra:** Áreas de la empresa piloto, divididas entre áreas con ranking y áreas de control.<br>**Duración:** 4 semanas antes y 4 semanas después.<br>**Desarrollo:** Se mide la tasa de cierre y los reportes por usuario de cada área antes y después de publicar el ranking, y se compara el cambio de las áreas con ranking con el de las áreas de control.<br>**Criterio de éxito:** El experimento será exitoso si la tasa de cierre aumenta significativamente (α = 0,05) en las áreas con ranking frente a las de control y M01 no cae más de 10 %. Se refuta si la tasa de cierre no aumenta o si el reporte cae más de 10 %.<br>**Riesgo:** Que las áreas dejen de reportar para mejorar su posición, o que las áreas con y sin ranking comparen resultados entre sí. |
+| **Hypothesis** | Si publicamos un ranking de áreas por hallazgos cerrados, entonces la tasa de cierre aumentará sin que la frecuencia de reporte caiga más de 10 %. |
+| **Métricas** | - M04 tasa de cierre (principal)<br>- M01 reportes por usuario (control) |
+| **Metas** | Aumento significativo de M04 frente a las áreas de control y caída de M01 no mayor a 10 %. |
+| **Prioridad** | Baja (baja todavía más en la re-priorización, 8.5.2) |
+| **Responsable** | Product Owner |
+
+**Experiment Card N° 9 — EXP-09 (Q5): Reporte anónimo**
+
+| Campo | Contenido |
+|---|---|
+| **Question** | ¿La posibilidad de reportar de forma anónima aumenta los reportes de actos inseguros de terceros? |
+| **Why** | Si el temor a represalias impide reportar los actos inseguros de los compañeros, reducir la fricción del formulario no basta. Si se confirma, se implementa el reporte anónimo opcional (idea I2); si no, el temor a represalias se aborda por otra vía. |
+| **Assumption** | Supuesto A3: el temor a represalias no es la barrera dominante. Esta tarjeta pone a prueba su contrario. |
+| **Belief (Lo que creemos)** | Creemos que la opción de reportar sin identificarse aumentará los reportes de actos inseguros de terceros. |
+| **What** | Se agrega al formulario una opción de reporte anónimo, disponible para un grupo de operarios y no para el otro. |
+| **Design** | **Técnica de validación:** Experimento controlado A/B con asignación determinística por usuario.<br>**Muestra:** Operarios de campo con cuenta activa; el tamaño se calcula como en 8.2.5.<br>**Duración:** 14 días.<br>**Desarrollo:** Se cuentan los reportes de actos inseguros de terceros por usuario en cada grupo; el resto del formulario y de la aplicación es idéntico.<br>**Criterio de éxito:** El experimento será exitoso si hay una diferencia significativa (U de Mann-Whitney, α = 0,05, dos colas) a favor del grupo con anonimato. Se refuta si no hay diferencia con la muestra requerida.<br>**Riesgo:** Que el anonimato genere reportes malintencionados o imposibles de investigar, y el tratamiento de datos personales que analiza la matriz ética (8.8). |
+| **Hypothesis** | Si ofrecemos la opción de reportar de forma anónima, entonces aumentarán los reportes de actos inseguros de terceros por usuario. |
+| **Métricas** | - M01 reportes por usuario, restringido a actos inseguros de terceros |
+| **Metas** | Diferencia significativa a favor del grupo con anonimato (α = 0,05). |
+| **Prioridad** | Baja |
+| **Responsable** | UX Designer |
+
+**Experiment Card N° 10 — EXP-10 (Q8): Reporte por voz**
+
+| Campo | Contenido |
+|---|---|
+| **Question** | ¿El reporte por voz aumenta los reportes de quienes trabajan con guantes o con las manos ocupadas? |
+| **Why** | Quien trabaja con guantes no puede escribir con comodidad en la pantalla; dictar el reporte podría quitar esa barrera. Si se confirma, se invierte en la captura por voz (idea I4); si no, se descarta. |
+| **Assumption** | Idea I4: el reporte por voz facilita el reporte a quien trabaja con guantes. |
+| **Belief (Lo que creemos)** | Creemos que los operarios con guantes reportarán más cuando puedan dictar su reporte. |
+| **What** | Se agrega al formulario rápido la opción de dictar la descripción, disponible para un grupo de operarios que trabajan con guantes y no para el otro. Solo cambia el canal de captura. |
+| **Design** | **Técnica de validación:** Experimento controlado A/B entre operarios que trabajan con guantes.<br>**Muestra:** Operarios de campo que trabajan con guantes; el tamaño se calcula como en 8.2.5.<br>**Duración:** 14 días.<br>**Desarrollo:** Se comparan los reportes por usuario y la tasa de finalización entre el grupo con voz y el grupo sin voz.<br>**Criterio de éxito:** El experimento será exitoso si hay una diferencia significativa (U de Mann-Whitney, α = 0,05, dos colas) a favor del grupo con voz. Se refuta si no hay diferencia con la muestra requerida.<br>**Riesgo:** Que el ruido de la obra o de la planta degrade el reconocimiento de voz y la función se abandone por mala calidad, no por falta de interés. |
+| **Hypothesis** | Si los operarios con guantes pueden dictar su reporte, entonces registrarán más reportes por usuario que quienes solo pueden escribirlo. |
+| **Métricas** | - M01 reportes por usuario<br>- M07 tasa de finalización (secundaria) |
+| **Metas** | Diferencia significativa en M01 a favor del grupo con voz (α = 0,05). |
+| **Prioridad** | Baja |
+| **Responsable** | UX Designer |
 
 ## 8.2. Experiment Design
 
