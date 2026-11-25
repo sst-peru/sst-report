@@ -5884,6 +5884,34 @@ se construirán las notificaciones de TB05 y TB04, pero no las implementa.
 
 #### 8.3.3.6. Team Collaboration Insights
 
+Conteo de commits en la rama `develop` de cada repositorio, obtenido con
+`git shortlog -sn --since=2026-10-01 origin/develop`. El periodo empieza el 1 de octubre de
+2026, cuando se inicia el ciclo de experimentación, y llega hasta el 25 de noviembre de 2026.
+
+| Repositorio | Commits en el periodo | Autores | Trabajo principal |
+|---|---|---|---|
+| `sst-api` | 23 | Villafuerte Tapia Renzo Alonso (23) | TB01 y TB02 en el endpoint de resultados, privacidad y reporte anónimo, conflictos de sincronización e historias técnicas del Sprint 3 |
+| `sst-web` | 17 | Villafuerte Tapia Renzo Alonso (17) | Panel del experimento con intervalo y aviso de demostración, consentimiento informado, bandeja paginada y nuevas pantallas del Sprint 3 |
+| `sst-mobile` | 1 | Mora Blas Diego Alonzo (1) | Integración de endpoints y pantallas de gestión |
+| `sst-report` | 51 | Villafuerte Tapia Renzo Alonso (50), Mora Blas Diego Alonzo (1) | Capítulos VI, VII y VIII: pruebas, DevOps, diseño, ejecución y análisis del experimento |
+
+El conteo agrupa por persona los distintos nombres con que cada integrante configuró Git
+(por ejemplo, `Renzo`, `Renzo Alonso`, `Renzo Villafuerte` y `RenzoVillafuerteTapia`). La
+distribución muestra que el ciclo To-Be se concentró en un integrante. Es un dato que el informe
+declara tal como está, en lugar de repartirlo de forma artificial entre los tres.
+
+<p align="center"><img src="assets/img/insights-sst-api.png" alt="Insights de sst-api" width="900"></p>
+
+*Figura. GitHub Insights → Contributors de sst-api (rama develop).*
+
+<p align="center"><img src="assets/img/insights-sst-web.png" alt="Insights de sst-web" width="900"></p>
+
+*Figura. GitHub Insights → Contributors de sst-web (rama develop).*
+
+<p align="center"><img src="assets/img/insights-sst-report.png" alt="Insights de sst-report" width="900"></p>
+
+*Figura. GitHub Insights → Contributors de sst-report (rama develop).*
+
 ### 8.3.4. To-Be Validation Interviews
 
 #### 8.3.4.1. Diseño de Entrevistas
