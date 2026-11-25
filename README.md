@@ -295,7 +295,6 @@ en ella, aunque sí están en el historial del repositorio.
     - [8.6.2. Resumen usando Gees Framework](#862-resumen-usando-gees-framework)
   - [Matriz de Evaluación Ética y de Impacto](#matriz-de-evaluación-ética-y-de-impacto)
 - [Conclusiones](#conclusiones)
-  - [Avance de conclusiones](#avance-de-conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
   - [Video App Validation](#video-app-validation)
   - [Video About-the-Team](#video-about-the-team)
@@ -6177,35 +6176,23 @@ un fin contratado sin cuestionarse el fin en sí mismo— y evidenciar pensamien
 # Conclusiones
 
 
-## Avance de conclusiones
-
-El avance permite definir un ciclo de gestión trazable del hallazgo y una planificación de
-162 elementos. La revisión de código confirma componentes de captura, sincronización,
-gestión web y API, pero también diferencias respecto del alcance declarado. Por ello, los
-estados históricos de los sprints no bastan para concluir que todas las capacidades están
-aceptadas ni que existe paridad completa entre plataformas.
-
-La separación entre fecha de ocurrencia y recepción, junto con un UUID persistente, responde
-al contexto de trabajo sin conexión. Su aceptación requiere pruebas integradas de Android y
-API, además de resolver el alcance entre empresas de la búsqueda por UUID. Compartir backend
-facilita la consistencia de las reglas; no garantiza por sí solo la consistencia de las interfaces.
-
-Los workflows localizados proporcionan una base de integración continua. El despliegue, los
-respaldos, la disponibilidad SaaS y la recuperación siguen como diseño hasta que existan
-registros de ejecución. Las ocho funciones de prueba localizadas tampoco permiten afirmar
-cobertura total o una suite aprobada sin ejecutar y conservar sus resultados.
-
-No se concluye todavía que Resguardo reduzca accidentes, MTTR o abandono del reporte: faltan
-mediciones y validación con usuarios. La prioridad para el siguiente avance es conciliar las
-versiones del informe y del código, completar la evidencia del flujo principal y ejecutar la
-validación propuesta usando datos reales separados de los datos de demostración.
 ## Conclusiones y recomendaciones
 
-**Sobre la arquitectura y la paridad entre plataformas.** Concentrar la totalidad de la lógica de
-negocio en un único API REST consumido por ambos clientes resultó ser la decisión más
-consecuente del proyecto. Reduce la duplicación de reglas entre clientes. La paridad sigue requiriendo verificar
-interfaces y contratos; la corrección del registro público descrita anteriormente no aparece
-en el commit del API consultado y no puede darse por validada en este avance.
+**Sobre el problema y el producto.** Resguardo nació de una observación concreta: en el frente
+de trabajo el peligro se detecta, pero no se reporta o se reporta tarde, y lo que se reporta en
+papel no deja trazabilidad. El producto cubre el ciclo completo que exige la Ley N° 29783 —captura
+del hallazgo en campo, gestión hasta su cierre, matriz IPERC, EPP, inspecciones, comité y
+evidencia exportable— con un API, un panel web y una aplicación Android. Lo que el informe todavía
+no puede afirmar es que Resguardo reduzca los accidentes, el MTTR o el abandono del reporte:
+para eso faltan las mediciones con usuarios reales que el Capítulo VIII deja diseñadas.
+
+**Sobre la arquitectura y la paridad entre plataformas.** Concentrar la lógica de negocio en un
+único API REST consumido por ambos clientes fue la decisión más consecuente del proyecto: las
+reglas de permisos, de cierre y del experimento viven en un solo lugar. Compartir el backend
+garantiza la consistencia de las reglas, pero no la de las interfaces. La aplicación web es hoy
+el cliente más completo; la aplicación Android cubre la captura sin conexión, la sincronización
+y las pantallas de gestión integradas en el último corte, y su paridad de detalle con la web
+todavía debe verificarse pantalla por pantalla.
 
 **Sobre el diseño para el contexto real de uso.** La operación sin conexión no es una
 funcionalidad adicional sino una condición de existencia del producto. Un sistema de reporte de
@@ -6214,10 +6201,13 @@ peligros son mayores. La consecuencia técnica —guardar localmente antes de in
 identificar cada reporte con un UUID generado en el dispositivo para que el reintento no
 duplique— nace de una restricción del dominio, no de una preferencia de ingeniería.
 
-**Sobre la separación de responsabilidades.** El producto requiere reservar las acciones de
-gestión a roles autorizados. Se localizó una prueba del rechazo del cierre por un operario;
-su existencia no permite certificar todas las vías de autorización. La aceptación del rol en
-el registro público y el aislamiento en reintentos requieren corrección y pruebas adicionales.
+**Sobre la separación de responsabilidades y la seguridad.** El registro público ya no permite
+elegir el rol: quien se registra entra siempre como operario, y la prueba
+`test_el_registro_publico_no_permite_elegir_rol` impide que el error vuelva. Quedan dos riesgos
+conocidos que el informe declara en lugar de ocultar. La búsqueda por UUID que hace idempotente
+la sincronización no filtra por empresa, de modo que un reintento podría devolver un reporte de
+otra empresa con el mismo identificador. Y los tokens de la aplicación web se guardan en
+`localStorage`. Ambos deben corregirse antes de cualquier uso en producción.
 
 **Sobre la medición como parte del producto.** Instrumentar el experimento dentro del propio
 modelo de datos, en lugar de delegarlo a una herramienta de analítica externa, resultó coherente
@@ -6225,25 +6215,39 @@ con el contexto de uso: los eventos de una herramienta externa se pierden justam
 hay conectividad. El costo es un campo adicional en la tabla de reportes; el beneficio es que el
 dato del experimento es tan confiable como el dato operativo.
 
+**Sobre el ciclo de experimentación.** El Capítulo VIII convirtió supuestos del equipo en diez
+preguntas priorizadas, diez Experiment Cards y nueve hipótesis con su hipótesis nula, su prueba
+estadística y su regla de decisión. La primera, Q1, se ejecutó sobre los datos de demostración
+y el resultado es **no concluyente**: el formulario rápido muestra un +40,95 % de reportes por
+usuario, pero el intervalo de confianza al 95 % va de −8,66 a +15,82 y contiene el cero. El
+ciclo no confirmó la hipótesis, pero sí validó que la medición funciona de punta a punta, y eso
+es lo que permite ejecutar el piloto real con confianza en el dato.
+
 **Sobre el rigor experimental y sus límites.** El cálculo de tamaño de muestra determinó que se
 requieren 24 participantes para detectar, con significancia del 5 % y potencia del 80 %, el
 efecto que la hipótesis afirma. Ese número es la conclusión metodológica más importante del
 trabajo, porque define cuándo un resultado es interpretable y cuándo no. Un experimento
 ejecutado con seis participantes solo podría detectar efectos superiores al 232 %: un resultado
-no significativo en esas condiciones no refuta nada.
+no significativo en esas condiciones no refuta nada. Por la misma razón, el panel del
+experimento muestra ahora el intervalo de confianza y declara los datos de demostración (TB01 y
+TB02): un número sin su incertidumbre afirma más de lo que se sabe.
 
 **Recomendaciones para la continuidad del producto**
 
-1. Ejecutar el experimento con el número de participantes que el cálculo exige, o declarar
-   explícitamente la limitación y reportar el estudio como no concluyente.
-2. Implementar el circuito de retroalimentación al operario —avisarle cuando su hallazgo se
-   cierra—, porque la evidencia del dominio sugiere que la ausencia de consecuencia visible es
-   una causa central del abandono del reporte.
-3. Priorizar el reporte anónimo opcional para actos inseguros de terceros, que ataca la barrera
-   que la reducción de fricción no puede resolver.
-4. Completar el pipeline hasta el despliegue automatizado y añadir notificaciones, que hoy están
-   diseñadas pero no implementadas.
-5. Mover el refresh token a una cookie `httpOnly` antes de cualquier uso en producción.
+1. Ejecutar el piloto real de EXP-01 con los 24 participantes que el cálculo exige, junto con
+   EXP-03, y entrevistar a los participantes al cierre (8.3.4) antes de decidir el formulario
+   por defecto.
+2. Implementar el aviso de cierre al reportante (TB05) y la notificación de hallazgos críticos
+   (TB04), que siguen pendientes, porque la ausencia de consecuencia visible es una causa central
+   del abandono del reporte.
+3. Implementar el registro de auditoría de exportaciones (TB03), que exige el tratamiento de
+   datos personales bajo la Ley N° 29733.
+4. Filtrar por empresa la búsqueda por UUID de la sincronización y mover el refresh token a una
+   cookie `httpOnly` antes de cualquier uso en producción.
+5. Completar el pipeline hasta el despliegue automatizado y publicar la landing page, que hoy no
+   tienen URL acreditada.
+6. Corregir el registro de fotos detectado en 8.4.1 y ejecutar EXP-06 (foto obligatoria), la
+   siguiente pregunta del Question Backlog re-priorizado.
 
 ## Video App Validation
 
