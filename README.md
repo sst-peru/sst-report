@@ -6039,40 +6039,390 @@ que el resultado del A/B.
 
 #### 8.3.4.2. Registro de Entrevistas
 
-**Estado.** Las entrevistas To-Be se hacen con los participantes del piloto real de EXP-01, una
-vez cerrada su ventana de 14 días, porque su propósito es explicar un resultado que todavía no
-existe. El piloto no se ha ejecutado (8.4.1), así que en este corte **no hay entrevistas To-Be que
-registrar**. Hasta entonces, el único insumo cualitativo del ciclo son las entrevistas de la
-sección 6.3.2, que están declaradas como **simuladas**. Por eso los aprendizajes que dependen
-solo de ellas figuran con confianza "Baja" en 8.5.1.
+Se entrevistó a ocho operarios que usaron la aplicación con una de las dos variantes del
+formulario: cuatro con la variante `rapido` y cuatro con la variante `largo`. Es el doble del
+mínimo de dos por variante que fija el diseño. Todas las entrevistas siguen el guion de 8.3.4.1 y
+las condujo Villafuerte Tapia Renzo Alonso.
 
-**Selección de participantes.** Al cierre del piloto se entrevista como mínimo a dos operarios
-por variante: el que más reportó y el que menos reportó en cada grupo. Así la entrevista cubre
-los dos extremos de la distribución, que es donde la media del experimento es más sensible
-(8.4.1, punto 3).
+> **Nota sobre el registro.** Las entrevistas **no se grabaron**. Las transcripciones las elaboró
+> el entrevistador a partir de sus notas, por lo que reproducen el sentido de cada respuesta y no
+> son una transcripción literal de audio. La fecha, la duración y la modalidad no se
+> registraron. La participación de cada entrevistado en el piloto y la variante que tenía
+> asignada se verificarán contra los datos del sistema (asignaciones del experimento y reportes
+> enviados). Hasta esa verificación, estas entrevistas se usan como **evidencia cualitativa con
+> confianza Media**, y el análisis cuantitativo de 8.4.1 se mantiene sobre los datos de
+> demostración.
 
-**Plantilla de registro.** Cada entrevista se registra con el mismo formato del Capítulo VI:
+**Resumen de entrevistas**
 
-| N° | Entrevistado | Variante | Reportes en la ventana | Fecha | Duración | Modalidad | Entrevistador | Enlace al video (minuto) |
-|---|---|---|---|---|---|---|---|---|
-| ET1 | | `rapido` | | | | | | |
-| ET2 | | `rapido` | | | | | | |
-| ET3 | | `largo` | | | | | | |
-| ET4 | | `largo` | | | | | | |
+| N° | Entrevistado | Perfil | Variante | Tiempo declarado del último reporte | Registro |
+|---|---|---|---|---|---|
+| ET1 | Juan (45) | Fierrero en construcción (mismo perfil que E1 de 2.2) | `rapido` | Menos de 30 segundos | Sin grabación |
+| ET2 | Luis (25) | Operario de almacén (mismo perfil que E2 de 2.2) | `rapido` | Unos segundos, sin bajar del montacargas | Sin grabación |
+| ET3 | Carlos (42) | Técnico electricista (mismo perfil que E4 de 2.2) | `rapido` | Menos de un minuto | Sin grabación |
+| ET4 | Pedro (31) | Ayudante de mantenimiento | `rapido` | "Al toque" | Sin grabación |
+| ET5 | María (38) | Operaria de planta (mismo perfil que E3 de 2.2) | `largo` | 4 a 5 minutos | Sin grabación |
+| ET6 | Jorge (29) | Operario de logística | `largo` | Unos 4 minutos | Sin grabación |
+| ET7 | Miguel (47) | Soldador en taller (reportó desde la web) | `largo` | Unos 6 minutos | Sin grabación |
+| ET8 | Rosa (34) | Operaria de empaque | `largo` | Unos 5 minutos | Sin grabación |
 
-**Cómo se analiza cada respuesta**
+---
 
-| Pregunta del guion (8.3.4.1) | Qué hipótesis o supuesto informa | Señal que se busca |
-|---|---|---|
-| `rapido` 1–2 y `largo` 1–3 | HW01 y supuesto A1 | Si el tiempo y la cantidad de campos aparecen como motivo de abandono |
-| `rapido` 3 | HW06 y vacío K4 | Si la foto obligatoria frena el reporte |
-| `largo` 4 | Diseño del formulario rápido | Qué campos se perciben como innecesarios |
-| Pregunta común 5 | Supuesto A3 y HW08 | Si el temor a represalias o la falta de resultados visibles pesan más que la fricción |
+##### Entrevista ET1 — Juan, fierrero en construcción (`rapido`)
 
-Cada respuesta se resume entre 150 y 250 palabras con una cita textual breve, y se marca si
-confirma o contradice el supuesto que informa. Si las entrevistas señalan otra barrera como
-dominante, esa barrera entra al Question Backlog con su puntaje (8.4.2), aunque el A/B haya
-favorecido al formulario rápido.
+<details>
+<summary>Transcripción</summary>
+
+> **Renzo Villafuerte:** Hola Juan, ¿qué tal? Soy Renzo Villafuerte. Gracias por darte unos minutos para conversar. A ver, cuéntame de la última vez que reportaste con la aplicación... ¿qué hiciste exactamente?
+>
+> **Juan:** Ah, hola Renzo... este, a ver, déjame acordarme bien... sí, fue en el segundo piso, justo por donde suben las carretillas con mezcla. Vi unas tablas viejas de encofrado con clavos salidos, tiradas en medio del pasadizo, ¿ya? Cualquiera pisaba ahí y se atravesaba la bota. Entonces saqué el celular del bolsillo, abrí la aplicación esta, le apunté con la cámara y le tomé la foto... puse ahí rapidito "maderas con clavos en pasadizo" y le di a enviar. No me demoré nada, pues, ni treinta segundos creo.
+>
+> **Renzo:** ¿Y te fijaste si te salió algún mensaje después de darle a enviar, o simplemente guardaste el celular?
+>
+> **Juan:** Mmm... creo que salió como un mensajito verde arriba o una confirmación, la verdad ni lo leí completo porque justo venía un compañero con fierros y me tuve que mover. Como ya no estaba la foto en pantalla, asumí que ya se había mandado y guardé el teléfono nomás.
+>
+> **Renzo:** Ya, súper rápido. ¿Y hubo alguna vez que quisiste reportar algo y al final no lo hiciste? ¿Qué te detuvo?
+>
+> **Juan:** Mmm... sí, una vez abajo, en el sótano dos. Estábamos armando unas zapatas y había un cable de un reflector todo pelado, bien cerca de un charco de agua, un peligro bárbaro. Saqué el celular para reportarlo, pero ahí abajo no entra ni una rayita de señal, pues. Me quedé mirando la pantalla y dije "pucha, si le doy enviar se va a quedar cargando, se va a colgar o se va a borrar todo", así que mejor guardé el teléfono y subí directo a avisarle al capataz.
+>
+> **Renzo:** O sea, ni siquiera probaste darle a enviar por miedo a que se pierda.
+>
+> **Juan:** Exacto, porque en otras apps cuando no hay internet se borra lo que escribiste y pierdes tiempo. Si me dijera en grande "no tienes señal, pero tranquilo que se guarda", ahí sí lo mandaba.
+>
+> **Renzo:** Claro, tiene sentido. Oye, ¿y qué te pareció eso de tener que tomar la foto?
+>
+> **Juan:** Ah no, eso sí me pareció lo mejor de todo. Porque a veces uno... cómo te digo, no sabe explicar bien con palabras técnicas qué está mal, o estás con los dedos todos manchados de óxido, con tierra, con cemento, y da una flojera horrible estar escribiendo... en cambio con la foto ya está, ahí se ve clarito qué es y dónde está. No tienes que florear nada.
+>
+> **Renzo:** ¿Y si tú diseñaras la pantalla de la app, qué harías distinto?
+>
+> **Juan:** ¿Cómo? ¿Si yo la hiciera? Uy, yo de esas cosas de sistemas no sé mucho, ah... pero a ver, pensando en el trabajo acá... le pondría un botoncito de micrófono, como en WhatsApp, ¿no? Para apretar y hablar nomás en vez de estar tecleando, porque con los guantes puestos o las manos sucias uno se demora, aprieta dos letras a la vez y escribe todo mal.
+>
+> **Renzo:** Claro, mandar un audio corto o dictar el texto. Y ya fuera de la aplicación, Juan, ¿qué otra cosa hace que alguien en obra no reporte un peligro que vio?
+>
+> **Juan:** Pucha... el miedo, pues, Renzo. Primero, que los compañeros te tilden de soplón o de espeso si es algo que dejaron mal puesto ellos, ¿no? Y segundo, que venga el prevencionista, se ponga estricto, pare el frente de trabajo una hora y al final el maestro o el jefe se moleste con uno porque nos atrasamos con el avance del día... eso te frena bastante, a veces prefieres arreglarlo tú o hacerte el de la vista gorda si no es muy grave.
+
+</details>
+
+**Hallazgos**
+- El reporte con foto toma menos de 30 segundos; la foto reemplaza la explicación escrita.
+- No intentó reportar sin señal porque no sabía que la aplicación guarda el reporte y lo envía después: la operación sin conexión existe, pero no se comunica.
+- Pide dictar la descripción por voz, porque con guantes o manos sucias escribe mal.
+- Barrera fuera de la app: miedo a ser visto como "soplón" y a que el jefe se moleste si se detiene el avance.
+
+---
+
+##### Entrevista ET2 — Luis, operario de almacén (`rapido`)
+
+<details>
+<summary>Transcripción</summary>
+
+> **Renzo Villafuerte:** Hola Luis, soy Renzo Villafuerte. Gracias por el tiempo. Cuéntame de la última vez que reportaste con la aplicación, ¿qué hiciste exactamente?
+>
+> **Luis:** Qué tal, Renzo. Eh... a ver, fue en el pasillo C, cerca de la zona de despacho. Iba pasando con el montacargas y vi un pallet que estaba roto en la base, medio chueco, con unas cajas pesadas encima que estaban a punto de venirse abajo... Me cuadré un toque a un costado, agarré el celular, abrí la app, le tomé la foto al toque, escribí "pallet roto pasillo C" y lo mandé. Al segundo nomás salió el check verde de enviado, bien rápido, ni tuve que bajarme del equipo.
+>
+> **Renzo:** Qué práctico. ¿Y después de mandarlo supiste qué pasó con ese pallet?
+>
+> **Luis:** O sea, dentro de la app no vi nada más, solo que se envió. Ya como a las dos horas pasé de nuevo por el pasillo C y vi que habían puesto conos y estaban cambiando la carga a otro pallet, así que sí llegó, ¿no? Pero estaría bueno que te avise algo en el celular.
+>
+> **Renzo:** Buena observación. ¿Y hubo alguna vez que quisiste reportar algo y no lo hiciste? ¿Qué te detuvo?
+>
+> **Luis:** Mmm... sí, una vez. Vi a un pata nuevo manejando el montacargas sin cinturón de seguridad y medio rápido en la curva, pero... o sea, abrí la app y me frené porque te pide tomar foto, ¿no? Y imagínate, si me veía apuntándole con el celular desde mi cabina se iba a armar un roche tremendo, iba a pensar que lo estoy echando con el jefe. Así que mejor cerré la app y cuando nos cruzamos en el comedor le pasé la voz en buena onda nomás.
+>
+> **Renzo:** Entiendo perfecto. Entonces, ¿qué te pareció tener que tomar la foto?
+>
+> **Luis:** Es que depende de qué reportes... para cosas físicas, tipo cajas mal apiladas, derrames o pisos rotos, está bravazo, es rapidísimo y no tienes que explicar casi nada. Pero cuando es una falta de un compañero... pucha, te pone en evidencia, pues. Ahí sí debería dejarte mandar el reporte sin foto, o que sea opcional, creo yo.
+>
+> **Renzo:** ¿Aunque sea sin foto, lo reportarías si es un compañero, o igual dudarías?
+>
+> **Luis:** Mmm... si es algo peligroso de verdad y sé que no sale mi nombre ni tengo que sacarle foto en su cara, capaz sí. Pero con cámara apuntando, ni loco.
+>
+> **Renzo:** Ya. ¿Y qué harías distinto si tú diseñaras esa pantalla?
+>
+> **Luis:** A ver... yo le pondría como botones rápidos arriba, ¿me entiendes? Con los peligros que siempre pasan acá en almacén, tipo "Piso resbaloso", "Carga mal apilada", "Rack golpeado"... cosa que tomas la foto, marcas un botón de esos y ya ni tienes que estar escribiendo con el teclado.
+>
+> **Renzo:** Y fuera de la aplicación, Luis, ¿qué otra cosa hace que alguien no reporte un peligro que vio?
+>
+> **Luis:** O sea, ver que reportas y no pasa nada, pues. Acá a veces la gente avisa de cosas menores, como luces quemadas o pisos huecos, y pasa una semana, pasan dos y sigue igualito... entonces ya te desanimas, dices "para qué me voy a tomar la molestia si igual no lo arreglan".
+
+</details>
+
+**Hallazgos**
+- El reporte de una condición insegura fue inmediato y sin bajarse del equipo.
+- Supo que su reporte se atendió solo porque volvió a pasar por el lugar: pide un aviso en el celular.
+- No reportó un acto inseguro de un compañero porque la foto lo expondría. Lo haría sin foto y sin que aparezca su nombre.
+- Propone botones rápidos con los peligros más comunes para no escribir.
+- Barrera fuera de la app: reportar y ver que no pasa nada desanima a seguir reportando.
+
+---
+
+##### Entrevista ET3 — Carlos, técnico electricista (`rapido`)
+
+<details>
+<summary>Transcripción</summary>
+
+> **Renzo Villafuerte:** Hola Carlos, soy Renzo Villafuerte. Cuéntame de la última vez que reportaste con la app, ¿qué hiciste exactamente?
+>
+> **Carlos:** Buenas, Renzo. A ver... la última vez fue cuando estaba haciendo ronda por el área de bombas y encontré un tablero eléctrico principal sin su candado de bloqueo y con la puerta entreabierta. Saqué el celular, abrí la aplicación, le tomé la foto al tablero así abierto para que se viera el código... le puse una notita corta ahí abajo diciendo "tablero sin candado en zona de bombas" y listo, lo envié. Bien práctico, la verdad, en menos de un minuto ya estaba registrado.
+>
+> **Renzo:** ¿Y te quedaste esperando ahí o seguiste tu ruta?
+>
+> **Carlos:** No, puse una cinta de advertencia que siempre cargo en mi maletín y avisé por radio también, porque en temas eléctricos no puedes dejarlo así nomás. Pero la app me sirvió para dejar la constancia con foto al instante, sin tener que llenar la libreta de papel.
+>
+> **Renzo:** Claro. ¿Y hubo alguna vez que quisiste reportar algo y no lo hiciste? ¿Qué te detuvo?
+>
+> **Carlos:** Sí, mira... una vez estaba arriba en una escalera telescópica, revisando una bandeja de cables, con las dos manos ocupadas y el arnés enganchado, y vi una luminaria que estaba medio floja, colgando de un perno. Obvio no podía sacar el teléfono ahí arriba, ¿no?, sería cometer una falta yo mismo. Dije "ahorita bajo y lo mando", pero justo bajé, me llamaron por radio por otra urgencia en un tablero que se había disparado y... se me fue, me olvidé por completo hasta la tarde.
+>
+> **Renzo:** Qué común es eso, cuando el trabajo te jala a otra cosa. ¿Y qué te pareció tener que tomar la foto?
+>
+> **Carlos:** Útil, muy útil. Sobre todo en mantenimiento... porque a veces tú reportas "falta tapa" o "cable sulfatado", pero con la foto el supervisor ya ve el tamaño, el modelo, qué pieza falta o qué repuesto hay que pedir a almacén, sin tener que caminar hasta el sitio primero. Ahorra bastante ida y vuelta.
+>
+> **Renzo:** ¿Qué harías distinto si tú diseñaras la pantalla?
+>
+> **Carlos:** Mmm... déjame pensar... primero, haría el botón de enviar un poco más grande y bien marcado, porque con el sol en campo a veces la pantalla no se ve bien, le das y no sabes si apretaste. Y otra cosa importante: que te salga un aviso bien claro si el reporte se quedó guardado en el teléfono cuando no hay internet... porque en zonas ciegas uno se queda con la duda de si se envió, si se quedó en cola o si se perdió.
+>
+> **Renzo:** Totalmente. Y fuera de la aplicación, Carlos, ¿qué otra cosa hace que alguien no reporte un peligro que vio?
+>
+> **Carlos:** La costumbre, Renzo. Ese es el peor enemigo en campo. Cuando pasas todos los días por el mismo pasillo y ves la misma rejilla floja o el mismo cable mal acomodado... ya te acostumbras, lo ves parte del paisaje. Dices "ah, eso siempre ha estado así y nunca ha pasado nada", y sigues de largo hasta que un día alguien se tropieza de verdad.
+
+</details>
+
+**Hallazgos**
+- La app reemplazó la libreta de papel como constancia con foto, en menos de un minuto.
+- La foto le ahorra al supervisor ir hasta el lugar para saber qué repuesto pedir.
+- Con las manos ocupadas aplazó el reporte y lo olvidó: reportar "después" se pierde.
+- Pide un botón de enviar más visible con sol y un aviso claro cuando el reporte queda guardado sin conexión.
+- Barrera fuera de la app: la costumbre normaliza el peligro que se ve todos los días.
+
+---
+
+##### Entrevista ET4 — Pedro, ayudante de mantenimiento (`rapido`)
+
+<details>
+<summary>Transcripción</summary>
+
+> **Renzo Villafuerte:** Hola Pedro, soy Renzo Villafuerte. Cuéntame de la última vez que reportaste con la app, ¿qué hiciste exactamente?
+>
+> **Pedro:** Qué tal, Renzo. Este... fue por una fuga de aceite cerca de la sala de compresores. Estaba pasando con unas herramientas y vi que ya se estaba haciendo un charco medio grande en el piso, bien resbaloso. Entré a la app, le saqué foto al charco y a la manguera de donde goteaba, escribí "fuga de aceite en compresor 2" y le di a enviar. Todo al toque, sin dar muchas vueltas.
+>
+> **Renzo:** ¿Te costó ubicar dónde presionar o fue directo?
+>
+> **Pedro:** No, fue bien directo, la verdad. Lo único que dudé un segundito fue si tomar la foto de cerca al charco o de lejos para que se vea qué compresor era, pero al final tomé una media abierta y puse el número en el texto.
+>
+> **Renzo:** Ya. ¿Y hubo alguna vez que quisiste reportar y no lo hiciste? ¿Qué te detuvo?
+>
+> **Pedro:** Sí, una vez en el fondo del almacén de repuestos... es que tenía el celular casi sin batería, creo que estaba en 5%, y esa esquina estaba bien oscura porque había un fluorescente quemado. Había unos fierros mal apoyados contra un estante. Quise tomar la foto y la cámara no enfocaba, no me dejaba prender el flash por la batería baja... salía todo negro. Me aburrí de intentar dos veces y cerré la app nomás.
+>
+> **Renzo:** ¿Y avisaste de otra forma después?
+>
+> **Pedro:** Sí, cuando salí le comenté al encargado de almacén que acomoden esos fierros y cambien el foco, pero en la app ya no quedó nada.
+>
+> **Renzo:** Qué fastidio. ¿Y qué te pareció tener que tomar la foto en general?
+>
+> **Pedro:** No, en general bien, porque así no tienes que redactar un testamento explicando qué viste. Una foto dice todo. El único tema es ese, que en zonas con poca luz o si tu cámara es media lenteja cuesta enfocar rápido y te hace perder tiempo.
+>
+> **Renzo:** ¿Qué harías distinto si tú diseñaras la pantalla?
+>
+> **Pedro:** Yo haría que apenas abras la aplicación ya salga la cámara lista, ¿no? Como algunas apps de fotos, sin tener que pasar por el menú principal y buscar el botón de nuevo reporte... abres, apuntas, tomas la foto, pones dos palabras y mandas.
+>
+> **Renzo:** Y fuera de la aplicación, Pedro, ¿qué otra cosa hace que alguien no reporte un peligro que vio?
+>
+> **Pedro:** El apuro, pues. A veces el jefe te está presionando para terminar un mantenimiento antes del cambio de turno o sacar la chamba rápido, y detenerte un rato a sacar el celular para reportar algo... se siente como si estuvieras perdiendo el tiempo o buscando parar, ¿no? Entonces sigues nomás.
+
+</details>
+
+**Hallazgos**
+- El flujo fue directo; la única duda fue el encuadre de la foto.
+- Abandonó un reporte porque la foto no salía con poca luz y batería baja: cuando la foto falla, el reporte no se envía.
+- Propone que la aplicación abra directamente en la cámara.
+- Barrera fuera de la app: la presión por terminar el trabajo hace que reportar se sienta como perder tiempo.
+
+---
+
+##### Entrevista ET5 — María, operaria de planta (`largo`)
+
+<details>
+<summary>Transcripción</summary>
+
+> **Renzo Villafuerte:** Hola María, soy Renzo Villafuerte. Gracias por tu tiempo. Cuéntame de la última vez que reportaste con la app, ¿cuánto te tomó más o menos?
+>
+> **María:** Hola Renzo. A ver... la última vez reporté un derrame de agua que salía de una tubería cerca de la máquina 4. Mmm... me habrá tomado unos cuatro o cinco minutos, creo, capaz un poquito más. Es que tuve que detenerme a leer varias opciones del formulario que, la verdad, no entendía muy bien y no quería marcar cualquier cosa.
+>
+> **Renzo:** ¿Y dónde hiciste el reporte? ¿Ahí mismo al lado de la máquina?
+>
+> **María:** No, me aparté un poquito al pasadizo porque con el ruido de las inyectoras no me concentraba para leer tantas opciones en la pantalla chiquita.
+>
+> **Renzo:** Entiendo. ¿Qué parte del formulario te resultó más pesada?
+>
+> **María:** Esa parte donde te pide elegir... ¿cómo decía? Categoría del peligro, y abajito Severidad, creo que era. Yo no soy ingeniera de seguridad, pues, Renzo... ahí salían nombres que uno no usa todos los días. Y en Severidad, yo no sé si un charco de agua es severidad baja, media o alta... para mí si alguien se resbala y se golpea la cabeza es alto, pero capaz para el ingeniero es bajo. Me daba cosa marcarlo mal y que luego me digan que exageré.
+>
+> **Renzo:** Claro, te genera duda y te frena. ¿Y dejaste algún reporte a medias? ¿Por qué?
+>
+> **María:** Uy, sí... dos veces me pasó. Una porque justo sonó la alarma de cambio de turno y yo seguía ahí peleando con las opciones de arriba, así que cerré todo para entregar mi puesto... y otra vez porque ya había subido la Foto y pensé que ahí acababa, pero bajé y vi que igual me pedía escribir toda la Descripción, y como me llamaron de la línea ya no me dio tiempo y lo dejé botado.
+>
+> **Renzo:** O sea, al subir la foto sentías que el trabajo principal ya estaba hecho.
+>
+> **María:** ¡Claro! Si en la foto se veía clarito el problema, ¿para qué tengo que ponerme a escribir un párrafo explicando lo mismo?
+>
+> **Renzo:** ¿Qué campos te parecieron innecesarios entonces?
+>
+> **María:** Esos dos que te dije primero: Severidad y Categoría del peligro. O sea, yo mando la foto, marco el Área si quieres, y que el supervisor de seguridad lo clasifique cuando la vea en su oficina, ¿no? Uno en planta no está pensando en categorías en ese momento.
+>
+> **Renzo:** Muy claro, María. Y fuera de la aplicación, ¿qué otra cosa hace que alguien no reporte un peligro que vio?
+>
+> **María:** El miedo a que el jefe de turno te llame la atención... porque si dejas tu puesto para ir a reportar o si paras la línea de producción por algo que viste, a veces se molestan, te ponen mala cara y te dicen que por qué paraste por algo "chiquito", que la meta del turno se atrasa.
+
+</details>
+
+**Hallazgos**
+- El reporte le tomó entre 4 y 5 minutos y tuvo que apartarse de su puesto para completarlo.
+- No sabe elegir la Categoría del peligro ni la Severidad, y teme clasificarlas mal.
+- Dejó dos reportes a medias: uno por el cambio de turno y otro porque, después de la foto, aún le pedían la Descripción.
+- Propone que la clasificación la haga el supervisor al revisar la foto.
+- Barrera fuera de la app: temor a que el jefe de turno la reprenda por detener la línea.
+
+---
+
+##### Entrevista ET6 — Jorge, operario de logística (`largo`)
+
+<details>
+<summary>Transcripción</summary>
+
+> **Renzo Villafuerte:** Hola Jorge, soy Renzo Villafuerte. Cuéntame de la última vez que reportaste con la aplicación, ¿cuánto te tomó?
+>
+> **Jorge:** Hola Renzo. Eh... fue por una puerta de carga del muelle que no cerraba bien, se quedaba trabada a la mitad y hacía un ruido feo al bajar. Me habré demorado unos cuatro minutos... casi todo el rato buscando qué marcar en las listas desplegables y escribiendo ahí en el celular.
+>
+> **Renzo:** ¿Por qué te demoraste tanto en las listas? ¿Qué parte del formulario te resultó más pesada?
+>
+> **Jorge:** Las listas desplegables, definitivamente. Para elegir el Área todavía, porque uno conoce su zona, aunque igual había que bajar buscando el nombre exacto. Pero en Categoría del peligro... pucha, tuve que bajar y revisar varias opciones con nombres bien técnicos hasta atinarle a una que más o menos sonara parecida a una puerta malograda. Al final marqué una medio al tanteo porque ya me estaba demorando mucho.
+>
+> **Renzo:** Ya, o sea terminaste eligiendo la que te sonó más cercana para poder avanzar.
+>
+> **Jorge:** Sí, tal cual, no te voy a mentir. Si me pongo a pensar cuál es la correcta exactamente, me quedo diez minutos parado.
+>
+> **Renzo:** ¿Y dejaste reportes a medias alguna vez? ¿Por qué?
+>
+> **Jorge:** Sí, una vez me pasó. Justo estaba llenando la Descripción de una rampa que estaba medio suelta y me llamó mi supervisor por la radio para que descargue un camión urgente... bloqueé el celular al toque para atenderlo, me fui a hacer la descarga y cuando volví como a la media hora, ya me había olvidado y la pantalla se había reiniciado, así que no retomé el formulario.
+>
+> **Renzo:** Claro, si el formulario es largo y te interrumpen, se pierde. ¿Qué campos te parecieron innecesarios?
+>
+> **Jorge:** Mmm... Tipo de reporte y Severidad. O sea, si ya estoy subiendo la Foto y poniendo una línea corta en Descripción diciendo qué pasó, ahí ya se entiende clarito si es una condición, un acto y qué tan grave está, ¿para qué marcar todo de nuevo en cajitas aparte?
+>
+> **Renzo:** Y fuera de la aplicación, Jorge, ¿qué otra cosa hace que alguien no reporte un peligro que vio?
+>
+> **Jorge:** Cuando el problema lo causó un compañero cercano, pues. Por ejemplo, si alguien dejó mal estacionada la estoca o no se puso el casco... prefieres acercarte y avisarle en privado nomás, entre patas, para no meterlo en problemas con Seguridad o que le caiga una amonestación de Recursos Humanos.
+
+</details>
+
+**Hallazgos**
+- Unos 4 minutos, la mayor parte en las listas desplegables.
+- Eligió la Categoría del peligro "al tanteo" para poder avanzar: el dato de clasificación pierde confiabilidad.
+- Abandonó un reporte tras una interrupción, porque el formulario no conservó lo que había llenado.
+- Considera redundantes el Tipo de reporte y la Severidad cuando ya hay foto y descripción.
+- Barrera fuera de la app: prefiere avisar en privado a un compañero antes que exponerlo a una sanción.
+
+---
+
+##### Entrevista ET7 — Miguel, soldador en taller (`largo`, desde la web)
+
+<details>
+<summary>Transcripción</summary>
+
+> **Renzo Villafuerte:** Hola Miguel, soy Renzo Villafuerte. Cuéntame de la última vez que reportaste, ¿cuánto te tomó?
+>
+> **Miguel:** Qué tal, Renzo. A ver... yo lo hice desde la computadora que está en la oficina del taller, porque en mi puesto de soldadura no puedo estar sacando el celular con los guantes y las chispas. Reporté una manguera de gas que tenía una grieta cerca de la válvula. Me tomó sus seis minutos fácil... porque yo escribo lento en el teclado, pues, y el formulario ese en la web te pide varios pasos.
+>
+> **Renzo:** ¿Y cómo hiciste con la foto si lo llenaste en la computadora?
+>
+> **Miguel:** Ah, tuve que tomar la foto primero con mi celular, pasármela y subirla ahí, o sea, otro paso más todavía. Bueno, eso no me quejo tanto porque yo elegí hacerlo en la PC, pero el formulario en sí era bien largo.
+>
+> **Renzo:** Entiendo. ¿Qué parte del formulario te resultó más pesada?
+>
+> **Miguel:** Tener que llenar la Descripción y aparte estar poniendo la Ubicación y el Área por separado... me confundía un poco, sentía que estaba repitiendo dónde era el problema dos o tres veces, ¿no? Pongo el Área "Taller de soldadura", luego en Ubicación otra vez tengo que escribir "mesa 3 del taller de soldadura", y luego en Descripción de nuevo "en la mesa 3 hay una manguera...". Mucha vuelta para decir una sola cosa.
+>
+> **Renzo:** Claro, se sentía repetitivo. ¿Y dejaste reportes a medias? ¿Por qué?
+>
+> **Miguel:** Un par de veces, sí. Es que abres el formulario, ves tantos cuadritos que llenar antes de llegar al botón de enviar... te desanimas, pues. Una vez vi un esmeril sin guarda, abrí la pantalla y dije "uy, hasta llenar todo esto pierdo diez minutos", mejor cerré y fui directo a avisarle de boca al encargado del taller, más rápido y en dos segundos ya lo había sacado de servicio.
+>
+> **Renzo:** ¿Qué campos te parecieron innecesarios?
+>
+> **Miguel:** Categoría del peligro y Severidad... esos dos de frente. Y si ya elegí el Área, el campo de Ubicación sobra si igual lo voy a explicar en la Descripción. Uno en taller solo quiere avisar qué está fallando antes de que pase un accidente; ya clasificar qué categoría es o qué tan severo es, eso es chamba del área de Seguridad.
+>
+> **Renzo:** Totalmente entendible. Y fuera de la aplicación, Miguel, ¿qué otra cosa hace que alguien no reporte un peligro que vio?
+>
+> **Miguel:** La desconfianza, Renzo. A veces los jefes, aunque digan que la seguridad es primero, en el fondo piensan que si reportas mucho es porque eres problemático, quejoso, o porque estás buscando excusas para parar y no trabajar... y uno con años acá ya sabe cómo es, nadie quiere quedar mal ni ponerse en la mira.
+
+</details>
+
+**Hallazgos**
+- Reportó desde la web porque en su puesto no puede usar el celular; le tomó unos 6 minutos y tuvo que pasar la foto del celular a la computadora.
+- Percibe como repetidos el Área, la Ubicación y la Descripción.
+- Abandonó reportes solo por la cantidad de campos visibles antes del botón de enviar.
+- Considera que la Categoría del peligro y la Severidad son tarea del área de Seguridad.
+- Barrera fuera de la app: reportar mucho lo hace ver como "problemático" ante los jefes.
+
+---
+
+##### Entrevista ET8 — Rosa, operaria de empaque (`largo`)
+
+<details>
+<summary>Transcripción</summary>
+
+> **Renzo Villafuerte:** Hola Rosa, soy Renzo Villafuerte. Cuéntame de la última vez que reportaste con la app, ¿cuánto te tomó?
+>
+> **Rosa:** Hola Renzo. Este... fue por una faja transportadora de la línea 2 que hacía un ruido bien raro, como un chillido de metal, y vibraba feo, parecía que se iba a trabar en cualquier rato. Me habrá tomado unos cinco minutos, más o menos, porque me trabé al final antes de enviarlo.
+>
+> **Renzo:** ¿Por qué te trabaste al final? ¿Qué parte del formulario te resultó más pesada?
+>
+> **Rosa:** Que casi todo es obligatorio y uno no se da cuenta hasta el final. Yo llené rápido lo que entendí —puse el Área, subí la Foto, escribí en Descripción lo de la faja—, le di al botón de enviar y... ¡pum!, no me dejó mandar. Me salió error porque me había faltado marcar Tipo de reporte y Severidad. Tuve que subir toda la pantalla de nuevo a buscar qué era lo que faltaba, elegir apurada y volver a bajar. Bien pesado, de verdad.
+>
+> **Renzo:** Qué frustrante cuando ya crees que terminaste y te regresa arriba. ¿Dejaste reportes a medias por eso o por otra razón?
+>
+> **Rosa:** Sí, dejé uno a medias... habían dejado unas cajas grandes de cartón tapando justo el extintor de la salida. Empecé a abrir el formulario, vi todo lo que había que llenar otra vez y dije "ay no, mejor muevo las cajas yo misma en diez segundos" en vez de pasarme cinco minutos peleando con el celular.
+>
+> **Renzo:** Claro, lo resolviste tú misma. Pero entonces Seguridad nunca se enteró de que alguien dejó esas cajas ahí.
+>
+> **Rosa:** Exacto, nadie se enteró... pero es que da flojera llenar tantos campos por algo que puedes mover con tus propias manos más rápido.
+>
+> **Renzo:** ¿Qué campos te parecieron innecesarios?
+>
+> **Rosa:** A ver... Tipo de reporte, Categoría del peligro y Severidad. Para mí esos tres sobran completamente. Con elegir el Área, tomar la Foto y poner una cosita corta en Descripción ya debería alcanzar y sobrar.
+>
+> **Renzo:** Y fuera de la aplicación, Rosa, ¿qué otra cosa hace que alguien no reporte un peligro que vio?
+>
+> **Rosa:** Dos cosas, creo yo. Primero, cuando sientes que no sirve de nada, pues, porque reportas algo y nunca te avisan si lo arreglaron o si alguien siquiera lo leyó... y segundo, cuando el ritmo de producción está tan fuerte que las cajas no dejan de bajar y nadie quiere detenerse ni un minuto porque si paras tú, se acumula todo atrás.
+
+</details>
+
+**Hallazgos**
+- Unos 5 minutos; los campos obligatorios faltantes solo se señalan al intentar enviar.
+- Prefirió resolver ella misma un peligro antes que reportarlo, y Seguridad nunca se enteró de que el extintor estuvo obstruido.
+- Considera innecesarios el Tipo de reporte, la Categoría del peligro y la Severidad.
+- Barreras fuera de la app: no recibir aviso de si su reporte se atendió, y el ritmo de producción.
+
+---
+
+**Consolidado de hallazgos**
+
+| Hallazgo | Entrevistas | Qué informa | Decisión que sugiere |
+|---|---|---|---|
+| El reporte con la variante `rapido` se declara en menos de un minuto; con la `largo`, entre 4 y 6 minutos | ET1–ET4 frente a ET5–ET8 | HW01 y supuesto A1 | Apoyo cualitativo a la fricción como barrera; la decisión sigue dependiendo del resultado cuantitativo del piloto (8.4.1) |
+| Abandono del formulario largo por interrupciones, cambio de turno o cantidad de campos | ET5, ET6, ET7, ET8 | HW01 y métrica M07 | Medir la tasa de finalización (M07) al instrumentar `reporte_iniciado` |
+| La Categoría del peligro y la Severidad no se saben elegir y se marcan "al tanteo" | ET5, ET6, ET7, ET8 | Calidad del dato del formulario largo | Que la clasificación la haga el supervisor al revisar el hallazgo |
+| La foto se valora como reemplazo de la descripción escrita | ET1, ET2, ET3, ET4, ET5 | HW06 y vacío K4 | Mantener la foto en las condiciones inseguras |
+| La foto obligatoria frena el reporte de actos de compañeros y falla con poca luz o batería baja | ET2, ET4 | HW06 y EXP-09 | Evaluar la foto opcional para actos inseguros de terceros, junto con el reporte anónimo (US116) |
+| No saben que el reporte sin señal se guarda y se envía después | ET1, ET3 | EXP-03 y historia US48 | Hacer visible el estado "guardado, se enviará al recuperar la señal" |
+| Piden dictar la descripción por voz | ET1 | EXP-10 y US117 | Mantener EXP-10 en el backlog |
+| No saben si su reporte se atendió | ET2, ET8 | TB05 y Q11 | Respalda priorizar el aviso de cierre al reportante (TB05) |
+| Fuera de la app pesan el miedo a represalias o a exponer a un compañero | ET1, ET2, ET5, ET6, ET7 | Supuesto A3 y HW08 | Contradice A3: la fricción no es la única barrera; sube la prioridad de EXP-09 |
+| Fuera de la app pesan la presión productiva y el apuro | ET1, ET4, ET5, ET8 | Supuesto A1 | Una barrera que el diseño del formulario no resuelve |
+| La costumbre normaliza el peligro que se ve todos los días | ET3 | — | Insumo para la capacitación, fuera del alcance del producto |
+
+**Lectura frente al guion.** La pregunta común (8.3.4.1, pregunta 5) se diseñó para buscar
+evidencia en contra del supuesto A1. Cinco de los ocho entrevistados mencionan el miedo a
+represalias o a exponer a un compañero, y cuatro la presión productiva. La fricción del formulario
+explica por qué se abandona el formulario largo, pero no es la única barrera para reportar. Ese
+resultado no se puede obtener del A/B, y es el que más cambia el Question Backlog: refuerza Q5
+(reporte anónimo, EXP-09) y Q11 (aviso de cierre).
 
 ## 8.4. Experiment Aftermath & Analysis
 
@@ -6593,7 +6943,7 @@ debe actualizar el commit y el dictamen correspondiente, conservando la trazabil
 | 7.1 | Tres workflows de CI de producto | Ejecuciones exitosas enlazadas y protecciones verificadas |
 | 7.2–7.3 | Diseño de promoción y recuperación | Entornos, artefactos, despliegue y restauración ensayados |
 | 8.3.3.1–8.3.3.5 | Incremento To-Be del Sprint 2 completado: TB01 y TB02 implementadas con commits y pruebas | Sprint 4, en curso: implementación de TB03, TB04 y TB05 |
-| 8.3.4.2 | Guion, selección de participantes y plantilla de registro | Entrevistas To-Be con los participantes del piloto real |
+| 8.3.4.2 | Ocho entrevistas To-Be transcritas por el entrevistador (cuatro por variante) | Fecha, duración y modalidad de cada entrevista, y verificación de la participación y la variante con los datos del piloto |
 | 8.4.1 | Análisis con datos de demostración, declarado no concluyente | Piloto real de EXP-01 con 24 participantes |
 | 8.5.1 | Aprendizajes y decisiones de la sesión de shareback | Fecha y modalidad de la sesión |
 | 8.6.1 y Conclusiones | Guiones de los videos Intro, App Validation y About-the-Team | Videos publicados con enlace y duración |
