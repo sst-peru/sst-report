@@ -337,7 +337,7 @@ Outcome 4.
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---|---|---|
 | **4.c.1** Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | **Esquirva León Miguel Juan Diego**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Mora Blas Diego Alonzo**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Villafuerte Tapia Renzo Alonso**<br>**TB1:** Declaró en el Capítulo V el periodo real de ejecución del trabajo en lugar de repartir fechas de sprint que el historial público de commits no respalda. Separó en el Product Backlog lo construido de lo propuesto, para no atribuirle al prototipo capacidades que no tiene. Etiquetó los datos del comando `seed_demo` como datos de demostración, de modo que no puedan presentarse como evidencia del experimento. Declaró la conversión de Story Points a horas como una regla de estimación y no como una medición de tiempo real. Mantuvo sin publicar la cifra de accidentes del MTPE mientras no contara con su fuente citada.<br><br>**TB2:** Implementó en el API y en el panel web el aviso de datos de demostración y el intervalo de confianza al 95 % del experimento (TB01 y TB02), para que el panel no comunique una diferencia sin su precisión. En el análisis de resultados (8.4.1) declaró que los datos provienen de `seed_demo` y no rechazó H₀ porque el intervalo contiene el cero, en lugar de reportar el +40,95 % como un logro. Declaró como simuladas las entrevistas de validación de 6.3.2 y bajó a confianza "Baja" los aprendizajes que dependen solo de ellas. Marcó por estado las historias To-Be implementadas y pendientes (8.3.2 y 8.3.3.1).<br><br>**TF:** Documentó la evidencia To-Be (8.3.3.2 a 8.3.3.5) a partir de los commits y pruebas de cada repositorio, y registró como pendientes TB03, TB04 y TB05 y los work-items de Android en lugar de describirlos como construidos. No registró entrevistas To-Be que no se realizaron (8.3.4.2). Actualizó el corte técnico del Anexo G: retiró la diferencia del registro público al verificar su corrección y su prueba, y mantuvo abierta la de la búsqueda por UUID. Declaró en 8.3.3.6 que los commits del ciclo se concentran en un integrante, sin repartirlos de forma artificial. | **Conclusión del grupo:** la responsabilidad profesional en este proyecto se ejerció sobre todo al decidir qué no afirmar: datos de demostración declarados como tales, resultados no concluyentes reportados como no concluyentes e historias pendientes marcadas como pendientes. Un informe que declara sus límites puede verificarse contra el código; uno que los esconde no resiste la primera revisión. |
-| **4.c.2** Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | **Esquirva León Miguel Juan Diego**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Mora Blas Diego Alonzo**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Villafuerte Tapia Renzo Alonso**<br>**TB1:** Restringió el alcance a Android nativo por la distribución de dispositivos del segmento objetivo, y dejó la decisión documentada como tal en lugar de presentarla como omisión. Diseñó la captura sin conexión porque la conectividad en obra, planta y unidad minera es intermitente: una decisión tomada por el contexto del usuario y no por preferencia técnica. Dejó fuera del alcance la vigilancia médica ocupacional, por tratarse de datos de salud cuyo tratamiento excede lo que el equipo puede sostener. Especificó la geolocalización como opcional y revocable y el reporte anónimo de actos inseguros, reconociendo que el trabajador puede temer represalias. Sujetó el tratamiento de DNI, teléfono, fotografías y ubicación a la Ley N° 29733 en el acuerdo de servicio del producto.<br><br>**TB2:** Decidió no cambiar el formulario por defecto hasta alcanzar el tamaño de muestra de 8.2.5, para no imponer a los trabajadores un cambio basado en ruido estadístico. Priorizó en el Sprint To-Be 1 el aviso de cierre al reportante (TB05), porque el operario que no ve resultado deja de reportar, y la notificación de hallazgos críticos (TB04), que reduce el tiempo de exposición al riesgo. Planificó el registro de auditoría de exportaciones (TB03) como obligación derivada de la Ley N° 29733. Propuso ocultar al usuario la variante del experimento, señalada en la evaluación heurística como fuente de sesgo.<br><br>**TF:** Planteó la salida al mercado con el framework Gees (8.6.2) sin presentar el formulario rápido como un hecho comprobado mientras Q1 siga sin concluir. Recomendó filtrar por empresa la búsqueda por UUID antes de cualquier uso en producción, porque un reintento podría devolver datos de trabajadores de otra empresa. Vinculó el experimento del reporte anónimo (EXP-09) con la historia US116, que oculta la identidad del autor incluso al supervisor y al comité, para medir si el temor a represalias frena el reporte. | **Conclusión del grupo:** las decisiones de diseño de Resguardo se tomaron por quién lo usa y en qué condiciones: un operario con guantes, sin señal y con temor a represalias. Operación sin conexión, formulario corto, ubicación revocable y anonimato responden a ese contexto, y su efecto real todavía debe medirse con usuarios reales antes de afirmarlo. |
+| **4.c.2** Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | **Esquirva León Miguel Juan Diego**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Mora Blas Diego Alonzo**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Villafuerte Tapia Renzo Alonso**<br>**TB1:** Restringió el alcance a Android nativo por la distribución de dispositivos del segmento objetivo, y dejó la decisión documentada como tal en lugar de presentarla como omisión. Diseñó la captura sin conexión porque la conectividad en obra, planta y unidad minera es intermitente: una decisión tomada por el contexto del usuario y no por preferencia técnica. Dejó fuera del alcance la vigilancia médica ocupacional, por tratarse de datos de salud cuyo tratamiento excede lo que el equipo puede sostener. Especificó la geolocalización como opcional y revocable y el reporte anónimo de actos inseguros, reconociendo que el trabajador puede temer represalias. Sujetó el tratamiento de DNI, teléfono, fotografías y ubicación a la Ley N° 29733 en el acuerdo de servicio del producto.<br><br>**TB2:** Decidió no cambiar el formulario por defecto hasta alcanzar el tamaño de muestra de 8.2.5, para no imponer a los trabajadores un cambio basado en ruido estadístico. Priorizó en los sprints To-Be el aviso de cierre al reportante (TB05), porque el operario que no ve resultado deja de reportar, y la notificación de hallazgos críticos (TB04), que reduce el tiempo de exposición al riesgo. Planificó el registro de auditoría de exportaciones (TB03) como obligación derivada de la Ley N° 29733. Propuso ocultar al usuario la variante del experimento, señalada en la evaluación heurística como fuente de sesgo.<br><br>**TF:** Planteó la salida al mercado con el framework Gees (8.6.2) sin presentar el formulario rápido como un hecho comprobado mientras Q1 siga sin concluir. Recomendó filtrar por empresa la búsqueda por UUID antes de cualquier uso en producción, porque un reintento podría devolver datos de trabajadores de otra empresa. Vinculó el experimento del reporte anónimo (EXP-09) con la historia US116, que oculta la identidad del autor incluso al supervisor y al comité, para medir si el temor a represalias frena el reporte. | **Conclusión del grupo:** las decisiones de diseño de Resguardo se tomaron por quién lo usa y en qué condiciones: un operario con guantes, sin señal y con temor a represalias. Operación sin conexión, formulario corto, ubicación revocable y anonimato responden a ese contexto, y su efecto real todavía debe medirse con usuarios reales antes de afirmarlo. |
 
 El enunciado del trabajo final pide, además del cuadro anterior, **una subsección por cada
 integrante** en la que describa por escrito la relación entre el outcome, sus dimensiones y el
@@ -447,7 +447,7 @@ cambiado el formulario por defecto a partir de ese +40,95 %, habría impuesto a 
 trabajadores un cambio sostenido en ruido estadístico. Por eso la decisión de la sesión de
 shareback fue mantener Q1 en ejecución hasta reunir el tamaño de muestra calculado en 8.2.5.
 
-El Sprint To-Be 1 lo ordené por el impacto sobre el trabajador y no por la facilidad técnica. El
+Los sprints To-Be los ordené por el impacto sobre el trabajador y no por la facilidad técnica. El
 aviso de cierre al reportante (TB05) responde a algo social: el operario que reporta y nunca ve
 resultado deja de reportar. La notificación de hallazgos críticos (TB04) reduce el tiempo en que
 una persona sigue expuesta a un peligro ya conocido. El registro de exportaciones (TB03) atiende
@@ -1192,7 +1192,7 @@ cliente lo exija en una licitación (E8).
 2. **Operación sin conexión** con envío diferido (E1, E4), ya prevista en la aplicación móvil.
 3. **Clasificación técnica a cargo del supervisor**: el operario elige entre opciones en lenguaje
    llano y el supervisor asigna la severidad (E3).
-4. **Aviso de cierre al reportante**, que corresponde a la historia TB05 del Sprint To-Be 1.
+4. **Aviso de cierre al reportante**, que corresponde a la historia TB05 del Sprint To-Be 2.
 5. **Punto de reporte compartido** (tablet de planta) para empresas que prohíben el celular
    personal (E3), y uso de la red WiFi de la empresa para no consumir datos del trabajador (E2).
 6. **Indicadores por subcontrata y por cliente** para contratistas y obras con terceros (E5, E8).
@@ -5716,7 +5716,7 @@ indica el evento, su disparador y dónde queda registrado.
 | `reporte_cerrado` | El supervisor cierra el hallazgo | Fecha de cierre, acción correctiva, tiempo de resolución | Web y móvil | Campos del reporte y bitácora |
 | `inspeccion_realizada` | Se completa una inspección | Programa, fecha programada, fecha de ejecución, resultados del checklist | Web y móvil | Tabla `inspections_inspection` |
 | `epp_conformidad` | El trabajador da conformidad | Entrega, trabajador, fecha | Web y móvil | Tabla `epp_eppdelivery` |
-| `evidencia_exportada` | Se descarga un archivo de evidencia | Usuario, recurso exportado, filtros aplicados | Web | Pendiente: hoy la exportación no deja registro; se implementa con la historia TB03 del Sprint To-Be 1 (8.3.3.1) |
+| `evidencia_exportada` | Se descarga un archivo de evidencia | Usuario, recurso exportado, filtros aplicados | Web | Pendiente: hoy la exportación no deja registro; se implementa con la historia TB03 del Sprint To-Be 2 (8.3.3.1) |
 
 **Consideración de privacidad.** El plan registra datos personales —DNI, fotografías,
 geolocalización— de trabajadores identificables. Su tratamiento queda sujeto a la Ley N° 29733
@@ -5787,54 +5787,106 @@ verifica con las mismas pruebas.
 
 #### 8.3.3.1. To-Be Sprint Backlogs
 
-Las historias To-Be priorizadas en la sección 8.3.2 se planifican en un sprint propio, con el
-mismo formato de work-items que los sprints del Capítulo V: cada historia se descompone por área
-responsable y las horas estimadas equivalen a sus story points.
+Las cinco historias del To-Be Product Backlog (8.3.2) se reparten en **dos sprints**: el Sprint
+To-Be 1 reúne las dos historias que hacen legible el experimento (TB01 y TB02, ya
+implementadas) y el Sprint To-Be 2 las tres que cierran el circuito de retroalimentación y
+trazabilidad (TB05, TB04 y TB03, pendientes). Cada sprint tiene su propio objetivo, su ventana,
+su estado y su incremento, y se presenta en dos bloques: una ficha resumen y el desglose
+operativo de sus work-items.
+
+**Avance del To-Be Product Backlog:** 2 de 5 historias completadas · 7 de 20 Story Points
+ejecutados · 6 de 17 work-items hechos.
+
+**Regla de estimación.** Se aplica la misma regla declarada en la sección 5.2.1 para los sprints
+del Capítulo V: cada Story Point equivale a una hora, y esas horas se reparten entre los
+work-items según el peso de cada capa. Los Story Points miden complejidad relativa, y la
+conversión a horas es una regla para dimensionar el esfuerzo entre tareas, no una medición del
+tiempo que tomó cada una. Se mantiene para que el capítulo VIII sea comparable con el V; como
+en 5.2.1, la velocidad no se ha medido contra una capacidad observada del equipo.
+
+---
+
+##### Sprint To-Be 1 — Integridad del panel del experimento
+
+**Ficha resumen**
 
 | Campo | Valor |
 |---|---|
 | Sprint | Sprint To-Be 1 |
-| Objetivo | Hacer que el experimento comunique resultados íntegros (datos de demostración declarados e intervalo de confianza) y cerrar el circuito de retroalimentación con notificaciones al reportante y al supervisor, con trazabilidad de las exportaciones de evidencia. |
-| Elementos del backlog | 5 |
-| Story Points | 20 |
-| Work-items | 17 |
-| Horas estimadas | 20 |
-| Estado | TB01 y TB02 implementadas: el panel "Experimento A/B" del API y la web ya declara los datos de demostración y muestra la diferencia con su intervalo al 95 % (Welch). TB05, TB04 y TB03 quedan pendientes. |
-| Incremento entregable | El panel del experimento distingue datos de demostración y muestra la diferencia con su intervalo al 95 %; el operario recibe aviso cuando su reporte se cierra; el supervisor es notificado de cada hallazgo crítico; toda exportación de evidencia queda registrada con usuario y fecha. |
+| Timebox | Semana 7 del ciclo (05/10/2026 al 11/10/2026), dentro de la ventana del Sprint 2 del Capítulo V. Los commits que lo implementan son del 07/10/2026 |
+| Objetivo | Garantizar que el panel del experimento A/B comunique resultados íntegros y no solo un porcentaje. |
+| Historias | 2 (TB01 y TB02) |
+| Story Points | 7 |
+| Work-items | 6 |
+| Horas estimadas | 7 |
+| Capacidad | Un integrante con commits en el sprint (8.3.3.6); no se midió una capacidad observada del equipo |
+| Estado | **Completado** — 2/2 historias · 7/7 SP · 6/6 work-items |
+| Incremento entregable | El panel del experimento declara cuando los datos son de demostración, avisa si la muestra no alcanza el mínimo por variante y muestra la diferencia entre variantes con su intervalo de confianza al 95 %. |
 
-| Sprint | User Story | Título | Work-Item | Descripción de la tarea | Estimación (h) | Área responsable |
-|---|---|---|---|---|---|---|
-| Sprint To-Be 1 | TB01 | Aviso de datos de demostración | SprintTB-T001 | Exponer en el endpoint del experimento el indicador de empresa de demostración | 0,5 | Backend |
-| Sprint To-Be 1 | TB01 | Aviso de datos de demostración | SprintTB-T002 | Mostrar en el panel web del experimento el aviso de datos de demostración | 1 | Web |
-| Sprint To-Be 1 | TB01 | Aviso de datos de demostración | SprintTB-T003 | Cubrir el aviso de datos de demostración con pruebas automatizadas | 0,5 | QA |
-| Sprint To-Be 1 | TB02 | Intervalo de confianza en los resultados | SprintTB-T004 | Calcular en el API la diferencia de medias, error estándar e intervalo al 95 % (aproximación de Welch) | 2 | Backend |
-| Sprint To-Be 1 | TB02 | Intervalo de confianza en los resultados | SprintTB-T005 | Mostrar en el panel web la diferencia, el intervalo y si se distingue del azar | 1,5 | Web |
-| Sprint To-Be 1 | TB02 | Intervalo de confianza en los resultados | SprintTB-T006 | Validar el cálculo del intervalo contra casos de prueba conocidos | 1,5 | QA |
-| Sprint To-Be 1 | TB05 | Aviso de cierre al reportante | SprintTB-T007 | Emitir en el API una notificación al reportante cuando su hallazgo cambia a Cerrado | 1,5 | Backend |
-| Sprint To-Be 1 | TB05 | Aviso de cierre al reportante | SprintTB-T008 | Mostrar en la aplicación Android la notificación de cierre con la acción correctiva aplicada | 1,5 | Móvil |
-| Sprint To-Be 1 | TB05 | Aviso de cierre al reportante | SprintTB-T009 | Mostrar en el panel web el aviso de cierre en el seguimiento del reporte | 1 | Web |
-| Sprint To-Be 1 | TB05 | Aviso de cierre al reportante | SprintTB-T010 | Cubrir el aviso de cierre con pruebas automatizadas | 1 | QA |
-| Sprint To-Be 1 | TB04 | Notificación de hallazgo crítico | SprintTB-T011 | Disparar en el API una notificación a los supervisores al registrarse un hallazgo de severidad crítica | 2 | Backend |
-| Sprint To-Be 1 | TB04 | Notificación de hallazgo crítico | SprintTB-T012 | Mostrar en el panel web la alerta de hallazgo crítico con acceso directo al detalle | 1 | Web |
-| Sprint To-Be 1 | TB04 | Notificación de hallazgo crítico | SprintTB-T013 | Mostrar en la aplicación Android la notificación de hallazgo crítico | 1 | Móvil |
-| Sprint To-Be 1 | TB04 | Notificación de hallazgo crítico | SprintTB-T014 | Cubrir la notificación de hallazgo crítico con pruebas automatizadas | 1 | QA |
-| Sprint To-Be 1 | TB03 | Registro de auditoría de exportaciones | SprintTB-T015 | Registrar en el API usuario, fecha y tipo de cada exportación de evidencia | 1,5 | Backend |
-| Sprint To-Be 1 | TB03 | Registro de auditoría de exportaciones | SprintTB-T016 | Construir en el panel web la consulta del registro de exportaciones | 1 | Web |
-| Sprint To-Be 1 | TB03 | Registro de auditoría de exportaciones | SprintTB-T017 | Cubrir el registro de exportaciones con pruebas automatizadas | 0,5 | QA |
+**Desglose operativo**
 
-**Resumen por área**
+| ID Historia | ID Tarea | Descripción de la tarea (work-item) | Área | Responsable | Horas est. | Estado | Evidencia |
+|---|---|---|---|---|---|---|---|
+| TB01 | SprintTB-T001 | Exponer en el endpoint del experimento el indicador de empresa de demostración | Backend | Villafuerte Tapia Renzo Alonso | 0,5 | Hecho | `sst-api` `4645cde` |
+| TB01 | SprintTB-T002 | Mostrar en el panel web del experimento el aviso de datos de demostración | Web | Villafuerte Tapia Renzo Alonso | 1 | Hecho | `sst-web` `9241253` |
+| TB01 | SprintTB-T003 | Cubrir el aviso de datos de demostración con pruebas automatizadas | QA | Villafuerte Tapia Renzo Alonso | 0,5 | Hecho | `test_los_resultados_avisan_si_la_empresa_es_de_demostracion` |
+| TB02 | SprintTB-T004 | Calcular en el API la diferencia de medias, error estándar e intervalo al 95 % (aproximación de Welch) | Backend | Villafuerte Tapia Renzo Alonso | 2 | Hecho | `sst-api` `4645cde` |
+| TB02 | SprintTB-T005 | Mostrar en el panel web la diferencia, el intervalo y si se distingue del azar | Web | Villafuerte Tapia Renzo Alonso | 1,5 | Hecho | `sst-web` `9241253` |
+| TB02 | SprintTB-T006 | Validar el cálculo del intervalo contra casos de prueba conocidos | QA | Villafuerte Tapia Renzo Alonso | 1,5 | Hecho | `test_una_diferencia_pequena_sale_como_no_concluyente` y `test_una_diferencia_grande_y_consistente_sale_como_concluyente` |
 
 | Área | Work-items | Horas |
 |---|---|---|
-| Backend | 5 | 7,5 |
-| Web | 5 | 5,5 |
+| Backend | 2 | 2,5 |
+| Web | 2 | 2,5 |
+| QA | 2 | 2 |
+| **Total** | **6** | **7** |
+
+---
+
+##### Sprint To-Be 2 — Retroalimentación y trazabilidad
+
+**Ficha resumen**
+
+| Campo | Valor |
+|---|---|
+| Sprint | Sprint To-Be 2 |
+| Timebox | Planificado en las semanas 13 a 15 del ciclo (16/11/2026 al 06/12/2026), junto con el Sprint 4 del Capítulo V, que incluye las notificaciones |
+| Objetivo | Cerrar el circuito de retroalimentación y trazabilidad del hallazgo. |
+| Historias | 3 (TB05, TB04 y TB03) |
+| Story Points | 13 |
+| Work-items | 11 |
+| Horas estimadas | 13 |
+| Capacidad | Responsables por asignar; no se midió una capacidad observada del equipo |
+| Estado | **Pendiente** — 0/3 historias · 0/13 SP · 0/11 work-items al 25/11/2026 |
+| Incremento entregable | El operario recibe aviso cuando su hallazgo se cierra, con la acción correctiva aplicada; el supervisor es notificado de cada hallazgo crítico sin atender; toda exportación de evidencia queda registrada con usuario, recurso y fecha. |
+
+**Desglose operativo**
+
+| ID Historia | ID Tarea | Descripción de la tarea (work-item) | Área | Responsable | Horas est. | Estado | Evidencia |
+|---|---|---|---|---|---|---|---|
+| TB05 | SprintTB-T007 | Emitir en el API una notificación al reportante cuando su hallazgo cambia a Cerrado | Backend | Por asignar | 1,5 | Pendiente | — |
+| TB05 | SprintTB-T008 | Mostrar en la aplicación Android la notificación de cierre con la acción correctiva aplicada | Móvil | Por asignar | 1,5 | Pendiente | — |
+| TB05 | SprintTB-T009 | Mostrar en el panel web el aviso de cierre en el seguimiento del reporte | Web | Por asignar | 1 | Pendiente | — |
+| TB05 | SprintTB-T010 | Cubrir el aviso de cierre con pruebas automatizadas | QA | Por asignar | 1 | Pendiente | — |
+| TB04 | SprintTB-T011 | Disparar en el API una notificación a los supervisores al registrarse un hallazgo de severidad crítica | Backend | Por asignar | 2 | Pendiente | — |
+| TB04 | SprintTB-T012 | Mostrar en el panel web la alerta de hallazgo crítico con acceso directo al detalle | Web | Por asignar | 1 | Pendiente | — |
+| TB04 | SprintTB-T013 | Mostrar en la aplicación Android la notificación de hallazgo crítico | Móvil | Por asignar | 1 | Pendiente | — |
+| TB04 | SprintTB-T014 | Cubrir la notificación de hallazgo crítico con pruebas automatizadas | QA | Por asignar | 1 | Pendiente | — |
+| TB03 | SprintTB-T015 | Registrar en el API usuario, fecha y tipo de cada exportación de evidencia | Backend | Por asignar | 1,5 | Pendiente | — |
+| TB03 | SprintTB-T016 | Construir en el panel web la consulta del registro de exportaciones | Web | Por asignar | 1 | Pendiente | — |
+| TB03 | SprintTB-T017 | Cubrir el registro de exportaciones con pruebas automatizadas | QA | Por asignar | 0,5 | Pendiente | — |
+
+| Área | Work-items | Horas |
+|---|---|---|
+| Backend | 3 | 5 |
+| Web | 3 | 3 |
 | Móvil | 2 | 2,5 |
-| QA | 5 | 4,5 |
-| **Total** | **17** | **20** |
+| QA | 3 | 2,5 |
+| **Total** | **11** | **13** |
 
 #### 8.3.3.2. Implemented To-Be Landing Page Evidence
 
-Ninguna historia del Sprint To-Be 1 (TB01 a TB05) modifica la landing page: las cinco actúan
+Ninguna historia de los sprints To-Be (TB01 a TB05) modifica la landing page: las cinco actúan
 sobre el panel del experimento, las notificaciones y el registro de exportaciones, que viven en
 el API, la aplicación web y la aplicación Android. Por eso este ciclo no produce un incremento
 To-Be de la landing.
@@ -5870,7 +5922,7 @@ diferencia con su intervalo de confianza al 95 % (TB02).*
 
 #### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
 
-En la aplicación Android, el Sprint To-Be 1 asigna dos work-items: SprintTB-T008 (notificación
+En la aplicación Android, el Sprint To-Be 2 asigna dos work-items: SprintTB-T008 (notificación
 de cierre al reportante, TB05) y SprintTB-T013 (notificación de hallazgo crítico, TB04). **Ninguno
 está implementado en este corte**: la rama `develop` de `sst-mobile` no contiene commits
 posteriores al 7 de octubre de 2026, y el último
@@ -6152,7 +6204,7 @@ flowchart LR
 
 1. Q1 continúa en ejecución con usuarios reales; no se cambia el formulario por defecto.
 2. Se corrige la instrumentación de fotos y se oculta la variante del experimento antes del piloto.
-3. Se planifica el Sprint To-Be 1 (sección 8.3.3.1) y se incorpora Q11 al Question Backlog (8.4.2).
+3. Se planifican los sprints To-Be (sección 8.3.3.1) y se incorpora Q11 al Question Backlog (8.4.2).
 
 ## 8.6. To-Be Software Platform Pre-launch
 
@@ -6540,7 +6592,7 @@ debe actualizar el commit y el dictamen correspondiente, conservando la trazabil
 | 6.1 | Catálogo, ocho pruebas localizadas y escenarios BDD | JUnit XML, resultados de sistema y validación con usuarios |
 | 7.1 | Tres workflows de CI de producto | Ejecuciones exitosas enlazadas y protecciones verificadas |
 | 7.2–7.3 | Diseño de promoción y recuperación | Entornos, artefactos, despliegue y restauración ensayados |
-| 8.3.3.1–8.3.3.5 | Sprint To-Be 1, TB01 y TB02 implementadas con commits y pruebas | Implementación de TB03, TB04 y TB05 |
+| 8.3.3.1–8.3.3.5 | Sprint To-Be 1 completado: TB01 y TB02 implementadas con commits y pruebas | Sprint To-Be 2: implementación de TB03, TB04 y TB05 |
 | 8.3.4.2 | Guion, selección de participantes y plantilla de registro | Entrevistas To-Be con los participantes del piloto real |
 | 8.4.1 | Análisis con datos de demostración, declarado no concluyente | Piloto real de EXP-01 con 24 participantes |
 | 8.5.1 | Aprendizajes y decisiones de la sesión de shareback | Fecha y modalidad de la sesión |
