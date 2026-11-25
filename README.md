@@ -276,24 +276,24 @@ en ella, aunque sí están en el historial del repositorio.
     - [8.3.1. To-Be User Stories](#831-to-be-user-stories)
     - [8.3.2. To-Be Product Backlog](#832-to-be-product-backlog)
     - [8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle](#833-pipeline-supported-experiment-driven-to-be-software-platform-lifecycle)
-    - [8.3.4. To-Be Sprint Backlogs](#834-to-be-sprint-backlogs)
-    - [8.3.5. Implemented To-Be Landing Page Evidence](#835-implemented-to-be-landing-page-evidence)
-    - [8.3.6. Implemented To-Be Frontend-Web Application Evidence](#836-implemented-to-be-frontend-web-application-evidence)
-    - [8.3.7. Implemented To-Be Native-Mobile Application Evidence](#837-implemented-to-be-native-mobile-application-evidence)
-    - [8.3.8. Implemented To-Be RESTful API and/or Serverless Backend Evidence](#838-implemented-to-be-restful-api-andor-serverless-backend-evidence)
-    - [8.3.9. Team Collaboration Insights](#839-team-collaboration-insights)
-  - [8.4. To-Be Validation Interviews](#84-to-be-validation-interviews)
-    - [8.4.1. Diseño de Entrevistas](#841-diseño-de-entrevistas)
-    - [8.4.2. Registro de Entrevistas](#842-registro-de-entrevistas)
-  - [8.5. Experiment Aftermath & Analysis](#85-experiment-aftermath--analysis)
-    - [8.5.1. Analysis and Interpretation of Results](#851-analysis-and-interpretation-of-results)
-    - [8.5.2. Re-scored and Re-prioritized Question Backlog](#852-re-scored-and-re-prioritized-question-backlog)
-  - [8.6. Continuous Learning](#86-continuous-learning)
-    - [8.6.1. Shareback Session Artifacts: Learning Workflow](#861-shareback-session-artifacts-learning-workflow)
-  - [8.7. To-Be Software Platform Pre-launch](#87-to-be-software-platform-pre-launch)
-    - [8.7.1. About-the-Product Intro Video](#871-about-the-product-intro-video)
-    - [8.7.2. Resumen usando Gees Framework](#872-resumen-usando-gees-framework)
-  - [8.8. Matriz de Evaluación Ética y de Impacto](#88-matriz-de-evaluación-ética-y-de-impacto)
+      - [8.3.3.1. To-Be Sprint Backlogs](#8331-to-be-sprint-backlogs)
+      - [8.3.3.2. Implemented To-Be Landing Page Evidence](#8332-implemented-to-be-landing-page-evidence)
+      - [8.3.3.3. Implemented To-Be Frontend-Web Application Evidence](#8333-implemented-to-be-frontend-web-application-evidence)
+      - [8.3.3.4. Implemented To-Be Native-Mobile Application Evidence](#8334-implemented-to-be-native-mobile-application-evidence)
+      - [8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence](#8335-implemented-to-be-restful-api-andor-serverless-backend-evidence)
+      - [8.3.3.6. Team Collaboration Insights](#8336-team-collaboration-insights)
+    - [8.3.4. To-Be Validation Interviews](#834-to-be-validation-interviews)
+      - [8.3.4.1. Diseño de Entrevistas](#8341-diseño-de-entrevistas)
+      - [8.3.4.2. Registro de Entrevistas](#8342-registro-de-entrevistas)
+  - [8.4. Experiment Aftermath & Analysis](#84-experiment-aftermath--analysis)
+    - [8.4.1. Analysis and Interpretation of Results](#841-analysis-and-interpretation-of-results)
+    - [8.4.2. Re-scored and Re-prioritized Question Backlog](#842-re-scored-and-re-prioritized-question-backlog)
+  - [8.5. Continuous Learning](#85-continuous-learning)
+    - [8.5.1. Shareback Session Artifacts: Learning Workflow](#851-shareback-session-artifacts-learning-workflow)
+  - [8.6. To-Be Software Platform Pre-launch](#86-to-be-software-platform-pre-launch)
+    - [8.6.1. About-the-Product Intro Video](#861-about-the-product-intro-video)
+    - [8.6.2. Resumen usando Gees Framework](#862-resumen-usando-gees-framework)
+  - [Matriz de Evaluación Ética y de Impacto](#matriz-de-evaluación-ética-y-de-impacto)
 - [Conclusiones](#conclusiones)
   - [Avance de conclusiones](#avance-de-conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
@@ -336,7 +336,7 @@ Outcome 4.
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---|---|---|
-| **4.c.1** Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | **Esquirva León Miguel Juan Diego**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Mora Blas Diego Alonzo**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Villafuerte Tapia Renzo Alonso**<br>**TB1:** Declaró en el Capítulo V el periodo real de ejecución del trabajo en lugar de repartir fechas de sprint que el historial público de commits no respalda. Separó en el Product Backlog lo construido de lo propuesto, para no atribuirle al prototipo capacidades que no tiene. Etiquetó los datos del comando `seed_demo` como datos de demostración, de modo que no puedan presentarse como evidencia del experimento. Declaró la conversión de Story Points a horas como una regla de estimación y no como una medición de tiempo real. Mantuvo sin publicar la cifra de accidentes del MTPE mientras no contara con su fuente citada.<br><br>**TB2:** Implementó en el API y en el panel web el aviso de datos de demostración y el intervalo de confianza al 95 % del experimento (TB01 y TB02), para que el panel no comunique una diferencia sin su precisión. En el análisis de resultados (8.5.1) declaró que los datos provienen de `seed_demo` y no rechazó H₀ porque el intervalo contiene el cero, en lugar de reportar el +40,95 % como un logro. Declaró como simuladas las entrevistas de validación de 6.3.2 y bajó a confianza "Baja" los aprendizajes que dependen solo de ellas. Marcó por estado las historias To-Be implementadas y pendientes (8.3.2 y 8.3.4). | <!-- COMPLETAR: conclusiones del grupo, acumulables entre entregas --> |
+| **4.c.1** Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | **Esquirva León Miguel Juan Diego**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Mora Blas Diego Alonzo**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Villafuerte Tapia Renzo Alonso**<br>**TB1:** Declaró en el Capítulo V el periodo real de ejecución del trabajo en lugar de repartir fechas de sprint que el historial público de commits no respalda. Separó en el Product Backlog lo construido de lo propuesto, para no atribuirle al prototipo capacidades que no tiene. Etiquetó los datos del comando `seed_demo` como datos de demostración, de modo que no puedan presentarse como evidencia del experimento. Declaró la conversión de Story Points a horas como una regla de estimación y no como una medición de tiempo real. Mantuvo sin publicar la cifra de accidentes del MTPE mientras no contara con su fuente citada.<br><br>**TB2:** Implementó en el API y en el panel web el aviso de datos de demostración y el intervalo de confianza al 95 % del experimento (TB01 y TB02), para que el panel no comunique una diferencia sin su precisión. En el análisis de resultados (8.4.1) declaró que los datos provienen de `seed_demo` y no rechazó H₀ porque el intervalo contiene el cero, en lugar de reportar el +40,95 % como un logro. Declaró como simuladas las entrevistas de validación de 6.3.2 y bajó a confianza "Baja" los aprendizajes que dependen solo de ellas. Marcó por estado las historias To-Be implementadas y pendientes (8.3.2 y 8.3.3.1). | <!-- COMPLETAR: conclusiones del grupo, acumulables entre entregas --> |
 | **4.c.2** Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | **Esquirva León Miguel Juan Diego**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Mora Blas Diego Alonzo**<br>**TF:** <!-- COMPLETAR: acciones concretas y verificables --><br><br>**Villafuerte Tapia Renzo Alonso**<br>**TB1:** Restringió el alcance a Android nativo por la distribución de dispositivos del segmento objetivo, y dejó la decisión documentada como tal en lugar de presentarla como omisión. Diseñó la captura sin conexión porque la conectividad en obra, planta y unidad minera es intermitente: una decisión tomada por el contexto del usuario y no por preferencia técnica. Dejó fuera del alcance la vigilancia médica ocupacional, por tratarse de datos de salud cuyo tratamiento excede lo que el equipo puede sostener. Especificó la geolocalización como opcional y revocable y el reporte anónimo de actos inseguros, reconociendo que el trabajador puede temer represalias. Sujetó el tratamiento de DNI, teléfono, fotografías y ubicación a la Ley N° 29733 en el acuerdo de servicio del producto.<br><br>**TB2:** Decidió no cambiar el formulario por defecto hasta alcanzar el tamaño de muestra de 8.2.5, para no imponer a los trabajadores un cambio basado en ruido estadístico. Priorizó en el Sprint To-Be 1 el aviso de cierre al reportante (TB05), porque el operario que no ve resultado deja de reportar, y la notificación de hallazgos críticos (TB04), que reduce el tiempo de exposición al riesgo. Planificó el registro de auditoría de exportaciones (TB03) como obligación derivada de la Ley N° 29733. Propuso ocultar al usuario la variante del experimento, señalada en la evaluación heurística como fuente de sesgo. | <!-- COMPLETAR: conclusiones del grupo, acumulables entre entregas --> |
 
 El enunciado del trabajo final pide, además del cuadro anterior, **una subsección por cada
@@ -432,7 +432,7 @@ rápido generaba un 40,95 % más de reportes por usuario, y esa cifra, sola, par
 hipótesis. Implementé en el API y en el panel web el intervalo de confianza al 95 % con la
 aproximación de Welch y el aviso de datos de demostración (TB01 y TB02). Con eso a la vista, el
 resultado honesto fue otro: el intervalo contiene el cero, la muestra es de tres y cuatro usuarios,
-y los datos los genera `seed_demo`. En el análisis de 8.5.1 escribí que no se rechaza H₀ y que el
+y los datos los genera `seed_demo`. En el análisis de 8.4.1 escribí que no se rechaza H₀ y que el
 experimento sirve para verificar la instrumentación, no para concluir sobre el negocio.
 
 Con el mismo criterio declaré como simuladas las entrevistas de validación de 6.3.2 y reduje la
@@ -5140,7 +5140,7 @@ una decisión.
 | Q6 | ¿Qué proporción de operarios acepta usar su celular personal para reportar? (A2) | Decide si la app propia es el canal principal o si se priorizan equipos compartidos y el reporte web |
 | Q7 | ¿Cuánto tiempo pasa hoy entre la detección y la corrección de un peligro con el proceso en papel? (K2) | Fija la línea base de MTTR contra la que se compara el producto |
 | Q8 | ¿El reporte por voz aumenta los reportes de quienes trabajan con guantes o con las manos ocupadas? (I4) | Decide si se invierte en captura por voz |
-| Q9 | ¿Un ranking de áreas por hallazgos cerrados mejora la tasa de cierre sin desalentar el reporte? (I5) | Decide si se implementa el incentivo colectivo o se descarta por su riesgo social (8.8) |
+| Q9 | ¿Un ranking de áreas por hallazgos cerrados mejora la tasa de cierre sin desalentar el reporte? (I5) | Decide si se implementa el incentivo colectivo o se descarta por su riesgo social (matriz ética) |
 | Q10 | ¿La evidencia exportable para SUNAFIL es el argumento que decide la compra? (C3) | Orienta el mensaje comercial y la prioridad de las funciones de exportación |
 
 ### 8.1.4. Question Backlog
@@ -5159,12 +5159,12 @@ experimento.
 
 | Prioridad | ID | Pregunta / Incógnita | Categoría | Historia relacionada | Responsable | Método / Fuente | Estado | Respuesta / Decisión |
 |---|---|---|---|---|---|---|---|---|
-| Alta (9) | Q1 | ¿Un formulario de tres pasos aumenta el número de reportes por usuario frente a uno de diez campos? | UX / Usuario | US06 Reporte rápido desde el celular · US38 Asignación de variante | Product Owner | Experimento A/B (EXP-01) | Ejecutado con datos de demostración | No concluyente (8.5.1): se repite con el piloto real |
+| Alta (9) | Q1 | ¿Un formulario de tres pasos aumenta el número de reportes por usuario frente a uno de diez campos? | UX / Usuario | US06 Reporte rápido desde el celular · US38 Asignación de variante | Product Owner | Experimento A/B (EXP-01) | Ejecutado con datos de demostración | No concluyente (8.4.1): se repite con el piloto real |
 | Alta (9) | Q4 | ¿El aumento de reportes se traduce en más hallazgos cerrados o solo en más cola? | Negocio | US16 Cierre con acción correctiva · US35 Indicador MTTR | Product Owner | Estudio observacional de serie temporal (EXP-02) | Pendiente | - |
 | Media (6) | Q2 | ¿Qué proporción de reportes se origina sin conexión? | Técnico | US07 Reporte sin conexión · US08 Sincronización sin duplicados | Tech Lead | Medición descriptiva sobre el piloto (EXP-03) | Pendiente | - |
 | Media (6) | Q6 | ¿Qué proporción de operarios acepta usar su celular personal para reportar? | UX / Usuario | US01 Registro de trabajador · US06 Reporte rápido desde el celular | Product Owner | Estudio de adopción (EXP-04) | Pendiente | - |
 | Media (6) | Q10 | ¿La evidencia exportable para SUNAFIL es el argumento que decide la compra? | Negocio | US37 Exportación de evidencia · US62 Exportar cada registro obligatorio | Product Owner | Demostración guiada con elección forzada (EXP-05) | Pendiente | - |
-| Baja (4) | Q3 | ¿La foto obligatoria reduce la tasa de finalización del reporte? | UX / Usuario | US09 Evidencia fotográfica | UX Designer | Experimento A/B (EXP-06) | Pendiente: siguiente experimento (8.5.2) | - |
+| Baja (4) | Q3 | ¿La foto obligatoria reduce la tasa de finalización del reporte? | UX / Usuario | US09 Evidencia fotográfica | UX Designer | Experimento A/B (EXP-06) | Pendiente: siguiente experimento (8.4.2) | - |
 | Baja (4) | Q7 | ¿Cuánto tiempo pasa hoy entre la detección y la corrección de un peligro con el proceso en papel? | Negocio | US35 Indicador MTTR | Data Analyst | Revisión retrospectiva de registros en papel (EXP-07) | Pendiente | - |
 | Baja (4) | Q9 | ¿Un ranking de áreas por hallazgos cerrados mejora la tasa de cierre sin desalentar el reporte? | Negocio | Sin historia todavía (idea I5) | Product Owner | Diseño antes y después con áreas de control (EXP-08) | En espera | - |
 | Baja (3) | Q5 | ¿La posibilidad de reportar de forma anónima aumenta los reportes de actos inseguros de terceros? | UX / Usuario | Sin historia todavía (idea I2) | UX Designer | Experimento A/B (EXP-09) | Pendiente | - |
@@ -5184,14 +5184,14 @@ midiendo. Cuando la tarjeta no fija la muestra, esta se calcula como en 8.2.5 an
 
 | Tarjeta | Pregunta | Método | Métrica | Estado |
 |---|---|---|---|---|
-| EXP-01 | Q1 · Fricción del formulario | Experimento controlado A/B con asignación determinística por usuario | M01 reportes por usuario (principal) y M02 MTTR (control) | Ejecutado con datos de demostración: no concluyente (8.5.1). Pendiente el piloto real |
+| EXP-01 | Q1 · Fricción del formulario | Experimento controlado A/B con asignación determinística por usuario | M01 reportes por usuario (principal) y M02 MTTR (control) | Ejecutado con datos de demostración: no concluyente (8.4.1). Pendiente el piloto real |
 | EXP-02 | Q4 · Captura frente a capacidad de cierre | Estudio observacional de serie temporal: volumen semanal de reportes frente a MTTR y tasa de cierre | M02 MTTR semanal y M04 tasa de cierre | Planificado para el siguiente ciclo |
 | EXP-03 | Q2 · Peso real del uso sin conexión | Medición descriptiva sobre los reportes del piloto | M06 proporción de reportes sin conexión (`synced_offline`) | Planificado: se ejecuta junto con el piloto real de EXP-01 |
 | EXP-04 | Q6 · Disposición a usar el celular personal | Estudio de adopción con invitación abierta y medición de uso real | M08 tasa de adopción (operarios con al menos un reporte desde su celular / operarios invitados) | Planificado |
 | EXP-05 | Q10 · Evidencia exportable como argumento de compra | Prueba de concepto con demostración guiada y elección forzada entre cuatro beneficios | M09 proporción de responsables que elige la evidencia exportable como motivo principal | Planificado |
-| EXP-06 | Q3 · Foto obligatoria | Experimento controlado A/B con asignación determinística por usuario | M07 tasa de finalización (reportes enviados / reportes iniciados) y M05 cobertura de evidencia (control) | Siguiente experimento (8.5.2). Requiere instrumentar el evento `reporte_iniciado` y corregir el registro de fotos |
+| EXP-06 | Q3 · Foto obligatoria | Experimento controlado A/B con asignación determinística por usuario | M07 tasa de finalización (reportes enviados / reportes iniciados) y M05 cobertura de evidencia (control) | Siguiente experimento (8.4.2). Requiere instrumentar el evento `reporte_iniciado` y corregir el registro de fotos |
 | EXP-07 | Q7 · Línea base del MTTR en papel | Revisión retrospectiva de los registros en papel de la empresa piloto | M02 MTTR en el proceso en papel | Planificado |
-| EXP-08 | Q9 · Ranking de áreas por hallazgos cerrados | Diseño antes y después por área, con áreas de control sin ranking | M04 tasa de cierre (principal) y M01 reportes por usuario (control) | En espera: baja prioridad tras la re-priorización (8.5.2) |
+| EXP-08 | Q9 · Ranking de áreas por hallazgos cerrados | Diseño antes y después por área, con áreas de control sin ranking | M04 tasa de cierre (principal) y M01 reportes por usuario (control) | En espera: baja prioridad tras la re-priorización (8.4.2) |
 | EXP-09 | Q5 · Reporte anónimo | Experimento controlado A/B con asignación determinística por usuario | M01 reportes por usuario, restringido a actos inseguros de terceros | Planificado |
 | EXP-10 | Q8 · Reporte por voz | Experimento controlado A/B entre operarios que trabajan con guantes | M01 reportes por usuario y M07 tasa de finalización | Planificado |
 
@@ -5283,12 +5283,12 @@ midiendo. Cuando la tarjeta no fija la muestra, esta se calcula como en 8.2.5 an
 | **Why** | La foto es la evidencia más valiosa ante una fiscalización (M05), pero cada paso obligatorio añade fricción. Si la foto obligatoria reduce la finalización, pasa a opcional con recordatorio; si no, se mantiene obligatoria por su valor como evidencia. |
 | **Assumption** | Vacío de conocimiento K4: no se sabe si la foto obligatoria acelera o frena el reporte. |
 | **Belief (Lo que creemos)** | Creemos que exigir la foto hace que algunos operarios abandonen el reporte antes de enviarlo. |
-| **What** | Se configura el formulario rápido en dos variantes, foto `obligatoria` y foto `opcional`, con la misma asignación determinística de EXP-01. Antes hay que instrumentar el evento `reporte_iniciado` (8.2.8) y corregir el registro de fotos observado en 8.5.1. |
-| **Design** | **Técnica de validación:** Experimento controlado A/B con asignación determinística por usuario.<br>**Muestra:** Operarios de campo con cuenta activa; el tamaño se calcula como en 8.2.5 sobre la tasa de finalización.<br>**Duración:** 14 días.<br>**Desarrollo:** Se registran los reportes iniciados y enviados por variante, y la proporción de reportes con foto como métrica de control.<br>**Criterio de éxito:** El experimento será exitoso si hay una diferencia significativa de proporciones (α = 0,05, dos colas) en la tasa de finalización. Se refuta si no hay diferencia con la muestra requerida.<br>**Riesgo:** Que el defecto en el registro de fotos (8.5.1) contamine la métrica de control, o que fallas de cámara en algunos equipos se confundan con abandono. |
+| **What** | Se configura el formulario rápido en dos variantes, foto `obligatoria` y foto `opcional`, con la misma asignación determinística de EXP-01. Antes hay que instrumentar el evento `reporte_iniciado` (8.2.8) y corregir el registro de fotos observado en 8.4.1. |
+| **Design** | **Técnica de validación:** Experimento controlado A/B con asignación determinística por usuario.<br>**Muestra:** Operarios de campo con cuenta activa; el tamaño se calcula como en 8.2.5 sobre la tasa de finalización.<br>**Duración:** 14 días.<br>**Desarrollo:** Se registran los reportes iniciados y enviados por variante, y la proporción de reportes con foto como métrica de control.<br>**Criterio de éxito:** El experimento será exitoso si hay una diferencia significativa de proporciones (α = 0,05, dos colas) en la tasa de finalización. Se refuta si no hay diferencia con la muestra requerida.<br>**Riesgo:** Que el defecto en el registro de fotos (8.4.1) contamine la métrica de control, o que fallas de cámara en algunos equipos se confundan con abandono. |
 | **Hypothesis** | Si exigimos la foto para enviar el reporte, entonces la tasa de finalización será menor que con la foto opcional. |
 | **Métricas** | - M07 tasa de finalización del reporte<br>- M05 cobertura de evidencia (control) |
 | **Metas** | Detectar la diferencia en M07 con α = 0,05; M05 se reporta como métrica de control. |
-| **Prioridad** | Baja en 8.1.4; sube a Media en la re-priorización (8.5.2) |
+| **Prioridad** | Baja en 8.1.4; sube a Media en la re-priorización (8.4.2) |
 | **Responsable** | UX Designer |
 
 **Experiment Card N° 7 — EXP-07 (Q7): Línea base del MTTR en papel**
@@ -5304,7 +5304,7 @@ midiendo. Cuando la tarjeta no fija la muestra, esta se calcula como en 8.2.5 an
 | **Hypothesis** | No aplica: es una pregunta descriptiva. Se estima la mediana con su intervalo de confianza. |
 | **Métricas** | - M02 MTTR en el proceso en papel (mediana)<br>- Intervalo de confianza al 95 % |
 | **Metas** | Mediana del MTTR en papel con su intervalo al 95 %. |
-| **Prioridad** | Baja en 8.1.4; sube a Media en la re-priorización (8.5.2) |
+| **Prioridad** | Baja en 8.1.4; sube a Media en la re-priorización (8.4.2) |
 | **Responsable** | Data Analyst |
 
 **Experiment Card N° 8 — EXP-08 (Q9): Ranking de áreas por hallazgos cerrados**
@@ -5312,15 +5312,15 @@ midiendo. Cuando la tarjeta no fija la muestra, esta se calcula como en 8.2.5 an
 | Campo | Contenido |
 |---|---|
 | **Question** | ¿Un ranking de áreas por hallazgos cerrados mejora la tasa de cierre sin desalentar el reporte? |
-| **Why** | Un incentivo colectivo podría acelerar el cierre, pero también puede llevar a que las áreas dejen de reportar para no quedar mal. Si se confirma sin caída del reporte, se adopta el ranking por área; si el reporte cae, se descarta por su riesgo social (8.8). |
+| **Why** | Un incentivo colectivo podría acelerar el cierre, pero también puede llevar a que las áreas dejen de reportar para no quedar mal. Si se confirma sin caída del reporte, se adopta el ranking por área; si el reporte cae, se descarta por su riesgo social (matriz ética). |
 | **Assumption** | Idea I5: un ranking de áreas por hallazgos cerrados funciona como incentivo colectivo. |
 | **Belief (Lo que creemos)** | Creemos que publicar un ranking de áreas aumentará la tasa de cierre sin desalentar el reporte. |
-| **What** | Se publica en el tablero un ranking de áreas por hallazgos cerrados solo para algunas áreas; las demás quedan como control. El ranking es por área, nunca por persona (matriz ética, 8.8). |
+| **What** | Se publica en el tablero un ranking de áreas por hallazgos cerrados solo para algunas áreas; las demás quedan como control. El ranking es por área, nunca por persona (matriz ética). |
 | **Design** | **Técnica de validación:** Diseño antes y después por área, con áreas de control sin ranking.<br>**Muestra:** Áreas de la empresa piloto, divididas entre áreas con ranking y áreas de control.<br>**Duración:** 4 semanas antes y 4 semanas después.<br>**Desarrollo:** Se mide la tasa de cierre y los reportes por usuario de cada área antes y después de publicar el ranking, y se compara el cambio de las áreas con ranking con el de las áreas de control.<br>**Criterio de éxito:** El experimento será exitoso si la tasa de cierre aumenta significativamente (α = 0,05) en las áreas con ranking frente a las de control y M01 no cae más de 10 %. Se refuta si la tasa de cierre no aumenta o si el reporte cae más de 10 %.<br>**Riesgo:** Que las áreas dejen de reportar para mejorar su posición, o que las áreas con y sin ranking comparen resultados entre sí. |
 | **Hypothesis** | Si publicamos un ranking de áreas por hallazgos cerrados, entonces la tasa de cierre aumentará sin que la frecuencia de reporte caiga más de 10 %. |
 | **Métricas** | - M04 tasa de cierre (principal)<br>- M01 reportes por usuario (control) |
 | **Metas** | Aumento significativo de M04 frente a las áreas de control y caída de M01 no mayor a 10 %. |
-| **Prioridad** | Baja (baja todavía más en la re-priorización, 8.5.2) |
+| **Prioridad** | Baja (baja todavía más en la re-priorización, 8.4.2) |
 | **Responsable** | Product Owner |
 
 **Experiment Card N° 9 — EXP-09 (Q5): Reporte anónimo**
@@ -5332,7 +5332,7 @@ midiendo. Cuando la tarjeta no fija la muestra, esta se calcula como en 8.2.5 an
 | **Assumption** | Supuesto A3: el temor a represalias no es la barrera dominante. Esta tarjeta pone a prueba su contrario. |
 | **Belief (Lo que creemos)** | Creemos que la opción de reportar sin identificarse aumentará los reportes de actos inseguros de terceros. |
 | **What** | Se agrega al formulario una opción de reporte anónimo, disponible para un grupo de operarios y no para el otro. |
-| **Design** | **Técnica de validación:** Experimento controlado A/B con asignación determinística por usuario.<br>**Muestra:** Operarios de campo con cuenta activa; el tamaño se calcula como en 8.2.5.<br>**Duración:** 14 días.<br>**Desarrollo:** Se cuentan los reportes de actos inseguros de terceros por usuario en cada grupo; el resto del formulario y de la aplicación es idéntico.<br>**Criterio de éxito:** El experimento será exitoso si hay una diferencia significativa (U de Mann-Whitney, α = 0,05, dos colas) a favor del grupo con anonimato. Se refuta si no hay diferencia con la muestra requerida.<br>**Riesgo:** Que el anonimato genere reportes malintencionados o imposibles de investigar, y el tratamiento de datos personales que analiza la matriz ética (8.8). |
+| **Design** | **Técnica de validación:** Experimento controlado A/B con asignación determinística por usuario.<br>**Muestra:** Operarios de campo con cuenta activa; el tamaño se calcula como en 8.2.5.<br>**Duración:** 14 días.<br>**Desarrollo:** Se cuentan los reportes de actos inseguros de terceros por usuario en cada grupo; el resto del formulario y de la aplicación es idéntico.<br>**Criterio de éxito:** El experimento será exitoso si hay una diferencia significativa (U de Mann-Whitney, α = 0,05, dos colas) a favor del grupo con anonimato. Se refuta si no hay diferencia con la muestra requerida.<br>**Riesgo:** Que el anonimato genere reportes malintencionados o imposibles de investigar, y el tratamiento de datos personales que analiza la matriz ética. |
 | **Hypothesis** | Si ofrecemos la opción de reportar de forma anónima, entonces aumentarán los reportes de actos inseguros de terceros por usuario. |
 | **Métricas** | - M01 reportes por usuario, restringido a actos inseguros de terceros |
 | **Metas** | Diferencia significativa a favor del grupo con anonimato (α = 0,05). |
@@ -5682,11 +5682,11 @@ indica el evento, su disparador y dónde queda registrado.
 | `reporte_cerrado` | El supervisor cierra el hallazgo | Fecha de cierre, acción correctiva, tiempo de resolución | Web y móvil | Campos del reporte y bitácora |
 | `inspeccion_realizada` | Se completa una inspección | Programa, fecha programada, fecha de ejecución, resultados del checklist | Web y móvil | Tabla `inspections_inspection` |
 | `epp_conformidad` | El trabajador da conformidad | Entrega, trabajador, fecha | Web y móvil | Tabla `epp_eppdelivery` |
-| `evidencia_exportada` | Se descarga un archivo de evidencia | Usuario, recurso exportado, filtros aplicados | Web | Pendiente: hoy la exportación no deja registro; se implementa con la historia TB03 del Sprint To-Be 1 (8.3.4) |
+| `evidencia_exportada` | Se descarga un archivo de evidencia | Usuario, recurso exportado, filtros aplicados | Web | Pendiente: hoy la exportación no deja registro; se implementa con la historia TB03 del Sprint To-Be 1 (8.3.3.1) |
 
 **Consideración de privacidad.** El plan registra datos personales —DNI, fotografías,
 geolocalización— de trabajadores identificables. Su tratamiento queda sujeto a la Ley N° 29733
-de Protección de Datos Personales y se analiza en la matriz ética de la sección 8.8.
+de Protección de Datos Personales y se analiza en la Matriz de Evaluación Ética y de Impacto.
 
 ## 8.3. Experimentation
 
@@ -5742,7 +5742,7 @@ hace que el pipeline sea parte del experimento y no solo de la construcción es 
 instrumentación —el campo `form_variant`— viaja en el mismo artefacto que se despliega y se
 verifica con las mismas pruebas.
 
-### 8.3.4. To-Be Sprint Backlogs
+#### 8.3.3.1. To-Be Sprint Backlogs
 
 Las historias To-Be priorizadas en la sección 8.3.2 se planifican en un sprint propio, con el
 mismo formato de work-items que los sprints del Capítulo V: cada historia se descompone por área
@@ -5789,19 +5789,19 @@ responsable y las horas estimadas equivalen a sus story points.
 | QA | 5 | 4,5 |
 | **Total** | **17** | **20** |
 
-### 8.3.5. Implemented To-Be Landing Page Evidence
+#### 8.3.3.2. Implemented To-Be Landing Page Evidence
 
-### 8.3.6. Implemented To-Be Frontend-Web Application Evidence
+#### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
 
-### 8.3.7. Implemented To-Be Native-Mobile Application Evidence
+#### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
 
-### 8.3.8. Implemented To-Be RESTful API and/or Serverless Backend Evidence
+#### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
 
-### 8.3.9. Team Collaboration Insights
+#### 8.3.3.6. Team Collaboration Insights
 
-## 8.4. To-Be Validation Interviews
+### 8.3.4. To-Be Validation Interviews
 
-### 8.4.1. Diseño de Entrevistas
+#### 8.3.4.1. Diseño de Entrevistas
 
 Entrevistas posteriores a la ejecución del experimento, orientadas a explicar el **porqué** del
 resultado cuantitativo. El número dice qué pasó; la entrevista, por qué.
@@ -5829,11 +5829,11 @@ participantes señalan mayoritariamente el temor a represalias o la desconfianza
 cambie, entonces la fricción del formulario no es la barrera principal, y ese hallazgo vale más
 que el resultado del A/B.
 
-### 8.4.2. Registro de Entrevistas
+#### 8.3.4.2. Registro de Entrevistas
 
-## 8.5. Experiment Aftermath & Analysis
+## 8.4. Experiment Aftermath & Analysis
 
-### 8.5.1. Analysis and Interpretation of Results
+### 8.4.1. Analysis and Interpretation of Results
 
 **Fuente de los datos.** Los resultados provienen del panel "Experimento A/B" de la aplicación
 web, ejecutada sobre la empresa de demostración que carga el comando `seed_demo`. Son datos
@@ -5887,7 +5887,7 @@ ejecutará un piloto con usuarios reales durante la ventana de 14 días definida
 validada: la asignación es determinística, los reportes se atribuyen a la variante grabada en
 cada reporte y el panel calcula el intervalo de confianza correctamente.
 
-### 8.5.2. Re-scored and Re-prioritized Question Backlog
+### 8.4.2. Re-scored and Re-prioritized Question Backlog
 
 Se recalifica el Question Backlog de la sección 8.1.4 con el mismo criterio (incertidumbre ×
 costo de equivocarse; Alta/Alto = 3, Media/Medio = 2, Baja/Bajo = 1), incorporando lo aprendido
@@ -5907,7 +5907,7 @@ consideran provisionales hasta validarlos con usuarios reales.
 | 8 | Q7 | Línea base del MTTR en papel | Alta | Medio | 4 | 6 | Sube: sin línea base, el MTTR de 92 h del panel no se puede comparar con el proceso actual |
 | 9 | Q5 | Reporte anónimo | Alta | Bajo | 3 | 3 | Sin evidencia nueva |
 | 10 | Q8 | Reporte por voz | Alta | Bajo | 3 | 3 | Sin evidencia nueva |
-| 11 | Q9 | Ranking de áreas por hallazgos cerrados | Media | Bajo | 4 | 2 | Baja: la matriz ética (8.8) descarta indicadores punitivos y reduce el valor de responderla |
+| 11 | Q9 | Ranking de áreas por hallazgos cerrados | Media | Bajo | 4 | 2 | Baja: la matriz ética descarta indicadores punitivos y reduce el valor de responderla |
 
 El backlog queda con once preguntas: las diez de la sección 8.1.4 y Q11, que surge de este ciclo.
 
@@ -5915,9 +5915,9 @@ El backlog queda con once preguntas: las diez de la sección 8.1.4 y Q11, que su
 pregunta a experimentar es Q3, por ser la que más cambió de puntaje y porque su
 instrumentación (registro de fotos) debe corregirse de todos modos para Q1.
 
-## 8.6. Continuous Learning
+## 8.5. Continuous Learning
 
-### 8.6.1. Shareback Session Artifacts: Learning Workflow
+### 8.5.1. Shareback Session Artifacts: Learning Workflow
 
 La sesión de shareback reúne al equipo para compartir lo aprendido en el ciclo de
 experimentación y decidir qué cambia en el producto y en el backlog.
@@ -5927,7 +5927,7 @@ experimentación y decidir qué cambia en el producto y en el backlog.
 | Fecha | [dd/mm/2026] |
 | Modalidad | [Presencial / Google Meet] |
 | Participantes | Esquirva León Miguel Juan Diego, Mora Blas Diego Alonzo, Villafuerte Tapia Renzo Alonso |
-| Insumos | Panel del experimento A/B (8.5.1), registro de entrevistas (6.3.2), evaluación heurística (6.3.3) |
+| Insumos | Panel del experimento A/B (8.4.1), registro de entrevistas (6.3.2), evaluación heurística (6.3.3) |
 
 **Learning Workflow**
 
@@ -5950,7 +5950,7 @@ flowchart LR
 
 | # | Aprendizaje | Evidencia | Confianza | Acción |
 |---|---|---|---|---|
-| 1 | La infraestructura del experimento funciona de punta a punta: asignación determinística, atribución por reporte e intervalo de confianza | Panel del experimento (8.5.1) | Alta | Mantenerla para el piloto real |
+| 1 | La infraestructura del experimento funciona de punta a punta: asignación determinística, atribución por reporte e intervalo de confianza | Panel del experimento (8.4.1) | Alta | Mantenerla para el piloto real |
 | 2 | Con menos de 20 usuarios por variante no es posible concluir | Intervalo [−8,66 ; 15,82] | Alta | No decidir sobre Q1 hasta alcanzar el tamaño de muestra de 8.2.5 |
 | 3 | La métrica "reportes con foto" no se está registrando o no hay datos | 0 reportes con foto en ambas variantes | Media | Revisar la instrumentación antes del piloto |
 | 4 | El formulario rápido no perjudica el tiempo de cierre | MTTR 92,26 h frente a 93,19 h | Media | Mantener MTTR como métrica de control |
@@ -5961,15 +5961,15 @@ flowchart LR
 
 1. Q1 continúa en ejecución con usuarios reales; no se cambia el formulario por defecto.
 2. Se corrige la instrumentación de fotos y se oculta la variante del experimento antes del piloto.
-3. Se planifica el Sprint To-Be 1 (sección 8.3.4) y se incorpora Q11 al Question Backlog (8.5.2).
+3. Se planifica el Sprint To-Be 1 (sección 8.3.3.1) y se incorpora Q11 al Question Backlog (8.4.2).
 
-## 8.7. To-Be Software Platform Pre-launch
+## 8.6. To-Be Software Platform Pre-launch
 
-### 8.7.1. About-the-Product Intro Video
+### 8.6.1. About-the-Product Intro Video
 
-### 8.7.2. Resumen usando Gees Framework
+### 8.6.2. Resumen usando Gees Framework
 
-## 8.8. Matriz de Evaluación Ética y de Impacto
+## Matriz de Evaluación Ética y de Impacto
 
 La matriz permite demostrar la capacidad de reconocer las responsabilidades éticas y
 profesionales, y emitir juicios informados considerando el impacto de la solución de ingeniería
@@ -5980,7 +5980,7 @@ un fin contratado sin cuestionarse el fin en sí mismo— y evidenciar pensamien
 |---|---|---|---|
 | **1. Salud Pública y Seguridad** | *Positivo:* acortar el tiempo entre la detección de un peligro y su corrección reduce la exposición al riesgo de todos los trabajadores del frente.<br><br>*Negativo:* si la empresa usa el sistema como sustituto de la inspección presencial, podría reducirse la supervisión en campo. Un registro digital ordenado puede dar una falsa sensación de control mientras el peligro sigue existiendo. | *Afectados:* trabajadores de campo, con riesgo físico grave. La magnitud es alta: un peligro no corregido puede causar una lesión incapacitante o la muerte. | El cierre del hallazgo exige describir la acción correctiva aplicada, no basta marcarlo como resuelto. El tablero expone los hallazgos críticos abiertos y las inspecciones vencidas, de modo que el incumplimiento sea visible y no quede enterrado. En la documentación del producto se establece explícitamente que el sistema no reemplaza la inspección presencial. |
 | **2. Inclusión y Accesibilidad** | *Negativo:* la aplicación requiere un teléfono Android propio con cámara y espacio de almacenamiento. Un trabajador sin ese equipo queda excluido del canal principal de reporte. La interfaz asume alfabetización funcional y visión adecuada.<br><br>*Positivo:* el flujo por iconos y pocos toques baja la barrera frente a un formulario en papel denso. | *Afectados:* trabajadores de menores ingresos, trabajadores mayores y personas con discapacidad visual o baja alfabetización. La exclusión no es menor: quien no puede reportar queda sin voz en el sistema de seguridad que lo protege. | Se mantiene el reporte desde la web para que cualquier equipo compartido de la empresa sirva como canal alternativo, y el registro por parte del supervisor a nombre del trabajador. Objetivos táctiles de 48 dp, textos cortos y descripción opcional. *Acciones pendientes:* verificar compatibilidad con TalkBack, y evaluar el reporte por voz (idea I4) para quien trabaja con guantes o no lee con fluidez. |
-| **3. Impacto Social y Cultural** | *Negativo, y es el riesgo más serio del producto:* el registro de "actos inseguros" identifica por nombre a quien comete la falta. Mal usado, el sistema se convierte en una herramienta de vigilancia y sanción entre compañeros, deteriora la confianza en la cuadrilla y desincentiva el reporte por temor a represalias.<br><br>*Positivo:* da voz formal y trazable al trabajador, que hoy depende de que su aviso verbal sea recordado. | *Afectados:* la relación entre trabajadores y con sus supervisores; la cohesión de la cuadrilla. Magnitud alta, porque determina si el sistema se usa o se sabotea. | El modelo registra quién reporta y qué se reportó, pero el producto no expone rankings individuales de faltas ni indicadores punitivos por persona. Se prioriza la idea I2 —reporte anónimo opcional para actos inseguros de terceros— como historia del siguiente ciclo. La pregunta común de la entrevista 8.4.1 está diseñada específicamente para detectar si el temor a represalias está operando. |
+| **3. Impacto Social y Cultural** | *Negativo, y es el riesgo más serio del producto:* el registro de "actos inseguros" identifica por nombre a quien comete la falta. Mal usado, el sistema se convierte en una herramienta de vigilancia y sanción entre compañeros, deteriora la confianza en la cuadrilla y desincentiva el reporte por temor a represalias.<br><br>*Positivo:* da voz formal y trazable al trabajador, que hoy depende de que su aviso verbal sea recordado. | *Afectados:* la relación entre trabajadores y con sus supervisores; la cohesión de la cuadrilla. Magnitud alta, porque determina si el sistema se usa o se sabotea. | El modelo registra quién reporta y qué se reportó, pero el producto no expone rankings individuales de faltas ni indicadores punitivos por persona. Se prioriza la idea I2 —reporte anónimo opcional para actos inseguros de terceros— como historia del siguiente ciclo. La pregunta común de la entrevista 8.3.4.1 está diseñada específicamente para detectar si el temor a represalias está operando. |
 | **4. Impacto Económico** | *Positivo:* reduce el costo administrativo de consolidar registros y la exposición a multas, lo que para una empresa mediana puede ser significativo.<br><br>*Negativo:* un modelo de suscripción por número de trabajadores encarece la herramienta justo para las empresas con más personal y menos margen, que suelen ser las de mayor riesgo. Quedarían fuera las que más lo necesitan. | *Afectados:* pequeñas y medianas empresas peruanas y sus trabajadores. La consecuencia de excluirlas por precio es que el beneficio de seguridad se concentra en quienes ya pueden pagarlo. | Escalonamiento del precio que no penalice linealmente el número de trabajadores, y evaluación de un plan gratuito acotado para empresas por debajo del umbral de comité (20 trabajadores), que son las de menor capacidad de pago. Se deja constancia de que el diseño comercial es una decisión con consecuencias sobre la seguridad de terceros, no solo sobre los ingresos. |
 | **5. Impacto Ambiental (Antrópico)** | *Positivo:* sustituye formatos en papel de uso intensivo y evita desplazamientos para consolidar información.<br><br>*Negativo:* el almacenamiento de fotografías a resolución completa multiplica el consumo de almacenamiento y el tráfico de datos, con su correlato energético; además consume el plan de datos del trabajador. | *Afectados:* el medio ambiente por el consumo de cómputo y almacenamiento; y el bolsillo del trabajador, que paga sus propios datos. | Comprimir las imágenes en el dispositivo antes de subirlas y sincronizar preferentemente por Wi-Fi cuando esté disponible. Definir una política de retención que conserve el registro obligatorio y descarte las imágenes de hallazgos cerrados y verificados pasado el plazo legal de conservación. |
 | **6. Enfoque Global** | *Negativo:* el sistema almacena datos personales sensibles —DNI, fotografía del lugar de trabajo, geolocalización precisa del trabajador en el momento del reporte— que, alojados en infraestructura de terceros en el extranjero, quedan sujetos a legislaciones distintas de la peruana.<br><br>*Positivo:* la arquitectura basada en un API estándar facilita la adaptación a la normativa de otros países de la región. | *Afectados:* la privacidad de todos los trabajadores registrados. La geolocalización asociada a una persona identificada permite inferir dónde estuvo y cuándo. | Cumplimiento de la Ley N° 29733 de Protección de Datos Personales: finalidad declarada, consentimiento informado y derecho de acceso y rectificación. La ubicación es opcional y se solicita en el momento de tomar la foto, no al abrir la aplicación; si el trabajador la niega, el reporte se envía igual. Se registra en el SLA la ubicación de los servidores y la política de retención. |
