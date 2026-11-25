@@ -6391,9 +6391,13 @@ disponibles; los enlaces a repositorios no sustituyen esos entregables.
 
 ## Anexo A. Videos de Exposiciones
 
-| Entrega | Enlace del video | Duración |
-|---|---|---|
-| Trabajo Final (TF) | No incorporado en este avance | Sin duración registrada |
+| Video | Sección | Enlace del video | Duración |
+|---|---|---|---|
+| About-the-Product | 5.3 | Pendiente de publicación | Sin duración registrada |
+| About-the-Product Intro (pre-lanzamiento) | 8.6.1 | Pendiente de publicación | Sin duración registrada |
+| App Validation | Conclusiones | Pendiente de publicación | Sin duración registrada |
+| About-the-Team | Conclusiones | Pendiente de publicación | Sin duración registrada |
+| Exposición del Trabajo Final (TF) | — | Pendiente de publicación | Sin duración registrada |
 
 ## Anexo B. Enlaces del proyecto
 
@@ -6453,25 +6457,25 @@ Ver la sección [Student Outcome](#student-outcome) de este informe.
 
 ## Anexo G. Corte de evidencia técnica
 
-Inspección de las ramas públicas `develop` al 6 de octubre de 2026. Se consultó código y
-configuración; no se ejecutaron las aplicaciones, sus suites ni sus despliegues en esta
-actualización del informe.
+Inspección de las ramas públicas `develop` al 25 de noviembre de 2026, para la versión final
+del informe. Se consultó código y configuración; no se ejecutaron las aplicaciones, sus suites
+ni sus despliegues en esta actualización.
 
 | Componente | Commit consultado | Evidencia disponible |
 |---|---|---|
-| API | [`1b5e02e`](https://github.com/sst-peru/sst-api/tree/1b5e02e07108b4358f168133ee380563bf2da4c3) | Rutas, serializadores, modelos, ocho funciones de prueba y workflows |
-| Web | [`2fd0a59`](https://github.com/sst-peru/sst-web/tree/2fd0a59df9465c464915b51894a60e5b5a9667c8) | Rutas e interfaces React, cliente HTTP y workflow de construcción |
-| Android | [`aeef3a8`](https://github.com/sst-peru/sst-mobile/tree/aeef3a8b1170d1a4bda12631ae3b2c54e47d3368) | Login, lista, formularios, persistencia local, worker y workflow APK |
-| Informe | `c5bb93c` como base local previa a esta edición | Markdown, herramientas de generación del índice y hook de commits |
+| API | [`c9a4965`](https://github.com/sst-peru/sst-api/commit/c9a4965) | Rutas, serializadores, modelos, 185 funciones de prueba (`def test_`), workflows `ci.yml` y `commitlint.yml` |
+| Web | [`62cbf37`](https://github.com/sst-peru/sst-web/commit/62cbf37) | Rutas e interfaces React, cliente HTTP, panel del experimento (TB01 y TB02) y workflows `ci.yml` y `commitlint.yml` |
+| Android | [`811746c`](https://github.com/sst-peru/sst-mobile/commit/811746c) | Login, formularios rápido y largo, persistencia local, worker de sincronización, pantallas de gestión y workflows `ci.yml` y `commitlint.yml` |
+| Informe | Rama `develop` de `sst-report` | Markdown, herramientas de generación del índice y hook de commits |
 
 | Diferencia encontrada | Consecuencia para la aceptación |
 |---|---|
-| El backend consultado no registra comité, exportaciones ni `auth/users/` | Las pantallas y contratos asociados requieren una versión compatible o implementación adicional |
-| El serializador de registro acepta `role` | La restricción del alta pública no queda acreditada; requiere corrección y prueba |
-| La búsqueda de reintento por UUID no filtra empresa | La no duplicación dentro de una empresa no demuestra aislamiento entre empresas |
-| La navegación Android contiene tres destinos | No queda acreditada la paridad de detalle, gestión, IPERC, EPP, inspecciones y tablero |
-| Se localizaron ocho pruebas frente al catálogo más amplio del informe | Los casos restantes son especificación sin código localizado; no hay resultados de corrida adjuntos |
-| No existe `.github/workflows/` en el checkout del informe | Sus pipelines se documentan como propuestos, aunque el generador local sí existe |
+| El registro público asigna siempre el rol de operario (`e5e909d`) y lo cubre la prueba `test_el_registro_publico_no_permite_elegir_rol` | La restricción del alta pública queda acreditada en el código; ya no es una diferencia abierta |
+| La búsqueda de reintento por UUID (`apps/reports/views.py`) no filtra por empresa | La no duplicación dentro de una empresa no demuestra aislamiento entre empresas; requiere corrección antes de producción |
+| La aplicación Android integró pantallas de gestión en `811746c` | La paridad de detalle con la web todavía no se verificó pantalla por pantalla |
+| Las historias To-Be TB03, TB04 y TB05 no tienen commits asociados | Se documentan como pendientes en 8.3.3.1 a 8.3.3.5 |
+| La web y Android no tienen archivos de prueba automatizada en `develop` | La verificación automatizada se concentra en el API; los clientes se validan de forma manual |
+| No existe `.github/workflows/` en el repositorio del informe | Sus pipelines se documentan como propuestos, aunque el generador local sí existe |
 
 Este corte no descarta cambios en otras ramas o versiones no aportadas. Una evidencia posterior
 debe actualizar el commit y el dictamen correspondiente, conservando la trazabilidad.
@@ -6492,6 +6496,11 @@ debe actualizar el commit y el dictamen correspondiente, conservando la trazabil
 | 6.1 | Catálogo, ocho pruebas localizadas y escenarios BDD | JUnit XML, resultados de sistema y validación con usuarios |
 | 7.1 | Tres workflows de CI de producto | Ejecuciones exitosas enlazadas y protecciones verificadas |
 | 7.2–7.3 | Diseño de promoción y recuperación | Entornos, artefactos, despliegue y restauración ensayados |
+| 8.3.3.1–8.3.3.5 | Sprint To-Be 1, TB01 y TB02 implementadas con commits y pruebas | Implementación de TB03, TB04 y TB05 |
+| 8.3.4.2 | Guion, selección de participantes y plantilla de registro | Entrevistas To-Be con los participantes del piloto real |
+| 8.4.1 | Análisis con datos de demostración, declarado no concluyente | Piloto real de EXP-01 con 24 participantes |
+| 8.5.1 | Aprendizajes y decisiones de la sesión de shareback | Fecha y modalidad de la sesión |
+| 8.6.1 y Conclusiones | Guiones de los videos Intro, App Validation y About-the-Team | Videos publicados con enlace y duración |
 
 Para incorporar una evidencia se registrarán ID, sección, historia, commit, entorno, fecha,
 responsable, enlace y resultado observado. Las capturas se guardarán en `assets/img/` y los
