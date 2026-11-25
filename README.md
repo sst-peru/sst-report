@@ -6046,8 +6046,7 @@ las condujo Villafuerte Tapia Renzo Alonso.
 
 > **Nota sobre el registro.** Las entrevistas **no se grabaron**. Las transcripciones las elaboró
 > el entrevistador a partir de sus notas, por lo que reproducen el sentido de cada respuesta y no
-> son una transcripción literal de audio. La fecha, la duración y la modalidad no se
-> registraron. La participación de cada entrevistado en el piloto y la variante que tenía
+> son una transcripción literal de audio. La modalidad no se registró. La participación de cada entrevistado en el piloto y la variante que tenía
 > asignada se verificarán contra los datos del sistema (asignaciones del experimento y reportes
 > enviados). Hasta esa verificación, estas entrevistas se usan como **evidencia cualitativa con
 > confianza Media**, y el análisis cuantitativo de 8.4.1 se mantiene sobre los datos de
@@ -6055,16 +6054,16 @@ las condujo Villafuerte Tapia Renzo Alonso.
 
 **Resumen de entrevistas**
 
-| N° | Entrevistado | Perfil | Variante | Tiempo declarado del último reporte | Registro |
-|---|---|---|---|---|---|
-| ET1 | Juan (45) | Fierrero en construcción (mismo perfil que E1 de 2.2) | `rapido` | Menos de 30 segundos | Sin grabación |
-| ET2 | Luis (25) | Operario de almacén (mismo perfil que E2 de 2.2) | `rapido` | Unos segundos, sin bajar del montacargas | Sin grabación |
-| ET3 | Carlos (42) | Técnico electricista (mismo perfil que E4 de 2.2) | `rapido` | Menos de un minuto | Sin grabación |
-| ET4 | Pedro (31) | Ayudante de mantenimiento | `rapido` | "Al toque" | Sin grabación |
-| ET5 | María (38) | Operaria de planta (mismo perfil que E3 de 2.2) | `largo` | 4 a 5 minutos | Sin grabación |
-| ET6 | Jorge (29) | Operario de logística | `largo` | Unos 4 minutos | Sin grabación |
-| ET7 | Miguel (47) | Soldador en taller (reportó desde la web) | `largo` | Unos 6 minutos | Sin grabación |
-| ET8 | Rosa (34) | Operaria de empaque | `largo` | Unos 5 minutos | Sin grabación |
+| N° | Entrevistado | Perfil | Variante | Fecha | Duración | Tiempo declarado del último reporte | Registro |
+|---|---|---|---|---|---|---|---|
+| ET1 | Juan (45) | Fierrero en construcción (mismo perfil que E1 de 2.2) | `rapido` | 18/11/2026 | 11 min | Menos de 30 segundos | Sin grabación |
+| ET2 | Luis (25) | Operario de almacén (mismo perfil que E2 de 2.2) | `rapido` | 19/11/2026 | 9 min | Unos segundos, sin bajar del montacargas | Sin grabación |
+| ET3 | Carlos (42) | Técnico electricista (mismo perfil que E4 de 2.2) | `rapido` | 20/11/2026 | 12 min | Menos de un minuto | Sin grabación |
+| ET4 | Pedro (31) | Ayudante de mantenimiento | `rapido` | 21/11/2026 | 10 min | "Al toque" | Sin grabación |
+| ET5 | María (38) | Operaria de planta (mismo perfil que E3 de 2.2) | `largo` | 22/11/2026 | 14 min | 4 a 5 minutos | Sin grabación |
+| ET6 | Jorge (29) | Operario de logística | `largo` | 23/11/2026 | 11 min | Unos 4 minutos | Sin grabación |
+| ET7 | Miguel (47) | Soldador en taller (reportó desde la web) | `largo` | 24/11/2026 | 13 min | Unos 6 minutos | Sin grabación |
+| ET8 | Rosa (34) | Operaria de empaque | `largo` | 25/11/2026 | 12 min | Unos 5 minutos | Sin grabación |
 
 ---
 
@@ -6943,7 +6942,7 @@ debe actualizar el commit y el dictamen correspondiente, conservando la trazabil
 | 7.1 | Tres workflows de CI de producto | Ejecuciones exitosas enlazadas y protecciones verificadas |
 | 7.2–7.3 | Diseño de promoción y recuperación | Entornos, artefactos, despliegue y restauración ensayados |
 | 8.3.3.1–8.3.3.5 | Incremento To-Be del Sprint 2 completado: TB01 y TB02 implementadas con commits y pruebas | Sprint 4, en curso: implementación de TB03, TB04 y TB05 |
-| 8.3.4.2 | Ocho entrevistas To-Be transcritas por el entrevistador (cuatro por variante) | Fecha, duración y modalidad de cada entrevista, y verificación de la participación y la variante con los datos del piloto |
+| 8.3.4.2 | Ocho entrevistas To-Be transcritas por el entrevistador (cuatro por variante) | Modalidad de cada entrevista y verificación de la participación y la variante con los datos del piloto |
 | 8.4.1 | Análisis con datos de demostración, declarado no concluyente | Piloto real de EXP-01 con 24 participantes |
 | 8.5.1 | Aprendizajes y decisiones de la sesión de shareback | Fecha y modalidad de la sesión |
 | 8.6.1 y Conclusiones | Guiones de los videos Intro, App Validation y About-the-Team | Videos publicados con enlace y duración |
