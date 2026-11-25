@@ -5363,29 +5363,167 @@ aplicaciones web y móvil.
 
 ### 8.2.1. Hypotheses
 
-Cada hipótesis de trabajo (HW) tiene su hipótesis nula (H0), está vinculada a una Experiment
-Card de la sección 8.1.5 y a una métrica del catálogo de 8.2.2, y se puede refutar con datos.
-Las preguntas exploratorias o descriptivas del Question Backlog (Q2 y Q7) no llevan hipótesis:
-se responden midiendo, no contrastando. **Los valores objetivo son metas de validación, no
-resultados alcanzados.** Las hipótesis se relacionan con las hipótesis Lean UX H1, H3 y H4 de
-la sección 1.2.2.3.
+A partir de las Experiment Cards de 8.1.5 se diseñó cada experimento. En esta fase cada pregunta
+se transforma en un **Hypothesis Statement** siguiendo el **Feature Hypothesis Statement
+Template**:
 
-| ID | Tarjeta | Métrica | Hipótesis de trabajo (HW) | Hipótesis nula (H0) | Regla de decisión |
+> *"Creemos que [implementar este feature] para [estos usuarios] logrará [este resultado]. Sabremos
+> que esto es cierto cuando veamos [esta métrica / este cambio medible]."*
+
+Para cada hipótesis se redacta la **Null Hypothesis (H0)**, que es su reflejo (el resultado
+esperado **no** se produce), y la **Alternative Hypothesis (H1)**, que afirma que sí se produce el
+cambio medible. Todas son **falseables**, **comprobables**, **medibles** (tienen métrica y umbral)
+y **describen una diferencia o cambio**. Cada hipótesis de trabajo (HW01 a HW09) está vinculada a
+su Experiment Card y a una métrica del catálogo de 8.2.2. Las preguntas descriptivas del Question
+Backlog (Q2 y Q7) no llevan hipótesis: se responden midiendo, no contrastando. **Los valores
+objetivo son metas de validación, no resultados alcanzados.**
+
+**Notación.** En esta sección, H1 designa siempre la hipótesis alternativa. Las hipótesis del
+proceso Lean UX de la sección 1.2.2.3 se citan como *Lean UX H1* a *Lean UX H4*.
+
+**Diseño de los experimentos.** La prueba estadística depende del tipo de comparación: cuando se
+comparan conteos entre dos grupos se usa la prueba t de Welch, o la U de Mann-Whitney si los
+conteos son muy asimétricos; cuando se comparan proporciones entre dos grupos se usa la diferencia
+de proporciones, o la prueba exacta de Fisher si hay pocos casos; cuando se compara una proporción
+contra un umbral se usa el intervalo de Wilson o la prueba binomial; y cuando se estudia una
+asociación en el tiempo se usa la correlación de Spearman. En todos los casos α = 0,05: si el
+p-valor es menor que 0,05, o el intervalo excluye el valor que afirma H0, se rechaza H0 y se acepta
+H1. Con una muestra menor a la calculada en 8.2.5, un resultado no significativo es **no
+concluyente**, no una refutación.
+
+| Hipótesis | Tarjeta | Pregunta | Métrica | Prueba | Relación con Lean UX |
 |---|---|---|---|---|---|
-| HW01 / H0-01 | EXP-01 | M01 | Los operarios expuestos al formulario rápido registran al menos el doble de reportes por usuario que los expuestos al formulario largo durante la ventana de 14 días. *(H1)* | No hay diferencia en la media de reportes por usuario entre ambas variantes (μ_rápido = μ_largo). | Prueba t de Welch a dos colas, α = 0,05, con intervalo de confianza al 95 % de la diferencia. Se rechaza H0 si el intervalo excluye el cero. HW01 se considera apoyada si además el *lift* es de +100 % o más; si el intervalo es positivo pero el *lift* es menor, se apoya solo un efecto menor al esperado. Con menos de 12 usuarios por grupo (8.2.5) un resultado no significativo es **no concluyente**, no una refutación. |
-| HW02 / H0-02 | EXP-01 | M02 | El formulario rápido no empeora el tiempo de cierre: el MTTR del grupo rápido no supera en más de 10 % al del grupo largo. *(H3)* | El MTTR del grupo rápido supera en más de 10 % al del grupo largo. | Prueba de no inferioridad unilateral, α = 0,05: se rechaza H0 si el límite superior del intervalo al 95 % de la diferencia (rápido − largo) es menor que el 10 % del MTTR del grupo largo. Si el intervalo cruza ese margen, el resultado es no concluyente y el MTTR se mantiene como métrica de control. |
-| HW03 / H0-03 | EXP-02 | M02, M04 | Un aumento del volumen semanal de reportes, sin cambios en el proceso de cierre, eleva el MTTR y reduce la tasa de cierre. *(H3)* | No hay asociación entre el volumen semanal de reportes y el MTTR semanal. | Correlación de Spearman entre volumen y MTTR semanales sobre al menos 8 semanas, α = 0,05, unilateral. HW03 se considera apoyada si la correlación es positiva y significativa y la tasa de cierre (M04) desciende en las semanas de mayor volumen. Con menos semanas se reporta solo la serie descriptiva. |
-| HW04 / H0-04 | EXP-04 | M08 | Al menos el 70 % de los operarios invitados registra un reporte desde su propio celular durante la ventana. *(H1)* | La tasa de adopción es menor al 70 %. | Intervalo de Wilson al 95 % de la proporción: HW04 se apoya si el límite inferior es igual o mayor a 70 % y se refuta si el límite superior es menor; en otro caso, no concluyente. |
-| HW05 / H0-05 | EXP-05 | M09 | Al menos la mitad de los responsables de SST elige la evidencia exportable como motivo principal de compra. *(H4)* | La proporción que la elige es igual o menor al 50 %. | Prueba binomial unilateral, α = 0,05, con al menos 10 responsables; con menos, solo se reporta la proporción descriptiva. |
-| HW06 / H0-06 | EXP-06 | M07 | Exigir la foto reduce la tasa de finalización del reporte frente a dejarla opcional. *(H1)* | No hay diferencia en la tasa de finalización entre foto obligatoria y opcional. | Diferencia de proporciones a dos colas, α = 0,05 (prueba exacta de Fisher si algún grupo tiene menos de 5 casos en una categoría). M05 se reporta como métrica de control. |
-| HW07 / H0-07 | EXP-08 | M04, M01 | El ranking de áreas aumenta la tasa de cierre sin reducir la frecuencia de reporte en más de 10 %. *(H3)* | El ranking no aumenta la tasa de cierre. | Comparación antes y después entre áreas con y sin ranking, α = 0,05. Si la frecuencia de reporte (M01) cae más de 10 %, la hipótesis se descarta aunque la tasa de cierre suba. |
-| HW08 / H0-08 | EXP-09 | M01 | Con la opción de reporte anónimo aumentan los reportes de actos inseguros de terceros por usuario. *(H1)* | No hay diferencia en los reportes de actos de terceros por usuario. | U de Mann-Whitney a dos colas, α = 0,05, por la asimetría esperada de los conteos. |
-| HW09 / H0-09 | EXP-10 | M01, M07 | Los operarios con guantes reportan más cuando disponen de reporte por voz. *(H1)* | No hay diferencia en los reportes por usuario entre quienes tienen y no tienen voz. | U de Mann-Whitney a dos colas, α = 0,05; M07 se reporta como métrica secundaria. |
+| HW01 / H0-01 | EXP-01 | Q1 | M01 | t de Welch, dos colas | Lean UX H1 |
+| HW02 / H0-02 | EXP-01 | Q1 | M02 | No inferioridad, unilateral | Lean UX H3 |
+| HW03 / H0-03 | EXP-02 | Q4 | M02, M04 | Spearman, unilateral | Lean UX H3 |
+| HW04 / H0-04 | EXP-04 | Q6 | M08 | Intervalo de Wilson | Lean UX H1 |
+| HW05 / H0-05 | EXP-05 | Q10 | M09 | Binomial, unilateral | Lean UX H4 |
+| HW06 / H0-06 | EXP-06 | Q3 | M07 | Diferencia de proporciones, dos colas | Lean UX H1 |
+| HW07 / H0-07 | EXP-08 | Q9 | M04, M01 | Antes y después con control, unilateral | Lean UX H3 |
+| HW08 / H0-08 | EXP-09 | Q5 | M01 | U de Mann-Whitney, dos colas | Lean UX H1 |
+| HW09 / H0-09 | EXP-10 | Q8 | M01, M07 | U de Mann-Whitney, dos colas | Lean UX H1 |
+
+**Hipótesis HW01 (Q1 · EXP-01) — Fricción del formulario: frecuencia de reporte**
+
+| Campo | Contenido |
+|---|---|
+| **Question** | ¿Un formulario de tres pasos aumenta el número de reportes por usuario frente al formulario tradicional de diez o más campos? |
+| **Hypothesis Statement** | Creemos que implementar el **formulario de reporte de tres pasos con foto** para **operarios de campo** logrará **aumentar la frecuencia de reporte**. Sabremos que esto es cierto cuando veamos que el grupo con formulario rápido registra **al menos el doble de reportes por usuario** que el grupo con formulario largo durante los 14 días. |
+| **Null Hypothesis (H0-01)** | Creemos que implementar el formulario de tres pasos con foto para operarios de campo **no** logrará cambiar la frecuencia de reporte. Sabremos que esto es cierto cuando veamos que la media de reportes por usuario es **igual** en ambas variantes. |
+| **Alternative Hypothesis (H1)** | La media de reportes por usuario del grupo con formulario rápido es **distinta** de la del grupo con formulario largo. HW01 se apoya si, además, la diferencia es a favor del rápido con un *lift* de **+100 % o más**. |
+| **Expresión estadística** | H0: μ(rápido) − μ(largo) = 0  H1: μ(rápido) − μ(largo) ≠ 0 (prueba t de Welch a dos colas). Se rechaza H0 si el intervalo de confianza al 95 % de la diferencia excluye el cero. El *lift* de +100 % opera como umbral práctico: si el intervalo es positivo pero el *lift* es menor, solo se apoya un efecto menor al esperado. |
+| **Variable independiente** | Variante del formulario de reporte: `rapido` o `largo`. |
+| **Variable dependiente (métrica)** | M01 reportes por usuario durante la ventana. |
+| **Diseño** | Experimento controlado A/B con asignación determinística por usuario, 24 operarios (12 / 12), 14 días. Prueba t de Welch a dos colas con α = 0,05. Con menos de 12 usuarios por grupo (8.2.5), un resultado no significativo es no concluyente. |
 
 **Por qué HW01 se contrasta a dos colas.** Aunque la hipótesis de negocio es direccional, un
 formulario más corto podría producir reportes de menor calidad y desalentar su uso al
 percibirse como poco serio. Cerrar esa posibilidad por anticipado sería diseñar el experimento
 para confirmar lo que ya se cree.
+
+**Hipótesis HW02 (Q1 · EXP-01) — Fricción del formulario: tiempo de cierre**
+
+| Campo | Contenido |
+|---|---|
+| **Question** | ¿El formulario de tres pasos aumenta los reportes sin empeorar el tiempo de cierre de los hallazgos? |
+| **Hypothesis Statement** | Creemos que implementar el **formulario de reporte de tres pasos** para **operarios de campo** logrará aumentar los reportes **sin empeorar el tiempo de cierre**. Sabremos que esto es cierto cuando veamos que el MTTR del grupo rápido **no supera en más de 10 %** al del grupo largo. |
+| **Null Hypothesis (H0-02)** | Creemos que implementar el formulario de tres pasos para operarios de campo **empeorará** el tiempo de cierre. Sabremos que esto es cierto cuando veamos que el MTTR del grupo rápido **supera en más de 10 %** al del grupo largo. |
+| **Alternative Hypothesis (H1)** | El MTTR del grupo rápido supera al del grupo largo en **menos del 10 %**: el formulario rápido no es inferior en tiempo de cierre. |
+| **Expresión estadística** | H0: μ_MTTR(rápido) − μ_MTTR(largo) ≥ 0,10 · μ_MTTR(largo)  H1: μ_MTTR(rápido) − μ_MTTR(largo) < 0,10 · μ_MTTR(largo) (prueba de no inferioridad unilateral). Se rechaza H0 si el límite superior del intervalo al 95 % de la diferencia es menor que el margen del 10 %. Si el intervalo cruza el margen, el resultado es no concluyente y el MTTR se mantiene como métrica de control. |
+| **Variable independiente** | Variante del formulario de reporte: `rapido` o `largo`. |
+| **Variable dependiente (métrica)** | M02 MTTR de los hallazgos cerrados de cada grupo. |
+| **Diseño** | Mismo experimento A/B que HW01 (EXP-01), con la misma muestra y la misma ventana de 14 días. Prueba de no inferioridad unilateral con α = 0,05. |
+
+**Hipótesis HW03 (Q4 · EXP-02) — Captura frente a capacidad de cierre**
+
+| Campo | Contenido |
+|---|---|
+| **Question** | ¿El aumento de reportes se traduce en hallazgos cerrados o solo en cola acumulada? |
+| **Hypothesis Statement** | Creemos que un **aumento del volumen semanal de reportes**, sin cambios en el proceso de cierre del **equipo de SST**, logrará **elevar el MTTR y reducir la tasa de cierre**. Sabremos que esto es cierto cuando veamos una **correlación positiva y significativa** entre el volumen semanal y el MTTR semanal, con caída de la tasa de cierre en las semanas de mayor volumen. |
+| **Null Hypothesis (H0-03)** | Creemos que un aumento del volumen semanal de reportes, sin cambios en el proceso de cierre del equipo de SST, **no** afectará el MTTR. Sabremos que esto es cierto cuando veamos que la correlación entre el volumen semanal y el MTTR semanal es **nula o negativa**. |
+| **Alternative Hypothesis (H1)** | La correlación entre el volumen semanal de reportes y el MTTR semanal es **positiva**. |
+| **Expresión estadística** | H0: ρs ≤ 0  H1: ρs > 0, donde ρs = correlación de Spearman entre volumen semanal y MTTR semanal (unilateral). La caída de la tasa de cierre (M04) en las semanas de mayor volumen es una condición complementaria para apoyar HW03. |
+| **Variable independiente** | Volumen semanal de reportes (se observa, no se manipula). |
+| **Variable dependiente (métrica)** | M02 MTTR semanal; M04 tasa de cierre como métrica complementaria. |
+| **Diseño** | Estudio observacional de serie temporal en una empresa piloto, al menos 8 semanas. Correlación de Spearman unilateral con α = 0,05. Con menos semanas se reporta solo la serie descriptiva. |
+
+**Hipótesis HW04 (Q6 · EXP-04) — Disposición a usar el celular personal**
+
+| Campo | Contenido |
+|---|---|
+| **Question** | ¿Qué proporción de operarios acepta usar su celular personal para reportar? |
+| **Hypothesis Statement** | Creemos que implementar la **aplicación de reporte en el celular personal** para **operarios de campo** logrará **una adopción amplia del canal móvil**. Sabremos que esto es cierto cuando veamos que **al menos el 70 %** de los operarios invitados registra un reporte desde su propio celular durante la ventana. |
+| **Null Hypothesis (H0-04)** | Creemos que implementar la aplicación de reporte en el celular personal para operarios de campo **no** logrará una adopción amplia del canal móvil. Sabremos que esto es cierto cuando veamos que **menos del 70 %** de los operarios invitados registra un reporte desde su celular. |
+| **Alternative Hypothesis (H1)** | La tasa de adopción es **mayor o igual al 70 %**. |
+| **Expresión estadística** | H0: p < 0,70  H1: p ≥ 0,70, donde p = proporción de operarios invitados con al menos un reporte desde su celular. Se decide con el intervalo de Wilson al 95 %: se apoya H1 si el límite inferior es igual o mayor a 0,70, se mantiene H0 si el límite superior es menor a 0,70 y, en otro caso, el resultado es no concluyente. |
+| **Variable independiente** | Invitación a instalar la aplicación en el celular personal, con la misma capacitación para todos. |
+| **Variable dependiente (métrica)** | M08 tasa de adopción. |
+| **Diseño** | Estudio de adopción con invitación abierta a los operarios de la empresa piloto, 14 días. Intervalo de Wilson al 95 % (α = 0,05). |
+
+**Hipótesis HW05 (Q10 · EXP-05) — Evidencia exportable como argumento de compra**
+
+| Campo | Contenido |
+|---|---|
+| **Question** | ¿La evidencia exportable para SUNAFIL es el argumento que decide la compra? |
+| **Hypothesis Statement** | Creemos que ofrecer la **exportación de evidencia para SUNAFIL** a **responsables de SST** logrará que sea **el motivo principal para contratar el producto**. Sabremos que esto es cierto cuando veamos que **más de la mitad** de los responsables la elige como motivo principal entre cuatro beneficios. |
+| **Null Hypothesis (H0-05)** | Creemos que ofrecer la exportación de evidencia para SUNAFIL a responsables de SST **no** logrará que sea el motivo principal para contratar el producto. Sabremos que esto es cierto cuando veamos que la proporción que la elige es **igual o menor al 50 %**. |
+| **Alternative Hypothesis (H1)** | La proporción de responsables de SST que elige la evidencia exportable como motivo principal es **mayor al 50 %**. |
+| **Expresión estadística** | H0: p ≤ 0,50  H1: p > 0,50, donde p = proporción de responsables que elige la evidencia exportable (prueba binomial unilateral). |
+| **Variable independiente** | No se manipula: se compara la preferencia entre cuatro beneficios presentados en orden aleatorio. |
+| **Variable dependiente (métrica)** | M09 preferencia por la evidencia exportable. |
+| **Diseño** | Demostración guiada con elección forzada a al menos 10 supervisores o jefes de SST, 2 semanas. Prueba binomial unilateral con α = 0,05; con menos de 10 responsables solo se reporta la proporción descriptiva. |
+
+**Hipótesis HW06 (Q3 · EXP-06) — Foto obligatoria**
+
+| Campo | Contenido |
+|---|---|
+| **Question** | ¿La foto obligatoria reduce la tasa de finalización del reporte? |
+| **Hypothesis Statement** | Creemos que **exigir la foto** en el formulario rápido para **operarios de campo** logrará **reducir la tasa de finalización del reporte**. Sabremos que esto es cierto cuando veamos que la tasa de finalización con foto obligatoria es **significativamente menor** que con foto opcional. |
+| **Null Hypothesis (H0-06)** | Creemos que exigir la foto en el formulario rápido para operarios de campo **no** cambiará la tasa de finalización del reporte. Sabremos que esto es cierto cuando veamos que la tasa de finalización es **igual** con foto obligatoria y con foto opcional. |
+| **Alternative Hypothesis (H1)** | La tasa de finalización con foto obligatoria es **distinta** de la tasa con foto opcional. HW06 se apoya si la diferencia es **negativa** para la foto obligatoria. |
+| **Expresión estadística** | H0: p(obligatoria) − p(opcional) = 0  H1: p(obligatoria) − p(opcional) ≠ 0, donde p = reportes enviados / reportes iniciados (diferencia de proporciones a dos colas; prueba exacta de Fisher si algún grupo tiene menos de 5 casos en una categoría). |
+| **Variable independiente** | Foto `obligatoria` u `opcional` en el formulario rápido. |
+| **Variable dependiente (métrica)** | M07 tasa de finalización del reporte; M05 cobertura de evidencia como métrica de control. |
+| **Diseño** | Experimento controlado A/B con asignación determinística por usuario, 14 días, con el tamaño de muestra calculado como en 8.2.5. Diferencia de proporciones a dos colas con α = 0,05. |
+
+**Hipótesis HW07 (Q9 · EXP-08) — Ranking de áreas por hallazgos cerrados**
+
+| Campo | Contenido |
+|---|---|
+| **Question** | ¿Un ranking de áreas por hallazgos cerrados mejora la tasa de cierre sin desalentar el reporte? |
+| **Hypothesis Statement** | Creemos que publicar un **ranking de áreas por hallazgos cerrados** para **los supervisores y operarios de cada área** logrará **aumentar la tasa de cierre**. Sabremos que esto es cierto cuando veamos que la tasa de cierre de las áreas con ranking **aumenta significativamente más** que la de las áreas de control y que la frecuencia de reporte **no cae más de 10 %**. |
+| **Null Hypothesis (H0-07)** | Creemos que publicar un ranking de áreas por hallazgos cerrados **no** logrará aumentar la tasa de cierre. Sabremos que esto es cierto cuando veamos que la tasa de cierre de las áreas con ranking aumenta **igual o menos** que la de las áreas de control. |
+| **Alternative Hypothesis (H1)** | El aumento de la tasa de cierre de las áreas con ranking es **mayor** que el de las áreas de control. |
+| **Expresión estadística** | H0: Δ(ranking) − Δ(control) ≤ 0  H1: Δ(ranking) − Δ(control) > 0, donde Δ = tasa de cierre después − tasa de cierre antes (unilateral). Condición de descarte: si M01 cae más de 10 % en las áreas con ranking, HW07 se descarta aunque se rechace H0. |
+| **Variable independiente** | Publicación del ranking en el tablero (sí / no, por área). |
+| **Variable dependiente (métrica)** | M04 tasa de cierre; M01 reportes por usuario como métrica de control. |
+| **Diseño** | Diseño antes y después con áreas de control, 4 semanas antes y 4 después. Comparación unilateral con α = 0,05. |
+
+**Hipótesis HW08 (Q5 · EXP-09) — Reporte anónimo**
+
+| Campo | Contenido |
+|---|---|
+| **Question** | ¿La posibilidad de reportar de forma anónima aumenta los reportes de actos inseguros de terceros? |
+| **Hypothesis Statement** | Creemos que ofrecer el **reporte anónimo opcional** a **operarios de campo** logrará **aumentar los reportes de actos inseguros de terceros**. Sabremos que esto es cierto cuando veamos que el grupo con anonimato registra **significativamente más** reportes de ese tipo por usuario que el grupo sin anonimato. |
+| **Null Hypothesis (H0-08)** | Creemos que ofrecer el reporte anónimo opcional a operarios de campo **no** logrará aumentar los reportes de actos inseguros de terceros. Sabremos que esto es cierto cuando veamos que los reportes de ese tipo por usuario son **iguales** en ambos grupos. |
+| **Alternative Hypothesis (H1)** | Los reportes de actos inseguros de terceros por usuario **difieren** entre el grupo con anonimato y el grupo sin anonimato. HW08 se apoya si la diferencia favorece al grupo con anonimato. |
+| **Expresión estadística** | H0: las distribuciones de reportes por usuario son iguales en ambos grupos  H1: las distribuciones difieren (U de Mann-Whitney a dos colas, elegida por la asimetría esperada de los conteos). |
+| **Variable independiente** | Opción de reporte anónimo `disponible` o `no disponible`. |
+| **Variable dependiente (métrica)** | M01 reportes por usuario, restringido a actos inseguros de terceros. |
+| **Diseño** | Experimento controlado A/B con asignación determinística por usuario, 14 días, con el tamaño de muestra calculado como en 8.2.5. U de Mann-Whitney a dos colas con α = 0,05. |
+
+**Hipótesis HW09 (Q8 · EXP-10) — Reporte por voz**
+
+| Campo | Contenido |
+|---|---|
+| **Question** | ¿El reporte por voz aumenta los reportes de quienes trabajan con guantes o con las manos ocupadas? |
+| **Hypothesis Statement** | Creemos que implementar el **reporte por voz** para **operarios que trabajan con guantes** logrará **aumentar sus reportes**. Sabremos que esto es cierto cuando veamos que el grupo con voz registra **significativamente más** reportes por usuario que el grupo sin voz. |
+| **Null Hypothesis (H0-09)** | Creemos que implementar el reporte por voz para operarios que trabajan con guantes **no** logrará aumentar sus reportes. Sabremos que esto es cierto cuando veamos que los reportes por usuario son **iguales** en el grupo con voz y en el grupo sin voz. |
+| **Alternative Hypothesis (H1)** | Los reportes por usuario **difieren** entre el grupo con voz y el grupo sin voz. HW09 se apoya si la diferencia favorece al grupo con voz. |
+| **Expresión estadística** | H0: las distribuciones de reportes por usuario son iguales en ambos grupos  H1: las distribuciones difieren (U de Mann-Whitney a dos colas). M07 tasa de finalización se reporta como métrica secundaria. |
+| **Variable independiente** | Reporte por voz `disponible` o `no disponible`. |
+| **Variable dependiente (métrica)** | M01 reportes por usuario; M07 tasa de finalización como métrica secundaria. |
+| **Diseño** | Experimento controlado A/B entre operarios que trabajan con guantes, 14 días, con el tamaño de muestra calculado como en 8.2.5. U de Mann-Whitney a dos colas con α = 0,05. |
 
 ### 8.2.2. Domain Business Metrics
 
