@@ -5167,8 +5167,8 @@ experimento.
 | Baja (4) | Q3 | ¿La foto obligatoria reduce la tasa de finalización del reporte? | UX / Usuario | US09 Evidencia fotográfica | UX Designer | Experimento A/B (EXP-06) | Pendiente: siguiente experimento (8.4.2) | - |
 | Baja (4) | Q7 | ¿Cuánto tiempo pasa hoy entre la detección y la corrección de un peligro con el proceso en papel? | Negocio | US35 Indicador MTTR | Data Analyst | Revisión retrospectiva de registros en papel (EXP-07) | Pendiente | - |
 | Baja (4) | Q9 | ¿Un ranking de áreas por hallazgos cerrados mejora la tasa de cierre sin desalentar el reporte? | Negocio | Sin historia todavía (idea I5) | Product Owner | Diseño antes y después con áreas de control (EXP-08) | En espera | - |
-| Baja (3) | Q5 | ¿La posibilidad de reportar de forma anónima aumenta los reportes de actos inseguros de terceros? | UX / Usuario | Sin historia todavía (idea I2) | UX Designer | Experimento A/B (EXP-09) | Pendiente | - |
-| Baja (3) | Q8 | ¿El reporte por voz aumenta los reportes de quienes trabajan con guantes o con las manos ocupadas? | UX / Usuario | Sin historia todavía (idea I4) | UX Designer | Experimento A/B (EXP-10) | Pendiente | - |
+| Baja (3) | Q5 | ¿La posibilidad de reportar de forma anónima aumenta los reportes de actos inseguros de terceros? | UX / Usuario | US116 Reporte anónimo de actos inseguros | UX Designer | Experimento A/B (EXP-09) | Pendiente | - |
+| Baja (3) | Q8 | ¿El reporte por voz aumenta los reportes de quienes trabajan con guantes o con las manos ocupadas? | UX / Usuario | US117 Reporte por voz | UX Designer | Experimento A/B (EXP-10) | Pendiente | - |
 
 La pregunta Q1 encabeza el backlog y es la que se somete a experimento en este ciclo.
 
@@ -5328,10 +5328,10 @@ midiendo. Cuando la tarjeta no fija la muestra, esta se calcula como en 8.2.5 an
 | Campo | Contenido |
 |---|---|
 | **Question** | ¿La posibilidad de reportar de forma anónima aumenta los reportes de actos inseguros de terceros? |
-| **Why** | Si el temor a represalias impide reportar los actos inseguros de los compañeros, reducir la fricción del formulario no basta. Si se confirma, se implementa el reporte anónimo opcional (idea I2); si no, el temor a represalias se aborda por otra vía. |
+| **Why** | Si el temor a represalias impide reportar los actos inseguros de los compañeros, reducir la fricción del formulario no basta. Si se confirma, el reporte anónimo opcional (US116) se mantiene visible para todos y se destaca en la capacitación; si no, el temor a represalias se aborda por otra vía. |
 | **Assumption** | Supuesto A3: el temor a represalias no es la barrera dominante. Esta tarjeta pone a prueba su contrario. |
 | **Belief (Lo que creemos)** | Creemos que la opción de reportar sin identificarse aumentará los reportes de actos inseguros de terceros. |
-| **What** | Se agrega al formulario una opción de reporte anónimo, disponible para un grupo de operarios y no para el otro. |
+| **What** | La opción de reporte anónimo ya existe en el producto (US116, campo `is_anonymous` del reporte). Para el experimento no se construye nada nuevo: la opción se habilita para un grupo de operarios y se oculta para el otro, con la misma asignación determinística de EXP-01. |
 | **Design** | **Técnica de validación:** Experimento controlado A/B con asignación determinística por usuario.<br>**Muestra:** Operarios de campo con cuenta activa; el tamaño se calcula como en 8.2.5.<br>**Duración:** 14 días.<br>**Desarrollo:** Se cuentan los reportes de actos inseguros de terceros por usuario en cada grupo; el resto del formulario y de la aplicación es idéntico.<br>**Criterio de éxito:** El experimento será exitoso si hay una diferencia significativa (U de Mann-Whitney, α = 0,05, dos colas) a favor del grupo con anonimato. Se refuta si no hay diferencia con la muestra requerida.<br>**Riesgo:** Que el anonimato genere reportes malintencionados o imposibles de investigar, y el tratamiento de datos personales que analiza la matriz ética. |
 | **Hypothesis** | Si ofrecemos la opción de reportar de forma anónima, entonces aumentarán los reportes de actos inseguros de terceros por usuario. |
 | **Métricas** | - M01 reportes por usuario, restringido a actos inseguros de terceros |
@@ -5347,7 +5347,7 @@ midiendo. Cuando la tarjeta no fija la muestra, esta se calcula como en 8.2.5 an
 | **Why** | Quien trabaja con guantes no puede escribir con comodidad en la pantalla; dictar el reporte podría quitar esa barrera. Si se confirma, se invierte en la captura por voz (idea I4); si no, se descarta. |
 | **Assumption** | Idea I4: el reporte por voz facilita el reporte a quien trabaja con guantes. |
 | **Belief (Lo que creemos)** | Creemos que los operarios con guantes reportarán más cuando puedan dictar su reporte. |
-| **What** | Se agrega al formulario rápido la opción de dictar la descripción, disponible para un grupo de operarios que trabajan con guantes y no para el otro. Solo cambia el canal de captura. |
+| **What** | Se construye la historia US117 (dictado de la descripción en Android), planificada pero todavía no implementada, y se habilita solo para un grupo de operarios que trabajan con guantes. Solo cambia el canal de captura. |
 | **Design** | **Técnica de validación:** Experimento controlado A/B entre operarios que trabajan con guantes.<br>**Muestra:** Operarios de campo que trabajan con guantes; el tamaño se calcula como en 8.2.5.<br>**Duración:** 14 días.<br>**Desarrollo:** Se comparan los reportes por usuario y la tasa de finalización entre el grupo con voz y el grupo sin voz.<br>**Criterio de éxito:** El experimento será exitoso si hay una diferencia significativa (U de Mann-Whitney, α = 0,05, dos colas) a favor del grupo con voz. Se refuta si no hay diferencia con la muestra requerida.<br>**Riesgo:** Que el ruido de la obra o de la planta degrade el reconocimiento de voz y la función se abandone por mala calidad, no por falta de interés. |
 | **Hypothesis** | Si los operarios con guantes pueden dictar su reporte, entonces registrarán más reportes por usuario que quienes solo pueden escribirlo. |
 | **Métricas** | - M01 reportes por usuario<br>- M07 tasa de finalización (secundaria) |
