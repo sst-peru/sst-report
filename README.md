@@ -6701,6 +6701,16 @@ usuario, pero el intervalo de confianza al 95 % va de −8,66 a +15,82 y contien
 ciclo no confirmó la hipótesis, pero sí validó que la medición funciona de punta a punta, y eso
 es lo que permite ejecutar el piloto real con confianza en el dato.
 
+**Sobre lo que dicen los usuarios.** Las ocho entrevistas To-Be agregaron lo que el número no
+podía dar. Quienes usaron el formulario rápido declaran reportar en menos de un minuto; quienes
+usaron el largo, entre cuatro y seis minutos, y lo abandonan por interrupciones y porque no saben
+clasificar el peligro ni su severidad. Pero la fricción no es la única barrera: cinco de los
+ocho mencionan el miedo a represalias o a exponer a un compañero, y cuatro la presión por no
+detener el trabajo. Eso contradice el supuesto A3 y cambia el orden del trabajo: reducir la
+fricción es necesario, pero no suficiente, y el reporte anónimo y el aviso de cierre pesan tanto
+como el formulario. Estas entrevistas no se grabaron ni provienen de un piloto registrado, así
+que orientan el siguiente ciclo, pero no reemplazan su medición.
+
 **Sobre el rigor experimental y sus límites.** El cálculo de tamaño de muestra determinó que se
 requieren 24 participantes para detectar, con significancia del 5 % y potencia del 80 %, el
 efecto que la hipótesis afirma. Ese número es la conclusión metodológica más importante del
@@ -6725,7 +6735,11 @@ TB02): un número sin su incertidumbre afirma más de lo que se sabe.
 5. Completar el pipeline hasta el despliegue automatizado y publicar la landing page, que hoy no
    tienen URL acreditada.
 6. Corregir el registro de fotos detectado en 8.4.1 y ejecutar EXP-06 (foto obligatoria), la
-   siguiente pregunta del Question Backlog re-priorizado.
+   siguiente pregunta del Question Backlog re-priorizado, junto con EXP-09 (reporte anónimo),
+   que no requiere desarrollo porque la opción ya existe.
+7. Evaluar que la clasificación del hallazgo (Categoría del peligro y Severidad) la haga el
+   supervisor al revisarlo y no el operario al reportarlo (Q12), y hacer visible en la aplicación
+   cuando un reporte quedó guardado sin señal.
 
 ## Video App Validation
 
