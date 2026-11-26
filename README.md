@@ -6506,29 +6506,33 @@ supuesto A3, y dos (ET2 y ET8) señalan que nunca saben si su reporte se atendi�
 
 Se recalifica el Question Backlog de la sección 8.1.4 con el mismo criterio (incertidumbre ×
 costo de equivocarse; Alta/Alto = 3, Media/Medio = 2, Baja/Bajo = 1), incorporando lo aprendido
-en el experimento, en las entrevistas de validación (6.3.2) y en la evaluación heurística
-(6.3.3). Como las entrevistas fueron simuladas, los cambios que dependen solo de ellas se
-consideran provisionales hasta validarlos con usuarios reales.
+en el experimento, en las entrevistas de validación (6.3.2), en la evaluación heurística (6.3.3)
+y en las entrevistas To-Be (8.3.4.2). Las entrevistas de 6.3.2 fueron simuladas y las To-Be no
+se grabaron ni provienen de un piloto registrado, por lo que los cambios que dependen solo de
+entrevistas se consideran provisionales hasta medirlos en el piloto real.
 
 | Prioridad | ID | Pregunta | Incertidumbre | Costo de equivocarse | Puntaje anterior | Puntaje nuevo | Motivo del cambio |
 |---|---|---|---|---|---|---|---|
-| 1 | Q1 | Fricción del formulario | Alta | Alto | 9 | 9 | El experimento no fue concluyente; la incertidumbre se mantiene y requiere piloto real |
+| 1 | Q1 | Fricción del formulario | Alta | Alto | 9 | 9 | El experimento no fue concluyente y requiere piloto real. Las entrevistas To-Be lo apoyan de forma cualitativa (menos de un minuto frente a 4 a 6 minutos, autodeclarado), pero no sustituyen a M01 |
 | 2 | Q4 | Captura frente a capacidad de cierre | Alta | Alto | 9 | 9 | Sin cambio; la evaluación heurística mostró que se puede cerrar sin responsable, lo que afecta la medición del cierre |
-| 3 | Q3 | Foto obligatoria | Alta | Medio | 4 | 6 | Sube la incertidumbre: el panel registra 0 reportes con foto en ambas variantes y la entrevista E3 pide foto obligatoria al cerrar |
-| 4 | Q2 | Peso real del uso sin conexión | Media | Alto | 6 | 6 | Sin cambio; hay reportes que llegan por sincronización offline y la entrevista E1 la pide, pero falta medir su volumen |
-| 5 | Q11 | ¿Avisar al reportante del cierre aumenta su frecuencia de reporte? (nueva) | Alta | Medio | — | 6 | Surge de las entrevistas E1 y E4 y de la historia TB05; se puede medir una vez implementado el aviso |
-| 6 | Q6 | Disposición a usar el celular personal | Media | Alto | 6 | 6 | Sin evidencia nueva; se mide en el piloto real |
-| 7 | Q10 | Evidencia exportable como argumento de compra | Media | Alto | 6 | 6 | Sin cambio; las entrevistas a supervisores (E5 a E8) la mencionan, pero falta validarla con compradores |
-| 8 | Q7 | Línea base del MTTR en papel | Alta | Medio | 4 | 6 | Sube: sin línea base, el MTTR de 92 h del panel no se puede comparar con el proceso actual |
-| 9 | Q5 | Reporte anónimo | Alta | Bajo | 3 | 3 | Sin evidencia nueva |
-| 10 | Q8 | Reporte por voz | Alta | Bajo | 3 | 3 | Sin evidencia nueva |
-| 11 | Q9 | Ranking de áreas por hallazgos cerrados | Media | Bajo | 4 | 2 | Baja: la matriz ética descarta indicadores punitivos y reduce el valor de responderla |
+| 3 | Q3 | Foto obligatoria | Alta | Medio | 4 | 6 | Sube: el panel registra 0 reportes con foto, la entrevista E3 pide foto obligatoria al cerrar, y en las To-Be la foto obligatoria frenó el reporte de un acto inseguro (ET2) y falló con poca luz (ET4) |
+| 4 | Q5 | Reporte anónimo | Alta | Medio | 3 | 6 | Sube: cinco de las ocho entrevistas To-Be mencionan el miedo a represalias o a exponer a un compañero (ET1, ET2, ET5, ET6, ET7), lo que contradice el supuesto A3. Como el reporte anónimo ya está implementado (US116), EXP-09 no requiere desarrollo |
+| 5 | Q2 | Peso real del uso sin conexión | Media | Alto | 6 | 6 | Sin cambio en el puntaje. Hay reportes que llegan por sincronización offline y la entrevista E1 la pide; en las To-Be, ET1 y ET3 no sabían que el reporte sin señal se guarda, así que la medición debe incluir si el usuario lo intenta |
+| 6 | Q11 | ¿Avisar al reportante del cierre aumenta su frecuencia de reporte? (nueva) | Alta | Medio | — | 6 | Surge de las entrevistas E1 y E4 y de la historia TB05; se refuerza con ET2 y ET8, que nunca saben si su reporte se atendió. Se mide una vez implementado TB05 |
+| 7 | Q12 | ¿Que la clasificación (Categoría del peligro y Severidad) la haga el supervisor aumenta la finalización del reporte sin perder calidad del dato? (nueva) | Alta | Medio | — | 6 | Surge de las entrevistas To-Be: los cuatro participantes de la variante `largo` no saben clasificar o lo hacen "al tanteo" (ET5–ET8) |
+| 8 | Q6 | Disposición a usar el celular personal | Media | Alto | 6 | 6 | Sin evidencia nueva; se mide en el piloto real |
+| 9 | Q10 | Evidencia exportable como argumento de compra | Media | Alto | 6 | 6 | Sin cambio; las entrevistas a supervisores (E5 a E8 de 2.2) la mencionan, pero falta validarla con compradores |
+| 10 | Q7 | Línea base del MTTR en papel | Alta | Medio | 4 | 6 | Sube: sin línea base, el MTTR de 92 h del panel no se puede comparar con el proceso actual |
+| 11 | Q8 | Reporte por voz | Alta | Bajo | 3 | 3 | Sin cambio en el puntaje; ET1 pide dictar la descripción, pero es un solo caso |
+| 12 | Q9 | Ranking de áreas por hallazgos cerrados | Media | Bajo | 4 | 2 | Baja: la matriz ética descarta indicadores punitivos y reduce el valor de responderla |
 
-El backlog queda con once preguntas: las diez de la sección 8.1.4 y Q11, que surge de este ciclo.
+El backlog queda con doce preguntas: las diez de la sección 8.1.4, Q11, que surgió del
+experimento y de las entrevistas de validación, y Q12, que surge de las entrevistas To-Be.
 
-**Siguiente experimento.** Q1 se mantiene en ejecución con usuarios reales. La siguiente
-pregunta a experimentar es Q3, por ser la que más cambió de puntaje y porque su
-instrumentación (registro de fotos) debe corregirse de todos modos para Q1.
+**Siguiente experimento.** Q1 se mantiene pendiente del piloto real. La siguiente pregunta a
+experimentar es Q3, porque su instrumentación (registro de fotos) debe corregirse de todos modos
+para Q1. Q5 sube al cuarto lugar y, como el reporte anónimo ya existe en el producto, EXP-09 puede
+ejecutarse en el mismo piloto que EXP-06 sin desarrollo adicional.
 
 ## 8.5. Continuous Learning
 
