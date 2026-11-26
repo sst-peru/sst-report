@@ -6546,7 +6546,7 @@ experimentación y decidir qué cambia en el producto y en el backlog.
 | Fecha | [dd/mm/2026] |
 | Modalidad | [Presencial / Google Meet] |
 | Participantes | Esquirva León Miguel Juan Diego, Mora Blas Diego Alonzo, Villafuerte Tapia Renzo Alonso |
-| Insumos | Panel del experimento A/B (8.4.1), registro de entrevistas (6.3.2), evaluación heurística (6.3.3) |
+| Insumos | Panel del experimento A/B (8.4.1), registro de entrevistas (6.3.2), evaluación heurística (6.3.3) y entrevistas To-Be (8.3.4.2) |
 
 **Learning Workflow**
 
@@ -6573,14 +6573,20 @@ flowchart LR
 | 2 | Con menos de 20 usuarios por variante no es posible concluir | Intervalo [−8,66 ; 15,82] | Alta | No decidir sobre Q1 hasta alcanzar el tamaño de muestra de 8.2.5 |
 | 3 | La métrica "reportes con foto" no se está registrando o no hay datos | 0 reportes con foto en ambas variantes | Media | Revisar la instrumentación antes del piloto |
 | 4 | El formulario rápido no perjudica el tiempo de cierre | MTTR 92,26 h frente a 93,19 h | Media | Mantener MTTR como métrica de control |
-| 5 | Los usuarios esperan ser avisados cuando su reporte avanza | Entrevistas E1 y E4 (simuladas) | Baja | Implementar TB05 y validar con usuarios reales (Q11) |
+| 5 | Los usuarios esperan ser avisados cuando su reporte avanza | Entrevistas E1 y E4 (6.3.2, simuladas) y ET2 y ET8 (8.3.4.2) | Media | Implementar TB05 en el Sprint 4 y medir su efecto (Q11) |
 | 6 | Mostrar la variante del experimento puede sesgar al usuario | Evaluación heurística, problema 5 | Media | Ocultar la variante en la interfaz |
+| 7 | La fricción no es la única barrera: pesan el miedo a represalias o a exponer a un compañero y la presión productiva | Cinco de ocho entrevistas To-Be mencionan el miedo (ET1, ET2, ET5, ET6, ET7) y cuatro la presión (ET1, ET4, ET5, ET8) | Media | Subir Q5 y ejecutar EXP-09 con el reporte anónimo que ya existe (US116) |
+| 8 | En el formulario largo, la clasificación es la mayor fricción y se llena "al tanteo" | ET5, ET6, ET7 y ET8 | Media | Agregar Q12 al backlog e instrumentar `reporte_iniciado` para medir el abandono (M07) |
+| 9 | Los usuarios no saben que el reporte sin señal se guarda y se envía después | ET1 y ET3 | Media | Hacer visible el estado de envío (US48) antes de medir EXP-03 |
+| 10 | Las entrevistas sin piloto registrado no pueden contrastar una hipótesis | Ninguna de las ocho entrevistas To-Be tiene uso registrado en el sistema | Alta | Hacer el piloto real con cuentas propias, para que entrevistas y datos describan a las mismas personas |
 
 **Decisiones**
 
-1. Q1 continúa en ejecución con usuarios reales; no se cambia el formulario por defecto.
+1. Q1 continúa pendiente del piloto real; no se cambia el formulario por defecto.
 2. Se corrige la instrumentación de fotos y se oculta la variante del experimento antes del piloto.
 3. Se planifica el To-Be Sprint Backlog (sección 8.3.3.1) y se incorpora Q11 al Question Backlog (8.4.2).
+4. Q5 sube en el backlog y EXP-09 se ejecuta junto con EXP-06 en el piloto, porque el reporte anónimo ya está implementado.
+5. Se incorpora Q12 al backlog: evaluar que la clasificación del hallazgo la haga el supervisor y no el operario.
 
 ## 8.6. To-Be Software Platform Pre-launch
 
