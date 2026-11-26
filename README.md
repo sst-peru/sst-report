@@ -6482,6 +6482,26 @@ ejecutará un piloto con usuarios reales durante la ventana de 14 días definida
 validada: la asignación es determinística, los reportes se atribuyen a la variante grabada en
 cada reporte y el panel calcula el intervalo de confianza correctamente.
 
+**Lectura cualitativa: entrevistas To-Be (8.3.4.2)**
+
+Las ocho entrevistas To-Be no forman parte de la prueba estadística: no provienen de un piloto
+registrado en el sistema y el tiempo de reporte que mencionan es autodeclarado. Sirven para
+explicar el porqué detrás del número y para orientar el piloto real.
+
+| Aspecto | Variante `rapido` (ET1–ET4) | Variante `largo` (ET5–ET8) | Lectura |
+|---|---|---|---|
+| Tiempo declarado del último reporte | Menos de un minuto en los cuatro casos | Entre 4 y 6 minutos | Coherente con HW01, pero autodeclarado: no reemplaza a M01 |
+| Reportes abandonados | Por falta de señal (ET1), manos ocupadas (ET3), foto fallida con poca luz (ET4) y temor a exponer a un compañero (ET2) | Por interrupciones, cambio de turno o cantidad de campos (ET5–ET8) | En `largo`, el abandono lo causa el formulario; en `rapido`, el contexto |
+| Campos señalados como problema | Ninguno; piden dictado por voz, botones rápidos y cámara directa | Categoría del peligro y Severidad (los cuatro), Tipo de reporte (ET6, ET8) | La clasificación es la mayor fricción del formulario largo |
+| Barreras fuera de la app | Miedo a represalias (ET1), falta de respuesta (ET2), costumbre (ET3) y apuro (ET4) | Temor al jefe (ET5), proteger a un compañero (ET6), estigma (ET7), falta de respuesta y ritmo (ET8) | La fricción no es la única barrera |
+
+**Qué cambia y qué no.** Las entrevistas respaldan de forma cualitativa la hipótesis de fricción
+(HW01) y explican el mecanismo: el formulario largo se abandona por las interrupciones y por
+la clasificación que exige. No cambian la decisión estadística: el experimento sigue no
+concluyente hasta el piloto real. Sí cambian el Question Backlog (8.4.2): cinco de ocho
+entrevistados mencionan el miedo a represalias o a exponer a un compañero, lo que contradice el
+supuesto A3, y dos (ET2 y ET8) señalan que nunca saben si su reporte se atendió.
+
 ### 8.4.2. Re-scored and Re-prioritized Question Backlog
 
 Se recalifica el Question Backlog de la sección 8.1.4 con el mismo criterio (incertidumbre ×
