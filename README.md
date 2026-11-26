@@ -6046,11 +6046,14 @@ las condujo Villafuerte Tapia Renzo Alonso.
 
 > **Nota sobre el registro.** Las entrevistas **no se grabaron**. Las transcripciones las elaboró
 > el entrevistador a partir de sus notas, por lo que reproducen el sentido de cada respuesta y no
-> son una transcripción literal de audio. Las ocho entrevistas fueron virtuales. La participación de cada entrevistado en el piloto y la variante que tenía
-> asignada se verificarán contra los datos del sistema (asignaciones del experimento y reportes
-> enviados). Hasta esa verificación, estas entrevistas se usan como **evidencia cualitativa con
-> confianza Media**, y el análisis cuantitativo de 8.4.1 se mantiene sobre los datos de
-> demostración.
+> son una transcripción literal de audio. Las ocho entrevistas fueron virtuales.
+>
+> **No se ejecutó un piloto con usuarios registrados en el sistema.** El uso que describen los
+> entrevistados no quedó registrado en la base de datos: no hay asignaciones del experimento ni
+> reportes asociados a ellos. Por eso su variante y sus reportes no pueden verificarse con datos
+> del sistema. Estas entrevistas se usan como **evidencia cualitativa con confianza Media**, y no
+> sustituyen la medición del piloto: el análisis cuantitativo de 8.4.1 sigue sobre los datos de
+> demostración y EXP-01 sigue pendiente de su piloto real con 24 participantes.
 
 **Resumen de entrevistas**
 
@@ -6942,7 +6945,7 @@ debe actualizar el commit y el dictamen correspondiente, conservando la trazabil
 | 7.1 | Tres workflows de CI de producto | Ejecuciones exitosas enlazadas y protecciones verificadas |
 | 7.2–7.3 | Diseño de promoción y recuperación | Entornos, artefactos, despliegue y restauración ensayados |
 | 8.3.3.1–8.3.3.5 | Incremento To-Be del Sprint 2 completado: TB01 y TB02 implementadas con commits y pruebas | Sprint 4, en curso: implementación de TB03, TB04 y TB05 |
-| 8.3.4.2 | Ocho entrevistas To-Be transcritas por el entrevistador (cuatro por variante) | Verificación de la participación y la variante con los datos del piloto |
+| 8.3.4.2 | Ocho entrevistas To-Be transcritas por el entrevistador (cuatro por variante) | Grabaciones y entrevistas a participantes del piloto real, con su uso registrado en el sistema |
 | 8.4.1 | Análisis con datos de demostración, declarado no concluyente | Piloto real de EXP-01 con 24 participantes |
 | 8.5.1 | Aprendizajes y decisiones de la sesión de shareback | Fecha y modalidad de la sesión |
 | 8.6.1 y Conclusiones | Guiones de los videos Intro, App Validation y About-the-Team | Videos publicados con enlace y duración |
